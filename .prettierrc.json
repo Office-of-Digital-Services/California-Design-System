@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "arrowParens": "avoid",
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "bracketSameLine": true,
+  "singleAttributePerLine": false,
+  "embeddedLanguageFormatting": "off",
+  "overrides": [
+    {
+      "files": ["*.njk"],
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": "web.config",
+      "options": {
+        "parser": "html",
+        "printWidth": 120
+      }
+    }
+  ]
+}

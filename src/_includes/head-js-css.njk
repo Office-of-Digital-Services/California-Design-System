@@ -1,0 +1,8 @@
+<!-- Design System css -->
+<link rel="stylesheet" href="/css/base.css" />
+{%- if customcss -%}
+<link rel="stylesheet" href="{{ customcss }}" />
+{% endif -%} {%- if customjs -%} {% for link in customjs %}
+<script src="{{ link }}"></script>
+{%- endfor -%} {%- endif %}
+<link rel="shortcut icon" href="/favicon.ico" />
