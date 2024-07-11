@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/stylelintrc",
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-use-nesting"],
+  "rules": {
+    "declaration-property-unit-allowed-list": {
+      "/^border/": ["px"],
+      "/^padding|^gap/": ["rem"]
+    },
+    "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "vw"],
+    "number-max-precision": 5,
+    "csstools/use-nesting": "always",
+    "selector-max-universal": 0,
+
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["appearance"]
+      }
+    ]
+  }
+}
