@@ -8,10 +8,10 @@
   },
   "extends": ["eslint:recommended", "plugin:jsdoc/recommended"],
   "parserOptions": {
-    "ecmaVersion": 12,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["_site"],
+  "ignorePatterns": ["_site", "dist"],
   "rules": {
     "arrow-parens": ["warn", "as-needed"],
     "block-scoped-var": "warn",
@@ -32,9 +32,11 @@
     "no-var": "warn",
     "operator-assignment": "warn",
     "prefer-arrow-callback": "warn",
+    "prefer-const": "warn",
     "prefer-template": "warn",
     "semi": "warn",
     "yoda": "warn",
+    "jsdoc/require-jsdoc": "off",
     "jsdoc/require-returns": "off",
     "jsdoc/require-returns-type": "off",
     "jsdoc/require-property-description": "off",
