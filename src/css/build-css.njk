@@ -6,7 +6,7 @@ permalink: css/ds-base.css
 /* layout variables */
 --columns-gap: {{ ds_tokens.layout.columns_gap }}; 
 --sidebar-min-width: {{ ds_tokens.layout.sidebar_col_min_width }}; 
---main-min-width: {{ ds_tokens.layout.main_col_min_width }}; 
+--main-min-width: calc({{ ds_tokens.layout.mobile_breakpoint }} - {{ ds_tokens.layout.sidebar_col_min_width }} - {{ ds_tokens.spacing.s_5 }} - {{ ds_tokens.layout.columns_gap }}); 
 --flex-grow-max: {{ ds_tokens.layout.flex_grow_max }}; 
 --container-max-width: {{ ds_tokens.layout.container_max_width }}; 
 

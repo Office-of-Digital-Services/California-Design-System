@@ -1,8 +1,8 @@
 {
   "layout": {
     "container_max_width": "1920px",
+    "mobile_breakpoint": "1080px",
     "sidebar_col_min_width": "300px",
-    "main_col_min_width": "500px",
     "columns_gap": "1.674vw",
     "flex_grow_max": "9999"
   },
