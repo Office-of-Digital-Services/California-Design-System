@@ -20,12 +20,12 @@
 }
 
 .container-left-sidebar > :first-child {
-  flex-basis: var(--sidebar-min-width);
+  flex-basis: var(--sidebar-max-width);
   flex-grow: 1;
 }
 
 .container-left-sidebar > :last-child {
-  flex-basis: var(--main-min-width);
+  flex-basis: var(--main-max-width);
   flex-grow: var(--flex-grow-max);
 }
 
