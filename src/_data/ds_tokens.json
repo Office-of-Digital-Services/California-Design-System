@@ -9,7 +9,23 @@
   "color": {
     "text_color": "#323232",
     "primary": "#1A80AF",
-    "highlight": "#FEC335"
+    "highlight": "#FEC335",
+    "white": "#FFFFFF",
+    "gray_10": "#EEEEEE",
+    "gray_25": "#DDDDDD",
+    "gray_50": "#CCCCCC",
+    "gray_75": "#BBBBBB",
+    "gray_100": "#AAAAAA",
+    "gray_200": "#999999",
+    "gray_300": "#888888",
+    "gray_400": "#777777",
+    "gray_500": "#666666",
+    "gray_600": "#555555",
+    "gray_700": "#444444",
+    "gray_800": "#333333",
+    "gray_900": "#222222",
+    "gray_1000": "#111111",
+    "black": "#000000"
   },
   "border": {
     "border_1": "1px",

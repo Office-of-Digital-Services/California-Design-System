@@ -27,7 +27,7 @@
     <meta property="og:description" content="{{ description }}" />
     {% include "../head-js-css.njk" %}
   </head>
-  <body class="primary">
+  <body>
     <header role="banner"></header>
     {% block content -%} {{ content | safe }} {%- endblock -%}
   </body>

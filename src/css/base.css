@@ -1,8 +1,16 @@
+/* stylelint-disable selector-combinator-allowed-list */
+/* stylelint-disable custom-property-empty-line-before */
 /* stylelint-disable csstools/use-nesting */
 /* stylelint-disable selector-max-universal */
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
+  color: var(--text-color);
+  --color: var(--black);
+  --bg: var(--white);
 }
 
 /* layout options */
@@ -29,8 +37,20 @@
   flex-grow: var(--flex-grow-max);
 }
 
-body {
-  color: var(--text-color);
+/* --- Themes --- */
+[class*="theme-"] {
+  color: var(--color);
+  background-color: var(--bg);
+}
+
+[class*="theme-"] a {
+  color: var(--primary);
+}
+
+.theme-primary,
+.theme-primary a {
+  --color: var(--white);
+  --bg: var(--primary);
 }
 
 /* --- Utility classes --- */
@@ -57,7 +77,7 @@ body {
   border-color: var(--primary);
 }
 
-/* typography */
+/* --- typography ---  */
 p,
 li,
 h2,
