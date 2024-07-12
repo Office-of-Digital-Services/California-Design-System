@@ -1,3 +1,68 @@
+/* stylelint-disable csstools/use-nesting */
+/* stylelint-disable selector-max-universal */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* layout options */
+.container-fixed {
+  max-width: var(--container-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-left-sidebar {
+  display: flex;
+  gap: var(--columns-gap);
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.container-left-sidebar > :first-child {
+  flex-basis: var(--sidebar-min-width);
+  flex-grow: 1;
+}
+
+.container-left-sidebar > :last-child {
+  flex-basis: var(--main-min-width);
+  flex-grow: var(--flex-grow-max);
+}
+
 body {
   color: var(--text-color);
+}
+
+/* --- Utility classes --- */
+
+/* colors */
+.primary {
+  color: var(--primary);
+}
+
+.highlight {
+  color: var(--highlight);
+}
+
+/* borders */
+.brd-1 {
+  border: var(--brd-1px) solid;
+}
+
+.brd-highlight {
+  border-color: var(--highlight);
+}
+
+.brd-primary {
+  border-color: var(--primary);
+}
+
+/* typography */
+p,
+li,
+h2,
+h3,
+h4,
+h5 {
+  max-width: var(--text-max-width);
 }

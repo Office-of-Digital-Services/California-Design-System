@@ -1,5 +1,45 @@
 {
-  "custom": {
-    "text_color": "salmon"
+  "layout": {
+    "container_max_width": "1920px",
+    "sidebar_col_min_width": "300px",
+    "main_col_min_width": "500px",
+    "columns_gap": "1.674vw",
+    "flex_grow_max": "9999"
+  },
+  "color": {
+    "text_color": "#323232",
+    "primary": "#1A80AF",
+    "highlight": "#FEC335"
+  },
+  "border": {
+    "border_1": "1px",
+    "border_2": "2px",
+    "border_3": "3px",
+    "border_4": "4px",
+    "border_5": "5px",
+    "border_6": "6px",
+    "border_10": "10px",
+    "radius_round": "50%",
+    "radius_1": "2px",
+    "radius_2": "4px",
+    "radius_3": "0.5rem",
+    "radius_4": "1rem",
+    "radius_5": "2rem"
+  },
+  "spacing": {
+    "s_0": "0",
+    "s_1": "0.25rem",
+    "s_2": "0.5rem",
+    "s_3": "0.75rem",
+    "s_4": "1rem",
+    "s_5": "2rem",
+    "s_6": "3rem",
+    "s_7": "4rem",
+    "s_8": "6rem",
+    "s_9": "9rem",
+    "s_10": "12rem"
+  },
+  "typography": {
+    "text_max_width": "48rem"
   }
 }

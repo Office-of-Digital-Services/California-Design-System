@@ -2,6 +2,35 @@
 permalink: css/ds-base.css
 ---
 
-:root { --text-color: {{ ds_tokens.custom.text_color }}; } 
+:root { 
+/* layout variables */
+--columns-gap: {{ ds_tokens.layout.columns_gap }}; 
+--sidebar-min-width: {{ ds_tokens.layout.sidebar_col_min_width }}; 
+--main-min-width: {{ ds_tokens.layout.main_col_min_width }}; 
+--flex-grow-max: {{ ds_tokens.layout.flex_grow_max }}; 
+--container-max-width: {{ ds_tokens.layout.container_max_width }}; 
+
+/* color variables */
+--text-color: {{ ds_tokens.color.text_color }}; 
+--primary: {{ ds_tokens.color.primary }}; 
+--highlight: {{ ds_tokens.color.highlight }}; 
+
+/* border variables */
+--brd-1px: {{ ds_tokens.border.border_1 }}; 
+
+/* spacing variables */
+--s-4: {{ ds_tokens.spacing.s_4 }};
+
+/* typography variables */
+--text-max-width:  {{ ds_tokens.typography.text_max_width }};
+}
+
+/* layout */
+@media (max-width: {{ ds_tokens.layout.container_max_width }}) {
+  .content-wrapper > * {
+    padding-left: var(--s-4);
+    padding-right: var(--s-4);
+  }
+}
 
 {% include "./base.css" -%}
