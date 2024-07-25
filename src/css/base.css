@@ -69,6 +69,10 @@ body {
   border: var(--brd-1px) solid;
 }
 
+.brd-2 {
+  border: var(--brd-2px) solid;
+}
+
 .brd-highlight {
   border-color: var(--highlight);
 }
