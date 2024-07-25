@@ -33,6 +33,13 @@ permalink: css/ds-base.css
 
 /* border variables */
 --brd-1px: {{ ds_tokens.border.border_1 }}; 
+--brd-2px: calc({{ ds_tokens.border.border_1 }} * 2); 
+--brd-4px: calc({{ ds_tokens.border.border_1 }} * 4); 
+--brd-8px: calc({{ ds_tokens.border.border_1 }} * 8);
+--brd-radius-sm: calc({{ ds_tokens.border.radius }} / 2); 
+--brd-radius: {{ ds_tokens.border.radius }};
+--brd-radius-lg: calc({{ ds_tokens.border.radius }} * 2); 
+--brd-radius-round: 50%;
 
 /* spacing variables */
 --s-4: {{ ds_tokens.spacing.s_4 }};
