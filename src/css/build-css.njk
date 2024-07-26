@@ -11,9 +11,34 @@ permalink: css/ds-base.css
 --container-max-width: {{ ds_tokens.layout.container_max_width }}; 
 
 /* color variables */
---text-color: {{ ds_tokens.color.text_color }}; 
---primary: {{ ds_tokens.color.primary }}; 
---highlight: {{ ds_tokens.color.highlight }}; 
+--brand-primary: {{ ds_tokens.color.brand_primary }}; 
+--brand-secondary: {{ ds_tokens.color.brand_secondary }}; 
+--banner-light: {{ ds_tokens.color.banner_light }}; 
+--banner-dark: {{ ds_tokens.color.banner_dark }}; 
+--brand-hover-light: {{ ds_tokens.color.brand_hover_light }}; 
+--brand-hover-dark: {{ ds_tokens.color.brand_hover_dark }}; 
+--navigation-hover-light: {{ ds_tokens.color.navigation_hover_light }}; 
+--navigation-hover-dark: {{ ds_tokens.color.navigation_hover_dark }}; 
+--background-primary-light: {{ ds_tokens.color.background_primary_light }}; 
+--background-primary-dark: {{ ds_tokens.color.background_primary_dark }}; 
+--background-secondary-light: {{ ds_tokens.color.background_secondary_light }}; 
+--background-secondary-dark: {{ ds_tokens.color.background_secondary_dark }}; 
+--action-primary: {{ ds_tokens.color.action_primary }}; 
+--action-secondary: {{ ds_tokens.color.action_secondary }}; 
+--main-light: {{ ds_tokens.color.main_light }}; 
+--main-dark: {{ ds_tokens.color.main_dark }}; 
+--navigation-submenu-dark: {{ ds_tokens.color.navigation_submenu_dark }}; 
+--navigation-submenu-light: {{ ds_tokens.color.navigation_submenu_light }}; 
+--utility-dark: {{ ds_tokens.color.utility_dark }}; 
+--utility-dark-grey: {{ ds_tokens.color.utility_dark_grey }}; 
+--utility-mid-grey: {{ ds_tokens.color.utility_mid_grey }}; 
+--utility-light-grey: {{ ds_tokens.color.utility_light_grey }}; 
+--text-dark: {{ ds_tokens.color.text_dark }}; 
+--text-white: {{ ds_tokens.color.text_white }}; 
+--hyperlink-light: {{ ds_tokens.color.hyperlink_light }}; 
+--hyperlink-activated-light: {{ ds_tokens.color.hyperlink_activated_light }}; 
+--hyperlink-dark: {{ ds_tokens.color.hyperlink_dark }}; 
+--hyperlink-activated-dark: {{ ds_tokens.color.hyperlink_activated_dark }}; 
 --white: {{ ds_tokens.color.white }}; 
 --gray-10: {{ ds_tokens.color.gray_10 }}; 
 --gray-25: {{ ds_tokens.color.gray_25 }};
@@ -42,7 +67,11 @@ permalink: css/ds-base.css
 --brd-radius-round: 50%;
 
 /* spacing variables */
---s-4: {{ ds_tokens.spacing.s_4 }};
+--s-1: {{ ds_tokens.spacing.unit }};
+--s-x2: calc({{ ds_tokens.spacing.unit }} * 2);
+--s-x4: calc({{ ds_tokens.spacing.unit }} * 4);
+--s-x8: calc({{ ds_tokens.spacing.unit }} * 8);
+--s-x16: calc({{ ds_tokens.spacing.unit }} * 16);
 
 /* typography variables */
 --text-max-width:  {{ ds_tokens.typography.text_max_width }};
@@ -51,8 +80,8 @@ permalink: css/ds-base.css
 /* layout */
 @media (max-width: {{ ds_tokens.layout.container_max_width }}) {
   .content-wrapper > * {
-    padding-left: var(--s-4);
-    padding-right: var(--s-4);
+    padding-left: var(--s-x2);
+    padding-right: var(--s-x2);
   }
 }
 

@@ -9,11 +9,17 @@
 
 body {
   color: var(--text-color);
-  --color: var(--black);
-  --bg: var(--white);
+  --color: var(--text-dark);
+  --bg: var(--main-light);
 }
 
-/* layout options */
+a {
+  --link-color: var(--hyperlink-light);
+}
+
+/* --- Layouts --- */
+
+/* fixed layout with left sidebar */
 .container-fixed {
   max-width: var(--container-max-width);
   margin-right: auto;
@@ -44,44 +50,26 @@ body {
 }
 
 [class*="theme-"] a {
-  color: var(--primary);
+  color: var(--link-color);
 }
 
-.theme-primary,
-.theme-primary a {
-  --color: var(--white);
-  --bg: var(--primary);
+/* dark theme */
+.theme-dark {
+  --color: var(--text-white);
+  --bg: var(--main-dark);
+}
+
+.theme-dark a {
+  --link-color: var(--hyperlink-dark);
 }
 
 /* --- Utility classes --- */
 
 /* colors */
-.primary {
-  color: var(--primary);
-}
-
-.highlight {
-  color: var(--highlight);
-}
 
 /* borders */
-.brd-1 {
-  border: var(--brd-1px) solid;
-}
 
-.brd-2 {
-  border: var(--brd-2px) solid;
-}
-
-.brd-highlight {
-  border-color: var(--highlight);
-}
-
-.brd-primary {
-  border-color: var(--primary);
-}
-
-/* --- typography ---  */
+/* --- Typography ---  */
 p,
 li,
 h2,
