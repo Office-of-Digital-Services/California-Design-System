@@ -9,6 +9,18 @@
 
 body {
   color: var(--text-color);
+  /* stylelint-disable-next-line font-family-name-quotes */
+  font-family:
+    var(--font-family),
+    ystem-ui,
+    -apple-system,
+    "Roboto",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: clamp(1rem, var(--base), 5rem);
+  letter-spacing: 0.02rem;
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
   --color: var(--text-dark);
   --bg: var(--main-light);
 }
@@ -63,7 +75,12 @@ a {
   --link-color: var(--hyperlink-dark);
 }
 
-/* --- Utility classes --- */
+/* --- Utility  --- */
+
+/* margin (page global) */
+main * + * {
+  margin-block-start: var(--s-x2);
+}
 
 /* colors */
 
@@ -75,6 +92,62 @@ li,
 h2,
 h3,
 h4,
-h5 {
+h5,
+small,
+blockquote {
   max-width: var(--text-max-width);
+}
+
+h1 {
+  font-weight: var(--h1-font-weight);
+  font-size: var(--h1);
+  line-height: var(--h1-line-height);
+}
+
+h2 {
+  font-weight: var(--h2-font-weight);
+  font-size: var(--h2);
+  line-height: var(--h2-line-height);
+}
+
+h3 {
+  font-weight: var(--h3-font-weight);
+  font-size: var(--h3);
+  line-height: var(--h3-line-height);
+}
+
+h4 {
+  font-weight: var(--h4-font-weight);
+  font-size: var(--h4);
+  line-height: var(--h4-line-height);
+}
+
+h5 {
+  font-weight: var(--h5-font-weight);
+  font-size: var(--h4-line-height);
+}
+
+small {
+  font-weight: var(--st-font-weight);
+  font-size: var(--st);
+  line-height: var(--st-line-height);
+}
+
+li + li {
+  margin-top: var(--s-x4);
+}
+
+p {
+  line-height: var(--p-line-height);
+}
+
+h1 + p {
+  font-size: calc(var(--lt) - 0.02rem);
+  line-height: var(--lt-line-height);
+}
+
+blockquote {
+  border-left: var(--gray-300) 4px solid;
+  margin-left: 0;
+  padding-left: var(--s-x4);
 }

@@ -74,7 +74,44 @@ permalink: css/ds-base.css
 --s-x16: calc({{ ds_tokens.spacing.unit }} * 16);
 
 /* typography variables */
+--font-family:  {{ ds_tokens.typography.font }};
 --text-max-width:  {{ ds_tokens.typography.text_max_width }};
+--font-size-base:  {{ ds_tokens.typography.font_size_base }};
+--font-weight-base: {{ ds_tokens.typography.font_weight_base }};
+--line-height-base: {{ ds_tokens.typography.line_height_base }};
+--ratio:  {{ ds_tokens.typography.ratio }};
+--s0: calc(var(--font-size-base) + .2vw);
+
+/* small text font  */
+--st: calc(var(--s0) - .1em);
+--st-font-weight: {{ ds_tokens.typography.small_text_font_weight }};
+--st-line-height: {{ ds_tokens.typography.small_text_line_height }};
+
+/* standard paragraph font  */
+--base: calc(var(--s0) * var(--ratio));
+--p-line-height: {{ ds_tokens.typography.p_line_weight }};
+  
+/* Lead text font */
+--lt: calc(var(--base) * var(--ratio));
+--lt-line-height: {{ ds_tokens.typography.lead_text_line_height }};
+  
+/* headings fonts  */
+--h6: calc(var(--s0) * var(--ratio));
+--h5: calc(var(--h6) * var(--ratio));
+--h4: calc(var(--h5) * var(--ratio));
+--h3: calc(var(--h4) * var(--ratio));
+--h2: calc(var(--h3) * var(--ratio));
+--h1: calc(var(--h2) * var(--ratio) * var(--ratio));
+--h1-font-weight: {{ ds_tokens.typography.h1_font_weight }};
+--h1-line-height: {{ ds_tokens.typography.h1_line_height }};
+--h2-font-weight: {{ ds_tokens.typography.h2_font_weight }};
+--h2-line-height: {{ ds_tokens.typography.h2_line_height }};
+--h3-font-weight: {{ ds_tokens.typography.h3_font_weight }};
+--h3-line-height: {{ ds_tokens.typography.h3_line_height }};
+--h4-font-weight: {{ ds_tokens.typography.h4_font_weight }};
+--h4-line-height: {{ ds_tokens.typography.h4_line_height }};
+--h5-font-weight: {{ ds_tokens.typography.h5_font_weight }};
+--h5-line-height: {{ ds_tokens.typography.h5_line_height }};
 }
 
 /* layout */

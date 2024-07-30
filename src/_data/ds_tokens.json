@@ -60,6 +60,25 @@
     "unit": "0.5rem"
   },
   "typography": {
-    "text_max_width": "48rem"
+    "font": "Noto Sans",
+    "text_max_width": "48rem",
+    "font_size_base": "1rem",
+    "font_weight_base": "400",
+    "ratio": "1.24",
+    "line_height_base": "1rem",
+    "p_line_weight": "1.619",
+    "lead_text_line_height": "1.5",
+    "small_text_font_weight": "500",
+    "small_text_line_height": "2.619",
+    "h1_font_weight": "700",
+    "h1_line_height": "1.619",
+    "h2_font_weight": "700",
+    "h2_line_height": "1.619",
+    "h3_font_weight": "700",
+    "h3_line_height": "1.619",
+    "h4_font_weight": "600",
+    "h4_line_height": "1.619",
+    "h5_font_weight": "600",
+    "h5_line_height": "1.619"
   }
 }
