@@ -12,7 +12,7 @@ body {
   /* stylelint-disable-next-line font-family-name-quotes */
   font-family:
     var(--font-family),
-    ystem-ui,
+    system-ui,
     -apple-system,
     "Roboto",
     "Helvetica Neue",
@@ -82,6 +82,8 @@ main * + * {
   margin-block-start: var(--s-x2);
 }
 
+/* spacing */
+
 /* colors */
 
 /* borders */
@@ -127,16 +129,6 @@ h5 {
   font-size: var(--h4-line-height);
 }
 
-small {
-  font-weight: var(--st-font-weight);
-  font-size: var(--st);
-  line-height: var(--st-line-height);
-}
-
-li + li {
-  margin-top: var(--s-x4);
-}
-
 p {
   line-height: var(--p-line-height);
 }
@@ -146,8 +138,18 @@ h1 + p {
   line-height: var(--lt-line-height);
 }
 
+small {
+  font-weight: var(--st-font-weight);
+  font-size: var(--st);
+  line-height: var(--st-line-height);
+}
+
 blockquote {
   border-left: var(--gray-300) 4px solid;
   margin-left: 0;
   padding-left: var(--s-x4);
+}
+
+li + li {
+  margin-top: var(--s-x4);
 }
