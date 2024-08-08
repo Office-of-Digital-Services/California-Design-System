@@ -19,6 +19,9 @@ module.exports = function (
     (/** @type {{url:string}} */ page) => domain + page.url
   );
 
+  //Watching css updates
+  eleventyConfig.addWatchTarget("./src/css/");
+
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
 
