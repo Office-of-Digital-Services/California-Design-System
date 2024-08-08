@@ -5,10 +5,14 @@ permalink: css/ds-base.css
 :root { 
 /* layout variables */
 --columns-gap: {{ ds_tokens.layout.columns_gap }}; 
---sidebar-max-width: {{ ds_tokens.layout.sidebar_col_max_width }}; 
---mobile-breakpoint-width: calc({{ ds_tokens.layout.mobile_breakpoint }} - 32px); 
---flex-grow-max: {{ ds_tokens.layout.flex_grow_max }}; 
 --container-max-width: {{ ds_tokens.layout.container_max_width }}; 
+--mobile-breakpoint-width: {{ ds_tokens.layout.mobile_breakpoint }}; 
+--sidebar-max-width: {{ ds_tokens.layout.sidebar_col_max_width }}; 
+--container-sm-breakpoint: {{ ds_tokens.layout.container_breakpoint_width_sm }}; 
+--container-md-breakpoint: {{ ds_tokens.layout.container_breakpoint_width_md }}; 
+--container-lg-breakpoint: {{ ds_tokens.layout.container_breakpoint_width_lg }}; 
+--flex-grow-max: {{ ds_tokens.layout.flex_grow_max }}; 
+
 
 /* color variables */
 --brand-primary: {{ ds_tokens.color.brand_primary }}; 

@@ -2,7 +2,10 @@
   "layout": {
     "container_max_width": "1920px",
     "mobile_breakpoint": "1080px",
-    "sidebar_col_max_width": "300px",
+    "sidebar_col_max_width": "16rem",
+    "container_breakpoint_width_sm": "34rem",
+    "container_breakpoint_width_md": "48rem",
+    "container_breakpoint_width_lg": "67rem",
     "columns_gap": "1.674vw",
     "flex_grow_max": "9999"
   },

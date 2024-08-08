@@ -29,53 +29,6 @@ a {
   --link-color: var(--hyperlink-light);
 }
 
-/* --- Layouts --- */
-
-/* fixed layout with left sidebar */
-.container-fixed {
-  max-width: var(--container-max-width);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.container-left-sidebar {
-  display: flex;
-  gap: var(--columns-gap);
-  align-items: stretch;
-  flex-wrap: wrap;
-  --breakpoint-width: var(--mobile-breakpoint-width);
-}
-
-.container-left-sidebar > :first-child {
-  flex-basis: var(--sidebar-max-width);
-  flex-grow: 1;
-}
-
-.container-left-sidebar > :last-child {
-  flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
-  flex-grow: var(--flex-grow-max);
-}
-
-/* container with equal columns */
-.container-columns {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: var(--columns-gap);
-  --breakpoint-width: var(--mobile-breakpoint-width);
-}
-
-.container-columns > * {
-  flex-grow: 1;
-  flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
-  margin-block-start: 0;
-}
-
-.container-columns > :nth-last-child(n + 5),
-.container-columns > :nth-last-child(n + 5) ~ * {
-  flex-basis: 100%;
-}
-
 /* --- Themes --- */
 [class*="theme-"] {
   color: var(--color);
@@ -173,4 +126,50 @@ blockquote {
 
 li + li {
   margin-top: var(--s-x4);
+}
+
+/* --- Layouts --- */
+
+/* fixed layout with left sidebar */
+.container-fixed {
+  max-width: var(--container-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-left-sidebar {
+  display: flex;
+  gap: var(--columns-gap);
+  align-items: stretch;
+  flex-wrap: wrap;
+  --breakpoint-width: var(--container-md-breakpoint);
+}
+
+.container-left-sidebar > :first-child {
+  flex-basis: var(--sidebar-max-width);
+  flex-grow: 1;
+}
+
+.container-left-sidebar > :last-child {
+  flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
+  flex-grow: var(--flex-grow-max);
+}
+
+/* container with equal columns */
+.container-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--columns-gap);
+  --breakpoint-width: var(--container-md-breakpoint);
+}
+
+.container-columns > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
+  margin-block-start: 0;
+}
+
+.container-columns > :nth-last-child(n + 5),
+.container-columns > :nth-last-child(n + 5) ~ * {
+  flex-basis: 100%;
 }
