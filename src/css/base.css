@@ -43,6 +43,7 @@ a {
   gap: var(--columns-gap);
   align-items: stretch;
   flex-wrap: wrap;
+  --breakpoint-width: var(--mobile-breakpoint-width);
 }
 
 .container-left-sidebar > :first-child {
@@ -51,8 +52,28 @@ a {
 }
 
 .container-left-sidebar > :last-child {
-  flex-basis: var(--main-max-width);
+  flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
   flex-grow: var(--flex-grow-max);
+}
+
+/* container with equal columns */
+.container-columns {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--columns-gap);
+  --breakpoint-width: var(--mobile-breakpoint-width);
+}
+
+.container-columns > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
+  margin-block-start: 0;
+}
+
+.container-columns > :nth-last-child(n + 5),
+.container-columns > :nth-last-child(n + 5) ~ * {
+  flex-basis: 100%;
 }
 
 /* --- Themes --- */
