@@ -11,7 +11,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["_site", "dist"],
+  "ignorePatterns": ["docs", "dist"],
   "rules": {
     "arrow-parens": ["warn", "as-needed"],
     "block-scoped-var": "warn",

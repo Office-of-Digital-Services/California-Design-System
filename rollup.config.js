@@ -5,11 +5,11 @@ export default [
     input: "src/js/custom.js",
     output: [
       {
-        file: "_site/js/custom.js",
+        file: "docs/js/custom.js",
         format: "esm"
       },
       {
-        file: "_site/js/custom.min.js",
+        file: "docs/js/custom.min.js",
         format: "esm",
         plugins: [terser()]
       }

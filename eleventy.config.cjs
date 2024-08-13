@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
 ) {
-  // Copy `src/css/` to `_site/css`, `src/images/` to `_site/images`
+  // Copy `src/css/` to `docs/css`, `src/images/` to `docs/images`
   // Copy all static files that should appear in the website root
   // Copy state tempate code files from NPM
   eleventyConfig.addPassthroughCopy({
