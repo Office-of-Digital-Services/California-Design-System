@@ -39,7 +39,7 @@ module.exports = function (
     includes: "../src/_includes",
     layouts: "../src/_includes/layouts",
     // site final outpuut directory
-    output: "_site"
+    output: "docs"
   };
 
   //Adding a transform to make the output work as non-server static files
