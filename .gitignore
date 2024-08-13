@@ -59,6 +59,5 @@ git push origin master
 /node_modules
 /.vs
 *.dat
-/_site
 /StateTemplate.sln
 /website.publishproj
