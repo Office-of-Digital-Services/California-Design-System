@@ -132,7 +132,7 @@ li + li {
 
 /* fixed layout with left sidebar */
 .container-fixed-width {
-  max-width: var(--container-max-width);
+  max-width: var(--desktop-max-width);
   margin-right: auto;
   margin-left: auto;
 }

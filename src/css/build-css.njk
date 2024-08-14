@@ -5,12 +5,14 @@ permalink: css/ds-base.css
 :root { 
 /* layout variables */
 --columns-gap: {{ ds_tokens.layout.columns_gap }}; 
---container-max-width: {{ ds_tokens.layout.container_max_width }}; 
---mobile-breakpoint-width: {{ ds_tokens.layout.mobile_breakpoint }}; 
---sidebar-max-width: {{ ds_tokens.layout.sidebar_col_max_width }}; 
---breakpoint-width-small: {{ ds_tokens.layout.container_breakpoint_width_sm }}; 
---breakpoint-width-medium: {{ ds_tokens.layout.container_breakpoint_width_md }}; 
---breakpoint-width-large: {{ ds_tokens.layout.container_breakpoint_width_lg }}; 
+--desktop-max-width: {{ ds_tokens.layout.desktop_max_width }}; 
+--mobile-breakpoint-width: {{ ds_tokens.layout.mobile_breakpoint_width }}; 
+--sidebar-max-width: {{ ds_tokens.layout.sidebar_max_width }}; 
+--main-content-max-width: {{ ds_tokens.layout.main_content_max_width }}; 
+--main-content-left-margin-max-width: {{ ds_tokens.layout.main_content_left_margin_max_width }}; 
+--breakpoint-width-small: {{ ds_tokens.layout.container_breakpoint_width_small }}; 
+--breakpoint-width-medium: {{ ds_tokens.layout.container_breakpoint_width_medium }}; 
+--breakpoint-width-large: {{ ds_tokens.layout.container_breakpoint_width_large }}; 
 --flex-grow-max: {{ ds_tokens.layout.flex_grow_max }}; 
 
 
@@ -119,7 +121,7 @@ permalink: css/ds-base.css
 }
 
 /* layout */
-@media (max-width: {{ ds_tokens.layout.container_max_width }}) {
+@media (max-width: {{ ds_tokens.layout.desktop_max_width }}) {
   .wrapper-with-side-padding > * {
     padding-left: var(--space-unit-x2);
     padding-right: var(--space-unit-x2);

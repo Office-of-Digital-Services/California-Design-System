@@ -2,9 +2,11 @@
 :root { 
 /* layout variables */
 --columns-gap: 1.674vw; 
---container-max-width: 1920px; 
+--desktop-max-width: 1920px; 
 --mobile-breakpoint-width: 1080px; 
 --sidebar-max-width: 15rem; 
+--main-content-max-width: 80rem; 
+--main-content-left-margin-max-width: 19rem; 
 --breakpoint-width-small: 34rem; 
 --breakpoint-width-medium: 48rem; 
 --breakpoint-width-large: 67rem; 
@@ -257,7 +259,7 @@ li + li {
 
 /* fixed layout with left sidebar */
 .container-fixed-width {
-  max-width: var(--container-max-width);
+  max-width: var(--desktop-max-width);
   margin-right: auto;
   margin-left: auto;
 }

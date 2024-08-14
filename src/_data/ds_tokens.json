@@ -1,11 +1,13 @@
 {
   "layout": {
-    "container_max_width": "1920px",
-    "mobile_breakpoint": "1080px",
-    "sidebar_col_max_width": "15rem",
-    "container_breakpoint_width_sm": "34rem",
-    "container_breakpoint_width_md": "48rem",
-    "container_breakpoint_width_lg": "67rem",
+    "desktop_max_width": "1920px",
+    "mobile_breakpoint_width": "1080px",
+    "sidebar_max_width": "15rem",
+    "main_content_max_width": "80rem",
+    "main_content_left_margin_max_width": "19rem",
+    "container_breakpoint_width_small": "34rem",
+    "container_breakpoint_width_medium": "48rem",
+    "container_breakpoint_width_large": "67rem",
     "columns_gap": "1.674vw",
     "flex_grow_max": "9999"
   },
