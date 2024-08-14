@@ -117,7 +117,7 @@
 
 /* layout */
 @media (max-width: 1920px) {
-  .content-wrapper > * {
+  .wrapper-with-side-padding > * {
     padding-left: var(--s-x2);
     padding-right: var(--s-x2);
   }
@@ -256,7 +256,7 @@ li + li {
 /* --- Layouts --- */
 
 /* fixed layout with left sidebar */
-.container-fixed {
+.container-fixed-width {
   max-width: var(--container-max-width);
   margin-right: auto;
   margin-left: auto;
@@ -293,32 +293,32 @@ li + li {
 }
 
 /* container with equal columns */
-[class*="container-columns"] {
+[class*="container-with-equal-columns"] {
   display: flex;
   flex-wrap: wrap;
   gap: var(--columns-gap);
   --breakpoint-width: var(--container-md-breakpoint);
 }
 
-.container-columns-lg {
+.container-with-equal-columns-breakpoint-large {
   --breakpoint-width: var(--container-lg-breakpoint);
 }
 
-.container-columns-md {
+.container-with-equal-columns-breakpoint-medium {
   --breakpoint-width: var(--container-md-breakpoint);
 }
 
-.container-columns-sm {
+.container-with-equal-columns-breakpoint-small {
   --breakpoint-width: var(--container-sm-breakpoint);
 }
 
-[class*="container-columns"] > * {
+[class*="container-with-equal-columns"] > * {
   flex-grow: 1;
   flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
   margin-block-start: 0;
 }
 
-[class*="container-columns"] > :nth-last-child(n + 5),
-[class*="container-columns"] > :nth-last-child(n + 5) ~ * {
+[class*="container-with-equal-columns"] > :nth-last-child(n + 5),
+[class*="container-with-equal-columns"] > :nth-last-child(n + 5) ~ * {
   flex-basis: 100%;
 }
