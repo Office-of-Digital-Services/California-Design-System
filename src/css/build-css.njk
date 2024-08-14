@@ -8,9 +8,9 @@ permalink: css/ds-base.css
 --container-max-width: {{ ds_tokens.layout.container_max_width }}; 
 --mobile-breakpoint-width: {{ ds_tokens.layout.mobile_breakpoint }}; 
 --sidebar-max-width: {{ ds_tokens.layout.sidebar_col_max_width }}; 
---container-sm-breakpoint: {{ ds_tokens.layout.container_breakpoint_width_sm }}; 
---container-md-breakpoint: {{ ds_tokens.layout.container_breakpoint_width_md }}; 
---container-lg-breakpoint: {{ ds_tokens.layout.container_breakpoint_width_lg }}; 
+--breakpoint-width-small: {{ ds_tokens.layout.container_breakpoint_width_sm }}; 
+--breakpoint-width-medium: {{ ds_tokens.layout.container_breakpoint_width_md }}; 
+--breakpoint-width-large: {{ ds_tokens.layout.container_breakpoint_width_lg }}; 
 --flex-grow-max: {{ ds_tokens.layout.flex_grow_max }}; 
 
 
@@ -61,21 +61,21 @@ permalink: css/ds-base.css
 --black: {{ ds_tokens.color.black }};
 
 /* border variables */
---brd-1px: {{ ds_tokens.border.border_1 }}; 
---brd-2px: calc({{ ds_tokens.border.border_1 }} * 2); 
---brd-4px: calc({{ ds_tokens.border.border_1 }} * 4); 
---brd-8px: calc({{ ds_tokens.border.border_1 }} * 8);
---brd-radius-sm: calc({{ ds_tokens.border.radius }} / 2); 
---brd-radius: {{ ds_tokens.border.radius }};
---brd-radius-lg: calc({{ ds_tokens.border.radius }} * 2); 
---brd-radius-round: 50%;
+--border-1px: {{ ds_tokens.border.border_1 }}; 
+--border-2px: calc({{ ds_tokens.border.border_1 }} * 2); 
+--border-4px: calc({{ ds_tokens.border.border_1 }} * 4); 
+--border-8px: calc({{ ds_tokens.border.border_1 }} * 8);
+--border-radius-sm: calc({{ ds_tokens.border.radius }} / 2); 
+--border-radius: {{ ds_tokens.border.radius }};
+--border-radius-lg: calc({{ ds_tokens.border.radius }} * 2); 
+--border-radius-round: 50%;
 
 /* spacing variables */
---s-1: {{ ds_tokens.spacing.unit }};
---s-x2: calc({{ ds_tokens.spacing.unit }} * 2);
---s-x4: calc({{ ds_tokens.spacing.unit }} * 4);
---s-x8: calc({{ ds_tokens.spacing.unit }} * 8);
---s-x16: calc({{ ds_tokens.spacing.unit }} * 16);
+--space-unit-1: {{ ds_tokens.spacing.unit }};
+--space-unit-x2: calc({{ ds_tokens.spacing.unit }} * 2);
+--space-unit-x4: calc({{ ds_tokens.spacing.unit }} * 4);
+--space-unit-x8: calc({{ ds_tokens.spacing.unit }} * 8);
+--space-unit-x16: calc({{ ds_tokens.spacing.unit }} * 16);
 
 /* typography variables */
 --font-family:  {{ ds_tokens.typography.font }};
@@ -84,23 +84,23 @@ permalink: css/ds-base.css
 --font-weight-base: {{ ds_tokens.typography.font_weight_base }};
 --line-height-base: {{ ds_tokens.typography.line_height_base }};
 --ratio:  {{ ds_tokens.typography.ratio }};
---s0: calc(var(--font-size-base) + .2vw);
+--font-size-base-plus-viewport-adjustment: calc(var(--font-size-base) + .2vw);
 
 /* small text font  */
---st: calc(var(--s0) - .1em);
---st-font-weight: {{ ds_tokens.typography.small_text_font_weight }};
---st-line-height: {{ ds_tokens.typography.small_text_line_height }};
+--small-text: calc(var(--font-size-base-plus-viewport-adjustment) - .1em);
+--small-text-font-weight: {{ ds_tokens.typography.small_text_font_weight }};
+--small-text-line-height: {{ ds_tokens.typography.small_text_line_height }};
 
 /* standard paragraph font  */
---base: calc(var(--s0) * var(--ratio));
+--p-font-size: calc(var(--font-size-base-plus-viewport-adjustment) * var(--ratio));
 --p-line-height: {{ ds_tokens.typography.p_line_height }};
   
 /* Lead text font */
---lt: calc(var(--base) * var(--ratio));
---lt-line-height: {{ ds_tokens.typography.lead_text_line_height }};
+--lead-text: calc(var(--p-font-size) * var(--ratio));
+--lead-text-line-height: {{ ds_tokens.typography.lead_text_line_height }};
   
 /* headings fonts  */
---h6: calc(var(--s0) * var(--ratio));
+--h6: calc(var(--font-size-base-plus-viewport-adjustment) * var(--ratio));
 --h5: calc(var(--h6) * var(--ratio));
 --h4: calc(var(--h5) * var(--ratio));
 --h3: calc(var(--h4) * var(--ratio));
@@ -121,8 +121,8 @@ permalink: css/ds-base.css
 /* layout */
 @media (max-width: {{ ds_tokens.layout.container_max_width }}) {
   .wrapper-with-side-padding > * {
-    padding-left: var(--s-x2);
-    padding-right: var(--s-x2);
+    padding-left: var(--space-unit-x2);
+    padding-right: var(--space-unit-x2);
   }
 }
 
