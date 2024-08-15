@@ -2,14 +2,14 @@ import { terser } from "rollup-plugin-terser";
 
 export default [
   {
-    input: "src/js/custom.js",
+    input: "src/js/index.js",
     output: [
       {
-        file: "docs/js/custom.js",
+        file: "docs/js/ca-design-system-base.js",
         format: "esm"
       },
       {
-        file: "docs/js/custom.min.js",
+        file: "docs/js/ca-design-system-base.min.js",
         format: "esm",
         plugins: [terser()]
       }

@@ -189,6 +189,19 @@ main * + * {
 
 /* borders */
 
+/* Accessibility */
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* --- Typography ---  */
 p,
 li,
@@ -266,6 +279,7 @@ li + li {
 
 [class*="container-with-left-sidebar"] {
   display: flex;
+  margin-top: 0;
   gap: var(--columns-gap);
   align-items: stretch;
   flex-wrap: wrap;
@@ -324,3 +338,256 @@ li + li {
 [class*="container-with-equal-columns"] > :nth-last-child(n + 5) ~ * {
   flex-basis: 100%;
 }
+
+/* --- Site header --- */
+/* stylelint-disable csstools/use-nesting */
+/* stylelint-disable selector-combinator-allowed-list */
+
+/* header color themes */
+div.site-header[class*="theme-"] {
+  background-color: var(--banner-bg);
+
+  --banner-bg: var(--banner-dark);
+}
+
+div.site-header[class*="theme-"] a {
+  color: var(--header-link-color);
+
+  --header-link-color: var(--white);
+}
+
+div.site-header[class*="theme-"] div.main-navigation-hamburger,
+div.site-header[class*="theme-"] div.main-navigation-hamburger::before,
+div.site-header[class*="theme-"] div.main-navigation-hamburger::after {
+  background-color: var(--bg);
+
+  --bg: var(--white);
+}
+
+div.site-header.theme-light {
+  --banner-bg: var(--white);
+}
+
+div.site-header.theme-light a {
+  --header-link-color: var(--text-dark);
+}
+
+div.site-header.theme-light div.main-navigation-hamburger,
+div.site-header.theme-light div.main-navigation-hamburger::before,
+div.site-header.theme-light div.main-navigation-hamburger::after {
+  --bg: var(--banner-dark);
+}
+
+/* header styles */
+div.site-header > div.site-header-fixed-width-container {
+  max-width: var(--desktop-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 var(--space-unit-x2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-unit-x2);
+  overflow: visible;
+}
+
+/* hamburger */
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 var(--space-unit-1) 0 var(--space-unit-1);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button
+  > div.main-navigation-hamburger {
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button
+  > div.main-navigation-hamburger::before,
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button
+  > div.main-navigation-hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: all 200ms ease;
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button
+  > div.main-navigation-hamburger::before {
+  transform: translateY(-7px);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button
+  > div.main-navigation-hamburger::after {
+  transform: translateY(7px);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button.open
+  > div.main-navigation-hamburger {
+  transform: rotate(45deg);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button.open
+  > div.main-navigation-hamburger::before {
+  transform: rotate(90deg) translateX(0);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > button.main-navigation-button.open
+  > div.main-navigation-hamburger::after {
+  transform: rotate(90deg) translateX(0);
+}
+
+/* logo */
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a {
+  text-decoration: none;
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a
+  > div.site-branding-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-unit-x2);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a
+  > div.site-branding-logo
+  > div.logo-image {
+  min-width: 104px;
+  min-height: 64px;
+  position: relative;
+  display: none;
+}
+
+/* logo image circle */
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a
+  > div.site-branding-logo
+  > div.logo-image
+  > img.circle {
+  position: absolute;
+  width: 104px;
+  height: 104px;
+  top: var(--space-unit-x2);
+}
+
+/* logo text */
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a
+  > div.site-branding-logo
+  > div.site-branding-text {
+  padding-top: var(--space-unit-x2);
+  padding-bottom: var(--space-unit-x2);
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a
+  > div.site-branding-logo
+  > div.site-branding-text
+  > span.branding-text-state {
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 300ms;
+  display: block;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+div.site-header
+  > div.site-header-fixed-width-container
+  > div.site-branding
+  > a
+  > div.site-branding-logo
+  > div.site-branding-text
+  > span.branding-text-department {
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 300ms;
+  display: block;
+  letter-spacing: 1px;
+  margin-top: var(--space-unit-1);
+}
+
+@media (width >= 1080px) {
+  div.site-header
+    > div.site-header-fixed-width-container
+    > button.main-navigation-button {
+    display: none;
+  }
+
+  div.site-header
+    > div.site-header-fixed-width-container
+    > div.site-branding
+    > a
+    > div.site-branding-logo
+    > div.logo-image {
+    display: block;
+  }
+
+  div.site-header
+    > div.site-header-fixed-width-container
+    > div.site-branding
+    > a
+    > div.site-branding-logo
+    > div.site-branding-text
+    > span.branding-text-state {
+    font-size: 1.75rem;
+    margin-top: var(--space-unit-x2);
+  }
+
+  div.site-header
+    > div.site-header-fixed-width-container
+    > div.site-branding
+    > a
+    > div.site-branding-logo
+    > div.site-branding-text
+    > span.branding-text-department {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: var(--space-unit-1);
+  }
+}
+

@@ -62,6 +62,19 @@ main * + * {
 
 /* borders */
 
+/* Accessibility */
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* --- Typography ---  */
 p,
 li,
@@ -139,6 +152,7 @@ li + li {
 
 [class*="container-with-left-sidebar"] {
   display: flex;
+  margin-top: 0;
   gap: var(--columns-gap);
   align-items: stretch;
   flex-wrap: wrap;
