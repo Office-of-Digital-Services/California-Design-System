@@ -556,18 +556,39 @@ div.site-header
   margin-top: var(--space-unit-1);
 }
 
+/* site header utility links */
 div.site-header > div.site-header-container > .site-header-utility {
   margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--space-unit-x2) / 1.5);
+}
+
+div.site-header
+  > div.site-header-container
+  > .site-header-utility
+  > button.cagov-button {
+  border: none;
+  background: transparent;
+  margin-left: auto;
+  padding: 0;
+  cursor: pointer;
 }
 
 div.site-header
   > div.site-header-container
   > .site-header-utility
   > a.login-button
-  > img.login-icon {
+  > img.login-icon,
+div.site-header
+  > div.site-header-container
+  > .site-header-utility
+  > button.cagov-button
+  > img.cagov-icon {
   height: 2rem;
   width: 2rem;
   display: block;
+  transition: all 300ms;
 }
 
 div.site-header
@@ -621,13 +642,15 @@ div.site-header
     margin-bottom: var(--space-unit-1);
   }
 
+  /* site header utility links */
   div.site-header
     > div.site-header-container
     > .site-header-utility
     > a.login-button {
     background-color: var(--action-secondary);
     border-radius: var(--rounded-buttons);
-    padding: 0.25rem calc(var(--space-unit-1) + (30 * ((100vw - 48rem) / 1200)));
+    padding: var(--space-unit-1)
+      calc(var(--space-unit-1) + (30 * ((100vw - 48rem) / 1200)));
     text-decoration: none;
     color: var(--text-dark);
     font-size: 1.125rem;
@@ -665,6 +688,22 @@ div.site-header
     width: unset;
     height: unset;
     margin: unset;
+  }
+
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > button.cagov-button {
+    padding-left: clamp(0rem, 5vw, 10rem);
+  }
+
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > button.cagov-button
+    > img.cagov-icon {
+    height: 3rem;
+    width: 3rem;
   }
 }
 
