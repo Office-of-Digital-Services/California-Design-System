@@ -38,7 +38,7 @@ div.site-header.theme-light div.main-navigation-hamburger::after {
 }
 
 /* header styles */
-div.site-header > div.site-header-fixed-width-container {
+div.site-header > div.site-header-container {
   max-width: var(--desktop-max-width);
   margin-right: auto;
   margin-left: auto;
@@ -50,9 +50,7 @@ div.site-header > div.site-header-fixed-width-container {
 }
 
 /* hamburger */
-div.site-header
-  > div.site-header-fixed-width-container
-  > button.main-navigation-button {
+div.site-header > div.site-header-container > button.main-navigation-button {
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -63,7 +61,7 @@ div.site-header
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button
   > div.main-navigation-hamburger {
   width: 100%;
@@ -74,11 +72,11 @@ div.site-header
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button
   > div.main-navigation-hamburger::before,
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button
   > div.main-navigation-hamburger::after {
   content: "";
@@ -91,50 +89,47 @@ div.site-header
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button
   > div.main-navigation-hamburger::before {
   transform: translateY(-7px);
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button
   > div.main-navigation-hamburger::after {
   transform: translateY(7px);
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button.open
   > div.main-navigation-hamburger {
   transform: rotate(45deg);
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button.open
   > div.main-navigation-hamburger::before {
   transform: rotate(90deg) translateX(0);
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > button.main-navigation-button.open
   > div.main-navigation-hamburger::after {
   transform: rotate(90deg) translateX(0);
 }
 
-/* logo */
-div.site-header
-  > div.site-header-fixed-width-container
-  > div.site-branding
-  > a {
+/* site logo */
+div.site-header > div.site-header-container > div.site-branding > a {
   text-decoration: none;
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > div.site-branding
   > a
   > div.site-branding-logo {
@@ -144,7 +139,7 @@ div.site-header
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > div.site-branding
   > a
   > div.site-branding-logo
@@ -157,7 +152,7 @@ div.site-header
 
 /* logo image circle */
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > div.site-branding
   > a
   > div.site-branding-logo
@@ -171,7 +166,7 @@ div.site-header
 
 /* logo text */
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > div.site-branding
   > a
   > div.site-branding-logo
@@ -181,7 +176,7 @@ div.site-header
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > div.site-branding
   > a
   > div.site-branding-logo
@@ -196,7 +191,7 @@ div.site-header
 }
 
 div.site-header
-  > div.site-header-fixed-width-container
+  > div.site-header-container
   > div.site-branding
   > a
   > div.site-branding-logo
@@ -210,15 +205,41 @@ div.site-header
   margin-top: var(--space-unit-1);
 }
 
+div.site-header > div.site-header-container > .site-header-utility {
+  margin-left: auto;
+}
+
+div.site-header
+  > div.site-header-container
+  > .site-header-utility
+  > a.login-button
+  > img.login-icon {
+  height: 2rem;
+  width: 2rem;
+  display: block;
+}
+
+div.site-header
+  > div.site-header-container
+  > .site-header-utility
+  > a.login-button
+  span.login-text {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/* Site header desktop styles */
 @media (width >= 1080px) {
-  div.site-header
-    > div.site-header-fixed-width-container
-    > button.main-navigation-button {
+  div.site-header > div.site-header-container > button.main-navigation-button {
     display: none;
   }
 
   div.site-header
-    > div.site-header-fixed-width-container
+    > div.site-header-container
     > div.site-branding
     > a
     > div.site-branding-logo
@@ -227,7 +248,7 @@ div.site-header
   }
 
   div.site-header
-    > div.site-header-fixed-width-container
+    > div.site-header-container
     > div.site-branding
     > a
     > div.site-branding-logo
@@ -238,7 +259,7 @@ div.site-header
   }
 
   div.site-header
-    > div.site-header-fixed-width-container
+    > div.site-header-container
     > div.site-branding
     > a
     > div.site-branding-logo
@@ -247,5 +268,51 @@ div.site-header
     font-size: 1.25rem;
     margin-top: 1.25rem;
     margin-bottom: var(--space-unit-1);
+  }
+
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > a.login-button {
+    background-color: var(--action-secondary);
+    border-radius: var(--rounded-buttons);
+    padding: 0.25rem calc(var(--space-unit-1) + (30 * ((100vw - 48rem) / 1200)));
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1.125rem;
+  }
+
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > a.login-button:hover,
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > a.login-button:focus {
+    color: var(--black);
+    background-color: var(--action-secondary-hover);
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+  }
+
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > a.login-button
+    > img.login-icon {
+    display: none;
+  }
+
+  div.site-header
+    > div.site-header-container
+    > .site-header-utility
+    > a.login-button
+    span.login-text {
+    position: relative;
+    overflow: visible;
+    clip: unset;
+    width: unset;
+    height: unset;
+    margin: unset;
   }
 }

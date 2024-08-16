@@ -26,6 +26,7 @@
     "background_secondary_dark": "#65645F",
     "action_primary": "#FEC335",
     "action_secondary": "#FAE2AD",
+    "action_secondary_hover": "#e9d2a1",
     "main_light": "#FAFAFA",
     "main_dark": "#242424",
     "navigation_submenu_dark": "#6D6D6D",
@@ -59,7 +60,8 @@
   },
   "border": {
     "border_1": "1px",
-    "radius": "0.5rem"
+    "radius": "0.5rem",
+    "rounded_buttons": "50px"
   },
   "spacing": {
     "unit": "0.5rem"

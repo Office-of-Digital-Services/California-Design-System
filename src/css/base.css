@@ -49,6 +49,14 @@ a {
   --link-color: var(--hyperlink-dark);
 }
 
+[class*="theme-"] a:focus {
+  color: var(--hyperlink-activated-light);
+}
+
+.theme-dark a:focus {
+  --link-color: var(--hyperlink-activated-dark);
+}
+
 /* --- Utility  --- */
 
 /* margin (page global) */
