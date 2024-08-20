@@ -117,11 +117,15 @@ header .logo-image {
 
 header .logo-image img {
   max-width: 100%;
-  height: auto;
+  min-height: auto;
+  display: inline-block;
+  object-fit: contain;
+  transform: translateY(var(--space-unit-x2));
 }
 
-header .logo-image .overflow {
-  transform: translateY(var(--space-unit-x2));
+header .logo-image .no-overflow {
+  transform: translateY(0);
+  padding: var(--space-unit-1) 0;
 }
 
 /* logo text */
@@ -202,7 +206,7 @@ header .site-header .login-button span.login-text {
   }
 
   header .logo-image {
-    display: block;
+    display: flex;
     max-height: 6.5rem;
   }
 
