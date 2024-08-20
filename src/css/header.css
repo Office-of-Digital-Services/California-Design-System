@@ -100,7 +100,6 @@ header .main-navigation-button.open .hamburger::after {
 }
 
 /* site logo */
-
 header .site-branding a {
   text-decoration: none;
 }
@@ -111,15 +110,18 @@ header .site-branding-logo {
   gap: var(--space-unit-x2);
 }
 
+/* logo image */
 header .logo-image {
   display: none;
 }
 
-/* logo image circle */
-header .logo-image .circle {
-  transform: translateY(var(--space-unit-x2));
+header .logo-image img {
   max-width: 100%;
   height: auto;
+}
+
+header .logo-image .overflow {
+  transform: translateY(var(--space-unit-x2));
 }
 
 /* logo text */
