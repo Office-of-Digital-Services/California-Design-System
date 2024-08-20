@@ -3,42 +3,42 @@
 /* stylelint-disable selector-combinator-allowed-list */
 
 /* header color themes */
-div.site-header[class*="theme-"] {
+header .site-header {
   background-color: var(--banner-bg);
 
   --banner-bg: var(--banner-dark);
 }
 
-div.site-header[class*="theme-"] a {
+header .site-header a {
   color: var(--header-link-color);
 
   --header-link-color: var(--white);
 }
 
-div.site-header[class*="theme-"] div.main-navigation-hamburger,
-div.site-header[class*="theme-"] div.main-navigation-hamburger::before,
-div.site-header[class*="theme-"] div.main-navigation-hamburger::after {
+header .hamburger,
+header .hamburger::before,
+header .hamburger::after {
   background-color: var(--bg);
 
   --bg: var(--white);
 }
 
-div.site-header.theme-light {
+header .theme-light {
   --banner-bg: var(--white);
 }
 
-div.site-header.theme-light a {
+header .theme-light a {
   --header-link-color: var(--text-dark);
 }
 
-div.site-header.theme-light div.main-navigation-hamburger,
-div.site-header.theme-light div.main-navigation-hamburger::before,
-div.site-header.theme-light div.main-navigation-hamburger::after {
+header .theme-light .hamburger,
+header .theme-light .hamburger::before,
+header .theme-light .hamburger::after {
   --bg: var(--banner-dark);
 }
 
 /* header styles */
-div.site-header > div.site-header-container {
+header .site-header-container {
   max-width: var(--desktop-max-width);
   margin-right: auto;
   margin-left: auto;
@@ -50,7 +50,7 @@ div.site-header > div.site-header-container {
 }
 
 /* hamburger */
-div.site-header > div.site-header-container > button.main-navigation-button {
+header .main-navigation-button {
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -60,10 +60,7 @@ div.site-header > div.site-header-container > button.main-navigation-button {
   margin: 0 var(--space-unit-1) 0 var(--space-unit-1);
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button
-  > div.main-navigation-hamburger {
+header .main-navigation-button .hamburger {
   width: 100%;
   height: 4px;
   border-radius: 5px;
@@ -71,14 +68,8 @@ div.site-header
   position: relative;
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button
-  > div.main-navigation-hamburger::before,
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button
-  > div.main-navigation-hamburger::after {
+header .main-navigation-button .hamburger::before,
+header .main-navigation-button .hamburger::after {
   content: "";
   position: absolute;
   left: 0;
@@ -88,101 +79,57 @@ div.site-header
   transition: all 200ms ease;
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button
-  > div.main-navigation-hamburger::before {
+header .main-navigation-button .hamburger::before {
   transform: translateY(-7px);
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button
-  > div.main-navigation-hamburger::after {
+header .main-navigation-button .hamburger::after {
   transform: translateY(7px);
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button.open
-  > div.main-navigation-hamburger {
+header .main-navigation-button.open .hamburger {
   transform: rotate(45deg);
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button.open
-  > div.main-navigation-hamburger::before {
+header .main-navigation-button.open .hamburger::before {
   transform: rotate(90deg) translateX(0);
 }
 
-div.site-header
-  > div.site-header-container
-  > button.main-navigation-button.open
-  > div.main-navigation-hamburger::after {
+header .main-navigation-button.open .hamburger::after {
   transform: rotate(90deg) translateX(0);
 }
 
 /* site logo */
-div.site-header > div.site-header-container > div.site-branding > a {
+
+header .site-branding a {
   text-decoration: none;
 }
 
-div.site-header
-  > div.site-header-container
-  > div.site-branding
-  > a
-  > div.site-branding-logo {
+header .site-branding-logo {
   display: flex;
   align-items: flex-start;
   gap: var(--space-unit-x2);
 }
 
-div.site-header
-  > div.site-header-container
-  > div.site-branding
-  > a
-  > div.site-branding-logo
-  > div.logo-image {
-  min-width: 104px;
-  min-height: 64px;
-  position: relative;
+header .logo-image {
   display: none;
 }
 
 /* logo image circle */
-div.site-header
-  > div.site-header-container
-  > div.site-branding
-  > a
-  > div.site-branding-logo
-  > div.logo-image
-  > img.circle {
-  position: absolute;
-  width: 104px;
-  height: 104px;
-  top: var(--space-unit-x2);
+header .logo-image .circle {
+  transform: translateY(var(--space-unit-x2));
+  max-width: 100%;
+  height: auto;
 }
 
 /* logo text */
-div.site-header
-  > div.site-header-container
-  > div.site-branding
-  > a
-  > div.site-branding-logo
-  > div.site-branding-text {
+header .site-branding-text {
   padding-top: var(--space-unit-x2);
   padding-bottom: var(--space-unit-x2);
 }
 
-div.site-header
-  > div.site-header-container
-  > div.site-branding
-  > a
-  > div.site-branding-logo
-  > div.site-branding-text
-  > span.branding-text-state {
-  font-size: 1.5rem;
+header .site-branding-text .state {
+  font-size: clamp(1.5rem, 0.15rem + 2vw, 1.75rem);
   font-weight: 600;
   transition: all 300ms;
   display: block;
@@ -190,33 +137,24 @@ div.site-header
   margin-top: 0;
 }
 
-div.site-header
-  > div.site-header-container
-  > div.site-branding
-  > a
-  > div.site-branding-logo
-  > div.site-branding-text
-  > span.branding-text-department {
-  font-size: 1rem;
+header .site-branding-text .department {
+  font-size: clamp(1rem, -0.35rem + 2vw, 1.25rem);
   font-weight: 400;
   transition: all 300ms;
   display: block;
   letter-spacing: 1px;
-  margin-top: var(--space-unit-1);
+  margin-top: clamp(0.5rem, -0.35rem + 2vw, 1.25rem);
 }
 
 /* site header utility links */
-div.site-header > div.site-header-container > .site-header-utility {
+header .site-header-utility {
   margin-left: auto;
   display: flex;
   align-items: flex-end;
   gap: calc(var(--space-unit-x2) / 1.5);
 }
 
-div.site-header
-  > div.site-header-container
-  > .site-header-utility
-  > button.search-toggle {
+header .site-header .search-toggle {
   width: 2rem;
   height: 2rem;
   border: 1px solid var(--white);
@@ -230,10 +168,7 @@ div.site-header
   display: none;
 }
 
-div.site-header
-  > div.site-header-container
-  > .site-header-utility
-  > button.cagov-button {
+header .site-header .cagov-button {
   border: none;
   background: transparent;
   margin-left: auto;
@@ -241,27 +176,15 @@ div.site-header
   cursor: pointer;
 }
 
-div.site-header
-  > div.site-header-container
-  > .site-header-utility
-  > a.login-button
-  > img.login-icon,
-div.site-header
-  > div.site-header-container
-  > .site-header-utility
-  > button.cagov-button
-  > img.cagov-icon {
+header .site-header .login-icon,
+header .site-header .cagov-icon {
   height: 2rem;
   width: 2rem;
   display: block;
   transition: all 300ms;
 }
 
-div.site-header
-  > div.site-header-container
-  > .site-header-utility
-  > a.login-button
-  span.login-text {
+header .site-header .login-button span.login-text {
   position: absolute;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -272,58 +195,33 @@ div.site-header
 
 /* Site header desktop styles */
 @media (width >= 1080px) {
-  div.site-header > div.site-header-container > button.main-navigation-button {
+  header .main-navigation-button {
     display: none;
   }
 
-  div.site-header
-    > div.site-header-container
-    > div.site-branding
-    > a
-    > div.site-branding-logo
-    > div.logo-image {
+  header .logo-image {
     display: block;
+    max-height: 6.5rem;
   }
 
-  div.site-header
-    > div.site-header-container
-    > div.site-branding
-    > a
-    > div.site-branding-logo
-    > div.site-branding-text
-    > span.branding-text-state {
-    font-size: 1.75rem;
+  header .site-branding-text .state {
     margin-top: var(--space-unit-x2);
   }
 
-  div.site-header
-    > div.site-header-container
-    > div.site-branding
-    > a
-    > div.site-branding-logo
-    > div.site-branding-text
-    > span.branding-text-department {
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
+  header .site-branding-text .department {
     margin-bottom: var(--space-unit-1);
   }
 
   /* site header utility links */
-  div.site-header > div.site-header-container > .site-header-utility {
+  header .site-header-utility {
     gap: var(--space-unit-x4);
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > button.search-toggle {
+  header .site-header .search-toggle {
     display: block;
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > a.login-button {
+  header .site-header .login-button {
     background-color: var(--action-secondary);
     border-radius: var(--rounded-buttons);
     padding: var(--space-unit-1)
@@ -333,32 +231,18 @@ div.site-header
     font-size: 1.125rem;
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > a.login-button:hover,
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > a.login-button:focus {
+  header .site-header .login-button:hover,
+  header .site-header .login-button:focus {
     color: var(--black);
     background-color: var(--action-secondary-hover);
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > a.login-button
-    > img.login-icon {
+  header .site-header .login-icon {
     display: none;
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > a.login-button
-    span.login-text {
+  header .site-header .login-button span.login-text {
     position: relative;
     overflow: visible;
     clip: unset;
@@ -367,18 +251,11 @@ div.site-header
     margin: unset;
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > button.cagov-button {
-    padding-left: clamp(0rem, 5vw, 10rem);
+  header .site-header .cagov-button {
+    padding-left: clamp(0rem, -12.8571rem + 19.0476vw, 10rem);
   }
 
-  div.site-header
-    > div.site-header-container
-    > .site-header-utility
-    > button.cagov-button
-    > img.cagov-icon {
+  header .site-header .cagov-icon {
     height: 3rem;
     width: 3rem;
   }
