@@ -8,7 +8,6 @@
 }
 
 body {
-  color: var(--text-color);
   /* stylelint-disable-next-line font-family-name-quotes */
   font-family:
     var(--font-family),
@@ -21,40 +20,28 @@ body {
   letter-spacing: 0.02rem;
   font-weight: var(--font-weight-base);
   line-height: var(--line-height-base);
-  --color: var(--text-dark);
-  --bg: var(--main-light);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 a {
-  --link-color: var(--hyperlink-light);
-}
-
-/* --- Themes --- */
-[class*="theme-"] {
-  color: var(--color);
-  background-color: var(--bg);
-}
-
-[class*="theme-"] a {
   color: var(--link-color);
 }
 
-/* dark theme */
-.theme-dark {
-  --color: var(--text-white);
-  --bg: var(--main-dark);
+a:focus {
+  color: var(--active-link-color);
 }
 
-.theme-dark a {
-  --link-color: var(--hyperlink-dark);
-}
+/* --- Themes --- */
 
-[class*="theme-"] a:focus {
-  color: var(--hyperlink-activated-light);
-}
-
-.theme-dark a:focus {
-  --link-color: var(--hyperlink-activated-dark);
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--main-dark);
+    --text-color: var(--text-white);
+    --link-color: var(--hyperlink-dark);
+    --active-link-color: var(--hyperlink-activated-dark);
+  }
 }
 
 /* --- Utility  --- */

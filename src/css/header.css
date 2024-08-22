@@ -3,13 +3,18 @@
 /* stylelint-disable selector-combinator-allowed-list */
 
 /* header color themes */
+header {
+  position: relative;
+  top: 0;
+}
+
 header .site-header {
   background-color: var(--banner-bg);
 
   --banner-bg: var(--banner-dark);
 }
 
-header .site-header a {
+header a {
   color: var(--header-link-color);
 
   --header-link-color: var(--white);
@@ -100,30 +105,25 @@ header .main-navigation-button.open .hamburger::after {
 }
 
 /* site logo */
-header .site-branding a {
-  text-decoration: none;
-}
 
-header .site-branding-logo {
+header a.site-logo {
   display: flex;
   align-items: flex-start;
   gap: var(--space-unit-x2);
+  text-decoration: none;
 }
 
 /* logo image */
 header .logo-image {
+  max-width: 100%;
+  min-height: auto;
+  height: clamp(4.5rem, 1.9286rem + 3.8095vw, 6.5rem);
+  object-fit: contain;
+  transform: translateY(var(--space-unit-x2));
   display: none;
 }
 
-header .logo-image img {
-  max-width: 100%;
-  min-height: auto;
-  display: inline-block;
-  object-fit: contain;
-  transform: translateY(var(--space-unit-x2));
-}
-
-header .logo-image .no-overflow {
+header .logo-image.no-overflow {
   transform: translateY(0);
   padding: var(--space-unit-1) 0;
 }
@@ -135,21 +135,19 @@ header .site-branding-text {
 }
 
 header .site-branding-text .state {
-  font-size: clamp(1.5rem, 0.15rem + 2vw, 1.75rem);
+  font-size: clamp(1.5rem, 1.1786rem + 0.4762vw, 1.75rem);
   font-weight: 600;
-  transition: all 300ms;
   display: block;
   letter-spacing: 1px;
-  margin-top: 0;
+  margin-top: clamp(0rem, -1.2857rem + 1.9048vw, 1rem);
 }
 
 header .site-branding-text .department {
-  font-size: clamp(1rem, -0.35rem + 2vw, 1.25rem);
+  font-size: clamp(1rem, 0.6786rem + 0.4762vw, 1.25rem);
   font-weight: 400;
-  transition: all 300ms;
   display: block;
   letter-spacing: 1px;
-  margin-top: clamp(0.5rem, -0.35rem + 2vw, 1.25rem);
+  margin-top: clamp(0.5rem, -0.4643rem + 1.4286vw, 1.25rem);
 }
 
 /* site header utility links */
@@ -178,7 +176,7 @@ header .site-header .cagov-button {
   border: none;
   background: transparent;
   margin-left: auto;
-  padding: 0;
+  padding-left: clamp(0rem, -12.8571rem + 19.0476vw, 10rem);
   cursor: pointer;
 }
 
@@ -187,7 +185,6 @@ header .site-header .cagov-icon {
   height: 2rem;
   width: 2rem;
   display: block;
-  transition: all 300ms;
 }
 
 header .site-header .login-button span.login-text {
@@ -201,21 +198,16 @@ header .site-header .login-button span.login-text {
 
 /* Site header desktop styles */
 @media (width >= 1080px) {
+  header {
+    position: sticky;
+  }
+
   header .main-navigation-button {
     display: none;
   }
 
   header .logo-image {
-    display: flex;
-    max-height: 6.5rem;
-  }
-
-  header .site-branding-text .state {
-    margin-top: var(--space-unit-x2);
-  }
-
-  header .site-branding-text .department {
-    margin-bottom: var(--space-unit-1);
+    display: block;
   }
 
   /* site header utility links */
@@ -255,10 +247,6 @@ header .site-header .login-button span.login-text {
     width: unset;
     height: unset;
     margin: unset;
-  }
-
-  header .site-header .cagov-button {
-    padding-left: clamp(0rem, -12.8571rem + 19.0476vw, 10rem);
   }
 
   header .site-header .cagov-icon {
