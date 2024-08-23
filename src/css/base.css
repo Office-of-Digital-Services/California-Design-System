@@ -151,6 +151,8 @@ li + li {
   gap: var(--columns-gap);
   align-items: stretch;
   flex-wrap: wrap;
+  padding-left: var(--space-unit-x2);
+  padding-right: var(--space-unit-x2);
   --breakpoint-width: var(--breakpoint-width-medium);
 }
 
@@ -181,6 +183,8 @@ li + li {
   display: flex;
   flex-wrap: wrap;
   gap: var(--columns-gap);
+  padding-left: var(--space-unit-x2);
+  padding-right: var(--space-unit-x2);
   --breakpoint-width: var(--breakpoint-width-medium);
 }
 
