@@ -180,8 +180,10 @@ header .site-header .cagov-button {
   background-size: clamp(2rem, 0.7143rem + 1.9048vw, 3rem)
     clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
   background-position: center;
-  padding: clamp(1rem, 0.3571rem + 0.9524vw, 1.5rem);
-  padding-left: clamp(2rem, -8.2857rem + 15.2381vw, 10rem);
+  height: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
+  width: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
+  margin-left: auto;
+  margin-inline-start: clamp(0rem, -11.5714rem + 17.1429vw, 9rem);
   cursor: pointer;
 }
 
