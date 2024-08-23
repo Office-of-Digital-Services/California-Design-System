@@ -56,7 +56,13 @@
     "gray_800": "#333333",
     "gray_900": "#222222",
     "gray_1000": "#111111",
-    "black": "#000000"
+    "black": "#000000",
+    "search_icon_white": "FFFFFF",
+    "search_icon_dark": "323232",
+    "cagov_icon_white": "FFFFFF",
+    "cagov_icon_dark": "13394B",
+    "login_icon_white": "FFFFFF",
+    "login_icon_dark": "13394B"
   },
   "border": {
     "border_1": "1px",
