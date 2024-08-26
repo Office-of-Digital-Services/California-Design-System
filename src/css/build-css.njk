@@ -137,14 +137,6 @@ permalink: css/ds-base.css
 --login-icon-dark: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 32 32' fill='%23{{ ds_tokens.color.login_icon_dark }}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16,0.4c-8.7,0-15.7,7-15.7,15.7s7,15.7,15.7,15.7s15.7-7,15.7-15.7S24.7,0.4,16,0.4z M16,4 c2.9,0,5.6,2.6,5.6,5.6c0,3-2.6,5.7-5.6,5.6c-2.9,0-5.6-2.6-5.6-5.6C10.4,6.6,13,4,16,4z M16,17.2c4.8,0,9.3,4.5,9.4,10.9 c-2.6,2-5.9,3.3-9.4,3.3c-3.5,0-6.7-1.2-9.3-3.2C6.8,21.7,11.2,17.2,16,17.2z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-/* layout */
-@media (max-width: {{ ds_tokens.layout.desktop_max_width }}) {
-  .wrapper-with-padding > * {
-    padding-left: var(--space-unit-x2);
-    padding-right: var(--space-unit-x2);
-  }
-}
 
+{% include "./compiled/index.css" %}
 
-{% include "./base.css" %}
-{% include "./header.css" %}
