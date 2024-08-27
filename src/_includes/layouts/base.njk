@@ -28,7 +28,7 @@
     {% include "../font.njk" -%} {%- include "../head-js-css.njk" -%}
   </head>
   <body>
-    <header role="banner">{%- include "../header.njk" -%}</header>
+    <header role="banner">{%- include "../header.njk" %}</header>
     {% block content -%} {{ content | safe }} {%- endblock -%}
   </body>
 </html>

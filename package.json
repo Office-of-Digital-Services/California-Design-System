@@ -5,8 +5,10 @@
   "scripts": {
     "start": "run-p watch:*",
     "build": "run-p build:*",
+    "watch:sass": "npx sass --no-source-map src/css/index.scss:src/css/compiled/index.css --watch",
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
+    "build:sass": "npx sass --no-source-map src/css/index.scss:src/css/compiled/index.css",
     "build:js": "rollup --config rollup.config.js",
     "build:eleventy": "npx @11ty/eleventy"
   },
@@ -17,14 +19,16 @@
     "eslint": "^8.56.0",
     "eslint-plugin-jsdoc": "^48.2.0",
     "prettier": "^3.0.3",
-    "stylelint": "^16.2.1",
-    "stylelint-config-standard": "^35.0.0",
-    "stylelint-use-nesting": "^5.1.1"
+    "stylelint": "^15.10.2",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-standard-scss": "^10.0.0"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "npm-run-all": "^4.1.5",
     "rollup": "^2.52.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.38.1"
   }
 }

@@ -21,7 +21,7 @@ module.exports = function (
   );
 
   //Watching css updates
-  eleventyConfig.addWatchTarget("./src/css/");
+  eleventyConfig.addWatchTarget("./src/css/compiled/");
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
