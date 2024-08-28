@@ -168,6 +168,12 @@
             width 300ms ease,
             padding 300ms ease;
 
+          &:autofill {
+            /* Keeps the autofill consistent with theme */
+            box-shadow: 0 0 0 1000px var(--header-bg) inset;
+            -webkit-text-fill-color: var(--search-input-color);
+          }
+
           &::placeholder {
             color: var(--search-placeholder-color);
             opacity: 1; /* Firefox */
@@ -209,6 +215,13 @@
               1.125rem;
             cursor: pointer;
             color: transparent;
+            border-top-right-radius: var(--rounded-buttons);
+            border-bottom-right-radius: var(--rounded-buttons);
+
+            &:autofill {
+              /* Keeps the autofill consistent with theme */
+              -webkit-text-fill-color: var(--header-bg);
+            }
 
             &::placeholder {
               visibility: hidden; /* Hide the search placeholder as an icon */
