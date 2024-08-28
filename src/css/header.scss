@@ -17,6 +17,7 @@
     --search-submit-button-color: var(--navigation-submenu-light);
     --search-input-outline: var(--white);
     --search-submit-icon: var(--search-submit-dark);
+    --search-input-clear-icon: var(--search-input-clear-light);
   }
 
   header {
@@ -138,6 +139,19 @@
 
       form {
         display: flex;
+        position: relative;
+
+        &::after {
+          content: "";
+          background: transparent var(--search-icon) no-repeat center/1.125rem
+            1.125rem;
+          position: absolute;
+          width: var(--space-unit-x4);
+          height: var(--space-unit-x4);
+          cursor: pointer;
+          left: var(--space-unit-1);
+        }
+
         input.search-input {
           outline: 2px solid var(--search-input-outline); /* Needed for Safari */
           outline-offset: -4px;
@@ -146,21 +160,29 @@
           border: 0; /* Needed for Safari */
           width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
           height: var(--space-unit-x4);
-          padding-left: 3rem;
-          padding-right: 1rem;
-          background: transparent var(--search-icon) no-repeat;
-          background-size: 1.125rem 1.125rem;
-          background-position: 1rem center;
+          padding-left: calc(var(--space-unit-x2) * 3);
+          padding-right: var(--space-unit-1);
+          background: transparent;
           color: var(--search-input-color);
           transition:
             width 300ms ease,
             padding 300ms ease;
 
+          &::placeholder {
+            color: var(--search-placeholder-color);
+            opacity: 1; /* Firefox */
+          }
+
+          &::-ms-input-placeholder {
+            /* Edge 12 -18 */
+            color: var(--search-placeholder-color);
+          }
+
           &::-webkit-search-cancel-button {
             -webkit-appearance: none; /* Remove default styling */
-            height: 10px;
-            width: 10px;
-            background: red;
+            height: var(--space-unit-x2);
+            width: var(--space-unit-x2);
+            background: transparent var(--search-input-clear-icon) no-repeat;
           }
         }
 
@@ -169,20 +191,20 @@
           border: none;
           border-top-right-radius: var(--rounded-buttons);
           border-bottom-right-radius: var(--rounded-buttons);
-          background-color: var(--search-submit-button-color);
-          background-image: var(--search-submit-icon);
-          background-repeat: no-repeat;
-          background-size: 1.125rem 1.125rem;
-          background-position: center;
+          background: var(--search-submit-button-color)
+            var(--search-submit-icon) no-repeat center/1.125rem 1.125rem;
           cursor: pointer;
         }
 
         &:not(:focus-within) {
-          /* Shrink into a search icon */
+          &::after {
+            left: 0;
+          }
+
           input.search-input {
             outline: none;
             padding: 0;
-            width: 2rem;
+            width: var(--space-unit-x4);
             background: transparent var(--search-icon) no-repeat center /
               1.125rem;
             cursor: pointer;
@@ -222,7 +244,7 @@
     .login-button {
       background-image: var(--login-icon-white);
       background-repeat: no-repeat;
-      background-size: 2rem 2rem;
+      background-size: var(--space-unit-x4) var(--space-unit-x4);
       background-position: center;
       padding: var(--space-unit-x2);
       display: block;
@@ -337,11 +359,24 @@
 
       .search-container-desktop {
         border-color: var(--text-dark);
+
+        form::after {
+          background-image: var(--search-icon-dark);
+        }
       }
 
       .search-input {
-        background-image: var(--search-icon-dark);
         color: var(--text-dark);
+        &::placeholder {
+          color: var(--gray-600);
+          opacity: 1; /* Firefox */
+        }
+        &::-ms-input-placeholder {
+          color: var(--gray-600);
+        }
+        &::-webkit-search-cancel-button {
+          background: var(--search-input-clear-dark);
+        }
       }
 
       .search-submit {
