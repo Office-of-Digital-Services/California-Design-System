@@ -16,6 +16,7 @@
     --search-input-color: var(--white);
     --search-submit-button-color: var(--navigation-submenu-light);
     --search-input-outline: var(--white);
+    --search-submit-icon: var(--search-submit-dark);
   }
 
   header {
@@ -137,7 +138,6 @@
 
       form {
         display: flex;
-
         input.search-input {
           outline: 2px solid var(--search-input-outline); /* Needed for Safari */
           outline-offset: -4px;
@@ -156,24 +156,35 @@
             width 300ms ease,
             padding 300ms ease;
 
-          &::placeholder {
-            color: var(--search-placeholder-color);
-            opacity: 1; /* Firefox */
+          &::-webkit-search-cancel-button {
+            -webkit-appearance: none; /* Remove default styling */
+            height: 10px;
+            width: 10px;
+            background: red;
           }
+        }
 
-          &::-ms-input-placeholder {
-            /* Edge 12 -18 */
-            color: var(--search-placeholder-color);
-          }
+        button.search-submit {
+          padding: 0 1.5rem;
+          border: none;
+          border-top-right-radius: var(--rounded-buttons);
+          border-bottom-right-radius: var(--rounded-buttons);
+          background-color: var(--search-submit-button-color);
+          background-image: var(--search-submit-icon);
+          background-repeat: no-repeat;
+          background-size: 1.125rem 1.125rem;
+          background-position: center;
+          cursor: pointer;
+        }
 
-          /* shrink into a search icon */
-          &:not(:focus) {
+        &:not(:focus-within) {
+          /* Shrink into a search icon */
+          input.search-input {
             outline: none;
-            width: var(--space-unit-x4);
-            padding-left: 0;
+            padding: 0;
+            width: 2rem;
             background: transparent var(--search-icon) no-repeat center /
               1.125rem;
-
             cursor: pointer;
             color: transparent;
 
@@ -182,26 +193,10 @@
             }
 
             &::-webkit-search-cancel-button {
-              display: none;
+              display: none; /* Needed for Safari, Chrome clears on blur */
             }
           }
-        }
 
-        button.search-submit {
-          width: 2rem;
-          height: 2rem;
-          border: none;
-          border-top-right-radius: var(--rounded-buttons);
-          border-bottom-right-radius: var(--rounded-buttons);
-          background-color: var(--search-submit-button-color);
-          background-image: var(--search-icon);
-          background-repeat: no-repeat;
-          background-size: 1.125rem 1.125rem;
-          background-position: center;
-          cursor: pointer;
-        }
-
-        &:not(:focus-within) {
           button.search-submit {
             display: none;
           }
@@ -344,8 +339,14 @@
         border-color: var(--text-dark);
       }
 
-      .search-toggle {
+      .search-input {
         background-image: var(--search-icon-dark);
+        color: var(--text-dark);
+      }
+
+      .search-submit {
+        background-color: var(--navigation-submenu-dark);
+        background-image: var(--search-submit-light);
       }
 
       .login-button {

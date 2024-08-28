@@ -62,7 +62,9 @@
     "cagov_icon_white": "FFFFFF",
     "cagov_icon_dark": "13394B",
     "login_icon_white": "FFFFFF",
-    "login_icon_dark": "13394B"
+    "login_icon_dark": "13394B",
+    "search_submit_icon_dark": "09202B",
+    "search_submit_icon_light": "DBDBDB"
   },
   "border": {
     "border_1": "1px",

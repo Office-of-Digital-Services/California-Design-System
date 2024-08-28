@@ -194,6 +194,7 @@
     --search-input-color: var(--white);
     --search-submit-button-color: var(--navigation-submenu-light);
     --search-input-outline: var(--white);
+    --search-submit-icon: var(--search-submit-dark);
   }
   header {
     position: relative;
@@ -315,42 +316,41 @@
     background-position: 1rem center;
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
-    /* shrink into a search icon */
   }
-  header .search-container-desktop form input.search-input::placeholder {
-    color: var(--search-placeholder-color);
-    opacity: 1; /* Firefox */
-  }
-  header .search-container-desktop form input.search-input::-ms-input-placeholder {
-    /* Edge 12 -18 */
-    color: var(--search-placeholder-color);
-  }
-  header .search-container-desktop form input.search-input:not(:focus) {
-    outline: none;
-    width: var(--space-unit-x4);
-    padding-left: 0;
-    background: transparent var(--search-icon) no-repeat center/1.125rem;
-    cursor: pointer;
-    color: transparent;
-  }
-  header .search-container-desktop form input.search-input:not(:focus)::placeholder {
-    visibility: hidden; /* Hide the search placeholder as an icon */
-  }
-  header .search-container-desktop form input.search-input:not(:focus)::-webkit-search-cancel-button {
-    display: none;
+  header .search-container-desktop form input.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none; /* Remove default styling */
+    height: 10px;
+    width: 10px;
+    background: red;
   }
   header .search-container-desktop form button.search-submit {
-    width: 2rem;
-    height: 2rem;
+    padding: 0 1.5rem;
     border: none;
     border-top-right-radius: var(--rounded-buttons);
     border-bottom-right-radius: var(--rounded-buttons);
     background-color: var(--search-submit-button-color);
-    background-image: var(--search-icon);
+    background-image: var(--search-submit-icon);
     background-repeat: no-repeat;
     background-size: 1.125rem 1.125rem;
     background-position: center;
     cursor: pointer;
+  }
+  header .search-container-desktop form:not(:focus-within) {
+    /* Shrink into a search icon */
+  }
+  header .search-container-desktop form:not(:focus-within) input.search-input {
+    outline: none;
+    padding: 0;
+    width: 2rem;
+    background: transparent var(--search-icon) no-repeat center/1.125rem;
+    cursor: pointer;
+    color: transparent;
+  }
+  header .search-container-desktop form:not(:focus-within) input.search-input::placeholder {
+    visibility: hidden; /* Hide the search placeholder as an icon */
+  }
+  header .search-container-desktop form:not(:focus-within) input.search-input::-webkit-search-cancel-button {
+    display: none; /* Needed for Safari, Chrome clears on blur */
   }
   header .search-container-desktop form:not(:focus-within) button.search-submit {
     display: none;
@@ -466,8 +466,13 @@
   header .theme-light .search-container-desktop {
     border-color: var(--text-dark);
   }
-  header .theme-light .search-toggle {
+  header .theme-light .search-input {
     background-image: var(--search-icon-dark);
+    color: var(--text-dark);
+  }
+  header .theme-light .search-submit {
+    background-color: var(--navigation-submenu-dark);
+    background-image: var(--search-submit-light);
   }
   header .theme-light .login-button {
     background-image: var(--login-icon-dark);
