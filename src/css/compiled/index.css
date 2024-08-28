@@ -195,6 +195,7 @@
     --search-submit-button-color: var(--navigation-submenu-light);
     --search-input-outline: var(--white);
     --search-submit-icon: var(--search-submit-dark);
+    --search-input-clear-icon: var(--search-input-clear-light);
   }
   header {
     position: relative;
@@ -310,18 +311,26 @@
     width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
     height: var(--space-unit-x4);
     padding-left: 3rem;
-    padding-right: 1rem;
+    padding-right: 0.5rem;
     background: transparent var(--search-icon) no-repeat;
     background-size: 1.125rem 1.125rem;
     background-position: 1rem center;
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
   }
+  header .search-container-desktop form input.search-input::placeholder {
+    color: var(--search-placeholder-color);
+    opacity: 1; /* Firefox */
+  }
+  header .search-container-desktop form input.search-input::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: var(--search-placeholder-color);
+  }
   header .search-container-desktop form input.search-input::-webkit-search-cancel-button {
     -webkit-appearance: none; /* Remove default styling */
-    height: 10px;
-    width: 10px;
-    background: red;
+    height: 16px;
+    width: 16px;
+    background: transparent var(--search-input-clear-icon) no-repeat;
   }
   header .search-container-desktop form button.search-submit {
     padding: 0 1.5rem;
@@ -334,9 +343,6 @@
     background-size: 1.125rem 1.125rem;
     background-position: center;
     cursor: pointer;
-  }
-  header .search-container-desktop form:not(:focus-within) {
-    /* Shrink into a search icon */
   }
   header .search-container-desktop form:not(:focus-within) input.search-input {
     outline: none;
@@ -469,6 +475,16 @@
   header .theme-light .search-input {
     background-image: var(--search-icon-dark);
     color: var(--text-dark);
+  }
+  header .theme-light .search-input::placeholder {
+    color: var(--gray-600);
+    opacity: 1; /* Firefox */
+  }
+  header .theme-light .search-input::-ms-input-placeholder {
+    color: var(--gray-600);
+  }
+  header .theme-light .search-input::-webkit-search-cancel-button {
+    background: var(--search-input-clear-dark);
   }
   header .theme-light .search-submit {
     background-color: var(--navigation-submenu-dark);

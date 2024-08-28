@@ -134,6 +134,8 @@
 --login-icon-dark: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 32 32' fill='%2313394B' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16,0.4c-8.7,0-15.7,7-15.7,15.7s7,15.7,15.7,15.7s15.7-7,15.7-15.7S24.7,0.4,16,0.4z M16,4 c2.9,0,5.6,2.6,5.6,5.6c0,3-2.6,5.7-5.6,5.6c-2.9,0-5.6-2.6-5.6-5.6C10.4,6.6,13,4,16,4z M16,17.2c4.8,0,9.3,4.5,9.4,10.9 c-2.6,2-5.9,3.3-9.4,3.3c-3.5,0-6.7-1.2-9.3-3.2C6.8,21.7,11.2,17.2,16,17.2z'%3E%3C/path%3E%3C/svg%3E");
 --search-submit-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='16px' viewBox='0 0 25 16'><path style='fill:%2309202B;' d='M24.5,7.3l-6.4-6.4c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L21.4,7H0.1v2h21.3l-4.7,4.7c-0.4,0.4-0.4,1,0,1.4s1,0.4,1.4,0l6.4-6.4C24.9,8.3,24.9,7.7,24.5,7.3z'/></svg>");
 --search-submit-light: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='16px' viewBox='0 0 25 16'><path style='fill:%23DBDBDB;' d='M24.5,7.3l-6.4-6.4c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4L21.4,7H0.1v2h21.3l-4.7,4.7c-0.4,0.4-0.4,1,0,1.4s1,0.4,1.4,0l6.4-6.4C24.9,8.3,24.9,7.7,24.5,7.3z'/></svg>");
+--search-input-clear-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 16 16'><path style='fill:%23323232;' d='M9.3,8L9.3,8L8.9,7.5l5.8-5.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L7.9,5.7l0,0L7.4,6.1L1.7,0.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l5.3,5.3l0,0L6,7.5l-5.8,5.8c-0.4,0.4-0.4,1,0,1.4s1,0.4,1.4,0L7,9.4l0,0L7.4,9l5.8,5.8c0.4,0.4,1,0.4,1.4,0s0.4-1,0-1.4L9.3,8z'/></svg>");
+--search-input-clear-light: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 16 16'><path style='fill:%23DBDBDB;' d='M9.3,8L9.3,8L8.9,7.5l5.8-5.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L7.9,5.7l0,0L7.4,6.1L1.7,0.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l5.3,5.3l0,0L6,7.5l-5.8,5.8c-0.4,0.4-0.4,1,0,1.4s1,0.4,1.4,0L7,9.4l0,0L7.4,9l5.8,5.8c0.4,0.4,1,0.4,1.4,0s0.4-1,0-1.4L9.3,8z'/></svg>");
 }
 
 
@@ -334,6 +336,7 @@
     --search-submit-button-color: var(--navigation-submenu-light);
     --search-input-outline: var(--white);
     --search-submit-icon: var(--search-submit-dark);
+    --search-input-clear-icon: var(--search-input-clear-light);
   }
   header {
     position: relative;
@@ -449,18 +452,26 @@
     width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
     height: var(--space-unit-x4);
     padding-left: 3rem;
-    padding-right: 1rem;
+    padding-right: 0.5rem;
     background: transparent var(--search-icon) no-repeat;
     background-size: 1.125rem 1.125rem;
     background-position: 1rem center;
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
   }
+  header .search-container-desktop form input.search-input::placeholder {
+    color: var(--search-placeholder-color);
+    opacity: 1; /* Firefox */
+  }
+  header .search-container-desktop form input.search-input::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: var(--search-placeholder-color);
+  }
   header .search-container-desktop form input.search-input::-webkit-search-cancel-button {
     -webkit-appearance: none; /* Remove default styling */
-    height: 10px;
-    width: 10px;
-    background: red;
+    height: 16px;
+    width: 16px;
+    background: transparent var(--search-input-clear-icon) no-repeat;
   }
   header .search-container-desktop form button.search-submit {
     padding: 0 1.5rem;
@@ -473,9 +484,6 @@
     background-size: 1.125rem 1.125rem;
     background-position: center;
     cursor: pointer;
-  }
-  header .search-container-desktop form:not(:focus-within) {
-    /* Shrink into a search icon */
   }
   header .search-container-desktop form:not(:focus-within) input.search-input {
     outline: none;
@@ -608,6 +616,16 @@
   header .theme-light .search-input {
     background-image: var(--search-icon-dark);
     color: var(--text-dark);
+  }
+  header .theme-light .search-input::placeholder {
+    color: var(--gray-600);
+    opacity: 1; /* Firefox */
+  }
+  header .theme-light .search-input::-ms-input-placeholder {
+    color: var(--gray-600);
+  }
+  header .theme-light .search-input::-webkit-search-cancel-button {
+    background: var(--search-input-clear-dark);
   }
   header .theme-light .search-submit {
     background-color: var(--navigation-submenu-dark);
