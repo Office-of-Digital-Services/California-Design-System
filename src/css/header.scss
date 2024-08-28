@@ -139,6 +139,20 @@
 
       form {
         display: flex;
+        position: relative;
+
+        &::after {
+          content: "";
+          background: transparent var(--search-icon) no-repeat;
+          background-size: 1.125rem 1.125rem;
+          background-position: center;
+          position: absolute;
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+          left: 0.5rem;
+        }
+
         input.search-input {
           outline: 2px solid var(--search-input-outline); /* Needed for Safari */
           outline-offset: -4px;
@@ -149,13 +163,16 @@
           height: var(--space-unit-x4);
           padding-left: 3rem;
           padding-right: 0.5rem;
-          background: transparent var(--search-icon) no-repeat;
-          background-size: 1.125rem 1.125rem;
-          background-position: 1rem center;
+          background: transparent;
           color: var(--search-input-color);
           transition:
             width 300ms ease,
             padding 300ms ease;
+
+          &:autofill {
+            box-shadow: 0 0 0 1000px var(--header-bg) inset;
+            -webkit-text-fill-color: var(--search-input-color);
+          }
 
           &::placeholder {
             color: var(--search-placeholder-color);
@@ -189,6 +206,10 @@
         }
 
         &:not(:focus-within) {
+          &::after {
+            left: 0;
+          }
+
           input.search-input {
             outline: none;
             padding: 0;

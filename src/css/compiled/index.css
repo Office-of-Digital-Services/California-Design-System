@@ -301,6 +301,18 @@
   }
   header .search-container-desktop form {
     display: flex;
+    position: relative;
+  }
+  header .search-container-desktop form::after {
+    content: "";
+    background: transparent var(--search-icon) no-repeat;
+    background-size: 1.125rem 1.125rem;
+    background-position: center;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    left: 0.5rem;
   }
   header .search-container-desktop form input.search-input {
     outline: 2px solid var(--search-input-outline); /* Needed for Safari */
@@ -312,11 +324,13 @@
     height: var(--space-unit-x4);
     padding-left: 3rem;
     padding-right: 0.5rem;
-    background: transparent var(--search-icon) no-repeat;
-    background-size: 1.125rem 1.125rem;
-    background-position: 1rem center;
+    background: transparent;
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
+  }
+  header .search-container-desktop form input.search-input:autofill {
+    box-shadow: 0 0 0 1000px var(--header-bg) inset;
+    -webkit-text-fill-color: var(--search-input-color);
   }
   header .search-container-desktop form input.search-input::placeholder {
     color: var(--search-placeholder-color);
@@ -343,6 +357,9 @@
     background-size: 1.125rem 1.125rem;
     background-position: center;
     cursor: pointer;
+  }
+  header .search-container-desktop form:not(:focus-within)::after {
+    left: 0;
   }
   header .search-container-desktop form:not(:focus-within) input.search-input {
     outline: none;
