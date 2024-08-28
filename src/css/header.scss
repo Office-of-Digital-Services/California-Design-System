@@ -143,14 +143,13 @@
 
         &::after {
           content: "";
-          background: transparent var(--search-icon) no-repeat;
-          background-size: 1.125rem 1.125rem;
-          background-position: center;
+          background: transparent var(--search-icon) no-repeat center/1.125rem
+            1.125rem;
           position: absolute;
-          width: 2rem;
-          height: 2rem;
+          width: var(--space-unit-x4);
+          height: var(--space-unit-x4);
           cursor: pointer;
-          left: 0.5rem;
+          left: var(--space-unit-1);
         }
 
         input.search-input {
@@ -161,18 +160,13 @@
           border: 0; /* Needed for Safari */
           width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
           height: var(--space-unit-x4);
-          padding-left: 3rem;
-          padding-right: 0.5rem;
+          padding-left: calc(var(--space-unit-x2) * 3);
+          padding-right: var(--space-unit-1);
           background: transparent;
           color: var(--search-input-color);
           transition:
             width 300ms ease,
             padding 300ms ease;
-
-          &:autofill {
-            box-shadow: 0 0 0 1000px var(--header-bg) inset;
-            -webkit-text-fill-color: var(--search-input-color);
-          }
 
           &::placeholder {
             color: var(--search-placeholder-color);
@@ -186,8 +180,8 @@
 
           &::-webkit-search-cancel-button {
             -webkit-appearance: none; /* Remove default styling */
-            height: 16px;
-            width: 16px;
+            height: var(--space-unit-x2);
+            width: var(--space-unit-x2);
             background: transparent var(--search-input-clear-icon) no-repeat;
           }
         }
@@ -197,11 +191,8 @@
           border: none;
           border-top-right-radius: var(--rounded-buttons);
           border-bottom-right-radius: var(--rounded-buttons);
-          background-color: var(--search-submit-button-color);
-          background-image: var(--search-submit-icon);
-          background-repeat: no-repeat;
-          background-size: 1.125rem 1.125rem;
-          background-position: center;
+          background: var(--search-submit-button-color)
+            var(--search-submit-icon) no-repeat center/1.125rem 1.125rem;
           cursor: pointer;
         }
 
@@ -213,7 +204,7 @@
           input.search-input {
             outline: none;
             padding: 0;
-            width: 2rem;
+            width: var(--space-unit-x4);
             background: transparent var(--search-icon) no-repeat center /
               1.125rem;
             cursor: pointer;
@@ -253,7 +244,7 @@
     .login-button {
       background-image: var(--login-icon-white);
       background-repeat: no-repeat;
-      background-size: 2rem 2rem;
+      background-size: var(--space-unit-x4) var(--space-unit-x4);
       background-position: center;
       padding: var(--space-unit-x2);
       display: block;
