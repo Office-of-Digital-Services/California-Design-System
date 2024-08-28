@@ -326,6 +326,11 @@
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
   }
+  header .search-container-desktop form input.search-input:autofill {
+    /* Keeps the autofill consistent with theme */
+    box-shadow: 0 0 0 1000px var(--header-bg) inset;
+    -webkit-text-fill-color: var(--search-input-color);
+  }
   header .search-container-desktop form input.search-input::placeholder {
     color: var(--search-placeholder-color);
     opacity: 1; /* Firefox */
@@ -358,6 +363,12 @@
     background: transparent var(--search-icon) no-repeat center/1.125rem;
     cursor: pointer;
     color: transparent;
+    border-top-right-radius: var(--rounded-buttons);
+    border-bottom-right-radius: var(--rounded-buttons);
+  }
+  header .search-container-desktop form:not(:focus-within) input.search-input:autofill {
+    /* Keeps the autofill consistent with theme */
+    -webkit-text-fill-color: var(--header-bg);
   }
   header .search-container-desktop form:not(:focus-within) input.search-input::placeholder {
     visibility: hidden; /* Hide the search placeholder as an icon */
