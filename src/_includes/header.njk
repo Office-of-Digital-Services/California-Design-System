@@ -5,7 +5,7 @@
       <div class="hamburger"></div>
       <span class="visually-hidden">Main menu</span>
     </button>
-    <a href="/" class="site-logo">
+    <a href="/" class="site-logo ">
       <!-- add class "no-overflow" to remove image's bottom overflow-->
       <img
         src="https://cdn.cdt.ca.gov/cdt/CAWeb/site-logo-circle.svg"
@@ -19,7 +19,16 @@
     </a>
     <div class="site-header-utility">
       <div class="search-container-desktop">
-        <button class="search-toggle"></button>
+        <form>
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Search here..."
+            tabindex="0" />
+          <button type="submit" class="search-submit">
+            <span class="visually-hidden">Submit</span>
+          </button>
+        </form>
       </div>
       <a href="#" class="login-button"><span class="login-text">Login</span></a>
       <button class="cagov-toggle">

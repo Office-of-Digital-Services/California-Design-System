@@ -182,6 +182,19 @@
 /* stylelint-disable selector-combinator-allowed-list */
 @layer default, theme, desktop, states;
 @layer default {
+  :root {
+    --search-icon: var(--search-icon-light);
+    --cagov-icon: var(--cagov-icon-light);
+    --login-icon: var(--login-icon-light);
+    --header-bg: var(--banner-dark);
+    --hamburger-bg: var(--white);
+    --header-link-color: var(--white);
+    --search-border-color: var(--navigation-submenu-light);
+    --search-placeholder-color: var(--navigation-submenu-light);
+    --search-input-color: var(--white);
+    --search-submit-button-color: var(--navigation-submenu-light);
+    --search-input-outline: var(--white);
+  }
   header {
     position: relative;
     top: 0;
@@ -191,18 +204,14 @@
   }
   header .site-header {
     background-color: var(--header-bg);
-    border-color: var(--border-color);
-    --header-bg: var(--banner-dark);
   }
   header a {
     color: var(--header-link-color);
-    --header-link-color: var(--white);
   }
   header .hamburger,
   header .hamburger::before,
   header .hamburger::after {
-    background-color: var(--bg);
-    --bg: var(--white);
+    background-color: var(--hamburger-bg);
   }
   header .site-header-container {
     max-width: var(--desktop-max-width);
@@ -284,25 +293,72 @@
     gap: calc(var(--space-unit-x2) / 1.5);
   }
   header .search-container-desktop {
-    border: 1px solid var(--white);
+    border: 1px solid var(--search-border-color);
     border-radius: var(--rounded-buttons);
     display: none;
   }
-  header button.search-toggle {
+  header .search-container-desktop form {
+    display: flex;
+  }
+  header .search-container-desktop form input.search-input {
+    outline: 2px solid var(--search-input-outline); /* Needed for Safari */
+    outline-offset: -4px;
+    border-top-left-radius: var(--rounded-buttons);
+    border-bottom-left-radius: var(--rounded-buttons);
+    border: 0; /* Needed for Safari */
+    width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
+    height: var(--space-unit-x4);
+    padding-left: 3rem;
+    padding-right: 1rem;
+    background: transparent var(--search-icon) no-repeat;
+    background-size: 1.125rem 1.125rem;
+    background-position: 1rem center;
+    color: var(--search-input-color);
+    transition: width 300ms ease, padding 300ms ease;
+    /* shrink into a search icon */
+  }
+  header .search-container-desktop form input.search-input::placeholder {
+    color: var(--search-placeholder-color);
+    opacity: 1; /* Firefox */
+  }
+  header .search-container-desktop form input.search-input::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: var(--search-placeholder-color);
+  }
+  header .search-container-desktop form input.search-input:not(:focus) {
+    outline: none;
+    width: var(--space-unit-x4);
+    padding-left: 0;
+    background: transparent var(--search-icon) no-repeat center/1.125rem;
+    cursor: pointer;
+    color: transparent;
+  }
+  header .search-container-desktop form input.search-input:not(:focus)::placeholder {
+    visibility: hidden; /* Hide the search placeholder as an icon */
+  }
+  header .search-container-desktop form input.search-input:not(:focus)::-webkit-search-cancel-button {
+    display: none;
+  }
+  header .search-container-desktop form button.search-submit {
     width: 2rem;
     height: 2rem;
     border: none;
-    background-color: transparent;
-    background-image: var(--search-icon-white);
+    border-top-right-radius: var(--rounded-buttons);
+    border-bottom-right-radius: var(--rounded-buttons);
+    background-color: var(--search-submit-button-color);
+    background-image: var(--search-icon);
     background-repeat: no-repeat;
     background-size: 1.125rem 1.125rem;
     background-position: center;
     cursor: pointer;
   }
+  header .search-container-desktop form:not(:focus-within) button.search-submit {
+    display: none;
+  }
   header button.cagov-toggle {
     border: none;
     background: transparent;
-    background-image: var(--cagov-icon-white);
+    background-image: var(--cagov-icon);
     background-repeat: no-repeat;
     background-size: clamp(2rem, 0.7143rem + 1.9048vw, 3rem) clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
     background-position: center;
@@ -349,6 +405,7 @@
   @media (width >= 1080px) {
     header {
       position: sticky;
+      /* search */
     }
     header .main-navigation-button {
       display: none;
@@ -396,15 +453,15 @@
 @layer theme {
   /* theme light header */
   header .theme-light {
-    --header-bg: var(--white);
+    background-color: var(--white);
   }
   header .theme-light a {
-    --header-link-color: var(--text-dark);
+    color: var(--text-dark);
   }
   header .theme-light .hamburger,
   header .theme-light .hamburger::before,
   header .theme-light .hamburger::after {
-    --bg: var(--banner-dark);
+    background-color: var(--banner-dark);
   }
   header .theme-light .search-container-desktop {
     border-color: var(--text-dark);

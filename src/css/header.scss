@@ -4,29 +4,36 @@
 @layer default, theme, desktop, states;
 
 @layer default {
+  :root {
+    --search-icon: var(--search-icon-light);
+    --cagov-icon: var(--cagov-icon-light);
+    --login-icon: var(--login-icon-light);
+    --header-bg: var(--banner-dark);
+    --hamburger-bg: var(--white);
+    --header-link-color: var(--white);
+    --search-border-color: var(--navigation-submenu-light);
+    --search-placeholder-color: var(--navigation-submenu-light);
+    --search-input-color: var(--white);
+    --search-submit-button-color: var(--navigation-submenu-light);
+    --search-input-outline: var(--white);
+  }
+
   header {
     position: relative;
     top: 0;
 
     .site-header {
       background-color: var(--header-bg);
-      border-color: var(--border-color);
-
-      --header-bg: var(--banner-dark);
     }
 
     a {
       color: var(--header-link-color);
-
-      --header-link-color: var(--white);
     }
 
     .hamburger,
     .hamburger::before,
     .hamburger::after {
-      background-color: var(--bg);
-
-      --bg: var(--white);
+      background-color: var(--hamburger-bg);
     }
 
     .site-header-container {
@@ -124,27 +131,88 @@
     }
 
     .search-container-desktop {
-      border: 1px solid var(--white);
+      border: 1px solid var(--search-border-color);
       border-radius: var(--rounded-buttons);
       display: none;
-    }
 
-    button.search-toggle {
-      width: 2rem;
-      height: 2rem;
-      border: none;
-      background-color: transparent;
-      background-image: var(--search-icon-white);
-      background-repeat: no-repeat;
-      background-size: 1.125rem 1.125rem;
-      background-position: center;
-      cursor: pointer;
+      form {
+        display: flex;
+
+        input.search-input {
+          outline: 2px solid var(--search-input-outline); /* Needed for Safari */
+          outline-offset: -4px;
+          border-top-left-radius: var(--rounded-buttons);
+          border-bottom-left-radius: var(--rounded-buttons);
+          border: 0; /* Needed for Safari */
+          width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
+          height: var(--space-unit-x4);
+          padding-left: 3rem;
+          padding-right: 1rem;
+          background: transparent var(--search-icon) no-repeat;
+          background-size: 1.125rem 1.125rem;
+          background-position: 1rem center;
+          color: var(--search-input-color);
+          transition:
+            width 300ms ease,
+            padding 300ms ease;
+
+          &::placeholder {
+            color: var(--search-placeholder-color);
+            opacity: 1; /* Firefox */
+          }
+
+          &::-ms-input-placeholder {
+            /* Edge 12 -18 */
+            color: var(--search-placeholder-color);
+          }
+
+          /* shrink into a search icon */
+          &:not(:focus) {
+            outline: none;
+            width: var(--space-unit-x4);
+            padding-left: 0;
+            background: transparent var(--search-icon) no-repeat center /
+              1.125rem;
+
+            cursor: pointer;
+            color: transparent;
+
+            &::placeholder {
+              visibility: hidden; /* Hide the search placeholder as an icon */
+            }
+
+            &::-webkit-search-cancel-button {
+              display: none;
+            }
+          }
+        }
+
+        button.search-submit {
+          width: 2rem;
+          height: 2rem;
+          border: none;
+          border-top-right-radius: var(--rounded-buttons);
+          border-bottom-right-radius: var(--rounded-buttons);
+          background-color: var(--search-submit-button-color);
+          background-image: var(--search-icon);
+          background-repeat: no-repeat;
+          background-size: 1.125rem 1.125rem;
+          background-position: center;
+          cursor: pointer;
+        }
+
+        &:not(:focus-within) {
+          button.search-submit {
+            display: none;
+          }
+        }
+      }
     }
 
     button.cagov-toggle {
       border: none;
       background: transparent;
-      background-image: var(--cagov-icon-white);
+      background-image: var(--cagov-icon);
       background-repeat: no-repeat;
       background-size: clamp(2rem, 0.7143rem + 1.9048vw, 3rem)
         clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
@@ -214,6 +282,7 @@
         gap: var(--space-unit-x4);
       }
 
+      /* search */
       .search-container-desktop {
         display: block;
       }
@@ -260,15 +329,15 @@
   /* theme light header */
   header {
     .theme-light {
-      --header-bg: var(--white);
+      background-color: var(--white);
       a {
-        --header-link-color: var(--text-dark);
+        color: var(--text-dark);
       }
 
       .hamburger,
       .hamburger::before,
       .hamburger::after {
-        --bg: var(--banner-dark);
+        background-color: var(--banner-dark);
       }
 
       .search-container-desktop {
