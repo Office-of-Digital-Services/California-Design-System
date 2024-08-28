@@ -368,10 +368,13 @@
 
       .search-container-desktop {
         border-color: var(--text-dark);
+
+        form::after {
+          background-image: var(--search-icon-dark);
+        }
       }
 
       .search-input {
-        background-image: var(--search-icon-dark);
         color: var(--text-dark);
         &::placeholder {
           color: var(--gray-600);

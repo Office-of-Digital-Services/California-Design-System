@@ -630,8 +630,10 @@
   header .theme-light .search-container-desktop {
     border-color: var(--text-dark);
   }
-  header .theme-light .search-input {
+  header .theme-light .search-container-desktop form::after {
     background-image: var(--search-icon-dark);
+  }
+  header .theme-light .search-input {
     color: var(--text-dark);
   }
   header .theme-light .search-input::placeholder {
