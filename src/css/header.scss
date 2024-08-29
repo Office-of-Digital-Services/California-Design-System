@@ -220,10 +220,6 @@
               -webkit-text-fill-color: var(--header-bg);
             }
 
-            &:-internal-autofill-selected {
-              background-color: transparent !important;
-            }
-
             &::placeholder {
               visibility: hidden; /* Hide the search placeholder as an icon */
             }

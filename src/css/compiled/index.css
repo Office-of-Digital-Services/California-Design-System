@@ -370,9 +370,6 @@
     /* Keeps the autofill consistent with theme */
     -webkit-text-fill-color: var(--header-bg);
   }
-  header .search-container-desktop form:not(:focus-within) input.search-input:-internal-autofill-selected {
-    background-color: transparent !important;
-  }
   header .search-container-desktop form:not(:focus-within) input.search-input::placeholder {
     visibility: hidden; /* Hide the search placeholder as an icon */
   }
