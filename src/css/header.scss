@@ -40,8 +40,7 @@
 
     .site-header-container {
       max-width: var(--desktop-max-width);
-      margin-right: auto;
-      margin-left: auto;
+      margin: 0 auto;
       padding: 0 var(--space-unit-x2);
       display: flex;
       align-items: center;
@@ -57,29 +56,34 @@
       background: transparent;
       border: none;
       padding: 0;
-      margin: 0 var(--space-unit-1) 0 var(--space-unit-1);
+      margin: 0 var(--space-unit-1);
 
       .hamburger {
-        width: 100%;
         height: 4px;
-        border-radius: 5px;
-        transition: all 200ms ease;
         position: relative;
+
+        /* All 3 lines */
+        &,
+        &::before,
+        &::after {
+          width: 100%;
+          background-color: var(--hamburger-bg);
+          border-radius: 5px;
+        }
 
         &::before,
         &::after {
           content: "";
           position: absolute;
           left: 0;
-          width: 100%;
           height: 100%;
-          border-radius: 5px;
           transition: all 200ms ease;
         }
 
         &::before {
           transform: translateY(-7px);
         }
+
         &::after {
           transform: translateY(7px);
         }
@@ -104,23 +108,23 @@
     }
 
     .site-branding-text {
-      padding-top: var(--space-unit-x2);
-      padding-bottom: var(--space-unit-x2);
+      padding: var(--space-unit-x2) 0;
 
-      .state {
-        font-size: clamp(1.5rem, 1.1786rem + 0.4762vw, 1.75rem);
-        font-weight: 600;
+      span {
         display: block;
         letter-spacing: 1px;
-        margin-top: clamp(0rem, -1.2857rem + 1.9048vw, 1rem);
-      }
 
-      .department {
-        font-size: clamp(1rem, 0.6786rem + 0.4762vw, 1.25rem);
-        font-weight: 400;
-        display: block;
-        letter-spacing: 1px;
-        margin-top: clamp(0.5rem, -0.4643rem + 1.4286vw, 1.25rem);
+        &.state {
+          font-size: clamp(1.5rem, 1.1786rem + 0.4762vw, 1.75rem);
+          font-weight: 600;
+          margin-top: clamp(0rem, -1.2857rem + 1.9048vw, 1rem);
+        }
+
+        &.department {
+          font-size: clamp(1rem, 0.6786rem + 0.4762vw, 1.25rem);
+          font-weight: 400;
+          margin-top: clamp(0.5rem, -0.4643rem + 1.4286vw, 1.25rem);
+        }
       }
     }
 
@@ -142,11 +146,10 @@
         position: relative;
 
         input.search-input {
-          outline: 2px solid var(--search-input-outline); /* Needed for Safari */
+          outline: 2px solid var(--search-input-outline);
           outline-offset: -4px;
-          border-top-left-radius: var(--rounded-buttons);
-          border-bottom-left-radius: var(--rounded-buttons);
-          border: 0; /* Needed for Safari */
+          border-radius: var(--rounded-buttons) 0 0 var(--rounded-buttons);
+          border: 0;
           width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
           height: var(--space-unit-x4);
           padding-left: calc(var(--space-unit-x2) * 3);
@@ -168,9 +171,11 @@
             opacity: 1; /* Firefox */
           }
 
-          &::-ms-input-placeholder {
-            /* Edge 12 -18 */
+          /* stylelint-disable-next-line selector-no-vendor-prefix */
+          &::-ms-input-placeholder, /* -ms-input-placeholder for Edge 12 -18 */
+              &::placeholder {
             color: var(--search-placeholder-color);
+            opacity: 1; /* Firefox */
           }
 
           &::-webkit-search-cancel-button {
@@ -183,24 +188,22 @@
 
         label.search-toggle {
           border: none;
-          height: 1.5rem;
-          width: 1.5rem;
-          background-color: var(--header-bg);
-          background: var(--header-bg) var(--search-icon) no-repeat center/1rem;
           border-radius: var(--rounded-buttons);
           position: absolute;
-          top: 0.25rem;
-          left: 0.5rem;
           cursor: pointer;
+          height: var(--space-unit-x4);
+          width: var(--space-unit-x4);
+          background: transparent var(--search-icon) no-repeat center / 1.125rem;
+          top: 0;
+          left: 0;
         }
 
         button.search-submit {
           padding: 0 1.5rem;
           border: none;
-          border-top-right-radius: var(--rounded-buttons);
-          border-bottom-right-radius: var(--rounded-buttons);
+          border-radius: 0 var(--rounded-buttons) var(--rounded-buttons) 0;
           background: var(--search-submit-button-color)
-            var(--search-submit-icon) no-repeat center/1.125rem 1.125rem;
+            var(--search-submit-icon) no-repeat center / 1.125rem;
           cursor: pointer;
         }
 
@@ -212,8 +215,7 @@
             background: transparent;
             cursor: pointer;
             color: transparent;
-            border-top-right-radius: var(--rounded-buttons);
-            border-bottom-right-radius: var(--rounded-buttons);
+            border-radius: var(--rounded-buttons);
 
             &:autofill {
               /* Keeps the autofill consistent with theme */
@@ -227,16 +229,6 @@
             &::-webkit-search-cancel-button {
               display: none; /* Needed for Safari, Chrome clears on blur */
             }
-          }
-
-          label.search-toggle {
-            height: var(--space-unit-x4);
-            width: var(--space-unit-x4);
-            background-color: var(--header-bg);
-            background: var(--header-bg) var(--search-icon) no-repeat
-              center/1.125rem;
-            top: 0;
-            left: 0;
           }
 
           button.search-submit {
