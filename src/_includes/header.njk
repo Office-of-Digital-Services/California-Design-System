@@ -19,13 +19,18 @@
     </a>
     <div class="site-header-utility">
       <div class="search-container-desktop">
-        <form autocomplete="on">
+        <form>
+          <label class="search-toggle" for="site-search"
+            ><span class="visually-hidden">Search this site</span></label
+          >
           <input
+            id="site-search"
             type="search"
             class="search-input"
             name="q"
             placeholder="Search here..."
             tabindex="0" />
+
           <button type="submit" class="search-submit">
             <span class="visually-hidden">Submit</span>
           </button>

@@ -141,17 +141,6 @@
         display: flex;
         position: relative;
 
-        &::after {
-          content: "";
-          background: transparent var(--search-icon) no-repeat center/1.125rem
-            1.125rem;
-          position: absolute;
-          width: var(--space-unit-x4);
-          height: var(--space-unit-x4);
-          cursor: pointer;
-          left: var(--space-unit-1);
-        }
-
         input.search-input {
           outline: 2px solid var(--search-input-outline); /* Needed for Safari */
           outline-offset: -4px;
@@ -192,6 +181,19 @@
           }
         }
 
+        label.search-toggle {
+          border: none;
+          height: 1.5rem;
+          width: 1.5rem;
+          background-color: var(--header-bg);
+          background: var(--header-bg) var(--search-icon) no-repeat center/1rem;
+          border-radius: var(--rounded-buttons);
+          position: absolute;
+          top: 0.25rem;
+          left: 0.5rem;
+          cursor: pointer;
+        }
+
         button.search-submit {
           padding: 0 1.5rem;
           border: none;
@@ -203,16 +205,11 @@
         }
 
         &:not(:focus-within) {
-          &::after {
-            left: 0;
-          }
-
           input.search-input {
             outline: none;
             padding: 0;
             width: var(--space-unit-x4);
-            background: transparent var(--search-icon) no-repeat center /
-              1.125rem;
+            background: transparent;
             cursor: pointer;
             color: transparent;
             border-top-right-radius: var(--rounded-buttons);
@@ -223,6 +220,10 @@
               -webkit-text-fill-color: var(--header-bg);
             }
 
+            &:-internal-autofill-selected {
+              background-color: transparent !important;
+            }
+
             &::placeholder {
               visibility: hidden; /* Hide the search placeholder as an icon */
             }
@@ -230,6 +231,16 @@
             &::-webkit-search-cancel-button {
               display: none; /* Needed for Safari, Chrome clears on blur */
             }
+          }
+
+          label.search-toggle {
+            height: var(--space-unit-x4);
+            width: var(--space-unit-x4);
+            background-color: var(--header-bg);
+            background: var(--header-bg) var(--search-icon) no-repeat
+              center/1.125rem;
+            top: 0;
+            left: 0;
           }
 
           button.search-submit {
