@@ -1,6 +1,4 @@
 /* --- Site header --- */
-/* stylelint-disable csstools/use-nesting */
-/* stylelint-disable selector-combinator-allowed-list */
 @layer default, theme, desktop, states;
 
 @layer default {
@@ -262,7 +260,7 @@
     }
 
     .login-button {
-      background-image: var(--login-icon-white);
+      background-image: var(--login-icon);
       background-repeat: no-repeat;
       background-size: var(--space-unit-x4) var(--space-unit-x4);
       background-position: center;

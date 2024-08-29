@@ -25,10 +25,10 @@
     <meta property="og:url" content="{{page | canonical}}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description }}" />
-    {% include "../font.njk" -%} {%- include "../head-js-css.njk" -%}
+    {% include "../font.html" -%} {%- include "../head-js-css.html" -%}
   </head>
   <body>
-    <header role="banner">{%- include "../header.njk" %}</header>
+    <header role="banner">{%- include "../header.html" %}</header>
     {% block content -%} {{ content | safe }} {%- endblock -%}
   </body>
 </html>
