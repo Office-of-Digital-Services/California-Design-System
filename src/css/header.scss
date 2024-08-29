@@ -32,12 +32,6 @@
       color: var(--header-link-color);
     }
 
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-      background-color: var(--hamburger-bg);
-    }
-
     .site-header-container {
       max-width: var(--desktop-max-width);
       margin: 0 auto;
