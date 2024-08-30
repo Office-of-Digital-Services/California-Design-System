@@ -83,12 +83,15 @@
     
 <main>
   <section>
-    <div class="container-fixed-width">
+    <div class="wrapper-fixed-width">
       <!-- To use different breakpoints add following extensions the class: -breakpoint-large, -breakpoint-medium, -breakpoint-small -->
 
       <!--FLEX LAYOUTS-->
-      <h2>Flex layouts</h2>
-      <h3>Two columns flex layout</h3>
+      <div class="container">
+        <h2>Flex layouts</h2>
+        <h3>Two columns flex layout</h3>
+      </div>
+
       <div class="container-flex-two-columns-breakpoint-small">
         <div class="col-1" style="border: 1px solid;">
           <h3>Col 1</h3>
@@ -148,7 +151,8 @@
         </div>
       </div>
 
-      <h3>Three columns flex layouts</h3>
+      <div class="container"><h3>Three columns flex layouts</h3></div>
+
       <div class="container-flex-three-columns-breakpoint-small">
         <div class="col-1" style="border: 1px solid;">
           <h3>Col 1</h3>
@@ -212,7 +216,9 @@
         </div>
       </div>
 
-      <h3>Equal columns flex layouts (up to six columms)</h3>
+      <div class="container">
+        <h3>Equal columns flex layouts (up to six columms)</h3>
+      </div>
       <div class="container-flex-equal-columns-breakpoint-large">
         <div style="border: 1px solid;">
           <h3>Col 1</h3>
@@ -241,9 +247,20 @@
         </div>
       </div>
 
-      <h2>Grid layouts <br />(using media query)</h2>
-      <h3>Two columns grid layouts</h3>
       <!--GRID LAYOUTS-->
+      <div class="container">
+        <h2>Grid layouts <br />(using media query)</h2>
+      </div>
+
+      <div class="container-grid">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+      </div>
+
+      <div class="container"><h3>Two columns grid layouts</h3></div>
+
       <div class="container-grid-two-columns-breakpoint-small">
         <div class="col-1" style="border: 1px solid;">
           <h3>Col 1</h3>
@@ -300,10 +317,106 @@
         </div>
       </div>
 
-      <h3>Three columns grid layouts</h3>
+      <div class="container"><h3>Three columns grid layouts</h3></div>
+
+      <div class="container-grid-three-columns">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+        <div class="col-2" style="border: 1px solid;">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-3" style="border: 1px solid;">
+          <h3>Col 3</h3>
+          <p>This is col 3</p>
+        </div>
+      </div>
+
+      <div class="container-grid-three-columns-1fr-1fr-2fr">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+        <div class="col-2" style="border: 1px solid;">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-3" style="border: 1px solid;">
+          <h3>Col 3</h3>
+          <p>This is col 3</p>
+        </div>
+      </div>
+
+      <div class="container-grid-three-columns-2fr-1fr-1fr">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+        <div class="col-2" style="border: 1px solid;">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-3" style="border: 1px solid;">
+          <h3>Col 3</h3>
+          <p>This is col 3</p>
+        </div>
+      </div>
+
+      <div class="container-grid-three-columns-1fr-2fr-1fr">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+        <div class="col-2" style="border: 1px solid;">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-3" style="border: 1px solid;">
+          <h3>Col 3</h3>
+          <p>This is col 3</p>
+        </div>
+      </div>
+
+      <div class="container-grid-three-columns-1fr-3fr-1fr">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+        <div class="col-2" style="border: 1px solid;">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-3" style="border: 1px solid;">
+          <h3>Col 3</h3>
+          <p>This is col 3</p>
+        </div>
+      </div>
+
+      <div class="container-grid-three-columns-1fr-4fr-1fr">
+        <div class="col-1" style="border: 1px solid;">
+          <h3>Col 1</h3>
+          <p>This is col 1 sample</p>
+        </div>
+        <div class="col-2" style="border: 1px solid;">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-3" style="border: 1px solid;">
+          <h3>Col 3</h3>
+          <p>This is col 3</p>
+        </div>
+      </div>
 
       <!-- Left sidebar layout -->
-      <h2>Left sidebar layout</h2>
+      <div class="container"><h2>Left sidebar layout</h2></div>
       <div class="container-left-sidebar-breakpoint-small">
         <div style="border: 1px solid;">
           <nav aria-labelledby="navigation-list" class="side-navigation">

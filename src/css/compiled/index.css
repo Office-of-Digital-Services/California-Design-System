@@ -103,76 +103,76 @@
 }
 @layer layouts {
   /* --- Layouts --- */
-  .container-fixed-width {
+  .wrapper-fixed-width {
     max-width: var(--desktop-max-width);
     margin-right: auto;
     margin-left: auto;
   }
+  [class^=container] {
+    padding-left: var(--space-unit-x2);
+    padding-right: var(--space-unit-x2);
+  }
   /* fixed layout with left sidebar */
-  [class*=container-left-sidebar] {
+  [class^=container-left-sidebar] {
     display: flex;
     margin-top: 0;
     gap: var(--columns-gap);
     align-items: stretch;
     flex-wrap: wrap;
-    padding-left: var(--space-unit-x2);
-    padding-right: var(--space-unit-x2);
   }
-  [class*=container-left-sidebar] > :first-child {
+  [class^=container-left-sidebar] > :first-child {
     flex-basis: var(--sidebar-max-width);
     flex-grow: 1;
   }
-  [class*=container-left-sidebar] > :last-child {
+  [class^=container-left-sidebar] > :last-child {
     flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
     flex-grow: var(--flex-grow-max);
   }
   /* flex container with equal columns */
-  [class*=container-flex] {
+  [class^=container-flex] {
     display: flex;
     flex-wrap: wrap;
     gap: var(--columns-gap);
-    padding-left: var(--space-unit-x2);
-    padding-right: var(--space-unit-x2);
   }
-  [class*=container-flex] > * {
+  [class^=container-flex] > * {
     flex-grow: 1;
     flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
     margin-block-start: 0;
   }
   /* 6 columns max */
-  [class*=container-flex-equal-columns] > :nth-last-child(n+7),
-  [class*=container-flex-equal-columns] > :nth-last-child(n+7) ~ * {
+  [class^=container-flex-equal-columns] > :nth-last-child(n+7),
+  [class^=container-flex-equal-columns] > :nth-last-child(n+7) ~ * {
     flex-basis: 100%;
   }
   /* flex container with 2 columns */
-  [class*=container-flex-two-columns] > :nth-last-child(n+3),
-  [class*=container-flex-two-columns] > :nth-last-child(n+3) ~ * {
+  [class^=container-flex-two-columns] > :nth-last-child(n+3),
+  [class^=container-flex-two-columns] > :nth-last-child(n+3) ~ * {
     flex-basis: 100%;
   }
-  [class*=container-flex-two-columns-1fr-2fr] > :nth-child(2) {
+  [class^=container-flex-two-columns-1fr-2fr] > :nth-child(2) {
     flex-grow: 2;
   }
-  [class*=container-flex-two-columns-1fr-3fr] > :nth-child(2) {
+  [class^=container-flex-two-columns-1fr-3fr] > :nth-child(2) {
     flex-grow: 3;
   }
-  [class*=container-flex-two-columns-2fr-1fr] > :nth-child(1) {
+  [class^=container-flex-two-columns-2fr-1fr] > :nth-child(1) {
     flex-grow: 2;
   }
-  [class*=container-flex-two-columns-3fr-1fr] > :nth-child(1) {
+  [class^=container-flex-two-columns-3fr-1fr] > :nth-child(1) {
     flex-grow: 3;
   }
   /* flex container with 3 columns */
-  [class*=container-flex-three-columns] > :nth-last-child(n+4),
-  [class*=container-flex-three-columns] > :nth-last-child(n+4) ~ * {
+  [class^=container-flex-three-columns] > :nth-last-child(n+4),
+  [class^=container-flex-three-columns] > :nth-last-child(n+4) ~ * {
     flex-basis: 100%;
   }
-  [class*=container-flex-three-columns-1fr-2fr-1fr] > :nth-child(2) {
+  [class^=container-flex-three-columns-1fr-2fr-1fr] > :nth-child(2) {
     flex-grow: 2;
   }
-  [class*=container-flex-three-columns-2fr-1fr-1fr] > :nth-child(1) {
+  [class^=container-flex-three-columns-2fr-1fr-1fr] > :nth-child(1) {
     flex-grow: 2;
   }
-  [class*=container-flex-three-columns-1fr-1fr-2fr] > :nth-child(3) {
+  [class^=container-flex-three-columns-1fr-1fr-2fr] > :nth-child(3) {
     flex-grow: 2;
   }
   .container-left-sidebar-breakpoint-large,
@@ -229,43 +229,64 @@
   .container-flex-three-columns-1fr-1fr-2fr-breakpoint-small {
     --breakpoint-width: var(--breakpoint-width-small);
   }
-  /* Grid layout with 2 columns */
-  [class*=container-grid] {
+  /* Grid layouts */
+  [class^=container-grid] {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: var(--columns-gap);
     grid-row-gap: var(--columns-gap);
-    padding-left: var(--space-unit-x2);
-    padding-right: var(--space-unit-x2);
   }
-  [class*=container-grid] > * {
+  [class^=container-grid] > * {
     margin-top: 0;
   }
-  [class*=container-grid-two-columns] {
+  [class^=container-grid-two-columns] {
     grid-template-columns: 1fr 1fr;
   }
-  [class*=container-grid-three-columns] {
+  [class^=container-grid-three-columns] {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  /* Grid layout with 3 fractions and 1 fraction columns */
+  /* Two columns grid layout with fractioned columns */
   [class*=container-grid-two-columns-1fr-2fr] {
     grid-template-columns: 1fr 2fr;
   }
-  [class*=container-grid-two-columns-2fr-1fr] {
+  [class^=container-grid-two-columns-2fr-1fr] {
     grid-template-columns: 2fr 1fr;
   }
-  [class*=container-grid-two-columns-1fr-3fr] {
+  [class^=container-grid-two-columns-1fr-3fr] {
     grid-template-columns: 1fr 3fr;
   }
-  [class*=container-grid-two-columns-3fr-1fr] {
+  [class^=container-grid-two-columns-3fr-1fr] {
     grid-template-columns: 3fr 1fr;
   }
+  /* Three columns grid layout with fractioned columns */
+  [class^=container-grid-three-columns-1fr-2fr-1fr] {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  [class^=container-grid-three-columns-2fr-1fr-1fr] {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  [class^=container-grid-three-columns-1fr-1fr-2fr] {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  [class^=container-grid-three-columns-1fr-3fr-1fr] {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  [class^=container-grid-three-columns-1fr-4fr-1fr] {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
   @media (max-width: 34rem) {
+    .container-grid-two-columns-breakpoint-small,
     .container-grid-two-columns-1fr-2fr-breakpoint-small,
     .container-grid-two-columns-2fr-1fr-breakpoint-small,
     .container-grid-two-columns-1fr-3fr-breakpoint-small,
-    .container-grid-two-columns-3fr-1fr-breakpoint-small {
+    .container-grid-two-columns-3fr-1fr-breakpoint-small,
+    .container-grid-three-columns-breakpoint-small,
+    .container-grid-three-columns-1fr-2fr-1fr-breakpoint-small,
+    .container-grid-three-columns-2fr-1fr-1fr-breakpoint-small,
+    .container-grid-three-columns-1fr-1fr-2fr-breakpoint-small,
+    .container-grid-three-columns-1fr-3fr-1fr-breakpoint-small,
+    .container-grid-three-columns-1fr-4fr-1fr-breakpoint-small {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
     }
@@ -279,16 +300,35 @@
     .container-grid-two-columns-1fr-3fr,
     .container-grid-two-columns-3fr-1fr,
     .container-grid-two-columns-1fr-3fr-breakpoint-medium,
-    .container-grid-two-columns-3fr-1fr-breakpoint-medium {
+    .container-grid-two-columns-3fr-1fr-breakpoint-medium,
+    .container-grid-three-columns,
+    .container-grid-three-columns-breakpoint-medium,
+    .container-grid-three-columns-1fr-2fr-1fr,
+    .container-grid-three-columns-2fr-1fr-1fr,
+    .container-grid-three-columns-1fr-1fr-2fr,
+    .container-grid-three-columns-1fr-3fr-1fr,
+    .container-grid-three-columns-1fr-4fr-1fr,
+    .container-grid-three-columns-1fr-2fr-1fr-breakpoint-medium,
+    .container-grid-three-columns-2fr-1fr-1fr-breakpoint-medium,
+    .container-grid-three-columns-1fr-1fr-2fr-breakpoint-medium,
+    .container-grid-three-columns-1fr-3fr-1fr-breakpoint-medium,
+    .container-grid-three-columns-1fr-4fr-1fr-breakpoint-medium {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
     }
   }
   @media (max-width: 67rem) {
+    .container-grid-two-columns-breakpoint-large,
     .container-grid-two-columns-1fr-2fr-breakpoint-large,
     .container-grid-two-columns-2fr-1fr-breakpoint-large,
     .container-grid-two-columns-1fr-3fr-breakpoint-large,
-    .container-grid-two-columns-3fr-1fr-breakpoint-large {
+    .container-grid-two-columns-3fr-1fr-breakpoint-large,
+    .container-grid-three-columns-breakpoint-large,
+    .container-grid-three-columns-1fr-2fr-1fr-breakpoint-large,
+    .container-grid-three-columns-2fr-1fr-1fr-breakpoint-large,
+    .container-grid-three-columns-1fr-1fr-2fr-breakpoint-large,
+    .container-grid-three-columns-1fr-3fr-1fr-breakpoint-large,
+    .container-grid-three-columns-1fr-4fr-1fr-breakpoint-large {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
     }
@@ -334,15 +374,9 @@
   header a {
     color: var(--header-link-color);
   }
-  header .hamburger,
-  header .hamburger::before,
-  header .hamburger::after {
-    background-color: var(--hamburger-bg);
-  }
   header .site-header-container {
     max-width: var(--desktop-max-width);
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
     padding: 0 var(--space-unit-x2);
     display: flex;
     align-items: center;
@@ -356,22 +390,23 @@
     background: transparent;
     border: none;
     padding: 0;
-    margin: 0 var(--space-unit-1) 0 var(--space-unit-1);
+    margin: 0 var(--space-unit-1);
   }
   header .main-navigation-button .hamburger {
-    width: 100%;
     height: 4px;
-    border-radius: 5px;
-    transition: all 200ms ease;
     position: relative;
+    /* All 3 lines */
+  }
+  header .main-navigation-button .hamburger, header .main-navigation-button .hamburger::before, header .main-navigation-button .hamburger::after {
+    width: 100%;
+    background-color: var(--hamburger-bg);
+    border-radius: 5px;
   }
   header .main-navigation-button .hamburger::before, header .main-navigation-button .hamburger::after {
     content: "";
     position: absolute;
     left: 0;
-    width: 100%;
     height: 100%;
-    border-radius: 5px;
     transition: all 200ms ease;
   }
   header .main-navigation-button .hamburger::before {
@@ -395,21 +430,20 @@
     display: none;
   }
   header .site-branding-text {
-    padding-top: var(--space-unit-x2);
-    padding-bottom: var(--space-unit-x2);
+    padding: var(--space-unit-x2) 0;
   }
-  header .site-branding-text .state {
+  header .site-branding-text span {
+    display: block;
+    letter-spacing: 1px;
+  }
+  header .site-branding-text span.state {
     font-size: clamp(1.5rem, 1.1786rem + 0.4762vw, 1.75rem);
     font-weight: 600;
-    display: block;
-    letter-spacing: 1px;
     margin-top: clamp(0rem, -1.2857rem + 1.9048vw, 1rem);
   }
-  header .site-branding-text .department {
+  header .site-branding-text span.department {
     font-size: clamp(1rem, 0.6786rem + 0.4762vw, 1.25rem);
     font-weight: 400;
-    display: block;
-    letter-spacing: 1px;
     margin-top: clamp(0.5rem, -0.4643rem + 1.4286vw, 1.25rem);
   }
   header .site-header-utility {
@@ -428,11 +462,10 @@
     position: relative;
   }
   header .search-container-desktop form input.search-input {
-    outline: 2px solid var(--search-input-outline); /* Needed for Safari */
+    outline: 2px solid var(--search-input-outline);
     outline-offset: -4px;
-    border-top-left-radius: var(--rounded-buttons);
-    border-bottom-left-radius: var(--rounded-buttons);
-    border: 0; /* Needed for Safari */
+    border-radius: var(--rounded-buttons) 0 0 var(--rounded-buttons);
+    border: 0;
     width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
     height: var(--space-unit-x4);
     padding-left: calc(var(--space-unit-x2) * 3);
@@ -440,6 +473,7 @@
     background: transparent;
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
+    /* stylelint-disable-next-line selector-no-vendor-prefix */
   }
   header .search-container-desktop form input.search-input:autofill {
     /* Keeps the autofill consistent with theme */
@@ -450,9 +484,9 @@
     color: var(--search-placeholder-color);
     opacity: 1; /* Firefox */
   }
-  header .search-container-desktop form input.search-input::-ms-input-placeholder {
-    /* Edge 12 -18 */
+  header .search-container-desktop form input.search-input::-ms-input-placeholder, header .search-container-desktop form input.search-input::placeholder {
     color: var(--search-placeholder-color);
+    opacity: 1; /* Firefox */
   }
   header .search-container-desktop form input.search-input::-webkit-search-cancel-button {
     -webkit-appearance: none; /* Remove default styling */
@@ -462,22 +496,20 @@
   }
   header .search-container-desktop form label.search-toggle {
     border: none;
-    height: 1.5rem;
-    width: 1.5rem;
-    background-color: var(--header-bg);
-    background: var(--header-bg) var(--search-icon) no-repeat center/1rem;
     border-radius: var(--rounded-buttons);
     position: absolute;
-    top: 0.25rem;
-    left: 0.5rem;
     cursor: pointer;
+    height: var(--space-unit-x4);
+    width: var(--space-unit-x4);
+    background: transparent var(--search-icon) no-repeat center/1.125rem;
+    top: 0;
+    left: 0;
   }
   header .search-container-desktop form button.search-submit {
     padding: 0 1.5rem;
     border: none;
-    border-top-right-radius: var(--rounded-buttons);
-    border-bottom-right-radius: var(--rounded-buttons);
-    background: var(--search-submit-button-color) var(--search-submit-icon) no-repeat center/1.125rem 1.125rem;
+    border-radius: 0 var(--rounded-buttons) var(--rounded-buttons) 0;
+    background: var(--search-submit-button-color) var(--search-submit-icon) no-repeat center/1.125rem;
     cursor: pointer;
   }
   header .search-container-desktop form:not(:focus-within) input.search-input {
@@ -487,8 +519,7 @@
     background: transparent;
     cursor: pointer;
     color: transparent;
-    border-top-right-radius: var(--rounded-buttons);
-    border-bottom-right-radius: var(--rounded-buttons);
+    border-radius: var(--rounded-buttons);
   }
   header .search-container-desktop form:not(:focus-within) input.search-input:autofill {
     /* Keeps the autofill consistent with theme */
@@ -499,14 +530,6 @@
   }
   header .search-container-desktop form:not(:focus-within) input.search-input::-webkit-search-cancel-button {
     display: none; /* Needed for Safari, Chrome clears on blur */
-  }
-  header .search-container-desktop form:not(:focus-within) label.search-toggle {
-    height: var(--space-unit-x4);
-    width: var(--space-unit-x4);
-    background-color: var(--header-bg);
-    background: var(--header-bg) var(--search-icon) no-repeat center/1.125rem;
-    top: 0;
-    left: 0;
   }
   header .search-container-desktop form:not(:focus-within) button.search-submit {
     display: none;
