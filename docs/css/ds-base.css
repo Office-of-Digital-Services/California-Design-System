@@ -523,6 +523,7 @@
     --search-placeholder-color: var(--navigation-submenu-light);
     --search-input-color: var(--white);
     --search-submit-button-color: var(--navigation-submenu-light);
+    --search-submit-button-outline: var(--main-dark);
     --search-input-outline: var(--white);
     --search-submit-icon: var(--search-submit-dark);
     --search-input-clear-icon: var(--search-input-clear-light);
@@ -628,8 +629,6 @@
     position: relative;
   }
   header .search-container-desktop form input.search-input {
-    outline: 2px solid var(--search-input-outline);
-    outline-offset: -4px;
     border-radius: var(--rounded-buttons) 0 0 var(--rounded-buttons);
     border: 0;
     width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
@@ -640,6 +639,10 @@
     color: var(--search-input-color);
     transition: width 300ms ease, padding 300ms ease;
     /* stylelint-disable-next-line selector-no-vendor-prefix */
+  }
+  header .search-container-desktop form input.search-input:focus {
+    outline: 2px solid var(--search-input-outline);
+    outline-offset: -4px;
   }
   header .search-container-desktop form input.search-input:autofill {
     /* Keeps the autofill consistent with theme */
@@ -667,7 +670,11 @@
     cursor: pointer;
     height: var(--space-unit-x4);
     width: var(--space-unit-x4);
-    background: transparent var(--search-icon) no-repeat center/1.125rem;
+    background-color: transparent;
+    background-image: var(--search-icon);
+    background-repeat: no-repeat;
+    background-size: 1.125rem;
+    background-position: calc(50% + 0.25rem) center;
     top: 0;
     left: 0;
   }
@@ -677,6 +684,13 @@
     border-radius: 0 var(--rounded-buttons) var(--rounded-buttons) 0;
     background: var(--search-submit-button-color) var(--search-submit-icon) no-repeat center/1.125rem;
     cursor: pointer;
+  }
+  header .search-container-desktop form button.search-submit:focus {
+    outline: 2px solid var(--search-submit-button-outline);
+    outline-offset: -3px;
+  }
+  header .search-container-desktop form:not(:focus-within) label.search-toggle {
+    background-position: center;
   }
   header .search-container-desktop form:not(:focus-within) input.search-input {
     outline: none;
@@ -811,11 +825,12 @@
   header .theme-light .search-container-desktop {
     border-color: var(--text-dark);
   }
-  header .theme-light .search-container-desktop form::after {
+  header .theme-light .search-container-desktop label.search-toggle {
     background-image: var(--search-icon-dark);
   }
   header .theme-light .search-input {
     color: var(--text-dark);
+    outline-color: var(--navigation-submenu-dark);
   }
   header .theme-light .search-input::placeholder {
     color: var(--gray-600);
@@ -830,6 +845,9 @@
   header .theme-light .search-submit {
     background-color: var(--navigation-submenu-dark);
     background-image: var(--search-submit-light);
+  }
+  header .theme-light .search-submit:focus {
+    outline-color: var(--white);
   }
   header .theme-light .login-button {
     background-image: var(--login-icon-dark);
