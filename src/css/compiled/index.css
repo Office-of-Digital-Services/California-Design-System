@@ -5,10 +5,6 @@
     box-sizing: border-box;
     margin: 0;
   }
-  /* margin (page global) */
-  main * + * {
-    margin-block-start: var(--space-unit-x2);
-  }
 }
 @layer typogrqphy {
   body {
@@ -28,59 +24,88 @@
     color: var(--active-link-color);
   }
   /* --- Typography ---  */
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5 {
+    text-wrap: balance;
+    margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
+  }
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5 {
+    margin-top: clamp(2.2rem, 2.0909rem + 0.499vw, 2.5rem);
+  }
   p,
   li,
-  h2,
-  h3,
-  h4,
-  h5,
   small,
-  blockquote {
+  blockquote,
+  figcaption {
     max-width: var(--text-max-width);
+    text-wrap: pretty;
   }
-  h1 {
+  h1,
+  .h1 {
     font-weight: var(--h1-font-weight);
     font-size: var(--h1);
     line-height: var(--h1-line-height);
   }
-  h2 {
+  h2,
+  .h2 {
     font-weight: var(--h2-font-weight);
     font-size: var(--h2);
     line-height: var(--h2-line-height);
   }
-  h3 {
+  h3,
+  .h3 {
     font-weight: var(--h3-font-weight);
     font-size: var(--h3);
     line-height: var(--h3-line-height);
   }
-  h4 {
+  h4,
+  .h4 {
     font-weight: var(--h4-font-weight);
     font-size: var(--h4);
     line-height: var(--h4-line-height);
   }
-  h5 {
+  h5,
+  .h2 {
     font-weight: var(--h5-font-weight);
     font-size: var(--h4-line-height);
   }
-  p {
+  p,
+  li {
     line-height: var(--p-line-height);
+    margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
   }
-  h1 + p {
+  h1 + p,
+  .lead {
     font-size: calc(var(--lead-text) - 0.02rem);
     line-height: var(--lead-text-line-height);
+    margin-bottom: clamp(1.7rem, 1.6363rem + 0.2911vw, 1.875rem);
   }
-  small {
+  small,
+  .text-small {
     font-weight: var(--small-text-font-weight);
     font-size: var(--small-text);
     line-height: var(--small-text-line-height);
+    margin-bottom: clamp(1.22rem, 1.2091rem + 0.0499vw, 1.25rem);
   }
   blockquote {
     border-left: var(--gray-300) 4px solid;
     margin-left: 0;
     padding-left: var(--space-unit-x4);
-  }
-  li + li {
-    margin-top: var(--space-unit-x4);
   }
 }
 @layer utilities {
