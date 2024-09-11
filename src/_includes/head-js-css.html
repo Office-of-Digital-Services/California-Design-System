@@ -1,9 +1,0 @@
-<!-- Design System core files -->
-<link rel="stylesheet" href="/css/ds-base.css" />
-<script src="/js/ca-design-system-base.js"></script>
-{%- if customcss -%}
-<link rel="stylesheet" href="{{ customcss }}" />
-{% endif -%} {%- if customjs -%} {% for link in customjs %}
-<script src="{{ link }}"></script>
-{%- endfor -%} {%- endif %}
-<link rel="shortcut icon" href="/favicon.ico" />

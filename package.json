@@ -1,16 +1,11 @@
 {
   "name": "eureka",
   "version": "1.0.0",
+  "type": "module",
   "description": "This system makes it easy to build digital services that meet the needs of Californians.",
   "scripts": {
-    "start": "run-p watch:*",
-    "build": "run-p build:*",
-    "watch:sass": "npx sass --no-source-map src/css/index.scss:src/css/compiled/index.css --watch",
-    "watch:js": "rollup --config rollup.config.js --watch",
-    "watch:eleventy": "npx @11ty/eleventy --serve",
-    "build:sass": "npx sass --no-source-map src/css/index.scss:src/css/compiled/index.css",
-    "build:js": "rollup --config rollup.config.js",
-    "build:eleventy": "npx @11ty/eleventy"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
@@ -25,10 +20,11 @@
     "stylelint-config-standard-scss": "^10.0.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "npm-run-all": "^4.1.5",
+    "@11ty/eleventy": "^3.0.0-beta.1",
+    "chalk": "^5.3.0",
+    "glob": "^11.0.0",
     "rollup": "^2.52.2",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.38.1"
+    "sass": "^1.78.0"
   }
 }
