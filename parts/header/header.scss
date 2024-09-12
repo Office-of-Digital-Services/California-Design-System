@@ -1,22 +1,23 @@
 /* --- Site header --- */
 @layer default, theme, desktop, states;
 
+/* Light theme is default */
 @layer default {
   :root {
-    --search-icon: var(--search-icon-light);
-    --cagov-icon: var(--cagov-icon-light);
-    --login-icon: var(--login-icon-light);
-    --header-bg: var(--banner-dark);
-    --hamburger-bg: var(--white);
-    --header-link-color: var(--white);
-    --search-border-color: var(--navigation-submenu-light);
-    --search-placeholder-color: var(--navigation-submenu-light);
-    --search-input-color: var(--white);
-    --search-submit-button-color: var(--navigation-submenu-light);
-    --search-submit-button-outline: var(--main-dark);
-    --search-input-outline: var(--white);
-    --search-submit-icon: var(--search-submit-dark);
-    --search-input-clear-icon: var(--search-input-clear-light);
+    --search-icon: var(--search-icon-dark);
+    --cagov-icon: var(--cagov-icon-dark);
+    --login-icon: var(--login-icon-dark);
+    --header-bg: var(--white);
+    --hamburger-bg: var(--banner-dark);
+    --header-link-color: var(--text-dark);
+    --search-border-color: var(--navigation-submenu-dark);
+    --search-placeholder-color: var(--navigation-submenu-dark);
+    --search-input-color: var(--text-dark);
+    --search-submit-button-color: var(--navigation-submenu-dark);
+    --search-submit-button-outline: var(--white);
+    --search-input-outline: var(--text-dark);
+    --search-submit-icon: var(--search-submit-light);
+    --search-input-clear-icon: var(--search-input-clear-dark);
   }
 
   header {
@@ -416,5 +417,76 @@
         background-image: var(--cagov-icon-dark);
       }
     }
+
+    /* theme dark header */
+    .theme-dark {
+      background-color: var(--banner-dark);
+      a {
+        color: var(--white);
+      }
+
+      .hamburger,
+      .hamburger::before,
+      .hamburger::after {
+        background-color: var(--white);
+      }
+
+      .search-container-desktop {
+        border-color: var(--navigation-submenu-dark);
+
+        label.search-toggle {
+          background-image: var(--search-icon-light);
+        }
+      }
+
+      .search-input {
+        color: var(--white);
+        outline-color: var(--navigation-submenu-light);
+        &::placeholder {
+          color: var(--navigation-submenu-light);
+          opacity: 1; /* Firefox */
+        }
+        &::-ms-input-placeholder {
+          color: var(--navigation-submenu-light);
+        }
+        &::-webkit-search-cancel-button {
+          background: var(--search-input-clear-light);
+        }
+      }
+
+      .search-submit {
+        background-color: var(--navigation-submenu-light);
+        background-image: var(--search-submit-dark);
+        &:focus {
+          outline-color: var(--text-dark);
+        }
+      }
+
+      .login-button {
+        background-image: var(--login-icon-light);
+      }
+      button.cagov-toggle {
+        background-image: var(--cagov-icon-light);
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --search-icon: var(--search-icon-light);
+    --cagov-icon: var(--cagov-icon-light);
+    --login-icon: var(--login-icon-light);
+    --header-bg: var(--banner-dark);
+    --hamburger-bg: var(--white);
+    --header-link-color: var(--white);
+    --search-border-color: var(--navigation-submenu-light);
+    --search-placeholder-color: var(--navigation-submenu-light);
+    --search-input-color: var(--white);
+    --search-submit-button-color: var(--navigation-submenu-light);
+    --search-submit-button-outline: var(--text-dark);
+    --search-input-outline: var(--white);
+    --search-submit-icon: var(--search-submit-dark);
+    --search-input-clear-icon: var(--search-input-clear-light);
   }
 }
