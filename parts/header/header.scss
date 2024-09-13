@@ -1,11 +1,12 @@
 /* --- Site header --- */
-@layer default, theme, desktop, states;
+@layer default, desktop, theme, states;
 
 /* Light theme is default */
 @layer default {
   :root {
     --search-icon: var(--search-icon-dark);
     --cagov-icon: var(--cagov-icon-dark);
+    --cagov-logo: var(--cagov-logo-dark);
     --login-icon: var(--login-icon-dark);
     --header-bg: var(--white);
     --hamburger-bg: var(--banner-dark);
@@ -38,14 +39,15 @@
       padding: 0 var(--space-unit-x2);
       display: flex;
       align-items: center;
-      gap: var(--space-unit-x4);
+      gap: calc(var(--columns-gap) * 2);
       overflow: visible;
     }
 
     /* hamburger */
     .main-navigation-button {
-      width: 24px;
-      height: 24px;
+      width: var(--space-unit-x3);
+      height: var(--space-unit-x3);
+      min-width: var(--space-unit-x3);
       cursor: pointer;
       background: transparent;
       border: none;
@@ -259,7 +261,6 @@
       height: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
       width: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
       margin-left: auto;
-      margin-inline-start: clamp(0rem, -11.5714rem + 17.1429vw, 9rem);
       cursor: pointer;
     }
 
@@ -346,7 +347,8 @@
       }
 
       .login-button,
-      .theme-light .login-button {
+      .theme-light .login-button,
+      .theme-dark .login-button {
         background-image: none;
       }
 
@@ -360,7 +362,37 @@
       .login-icon {
         display: none;
       }
+
+      button.cagov-toggle {
+        background-image: var(--cagov-logo);
+        background-size: clamp(3.6rem, 0.7143rem + 1.9048vw, 5.5rem)
+          clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
+        height: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
+        width: clamp(3.6rem, 0.7143rem + 1.9048vw, 5.5rem);
+        margin-inline-start: clamp(0rem, -11.5714rem + 17.1429vw, 10rem);
+      }
     }
+  }
+}
+
+/* THEMES */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --search-icon: var(--search-icon-light);
+    --cagov-icon: var(--cagov-icon-light);
+    --cagov-logo: var(--cagov-logo-light);
+    --login-icon: var(--login-icon-light);
+    --header-bg: var(--banner-dark);
+    --hamburger-bg: var(--white);
+    --header-link-color: var(--white);
+    --search-border-color: var(--navigation-submenu-light);
+    --search-placeholder-color: var(--navigation-submenu-light);
+    --search-input-color: var(--white);
+    --search-submit-button-color: var(--navigation-submenu-light);
+    --search-submit-button-outline: var(--text-dark);
+    --search-input-outline: var(--white);
+    --search-submit-icon: var(--search-submit-dark);
+    --search-input-clear-icon: var(--search-input-clear-light);
   }
 }
 
@@ -412,9 +444,17 @@
 
       .login-button {
         background-image: var(--login-icon-dark);
+        @media (width >= 1080px) {
+          background-image: none;
+          color: var(--text-dark);
+        }
       }
+
       button.cagov-toggle {
         background-image: var(--cagov-icon-dark);
+        @media (width >= 1080px) {
+          background-image: var(--cagov-logo-dark);
+        }
       }
     }
 
@@ -464,29 +504,18 @@
 
       .login-button {
         background-image: var(--login-icon-light);
+        @media (width >= 1080px) {
+          background-image: none;
+          color: var(--text-dark);
+        }
       }
+
       button.cagov-toggle {
         background-image: var(--cagov-icon-light);
+        @media (width >= 1080px) {
+          background-image: var(--cagov-logo-light);
+        }
       }
     }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --search-icon: var(--search-icon-light);
-    --cagov-icon: var(--cagov-icon-light);
-    --login-icon: var(--login-icon-light);
-    --header-bg: var(--banner-dark);
-    --hamburger-bg: var(--white);
-    --header-link-color: var(--white);
-    --search-border-color: var(--navigation-submenu-light);
-    --search-placeholder-color: var(--navigation-submenu-light);
-    --search-input-color: var(--white);
-    --search-submit-button-color: var(--navigation-submenu-light);
-    --search-submit-button-outline: var(--text-dark);
-    --search-input-outline: var(--white);
-    --search-submit-icon: var(--search-submit-dark);
-    --search-input-clear-icon: var(--search-input-clear-light);
   }
 }
