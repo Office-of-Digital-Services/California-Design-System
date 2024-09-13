@@ -39,14 +39,15 @@
       padding: 0 var(--space-unit-x2);
       display: flex;
       align-items: center;
-      gap: var(--space-unit-x4);
+      gap: calc(var(--columns-gap) * 2);
       overflow: visible;
     }
 
     /* hamburger */
     .main-navigation-button {
-      width: 24px;
-      height: 24px;
+      width: var(--space-unit-x3);
+      height: var(--space-unit-x3);
+      min-width: var(--space-unit-x3);
       cursor: pointer;
       background: transparent;
       border: none;
@@ -442,7 +443,7 @@
       }
 
       .login-button {
-        background-image: var(--login-icon-light);
+        background-image: var(--login-icon-dark);
         @media (width >= 1080px) {
           background-image: none;
           color: var(--text-dark);
