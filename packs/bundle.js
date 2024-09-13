@@ -1,2 +1,2 @@
 import "../parts/base/theme.js";
-import "../parts/base/hamburger.js";
+import "../parts/header/hamburger.js";
