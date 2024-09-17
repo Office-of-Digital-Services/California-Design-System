@@ -19,6 +19,11 @@
     --search-input-outline: var(--text-dark);
     --search-submit-icon: var(--search-submit-light);
     --search-input-clear-icon: var(--search-input-clear-dark);
+    --cagov-menu-background: var(--navigation-submenu-light);
+    --close-icon: var(--close-icon-dark);
+    --close-button-background: var(--gray-10);
+    --close-button-background-hover: var(--gray-25);
+    --close-button-border-color: var(--text-dark);
   }
 
   header {
@@ -288,17 +293,40 @@
       width: 100%;
       max-width: 100%;
       margin-right: 0;
-      background-color: rosybrown;
-      padding: 0;
+      background-color: var(--cagov-menu-background);
+      padding: var(--space-unit-x3);
       height: 100%;
+      opacity: 0;
       overflow-y: auto;
       z-index: 7;
       display: none;
       translate: 100% 0;
-      opacity: 0;
       transition-property: display translate;
-      transition-duration: 1s;
+      transition-duration: 0.75s;
       transition-behavior: allow-discrete;
+
+      .close-cagov-global-menu {
+        width: calc(var(--space-unit-x8) / 1.5);
+        height: calc(var(--space-unit-x8) / 1.5);
+        background-image: var(--close-icon);
+        background-repeat: no-repeat;
+        background-size: var(--space-unit-x3) var(--space-unit-x3);
+        background-position: center;
+        background-color: var(--close-button-background);
+        border: 1px solid var(--close-button-border-color);
+        border-radius: var(--space-unit-1);
+        cursor: pointer;
+        margin-left: auto;
+
+        &:hover,
+        &:focus {
+          background-color: var(--close-button-background-hover);
+          box-shadow: calc(var(--space-unit-1) / 2)
+            calc(var(--space-unit-1) / 2) calc(var(--space-unit-1) / 2) -2px rgba(0, 0, 0, 0.25);
+          outline: 2px solid var(--search-input-outline);
+          outline-offset: -3px;
+        }
+      }
     }
   }
 }
@@ -306,12 +334,12 @@
 @layer states {
   header {
     .cagov-global-menu.visible {
-      display: block !important;
+      display: flex;
+      flex-direction: column;
       opacity: 1;
       translate: 0 0;
 
       @starting-style {
-        opacity: 0;
         translate: 100% 0;
       }
     }
@@ -424,6 +452,11 @@
     --search-input-outline: var(--white);
     --search-submit-icon: var(--search-submit-dark);
     --search-input-clear-icon: var(--search-input-clear-light);
+    --cagov-menu-background: var(--navigation-submenu-dark);
+    --close-icon: var(--close-icon-light);
+    --close-button-background: var(--gray-700);
+    --close-button-background-hover: var(--gray-900);
+    --close-button-border-color: var(--gray-100);
   }
 }
 
