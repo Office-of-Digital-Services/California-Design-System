@@ -88,6 +88,21 @@ const variables = (jsonTokens) => ` /* CSS Variables */
   --space-unit-x8: calc(${jsonTokens.spacing.unit} * 8);
   --space-unit-x16: calc(${jsonTokens.spacing.unit} * 16);
 
+  /* Bigger scale */
+  --size-1: ${jsonTokens.spacing.unit}; /* .5rem */
+  --size-2: calc(var(--size-1) * 2); /* 1rem */
+  --size-3: calc(var(--size-1) * 3); /* 1.5rem */
+  --size-4: calc(var(--size-1) * 4); /* 2rem */
+  --size-5: calc(var(--size-1) * 5); /* 2.5rem */
+  --size-6: calc(var(--size-1) * 6); /* 3rem */
+  --size-7: calc(var(--size-1) * 8); /* 4rem */
+  --size-8: calc(var(--size-1) * 10); /* 5rem */
+  --size-9: calc(var(--size-1) * 15); /* 7.5rem */
+  --size-10: calc(var(--size-1) * 20); /* 10rem */
+  --size-11: calc(var(--size-1) * 30); /* 15rem */
+  --size-12: calc(var(--size-1) * 40); /* 20rem */
+  --size-13: calc(var(--size-1) * 60); /* 30rem */
+
   /* typography variables */
   --font-family:  ${jsonTokens.typography.font};
   --text-max-width:  ${jsonTokens.typography.text_max_width};
@@ -127,6 +142,22 @@ const variables = (jsonTokens) => ` /* CSS Variables */
   --h4-line-height: ${jsonTokens.typography.h4_line_height};
   --h5-font-weight: ${jsonTokens.typography.h5_font_weight};
   --h5-line-height: ${jsonTokens.typography.h5_line_height};
+
+  /* font-size scale */
+  --text-size-0: var(--small-text);
+  --text-size-1: var(--font-size-base-plus-viewport-adjustment);
+  --text-size-2: var(--h6);
+  --text-size-3: var(--h5);
+  --text-size-4: var(--h4);
+  --text-size-5: var(--h3);
+  --text-size-6: var(--h2);
+  --text-size-7: var(--h1);
+  --text-size-p: var(--p-font-size); /* Same as text-size-2 */
+  --text-size-lead: var(--lead-text); /* Same as text-size-3 */
+  --text-lineheight-base: ${jsonTokens.typography.line_height_base};
+  --text-lineheight-small: ${jsonTokens.typography.lead_text_line_height};
+  --text-lineheight-medium: ${jsonTokens.typography.h1_line_height};
+  --text-lineheight-large: ${jsonTokens.typography.small_text_line_height};
 
   /* icons */
   --search-icon-light: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 16.5 16.7' fill='%23${jsonTokens.color.white}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.2,15l-4-4c2-2.6,1.8-6.4-0.6-8.8c-1.3-1.3-3-2-4.7-2s-3.4,0.6-4.7,2c-2.6,2.6-2.6,6.9,0,9.5 c1.3,1.3,3,2,4.7,2c1.4,0,2.9-0.4,4-1.4l4,4c0.2,0.2,0.4,0.3,0.6,0.3c0.2,0,0.5-0.1,0.6-0.3C16.5,16,16.5,15.4,16.2,15L16.2,15z M6.8,11.9c-1.3,0-2.5-0.5-3.5-1.4c-1.9-1.9-1.9-5,0-6.9c0.9-0.9,2.1-1.4,3.5-1.4s2.5,0.5,3.5,1.4c0.9,0.9,1.4,2.1,1.4,3.5 s-0.5,2.5-1.4,3.5C9.4,11.4,8.1,11.9,6.8,11.9z'%3E%3C/path%3E%3C/svg%3E");
