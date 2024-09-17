@@ -280,11 +280,42 @@
       height: 1px;
       margin: -1px;
     }
+
+    /* global menu drawer */
+    .cagov-global-menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+      background-color: rosybrown;
+      padding: 0;
+      height: 100%;
+      overflow-y: auto;
+      z-index: 7;
+      display: none;
+      translate: 100% 0;
+      opacity: 0;
+      transition-property: display translate;
+      transition-duration: 1s;
+      transition-behavior: allow-discrete;
+    }
   }
 }
 
 @layer states {
   header {
+    .cagov-global-menu.visible {
+      display: block !important;
+      opacity: 1;
+      translate: 0 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 100% 0;
+      }
+    }
+
     .main-navigation-button.open .hamburger {
       transform: rotate(45deg);
     }
