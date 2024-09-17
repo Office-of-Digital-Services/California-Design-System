@@ -22,10 +22,10 @@ $screen-lg: 67rem;
       "Roboto",
       "Helvetica Neue",
       sans-serif;
-    font-size: clamp(1rem, var(--p-font-size), 5rem);
+    font-size: clamp(1rem, var(--text-size-2), 5rem);
     letter-spacing: 0.02rem;
-    font-weight: var(--font-weight-base);
-    line-height: var(--line-height-base);
+    font-weight: 400;
+    line-height: var(--text-lineheight-base);
     background-color: var(--background-color);
     color: var(--text-color);
   }
@@ -75,56 +75,57 @@ $screen-lg: 67rem;
 
   h1,
   .h1 {
-    font-weight: var(--h1-font-weight);
-    font-size: var(--h1);
-    line-height: var(--h1-line-height);
+    font-weight: 700;
+    font-size: var(--text-size-7);
+    line-height: var(--text-lineheight-medium);
   }
 
   h2,
   .h2 {
-    font-weight: var(--h2-font-weight);
-    font-size: var(--h2);
-    line-height: var(--h2-line-height);
+    font-weight: 700;
+    font-size: var(--text-size-6);
+    line-height: var(--text-lineheight-medium);
   }
 
   h3,
   .h3 {
-    font-weight: var(--h3-font-weight);
-    font-size: var(--h3);
-    line-height: var(--h3-line-height);
+    font-weight: 700;
+    font-size: var(--text-size-5);
+    line-height: var(--text-lineheight-medium);
   }
 
   h4,
   .h4 {
-    font-weight: var(--h4-font-weight);
-    font-size: var(--h4);
-    line-height: var(--h4-line-height);
+    font-weight: 600;
+    font-size: var(--text-size-4);
+    line-height: var(--text-lineheight-medium);
   }
 
   h5,
-  .h2 {
-    font-weight: var(--h5-font-weight);
-    font-size: var(--h4-line-height);
+  .h5 {
+    font-weight: 600;
+    font-size: var(--text-size-3);
+    line-height: var(--text-lineheight-medium);
   }
 
   p,
   li {
-    line-height: var(--p-line-height);
+    line-height: var(--text-lineheight-medium);
     margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
   }
 
   h1 + p,
   .lead {
-    font-size: calc(var(--lead-text) - 0.02rem);
-    line-height: var(--lead-text-line-height);
+    font-size: var(--text-size-3);
+    line-height: var(--text-lineheight-small);
     margin-bottom: clamp(1.7rem, 1.6363rem + 0.2911vw, 1.875rem);
   }
 
   small,
   .text-small {
-    font-weight: var(--small-text-font-weight);
-    font-size: var(--small-text);
-    line-height: var(--small-text-line-height);
+    font-weight: 500;
+    font-size: var(--text-size-small);
+    line-height: var(--text-lineheight-large);
     margin-bottom: clamp(1.22rem, 1.2091rem + 0.0499vw, 1.25rem);
   }
 
