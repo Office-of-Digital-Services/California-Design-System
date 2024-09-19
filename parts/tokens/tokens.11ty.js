@@ -88,21 +88,6 @@ const variables = (jsonTokens) => ` /* CSS Variables */
   --space-unit-x8: calc(${jsonTokens.spacing.unit} * 8);
   --space-unit-x16: calc(${jsonTokens.spacing.unit} * 16);
 
-  /* Bigger scale */
-  --size-1: ${jsonTokens.spacing.unit}; /* .5rem */
-  --size-2: calc(var(--size-1) * 2); /* 1rem */
-  --size-3: calc(var(--size-1) * 3); /* 1.5rem */
-  --size-4: calc(var(--size-1) * 4); /* 2rem */
-  --size-5: calc(var(--size-1) * 5); /* 2.5rem */
-  --size-6: calc(var(--size-1) * 6); /* 3rem */
-  --size-7: calc(var(--size-1) * 8); /* 4rem */
-  --size-8: calc(var(--size-1) * 10); /* 5rem */
-  --size-9: calc(var(--size-1) * 15); /* 7.5rem */
-  --size-10: calc(var(--size-1) * 20); /* 10rem */
-  --size-11: calc(var(--size-1) * 30); /* 15rem */
-  --size-12: calc(var(--size-1) * 40); /* 20rem */
-  --size-13: calc(var(--size-1) * 60); /* 30rem */
-
   /* typography variables */
   --font-family:  ${jsonTokens.typography.font};
   --text-max-width:  ${jsonTokens.typography.text_max_width};
