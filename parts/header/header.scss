@@ -250,7 +250,7 @@
       }
     }
 
-    button.cagov-toggle {
+    .cagov-toggle {
       border: none;
       background: transparent;
       background-image: var(--cagov-icon);
@@ -262,6 +262,9 @@
       width: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
       margin-left: auto;
       cursor: pointer;
+      &:hover {
+        filter: opacity(0.9);
+      }
     }
 
     .login-button {
@@ -271,6 +274,9 @@
       background-position: center;
       padding: var(--space-unit-x2);
       display: block;
+      &:hover {
+        filter: opacity(0.9);
+      }
     }
     span.login-text {
       position: absolute;
@@ -363,7 +369,7 @@
         display: none;
       }
 
-      button.cagov-toggle {
+      .cagov-toggle {
         background-image: var(--cagov-logo);
         background-size: clamp(3.6rem, 0.7143rem + 1.9048vw, 5.5rem)
           clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
@@ -450,7 +456,7 @@
         }
       }
 
-      button.cagov-toggle {
+      .cagov-toggle {
         background-image: var(--cagov-icon-dark);
         @media (width >= 1080px) {
           background-image: var(--cagov-logo-dark);
@@ -510,7 +516,7 @@
         }
       }
 
-      button.cagov-toggle {
+      .cagov-toggle {
         background-image: var(--cagov-icon-light);
         @media (width >= 1080px) {
           background-image: var(--cagov-logo-light);
