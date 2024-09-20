@@ -68,7 +68,7 @@
   },
   "typography": {
     "font": "Noto Sans",
-    "text_max_width": "48rem",
+    "text_max_width": "65ch",
     "font_size_base": "1rem",
     "ratio": "1.24",
     "line_height_base": "1rem",
