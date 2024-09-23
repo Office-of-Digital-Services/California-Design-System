@@ -89,14 +89,15 @@ const variables = (jsonTokens) => ` /* CSS Variables */
   --space-unit-x16: calc(${jsonTokens.spacing.unit} * 16);
 
   /* typography variables */
-  --font-family:  ${jsonTokens.typography.font};
-  --text-max-width:  ${jsonTokens.typography.text_max_width};
-  --ratio:  ${jsonTokens.typography.ratio};
-  --font-size-base: calc(${jsonTokens.typography.font_size_base} + .2vw);
+  --font-family: ${jsonTokens.typography.font};
+  --text-max-width: ${jsonTokens.typography.text_max_width};
+  --ratio: ${jsonTokens.typography.ratio};
+  --font-size-base: ${jsonTokens.typography.font_size_base}; /* Adjust font-size-base, default 1rem. */
+  --font-size-base-responsive: calc(var(--font-size-base) + .2vw);
 
   /* font-size scale */
-  --text-size-small: calc(var(--font-size-base) - .1em);
-  --text-size-1: var(--font-size-base);
+  --text-size-small: calc(var(--font-size-base-responsive) - .1em);
+  --text-size-1: var(--font-size-base-responsive);
   --text-size-2: calc(var(--text-size-1) * var(--ratio));
   --text-size-3: calc(var(--text-size-2) * var(--ratio));
   --text-size-4: calc(var(--text-size-3) * var(--ratio));
