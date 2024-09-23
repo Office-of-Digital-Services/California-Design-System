@@ -1,0 +1,43 @@
+<!-- You'll probably want to include tokens and base by default in most components. -->
+<link rel="stylesheet" href="/parts/tokens/tokens.css" />
+<link rel="stylesheet" href="/parts/base/base.css" />
+
+<!-- Edit this tag with your component's (built) CSS file. -->
+<link rel="stylesheet" href="tac-header.css" />
+
+<!-- Your new component's markup goes below. -->
+<header role="banner">
+
+  <cagov-burger-button>
+    <button>
+      <span class="visually-hidden">Main menu</span>
+    </button>
+  </cagov-burger-button>
+
+  <cagov-org-badge data-overflow>
+    <span>California</span>
+    <span>Department Website</span>
+    <img
+      src="https://cdn.cdt.ca.gov/cdt/CAWeb/site-logo-circle.svg"
+      alt="Eureka Design System logo" />
+  </cagov-org-badge>
+
+  <search>
+    <form>
+      <label for="site-search" class="visually-hidden">Search this site</label>
+      <input type="search" id="site-search" placeholder="Search here..." />
+      <button type="submit">
+        <span class="visually-hidden">Search</span>
+      </button>
+    </form>
+  </search>
+
+  <a role="button" href="#">Login</a>
+
+  <cagov-waffle-menu>
+    <button>
+      <span class="visually-hidden">ca.gov links</span>
+    </button>
+  </cagov-waffle-menu>
+
+</header>

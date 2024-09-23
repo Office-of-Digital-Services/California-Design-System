@@ -1,0 +1,147 @@
+:root {
+  --search-icon: var(--search-icon-dark);
+  --cagov-icon: var(--cagov-icon-dark);
+  --cagov-logo: var(--cagov-logo-dark);
+  --login-icon: var(--login-icon-dark);
+  --header-bg: var(--white);
+  --hamburger-bg: var(--banner-dark);
+  --header-link-color: var(--text-dark);
+  --search-border-color: var(--navigation-submenu-dark);
+  --search-placeholder-color: var(--navigation-submenu-dark);
+  --search-input-color: var(--text-dark);
+  --search-submit-button-color: var(--navigation-submenu-dark);
+  --search-submit-button-outline: var(--white);
+  --search-input-outline: var(--text-dark);
+  --search-submit-icon: var(--search-submit-light);
+  --search-input-clear-icon: var(--search-input-clear-dark);
+}
+
+/* 
+header 
+
+While [role="banner"] is a little bit redundant here, it's a 
+useful target for CSS. That way, we can keep the plain <header> 
+for secondary use in <article>, <section>, etc.
+*/
+
+header[role="banner"] {
+  padding: .5rem 1rem;
+  background-color: var(--banner-dark);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 1rem;
+}
+
+header[role="banner"] > cagov-org-badge {
+  flex-grow: 4;
+}
+
+header[role="banner"] > cagov-waffle-menu {
+  flex-grow: 1;
+  text-align: right;
+}
+
+/* Manual attributes for creating custom headers. */
+
+// Apply flex growth to previous sibling, before attribute "data-utilities-start".
+header[role="banner"] > *:has(+ [data-utilities-start]) {
+  flex-grow: 4;
+}
+
+// Apply flex growth to next sibling, after attribute "data-utilities-end".
+header[role="banner"] > [data-utilities-end] + * {
+  flex-grow: 1;
+}
+
+
+/* 
+cagov-org-badge 
+*/
+
+/* Set up the basic 2x2 grid for cagov-org-badge. */
+cagov-org-badge {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "logo state"
+    "logo dept";
+  column-gap: 1.5rem;
+  row-gap: .75rem;
+  height: 4.5rem;
+}
+
+/* "California" state text. */
+cagov-org-badge > span:first-child {
+  grid-area: state;
+  font-size: var(--text-size-2);
+  font-weight: 600;
+  align-self: end;
+}
+
+/* Department text */
+cagov-org-badge > span:nth-child(2) {
+  grid-area: dept;
+  font-size: var(--text-size-1);
+  font-weight: 400;
+  align-self: start;
+}
+
+/* The logo image */
+cagov-org-badge > img {
+  grid-area: logo;
+  align-self: center;
+  height: 4.5rem;
+}
+
+/* Redefine some of the grid for image overflow. */
+cagov-org-badge[data-overflow] {
+  grid-template-rows: 2rem auto;
+  overflow-y: visible;
+}
+
+/* Make the overflow image bigger, and reposition it. */
+cagov-org-badge[data-overflow] > img {
+  transform: translateY(.5rem);
+  height: 6.5rem;
+}
+
+
+/* 
+Login button 
+
+We could probably make a standard TAC-style button.
+But just inlining it here for now.
+*/
+
+a[role="button"] {
+  display: inline-block;
+  padding: .5rem 1.5rem;
+  background-color: var(--action-secondary);
+  border-radius: var(--rounded-buttons);
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: var(--text-size-1);
+}
+
+/* 
+cagov-waffle-menu
+
+Using a Custom Element name here in anticipation of future
+JavaScript code.
+*/
+
+cagov-waffle-menu > button {
+  border: none;
+  background: transparent;
+  background-image: var(--cagov-logo);
+  background-repeat: no-repeat;
+  background-size: 4rem 4rem;
+  background-position: center;
+  height: 4rem;
+  width: 4rem;
+  margin-left: auto;
+  cursor: pointer;
+}
