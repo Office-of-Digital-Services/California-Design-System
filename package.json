@@ -1,6 +1,6 @@
 {
   "name": "eureka",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "This system makes it easy to build digital services that meet the needs of Californians.",
   "scripts": {
