@@ -36,8 +36,9 @@ jobs:
 
       # Increments the version number, creates git commit, and git tag.
       - name: Increment version
+        id: versioning
         run: |
-          npm version ${{inputs.release_type}}
+          echo "version=npm version ${{inputs.release_type}}" >> $GITHUB_OUTPUT
 
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -48,6 +49,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.versioning.outputs.version }}
           files: |
             dist/bundle.css
             dist/bundle.js
