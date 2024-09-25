@@ -2,7 +2,7 @@ import path from "path";
 import { glob } from "glob";
 
 export default async () => {
-  const partGlobs = await glob("parts/**/*.@(njk|html)");
+  const partGlobs = await glob("src/**/*.@(njk|html)");
   const parts = partGlobs.map((part) => {
     const parsedPath = path.parse(part);
 
@@ -20,7 +20,7 @@ export default async () => {
   }).sort((part) => part.group);
 
 
-  const pageGlobs = await glob("demo/pages/**/*.@(njk|html)");
+  const pageGlobs = await glob("pages/**/*.@(njk|html)");
   const pages = pageGlobs.map((page) => {
     const parsedPath = path.parse(page);
     const href = `/${parsedPath.dir}/${parsedPath.name}`

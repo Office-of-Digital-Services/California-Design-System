@@ -17,12 +17,15 @@
     <!-- Design System core files -->
     <link rel="shortcut icon" href="/favicon.ico" />
 
-    <!-- Font include -->
-    {% include "../font.html" -%}
+    <!-- Design System font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
 
-    <!-- Insert tags into sub-layouts -->
-    {% block headContent %}
-    {% endblock %}
+    <link rel="stylesheet" href="/css/bundle.css" />
+    <script src="/js/bundle.js"></script>
   </head>
   <body>
     {% block content -%} 
