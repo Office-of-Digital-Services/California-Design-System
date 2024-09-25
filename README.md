@@ -2,7 +2,7 @@
 
 [The infamous "garbanzo" test site](https://effective-garbanzo-re4lo11.pages.github.io/)
 
-This is the Base Team repository for the upcoming California Design System. We can make this professional later. For now, here's what devs need to know.
+This is the Base Team repository for the upcoming California Design System. We can make this readme professional later. For now, here's what devs need to know.
 
 ## Grab it
 
