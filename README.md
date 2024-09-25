@@ -8,8 +8,8 @@ This is the Base Team repository for the upcoming California Design System. We c
 
 There are currently two ways to grab the latest code from this repository.
 
-1. Check out the `dist` folder.
-2. Go to the [Releases](https://github.com/Office-of-Digital-Services/California-Design-System/releases) section of this repository.
+* Check out the `dist` folder.
+* Go to the [Releases](https://github.com/Office-of-Digital-Services/California-Design-System/releases) section of this repository.
 
 We plan to support NPM- and CDN-based download options in the future.
 
