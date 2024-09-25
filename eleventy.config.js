@@ -12,6 +12,7 @@ export default async function(eleventyConfig) {
     if (firstBuild || runMode !== "serve") {
       buildPromises.push(cssBuilder(cssBuildPath));
       buildPromises.push(jsBuilder(jsBuildPath));
+      firstBuild = false;
     }
     await Promise.all(buildPromises);
   });
