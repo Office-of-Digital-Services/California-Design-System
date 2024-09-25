@@ -31,7 +31,6 @@ jobs:
 
       - name: Build files
         run: |
-          mkdir dist
           npm install
           npm run build:bundles
 
