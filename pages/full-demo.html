@@ -1,54 +1,4 @@
-<header role="banner">
-  <!-- Add class "theme-light" or "theme-dark" to use specified header theme -->
-  <div class="site-header">
-    <div class="site-header-container">
-      <button class="main-navigation-button">
-        <div class="hamburger"></div>
-        <span class="visually-hidden">Main menu</span>
-      </button>
-      <a href="/" class="site-logo">
-        <!-- add class "no-overflow" to remove image's bottom overflow-->
-        <img
-          src="https://cdn.cdt.ca.gov/cdt/CAWeb/site-logo-circle.svg"
-          alt="Eureka Design System logo"
-          class="logo-image"
-        />
-
-        <div class="site-branding-text">
-          <span class="state">California</span>
-          <span class="department">Department Website</span>
-        </div>
-      </a>
-      <div class="site-header-utility">
-        <div class="search-container-desktop">
-          <form>
-            <label class="search-toggle" for="site-search"
-              ><span class="visually-hidden">Search this site</span></label
-            >
-            <input
-              id="site-search"
-              type="search"
-              class="search-input"
-              name="q"
-              placeholder="Search here..."
-              tabindex="0"
-            />
-
-            <button type="submit" class="search-submit">
-              <span class="visually-hidden">Submit</span>
-            </button>
-          </form>
-        </div>
-        <a href="#" class="login-button"
-          ><span class="login-text">Login</span></a
-        >
-        <a class="cagov-toggle" href="https://ca.gov">
-          <span class="visually-hidden">ca.gov portal</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
+{% include "../src/header/header.html" %}
 
 <main>
   <section>
@@ -62,22 +12,22 @@
       </div>
 
       <div class="container-flex-two-columns-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
       </div>
       <div class="container-flex-two-columns-1fr-2fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
@@ -85,11 +35,11 @@
       </div>
 
       <div class="container-flex-two-columns-1fr-3fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
@@ -97,11 +47,11 @@
       </div>
 
       <div class="container-flex-two-columns-2fr-1fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
@@ -109,11 +59,11 @@
       </div>
 
       <div class="container-flex-two-columns-3fr-1fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
@@ -123,63 +73,63 @@
       <div class="container"><h3>Three columns flex layouts</h3></div>
 
       <div class="container-flex-three-columns-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3 sample and some.</p>
         </div>
       </div>
       <div class="container-flex-three-columns-1fr-2fr-1fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3 sample and some.</p>
         </div>
       </div>
 
       <div class="container-flex-three-columns-2fr-1fr-1fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3 sample and some.</p>
         </div>
       </div>
 
       <div class="container-flex-three-columns-1fr-1fr-2fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3 sample and some.</p>
         </div>
@@ -189,28 +139,28 @@
         <h3>Equal columns flex layouts (up to six columms)</h3>
       </div>
       <div class="container-flex-equal-columns-breakpoint-large">
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3 sample and some.</p>
         </div>
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <h3>Col 4</h3>
           <p>This is col 4.</p>
         </div>
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <h3>Col 5</h3>
           <p>This is column 5.</p>
         </div>
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <h3>Col 6</h3>
           <p>And finally, this is column 6.</p>
         </div>
@@ -222,7 +172,7 @@
       </div>
 
       <div class="container-grid">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
@@ -231,55 +181,55 @@
       <div class="container"><h3>Two columns grid layouts</h3></div>
 
       <div class="container-grid-two-columns-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
       </div>
       <div class="container-grid-two-columns-2fr-1fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
       </div>
       <div class="container-grid-two-columns-3fr-1fr-breakpoint-small">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
       </div>
       <div class="container-grid-two-columns-1fr-2fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
       </div>
       <div class="container-grid-two-columns-1fr-3fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
@@ -289,96 +239,96 @@
       <div class="container"><h3>Three columns grid layouts</h3></div>
 
       <div class="container-grid-three-columns">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3</p>
         </div>
       </div>
 
       <div class="container-grid-three-columns-1fr-1fr-2fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3</p>
         </div>
       </div>
 
       <div class="container-grid-three-columns-2fr-1fr-1fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3</p>
         </div>
       </div>
 
       <div class="container-grid-three-columns-1fr-2fr-1fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3</p>
         </div>
       </div>
 
       <div class="container-grid-three-columns-1fr-3fr-1fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3</p>
         </div>
       </div>
 
       <div class="container-grid-three-columns-1fr-4fr-1fr">
-        <div class="col-1" style="border: 1px solid;">
+        <div class="col-1" style="border: 1px solid">
           <h3>Col 1</h3>
           <p>This is col 1 sample</p>
         </div>
-        <div class="col-2" style="border: 1px solid;">
+        <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
           <p>Extra p</p>
         </div>
-        <div class="col-3" style="border: 1px solid;">
+        <div class="col-3" style="border: 1px solid">
           <h3>Col 3</h3>
           <p>This is col 3</p>
         </div>
@@ -387,7 +337,7 @@
       <!-- Left sidebar layout -->
       <div class="container"><h2>Left sidebar layout</h2></div>
       <div class="container-left-sidebar-breakpoint-small">
-        <div style="border: 1px solid;">
+        <div style="border: 1px solid">
           <nav aria-labelledby="navigation-list" class="side-navigation">
             <ul>
               <li>
