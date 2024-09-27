@@ -2,10 +2,23 @@
   <!-- Add class "theme-light" or "theme-dark" to use specified header theme -->
   <div class="site-header">
     <div class="site-header-container">
-      <button class="main-navigation-button">
-        <div class="hamburger"></div>
-        <span class="visually-hidden">Main menu</span>
-      </button>
+      <nav class="mobile-nav-menu">
+        <button class="main-navigation-button">
+          <div class="hamburger"></div>
+          <span class="visually-hidden">Main menu</span>
+        </button>
+        <button
+          tabindex="-1"
+          class="main-navigation-cancel"
+          aria-hidden="true"
+        ></button>
+        <div class="mobile-navigation-drawer">
+          <ul>
+            <li><a href="">Test link 1</a></li>
+            <li><a href="">Test link 2</a></li>
+          </ul>
+        </div>
+      </nav>
       <a href="/" class="site-logo">
         <!-- add class "no-overflow" to remove image's bottom overflow-->
         <img
