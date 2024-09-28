@@ -103,8 +103,8 @@
     transform: translateY(42px);
   }
   .mobile-navigation-drawer {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 4.5rem;
     left: 0;
     padding: var(--space-unit-x4) var(--space-unit-x2);
     background-color: var(--navigation-drawer-bg);
@@ -112,10 +112,11 @@
     display: none;
     max-width: 15rem;
     min-width: 15rem;
-    height: 85vh;
+    height: calc(100% - 4.5rem);
     translate: -100% 0;
     opacity: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     transition-property: display translate;
     transition-duration: 0.3s;
     transition-behavior: allow-discrete;
@@ -125,11 +126,10 @@
     margin-top: auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     row-gap: 1.5rem;
     font-size: var(--text-size-small);
     padding-left: var(--space-unit-x2);
-    position: absolute;
-    bottom: 2rem;
   }
 
   .mobile-navigation-drawer .utility-links a {
@@ -389,8 +389,12 @@
   }
 }
 @layer states {
+  body.nav-focused {
+    overflow: hidden;
+  }
+
   header nav.mobile-nav-menu:focus-within .main-navigation-button {
-    pointer-events: none; /* Lets us click behind the icon to close menu */
+    /* Lets us click behind the icon to close menu */
     cursor: pointer;
   }
   header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger {
@@ -418,7 +422,10 @@
   }
 
   header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
     opacity: 1;
     translate: 0 0;
 
