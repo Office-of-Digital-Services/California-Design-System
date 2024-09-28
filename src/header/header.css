@@ -394,7 +394,7 @@
   }
 
   header nav.mobile-nav-menu:focus-within .main-navigation-button {
-    /* Lets us click behind the icon to close menu */
+    pointer-events: none; /* Lets us click behind the icon to close menu */
     cursor: pointer;
   }
   header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger {

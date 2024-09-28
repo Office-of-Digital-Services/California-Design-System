@@ -976,6 +976,7 @@
   }
 
   header nav.mobile-nav-menu:focus-within .main-navigation-button {
+    pointer-events: none;
     cursor: pointer;
   }
 
