@@ -79,9 +79,31 @@
         <a href="#" class="login-button"
           ><span class="login-text">Login</span></a
         >
+        <!-- cagov global menu can be replaced with this direct link to ca.gov
         <a class="cagov-toggle" href="https://ca.gov">
           <span class="visually-hidden">ca.gov portal</span>
-        </a>
+        </a> 
+        -->
+        <nav class="cagov-global-menu">
+          <button class="cagov-global-menu-toggle">
+            <span class="visually-hidden">ca.gov portal</span>
+          </button>
+          <button
+            tabindex="-1"
+            class="cagov-global-menu-toggle-cancel"
+            aria-hidden="true"
+          ></button>
+          <div class="cagov-global-menu-drawer">
+            <ul>
+              <li><a href="">Test link 1</a></li>
+              <li><a href="">Test link 2</a></li>
+            </ul>
+            <div class="cagov-utility-links">
+              <a href="#">Translation</a>
+              <a href="#">Settings</a>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   </div>

@@ -45,7 +45,8 @@
   }
 
   /* Mobile navigation */
-  header nav.mobile-nav-menu {
+  header nav.mobile-nav-menu,
+  header nav.cagov-global-menu {
     display: flex;
     border: none;
     padding: 0;
@@ -68,7 +69,8 @@
   header .main-navigation-button:hover {
     opacity: 0.9;
   }
-  header .main-navigation-cancel {
+  header .main-navigation-cancel,
+  header .cagov-global-menu-toggle-cancel {
     position: absolute;
     display: none;
   }
@@ -102,7 +104,8 @@
   header .main-navigation-button .hamburger::after {
     transform: translateY(42px);
   }
-  .mobile-navigation-drawer {
+  .mobile-navigation-drawer,
+  .cagov-global-menu-drawer {
     position: fixed;
     top: 4.5rem;
     left: 0;
