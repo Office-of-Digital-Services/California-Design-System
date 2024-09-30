@@ -4,11 +4,16 @@
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   });
 
-  // src/header/hamburger.js
-  window.addEventListener("load", () => {
-    const menuBtn = document.querySelector(".main-navigation-button");
-    menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("open");
-    });
+  // src/header/header.js
+  document.addEventListener("DOMContentLoaded", () => {
+    const navMenu = document.querySelector("nav.mobile-nav-menu");
+    if (navMenu) {
+      navMenu.addEventListener("focusin", () => {
+        document.body.classList.add("nav-focused");
+      });
+      navMenu.addEventListener("focusout", () => {
+        document.body.classList.remove("nav-focused");
+      });
+    }
   });
 })();

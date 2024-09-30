@@ -13,10 +13,34 @@
           aria-hidden="true"
         ></button>
         <div class="mobile-navigation-drawer">
+          <div class="search-container-mobile">
+            <form>
+              <label for="site-search-mobile" class="search-toggle"
+                ><span class="visually-hidden">Search this site</span></label
+              >
+              <input
+                id="site-search-mobile"
+                type="search"
+                class="search-input"
+                name="q"
+                placeholder="Search here..."
+                tabindex="0"
+              />
+
+              <button type="submit" class="search-submit">
+                <span class="visually-hidden">Submit</span>
+              </button>
+            </form>
+          </div>
+
           <ul>
             <li><a href="">Test link 1</a></li>
             <li><a href="">Test link 2</a></li>
           </ul>
+          <div class="utility-links">
+            <a href="#">Translation</a>
+            <a href="#">Settings</a>
+          </div>
         </div>
       </nav>
       <a href="/" class="site-logo">
