@@ -24,6 +24,7 @@
   header {
     position: relative;
     top: 0;
+    z-index: 1;
     /* hamburger */
     /* site logo */
     /* site header utility links */
@@ -428,11 +429,6 @@
     align-items: flex-start;
     opacity: 1;
     translate: 0 0;
-
-    @starting-style {
-      opacity: 0;
-      translate: -100% 0;
-    }
   }
 
   header .logo-image.no-overflow {
