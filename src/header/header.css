@@ -103,6 +103,7 @@
     height: 0;
     top: 0;
     opacity: 0;
+    right: var(--space-unit-1);
   }
 
   header .main-navigation-button .hamburger::before,
@@ -170,6 +171,13 @@
     row-gap: 1.5rem;
     font-size: var(--text-size-small);
     padding-left: var(--space-unit-x2);
+    align-self: end;
+  }
+
+  .cagov-global-menu-drawer .cagov-utility-links {
+    border-top: 1px solid;
+    padding-block-start: var(--space-unit-x3);
+    width: 100%;
   }
 
   .mobile-navigation-drawer .utility-links a,
@@ -185,6 +193,7 @@
   .mobile-navigation-drawer ul,
   .cagov-global-menu-drawer ul {
     padding-left: 0;
+    align-self: start;
   }
   .mobile-navigation-drawer ul li,
   .cagov-global-menu-drawer ul li {
@@ -258,6 +267,7 @@
   }
   header .search-container-mobile {
     margin-bottom: var(--space-unit-x4);
+    align-self: start;
   }
 
   header .search-container-desktop form,
@@ -493,10 +503,8 @@
 
   header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer,
   header nav.cagov-global-menu:focus-within .cagov-global-menu-drawer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     opacity: 1;
     translate: 0 0;
   }
@@ -578,6 +586,10 @@
       height: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
       width: clamp(3.6rem, 0.7143rem + 1.9048vw, 5.5rem);
       margin-inline-start: clamp(0rem, -11.5714rem + 17.1429vw, 10rem);
+    }
+
+    header .cagov-global-menu-toggle .close-x {
+      left: var(--space-unit-1);
     }
   }
 }
