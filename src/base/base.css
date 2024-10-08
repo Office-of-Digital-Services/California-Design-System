@@ -1,16 +1,16 @@
 /* establish layer-order: last takes precedence */
-@layer global, typogrqphy, layouts, utilities;
+@layer global, typography, layouts, utilities;
 @layer global {
   * {
     box-sizing: border-box;
     margin: 0;
   }
 }
-@layer typogrqphy {
+@layer typography {
   body {
     /* stylelint-disable-next-line font-family-name-quotes */
     font-family: var(--font-family), system-ui, -apple-system, "Roboto", "Helvetica Neue", sans-serif;
-    font-size: clamp(1rem, var(--text-size-2), 5rem);
+    font-size: clamp(1rem, var(--text-size-1), 5rem);
     letter-spacing: 0.02rem;
     font-weight: 400;
     line-height: var(--text-lineheight-base);

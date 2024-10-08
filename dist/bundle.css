@@ -113,10 +113,10 @@
   }
 }
 
-@layer typogrqphy {
+@layer typography {
   body {
     font-family: var(--font-family), system-ui, -apple-system, "Roboto", "Helvetica Neue", sans-serif;
-    font-size: clamp(1rem, var(--text-size-2), 5rem);
+    font-size: clamp(1rem, var(--text-size-1), 5rem);
     letter-spacing: .02rem;
     font-weight: 400;
     line-height: var(--text-lineheight-base);
@@ -428,7 +428,7 @@
     overflow: visible;
   }
 
-  header nav.mobile-nav-menu {
+  header nav.mobile-nav-menu, header nav.cagov-global-menu {
     color: var(--header-link-color);
     border: none;
     margin: 0;
@@ -436,7 +436,7 @@
     display: flex;
   }
 
-  header .main-navigation-button, header .main-navigation-cancel {
+  header .main-navigation-button, header .main-navigation-cancel, header .cagov-global-menu-toggle-cancel {
     cursor: pointer;
     background: none;
     border: none;
@@ -449,11 +449,18 @@
     position: relative;
   }
 
+  header .cagov-global-menu-toggle-cancel {
+    width: 62px;
+    min-width: 62px;
+    min-height: 42px;
+    right: 0;
+  }
+
   header .main-navigation-button:hover {
     opacity: .9;
   }
 
-  header .main-navigation-cancel {
+  header .main-navigation-cancel, header .cagov-global-menu-toggle-cancel {
     display: none;
     position: absolute;
   }
@@ -471,7 +478,17 @@
     top: 0;
   }
 
-  header .main-navigation-button .hamburger:before, header .main-navigation-button .hamburger:after {
+  header .cagov-global-menu-toggle .close-x {
+    opacity: 0;
+    top: 0;
+    right: var(--space-unit-1);
+    width: 42px;
+    height: 0;
+    transition: all .3s;
+    position: relative;
+  }
+
+  header .main-navigation-button .hamburger:before, header .main-navigation-button .hamburger:after, header .cagov-global-menu-toggle .close-x:after, header .cagov-global-menu-toggle .close-x:before {
     content: "";
     background-color: var(--hamburger-bg);
     border-radius: 5px;
@@ -490,7 +507,15 @@
     transform: translateY(42px);
   }
 
-  .mobile-navigation-drawer {
+  header .cagov-global-menu-toggle .close-x:after {
+    transform: rotate(-205deg)translateX(0);
+  }
+
+  header .cagov-global-menu-toggle .close-x:before {
+    transform: rotate(0)translateX(0);
+  }
+
+  .mobile-navigation-drawer, .cagov-global-menu-drawer {
     padding: var(--space-unit-x4) var(--space-unit-x2);
     background-color: var(--navigation-drawer-bg);
     color: var(--white);
@@ -504,39 +529,55 @@
     display: none;
     position: fixed;
     top: 4.5rem;
-    left: 0;
     overflow: hidden auto;
+  }
+
+  .mobile-navigation-drawer {
+    left: 0;
     translate: -100%;
   }
 
-  .mobile-navigation-drawer .utility-links {
+  .cagov-global-menu-drawer {
+    right: 0;
+    translate: 100%;
+  }
+
+  .mobile-navigation-drawer .utility-links, .cagov-global-menu-drawer .cagov-utility-links {
     font-size: var(--text-size-small);
     padding-left: var(--space-unit-x2);
     flex-flow: column wrap;
+    align-self: end;
     row-gap: 1.5rem;
     margin-top: auto;
     display: flex;
   }
 
-  .mobile-navigation-drawer .utility-links a {
+  .cagov-global-menu-drawer .cagov-utility-links {
+    border-top: 1px solid;
+    width: 100%;
+    padding-block-start: var(--space-unit-x3);
+  }
+
+  .mobile-navigation-drawer .utility-links a, .cagov-global-menu-drawer .cagov-utility-links a {
     text-decoration: none;
   }
 
-  .mobile-navigation-drawer .utility-links a:hover {
+  .mobile-navigation-drawer .utility-links a:hover, .cagov-global-menu-drawer .cagov-utility-links a:hover {
     text-decoration: underline;
   }
 
-  .mobile-navigation-drawer ul {
+  .mobile-navigation-drawer ul, .cagov-global-menu-drawer ul {
+    align-self: start;
     padding-left: 0;
   }
 
-  .mobile-navigation-drawer ul li {
+  .mobile-navigation-drawer ul li, .cagov-global-menu-drawer ul li {
     padding-left: 0;
     font-size: 1.125rem;
     list-style: none;
   }
 
-  .mobile-navigation-drawer ul li a {
+  .mobile-navigation-drawer ul li a, .cagov-global-menu-drawer ul li a {
     padding: var(--space-unit-1) var(--space-unit-x2);
     border: 2px solid var(--navigation-drawer-bg);
     border-radius: var(--rounded-buttons);
@@ -544,7 +585,7 @@
     text-decoration: none;
   }
 
-  .mobile-navigation-drawer ul li a:hover {
+  .mobile-navigation-drawer ul li a:hover, .cagov-global-menu-drawer ul li a:hover {
     background-color: color-mix(in srgb, var(--navigation-drawer-bg), #fff 7%);
   }
 
@@ -603,6 +644,7 @@
 
   header .search-container-mobile {
     margin-bottom: var(--space-unit-x4);
+    align-self: start;
   }
 
   header .search-container-desktop form, header .search-container-mobile form {
@@ -712,7 +754,7 @@
     display: none;
   }
 
-  header .cagov-toggle {
+  header .cagov-global-menu-toggle {
     background: none;
     background-image: var(--cagov-icon);
     cursor: pointer;
@@ -725,7 +767,7 @@
     margin-left: auto;
   }
 
-  header .cagov-toggle:hover {
+  header .cagov-global-menu-toggle:hover {
     filter: opacity(.9);
   }
 
@@ -806,12 +848,16 @@
       display: none;
     }
 
-    header .cagov-toggle {
+    header .cagov-global-menu-toggle {
       background-image: var(--cagov-logo);
       background-size: clamp(3.6rem, .7143rem + 1.9048vw, 5.5rem) clamp(2rem, .7143rem + 1.9048vw, 3rem);
       width: clamp(3.6rem, .7143rem + 1.9048vw, 5.5rem);
       height: clamp(2rem, .7143rem + 1.9048vw, 3rem);
       margin-inline-start: clamp(0rem, 17.1429vw - 11.5714rem, 10rem);
+    }
+
+    header .cagov-global-menu-toggle .close-x {
+      left: var(--space-unit-1);
     }
   }
 }
@@ -825,7 +871,7 @@
     color: var(--text-dark);
   }
 
-  header .theme-light .mobile-navigation-drawer {
+  header .theme-light .mobile-navigation-drawer, header .theme-light .cagov-global-menu-drawer {
     background-color: var(--brand-primary);
   }
 
@@ -833,7 +879,7 @@
     background-image: var(--hambearger-icon-dark);
   }
 
-  header .theme-light .hamburger:before, header .theme-light .hamburger:after {
+  header .theme-light .hamburger:before, header .theme-light .hamburger:after, header .theme-light .close-x:after, header .theme-light .close-x:before {
     background-color: var(--banner-dark);
   }
 
@@ -883,12 +929,12 @@
     }
   }
 
-  header .theme-light .cagov-toggle {
+  header .theme-light .cagov-global-menu-toggle {
     background-image: var(--cagov-icon-dark);
   }
 
   @media (width >= 1080px) {
-    header .theme-light .cagov-toggle {
+    header .theme-light .cagov-global-menu-toggle {
       background-image: var(--cagov-logo-dark);
     }
   }
@@ -909,7 +955,7 @@
     background-image: var(--hambearger-icon-light);
   }
 
-  header .theme-dark .hamburger:before, header .theme-dark .hamburger:after {
+  header .theme-dark .hamburger:before, header .theme-dark .hamburger:after, header .theme-dark .close-x:before, header .theme-dark .close-x:after {
     background-color: var(--white);
   }
 
@@ -959,12 +1005,12 @@
     }
   }
 
-  header .theme-dark .cagov-toggle {
+  header .theme-dark .cagov-global-menu-toggle {
     background-image: var(--cagov-icon-light);
   }
 
   @media (width >= 1080px) {
-    header .theme-dark .cagov-toggle {
+    header .theme-dark .cagov-global-menu-toggle {
       background-image: var(--cagov-logo-light);
     }
   }
@@ -975,9 +1021,13 @@
     overflow: hidden;
   }
 
-  header nav.mobile-nav-menu:focus-within .main-navigation-button {
+  header nav.mobile-nav-menu:focus-within .main-navigation-button, header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle {
     pointer-events: none;
     cursor: pointer;
+  }
+
+  header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle {
+    background-image: none;
   }
 
   header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger {
@@ -985,34 +1035,44 @@
     top: 20px;
   }
 
-  header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger:before {
+  header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle .close-x {
+    opacity: 1;
+    height: 0;
+    top: 0;
+  }
+
+  header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger:before, header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle .close-x:before {
     transform: rotate(45deg)translateX(0);
   }
 
-  header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger:after {
+  header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger:after, header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle .close-x:after {
     transform: rotate(-225deg)translateX(0);
   }
 
-  header nav.mobile-nav-menu:focus-within button.main-navigation-cancel {
+  header nav.mobile-nav-menu:focus-within button.main-navigation-cancel, header nav.cagov-global-menu:focus-within button.cagov-global-menu-toggle-cancel {
     display: block;
   }
 
-  header nav.mobile-nav-menu:focus-within button.main-navigation-cancel:focus {
+  header nav.mobile-nav-menu:focus-within button.main-navigation-cancel:focus, header nav.cagov-global-menu:focus-within button.cagov-global-menu-toggle-cancel:focus {
     display: none;
   }
 
-  header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer {
+  header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer, header nav.cagov-global-menu:focus-within .cagov-global-menu-drawer {
     opacity: 1;
-    flex-flow: column wrap;
-    align-items: flex-start;
-    display: flex;
+    grid-template-rows: auto 1fr auto;
+    display: grid;
     translate: 0;
+  }
 
-    @starting-style {
-      & {
-        opacity: 0;
-        translate: -100%;
-      }
+  @starting-style {
+    header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer {
+      opacity: 0;
+      translate: -100%;
+    }
+
+    header nav.cagov-global-menu:focus-within .cagov-global-menu-drawer {
+      opacity: 0;
+      translate: 100%;
     }
   }
 
