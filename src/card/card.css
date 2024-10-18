@@ -1,19 +1,26 @@
 @layer default, options, interactive, darkmode;
 
 @layer default {
+  :root {
+    --card-shadow: var(--shadow);
+    --card-shadow-focus: var(--shadow-focus);
+    --outline-color: var(--text-dark);
+  }
+
   ul.cards {
     padding: 0;
     font-size: 0.85em;
+    container-type: inline-size;
   }
   @supports (display: grid) {
     ul.cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
       grid-gap: var(--columns-gap);
+    }
 
-      > li {
-        height: 100%;
-      }
+    ul.cards > li {
+      height: 100%;
     }
   }
 
@@ -76,7 +83,7 @@
 
   /* call to action */
   .action {
-    --outline-color: var(--brand-secondary);
+    --outline-color: var(--outline-color);
     background: var(--brand-secondary);
     color: white;
     display: inline-block;
@@ -88,15 +95,16 @@
     border-radius: calc(var(--border-radius) * 1.5);
     text-decoration: none;
     transition: box-shadow 0.3 ease-out;
-    box-shadow: var(--shadow);
+    box-shadow: var(--card-shadow);
     align-self: start; /*not full width button*/
     order: 3;
     margin-top: auto;
   }
   .action:hover,
   .action:focus {
-    box-shadow: var(--shadow-focus);
-    background: var(--brand-hover-light);
+    box-shadow: var(--card-shadow-focus);
+    /* background: color-mix(in oklch, var(--brand-secondary), #000 15%); */
+    background: oklch(40% 0.12 234);
     transform: scale(1.06);
   }
 
@@ -106,144 +114,173 @@
   }
 
   /* card's layout  and orientations */
-  ul.cards[data-orientation^="media"] {
-    > li {
-      flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-    }
+  ul.cards[data-orientation^="media"] > li {
+    flex-basis: calc((var(--breakpoint-width) - 100%) * 999);
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
 
-    & img {
-      border-start-start-radius: var(--border-radius);
-      border-start-end-radius: 0;
-      border-end-start-radius: var(--border-radius);
-      border-end-end-radius: 0;
+  ul.cards[data-orientation^="media"] li:only-child img {
+    max-inline-size: 30%;
+  }
+
+  ul.cards[data-orientation^="media"] img {
+    border-start-start-radius: var(--border-radius);
+    border-start-end-radius: 0;
+    border-end-start-radius: var(--border-radius);
+    border-end-end-radius: 0;
+    max-block-size: 100%;
+    max-inline-size: 33%;
+  }
+
+  @container (max-width: 35rem) {
+    ul.cards[data-orientation^="media"] img {
       max-block-size: 100%;
-      max-inline-size: 33%;
-    }
-
-    li:only-child {
-      img {
-        max-inline-size: 30%;
-      }
+      max-inline-size: 100%;
     }
   }
 
-  ul.cards[data-orientation="media-end"] {
-    > li {
-      flex-direction: row-reverse;
-    }
+  ul.cards[data-orientation="media-end"] > li {
+    flex-direction: row-reverse;
+  }
 
-    & img {
-      border-start-start-radius: 0;
-      border-start-end-radius: var(--border-radius);
-      border-end-start-radius: 0;
-      border-end-end-radius: var(--border-radius);
-    }
+  ul.cards[data-orientation="media-end"] img {
+    border-start-start-radius: 0;
+    border-start-end-radius: var(--border-radius);
+    border-end-start-radius: 0;
+    border-end-end-radius: var(--border-radius);
+  }
 
-    article {
-      flex-grow: 2;
-    }
+  ul.cards[data-orientation="media-end"] article {
+    flex-grow: 2;
   }
 }
 
 @layer options {
-  [data-filter="dissaturated"] {
-    li {
-      img {
-        filter: saturate(20%);
-      }
-    }
+  ul.cards[data-filter="dissaturated"] li img {
+    filter: saturate(20%);
   }
 
-  [data-action="interactive"][data-filter="dissaturated"] {
-    > li:focus-within,
-    > li:hover {
-      img {
-        filter: saturate(100%);
-      }
-    }
+  ul.cards[data-action="interactive"][data-filter="dissaturated"]
+    > li:focus-within
+    img,
+  ul.cards[data-action="interactive"][data-filter="dissaturated"]
+    > li:hover
+    img {
+    filter: saturate(100%);
   }
 }
 
 @layer interactive {
-  [data-action="interactive"] {
-    > li {
-      box-shadow: var(--shadow);
-      cursor: pointer;
-      transition: all 0.3s ease-out;
-      justify-content: start;
-      position: relative;
-    }
+  ul.cards[data-action="interactive"] > li {
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    justify-content: start;
+    position: relative;
+  }
 
-    article a::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      z-index: 3000; /*for Chrome and Edge to allow anchor over the img*/
-    }
-    > li:focus-within {
-      --outline-size: max(2px, 0.08em);
-      --outline-style: solid;
-      outline: var(--outline-size) var(--outline-style) var(--brand-primary);
-      outline-offset: var(--outline-offset, var(--outline-size));
+  ul.cards[data-action="interactive"] article a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1; /* for Chrome and Edge to allow anchor over the img */
+  }
 
-      a:focus {
-        outline: none;
-      }
+  ul.cards[data-action="interactive"] > li:focus-within {
+    --outline-size: max(2px, 0.08em);
+    --outline-style: solid;
+    outline: var(--outline-size) var(--outline-style) var(--outline-color);
+    outline-offset: var(--outline-offset, var(--outline-size));
+  }
 
-      & img {
-        filter: saturate(100%);
-      }
-    }
+  ul.cards[data-action="interactive"] > li:focus-within a:focus {
+    outline: none;
+  }
 
-    h2 > a {
-      color: inherit;
-      text-decoration: none;
-    }
+  ul.cards[data-action="interactive"] > li:focus-within img {
+    filter: saturate(100%);
+  }
 
-    img {
-      margin-block-start: unset;
-    }
+  ul.cards[data-action="interactive"] h2 > a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    > li > a {
-      display: block;
-      color: currentColor;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      height: 100%;
-      --outline-color: var(--brand-primary);
-    }
+  ul.cards[data-action="interactive"] img {
+    margin-block-start: unset;
+  }
 
-    > li:hover,
-    > li:focus {
-      transform: scale(1.04);
-      box-shadow: var(--shadow-focus);
-      a {
-        color: var(--brand-hover-dark);
-        text-decoration: underline;
-      }
-    }
+  ul.cards[data-action="interactive"] > li > a {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    height: 100%;
+    --outline-color: var(--outline-color);
+  }
 
-    > li:active {
-      transform: scale(1.02);
-    }
+  ul.cards[data-action="interactive"] > li:hover,
+  ul.cards[data-action="interactive"] > li:focus {
+    transform: scale(1.04);
+    box-shadow: var(--card-shadow-focus);
+  }
+
+  ul.cards[data-action="interactive"] > li:hover a,
+  ul.cards[data-action="interactive"] > li:focus a {
+    color: var(--brand-hover-dark);
+    text-decoration: underline;
+  }
+
+  ul.cards[data-action="interactive"] > li:active {
+    transform: scale(1.02);
   }
 }
 
 @layer darkmode {
-  ul[data-action="interactive"] {
-    > li:hover,
-    > li:focus {
-      box-shadow: var(--shadow-focus);
-      a {
-        color: var(--brand-hover-light);
-        text-decoration: underline;
-      }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --card-shadow: 0.2rem 0.2rem 0.5em 0 rgba(255, 255, 255, 0.25);
+      --card-shadow-focus: 0.1rem 0.1rem 0.25em 0 rgba(255, 255, 255, 0.1);
+      --outline-color: var(--text-white);
     }
+
+    ul.cards .action {
+      box-shadow: var(--shadow);
+    }
+
+    ul[data-action="interactive"] > li:hover a,
+    ul[data-action="interactive"] > li:focus a {
+      color: var(--brand-hover-light);
+      text-decoration: underline;
+    }
+  }
+}
+
+@container (max-width: 34rem) {
+  ul.cards[data-orientation^="media"] > li,
+  ul.cards[data-orientation="media-end"] > li {
+    flex-direction: column;
+  }
+
+  ul.cards[data-orientation^="media"] > li img,
+  ul.cards[data-orientation="media-end"] > li img {
+    max-block-size: 100%;
+    max-inline-size: 100%;
+    border-start-start-radius: var(--border-radius);
+    border-start-end-radius: var(--border-radius);
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  ul.cards[data-orientation^="media"] li:only-child img,
+  ul.cards[data-orientation="media-end"] li:only-child img {
+    max-inline-size: 100%;
   }
 }
