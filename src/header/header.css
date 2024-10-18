@@ -24,6 +24,7 @@
   header {
     position: relative;
     top: 0;
+    z-index: 1;
     /* hamburger */
     /* site logo */
     /* site header utility links */
