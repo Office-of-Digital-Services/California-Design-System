@@ -118,6 +118,12 @@
 @layer utilities {
   /* --- Utilities  --- */
   /* spacing */
+  .padding-1 {
+    padding: var(--space-unit-x2);
+  }
+  .padding-2 {
+    padding: var(--space-unit-x4);
+  }
   /* colors */
   /* borders */
   /* Accessibility */
