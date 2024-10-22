@@ -48,7 +48,7 @@
     padding: var(--space-unit-x3);
     margin: 0;
     order: 2;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     height: 100%;
   }
@@ -92,16 +92,15 @@
     background: var(--brand-secondary);
     color: white;
     display: inline-block;
-    margin: var(--card-spacing);
     margin-top: auto;
-    padding-block: 0.55rem;
-    padding-inline: 1.5rem;
+    padding-block: var(--space-unit-1);
+    padding-inline: var(--space-unit-x3);
     border-radius: calc(var(--border-radius) * 1.5);
     box-shadow: var(--card-shadow);
-    align-self: start; /*not full width button*/
     order: 3;
     transition: all var(--transition) ease;
     text-decoration: none;
+    width: fit-content;
   }
   .action:hover,
   .action:focus {
