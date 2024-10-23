@@ -16,16 +16,23 @@
   ul.cards {
     padding: 0;
     container-type: inline-size;
-  }
-
-  ul.cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     grid-gap: var(--columns-gap);
   }
 
+  ul.cards:has(> li:only-child) {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  }
+
   ul.cards > li {
     height: 100%;
+    margin-block-start: 0;
+    border: 1px solid var(--utility-light-grey);
+    border-radius: var(--border-radius);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
   }
 
   ul.cards img {
@@ -73,15 +80,6 @@
     text-decoration: none;
   }
 
-  ul.cards > li {
-    margin-block-start: 0;
-    border: 1px solid var(--utility-light-grey);
-    border-radius: var(--border-radius);
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-  }
-
   ul.cards li,
   ul.cards p {
     max-width: unset;
@@ -102,6 +100,7 @@
     text-decoration: none;
     width: fit-content;
   }
+
   .action:hover,
   .action:focus {
     box-shadow: var(--card-shadow-focus);
@@ -179,17 +178,15 @@
   ul.cards[data-action="interactive"] article a::before {
     content: "";
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
     height: 100%;
     width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1; /* for Chrome and Edge to allow anchor over the img */
   }
 
   ul.cards[data-action="interactive"] > li:focus-within {
-    outline: var(--outline-size) var(--outline-style) var(--outline-color);
+    outline: var(--outline-size) solid var(--outline-color);
     outline-offset: var(--outline-offset, var(--outline-size));
   }
 
@@ -201,22 +198,12 @@
     filter: saturate(100%);
   }
 
-  ul.cards[data-action="interactive"] h2 > a {
-    color: inherit;
-    text-decoration: none;
-  }
-
   ul.cards[data-action="interactive"] img {
     margin-block-start: unset;
   }
 
   ul.cards[data-action="interactive"] > li > a {
     display: block;
-    color: currentColor;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    height: 100%;
-    --outline-color: var(--outline-color);
   }
 
   ul.cards[data-action="interactive"] > li:hover,
@@ -329,7 +316,7 @@
     color: var(--hyperlink-light);
   }
 
-  ul.cards[data-mode="light"] a.action {
+  ul.cards[data-mode="light"] .action {
     color: var(--white);
   }
 
