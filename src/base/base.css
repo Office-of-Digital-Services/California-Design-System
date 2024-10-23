@@ -126,6 +126,13 @@
   }
   /* colors */
   /* borders */
+  /* text */
+  .test-align-center {
+    text-align: center;
+  }
+  .content-align-center {
+    align-items: center;
+  }
   /* Accessibility */
   .visually-hidden {
     position: absolute !important;
