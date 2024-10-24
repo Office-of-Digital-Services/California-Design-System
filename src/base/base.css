@@ -125,6 +125,9 @@
     padding: var(--space-unit-x4);
   }
   /* colors */
+  .background-brand-primary {
+    background-color: var(--brand-primary);
+  }
   /* borders */
   /* text */
   .text-align-center {
