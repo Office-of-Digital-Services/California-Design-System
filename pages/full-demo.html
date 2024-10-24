@@ -5,6 +5,40 @@
     <div class="wrapper-fixed-width">
       <!-- To use different breakpoints add following extensions the class: -breakpoint-large, -breakpoint-medium, -breakpoint-small -->
 
+      <div class="container"><h2>Cards</h2></div>
+
+      <div class="container-flex-three-columns">
+        {% include "../src/card/static.html" %}{% include
+        "../src/card/interactive.html" %}{% include
+        "../src/card/static-image-fit-centered.html" %}
+      </div>
+
+      <div class="container-flex-two-columns">
+        {% include "../src/card/static-horizontal.html" %} {% include
+        "../src/card/interactive-horizontal.html" %}
+      </div>
+
+      <div class="container-flex-two-columns">
+        {% include "../src/card/static-horizontal-end.html" %} {% include
+        "../src/card/interactive-horizontal-end.html" %}
+      </div>
+
+      <div class="container">
+        <h2>Card groups</h2>
+        <p>
+          Card group row with three or more card columns. In the smaller screens
+          cards that don't fit in one row will wrap onto next one.
+        </p>
+      </div>
+
+      <div class="container">
+        {% include "../src/card/static-card-group.html" %}
+      </div>
+
+      <div class="container">
+        {% include "../src/card/interactive-card-group.html" %}
+      </div>
+
       <!--FLEX LAYOUTS-->
       <div class="container">
         <h2>Flex layouts</h2>
@@ -12,18 +46,36 @@
       </div>
 
       <div class="container-flex-two-columns-breakpoint-small">
-        {% include "../src/card/card-interactive-flex.html" %} {% include
-        "../src/card/card-static.html" %}
+        <div class="col-2" style="border: 1px solid">
+          <h3>Col 1</h3>
+          <p>This is col 1 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-2" style="border: 1px solid">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
       </div>
       <div class="container-flex-two-columns-1fr-2fr-breakpoint-small">
-        <div class="col-1">{% include "../src/card/card.html" %}</div>
-        <div class="col-2">
-          {% include "../src/card/card-interactive-flex-multy.html" %}
+        <div class="col-2" style="border: 1px solid">
+          <h3>Col 1</h3>
+          <p>This is col 1 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
+        <div class="col-2" style="border: 1px solid">
+          <h3>Col 2</h3>
+          <p>This is col 2 example with some more text to it</p>
+          <p>Extra p</p>
         </div>
       </div>
 
       <div class="container-flex-two-columns-1fr-3fr-breakpoint-small">
-        {% include "../src/card/card-interactive.html" %}
+        <div class="col-2" style="border: 1px solid">
+          <h3>Col 1</h3>
+          <p>This is col 1 example with some more text to it</p>
+          <p>Extra p</p>
+        </div>
         <div class="col-2" style="border: 1px solid">
           <h3>Col 2</h3>
           <p>This is col 2 example with some more text to it</p>
