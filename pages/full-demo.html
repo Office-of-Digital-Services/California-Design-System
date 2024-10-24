@@ -7,19 +7,18 @@
 
       <div class="container"><h2>Cards</h2></div>
 
-      <div class="container-flex-three-columns">
+      <div class="container-flex-two-columns">
         {% include "../src/card/static.html" %}{% include
-        "../src/card/interactive.html" %}{% include
-        "../src/card/static-image-fit-centered.html" %}
+        "../src/card/static-image-fit.html" %}
       </div>
 
       <div class="container-flex-two-columns">
         {% include "../src/card/static-horizontal.html" %} {% include
-        "../src/card/interactive-horizontal.html" %}
+        "../src/card/static-horizontal-end.html" %}
       </div>
 
       <div class="container-flex-two-columns">
-        {% include "../src/card/static-horizontal-end.html" %} {% include
+        {% include "../src/card/interactive-horizontal.html" %} {% include
         "../src/card/interactive-horizontal-end.html" %}
       </div>
 
@@ -32,10 +31,12 @@
       </div>
 
       <div class="container">
+        <h3>Static card group</h3>
         {% include "../src/card/static-card-group.html" %}
       </div>
 
       <div class="container">
+        <h3>Interactive card group</h3>
         {% include "../src/card/interactive-card-group.html" %}
       </div>
 
