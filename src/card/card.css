@@ -235,7 +235,7 @@
       box-shadow: var(--shadow);
     }
 
-    ul.cards a.action:focus-visible {
+    ul.cards .action:focus-visible {
       outline-color: var(--white);
     }
 
@@ -243,90 +243,6 @@
     ul[data-action="interactive"] > li:focus a {
       color: var(--brand-hover-light);
     }
-  }
-
-  /* manual dark mode */
-  ul.cards[data-mode="dark"] li {
-    background-color: var(--main-dark);
-    color: var(--text-white);
-  }
-
-  ul.cards[data-mode="dark"] h1 > a,
-  ul.cards[data-mode="dark"] h2 > a,
-  ul.cards[data-mode="dark"] h3 > a,
-  ul.cards[data-mode="dark"] h4 > a,
-  ul.cards[data-mode="dark"] h5 > a {
-    color: inherit;
-  }
-
-  ul.cards[data-mode="dark"] h1 > a:hover,
-  ul.cards[data-mode="dark"] h1 > a:focus,
-  ul.cards[data-mode="dark"] h2 > a:hover,
-  ul.cards[data-mode="dark"] h2 > a:focus,
-  ul.cards[data-mode="dark"] h3 > a:hover,
-  ul.cards[data-mode="dark"] h3 > a:focus,
-  ul.cards[data-mode="dark"] h4 > a:hover,
-  ul.cards[data-mode="dark"] h4 > a:focus {
-    color: var(--brand-hover-light);
-  }
-
-  ul.cards[data-mode="dark"] a {
-    color: var(--hyperlink-dark);
-  }
-
-  ul.cards[data-mode="dark"] a.action {
-    color: var(--white);
-  }
-
-  ul.cards[data-mode="dark"] a.action:focus-visible {
-    outline-color: var(--white);
-  }
-
-  ul.cards[data-mode="dark"] a.action:hover,
-  ul.cards[data-mode="dark"] a.action:focus {
-    color: var(--white);
-  }
-
-  /* manual light mode */
-  ul.cards[data-mode="light"] li {
-    background-color: var(--main-light);
-    color: var(--text-dark);
-  }
-
-  ul.cards[data-mode="light"] h1 > a,
-  ul.cards[data-mode="light"] h2 > a,
-  ul.cards[data-mode="light"] h3 > a,
-  ul.cards[data-mode="light"] h4 > a,
-  ul.cards[data-mode="light"] h5 > a {
-    color: inherit;
-  }
-
-  ul.cards[data-mode="light"] h1 > a:hover,
-  ul.cards[data-mode="light"] h1 > a:focus,
-  ul.cards[data-mode="light"] h2 > a:hover,
-  ul.cards[data-mode="light"] h2 > a:focus,
-  ul.cards[data-mode="light"] h3 > a:hover,
-  ul.cards[data-mode="light"] h3 > a:focus,
-  ul.cards[data-mode="light"] h4 > a:hover,
-  ul.cards[data-mode="light"] h4 > a:focus {
-    color: var(--brand-hover-dark);
-  }
-
-  ul.cards[data-mode="light"] a {
-    color: var(--hyperlink-light);
-  }
-
-  ul.cards[data-mode="light"] .action {
-    color: var(--white);
-  }
-
-  ul.cards[data-mode="light"] a.action:focus-visible {
-    outline-color: var(--text-dark);
-  }
-
-  ul.cards[data-mode="light"] a.action:hover,
-  ul.cards[data-mode="light"] a.action:focus {
-    color: var(--white);
   }
 }
 
