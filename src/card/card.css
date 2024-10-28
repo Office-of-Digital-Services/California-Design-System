@@ -26,7 +26,6 @@
   }
 
   ul.cards > li {
-    height: 100%;
     margin-block-start: 0;
     border: 1px solid var(--utility-light-grey);
     border-radius: var(--border-radius);
