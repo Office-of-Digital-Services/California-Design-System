@@ -26,7 +26,7 @@
   }
 
   ul.cards > li {
-    margin-block-start: 0;
+    margin-block: 0;
     border: 1px solid var(--utility-light-grey);
     border-radius: var(--border-radius);
     list-style: none;
