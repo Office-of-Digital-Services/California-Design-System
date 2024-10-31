@@ -1,2 +1,2 @@
-import "../base/theme.js";
+import "../base/base.js";
 import "../header/header.js";

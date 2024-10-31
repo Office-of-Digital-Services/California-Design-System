@@ -1,4 +1,4 @@
-import cssBuilder from "./tools/bundlers/cssBuilder.js";
+import mincssBuilder from "./tools/bundlers/mincssBuilder.js";
 import flatcssBuilder from "./tools/bundlers/flatcssBuilder.js";
 import jsBuilder from "./tools/bundlers/jsBuilder.js";
 import path from "path";
@@ -6,7 +6,7 @@ import postcss from "postcss";
 import postcssNested from "postcss-nested";
 
 let firstBuild = true;
-const cssBuildPath = "_site/css/bundle.css";
+const mincssBuildPath = "_site/css/bundle.min.css";
 const flatcssBuildPath = "_site/css/bundle.flat.css";
 const jsBuildPath = "_site/js/bundle.js";
 
@@ -44,7 +44,7 @@ export default async function (eleventyConfig) {
     const buildPromises = [];
     // Only build all of the bundle files during first run, not on every change.
     if (firstBuild || runMode !== "serve") {
-      buildPromises.push(cssBuilder(cssBuildPath));
+      buildPromises.push(mincssBuilder(mincssBuildPath));
       buildPromises.push(flatcssBuilder(flatcssBuildPath));
       buildPromises.push(jsBuilder(jsBuildPath));
       firstBuild = false;
@@ -56,7 +56,7 @@ export default async function (eleventyConfig) {
     // During development changes, only reload the bundles that need reloading.
     await changedFiles.forEach(async (changedFile) => {
       if (changedFile.endsWith(".css")) {
-        await cssBuilder(cssBuildPath);
+        await mincssBuilder(mincssBuildPath);
         await flatcssBuilder(flatcssBuildPath);
       }
       if (changedFile.endsWith(".js")) {

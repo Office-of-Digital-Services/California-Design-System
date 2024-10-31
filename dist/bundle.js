@@ -1,5 +1,25 @@
 (() => {
-  // src/base/theme.js
+  // src/base/base.js
+  window.addEventListener("DOMContentLoaded", () => {
+    if (!CSS.supports("selector(&)")) {
+      const link = (
+        /** @type {HTMLLinkElement} */
+        document.getElementById("main-stylesheet")
+      );
+      link.href = link.href.replace("min", "flat");
+      console.log("POLYFILL: Using FLAT CSS instead of Nested");
+    }
+    const webP = new Image();
+    webP.onload = webP.onerror = function() {
+      if (webP.height !== 1) {
+        document.querySelectorAll('img[src$=".webp" i]').forEach((img) => {
+          img.src = img.src.replace(/\.webp$/i, ".png");
+        });
+        console.log("POLYFILL: Using PNG instead of WEBP");
+      }
+    };
+    webP.src = "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
+  });
   window.addEventListener("load", () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   });
