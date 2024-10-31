@@ -1,10 +1,24 @@
 import cssBuilder from "./tools/bundlers/cssBuilder.js";
 import jsBuilder from "./tools/bundlers/jsBuilder.js";
 import path from "path";
+import postcss from "postcss";
+import postcssNested from "postcss-nested";
 
 let firstBuild = true;
 const cssBuildPath = "_site/css/bundle.css";
 const jsBuildPath = "_site/js/bundle.js";
+
+/**
+ * @param {string} content
+ */
+const minifyCSS = (content) =>
+  content
+    .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, "")
+    .replace(/ {2,}/g, " ")
+    .replace(/ ([{:}]) /g, "$1")
+    .replace(/([{:}]) /g, "$1")
+    .replace(/([;,]) /g, "$1")
+    .replace(/ !/g, "!");
 
 export default async function (eleventyConfig) {
   eleventyConfig.addTransform(
@@ -62,6 +76,25 @@ export default async function (eleventyConfig) {
   // Ignores
   eleventyConfig.ignores.add("*.md"); // Repo root markdowns
   eleventyConfig.ignores.add("*.js"); // Repo root configs
+
+  eleventyConfig.addNunjucksAsyncFilter(
+    "cssmin",
+    /**
+     * @param {string} code
+     * @param {(arg0: null, arg1: string) => void} callback
+     */
+    async (code, callback) => {
+      callback(null, minifyCSS(code));
+    }
+  );
+
+  // For making a non-nested fallback
+  eleventyConfig.addFilter("flattenCSS", async (code) => {
+    const result = await postcss([postcssNested]).process(code, {
+      from: undefined,
+    });
+    return result.css;
+  });
 
   return {
     // allow nunjucks templating in .html files
