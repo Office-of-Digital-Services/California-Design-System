@@ -1,4 +1,5 @@
 import cssBuilder from "./tools/bundlers/cssBuilder.js";
+import flatcssBuilder from "./tools/bundlers/flatcssBuilder.js";
 import jsBuilder from "./tools/bundlers/jsBuilder.js";
 import path from "path";
 import postcss from "postcss";
@@ -6,6 +7,7 @@ import postcssNested from "postcss-nested";
 
 let firstBuild = true;
 const cssBuildPath = "_site/css/bundle.css";
+const flatcssBuildPath = "_site/css/bundle.flat.css";
 const jsBuildPath = "_site/js/bundle.js";
 
 /**
@@ -43,6 +45,7 @@ export default async function (eleventyConfig) {
     // Only build all of the bundle files during first run, not on every change.
     if (firstBuild || runMode !== "serve") {
       buildPromises.push(cssBuilder(cssBuildPath));
+      buildPromises.push(flatcssBuilder(flatcssBuildPath));
       buildPromises.push(jsBuilder(jsBuildPath));
       firstBuild = false;
     }
@@ -54,6 +57,7 @@ export default async function (eleventyConfig) {
     await changedFiles.forEach(async (changedFile) => {
       if (changedFile.endsWith(".css")) {
         await cssBuilder(cssBuildPath);
+        await flatcssBuilder(flatcssBuildPath);
       }
       if (changedFile.endsWith(".js")) {
         await jsBuilder(jsBuildPath);
@@ -76,17 +80,6 @@ export default async function (eleventyConfig) {
   // Ignores
   eleventyConfig.ignores.add("*.md"); // Repo root markdowns
   eleventyConfig.ignores.add("*.js"); // Repo root configs
-
-  eleventyConfig.addNunjucksAsyncFilter(
-    "cssmin",
-    /**
-     * @param {string} code
-     * @param {(arg0: null, arg1: string) => void} callback
-     */
-    async (code, callback) => {
-      callback(null, minifyCSS(code));
-    }
-  );
 
   // For making a non-nested fallback
   eleventyConfig.addFilter("flattenCSS", async (code) => {
