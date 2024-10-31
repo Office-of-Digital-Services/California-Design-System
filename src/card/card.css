@@ -13,241 +13,222 @@ ul.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-gap: var(--columns-gap);
-}
 
-ul.cards:has(> li:only-child) {
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-}
-
-ul.cards > li {
-  margin-block: 0;
-  border: 1px solid var(--utility-light-grey);
-  border-radius: var(--border-radius);
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-}
-
-ul.cards img {
-  aspect-ratio: 3 / 2;
-  max-inline-size: 100%;
-  block-size: auto;
-  border-start-start-radius: var(--border-radius);
-  border-start-end-radius: var(--border-radius);
-  object-fit: cover;
-  object-position: center;
-  margin: unset;
-  order: 1;
-}
-
-ul.cards img[data-image-fit="contain"] {
-  object-fit: contain;
-}
-
-ul.cards article {
-  padding: var(--space-unit-x3);
-  margin: 0;
-  order: 2;
-  display: inline-flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-ul.cards h1,
-ul.cards h2,
-ul.cards h3,
-ul.cards h4,
-ul.cards h5 {
-  font-weight: 700;
-  font-size: var(--text-size-4);
-  line-height: var(--text-lineheight-medium);
-  margin-top: 0;
-}
-
-ul.cards h1 > a,
-ul.cards h2 > a,
-ul.cards h3 > a,
-ul.cards h4 > a,
-ul.cards h5 > a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul.cards li,
-ul.cards p {
-  max-width: unset;
-}
-
-/* call to action */
-.action {
-  background: var(--brand-secondary);
-  color: white;
-  display: inline-block;
-  margin-top: auto;
-  padding-block: var(--space-unit-1);
-  padding-inline: var(--space-unit-x3);
-  border-radius: calc(var(--border-radius) * 1.5);
-  box-shadow: var(--card-shadow);
-  order: 3;
-  transition: all var(--transition) ease;
-  text-decoration: none;
-  width: fit-content;
-}
-
-.action:hover,
-.action:focus {
-  box-shadow: var(--card-shadow-focus);
-  /* color needs to be finalized in base */
-  background: oklch(40% 0.12 234);
-  transform: scale(var(--scale));
-  color: var(--text-white);
-}
-
-.action:active {
-  transform: scale(var(--scale));
-  background: var(--brand-primary);
-}
-
-.action:focus-visible {
-  outline: var(--outline-size) solid var(--action-outline-color);
-  outline-offset: var(--outline-offset, var(--outline-size));
-}
-
-/* card's layout  and orientations */
-ul.cards[data-orientation^="media"] > li {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-
-ul.cards[data-orientation^="media"] img {
-  border-start-start-radius: var(--border-radius);
-  border-start-end-radius: 0;
-  border-end-start-radius: var(--border-radius);
-  border-end-end-radius: 0;
-  max-block-size: 100%;
-  max-inline-size: 33%;
-}
-
-ul.cards[data-orientation="media-end"] > li {
-  flex-direction: row-reverse;
-}
-
-ul.cards[data-orientation="media-end"] img {
-  border-start-start-radius: 0;
-  border-start-end-radius: var(--border-radius);
-  border-end-start-radius: 0;
-  border-end-end-radius: var(--border-radius);
-}
-
-ul.cards[data-orientation="media-end"] article {
-  flex-grow: 2;
-}
-
-/* card options */
-ul.cards[data-filter="desaturated"] li img {
-  filter: saturate(20%);
-}
-
-ul.cards[data-action="interactive"][data-filter="desaturated"]
-  > li:focus-within
-  img,
-ul.cards[data-action="interactive"][data-filter="desaturated"] > li:hover img {
-  filter: saturate(100%);
-}
-
-/* interactive card */
-ul.cards[data-action="interactive"] > li {
-  box-shadow: var(--card-shadow);
-  cursor: pointer;
-  transition: all var(--transition) ease-out;
-  justify-content: start;
-  position: relative;
-}
-
-ul.cards[data-action="interactive"] article a::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1; /* for Chrome and Edge to allow anchor over the img */
-}
-
-ul.cards[data-action="interactive"] > li:focus-within {
-  outline: var(--outline-size) solid var(--outline-color);
-  outline-offset: var(--outline-offset, var(--outline-size));
-}
-
-ul.cards[data-action="interactive"] > li:focus-within a:focus {
-  outline: none;
-}
-
-ul.cards[data-action="interactive"] > li:focus-within img {
-  filter: saturate(100%);
-}
-
-ul.cards[data-action="interactive"] img {
-  margin-block-start: unset;
-}
-
-ul.cards[data-action="interactive"] > li > a {
-  display: block;
-}
-
-ul.cards[data-action="interactive"] > li:hover,
-ul.cards[data-action="interactive"] > li:focus {
-  transform: scale(var(--scale));
-  box-shadow: var(--card-shadow-focus);
-}
-
-ul.cards[data-action="interactive"] > li:hover a:not(.action),
-ul.cards[data-action="interactive"] > li:focus a:not(.action) {
-  color: var(--brand-hover-dark);
-  text-decoration: underline;
-}
-
-ul.cards[data-action="interactive"] > li:active {
-  transform: scale(var(--scale));
-}
-
-/* dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --card-shadow: 0.2rem 0.2rem 0.5em 0 rgba(255, 255, 255, 0.25);
-    --card-shadow-focus: 0.1rem 0.1rem 0.25em 0 rgba(255, 255, 255, 0.1);
-    --outline-color: var(--text-white);
+  &:has(> li:only-child) {
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   }
 
-  ul.cards .action {
-    box-shadow: var(--shadow);
-  }
-
-  ul.cards .action:focus-visible {
-    outline-color: var(--white);
-  }
-
-  ul.cards[data-action="interactive"] > li:hover a:not(.action),
-  ul.cards[data-action="interactive"] > li:focus a:not(.action) {
-    color: var(--brand-hover-light);
-  }
-}
-
-/* Card in mobile */
-@container (max-width: 34rem) {
-  ul.cards[data-orientation^="media"] > li,
-  ul.cards[data-orientation="media-end"] > li {
+  > li {
+    margin-block: 0;
+    border: 1px solid var(--utility-light-grey);
+    border-radius: var(--border-radius);
+    list-style: none;
+    display: flex;
     flex-direction: column;
+
+    img {
+      aspect-ratio: 3 / 2;
+      max-inline-size: 100%;
+      block-size: auto;
+      border-start-start-radius: var(--border-radius);
+      border-start-end-radius: var(--border-radius);
+      object-fit: cover;
+      object-position: center;
+      margin: unset;
+      order: 1;
+
+      &[data-image-fit="contain"] {
+        object-fit: contain;
+      }
+    }
+
+    article {
+      padding: var(--space-unit-x3);
+      margin: 0;
+      order: 2;
+      display: inline-flex;
+      flex-direction: column;
+      height: 100%;
+
+      .action {
+        background: var(--brand-secondary);
+        color: white;
+        display: inline-block;
+        margin-top: auto;
+        padding-block: var(--space-unit-1);
+        padding-inline: var(--space-unit-x3);
+        border-radius: calc(var(--border-radius) * 1.5);
+        box-shadow: var(--card-shadow);
+        order: 3;
+        transition: all var(--transition) ease;
+        text-decoration: none;
+        width: fit-content;
+
+        &:hover,
+        &:focus {
+          box-shadow: var(--card-shadow-focus);
+          background: oklch(40% 0.12 234);
+          transform: scale(var(--scale));
+          color: var(--text-white);
+        }
+
+        &:active {
+          transform: scale(var(--scale));
+          background: var(--brand-primary);
+        }
+
+        &:focus-visible {
+          outline: var(--outline-size) solid var(--action-outline-color);
+          outline-offset: var(--outline-offset, var(--outline-size));
+        }
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 700;
+      font-size: var(--text-size-4);
+      line-height: var(--text-lineheight-medium);
+      margin-top: 0;
+
+      > a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      max-width: unset;
+    }
   }
 
-  ul.cards[data-orientation^="media"] > li img,
-  ul.cards[data-orientation="media-end"] > li img {
-    max-block-size: 100%;
-    max-inline-size: 100%;
-    border-start-start-radius: var(--border-radius);
-    border-start-end-radius: var(--border-radius);
-    border-end-start-radius: 0;
-    border-end-end-radius: 0;
+  &[data-orientation^="media"] > li {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    img {
+      border-start-start-radius: var(--border-radius);
+      border-start-end-radius: 0;
+      border-end-start-radius: var(--border-radius);
+      border-end-end-radius: 0;
+      max-block-size: 100%;
+      max-inline-size: 33%;
+    }
+  }
+
+  &[data-orientation="media-end"] > li {
+    flex-direction: row-reverse;
+
+    img {
+      border-start-start-radius: 0;
+      border-start-end-radius: var(--border-radius);
+      border-end-start-radius: 0;
+      border-end-end-radius: var(--border-radius);
+    }
+
+    article {
+      flex-grow: 2;
+    }
+  }
+
+  &[data-filter="desaturated"] li img {
+    filter: saturate(20%);
+  }
+
+  &[data-action="interactive"] {
+    > li {
+      box-shadow: var(--card-shadow);
+      cursor: pointer;
+      transition: all var(--transition) ease-out;
+      justify-content: start;
+      position: relative;
+
+      &:focus-within {
+        outline: var(--outline-size) solid var(--outline-color);
+        outline-offset: var(--outline-offset, var(--outline-size));
+
+        a:focus {
+          outline: none;
+        }
+
+        img {
+          filter: saturate(100%);
+        }
+      }
+
+      > a {
+        display: block;
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale(var(--scale));
+        box-shadow: var(--card-shadow-focus);
+
+        a:not(.action) {
+          color: var(--brand-hover-dark);
+          text-decoration: underline;
+        }
+      }
+
+      &:active {
+        transform: scale(var(--scale));
+      }
+    }
+
+    img {
+      margin-block-start: unset;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --card-shadow: 0.2rem 0.2rem 0.5em 0 rgba(255, 255, 255, 0.25);
+      --card-shadow-focus: 0.1rem 0.1rem 0.25em 0 rgba(255, 255, 255, 0.1);
+      --outline-color: var(--text-white);
+    }
+
+    .action {
+      box-shadow: var(--shadow);
+
+      &:focus-visible {
+        outline-color: var(--white);
+      }
+    }
+
+    &[data-action="interactive"] > li:hover a:not(.action),
+    &[data-action="interactive"] > li:focus a:not(.action) {
+      color: var(--brand-hover-light);
+    }
+  }
+
+  @container (max-width: 34rem) {
+    &[data-orientation^="media"] > li,
+    &[data-orientation="media-end"] > li {
+      flex-direction: column;
+
+      img {
+        max-block-size: 100%;
+        max-inline-size: 100%;
+        border-start-start-radius: var(--border-radius);
+        border-start-end-radius: var(--border-radius);
+        border-end-start-radius: 0;
+        border-end-end-radius: 0;
+      }
+    }
   }
 }
