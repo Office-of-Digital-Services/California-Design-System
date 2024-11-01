@@ -25,6 +25,7 @@ ul.cards {
     list-style: none;
     display: flex;
     flex-direction: column;
+    max-width: unset;
 
     img {
       aspect-ratio: 3 / 2;
@@ -98,10 +99,6 @@ ul.cards {
         color: inherit;
         text-decoration: none;
       }
-    }
-
-    p {
-      max-width: unset;
     }
   }
 
