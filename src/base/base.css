@@ -1,3 +1,13 @@
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--main-dark);
+    --text-color: var(--text-white);
+    --link-color: var(--hyperlink-dark);
+    --active-link-color: var(--hyperlink-activated-dark);
+  }
+}
+
 /* Global reset */
 * {
   box-sizing: border-box;
@@ -394,14 +404,4 @@ blockquote {
   padding: 0 !important;
   white-space: nowrap !important;
   border: 0 !important;
-}
-
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: var(--main-dark);
-    --text-color: var(--text-white);
-    --link-color: var(--hyperlink-dark);
-    --active-link-color: var(--hyperlink-activated-dark);
-  }
 }
