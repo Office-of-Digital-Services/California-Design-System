@@ -2,8 +2,7 @@
 /* Light theme is default */
 :root {
   --search-icon: var(--search-icon-dark);
-  --cagov-icon: var(--cagov-icon-dark);
-  --cagov-logo: var(--cagov-logo-dark);
+  --service-menu-icon: var(--service-menu-icon-dark);
   --login-icon: var(--login-icon-dark);
   --header-bg: var(--white);
   --navigation-drawer-bg: var(--brand-primary);
@@ -71,7 +70,7 @@ header .cagov-global-menu-toggle-cancel {
   width: 62px;
   min-height: 42px;
   min-width: 62px;
-  right: 0;
+  right: var(--space-unit-x2);
 }
 
 header .main-navigation-button:hover {
@@ -430,7 +429,7 @@ header .search-container-desktop form:not(:focus-within) button.search-submit {
 header .cagov-global-menu-toggle {
   border: none;
   background: transparent;
-  background-image: var(--cagov-icon);
+  background-image: var(--service-menu-icon);
   background-repeat: no-repeat;
   background-size: clamp(2rem, 0.7143rem + 1.9048vw, 3rem)
     clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
@@ -599,16 +598,7 @@ header .logo-image.no-overflow {
     display: none;
   }
   header .cagov-global-menu-toggle {
-    background-image: var(--cagov-logo);
-    background-size: clamp(3.6rem, 0.7143rem + 1.9048vw, 5.5rem)
-      clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
-    height: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
-    width: clamp(3.6rem, 0.7143rem + 1.9048vw, 5.5rem);
     margin-inline-start: clamp(0rem, -11.5714rem + 17.1429vw, 10rem);
-  }
-
-  header .cagov-global-menu-toggle .close-x {
-    left: var(--space-unit-1);
   }
 }
 
@@ -616,8 +606,7 @@ header .logo-image.no-overflow {
 @media (prefers-color-scheme: dark) {
   :root {
     --search-icon: var(--search-icon-light);
-    --cagov-icon: var(--cagov-icon-light);
-    --cagov-logo: var(--cagov-logo-light);
+    --service-menu-icon: var(--service-menu-icon-light);
     --login-icon: var(--login-icon-light);
     --header-bg: var(--utility-dark);
     --navigation-drawer-bg: var(--banner-dark);
@@ -692,12 +681,7 @@ header .theme-light .login-button {
   }
 }
 header .theme-light .cagov-global-menu-toggle {
-  background-image: var(--cagov-icon-dark);
-}
-@media (width >= 1080px) {
-  header .theme-light .cagov-global-menu-toggle {
-    background-image: var(--cagov-logo-dark);
-  }
+  background-image: var(--service-menu-icon-dark);
 }
 
 /* theme dark header */
@@ -756,10 +740,5 @@ header .theme-dark .login-button {
   }
 }
 header .theme-dark .cagov-global-menu-toggle {
-  background-image: var(--cagov-icon-light);
-}
-@media (width >= 1080px) {
-  header .theme-dark .cagov-global-menu-toggle {
-    background-image: var(--cagov-logo-light);
-  }
+  background-image: var(--service-menu-icon-light);
 }
