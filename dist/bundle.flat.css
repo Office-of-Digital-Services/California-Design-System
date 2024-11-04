@@ -705,7 +705,7 @@ header .search-container-desktop form input.search-input:autofill {
 }
 
 header .search-container-mobile form input.search-input:autofill {
-  box-shadow: 0 0 0 1000px var(--white) inset;
+  box-shadow: 0 0 0 1000px var(--navigation-drawer-bg) inset;
   -webkit-text-fill-color: var(--white);
 }
 
@@ -791,7 +791,7 @@ header .search-container-desktop form:not(:focus-within) input.search-input {
   padding: 0;
 }
 
-header .search-container-desktop form:not(:focus-within) input.search-input:autofill, header .search-container-mobile form:not(:focus-within) input.search-input:autofill {
+header .search-container-desktop form:not(:focus-within) input.search-input:autofill {
   -webkit-text-fill-color: var(--header-bg);
 }
 
