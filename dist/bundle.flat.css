@@ -1151,7 +1151,6 @@ ul.cards {
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   padding: 0;
   display: grid;
-  container-type: inline-size;
 }
 
 ul.cards:has( > li:only-child) {

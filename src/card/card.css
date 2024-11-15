@@ -15,7 +15,6 @@
 
 ul.cards {
   padding: 0;
-  container-type: inline-size;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-gap: var(--columns-gap);
