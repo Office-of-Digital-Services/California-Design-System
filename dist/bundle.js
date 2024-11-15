@@ -20,6 +20,12 @@
     };
     webP.src = "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
   });
+  var supportsContainerQueries = "container" in document.documentElement.style;
+  if (!supportsContainerQueries) {
+    const containerScript = document.createElement("script");
+    containerScript.src = "https://cdn.jsdelivr.net/npm/container-query-polyfill@1/dist/container-query-polyfill.modern.js";
+    document.head.append(containerScript);
+  }
   window.addEventListener("load", () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   });
