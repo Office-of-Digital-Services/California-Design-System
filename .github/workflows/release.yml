@@ -57,7 +57,7 @@ jobs:
             dist/bundle.flat.css
             dist/bundle.js
       - name: Publish NPM package
-        run: npm publish
+        run: npm publish --access public
         if: ${{ steps.release.outputs.release_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
