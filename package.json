@@ -1,7 +1,8 @@
 {
-  "name": "eureka",
+  "name": "@cagovweb/design-system",
   "version": "1.0.5",
   "type": "module",
+  "main": "dist/bundle.js",
   "description": "This system makes it easy to build digital services that meet the needs of Californians.",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",

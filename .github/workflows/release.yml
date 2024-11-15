@@ -1,60 +1,65 @@
-name: Create new release
+name: Release Please
+
 on:
-  workflow_dispatch:
-    inputs:
-      release_type:
-        description: "Semantic versioning release type"
-        required: true
-        default: "patch"
-        type: choice
-        options:
-          - patch
-          - minor
-          - major
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  build_release:
-    name: build_release
+  release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set git identity
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: googleapis/release-please-action@v4
+        id: release
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+      - name: Check out repo
+        uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          registry-url: 'https://registry.npmjs.org'
           node-version: 20.x
-
       - name: Build files
+        if: ${{ steps.release.outputs.release_created }}
         run: |
           npm install
           npm run build:bundles
-
-      # Increments the version number, creates git commit, and git tag.
-      - name: Increment version
+      - name: Git-tag major and minor versions
+        if: ${{ steps.release.outputs.release_created }}
         run: |
-          npm version ${{inputs.release_type}}
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-
-      - name: Get new package version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-
-      - name: Release
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/Office-of-Digital-Services/California-Design-System.git"
+          git tag -d v${{ steps.release.outputs.major }} || true
+          git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
+          git push origin :v${{ steps.release.outputs.major }} || true
+          git push origin :v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
+          git tag -a v${{ steps.release.outputs.major }} -m "Release v${{ steps.release.outputs.major }}"
+          git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
+          git push origin v${{ steps.release.outputs.major }}
+          git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+      - name: Upload release artifacts
         uses: softprops/action-gh-release@v2
+        if: ${{ steps.release.outputs.release_created }}
         with:
-          tag_name: v${{steps.package-version.outputs.current-version}}
+          tag_name: ${{ steps.release.outputs.tag_name }}
           files: |
             dist/bundle.css
             dist/bundle.min.css
             dist/bundle.flat.css
             dist/bundle.js
+      - name: Publish NPM package
+        run: npm publish --access public
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+
+      # Upload to CDN here when ready.
