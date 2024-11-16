@@ -6,12 +6,25 @@ This is the Base Team repository for the upcoming California Design System. We c
 
 ## Grab it
 
-There are currently two ways to grab the latest code from this repository.
+There are currently three ways to grab the latest code from this repository. Take your pick.
 
 - Check out the `dist` folder.
 - Go to the [Releases](https://github.com/Office-of-Digital-Services/California-Design-System/releases) section of this repository.
+- Fetch the [NPM package](https://www.npmjs.com/package/@cagovweb/design-system).
 
-We plan to support NPM- and CDN-based download options in the future.
+We plan to support CDN-based download options in the future.
+
+### Install from NPM
+
+From your JavaScript project folder, run the following.
+
+```bash
+npm install @cagovweb/design-system
+```
+
+For now, the files will be available in `node_modules/@cagovweb/design-system/dist`. 
+
+> We'll make this more conventient as we learn more about how people want to consume this code from the NPM package.
 
 ## Source
 
