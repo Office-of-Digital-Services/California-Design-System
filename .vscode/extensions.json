@@ -1,8 +1,5 @@
 {
  "recommendations": [
-  "dbaeumer.vscode-eslint",
-  "esbenp.prettier-vscode",
-  "eseom.nunjucks-template",
-  "tombonnike.vscode-status-bar-format-toggle"
+  "biomejs.biome"
  ]
 }

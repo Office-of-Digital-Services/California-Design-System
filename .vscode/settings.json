@@ -1,20 +1,19 @@
 {
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "prettier.documentSelectors": ["**/*.njk", "**/web.config"],
   "emmet.includeLanguages": {
     "njk": "html"
   },
   "formattingToggle.affects": ["editor.formatOnSave"],
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }
