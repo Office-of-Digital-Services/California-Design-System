@@ -1,6 +1,6 @@
 import cssBuilder from "./tools/bundlers/cssBuilder.js";
 import jsBuilder from "./tools/bundlers/jsBuilder.js";
-import path from "path";
+import path from "node:path";
 
 let firstBuild = true;
 const cssBuildPath = "_site/css/bundle.css";
@@ -13,7 +13,7 @@ export default async function (eleventyConfig) {
      * @param {string} content
      * @param {string} outputPath
      */
-    async function (content, outputPath) {
+    async (content, outputPath) => {
       const basePath = "_site"; // Adjust this if your output directory is different
       const relativePath = path
         .relative(path.dirname(outputPath), path.dirname(basePath))
@@ -37,14 +37,14 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.on("eleventy.beforeWatch", async (changedFiles) => {
     // During development changes, only reload the bundles that need reloading.
-    await changedFiles.forEach(async (changedFile) => {
+    for (const changedFile of changedFiles) {
       if (changedFile.endsWith(".css")) {
         await cssBuilder(cssBuildPath);
       }
       if (changedFile.endsWith(".js")) {
         await jsBuilder(jsBuildPath);
       }
-    });
+    }
   });
 
   eleventyConfig.addGlobalData("layout", "base");
