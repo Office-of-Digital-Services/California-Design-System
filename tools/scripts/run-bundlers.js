@@ -1,9 +1,7 @@
 import cssBuilder from "../bundlers/cssBuilder.js";
-import mincssBuilder from "../bundlers/mincssBuilder.js";
-import flatcssBuilder from "../bundlers/flatcssBuilder.js";
 import jsBuilder from "../bundlers/jsBuilder.js";
 
 await cssBuilder("dist/bundle.css");
-await mincssBuilder("dist/bundle.min.css");
-await flatcssBuilder("dist/bundle.flat.css");
+await cssBuilder("dist/bundle.min.css", { minify: true });
 await jsBuilder("dist/bundle.js");
+await jsBuilder("dist/bundle.min.js", { minify: true });

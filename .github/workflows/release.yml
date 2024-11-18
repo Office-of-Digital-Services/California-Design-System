@@ -54,8 +54,8 @@ jobs:
           files: |
             dist/bundle.css
             dist/bundle.min.css
-            dist/bundle.flat.css
             dist/bundle.js
+            dist/bundle.min.js
       - name: Publish NPM package
         run: npm publish --access public
         if: ${{ steps.release.outputs.release_created }}
