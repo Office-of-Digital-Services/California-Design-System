@@ -24,7 +24,7 @@ npm install @cagovweb/design-system
 
 For now, the files will be available in `node_modules/@cagovweb/design-system/dist`. 
 
-> We'll make this more conventient as we learn more about how people want to consume this code from the NPM package.
+> We'll make this more convenient as we learn more about how people want to consume this code from the NPM package.
 
 ## Source
 
