@@ -1,3 +1,10 @@
+/*
+* California Design System
+* https://github.com/Office-of-Digital-Services/California-Design-System
+* 
+* Version: 1.1.0
+* Release Notes: https://github.com/Office-of-Digital-Services/California-Design-System/releases/tag/v1.1.0
+*/
 (() => {
   // src/base/base.js
   window.addEventListener("DOMContentLoaded", () => {

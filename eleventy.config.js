@@ -1,26 +1,10 @@
-import mincssBuilder from "./tools/bundlers/mincssBuilder.js";
-import flatcssBuilder from "./tools/bundlers/flatcssBuilder.js";
+import cssBuilder from "./tools/bundlers/cssBuilder.js";
 import jsBuilder from "./tools/bundlers/jsBuilder.js";
 import path from "path";
-import postcss from "postcss";
-import postcssNested from "postcss-nested";
 
 let firstBuild = true;
-const mincssBuildPath = "_site/css/bundle.min.css";
-const flatcssBuildPath = "_site/css/bundle.flat.css";
+const cssBuildPath = "_site/css/bundle.css";
 const jsBuildPath = "_site/js/bundle.js";
-
-/**
- * @param {string} content
- */
-const minifyCSS = (content) =>
-  content
-    .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, "")
-    .replace(/ {2,}/g, " ")
-    .replace(/ ([{:}]) /g, "$1")
-    .replace(/([{:}]) /g, "$1")
-    .replace(/([;,]) /g, "$1")
-    .replace(/ !/g, "!");
 
 export default async function (eleventyConfig) {
   eleventyConfig.addTransform(
@@ -44,8 +28,7 @@ export default async function (eleventyConfig) {
     const buildPromises = [];
     // Only build all of the bundle files during first run, not on every change.
     if (firstBuild || runMode !== "serve") {
-      buildPromises.push(mincssBuilder(mincssBuildPath));
-      buildPromises.push(flatcssBuilder(flatcssBuildPath));
+      buildPromises.push(cssBuilder(cssBuildPath));
       buildPromises.push(jsBuilder(jsBuildPath));
       firstBuild = false;
     }
@@ -56,8 +39,7 @@ export default async function (eleventyConfig) {
     // During development changes, only reload the bundles that need reloading.
     await changedFiles.forEach(async (changedFile) => {
       if (changedFile.endsWith(".css")) {
-        await mincssBuilder(mincssBuildPath);
-        await flatcssBuilder(flatcssBuildPath);
+        await cssBuilder(cssBuildPath);
       }
       if (changedFile.endsWith(".js")) {
         await jsBuilder(jsBuildPath);
@@ -80,14 +62,6 @@ export default async function (eleventyConfig) {
   // Ignores
   eleventyConfig.ignores.add("*.md"); // Repo root markdowns
   eleventyConfig.ignores.add("*.js"); // Repo root configs
-
-  // For making a non-nested fallback
-  eleventyConfig.addFilter("flattenCSS", async (code) => {
-    const result = await postcss([postcssNested]).process(code, {
-      from: undefined,
-    });
-    return result.css;
-  });
 
   return {
     // allow nunjucks templating in .html files
