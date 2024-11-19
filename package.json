@@ -7,7 +7,7 @@
 	"scripts": {
 		"start": "npx @11ty/eleventy --serve",
 		"site": "npx @11ty/eleventy",
-		"bundle": "node tools/scripts/run-bundlers.js",
+		"bundle": "node tools/bundlers/run-bundlers.js",
 		"format": "npx @biomejs/biome format --write",
 		"lint": "npx @biomejs/biome lint --write",
 		"check": "npx @biomejs/biome check --write"

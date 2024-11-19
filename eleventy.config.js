@@ -1,5 +1,5 @@
-import cssBuilder from "./tools/bundlers/cssBuilder.js";
-import jsBuilder from "./tools/bundlers/jsBuilder.js";
+import cssBuilder from "./tools/bundlers/css-builder.js";
+import jsBuilder from "./tools/bundlers/js-builder.js";
 
 let firstBuild = true;
 const cssBuildPath = "_site/css/bundle.css";
@@ -27,11 +27,10 @@ export default async function (eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addGlobalData("layout", "base");
+	eleventyConfig.addGlobalData("layout", "_layout");
 	eleventyConfig.addPassthroughCopy({
 		"static/images": "images",
 		"static/images/favicon.ico": "/favicon.ico",
-		"tools/11ty/root": "/",
 	});
 
 	eleventyConfig.addWatchTarget("./src");
@@ -51,7 +50,7 @@ export default async function (eleventyConfig) {
 			// site content pages
 			input: ".",
 			// site structure pages (path is relative to input directory)
-			includes: "tools/11ty/_includes",
+			includes: "tools/11ty",
 			// site final output directory
 			output: "_site",
 		},
