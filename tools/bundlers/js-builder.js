@@ -1,7 +1,6 @@
 import { promises as fs } from "node:fs";
-import path from "node:path";
 import chalk from "chalk";
-import { Features, bundle } from "lightningcss";
+import esbuild from "esbuild";
 
 const packageData = await fs
 	.readFile("package.json")
@@ -16,21 +15,20 @@ const banner = `/*
 */`;
 
 export default async function (distPath, { minify = false } = {}) {
-	const srcPath = "src/_bundles/bundle.css";
-
-	// https://lightningcss.dev/bundling.html
-	const { code, map } = bundle({
-		filename: srcPath,
-		include: Features.Nesting,
-		minify,
-	});
-
-	const fileData = `${banner}\n${code}`;
+	const srcPath = "src/js/_bundle.js";
 
 	console.log(
-		`${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (CSS)`)}`,
+		`${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (JavaScript)`)}`,
 	);
 
-	await fs.mkdir(path.dirname(distPath), { recursive: true });
-	return fs.writeFile(distPath, fileData);
+	// https://esbuild.github.io/api/#bundle
+	return esbuild.build({
+		entryPoints: [srcPath],
+		bundle: true,
+		banner: {
+			js: banner,
+		},
+		outfile: distPath,
+		minify,
+	});
 }

@@ -31,7 +31,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         run: |
           npm install
-          npm run build:bundles
+          npm run bundle
       - name: Git-tag major and minor versions
         if: ${{ steps.release.outputs.release_created }}
         run: |

@@ -6,9 +6,8 @@ This is the Base Team repository for the upcoming California Design System. We c
 
 ## Grab it
 
-There are currently three ways to grab the latest code from this repository. Take your pick.
+There are currently two ways to grab the latest code from this repository. Take your pick.
 
-- Check out the `dist` folder.
 - Go to the [Releases](https://github.com/Office-of-Digital-Services/California-Design-System/releases) section of this repository.
 - Fetch the [NPM package](https://www.npmjs.com/package/@cagovweb/design-system).
 
@@ -28,13 +27,11 @@ For now, the files will be available in `node_modules/@cagovweb/design-system/di
 
 ## Source
 
-All CSS and JavaScript source can be found in the `src` subfolders.
-
-Bundle files are managed from `src/_bundles`.
+All CSS and JavaScript source can be found in their respective `src` subfolders.
 
 ## Pages
 
-The `pages` folder is a place to bring all of the components together into full demos.
+The `pages` folder is a place to test your work.
 
 ## Development
 
@@ -47,18 +44,16 @@ The repository currently uses [11ty](https://11ty.dev) for page previews. To run
 
 ### Build the 11ty site
 
-To build the 11ty site files, run `npm run build:site`.
+To build the 11ty site files, run `npm run site`.
+
+Files will be written to the `_site` folder.
 
 > This is useful for uploading to GitHub Pages.
 
 ### Build standalone bundle files
 
-To build the CSS/JS bundle files, run `npm run build:bundles`.
+To build the CSS/JS bundle files, run `npm run bundle`. 
+
+Files will be written to the `dist` folder.
 
 > This is useful for packaging activities, such as GitHub Releases, NPM, and CDN.
-
-### Add a new component
-
-To quickly scaffold a new component, run the `npm run new` command.
-
-> You'll need to wire your new component's CSS into the bundle file at `src/_bundles/bundle.css`.
