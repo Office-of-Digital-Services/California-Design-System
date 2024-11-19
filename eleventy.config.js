@@ -1,3 +1,5 @@
+
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import cssBuilder from "./tools/bundlers/css-builder.js";
 import jsBuilder from "./tools/bundlers/js-builder.js";
 
@@ -27,7 +29,9 @@ export default async function (eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addGlobalData("layout", "_layout");
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+	eleventyConfig.addGlobalData("layout", "layout");
 	eleventyConfig.addPassthroughCopy({
 		"static/images": "images",
 		"static/images/favicon.ico": "/favicon.ico",
@@ -50,7 +54,7 @@ export default async function (eleventyConfig) {
 			// site content pages
 			input: ".",
 			// site structure pages (path is relative to input directory)
-			includes: "tools/11ty",
+			includes: "tools/11ty/_includes",
 			// site final output directory
 			output: "_site",
 		},
