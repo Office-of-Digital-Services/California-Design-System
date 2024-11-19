@@ -1,8 +1,8 @@
 ---
 permalink: /
 ---
-<h1>Demo pages</h1>
-<p>Use demo pages to combine parts and test the system as a whole.</p>
+<h1>Design System Dev</h1>
+<p>Use demo pages to test the system, in part and in full.</p>
 <p>Demo pages are located in the <em>pages</em> folder.</p>
 <ul>
 {% for _page in pages %}
@@ -11,15 +11,3 @@ permalink: /
   </li>
 {% endfor %}
 </ul>
-
-<h1>Component pages</h1>
-<p>Use component pages to test parts of the system in isolation.</p>
-<p>Component pages are located in the <em>src</em> subfolders.
-<ul>
-{% for part in parts %}
-  <li>
-    <a href="{{part.href}}">[{{part.group}}] {{part.name}}</a>
-  </li>
-{% endfor %}
-</ul>
-
