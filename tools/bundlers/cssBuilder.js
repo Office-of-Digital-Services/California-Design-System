@@ -16,7 +16,7 @@ const banner = `/*
 */`;
 
 export default async function (distPath, { minify = false } = {}) {
-	const srcPath = "src/_bundles/bundle.css";
+	const srcPath = "src/css/_bundle.css";
 
 	// https://lightningcss.dev/bundling.html
 	const { code, map } = bundle({

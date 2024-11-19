@@ -15,7 +15,7 @@ const banner = `/*
 */`;
 
 export default async function (distPath, { minify = false } = {}) {
-	const srcPath = "src/_bundles/bundle.js";
+	const srcPath = "src/js/_bundle.js";
 
 	console.log(
 		`${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (JavaScript)`)}`,
