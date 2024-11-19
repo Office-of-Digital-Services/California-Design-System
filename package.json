@@ -6,8 +6,8 @@
 	"description": "This system makes it easy to build digital services that meet the needs of Californians.",
 	"scripts": {
 		"start": "npx @11ty/eleventy --serve",
-		"build:site": "npx @11ty/eleventy",
-		"build:bundles": "node tools/scripts/run-bundlers.js",
+		"site": "npx @11ty/eleventy",
+		"bundle": "node tools/scripts/run-bundlers.js",
 		"format": "npx @biomejs/biome format --write",
 		"lint": "npx @biomejs/biome lint --write",
 		"check": "npx @biomejs/biome check --write"
