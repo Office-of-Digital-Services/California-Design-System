@@ -21,6 +21,7 @@ export default async () => {
 		});
 
 	return {
+		permalink: "/",
 		pages,
 	};
 };
