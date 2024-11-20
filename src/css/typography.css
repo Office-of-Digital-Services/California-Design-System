@@ -126,3 +126,12 @@ small,
 	line-height: var(--text-lineheight-large);
 	margin-bottom: clamp(1.22rem, 1.2091rem + 0.0499vw, 1.25rem);
 }
+
+code,
+pre {
+	font-family: monospace;
+}
+
+cite {
+	font-style: italic;
+}
