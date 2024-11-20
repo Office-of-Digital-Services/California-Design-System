@@ -11,9 +11,12 @@ body {
 	min-height: 100vh;
 }
 
-/* Simplify working with images. */
+/* Simplify working with media. */
 img,
-picture {
+picture,
+video,
+canvas,
+svg {
 	max-width: 100%;
 	display: block;
 }
@@ -23,8 +26,7 @@ input,
 button,
 textarea,
 select {
-	font-family: inherit;
-	font-size: inherit;
+	font: inherit;
 }
 
 /* No flattened textareas. */
