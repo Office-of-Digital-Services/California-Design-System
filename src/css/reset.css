@@ -1,0 +1,38 @@
+/* Reset box-sizing. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* No dangling footers. */
+body {
+	min-height: 100vh;
+}
+
+/* Simplify working with images. */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons. */
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+/* No flattened textareas. */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* Anchored targets should get some extra vertical margin. */
+:target {
+	scroll-margin-block: 5ex;
+}
