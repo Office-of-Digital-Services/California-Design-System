@@ -84,27 +84,6 @@
 	--space-unit-x8: calc(0.5rem * 8);
 	--space-unit-x16: calc(0.5rem * 16);
 
-	/* typography variables */
-	--font-family: Noto Sans;
-	--text-max-width: 65ch;
-	--ratio: 1.24;
-	--font-size-base: 1rem; /* Adjust font-size-base, default 1rem. */
-	--font-size-base-responsive: calc(var(--font-size-base) + 0.2vw);
-
-	/* font-size scale */
-	--text-size-small: calc(var(--font-size-base-responsive) - 0.1em);
-	--text-size-1: var(--font-size-base-responsive);
-	--text-size-2: calc(var(--text-size-1) * var(--ratio));
-	--text-size-3: calc(var(--text-size-2) * var(--ratio));
-	--text-size-4: calc(var(--text-size-3) * var(--ratio));
-	--text-size-5: calc(var(--text-size-4) * var(--ratio));
-	--text-size-6: calc(var(--text-size-5) * var(--ratio));
-	--text-size-7: calc(var(--text-size-6) * var(--ratio) * var(--ratio));
-	--text-lineheight-base: 1rem;
-	--text-lineheight-small: 1.5;
-	--text-lineheight-medium: 1.619;
-	--text-lineheight-large: 2.619;
-
 	/* shadows */
 	--shadow: 0.2rem 0.2rem 0.5em 0 rgba(0, 0, 0, 0.25);
 	--shadow-focus: 0.1rem 0.1rem 0.25em 0 rgba(0, 0, 0, 0.1);

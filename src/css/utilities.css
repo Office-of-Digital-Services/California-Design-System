@@ -1,0 +1,32 @@
+/* --- Utilities  --- */
+/* spacing */
+.padding-1 {
+	padding: var(--space-unit-x2);
+}
+.padding-2 {
+	padding: var(--space-unit-x4);
+}
+/* colors */
+.background-brand-primary {
+	background-color: var(--brand-primary);
+}
+/* borders */
+/* text */
+.text-align-center {
+	text-align: center;
+}
+.content-align-center {
+	align-items: center;
+}
+/* Accessibility */
+.visually-hidden {
+	position: absolute !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
