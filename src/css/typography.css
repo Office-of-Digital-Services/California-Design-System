@@ -1,0 +1,137 @@
+:root {
+	/* Yes, safe to override. */
+	--font-family: Noto Sans;
+	--text-max-width: 65ch;
+	--ratio: 1.24;
+	--font-size-base: 1rem; /* Adjust font-size-base, default 1rem. */
+	--text-lineheight-base: 1rem;
+	--text-lineheight-small: 1.5;
+	--text-lineheight-medium: 1.619;
+	--text-lineheight-large: 2.619;
+
+	/* No, don't override. */
+	--font-size-base-responsive: calc(var(--font-size-base) + 0.2vw);
+	--text-size-small: calc(var(--font-size-base-responsive) - 0.1em);
+	--text-size-1: var(--font-size-base-responsive);
+	--text-size-2: calc(var(--text-size-1) * var(--ratio));
+	--text-size-3: calc(var(--text-size-2) * var(--ratio));
+	--text-size-4: calc(var(--text-size-3) * var(--ratio));
+	--text-size-5: calc(var(--text-size-4) * var(--ratio));
+	--text-size-6: calc(var(--text-size-5) * var(--ratio));
+	--text-size-7: calc(var(--text-size-6) * var(--ratio) * var(--ratio));
+}
+
+/* Prevent font size inflation. */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body {
+	font-family: var(--font-family), system-ui, -apple-system, "Roboto",
+		"Helvetica Neue", sans-serif;
+	font-size: clamp(1rem, var(--text-size-1), 5rem);
+	letter-spacing: 0.02rem;
+	font-weight: 400;
+	line-height: var(--text-lineheight-base);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+	text-wrap: balance;
+	margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
+}
+
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+	margin-top: clamp(2.2rem, 2.0909rem + 0.499vw, 2.5rem);
+}
+
+p,
+li,
+small,
+blockquote,
+figcaption {
+	max-width: var(--text-max-width);
+	text-wrap: pretty;
+}
+
+h1,
+.h1 {
+	font-weight: 700;
+	font-size: var(--text-size-7);
+	line-height: var(--text-lineheight-medium);
+}
+
+h2,
+.h2 {
+	font-weight: 700;
+	font-size: var(--text-size-6);
+	line-height: var(--text-lineheight-medium);
+}
+
+h3,
+.h3 {
+	font-weight: 700;
+	font-size: var(--text-size-5);
+	line-height: var(--text-lineheight-medium);
+}
+
+h4,
+.h4 {
+	font-weight: 600;
+	font-size: var(--text-size-4);
+	line-height: var(--text-lineheight-medium);
+}
+
+h5,
+.h5 {
+	font-weight: 600;
+	font-size: var(--text-size-3);
+	line-height: var(--text-lineheight-medium);
+}
+
+p,
+li {
+	line-height: var(--text-lineheight-medium);
+	margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
+}
+
+h1 + p,
+.lead {
+	font-size: var(--text-size-3);
+	line-height: var(--text-lineheight-small);
+	margin-bottom: clamp(1.7rem, 1.6363rem + 0.2911vw, 1.875rem);
+}
+
+small,
+.text-small {
+	font-weight: 500;
+	font-size: var(--text-size-small);
+	line-height: var(--text-lineheight-large);
+	margin-bottom: clamp(1.22rem, 1.2091rem + 0.0499vw, 1.25rem);
+}
+
+code,
+pre {
+	font-family: monospace;
+}
+
+cite {
+	font-style: italic;
+}
