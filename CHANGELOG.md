@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.2.0...v1.3.0) (2024-11-21)
+
+
+### Features
+
+* Add CSS reset ([51f4d65](https://github.com/Office-of-Digital-Services/California-Design-System/commit/51f4d659b1430d33e5ee2ae8884bbb3ad74cc92f))
+* Bundle into ZIP file ([9595e44](https://github.com/Office-of-Digital-Services/California-Design-System/commit/9595e44cb819bdd1c39b5e1ec5fd7603a23f0bf6))
+* More elements ([beb5f5e](https://github.com/Office-of-Digital-Services/California-Design-System/commit/beb5f5ea6a8e8e9b32e90022cc4906d4ceadbee3))
+* Prepare files for default elements ([cd3d67e](https://github.com/Office-of-Digital-Services/California-Design-System/commit/cd3d67ede331a5f1346a9e12aab7b4d27da3a540))
+* Skeleton theme and color-scheme toggle ([5985fad](https://github.com/Office-of-Digital-Services/California-Design-System/commit/5985fadf9b5c2b7d75af5388d9ce87a4eb3c1d79))
+
+
+### Bug Fixes
+
+* Github Pages linking ([80a168c](https://github.com/Office-of-Digital-Services/California-Design-System/commit/80a168c8bd510619427f8a08a4d443da9034e14c))
+
 ## [1.2.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.1.0...v1.2.0) (2024-11-19)
 
 
