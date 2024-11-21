@@ -108,8 +108,15 @@ h5,
 
 p,
 li {
-	line-height: var(--text-lineheight-medium);
 	margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
+}
+
+p,
+li,
+dt,
+dd,
+figcaption {
+	line-height: var(--text-lineheight-medium);
 }
 
 h1 + p,
@@ -134,4 +141,11 @@ pre {
 
 cite {
 	font-style: italic;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
 }
