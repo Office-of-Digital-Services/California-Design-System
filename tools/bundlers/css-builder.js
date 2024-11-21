@@ -3,19 +3,15 @@ import path from "node:path";
 import chalk from "chalk";
 import { Features, bundle } from "lightningcss";
 
-const packageData = await fs
-	.readFile("package.json")
-	.then((data) => JSON.parse(data));
-
-const banner = `/*
-* California Design System
-* https://github.com/Office-of-Digital-Services/California-Design-System
-* 
-* Version: ${packageData.version}
-* Release Notes: https://github.com/Office-of-Digital-Services/California-Design-System/releases/tag/v${packageData.version}
-*/`;
-
-export default async function (distPath, { minify = false } = {}) {
+/**
+ * Compiles the CSS bundle to a given path.
+ * @param {string} distPath The output path of the finished CSS file.
+ * @param {Object} options An optional collection of settings.
+ * @param {string} options.banner A commented banner to place at the top of the built file.
+ * @param {boolean} options.minify A toggle to enable minification of the build output.
+ * @returns {Promise}
+ */
+export default async function (distPath, { banner = "", minify = false } = {}) {
 	const srcPath = "src/css/_bundle.css";
 
 	// https://lightningcss.dev/bundling.html

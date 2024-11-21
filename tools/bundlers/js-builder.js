@@ -1,20 +1,15 @@
-import { promises as fs } from "node:fs";
 import chalk from "chalk";
 import esbuild from "esbuild";
 
-const packageData = await fs
-	.readFile("package.json")
-	.then((data) => JSON.parse(data));
-
-const banner = `/*
-* California Design System
-* https://github.com/Office-of-Digital-Services/California-Design-System
-* 
-* Version: ${packageData.version}
-* Release Notes: https://github.com/Office-of-Digital-Services/California-Design-System/releases/tag/v${packageData.version}
-*/`;
-
-export default async function (distPath, { minify = false } = {}) {
+/**
+ * Compiles the Javascript bundle to a given path.
+ * @param {string} distPath The output path of the finished JS file.
+ * @param {Object} options An optional collection of settings.
+ * @param {string} options.banner A commented banner to place at the top of the built file.
+ * @param {boolean} options.minify A toggle to enable minification of the build output.
+ * @returns {Promise}
+ */
+export default async function (distPath, { banner = "", minify = false } = {}) {
 	const srcPath = "src/js/_bundle.js";
 
 	console.log(
