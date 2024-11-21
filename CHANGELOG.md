@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.3.0...v1.3.1) (2024-11-21)
+
+
+### Bug Fixes
+
+* Remedy missing dist folder during bundles ([36cd14a](https://github.com/Office-of-Digital-Services/California-Design-System/commit/36cd14a7323f42dcc1ef2b1b2efa032c8927dedb))
+
 ## [1.3.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.2.0...v1.3.0) (2024-11-21)
 
 
