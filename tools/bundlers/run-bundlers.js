@@ -1,7 +1,33 @@
+import { promises as fs } from "node:fs";
 import cssBuilder from "./css-builder.js";
 import jsBuilder from "./js-builder.js";
+import zipBuilder from "./zip-builder.js";
 
-await cssBuilder("dist/bundle.css");
-await cssBuilder("dist/bundle.min.css", { minify: true });
-await jsBuilder("dist/bundle.js");
-await jsBuilder("dist/bundle.min.js", { minify: true });
+const packageData = await fs
+	.readFile("package.json")
+	.then((data) => JSON.parse(data));
+
+// Common fileName for bundle files.
+const fileSlug = `dist/California-Design-System-${packageData.version}`;
+
+// Banner is placed at the top of bundled CSS and JS files.
+const banner = `/*
+* California Design System
+* https://github.com/Office-of-Digital-Services/California-Design-System
+* 
+* Version: ${packageData.version}
+* Release Notes: https://github.com/Office-of-Digital-Services/California-Design-System/releases/tag/v${packageData.version}
+*/`;
+
+// Delete old build files.
+await fs.rm("dist", { recursive: true });
+await fs.mkdir("dist");
+
+// Build all files first.
+await cssBuilder(`${fileSlug}.css`, { banner });
+await cssBuilder(`${fileSlug}.min.css`, { banner, minify: true });
+await jsBuilder(`${fileSlug}.js`, { banner });
+await jsBuilder(`${fileSlug}.min.js`, { banner, minify: true });
+
+// Then compile builds into the zip.
+await zipBuilder("dist", `${fileSlug}.zip`);
