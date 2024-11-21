@@ -20,7 +20,7 @@ const banner = `/*
 */`;
 
 // Delete old build files.
-await fs.rm("dist", { recursive: true });
+await fs.rm("dist", { recursive: true, force: true });
 await fs.mkdir("dist");
 
 // Build all files first.
