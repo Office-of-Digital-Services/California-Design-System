@@ -8,7 +8,7 @@ const packageData = await fs
 	.then((data) => JSON.parse(data));
 
 // Common fileName for bundle files.
-const fileSlug = `dist/California-Design-System-${packageData.version}`;
+const fileSlug = "dist/California-Design-System";
 
 // Banner is placed at the top of bundled CSS and JS files.
 const banner = `/*
@@ -30,4 +30,4 @@ await jsBuilder(`${fileSlug}.js`, { banner });
 await jsBuilder(`${fileSlug}.min.js`, { banner, minify: true });
 
 // Then compile builds into the zip.
-await zipBuilder("dist", `${fileSlug}.zip`);
+await zipBuilder("dist", `${fileSlug}-${packageData.version}.zip`);
