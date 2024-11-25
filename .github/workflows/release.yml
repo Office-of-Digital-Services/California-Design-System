@@ -52,10 +52,10 @@ jobs:
         with:
           tag_name: ${{ steps.release.outputs.tag_name }}
           files: |
-            dist/California-Design-System-${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.css
-            dist/California-Design-System-${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.min.css
-            dist/California-Design-System-${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.js
-            dist/California-Design-System-${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.min.js
+            dist/California-Design-System.css
+            dist/California-Design-System.min.css
+            dist/California-Design-System.js
+            dist/California-Design-System.min.js
             dist/California-Design-System-${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.zip
       - name: Publish NPM package
         run: npm publish --access public
