@@ -94,6 +94,28 @@ a {
 	}
 }
 
+abbr {
+	font-weight: 700;
+}
+
+del {
+	background-color: lightcoral;
+}
+
+ins {
+	background-color: lightgreen;
+}
+
+kbd {
+	border: .125rem solid var(--text-color);
+	border-radius: .25rem;
+	padding: .25rem;
+}
+
+mark {
+	background-color: lightyellow;
+}
+
 :target {
 	scroll-margin-block: 5ex;
 }
@@ -101,6 +123,64 @@ a {
 /*
  * Forms
  */
+
+/* Default to display:block for most inputs. */
+label,
+input:not([type="radio"], [type="checkbox"]),
+textarea,
+select {
+	display: block;
+}
+
+/* Increase width for some inputs. */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+textarea {
+	inline-size: 100%;
+	max-inline-size: var(--text-max-width);
+}
+
+label {
+	/* When a label is followed by an input, add small margin between. */
+	&:has(+ input:not([type="radio"], [type="checkbox"])),
+	&:has(+ textarea),
+	&:has(+ select) {
+		margin-block: 1rem .25rem;
+	}
+
+	/* When an input is preceded by a label, add margin after the pair. */
+	& + input:not([type="radio"], [type="checkbox"]),
+	& + textarea,
+	& + select {
+		margin-block: .25rem 1rem;
+	}
+}
+
+fieldset {
+	margin-block: 1rem;
+	border: none;
+	padding: 0;
+}
+
+legend {
+	margin-block-end: .25rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: inline;
+}
+
+:is(input[type="radio"], input[type="checkbox"]) + label {
+	display: inline;
+
+	&:after {
+		display: block;
+		content: "\A";
+	}
+}
 
 /* No flattened textareas. */
 textarea:not([rows]) {
@@ -118,4 +198,44 @@ canvas,
 svg {
 	max-width: 100%;
 	display: block;
+}
+
+/* Tables */
+
+table {
+	border-collapse: collapse;
+	border: .25rem solid var(--text-color);
+}
+
+caption {
+	caption-side: bottom;
+	padding: 1rem 0;
+	font-style: italic;
+	text-align: left;
+}
+
+th,
+td {
+	border: .125rem solid var(--text-color);
+	padding: 1rem;
+}
+
+/* Interactive */
+
+details {
+	border: .125rem solid var(--text-color);
+	padding: 0;
+
+	&[open] summary {
+		margin-block-end: 1rem;
+		border-block-end: .125rem solid var(--text-color);
+	}
+
+	&[open] > :not(summary) {
+		margin-inline: 1rem;
+	}
+}
+
+summary {
+	padding: 1rem;
 }

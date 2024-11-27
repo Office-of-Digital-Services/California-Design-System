@@ -48,4 +48,194 @@
 		<li>Pay money for said condiments.</li>
 		<li>Take condiments home.</li>
 	</ol>
+
+	<h2>Editor's marks</h2>
+
+	<p>
+		<del>This text should be deleted.</del> <ins>This text should be inserted.</ins> <mark>This text should be
+			highlighted.</mark>
+	</p>
+
+	<h2>Input instructions</h2>
+
+	<p>Please press <kbd>Ctrl</kbd> + <kbd>R</kbd> to reload.</p>
+
+	<h2>Abbreviations</h2>
+
+	<p>We look to <abbr>CDT</abbr> (California Department of Technology) for guidance on digital security.</p>
+
+	<h2>Forms</h2>
+
+	<form action="" method="get">
+		<label for="text">Enter some text:</label>
+		<input type="text" name="text" id="text" required />
+
+		<label for="textarea">Enter more text:</label>
+		<textarea name="textarea" id="textarea">Replace this default text...</textarea>
+
+		<label for="email">Enter your email:</label>
+		<input type="email" name="email" id="email" required />
+
+		<label for="password">Enter your password:</label>
+		<input type="password" name="password" id="password" required />
+
+		<label for="date">Pick a date: </label>
+		<input type="date" name="date" id="date" />
+
+		<label for="datetime">Pick a date and time:</label>
+		<input type="datetime-local" name="datetime" id="datetime" />
+
+		<label for="month">Pick a month:</label>
+		<input type="month" name="month" id="month" />
+
+		<label for="week">Pick a week:</label>
+		<input type="week" name="week" id="week" />
+
+		<label for="time">Pick a time:</label>
+		<input type="time" name="time" id="time" />
+
+		<label for="number">Pick a number:</label>
+		<input type="number" name="number" id="number" />
+
+		<label for="tel">Enter a telephone number:</label>
+		<input type="tel" name="tel" id="tel" />
+
+		<input type="checkbox" name="checkbox" id="checkbox" />
+		<label for="checkbox">I agree to the whatever.</label>
+
+		<input type="radio" name="radio" id="radio" />
+		<label for="radio">I select this default single option against my will.</label>
+
+		<fieldset>
+			<legend>Choose your favorite condiments:</legend>
+
+			<input type="checkbox" id="mustard" name="condiments" value="mustard" />
+			<label for="mustard">Mustard</label>
+
+			<input type="checkbox" id="wasabi" name="condiments" value="wasabi" />
+			<label for="wasabi">Wasabi</label>
+
+			<input type="checkbox" id="horshradish" name="condiments" value="horshradish" />
+			<label for="horshradish">Horseradish</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>What's the correct spelling?</legend>
+
+			<input type="radio" id="ketchup" name="spelling" value="ketchup" />
+			<label for="ketchup">Ketchup</label>
+
+			<input type="radio" id="catsup" name="spelling" value="catsup" />
+			<label for="catsup">Catsup</label>
+
+			<input type="radio" id="what" name="spelling" value="what" />
+			<label for="what">What's up?</label>
+		</fieldset>
+
+		<label for="pet-select">Choose a pet:</label>
+		<select name="pets" id="pet-select">
+			<option value="dog">Dog</option>
+			<option value="cat">Cat</option>
+			<option value="hamster">Hamster</option>
+			<option value="parrot">Parrot</option>
+			<option value="spider">Spider</option>
+			<option value="goldfish">Goldfish</option>
+		</select>
+
+		<label for="dino-select">Choose a dinosaur:</label>
+		<select id="dino-select">
+			<optgroup label="Theropods">
+				<option>Tyrannosaurus</option>
+				<option>Velociraptor</option>
+				<option>Deinonychus</option>
+			</optgroup>
+			<optgroup label="Sauropods">
+				<option>Diplodocus</option>
+				<option>Saltasaurus</option>
+				<option>Apatosaurus</option>
+			</optgroup>
+		</select>
+
+		<label for="range">Adjust the range slider:</label>
+		<input type="range" name="range" id="range" min="0" max="100" />
+
+		<label for="color">Pick a color:</label>
+		<input type="color" name="color" id="color" />
+
+		<label for="search">Search:</label>
+		<input type="search" name="search" id="search" />
+
+		<label for="url">Enter a URL:</label>
+		<input type="url" name="url" id="url" />
+
+		<label for="file">Upload a file:</label>
+		<input type="file" name="file" id="file" />
+
+		<input type="reset" value="Reset" />
+		<input type="submit" value="Submit" />
+	</form>
+
+	<h2>Meter</h2>
+
+	<p>
+		Battery charge level:
+		<meter min="0" low="50" high="80" max="100" value="84">84%</meter>
+	</p>
+
+	<h2>Progress</h2>
+
+	<label for="progress">File progress:</label>
+	<progress id="progress" max="100" value="70">70%</progress>
+
+	<h2>Details</h2>
+
+	<details>
+		<summary>Important details</summary>
+		<p>Are you really going to read the whole EULA?</p>
+	</details>
+
+	<h2>Tables</h2>
+
+	<table>
+		<caption>
+			Front-end web developer course 2021
+		</caption>
+		<thead>
+			<tr>
+				<th scope="col">Person</th>
+				<th scope="col">Most interest in</th>
+				<th scope="col">Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Chris</th>
+				<td>HTML tables</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<th scope="row">Dennis</th>
+				<td>Web accessibility</td>
+				<td>45</td>
+			</tr>
+			<tr>
+				<th scope="row">Sarah</th>
+				<td>JavaScript frameworks</td>
+				<td>29</td>
+			</tr>
+			<tr>
+				<th scope="row">Karen</th>
+				<td>Web performance</td>
+				<td>36</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th scope="row" colspan="2">Average age</th>
+				<td>33</td>
+			</tr>
+		</tfoot>
+	</table>
+
+
 </main>
