@@ -115,7 +115,9 @@ p,
 li,
 dt,
 dd,
-figcaption {
+figcaption,
+legend,
+label {
 	line-height: var(--text-lineheight-medium);
 }
 
@@ -135,7 +137,8 @@ small,
 }
 
 code,
-pre {
+pre,
+samp {
 	font-family: monospace;
 }
 
