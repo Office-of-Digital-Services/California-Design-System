@@ -124,67 +124,85 @@ mark {
  * Forms
  */
 
-/* Default to display:block for most inputs. */
-label,
-input:not([type="radio"], [type="checkbox"]),
-textarea,
-select {
+label {
 	display: block;
 }
 
-/* Increase width for some inputs. */
-input[type="text"],
-input[type="email"],
-input[type="search"],
-input[type="url"],
-textarea {
-	inline-size: 100%;
-	max-inline-size: var(--text-max-width);
+/* Default to display:block for most inputs. */
+input:not([type="radio"], [type="checkbox"], [type="color"]),
+textarea,
+select {
+	display: block;
+	padding: .5rem;
 }
 
-label {
-	/* When a label is followed by an input, add small margin between. */
-	&:has(+ input:not([type="radio"], [type="checkbox"])),
-	&:has(+ textarea),
-	&:has(+ select) {
-		margin-block: 1rem .25rem;
+/* Increase width for some inputs. */
+input:not([type="submit"], [type="reset"], [type="color"]),
+select,
+textarea {
+	inline-size: 100%;
+}
+
+/* No flattened textareas. */
+textarea:not([rows]) {
+	min-block-size: 20ex;
+}
+
+ca-form-field,
+.ca-form-field {
+	margin-block: 1rem 2rem;
+	max-inline-size: var(--text-max-width);
+
+	/* Remove top and bottom margins from first and last children. */
+	& > :first-child {
+		margin-block-start: 0;
+	}
+	& > :last-child {
+		margin-block-end: 0;
 	}
 
-	/* When an input is preceded by a label, add margin after the pair. */
-	& + input:not([type="radio"], [type="checkbox"]),
-	& + textarea,
-	& + select {
-		margin-block: .25rem 1rem;
+	/* Need to add the [invalid] attribute to trigger this. */
+	&:has(*[invalid]) {
+		padding: 1rem;
+		border: .25rem solid red;
 	}
+
+	/* When it's a simple label + input, do a simple vertical flex. */
+	/* We need to allow disclaimer/fine-print text below the input too. */
+	&:has(textarea, select, input:not([type="radio"], [type="checkbox"])) {
+		display: flex;
+		flex-direction: column;
+		gap: .25rem;
+	}
+
+	/* When it's a checkbox or radio button, switch to grid. */
+	/* Consider extending this to other scenarios, such as "initial each paragraph" forms. */
+	&:has(input:is([type="radio"], [type="checkbox"])) {
+		display: grid;
+		grid-template-columns: 1rem auto;
+		grid-template-rows: auto;
+		gap: .25rem 2rem;
+
+		/* All subsequent elements should stay in the second column. */
+		& > :nth-child(n + 3) {
+			grid-column-start: 2;
+		}
+	}
+}
+
+/* Add some buffer when scrolling back up to an invalid field. */
+input:invalid {
+	scroll-margin-block: 5ex;
 }
 
 fieldset {
-	margin-block: 1rem;
+	margin-block: 1rem 2rem;
 	border: none;
 	padding: 0;
 }
 
 legend {
 	margin-block-end: .25rem;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-	display: inline;
-}
-
-:is(input[type="radio"], input[type="checkbox"]) + label {
-	display: inline;
-
-	&:after {
-		display: block;
-		content: "\A";
-	}
-}
-
-/* No flattened textareas. */
-textarea:not([rows]) {
-	min-height: 10em;
 }
 
 /*

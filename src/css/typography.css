@@ -128,12 +128,15 @@ h1 + p,
 	margin-bottom: clamp(1.7rem, 1.6363rem + 0.2911vw, 1.875rem);
 }
 
-small,
 .text-small {
 	font-weight: 500;
 	font-size: var(--text-size-small);
 	line-height: var(--text-lineheight-large);
 	margin-bottom: clamp(1.22rem, 1.2091rem + 0.0499vw, 1.25rem);
+}
+
+small {
+	font-size: var(--text-size-small);
 }
 
 code,
