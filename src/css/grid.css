@@ -116,11 +116,12 @@ ca-grid,
  * This would trigger as soon as the overall grid's size grows beyond the "NUMBER-OF-COLUMNS"
  * value. So it's a mobile-first approach.
  * 
- * Another option is to simply lock down the grid's possible values, and then
- * manually code the container queries for a limited number of spans.
+ * Another option is to simply lock down the grid's possible values, and then manually 
+ * code the container queries for a limited number of spans.
  *
- * Or, we can call this the "dynamic" or "flow" grid for content (no spans), then create another 
- * "static" grid that's more for layouts. Much easier to span.
+ * Or, we can call this the "dynamic" or "flow" grid for content (no spans), then create 
+ * another "static" grid that's more for layouts. Much easier to span. But we need to know
+ * more about overall layout/design before we can do "static" grids in a smart way.
  * 
  * Need to revisit this design.
  */
