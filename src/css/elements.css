@@ -243,6 +243,7 @@ td {
 details {
 	border: .125rem solid var(--text-color);
 	padding: 0;
+	margin-block: 1rem 2rem;
 
 	&[open] summary {
 		margin-block-end: 1rem;
@@ -251,6 +252,15 @@ details {
 
 	&[open] > :not(summary) {
 		margin-inline: 1rem;
+	}
+
+	/* This is all we need to combine subsequent <details> into an accordion. */
+	& + details {
+		margin-block-start: 0;
+		border-block-start: none;
+	}
+	&:has(+ details) {
+		margin-block-end: 0;
 	}
 }
 

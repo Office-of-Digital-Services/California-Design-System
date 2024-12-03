@@ -1,0 +1,127 @@
+ca-grid,
+.ca-grid {
+	/* End-user can override any of these vars. */
+	/* Consider adding sm/md/lg shortcut attributes. */
+	--min-cell-inline-size: 32ch;
+	--min-columns: 1;
+	--max-columns: 6;
+	--col-gap: 1rem;
+	--row-gap: 1rem;
+	--flow-style: auto-fit;
+
+	display: grid;
+	container: ca-grid / inline-size;
+	/* We'll need to teach a whole course to explain this one. */
+	grid-template-columns: repeat(
+			var(--flow-style),
+			minmax(
+				min(
+					calc(
+						(100% - ((var(--max-columns) - 1) * var(--col-gap))) /
+						var(--min-columns)
+					),
+					max(
+						var(--min-cell-inline-size),
+						calc(
+							(100% - ((var(--max-columns) - 1) * var(--col-gap))) /
+							var(--max-columns)
+						)
+					)
+				),
+				1fr
+			)
+		);
+	grid-template-rows: auto;
+	column-gap: var(--col-gap);
+	row-gap: var(--row-gap);
+
+	/* Set maximum number of columns on the grid. */
+	&[data-max-col="2"],
+	&.ca-grid-max-col-2 {
+		--max-columns: 2;
+	}
+	&[data-max-col="3"],
+	&.ca-grid-max-col-3 {
+		--max-columns: 3;
+	}
+	&[data-max-col="4"],
+	&.ca-grid-max-col-4 {
+		--max-columns: 4;
+	}
+	&[data-max-col="5"],
+	&.ca-grid-max-col-5 {
+		--max-columns: 5;
+	}
+	&[data-max-col="6"],
+	&.ca-grid-max-col-6 {
+		--max-columns: 6;
+	}
+	/* Set minimum number of columns on the grid. */
+	&[data-min-col="2"],
+	&.ca-grid-min-col-2 {
+		--min-columns: 2;
+	}
+	&[data-min-col="3"],
+	&.ca-grid-min-col-3 {
+		--min-columns: 3;
+	}
+	&[data-min-col="4"],
+	&.ca-grid-min-col-4 {
+		--min-columns: 4;
+	}
+	&[data-min-col="5"],
+	&.ca-grid-min-col-5 {
+		--min-columns: 5;
+	}
+	&[data-min-col="6"],
+	&.ca-grid-min-col-6 {
+		--min-columns: 6;
+	}
+
+	/* An example cell size shortcut. */
+	&[data-cell-size="large"] {
+		--min-cell-inline-size: 48ch;
+	}
+
+	/* Change the fit/fill style of the grid columns. */
+	&[data-flow="fit"] {
+		--flow-style: auto-fit;
+	}
+	&[data-flow="fill"] {
+		--flow-style: auto-fill;
+	}
+}
+
+/* 
+ * COLSPAN
+ * 
+ * Unfortunately, an easy way to span columns is not possible with this setup.
+ * The problem is that media/container queries don't yet support variables.
+ * Given our variables here, we can't yet calculate query widths for making 
+ * spans responsive. In other words, we can't dynamically break spans on mobile.
+ *
+ * With that said, an end-user who knows their grid's values can make their own span.
+ * Consider something like the following.
+ *
+ * ca-grid-span-3 {
+ *   @container (inline-size > calc(32ch * 3 + (2 * 1rem))) {
+ *     grid-column: span 3;
+ *   }
+ * }
+ *
+ * Here's the math on that...
+ * 
+ * @container (inline-size > calc(MIN-CELL-INLINE-SIZE * NUMBER-OF-COLUMNS + GAPS))
+ *
+ * This would trigger as soon as the overall grid's size grows beyond the "NUMBER-OF-COLUMNS"
+ * value. So it's a mobile-first approach.
+ * 
+ * Another option is to simply lock down the grid's possible values, and then manually 
+ * code the container queries for a limited number of spans.
+ *
+ * Or, we can call this the "dynamic" or "flow" grid for content (no spans), then create 
+ * another "static" grid that's more for layouts. Much easier to span. But we need to know
+ * more about overall layout/design before we can do "static" grids in a smart way.
+ * 
+ * Need to revisit this design.
+ */
