@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.4.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.3.1...v1.4.0) (2024-12-03)
+
+
+### Features
+
+* Add accordions ([1156e1a](https://github.com/Office-of-Digital-Services/California-Design-System/commit/1156e1a21404044bba003855456e8daac29607d2))
+* Add fit/fill to grid ([e9d982d](https://github.com/Office-of-Digital-Services/California-Design-System/commit/e9d982d6753237df322f34e25ad198011eb4c44c))
+* Forms, tables, and other defaults ([2c54751](https://github.com/Office-of-Digital-Services/California-Design-System/commit/2c54751d6d910ecbd1ee3050e19805b5c7ade97e))
+* Initial work on grid ([2d95ef9](https://github.com/Office-of-Digital-Services/California-Design-System/commit/2d95ef9b9855579dbb026e0ae1a59f9579eb775c))
+* Make forms more practical ([4a28b79](https://github.com/Office-of-Digital-Services/California-Design-System/commit/4a28b79bcb1c7b801288b108d06b3fdeec532cb6))
+
 ## [1.3.1](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.3.0...v1.3.1) (2024-11-21)
 
 
