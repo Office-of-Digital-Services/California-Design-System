@@ -7,12 +7,13 @@ ca-grid,
 	--max-columns: 6;
 	--col-gap: 1rem;
 	--row-gap: 1rem;
+	--flow-style: auto-fit;
 
 	display: grid;
 	container: ca-grid / inline-size;
-	/* I'll need to teach a whole course to explain this one. */
+	/* We'll need to teach a whole course to explain this one. */
 	grid-template-columns: repeat(
-			auto-fit,
+			var(--flow-style),
 			minmax(
 				min(
 					calc(
@@ -80,6 +81,14 @@ ca-grid,
 	/* An example cell size shortcut. */
 	&[data-cell-size="large"] {
 		--min-cell-inline-size: 48ch;
+	}
+
+	/* Change the fit/fill style of the grid columns. */
+	&[data-flow="fit"] {
+		--flow-style: auto-fit;
+	}
+	&[data-flow="fill"] {
+		--flow-style: auto-fill;
 	}
 }
 
