@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import cssBuilder from "./css-builder.js";
 import jsBuilder from "./js-builder.js";
 import zipBuilder from "./zip-builder.js";
+import iconFontBuilder from "./icon-font-builder.js";
 
 const packageData = await fs
 	.readFile("package.json")
@@ -22,8 +23,10 @@ const banner = `/*
 // Delete old build files.
 await fs.rm("dist", { recursive: true, force: true });
 await fs.mkdir("dist");
+await fs.mkdir("dist/fonts");
 
 // Build all files first.
+await iconFontBuilder("dist/fonts");
 await cssBuilder(`${fileSlug}.css`, { banner });
 await cssBuilder(`${fileSlug}.min.css`, { banner, minify: true });
 await jsBuilder(`${fileSlug}.js`, { banner });

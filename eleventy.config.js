@@ -1,9 +1,10 @@
-
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import cssBuilder from "./tools/bundlers/css-builder.js";
 import jsBuilder from "./tools/bundlers/js-builder.js";
+import iconFontBuilder from "./tools/bundlers/icon-font-builder.js";
 
 let firstBuild = true;
+const fontBuildPath = "_site/fonts";
 const cssBuildPath = "_site/css/bundle.css";
 const jsBuildPath = "_site/js/bundle.js";
 
@@ -11,6 +12,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.on("eleventy.before", async ({ runMode }) => {
 		// Only build all of the bundle files during first run, not on every change.
 		if (firstBuild || runMode !== "serve") {
+			await iconFontBuilder(fontBuildPath);
 			await cssBuilder(cssBuildPath);
 			await jsBuilder(jsBuildPath);
 			firstBuild = false;
@@ -20,6 +22,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.on("eleventy.beforeWatch", async (changedFiles) => {
 		// During development changes, only reload the bundles that need reloading.
 		for (const changedFile of changedFiles) {
+			if (changedFile.endsWith(".svg")) {
+				await iconFontBuilder(fontBuildPath);
+			}
 			if (changedFile.endsWith(".css")) {
 				await cssBuilder(cssBuildPath);
 			}
