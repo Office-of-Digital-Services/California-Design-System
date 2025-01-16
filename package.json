@@ -22,7 +22,6 @@
 		"archiver": "^7.0.1",
 		"chalk": "^5.3.0",
 		"esbuild": "^0.24.0",
-		"fantasticon": "^3.0.0",
 		"glob": "^11.0.0",
 		"lightningcss": "^1.27.0"
 	}
