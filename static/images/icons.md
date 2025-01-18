@@ -12,6 +12,10 @@ Think of each `<symbol>` as its own self-contained SVG.
 
 Some important dev notes follow.
 
+## currentColor
+
+Make sure to apply `currentColor` to `fill` or `stroke` attributes in the `<symbol>`. This ensures we can change the color via CSS later.
+
 ## Browser cache
 
 When using `<use>`, the browser cache can be very sticky. Hard reloads don't seem to work. When you're editing the `icons.svg` file and trying to preview changes, this can be very frustrating. I've found the best way to get around this is to open the page in a new tab.
