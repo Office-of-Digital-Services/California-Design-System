@@ -1,738 +1,103 @@
-/* --- Site header --- */
-/* Light theme is default */
-:root {
-	--search-icon: var(--search-icon-dark);
-	--service-menu-icon: var(--service-menu-icon-dark);
-	--login-icon: var(--login-icon-dark);
-	--header-bg: var(--white);
-	--navigation-drawer-bg: var(--brand-primary);
-	--hamburger-icon: var(--hambearger-icon-dark);
-	--hamburger-bg: var(--banner-dark);
-	--header-link-color: var(--text-dark);
-	--search-border-color: var(--navigation-submenu-dark);
-	--search-placeholder-color: var(--navigation-submenu-dark);
-	--search-input-color: var(--text-dark);
-	--search-submit-button-color: var(--navigation-submenu-dark);
-	--search-submit-button-outline: var(--white);
-	--search-input-outline: var(--text-dark);
-	--search-submit-icon: var(--search-submit-light);
-	--search-input-clear-icon: var(--search-input-clear-dark);
-}
-header {
-	position: relative;
-	top: 0;
-	z-index: 1;
-	/* hamburger */
-	/* site logo */
-	/* site header utility links */
-}
-header .site-header {
-	background-color: var(--header-bg);
-}
-header a,
-header a:focus {
-	color: var(--header-link-color);
-}
-header .site-header-container {
-	max-width: var(--desktop-max-width);
-	margin: 0 auto;
-	padding: 0 var(--space-unit-x2);
-	display: flex;
-	align-items: center;
-	gap: calc(var(--columns-gap) * 2);
-	overflow: visible;
-}
+/* Layout header */
 
-/* Mobile navigation */
-header nav.mobile-nav-menu,
-header nav.cagov-global-menu {
-	display: flex;
-	border: none;
-	padding: 0;
-	margin: 0;
-	color: var(--header-link-color);
-}
-header .main-navigation-button,
-header .main-navigation-cancel,
-header .cagov-global-menu-toggle-cancel {
-	width: 42px;
-	min-height: 42px;
-	min-width: 42px;
-	display: flex;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	padding: 0;
-	margin: 0;
-	position: relative;
-}
-header .cagov-global-menu-toggle-cancel {
-	width: 62px;
-	min-height: 42px;
-	min-width: 62px;
-	right: var(--space-unit-x2);
-}
-
-header .main-navigation-button:hover {
-	opacity: 0.9;
-}
-header .main-navigation-cancel,
-header .cagov-global-menu-toggle-cancel {
-	position: absolute;
-	display: none;
-}
-
-header .main-navigation-button .hamburger {
-	height: 25px;
-	width: 42px;
-	position: relative;
-	top: 0;
-	background-color: transparent;
-	background-image: var(--hamburger-icon);
-	background-repeat: no-repeat;
-	background-size: 42px;
-	background-position: center;
-	transition: all 200ms ease;
-}
-
-header .cagov-global-menu-toggle .close-x {
-	transition: all 300ms ease;
-	position: relative;
-	width: 42px;
-	height: 0;
-	top: 0;
-	opacity: 0;
-	right: var(--space-unit-1);
-}
-
-header .main-navigation-button .hamburger::before,
-header .main-navigation-button .hamburger::after,
-header .cagov-global-menu-toggle .close-x::after,
-header .cagov-global-menu-toggle .close-x::before {
-	content: "";
-	position: absolute;
-	border-radius: 5px;
-	height: 2px;
-	width: 100%;
-	left: 0;
-	background-color: var(--hamburger-bg);
-	transition: all 200ms ease;
-}
-
-header .main-navigation-button .hamburger::before {
-	transform: translateY(32px);
-}
-header .main-navigation-button .hamburger::after {
-	transform: translateY(42px);
-}
-
-header .cagov-global-menu-toggle .close-x::after {
-	transform: rotate(-205deg) translateX(0);
-}
-header .cagov-global-menu-toggle .close-x::before {
-	transform: rotate(0deg) translateX(0);
-}
-.mobile-navigation-drawer,
-.cagov-global-menu-drawer {
-	position: fixed;
-	top: 4.5rem;
-	padding: var(--space-unit-x4) var(--space-unit-x2);
-	background-color: var(--navigation-drawer-bg);
-	color: var(--white);
-	display: none;
-	max-width: 15rem;
-	min-width: 15rem;
-	height: calc(100% - 4.5rem);
-	opacity: 0;
-	overflow-y: auto;
-	overflow-x: hidden;
-	transition-property: display translate;
-	transition-duration: 0.3s;
-	transition-behavior: allow-discrete;
-}
-
-.mobile-navigation-drawer {
-	translate: -100% 0;
-	left: 0;
-}
-
-.cagov-global-menu-drawer {
-	translate: 100% 0;
-	right: 0;
-}
-
-.mobile-navigation-drawer .utility-links,
-.cagov-global-menu-drawer .cagov-utility-links {
-	margin-top: auto;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	row-gap: 1.5rem;
-	font-size: var(--text-size-small);
-	padding-left: var(--space-unit-x2);
-	align-self: end;
-}
-
-.cagov-global-menu-drawer .cagov-utility-links {
-	border-top: 1px solid;
-	padding-block-start: var(--space-unit-x3);
-	width: 100%;
-}
-
-.mobile-navigation-drawer .utility-links a,
-.cagov-global-menu-drawer .cagov-utility-links a {
-	text-decoration: none;
-	color: var(--text-white);
-}
-
-.mobile-navigation-drawer .utility-links a:hover,
-.cagov-global-menu-drawer .cagov-utility-links a:hover {
-	text-decoration: underline;
-}
-
-.mobile-navigation-drawer ul,
-.cagov-global-menu-drawer ul {
-	padding-left: 0;
-	align-self: start;
-}
-.mobile-navigation-drawer ul li,
-.cagov-global-menu-drawer ul li {
-	list-style: none;
-	padding-left: 0;
-	font-size: 1.125rem;
-}
-.mobile-navigation-drawer ul li a,
-.cagov-global-menu-drawer ul li a {
-	text-decoration: none;
-	padding: var(--space-unit-1) var(--space-unit-x2);
-	border: 2px solid var(--navigation-drawer-bg);
-	border-radius: var(--rounded-buttons);
-	color: var(--white);
-}
-.mobile-navigation-drawer ul li a:hover,
-.cagov-global-menu-drawer ul li a:hover {
-	background-color: color-mix(in srgb, var(--navigation-drawer-bg), #fff 7%);
-}
-
-/* Logo */
-header a.site-logo {
-	display: flex;
-	align-items: flex-start;
-	gap: var(--space-unit-x4);
-	text-decoration: none;
-}
-header .logo-image {
-	max-width: 100%;
-	min-height: auto;
-	height: clamp(4.5rem, 1.9286rem + 3.8095vw, 6.5rem);
-	object-fit: contain;
-	transform: translateY(var(--space-unit-x2));
-	display: none;
-}
-header .site-branding-text {
-	padding: var(--space-unit-x2) 0;
-}
-header .site-branding-text span {
-	display: block;
-	letter-spacing: 1px;
-}
-header .site-branding-text span.state {
-	font-size: clamp(1.5rem, 1.1786rem + 0.4762vw, 1.75rem);
-	font-weight: 600;
-	margin-top: clamp(0rem, -1.2857rem + 1.9048vw, 1rem);
-}
-header .site-branding-text span.department {
-	font-size: clamp(1rem, 0.6786rem + 0.4762vw, 1.25rem);
-	font-weight: 400;
-	margin-top: clamp(0.5rem, -0.4643rem + 1.4286vw, 1.25rem);
-}
-
-/* utulity */
-header .site-header-utility {
-	margin-left: auto;
-	display: flex;
-	align-items: flex-end;
-	gap: calc(var(--space-unit-x2) / 1.5);
-}
-
-/* search */
-header .search-container-desktop,
-header .search-container-mobile {
-	border-radius: var(--rounded-buttons);
-}
-
-header .search-container-desktop {
-	border: 1px solid var(--search-border-color);
-	display: none;
-}
-header .search-container-mobile {
-	margin-bottom: var(--space-unit-x4);
-	align-self: start;
-	border: 1px solid var(--navigation-submenu-light);
-}
-
-header .search-container-desktop form,
-header .search-container-mobile form {
-	display: flex;
-	position: relative;
-}
-header .search-container-desktop form input.search-input,
-header .search-container-mobile form input.search-input {
-	border-radius: var(--rounded-buttons) 0 0 var(--rounded-buttons);
-	border: 0;
-	width: clamp(10rem, -6.7143rem + 24.7619vw, 23rem);
-	height: var(--space-unit-x4);
-	padding-left: calc(var(--space-unit-x2) * 3);
-	padding-right: var(--space-unit-1);
-	background: transparent;
-	color: var(--search-input-color);
-	transition: width 300ms ease, padding 300ms ease;
-	/* stylelint-disable-next-line selector-no-vendor-prefix */
-}
-header .search-container-mobile form input.search-input {
-	padding-left: 2.5rem;
-	color: var(--white);
-}
-header .search-container-desktop form input.search-input:focus {
-	outline: 2px solid var(--search-input-outline);
-	outline-offset: -4px;
-}
-header .search-container-mobile form input.search-input:focus {
-	outline: 2px solid var(--white);
-	outline-offset: -4px;
-}
-
-header .search-container-desktop form input.search-input:autofill {
-	/* Keeps the autofill consistent with theme */
-	box-shadow: 0 0 0 1000px var(--header-bg) inset;
-	-webkit-text-fill-color: var(--search-input-color);
-}
-header .search-container-mobile form input.search-input:autofill {
-	box-shadow: 0 0 0 1000px var(--navigation-drawer-bg) inset;
-	-webkit-text-fill-color: var(--white);
-}
-
-header .search-container-desktop form input.search-input::placeholder,
-header
-	.search-container-desktop
-	form
-	input.search-input::-ms-input-placeholder {
-	color: var(--search-placeholder-color);
-	opacity: 1; /* Firefox */
-}
-
-header .search-container-mobile form input.search-input::placeholder,
-header .search-container-mobile form input.search-input::-ms-input-placeholder {
-	color: var(--navigation-submenu-light);
-	opacity: 1; /* Firefox */
-}
-
-header
-	.search-container-desktop
-	form
-	input.search-input::-webkit-search-cancel-button,
-header
-	.search-container-mobile
-	form
-	input.search-input::-webkit-search-cancel-button {
-	-webkit-appearance: none; /* Remove default styling */
-	height: var(--space-unit-x2);
-	width: var(--space-unit-x2);
-	background: transparent var(--search-input-clear-icon) no-repeat;
-}
-header .search-container-desktop form label.search-toggle,
-header .search-container-mobile form label.search-toggle {
-	border: none;
-	border-radius: var(--rounded-buttons);
-	position: absolute;
-	cursor: pointer;
-	height: var(--space-unit-x4);
-	width: var(--space-unit-x4);
-	background-color: transparent;
-	background-image: var(--search-icon);
-	background-repeat: no-repeat;
-	background-size: 1.125rem;
-	background-position: calc(50% + 0.25rem) center;
-	top: 0;
-	left: 0;
-}
-
-header .search-container-mobile form label.search-toggle {
-	background-image: var(--search-icon-light);
-}
-
-header .search-container-desktop form button.search-submit,
-header .search-container-mobile form button.search-submit {
-	padding: 0 1.5rem;
-	border: none;
-	border-radius: 0 var(--rounded-buttons) var(--rounded-buttons) 0;
-	background: var(--search-submit-button-color) var(--search-submit-icon)
-		no-repeat center / 1.125rem;
-	cursor: pointer;
-}
-
-header .search-container-mobile form button.search-submit {
-	background: var(--navigation-submenu-light) var(--search-submit-dark)
-		no-repeat center / 1.125rem;
-}
-header .search-container-desktop form button.search-submit:focus,
-header .search-container-mobile form button.search-submit:focus {
-	outline: 2px solid var(--search-submit-button-outline);
-	outline-offset: -3px;
-}
-
-header .search-container-mobile form button.search-submit:focus {
-	outline: 2px solid var(--text-dark);
-}
-header .search-container-desktop form:not(:focus-within) label.search-toggle {
-	background-position: center;
-}
-header .search-container-desktop form:not(:focus-within) input.search-input {
-	outline: none;
-	padding: 0;
-	width: var(--space-unit-x4);
-	background: transparent;
-	cursor: pointer;
-	color: transparent;
-	border-radius: var(--rounded-buttons);
-}
-header
-	.search-container-desktop
-	form:not(:focus-within)
-	input.search-input:autofill {
-	/* Keeps the autofill consistent with theme */
-	-webkit-text-fill-color: var(--header-bg);
-}
-header
-	.search-container-desktop
-	form:not(:focus-within)
-	input.search-input::placeholder {
-	visibility: hidden; /* Hide the search placeholder as an icon */
-}
-header
-	.search-container-desktop
-	form:not(:focus-within)
-	input.search-input::-webkit-search-cancel-button {
-	display: none; /* Needed for Safari, Chrome clears on blur */
-}
-header .search-container-desktop form:not(:focus-within) button.search-submit {
-	display: none;
-}
-
-/* Global menu */
-header .cagov-global-menu-toggle {
-	border: none;
-	background: transparent;
-	background-image: var(--service-menu-icon);
-	background-repeat: no-repeat;
-	background-size: clamp(2rem, 0.7143rem + 1.9048vw, 3rem)
-		clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
-	background-position: center;
-	height: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
-	width: clamp(2rem, 0.7143rem + 1.9048vw, 3rem);
-	margin-left: auto;
-	cursor: pointer;
-}
-header .cagov-global-menu-toggle:hover {
-	filter: opacity(0.9);
-}
-header .login-button {
-	background-image: var(--login-icon);
-	background-repeat: no-repeat;
-	background-size: var(--space-unit-x4) var(--space-unit-x4);
-	background-position: center;
-	padding: var(--space-unit-x2);
-	display: block;
-}
-header .login-button:hover {
-	filter: opacity(0.9);
-}
-header span.login-text {
-	position: absolute;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-}
-
-body.nav-focused {
-	overflow: hidden;
-}
-
-header nav.mobile-nav-menu:focus-within .main-navigation-button,
-header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle {
-	pointer-events: none; /* Lets us click behind the icon to close menu */
-	cursor: pointer;
-}
-header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle {
-	background-image: none;
-}
-
-header nav.mobile-nav-menu:focus-within .main-navigation-button .hamburger {
-	height: 0;
-	top: 20px;
-}
-
-header nav.cagov-global-menu:focus-within .cagov-global-menu-toggle .close-x {
-	height: 0;
-	top: 0;
-	opacity: 1;
-}
-
-header
-	nav.mobile-nav-menu:focus-within
-	.main-navigation-button
-	.hamburger::before,
-header
-	nav.cagov-global-menu:focus-within
-	.cagov-global-menu-toggle
-	.close-x::before {
-	transform: rotate(45deg) translateX(0);
-}
-header
-	nav.mobile-nav-menu:focus-within
-	.main-navigation-button
-	.hamburger::after,
-header
-	nav.cagov-global-menu:focus-within
-	.cagov-global-menu-toggle
-	.close-x::after {
-	transform: rotate(-225deg) translateX(0);
-}
-
-header nav.mobile-nav-menu:focus-within button.main-navigation-cancel,
-header
-	nav.cagov-global-menu:focus-within
-	button.cagov-global-menu-toggle-cancel {
-	display: block;
-}
-header nav.mobile-nav-menu:focus-within button.main-navigation-cancel:focus,
-header
-	nav.cagov-global-menu:focus-within
-	button.cagov-global-menu-toggle-cancel:focus {
-	display: none;
-}
-
-header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer,
-header nav.cagov-global-menu:focus-within .cagov-global-menu-drawer {
+:is(ca-layout, .ca-layout) > header {
 	display: grid;
-	grid-template-rows: auto 1fr auto;
-	opacity: 1;
-	translate: 0 0;
-}
 
-@starting-style {
-	header nav.mobile-nav-menu:focus-within .mobile-navigation-drawer {
-		opacity: 0;
-		translate: -100% 0;
+	/* Default grid setup on mobile. */
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"state"
+		"dept";
+	row-gap: .5rem;
+
+	& > :is(img, svg) {
+		grid-area: logo;
+		align-self: center;
+		display: none; /* Don't display image on mobile */
 	}
 
-	header nav.cagov-global-menu:focus-within .cagov-global-menu-drawer {
-		opacity: 0;
-		translate: 100% 0;
+	& > span:first-of-type {
+		grid-area: state;
+		font-weight: 700;
+		font-size: var(--text-size-3);
+		line-height: var(--text-size-3);
 	}
-}
 
-header .logo-image.no-overflow {
-	transform: translateY(0);
-	padding: var(--space-unit-1) 0;
-}
+	& > span:nth-of-type(2) {
+		grid-area: dept;
+	}
 
-/* Site header desktop styles */
-@media (width >= 1080px) {
-	header {
-		position: sticky;
-		/* search */
+	/* Apply this if there's only one single span. */
+	&:not(:has(span:nth-of-type(2))) {
+		& > span {
+			align-self: center;
+		}
 	}
-	header nav.mobile-nav-menu {
-		display: none;
-	}
-	header .main-navigation-button {
-		display: none;
-	}
-	header .logo-image {
-		display: block;
-	}
-	header .site-header-utility {
-		gap: var(--space-unit-x4);
-	}
-	header .search-container-desktop {
-		display: block;
-	}
-	header .login-button {
-		background-color: var(--action-secondary);
-		border-radius: var(--rounded-buttons);
-		padding: var(--space-unit-1)
-			calc(var(--space-unit-1) + 30 * (100vw - 48rem) / 1200);
-		text-decoration: none;
-		color: var(--text-dark);
-		font-size: 1.125rem;
-	}
-	header .login-button span.login-text {
-		position: relative;
-		overflow: visible;
-		clip: unset;
-		width: unset;
-		height: unset;
-		margin: unset;
-	}
-	header .login-button,
-	header .theme-light .login-button,
-	header .theme-dark .login-button {
-		background-image: none;
-	}
-	header .login-button:hover,
-	header .login-button:focus {
-		color: var(--black);
-		background-color: var(--action-secondary-hover);
-		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-	}
-	header .login-icon {
-		display: none;
-	}
-	header .cagov-global-menu-toggle {
-		margin-inline-start: clamp(0rem, -11.5714rem + 17.1429vw, 10rem);
+
+	/* If there are two spans, style differently. */
+	&:has(span:nth-of-type(2)) {
+		/* Bold on top. */
+		& > span:first-of-type {
+			align-self: end;
+		}
+
+		/* Plain on bottom. */
+		& > span:nth-of-type(2) {
+			align-self: start;
+		}
 	}
 }
 
-/* THEMES */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--search-icon: var(--search-icon-light);
-		--service-menu-icon: var(--service-menu-icon-light);
-		--login-icon: var(--login-icon-light);
-		--header-bg: var(--utility-dark);
-		--navigation-drawer-bg: var(--banner-dark);
-		--hamburger-icon: var(--hambearger-icon-light);
-		--hamburger-bg: var(--white);
-		--header-link-color: var(--white);
-		--search-border-color: var(--navigation-submenu-light);
-		--search-placeholder-color: var(--navigation-submenu-light);
-		--search-input-color: var(--white);
-		--search-submit-button-color: var(--navigation-submenu-light);
-		--search-submit-button-outline: var(--text-dark);
-		--search-input-outline: var(--white);
-		--search-submit-icon: var(--search-submit-dark);
-		--search-input-clear-icon: var(--search-input-clear-light);
+/* Default (Eureka), small desktop */
+@media screen and (min-width: 1024px) {
+	:is(ca-layout, .ca-layout) > header {
+		grid-template-areas:
+			"logo"
+			"state"
+			"dept";
+
+		& > :is(img, svg) {
+			display: block;
+			block-size: 6rem;
+			inline-size: 6rem;
+			margin-block: 0 .5rem;
+		}
 	}
 }
 
-/* theme light header */
-header .theme-light {
-	background-color: var(--white);
-}
-header .theme-light a {
-	color: var(--text-dark);
-}
-header .theme-light .mobile-navigation-drawer,
-header .theme-light .cagov-global-menu-drawer {
-	background-color: var(--brand-primary);
-}
-header .theme-light .hamburger {
-	background-image: var(--hambearger-icon-dark);
-}
-header .theme-light .hamburger::before,
-header .theme-light .hamburger::after,
-header .theme-light .close-x::after,
-header .theme-light .close-x::before {
-	background-color: var(--banner-dark);
-}
-header .theme-light .search-container-desktop {
-	border-color: var(--text-dark);
-}
-header .theme-light .search-container-desktop label.search-toggle {
-	background-image: var(--search-icon-dark);
-}
-header .theme-light .search-input {
-	color: var(--text-dark);
-	outline-color: var(--navigation-submenu-dark);
-}
-header .theme-light .search-input::placeholder {
-	color: var(--gray-600);
-	opacity: 1; /* Firefox */
-}
-header .theme-light .search-input::-ms-input-placeholder {
-	color: var(--gray-600);
-}
-header .theme-light .search-input::-webkit-search-cancel-button {
-	background: var(--search-input-clear-dark);
-}
-header .theme-light .search-submit {
-	background-color: var(--navigation-submenu-dark);
-	background-image: var(--search-submit-light);
-}
-header .theme-light .search-submit:focus {
-	outline-color: var(--white);
-}
-header .theme-light .login-button {
-	background-image: var(--login-icon-dark);
-}
-@media (width >= 1080px) {
-	header .theme-light .login-button {
-		background-image: none;
-		color: var(--text-dark);
+/* Horizon, small desktop */
+@media screen and (min-width: 1024px) {
+	:is(ca-layout, .ca-layout)[format="horizon"] > header {
+		grid-template-columns: 6rem 1fr;
+		grid-template-rows: 2rem auto;
+		grid-template-areas:
+			"logo state"
+			"logo dept";
+		column-gap: 1rem;
+		block-size: 5.5rem;
+		overflow-y: visible;
+
+		& > :is(img, svg) {
+			margin: 0;
+		}
 	}
-}
-header .theme-light .cagov-global-menu-toggle {
-	background-image: var(--service-menu-icon-dark);
 }
 
-/* theme dark header */
-header .theme-dark {
-	background-color: var(--utility-dark);
-}
-header .theme-dark .mobile-navigation-drawer {
-	background-color: var(--banner-dark);
-}
-header .theme-dark a {
-	color: var(--white);
-}
-header .theme-dark .hamburger {
-	background-image: var(--hambearger-icon-light);
-}
-header .theme-dark .hamburger::before,
-header .theme-dark .hamburger::after,
-header .theme-dark .close-x::before,
-header .theme-dark .close-x::after {
-	background-color: var(--white);
-}
-header .theme-dark .search-container-desktop {
-	border-color: var(--navigation-submenu-dark);
-}
-header .theme-dark .search-container-desktop label.search-toggle {
-	background-image: var(--search-icon-light);
-}
-header .theme-dark .search-input {
-	color: var(--white);
-	outline-color: var(--navigation-submenu-light);
-}
-header .theme-dark .search-input::placeholder {
-	color: var(--navigation-submenu-light);
-	opacity: 1; /* Firefox */
-}
-header .theme-dark .search-input::-ms-input-placeholder {
-	color: var(--navigation-submenu-light);
-}
-header .theme-dark .search-input::-webkit-search-cancel-button {
-	background: var(--search-input-clear-light);
-}
-header .theme-dark .search-submit {
-	background-color: var(--navigation-submenu-light);
-	background-image: var(--search-submit-dark);
-}
-header .theme-dark .search-submit:focus {
-	outline-color: var(--text-dark);
-}
-header .theme-dark .login-button {
-	background-image: var(--login-icon-light);
-}
-@media (width >= 1080px) {
-	header .theme-dark .login-button {
-		background-image: none;
-		color: var(--text-dark);
+/* Skyline, small desktop */
+@media screen and (min-width: 1024px) {
+	:is(ca-layout, .ca-layout)[format="skyline"] > header {
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"logo state"
+			"logo dept";
+		column-gap: 1rem;
+
+		& > :is(img, svg) {
+			block-size: 4rem;
+			inline-size: auto;
+			margin: 0;
+		}
 	}
-}
-header .theme-dark .cagov-global-menu-toggle {
-	background-image: var(--service-menu-icon-light);
 }

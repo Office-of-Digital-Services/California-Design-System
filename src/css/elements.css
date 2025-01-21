@@ -28,7 +28,8 @@ aside,
 hgroup,
 main,
 nav,
-section {
+section,
+footer {
 	padding: 1rem;
 }
 

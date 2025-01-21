@@ -1,0 +1,16 @@
+nav#utility-nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: end;
+	gap: 1rem;
+
+	& a {
+		color: var(--text-color);
+	}
+
+	& svg {
+		block-size: 1.5rem;
+		inline-size: 1.5rem;
+	}
+}

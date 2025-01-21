@@ -1,0 +1,11 @@
+footer a {
+	color: var(--text-color);
+}
+
+ca-footer-end {
+	display: grid;
+
+	& > p {
+		margin: 0;
+	}
+}
