@@ -1,5 +1,6 @@
 footer {
 	container: footer / inline-size;
+	padding-block: 5rem 3rem;
 
 	& a {
 		color: var(--text-color);
@@ -70,9 +71,19 @@ ca-footer-links {
 	& > ul:nth-of-type(2) {
 		flex-direction: row;
 	}
+
+	& svg {
+		min-block-size: 1.5rem;
+		min-inline-size: 1.5rem;
+	}
 }
 
 @container footer (width > 50rem) {
+	footer > * {
+		/* Apply side margin to all top-level children of footer. */
+		margin-inline: 3rem;
+	}
+
 	ca-footer-links {
 		flex-direction: row;
 
@@ -129,7 +140,7 @@ ca-footer-end {
 	}
 }
 
-@container footer (width > 50rem) {
+@container footer (width > 56rem) {
 	ca-footer-end {
 		& > div {
 			flex-direction: row;
