@@ -28,7 +28,7 @@
 
 	<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
 
-	<ca-grid data-max-col="3">
+	<ca-grid max-col="3">
 		<p>Cell one.</p>
 		<p>Cell two.</p>
 		<p>Cell three.</p>
@@ -57,7 +57,7 @@
 
 	<p>This grid will maintain a minimum of two columns, even on mobile.</p>
 
-	<ca-grid data-min-col="2">
+	<ca-grid min-col="2">
 		<p>Cell one.</p>
 		<p>Cell two.</p>
 		<p>Cell three.</p>
@@ -70,7 +70,7 @@
 
 	<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
 
-	<ca-grid data-min-col="2" data-max-col="3">
+	<ca-grid min-col="2" max-col="3">
 		<p>Cell one.</p>
 		<p>Cell two.</p>
 		<p>Cell three.</p>
@@ -94,9 +94,9 @@
 
 	<h2>Cell width override with shortcut</h2>
 
-	<p>We can create convenient attributes, like <code>data-cell-size="large"</code> for applying popular cell sizes.</p>
+	<p>We can create convenient attributes, like <code>cell-size="large"</code> for applying popular cell sizes.</p>
 
-	<ca-grid data-cell-size="large">
+	<ca-grid cell-size="large">
 		<p>Cell one.</p>
 		<p>Cell two.</p>
 		<p>Cell three.</p>
@@ -122,7 +122,7 @@
 
 	<p>Fill excess width.</p>
 
-	<ca-grid data-flow="fit" style="--min-cell-inline-size: 15ch;">
+	<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
 		<p>Cell one.</p>
 		<p>Cell two.</p>
 		<p>Cell three.</p>
@@ -132,7 +132,7 @@
 
 	<p>Don't fill excess width.</p>
 
-	<ca-grid data-flow="fill" style="--min-cell-inline-size: 15ch;">
+	<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
 		<p>Cell one.</p>
 		<p>Cell two.</p>
 		<p>Cell three.</p>

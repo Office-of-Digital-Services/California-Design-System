@@ -36,58 +36,58 @@ ca-grid,
 	row-gap: var(--row-gap);
 
 	/* Set maximum number of columns on the grid. */
-	&[data-max-col="2"],
+	&[max-col="2"],
 	&.ca-grid-max-col-2 {
 		--max-columns: 2;
 	}
-	&[data-max-col="3"],
+	&[max-col="3"],
 	&.ca-grid-max-col-3 {
 		--max-columns: 3;
 	}
-	&[data-max-col="4"],
+	&[max-col="4"],
 	&.ca-grid-max-col-4 {
 		--max-columns: 4;
 	}
-	&[data-max-col="5"],
+	&[max-col="5"],
 	&.ca-grid-max-col-5 {
 		--max-columns: 5;
 	}
-	&[data-max-col="6"],
+	&[max-col="6"],
 	&.ca-grid-max-col-6 {
 		--max-columns: 6;
 	}
 	/* Set minimum number of columns on the grid. */
-	&[data-min-col="2"],
+	&[min-col="2"],
 	&.ca-grid-min-col-2 {
 		--min-columns: 2;
 	}
-	&[data-min-col="3"],
+	&[min-col="3"],
 	&.ca-grid-min-col-3 {
 		--min-columns: 3;
 	}
-	&[data-min-col="4"],
+	&[min-col="4"],
 	&.ca-grid-min-col-4 {
 		--min-columns: 4;
 	}
-	&[data-min-col="5"],
+	&[min-col="5"],
 	&.ca-grid-min-col-5 {
 		--min-columns: 5;
 	}
-	&[data-min-col="6"],
+	&[min-col="6"],
 	&.ca-grid-min-col-6 {
 		--min-columns: 6;
 	}
 
 	/* An example cell size shortcut. */
-	&[data-cell-size="large"] {
+	&[cell-size="large"] {
 		--min-cell-inline-size: 48ch;
 	}
 
 	/* Change the fit/fill style of the grid columns. */
-	&[data-flow="fit"] {
+	&[flow="fit"] {
 		--flow-style: auto-fit;
 	}
-	&[data-flow="fill"] {
+	&[flow="fill"] {
 		--flow-style: auto-fill;
 	}
 }
