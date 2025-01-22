@@ -1,11 +1,142 @@
-footer a {
-	color: var(--text-color);
+footer {
+	container: footer / inline-size;
+
+	& a {
+		color: var(--text-color);
+		text-decoration: none;
+	}
+
+	& ul {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	& li {
+		padding: 0;
+		margin: 0;
+		font-size: var(--text-size-small);
+	}
+
+	& ca-grid {
+		--col-gap: 2rem;
+		--row-gap: 2rem;
+		--flow-style: auto-fill;
+		--min-cell-inline-size: 20rem;
+
+		margin-block-end: 2rem;
+		padding-block-end: 2rem;
+		border-block-end: 2px solid;
+		border-image-slice: 1;
+		border-image-source: linear-gradient(
+			to right,
+			var(--text-color),
+			var(--background-color)
+		);
+	}
+
+	& section {
+		padding: 0;
+	}
+
+	/* Support all heading levels for footer sections, just in case. */
+	& :is(h2, h3, h4, h5, h6) {
+		font-size: var(--text-size-1);
+		line-height: normal;
+		font-weight: 600;
+		margin-block: 0 1rem;
+		padding-block: 0 1rem;
+		border-block-end: 2px solid;
+		border-image-slice: 1;
+		border-image-source: linear-gradient(
+			to right,
+			var(--text-color),
+			var(--background-color)
+		);
+	}
+}
+
+ca-footer-links {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-between;
+	gap: 1.5rem;
+	margin-block-end: 2rem;
+
+	& > ul:nth-of-type(2) {
+		flex-direction: row;
+	}
+}
+
+@container footer (width > 50rem) {
+	ca-footer-links {
+		flex-direction: row;
+
+		& > ul:first-of-type {
+			flex-direction: row;
+			flex-wrap: wrap;
+			column-gap: 1.5rem;
+
+			& > li:first-of-type {
+				min-inline-size: 100%;
+				font-size: var(--text-size-1);
+			}
+		}
+	}
 }
 
 ca-footer-end {
-	display: grid;
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	justify-content: space-between;
+	column-gap: 1rem;
+	row-gap: 1rem;
 
-	& > p {
+	& p {
 		margin: 0;
+		line-height: normal;
+	}
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1rem;
+		column-gap: 1rem;
+	}
+
+	& > div:first-of-type {
+		flex-basis: 100%; /* Expand first div to fill space. */
+
+		& > *:last-child {
+			font-size: var(--text-size-small);
+		}
+	}
+
+	/* Icon links in 2nd div */
+	& > div:nth-of-type(2) > a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		justify-self: end;
+		block-size: 3rem;
+		inline-size: 3rem;
+		border: solid 2px var(--text-color);
+	}
+}
+
+@container footer (width > 50rem) {
+	ca-footer-end {
+		& > div {
+			flex-direction: row;
+		}
+
+		& > div:first-of-type > *:last-child {
+			margin-inline-start: auto; /* Push copyright line to edge. */
+		}
 	}
 }

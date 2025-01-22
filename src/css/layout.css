@@ -26,15 +26,14 @@ ca-layout,
 		background-color: orange;
 	}
 
-	& > nav#site-nav {
-		grid-area: site-nav;
+	& > nav#content-nav {
+		grid-area: content-nav;
 		padding: 1rem;
 		background-color: yellow;
 	}
 
 	& > main {
 		grid-area: main;
-		background-color: cornsilk;
 	}
 
 	& > footer {
@@ -57,8 +56,12 @@ ca-layout,
 		"burger utility-nav"
 		"header header"
 		"main main"
-		"site-nav site-nav"
 		"footer footer";
+
+	/* :where() drops specificity so it's easy to override on responsive queries. */
+	& > :where(nav#content-nav) {
+		display: none;
+	}
 }
 
 /* Default (Eureka), small desktop */
@@ -69,8 +72,12 @@ ca-layout,
 		grid-template-areas:
 			"header utility-nav"
 			"header main"
-			"site-nav main"
-			"site-nav footer";
+			"content-nav main"
+			"content-nav footer";
+	}
+
+	& > nav#content-nav {
+		display: block;
 	}
 }
 
@@ -88,7 +95,7 @@ ca-layout,
 		grid-template-columns: 7rem auto 1fr;
 		grid-template-areas:
 			"header header utility-nav"
-			"blank site-nav site-nav" /* Note the "blank" spot. */
+			"blank content-nav content-nav" /* Note the "blank" spot. */
 			"main main main"
 			"footer footer footer";
 
@@ -107,7 +114,7 @@ ca-layout,
 	:is(ca-layout, .ca-layout)[format="skyline"] {
 		grid-template-columns: max-content auto max-content;
 		grid-template-areas:
-			"header site-nav utility-nav"
+			"header content-nav utility-nav"
 			"main main main"
 			"footer footer footer";
 	}

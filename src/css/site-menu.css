@@ -13,7 +13,7 @@ ca-site-menu {
 	}
 }
 
-nav#site-nav {
+nav#content-nav {
 	& > ul {
 		display: flex;
 		flex-direction: column;
@@ -38,14 +38,14 @@ nav#site-nav {
 	}
 
 	/* Show the full nav. */
-	nav#site-nav {
+	nav#content-nav {
 		display: block;
 	}
 }
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout)[format="horizon"] > nav#site-nav {
+	:is(ca-layout, .ca-layout)[format="horizon"] > nav#content-nav {
 		& > ul {
 			flex-direction: row;
 			column-gap: 4rem;
@@ -55,7 +55,7 @@ nav#site-nav {
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout)[format="skyline"] > nav#site-nav {
+	:is(ca-layout, .ca-layout)[format="skyline"] > nav#content-nav {
 		display: flex;
 		align-items: center;
 		padding: 1rem 3rem;
