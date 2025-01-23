@@ -1,6 +1,6 @@
 <ca-layout format="">
 	<ca-site-menu>
-		<a href="#site-nav" title="Menu">
+		<a href="#content-nav" title="Menu">
 			<svg aria-hidden="true">
 				<use href="/images/icons.svg#hambearger"></use>
 			</svg>
@@ -46,7 +46,7 @@
 		<p>Some main content.</p>
 	</main>
 
-	<nav id="site-nav" aria-label="Site navigation">
+	<nav id="content-nav" aria-label="Content navigation">
 		<ul>
 			<li>Link 1</li>
 			<li>Link 2</li>
@@ -55,25 +55,107 @@
 	</nav>
 
 	<footer>
-		<p>Some footer content.</p>
+		<ca-grid>
+			<section>
+				<h2>Footer column heading</h2>
+				<ul>
+					<li><a href="#">Footer link</a></li>
+					<li><a href="#">Footer link</a></li>
+					<li><a href="#">Footer link</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Footer column heading</h2>
+				<ul>
+					<li><a href="#">Footer link</a></li>
+					<li><a href="#">Footer link</a></li>
+					<li><a href="#">Footer link</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Footer column heading</h2>
+				<ul>
+					<li><a href="#">Footer link</a></li>
+					<li><a href="#">Footer link</a></li>
+					<li><a href="#">Footer link</a></li>
+				</ul>
+			</section>
+		</ca-grid>
+
+		<ca-footer-links>
+			<ul>
+				<li><a href="#">Website Accessibility Certification</a></li>
+				<li><a href="#">Conditions of use</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Accessibility</a></li>
+				<li><a href="#">Sitemap</a></li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#" title="Login">
+						<svg width="24" height="24" aria-hidden="true">
+							<use href="/images/icons.svg#mail"></use>
+						</svg>
+						<span class="visually-hidden">Login</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Login">
+						<svg width="24" height="24" aria-hidden="true">
+							<use href="/images/icons.svg#facebook"></use>
+						</svg>
+						<span class="visually-hidden">Login</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Login">
+						<svg width="24" height="24" aria-hidden="true">
+							<use href="/images/icons.svg#linkedIn"></use>
+						</svg>
+						<span class="visually-hidden">Login</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Login">
+						<svg width="24" height="24" aria-hidden="true">
+							<use href="/images/icons.svg#x-dot-com"></use>
+						</svg>
+						<span class="visually-hidden">Login</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Login">
+						<svg width="24" height="24" aria-hidden="true">
+							<use href="/images/icons.svg#youtube"></use>
+						</svg>
+						<span class="visually-hidden">Login</span>
+					</a>
+				</li>
+			</ul>
+		</ca-footer-links>
+
 		<ca-footer-end>
-			<svg width="50" height="28" aria-hidden="true">
-				<use href="/images/icons.svg#cagov"></use>
-			</svg>
-			<p>An official California state website</p>
-			<p>© 2024 State of California</p>
-			<a href="#" title="Help">
-				<svg width="24" height="24" aria-hidden="true">
-					<use href="/images/icons.svg#help"></use>
+			<div>
+				<svg width="50" height="28" aria-hidden="true">
+					<use href="/images/icons.svg#cagov"></use>
 				</svg>
-				<span class="visually-hidden">Help</span>
-			</a>
-			<a href="#" title="Back to top">
-				<svg width="24" height="24" aria-hidden="true">
-					<use href="/images/icons.svg#back-to-top"></use>
-				</svg>
-				<span class="visually-hidden">Back to top</span>
-			</a>
+				<p>An official California state website</p>
+				<p>© <ca-current-year>2025</ca-current-year> State of California</p>
+			</div>
+			<div>
+				<a href="#" title="Help">
+					<svg width="24" height="24" aria-hidden="true">
+						<use href="/images/icons.svg#help"></use>
+					</svg>
+					<span class="visually-hidden">Help</span>
+				</a>
+				<a href="#" title="Back to top">
+					<svg width="24" height="24" aria-hidden="true">
+						<use href="/images/icons.svg#back-to-top"></use>
+					</svg>
+					<span class="visually-hidden">Back to top</span>
+				</a>
+			</div>
 		</ca-footer-end>
 	</footer>
 </ca-layout>
