@@ -1,0 +1,73 @@
+:root {
+	/* Basic palette */
+	--mountain-gray-10: #fefeff;
+	--mountain-gray-20: #e0e7ea;
+	--mountain-gray-30: #c1cfd6;
+	--mountain-gray-40: #a2b8c2;
+	--mountain-gray-50: #83a0ae;
+	--mountain-gray-60: #688c9d;
+	--mountain-gray-70: #5e8394;
+	--mountain-gray-80: #506d7b;
+	--mountain-gray-90: #3c525c;
+	--mountain-gray-100: #28363d;
+	--mountain-gray-110: #141b1e;
+	--mountain-gray-120: #080b0c;
+
+	/* Foreground/background shades */
+	--mountain-gray-lightest: var(--mountain-gray-10);
+	--mountain-gray-lighter: #f8fafa;
+	--mountain-gray-light: #f2f5f6;
+	--mountain-gray-palest: #ecf0f2;
+	--mountain-gray-paler: #dfe6ea;
+	--mountain-gray-pale: #d2dde2;
+	--mountain-gray-dim: #243238;
+	--mountain-gray-dimmer: #1c272c;
+	--mountain-gray-dimmest: #141c1f;
+	--mountain-gray-dark: #101619;
+	--mountain-gray-darker: #0c1012;
+	--mountain-gray-darkest: var(--mountain-gray-120);
+
+	/* Highlight, call-to-action */
+	--mountain-gray-highlight: var(--mountain-gray-60);
+	--mountain-gray-highlight-light: var(--mountain-gray-50);
+	--mountain-gray-highlight-dark: var(--mountain-gray-70);
+
+	/* Light mode (default) */
+	--primary-background-10: var(--mountain-gray-lightest);
+	--primary-background-20: var(--mountain-gray-lighter);
+	--primary-background-30: var(--mountain-gray-light);
+	--primary-background-40: var(--mountain-gray-palest);
+	--primary-background-50: var(--mountain-gray-paler);
+	--primary-background-60: var(--mountain-gray-pale);
+
+	--primary-foreground-60: var(--mountain-gray-dim);
+	--primary-foreground-50: var(--mountain-gray-dimmer);
+	--primary-foreground-40: var(--mountain-gray-dimmest);
+	--primary-foreground-30: var(--mountain-gray-dark);
+	--primary-foreground-20: var(--mountain-gray-darker);
+	--primary-foreground-10: var(--mountain-gray-darkest);
+
+	--primary-highlight-active: var(--mountain-gray-highlight-dark);
+
+	--primary-highlight: var(--mountain-gray-highlight);
+	--primary-text: var(--primary-foreground-10);
+}
+
+/* Dark mode */
+[data-color-scheme="dark"] {
+	--primary-foreground-10: var(--mountain-gray-lightest);
+	--primary-foreground-20: var(--mountain-gray-lighter);
+	--primary-foreground-30: var(--mountain-gray-light);
+	--primary-foreground-40: var(--mountain-gray-palest);
+	--primary-foreground-50: var(--mountain-gray-paler);
+	--primary-foreground-60: var(--mountain-gray-pale);
+
+	--primary-background-60: var(--mountain-gray-dim);
+	--primary-background-50: var(--mountain-gray-dimmer);
+	--primary-background-40: var(--mountain-gray-dimmest);
+	--primary-background-30: var(--mountain-gray-dark);
+	--primary-background-20: var(--mountain-gray-darker);
+	--primary-background-10: var(--mountain-gray-darkest);
+
+	--primary-highlight-active: var(--mountain-gray-highlight-light);
+}

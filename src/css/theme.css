@@ -1,89 +1,25 @@
 :root {
-	/* color variables */
-	--brand-primary: #13394b;
-	--brand-secondary: #0070a3;
-	--banner-light: #d5dbde;
-	--banner-dark: #09202b;
-	--brand-hover-light: #3ca3d3;
-	--brand-hover-dark: #246c8e;
-	--navigation-hover-light: #1a485e;
-	--navigation-hover-dark: #0f3040;
-	--background-primary-light: #d9d8cf;
-	--background-primary-dark: #43433f;
-	--background-secondary-light: #f5f3eb;
-	--background-secondary-dark: #65645f;
-	--action-primary: #fec335;
-	--action-secondary: #fae2ad;
-	--action-secondary-hover: #e9d2a1;
-	--main-light: #fafafa;
-	--main-dark: #242424;
-	--navigation-submenu-dark: #6d6d6d;
-	--navigation-submenu-light: #dbdbdb;
-	--utility-dark: #111111;
-	--utility-dark-grey: #494949;
-	--utility-mid-grey: #929292;
-	--utility-light-grey: #b6b6b6;
-	--text-dark: #323232;
-	--text-white: #ffffff;
-	--hyperlink-light: #0057ad;
-	--hyperlink-activated-light: #8a0071;
-	--hyperlink-dark: #87cefa;
-	--hyperlink-activated-dark: #f692b9;
-	--white: #ffffff;
-	--gray-10: #eeeeee;
-	--gray-25: #dddddd;
-	--gray-50: #cccccc;
-	--gray-75: #bbbbbb;
-	--gray-100: #aaaaaa;
-	--gray-200: #999999;
-	--gray-300: #888888;
-	--gray-400: #777777;
-	--gray-500: #666666;
-	--gray-600: #555555;
-	--gray-700: #444444;
-	--gray-800: #333333;
-	--gray-900: #222222;
-	--gray-1000: #111111;
-	--black: #000000;
+	--link-light: #87cefa;
+	--link-light-active: #f692b9;
+	--link-dark: #0057ad;
+	--link-dark-active: #8a0071;
 
-	/* transition */
-	--scale: 1.04;
-	--transition: 0.3s;
+	--text-light: #fff;
+	--text-dark: #292929;
+
+	/* Pulls from the loaded theme */
+	--primary-text: var(--primary-foreground-10);
+	--primary-background: var(--primary-background-10);
+
+	/* Light mode (default) */
+	--link: var(--link-dark);
+	--link-active: var(--link-dark-active);
+	--text: var(--text-dark);
 }
 
-/* 
- * Repeating the color-scheme like this is the least-JS way to 
- * respect the OS default while still allowing a toggle.	
- */
-
-[data-color-scheme="light"] {
-	--background-color: var(--main-light);
-	--text-color: var(--text-dark);
-	--link-color: var(--hyperlink-light);
-	--active-link-color: var(--hyperlink-activated-light);
-}
-
-@media (prefers-color-scheme: light) {
-	:root:not([data-color-scheme="light"]):not([data-color-scheme="dark"]) {
-		--background-color: var(--main-light);
-		--text-color: var(--text-dark);
-		--link-color: var(--hyperlink-light);
-		--active-link-color: var(--hyperlink-activated-light);
-	}
-}
-
+/* Dark mode */
 [data-color-scheme="dark"] {
-	--background-color: var(--main-dark);
-	--text-color: var(--text-white);
-	--link-color: var(--hyperlink-dark);
-	--active-link-color: var(--hyperlink-activated-dark);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root:not([data-color-scheme="light"]):not([data-color-scheme="dark"]) {
-		--background-color: var(--main-dark);
-		--text-color: var(--text-white);
-		--link-color: var(--hyperlink-dark);
-		--active-link-color: var(--hyperlink-activated-dark);
-	}
+	--link: var(--link-light);
+	--link-active: var(--link-light-active);
+	--text: var(--text-light);
 }
