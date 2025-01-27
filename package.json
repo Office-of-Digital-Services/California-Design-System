@@ -1,6 +1,6 @@
 {
 	"name": "@cagovweb/design-system",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"type": "module",
 	"main": "dist/bundle.js",
 	"description": "This system makes it easy to build digital services that meet the needs of Californians.",
