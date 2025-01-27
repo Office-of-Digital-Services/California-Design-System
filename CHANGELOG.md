@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.5.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.4.0...v1.5.0) (2025-01-27)
+
+
+### Features
+
+* Create icon font ([025c8b4](https://github.com/Office-of-Digital-Services/California-Design-System/commit/025c8b401976dd4c1eecb481ebbd444df5eb2f3c))
+* Footer content ([527c2a0](https://github.com/Office-of-Digital-Services/California-Design-System/commit/527c2a096324dcf7abb05b637ab2ad9269756a02))
+* Initial color work ([f868f6e](https://github.com/Office-of-Digital-Services/California-Design-System/commit/f868f6ee3770267d2d025e1f0f3d267339098ae0))
+* Initial footer ([87d3103](https://github.com/Office-of-Digital-Services/California-Design-System/commit/87d3103fff02d614acf1a6ea1e80b95c32a54c6e))
+* Initial layout setup ([11d8210](https://github.com/Office-of-Digital-Services/California-Design-System/commit/11d821093ca4af6d06a89adbb449232a1e8d2633))
+* Use icon symbols instead ([17fc99f](https://github.com/Office-of-Digital-Services/California-Design-System/commit/17fc99f657eea388a53fffbaaebd69ce0316040d))
+
+
+### Bug Fixes
+
+* Footer padding ([5ae6421](https://github.com/Office-of-Digital-Services/California-Design-System/commit/5ae642137d6a0f8a11a9f0b122b90cb38f09fec2))
+* Remove data- from grid ([6ac9937](https://github.com/Office-of-Digital-Services/California-Design-System/commit/6ac99378e40c56d758c11c827b86c20500bd19af))
+
 ## [1.4.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.3.1...v1.4.0) (2024-12-03)
 
 
