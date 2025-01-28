@@ -40,7 +40,6 @@
 	--primary-background-40: var(--coastal-blue-palest);
 	--primary-background-50: var(--coastal-blue-paler);
 	--primary-background-60: var(--coastal-blue-pale);
-
 	--primary-foreground-60: var(--coastal-blue-dim);
 	--primary-foreground-50: var(--coastal-blue-dimmer);
 	--primary-foreground-40: var(--coastal-blue-dimmest);
@@ -49,8 +48,9 @@
 	--primary-foreground-10: var(--coastal-blue-darkest);
 
 	--primary-highlight-active: var(--coastal-blue-highlight-dark);
-
 	--primary-highlight: var(--coastal-blue-highlight);
+	--primary-text: var(--primary-foreground-10);
+	--primary-background: var(--primary-background-10);
 }
 
 /* Dark mode */
@@ -61,7 +61,6 @@
 	--primary-foreground-40: var(--coastal-blue-palest);
 	--primary-foreground-50: var(--coastal-blue-paler);
 	--primary-foreground-60: var(--coastal-blue-pale);
-
 	--primary-background-60: var(--coastal-blue-dim);
 	--primary-background-50: var(--coastal-blue-dimmer);
 	--primary-background-40: var(--coastal-blue-dimmest);
@@ -70,4 +69,6 @@
 	--primary-background-10: var(--coastal-blue-darkest);
 
 	--primary-highlight-active: var(--coastal-blue-highlight-light);
+	--primary-text: var(--primary-foreground-10);
+	--primary-background: var(--primary-background-10);
 }
