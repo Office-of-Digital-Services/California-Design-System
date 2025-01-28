@@ -23,6 +23,11 @@ const banner = `/*
 await fs.rm("dist", { recursive: true, force: true });
 await fs.mkdir("dist");
 
+// Include critical image files
+await fs.mkdir("dist/images");
+await fs.copyFile("static/images/icons.svg", "dist/images/icons.svg");
+await fs.copyFile("static/images/favicon.ico", "dist/images/favicon.ico");
+
 // Build all files first.
 await cssBuilder(`${fileSlug}.css`, { banner });
 await cssBuilder(`${fileSlug}.min.css`, { banner, minify: true });
