@@ -61,7 +61,7 @@ figure {
 	gap: .5rem;
 	padding: .5rem;
 	margin: 1rem 0;
-	border: .125rem solid var(--gray-300);
+	border: .125rem solid var(--primary-background-40);
 	max-width: var(--text-max-width);
 }
 
@@ -71,7 +71,7 @@ figcaption {
 
 hr {
 	border: none;
-	border-block-start: .25rem solid var(--gray-300);
+	border-block-start: .25rem solid var(--primary-background-40);
 	height: .25rem;
 	margin: 1rem 0;
 	line-height: 1rem;
@@ -88,10 +88,10 @@ menu {
  */
 
 a {
-	color: var(--link-color);
+	color: var(--link);
 
 	&:focus {
-		color: var(--active-link-color);
+		color: var(--link-active);
 	}
 }
 
