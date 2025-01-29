@@ -1,9 +1,9 @@
-footer {
+:is(ca-layout, .ca-layout) > footer {
 	container: footer / inline-size;
 	padding-block: 5rem 3rem;
 
 	& a {
-		color: var(--text-color);
+		color: var(--primary-text);
 		text-decoration: none;
 	}
 
@@ -34,8 +34,8 @@ footer {
 		border-image-slice: 1;
 		border-image-source: linear-gradient(
 			to right,
-			var(--text-color),
-			var(--background-color)
+			var(--primary-text),
+			var(--primary-background-10)
 		);
 	}
 
@@ -54,8 +54,8 @@ footer {
 		border-image-slice: 1;
 		border-image-source: linear-gradient(
 			to right,
-			var(--text-color),
-			var(--background-color)
+			var(--primary-text),
+			var(--primary-background-10)
 		);
 	}
 }
@@ -75,11 +75,12 @@ ca-footer-links {
 	& svg {
 		min-block-size: 1.5rem;
 		min-inline-size: 1.5rem;
+		color: var(--primary-110);
 	}
 }
 
 @container footer (width > 50rem) {
-	footer > * {
+	:is(ca-layout, .ca-layout) > footer > * {
 		/* Apply side margin to all top-level children of footer. */
 		margin-inline: 3rem;
 	}
@@ -136,7 +137,8 @@ ca-footer-end {
 		justify-self: end;
 		block-size: 3rem;
 		inline-size: 3rem;
-		border: solid 2px var(--text-color);
+		color: var(--primary-110);
+		border: solid 2px var(--primary-110);
 	}
 }
 

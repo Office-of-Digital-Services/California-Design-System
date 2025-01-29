@@ -1,0 +1,10 @@
+:is(ca-layout, .ca-layout) > main {
+	container: main / inline-size;
+}
+
+@container main (width > 50rem) {
+	:is(ca-layout, .ca-layout) > main > * {
+		/* Apply side margin to all top-level children of footer. */
+		margin-inline: 3rem;
+	}
+}

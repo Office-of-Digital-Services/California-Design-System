@@ -6,13 +6,12 @@ ca-layout,
 .ca-layout {
 	& > ca-site-menu {
 		grid-area: burger;
-		background-color: lightcoral;
+		background-color: var(--primary-background-20);
 	}
 
 	& > header {
 		grid-area: header;
 		padding: 1rem;
-		background-color: lightblue;
 	}
 
 	& > search {
@@ -23,22 +22,26 @@ ca-layout,
 
 	& > nav#utility-nav {
 		grid-area: utility-nav;
-		background-color: orange;
 	}
 
 	& > nav#content-nav {
 		grid-area: content-nav;
 		padding: 1rem;
-		background-color: yellow;
+		background-color: var(--primary-background-20);
 	}
 
 	& > main {
 		grid-area: main;
+		background-color: var(--primary-background-10);
 	}
 
 	& > footer {
 		grid-area: footer;
-		background-color: lightpink;
+		background: linear-gradient(
+			0deg,
+			var(--primary-background-10) 77%,
+			var(--primary-background-20) 100%
+		);
 	}
 }
 
@@ -81,14 +84,6 @@ ca-layout,
 	}
 }
 
-/* Default (Eureka), large desktop */
-@media screen and (min-width: 1280px) {
-	ca-layout,
-	.ca-layout {
-		grid-template-columns: 20rem 1fr;
-	}
-}
-
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
 	:is(ca-layout, .ca-layout)[format="horizon"] {
@@ -103,7 +98,7 @@ ca-layout,
 		&::after {
 			content: "";
 			grid-area: blank;
-			background-color: lightgray;
+			background-color: var(--primary-background-20);
 			z-index: -100;
 		}
 	}
@@ -133,7 +128,7 @@ nav#utility-nav {
 }
 
 search svg {
-	color: var(--text-color);
+	color: var(--primary-text);
 }
 
 search {

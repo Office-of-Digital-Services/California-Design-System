@@ -43,21 +43,25 @@
 	--gray-highlight-dark: var(--gray-110);
 
 	/* Grayscale light mode (default) */
-	--gray-background-10: var(--gray-lightest);
-	--gray-background-20: var(--gray-lighter);
-	--gray-background-30: var(--gray-light);
-	--gray-background-40: var(--gray-palest);
-	--gray-background-50: var(--gray-paler);
-	--gray-background-60: var(--gray-pale);
-	--gray-foreground-60: var(--gray-dim);
-	--gray-foreground-50: var(--gray-dimmer);
-	--gray-foreground-40: var(--gray-dimmest);
-	--gray-foreground-30: var(--gray-dark);
-	--gray-foreground-20: var(--gray-darker);
-	--gray-foreground-10: var(--gray-darkest);
-	--gray-highlight-active: var(--gray-highlight-dark);
-	--gray-text: var(--gray-foreground-10);
-	--gray-background: var(--gray-background-10);
+	--primary-background-10: var(--gray-lightest);
+	--primary-background-20: var(--gray-lighter);
+	--primary-background-30: var(--gray-light);
+	--primary-background-40: var(--gray-palest);
+	--primary-background-50: var(--gray-paler);
+	--primary-background-60: var(--gray-pale);
+	--primary-foreground-60: var(--gray-dim);
+	--primary-foreground-50: var(--gray-dimmer);
+	--primary-foreground-40: var(--gray-dimmest);
+	--primary-foreground-30: var(--gray-dark);
+	--primary-foreground-20: var(--gray-darker);
+	--primary-foreground-10: var(--gray-darkest);
+
+	--primary-highlight-active: var(--gray-highlight-dark);
+	--primary-highlight: var(--gray-highlight);
+	--primary-text: var(--primary-foreground-10);
+	--primary-background: var(--primary-background-10);
+
+	--text: var(--gray-foreground-10);
 }
 
 /* Dark mode */
@@ -66,19 +70,21 @@
 	--link-active: var(--link-light-active);
 
 	/* Grayscale palette swaps */
-	--gray-foreground-10: var(--gray-lightest);
-	--gray-foreground-20: var(--gray-lighter);
-	--gray-foreground-30: var(--gray-light);
-	--gray-foreground-40: var(--gray-palest);
-	--gray-foreground-50: var(--gray-paler);
-	--gray-foreground-60: var(--gray-pale);
-	--gray-background-60: var(--gray-dim);
-	--gray-background-50: var(--gray-dimmer);
-	--gray-background-40: var(--gray-dimmest);
-	--gray-background-30: var(--gray-dark);
-	--gray-background-20: var(--gray-darker);
-	--gray-background-10: var(--gray-darkest);
-	--gray-highlight-active: var(--gray-highlight-light);
-	--gray-text: var(--gray-foreground-10);
-	--gray-background: var(--gray-background-10);
+	--primary-foreground-10: var(--gray-lightest);
+	--primary-foreground-20: var(--gray-lighter);
+	--primary-foreground-30: var(--gray-light);
+	--primary-foreground-40: var(--gray-palest);
+	--primary-foreground-50: var(--gray-paler);
+	--primary-foreground-60: var(--gray-pale);
+	--primary-background-60: var(--gray-dim);
+	--primary-background-50: var(--gray-dimmer);
+	--primary-background-40: var(--gray-dimmest);
+	--primary-background-30: var(--gray-dark);
+	--primary-background-20: var(--gray-darker);
+	--primary-background-10: var(--gray-darkest);
+	--primary-highlight-active: var(--gray-highlight-light);
+	--primary-text: var(--gray-foreground-10);
+	--primary-background: var(--gray-background-10);
+
+	--text: var(--primary-foreground-10);
 }

@@ -3,7 +3,7 @@ ca-site-menu {
 	align-items: center;
 
 	& > a {
-		color: var(--text-color);
+		color: var(--primary-110);
 		padding: 0.5rem 1rem;
 	}
 
