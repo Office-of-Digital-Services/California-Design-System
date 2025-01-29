@@ -1,24 +1,21 @@
 :root {
-	/* Yes, safe to override. */
+	/* 
+	 * Removing responsive typography for now, while making sense of the layout.
+	 * See the following URL to restore.
+	 * https://github.com/Office-of-Digital-Services/California-Design-System/blob/v1.5.0/src/css/typography.css
+	 * Let's revisit after both layout and typography are settled.
+	 */
+
 	--font-family: Noto Sans;
 	--text-max-width: 65ch;
-	--ratio: 1.24;
-	--font-size-base: 1rem; /* Adjust font-size-base, default 1rem. */
-	--text-lineheight-base: 1rem;
-	--text-lineheight-small: 1.5;
-	--text-lineheight-medium: 1.619;
-	--text-lineheight-large: 2.619;
 
-	/* No, don't override. */
-	--font-size-base-responsive: calc(var(--font-size-base) + 0.2vw);
-	--text-size-small: calc(var(--font-size-base-responsive) - 0.1em);
-	--text-size-1: var(--font-size-base-responsive);
-	--text-size-2: calc(var(--text-size-1) * var(--ratio));
-	--text-size-3: calc(var(--text-size-2) * var(--ratio));
-	--text-size-4: calc(var(--text-size-3) * var(--ratio));
-	--text-size-5: calc(var(--text-size-4) * var(--ratio));
-	--text-size-6: calc(var(--text-size-5) * var(--ratio));
-	--text-size-7: calc(var(--text-size-6) * var(--ratio) * var(--ratio));
+	--text-size-sm: 0.9375rem;
+	--text-size-1: 1rem; /* H5, H6, and menu items */
+	--text-size-2: 1.125rem; /* Base text */
+	--text-size-3: 1.25rem; /* H4 and lead text */
+	--text-size-4: 1.5625rem; /* H3 */
+	--text-size-5: 2rem; /* H2 */
+	--text-size-6: 3.375rem; /* H1 */
 }
 
 /* Prevent font size inflation. */
@@ -31,40 +28,15 @@ html {
 body {
 	font-family: var(--font-family), system-ui, -apple-system, "Roboto",
 		"Helvetica Neue", sans-serif;
-	font-size: clamp(1rem, var(--text-size-1), 5rem);
-	letter-spacing: 0.02rem;
+	font-size: var(--text-size-2);
 	font-weight: 400;
-	line-height: var(--text-lineheight-base);
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5 {
-	text-wrap: balance;
-	margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
-}
-
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5 {
-	margin-top: clamp(2.2rem, 2.0909rem + 0.499vw, 2.5rem);
+p {
+	line-height: 1.6rem;
 }
 
 p,
-li,
-small,
 blockquote,
 figcaption {
 	max-width: var(--text-max-width);
@@ -72,71 +44,65 @@ figcaption {
 }
 
 h1,
-.h1 {
-	font-weight: 700;
-	font-size: var(--text-size-7);
-	line-height: var(--text-lineheight-medium);
-}
-
 h2,
-.h2 {
-	font-weight: 700;
-	font-size: var(--text-size-6);
-	line-height: var(--text-lineheight-medium);
-}
-
 h3,
-.h3 {
-	font-weight: 700;
-	font-size: var(--text-size-5);
-	line-height: var(--text-lineheight-medium);
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	margin-block-end: 1.3rem;
 }
 
-h4,
-.h4 {
+h1 {
+	font-weight: 600;
+	font-size: var(--text-size-6);
+	line-height: 4.625rem;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: var(--text-size-5);
+	line-height: 2.625rem;
+}
+
+h3 {
 	font-weight: 600;
 	font-size: var(--text-size-4);
-	line-height: var(--text-lineheight-medium);
+	line-height: 2.1875rem;
 }
 
-h5,
-.h5 {
+h4 {
 	font-weight: 600;
 	font-size: var(--text-size-3);
-	line-height: var(--text-lineheight-medium);
+	line-height: 1.875rem;
+}
+
+h5 {
+	font-weight: 600;
+	font-size: var(--text-size-1);
+}
+
+h6 {
+	font-size: var(--text-size-1);
 }
 
 p,
 li {
-	margin-bottom: clamp(1.3rem, 1.2272rem + 0.3326vw, 1.5rem);
-}
-
-p,
-li,
-dt,
-dd,
-figcaption,
-legend,
-label {
-	line-height: var(--text-lineheight-medium);
+	margin-block-end: 1.3rem;
 }
 
 h1 + p,
 .lead {
+	font-weight: 400;
 	font-size: var(--text-size-3);
-	line-height: var(--text-lineheight-small);
-	margin-bottom: clamp(1.7rem, 1.6363rem + 0.2911vw, 1.875rem);
+	line-height: 1.875rem;
+	margin-bottom: 1.7rem;
 }
 
-.text-small {
-	font-weight: 500;
-	font-size: var(--text-size-small);
-	line-height: var(--text-lineheight-large);
-	margin-bottom: clamp(1.22rem, 1.2091rem + 0.0499vw, 1.25rem);
-}
-
-small {
-	font-size: var(--text-size-small);
+small,
+.small {
+	font-size: var(--text-size-sm);
+	margin-bottom: 1.22rem;
 }
 
 code,
