@@ -10,6 +10,7 @@
 		"state"
 		"dept";
 	row-gap: .5rem;
+	background-color: var(--primary-background-20);
 
 	& > :is(img, svg) {
 		grid-area: logo;
@@ -17,15 +18,18 @@
 		display: none; /* Don't display image on mobile */
 	}
 
+	/* "California" */
 	& > span:first-of-type {
 		grid-area: state;
 		font-weight: 700;
-		font-size: var(--text-size-3);
-		line-height: var(--text-size-3);
+		font-size: var(--text-size-4);
+		line-height: 2.1875rem;
 	}
 
+	/* Department website */
 	& > span:nth-of-type(2) {
 		grid-area: dept;
+		line-height: 1.6rem;
 	}
 
 	/* Apply this if there's only one single span. */
@@ -52,10 +56,14 @@
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
 	:is(ca-layout, .ca-layout) > header {
+		grid-template-columns: auto;
+		grid-template-rows: max-content max-content max-content;
 		grid-template-areas:
 			"logo"
 			"state"
 			"dept";
+
+		padding-inline: 2rem;
 
 		& > :is(img, svg) {
 			display: block;
@@ -77,6 +85,7 @@
 		column-gap: 1rem;
 		block-size: 5.5rem;
 		overflow-y: visible;
+		padding-inline: 1rem;
 
 		& > :is(img, svg) {
 			margin: 0;
@@ -93,6 +102,7 @@
 			"logo state"
 			"logo dept";
 		column-gap: 1rem;
+		padding-inline: 1rem;
 
 		& > :is(img, svg) {
 			block-size: 4rem;

@@ -1,9 +1,9 @@
-footer {
+:is(ca-layout, .ca-layout) > footer {
 	container: footer / inline-size;
 	padding-block: 5rem 3rem;
 
 	& a {
-		color: var(--text-color);
+		color: var(--primary-text);
 		text-decoration: none;
 	}
 
@@ -19,7 +19,7 @@ footer {
 	& li {
 		padding: 0;
 		margin: 0;
-		font-size: var(--text-size-small);
+		font-size: var(--text-size-sm);
 	}
 
 	& ca-grid {
@@ -34,8 +34,9 @@ footer {
 		border-image-slice: 1;
 		border-image-source: linear-gradient(
 			to right,
-			var(--text-color),
-			var(--background-color)
+			var(--primary-background-10),
+			var(--primary-40),
+			var(--primary-background-10)
 		);
 	}
 
@@ -45,7 +46,7 @@ footer {
 
 	/* Support all heading levels for footer sections, just in case. */
 	& :is(h2, h3, h4, h5, h6) {
-		font-size: var(--text-size-1);
+		font-size: var(--text-size-3);
 		line-height: normal;
 		font-weight: 600;
 		margin-block: 0 1rem;
@@ -54,8 +55,9 @@ footer {
 		border-image-slice: 1;
 		border-image-source: linear-gradient(
 			to right,
-			var(--text-color),
-			var(--background-color)
+			var(--primary-background-10),
+			var(--primary-40),
+			var(--primary-background-10)
 		);
 	}
 }
@@ -75,11 +77,12 @@ ca-footer-links {
 	& svg {
 		min-block-size: 1.5rem;
 		min-inline-size: 1.5rem;
+		color: var(--primary-110);
 	}
 }
 
 @container footer (width > 50rem) {
-	footer > * {
+	:is(ca-layout, .ca-layout) > footer > * {
 		/* Apply side margin to all top-level children of footer. */
 		margin-inline: 3rem;
 	}
@@ -94,7 +97,7 @@ ca-footer-links {
 
 			& > li:first-of-type {
 				min-inline-size: 100%;
-				font-size: var(--text-size-1);
+				font-size: var(--text-size-2);
 			}
 		}
 	}
@@ -110,6 +113,7 @@ ca-footer-end {
 
 	& p {
 		margin: 0;
+		font-size: var(--text-size-1);
 		line-height: normal;
 	}
 
@@ -124,7 +128,7 @@ ca-footer-end {
 		flex-basis: 100%; /* Expand first div to fill space. */
 
 		& > *:last-child {
-			font-size: var(--text-size-small);
+			font-size: var(--text-size-sm);
 		}
 	}
 
@@ -136,7 +140,8 @@ ca-footer-end {
 		justify-self: end;
 		block-size: 3rem;
 		inline-size: 3rem;
-		border: solid 2px var(--text-color);
+		color: var(--primary-110);
+		border: solid 2px var(--primary-110);
 	}
 }
 

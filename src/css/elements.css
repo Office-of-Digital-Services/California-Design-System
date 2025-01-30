@@ -14,8 +14,9 @@
  */
 
 body {
-	background-color: var(--background-color);
-	color: var(--text-color);
+	background-color: var(--primary-background-10);
+	color: var(--primary-foreground-10);
+	position: relative;
 	min-height: 100vh;
 }
 
@@ -40,7 +41,7 @@ footer {
  */
 
 blockquote {
-	border-inline-start: var(--gray-300) .25rem solid;
+	border-inline-start: var(--primary-background-60) .25rem solid;
 	margin: 1rem 0;
 	padding-inline-start: 1rem;
 }
@@ -61,7 +62,7 @@ figure {
 	gap: .5rem;
 	padding: .5rem;
 	margin: 1rem 0;
-	border: .125rem solid var(--gray-300);
+	border: .125rem solid var(--primary-background-40);
 	max-width: var(--text-max-width);
 }
 
@@ -71,7 +72,7 @@ figcaption {
 
 hr {
 	border: none;
-	border-block-start: .25rem solid var(--gray-300);
+	border-block-start: .25rem solid var(--primary-background-40);
 	height: .25rem;
 	margin: 1rem 0;
 	line-height: 1rem;
@@ -88,10 +89,10 @@ menu {
  */
 
 a {
-	color: var(--link-color);
+	color: var(--link);
 
 	&:focus {
-		color: var(--active-link-color);
+		color: var(--link-active);
 	}
 }
 
@@ -108,7 +109,7 @@ ins {
 }
 
 kbd {
-	border: .125rem solid var(--text-color);
+	border: .125rem solid var(--primary-text);
 	border-radius: .25rem;
 	padding: .25rem;
 }
@@ -223,7 +224,7 @@ svg {
 
 table {
 	border-collapse: collapse;
-	border: .25rem solid var(--text-color);
+	border: .25rem solid var(--primary-text);
 }
 
 caption {
@@ -235,20 +236,20 @@ caption {
 
 th,
 td {
-	border: .125rem solid var(--text-color);
+	border: .125rem solid var(--primary-text);
 	padding: 1rem;
 }
 
 /* Interactive */
 
 details {
-	border: .125rem solid var(--text-color);
+	border: .125rem solid var(--primary-text);
 	padding: 0;
 	margin-block: 1rem 2rem;
 
 	&[open] summary {
 		margin-block-end: 1rem;
-		border-block-end: .125rem solid var(--text-color);
+		border-block-end: .125rem solid var(--primary-text);
 	}
 
 	&[open] > :not(summary) {

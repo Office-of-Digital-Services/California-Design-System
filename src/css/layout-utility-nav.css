@@ -1,0 +1,33 @@
+:where(nav#utility-nav) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: end;
+	gap: 1rem;
+	background-color: var(--primary-background-20);
+
+	& a {
+		color: var(--primary-110);
+	}
+
+	& svg {
+		block-size: 1.5rem;
+		inline-size: 1.5rem;
+	}
+}
+
+/* Small desktop */
+@media screen and (min-width: 1024px) {
+	:where(nav#utility-nav) {
+		background-color: var(--primary-background-10);
+	}
+
+	:is(ca-layout, .ca-layout) {
+		&[format="horizon"],
+		&[format="skyline"] {
+			& > :where(nav#utility-nav) {
+				background-color: var(--primary-background-20);
+			}
+		}
+	}
+}
