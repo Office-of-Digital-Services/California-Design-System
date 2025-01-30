@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.5.0...v1.6.0) (2025-01-30)
+
+
+### Features
+
+* Add grayscale colors ([a549898](https://github.com/Office-of-Digital-Services/California-Design-System/commit/a549898ed149c533fa82908f7aebb926719fdf75))
+* Implement colors and temp typography ([036ab02](https://github.com/Office-of-Digital-Services/California-Design-System/commit/036ab02f37496187fef6c85c7142f4433812fba9))
+* Include images in release bundle ([90dc205](https://github.com/Office-of-Digital-Services/California-Design-System/commit/90dc20532595bae4f9645259558bf1e36a0e8f6b))
+
 ## [1.5.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.4.0...v1.5.0) (2025-01-27)
 
 
