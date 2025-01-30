@@ -59,6 +59,7 @@ ca-layout,
 		"burger utility-nav"
 		"header header"
 		"main main"
+		"content-nav content-nav"
 		"footer footer";
 
 	/* :where() drops specificity so it's easy to override on responsive queries. */
@@ -72,6 +73,7 @@ ca-layout,
 	ca-layout,
 	.ca-layout {
 		grid-template-columns: 15rem 1fr;
+		grid-template-rows: auto max-content 1fr auto;
 		grid-template-areas:
 			"header utility-nav"
 			"header main"

@@ -1,8 +1,9 @@
-<ca-layout format="eureka">
+<ca-layout format="">
 	<ca-site-menu>
 		<a href="#content-nav" title="Menu">
 			<svg aria-hidden="true">
-				<use href="../../images/icons.svg#hambearger"></use>
+				<use data-open href="../../images/icons.svg#hambearger"></use>
+				<use data-close href="../../images/icons.svg#close"></use>
 			</svg>
 			<span class="visually-hidden">Menu</span>
 		</a>
@@ -45,14 +46,31 @@
 	</nav>
 
 	<main>
-		<p>Some main content.</p>
+		<h1>Layout page</h1>
+		<p>Lead text.</p>
+		<p>Normal text.</p>
+		<h2>Heading</h2>
+		<p><a href="#">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+			ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+			nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+			est laborum.</p>
 	</main>
 
 	<nav id="content-nav" aria-label="Content navigation">
 		<ul>
-			<li>Link 1</li>
-			<li>Link 2</li>
-			<li>Link 3</li>
+			<li><a href="#">Navigation link</a></li>
+			<li>
+				<a class="active" href="#">Nav link</a>
+				<ul>
+					<li><a href="#">Drawer 1</a></li>
+					<li><a href="#">Sub-link 2</a></li>
+					<li><a href="#">Nested link 3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Another link</a></li>
+			<li><a href="#">Differ widths</a></li>
+			<li><a href="#">Test box model</a></li>
 		</ul>
 	</nav>
 

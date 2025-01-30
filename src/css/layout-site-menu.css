@@ -11,22 +11,87 @@ ca-site-menu {
 		block-size: 2.6rem;
 		inline-size: 2.5rem;
 	}
+
+	/* Hide the X symbol in the burger icon. */
+	& use[data-close] {
+		display: none;
+	}
+}
+
+/* Go ahead and display content-nav if JS disabled. */
+:is(ca-layout, .ca-layout):has(ca-site-menu:not(:defined)) > nav#content-nav {
+	display: block;
+
+	& ul ul {
+		display: flex;
+	}
 }
 
 nav#content-nav {
-	& > ul {
+	& ul {
 		display: flex;
 		flex-direction: column;
-		row-gap: 1.5rem;
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
 	}
 
+	& ul ul {
+		display: none;
+		margin-inline-start: 1rem;
+	}
+
 	& li {
-		font-weight: 600;
-		line-height: normal;
 		margin: 0;
+	}
+
+	& a {
+		box-sizing: border-box;
+		display: block;
+		font-size: var(--text-size-1);
+		padding: .5rem 1rem;
+		text-decoration: none;
+		color: var(--primary-110);
+
+		&:hover {
+			background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.0) 62%,
+					rgba(0, 97, 141, 0.14) 100%
+				), var(--primary-background-40);
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		}
+
+		/* In-click state */
+		&:active {
+			background-color: var(--primary-background-50);
+			border: 1px solid var(--primary-80);
+		}
+
+		/* Defined as "active" link in UI, with class or data attribute. */
+		&.active,
+		&[data-active] {
+			color: var(--primary-120);
+			font-weight: 600;
+			background: var(--primary-background-50);
+			margin-block: .5rem;
+			border-inline-start: 2px solid;
+			border-image-slice: 1;
+			border-image-source: radial-gradient(
+				circle closest-corner at left,
+				var(--primary-90),
+				var(--primary-background-50) 80%
+			);
+
+			&:hover {
+				box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+			}
+		}
+
+		&:focus-visible {
+			border: 2px solid var(--primary-10);
+			outline: 2px solid var(--primary-120);
+		}
 	}
 }
 
@@ -46,9 +111,28 @@ nav#content-nav {
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
 	:is(ca-layout, .ca-layout)[format="horizon"] > nav#content-nav {
+		padding: 0 1rem 0 0;
+		border-block-start: 2px solid;
+		border-image-slice: 1;
+		border-image-source: linear-gradient(
+			to right,
+			var(--primary-background-10),
+			var(--primary-40),
+			var(--primary-background-10)
+		);
+
 		& > ul {
 			flex-direction: row;
 			column-gap: 4rem;
+		}
+
+		a {
+			padding-block: 1rem;
+		}
+
+		a.active,
+		a[data-active] {
+			margin-block: 0;
 		}
 	}
 }
@@ -63,6 +147,11 @@ nav#content-nav {
 		& > ul {
 			flex-direction: row;
 			column-gap: 4rem;
+		}
+
+		a.active,
+		a[data-active] {
+			margin-block: 0;
 		}
 	}
 }

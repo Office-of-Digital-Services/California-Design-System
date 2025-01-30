@@ -50,7 +50,7 @@ h4,
 h5,
 h6 {
 	text-wrap: balance;
-	margin-block-end: 1.3rem;
+	margin-block-end: 1.5rem;
 }
 
 h1 {
@@ -88,7 +88,7 @@ h6 {
 
 p,
 li {
-	margin-block-end: 1.3rem;
+	margin-block-end: 1.5rem;
 }
 
 h1 + p,
@@ -96,13 +96,13 @@ h1 + p,
 	font-weight: 400;
 	font-size: var(--text-size-3);
 	line-height: 1.875rem;
-	margin-bottom: 1.7rem;
+	margin-bottom: 1.5rem;
 }
 
 small,
 .small {
 	font-size: var(--text-size-sm);
-	margin-bottom: 1.22rem;
+	margin-bottom: 1rem;
 }
 
 code,
