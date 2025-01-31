@@ -22,6 +22,7 @@ ca-site-menu {
 :is(ca-layout, .ca-layout):has(ca-site-menu:not(:defined)) > nav#content-nav {
 	display: block;
 
+	/* Without JS, display the nested lists too. */
 	& ul ul {
 		display: flex;
 	}
@@ -33,9 +34,11 @@ nav#content-nav {
 		flex-direction: column;
 		margin: 0;
 		padding: 0;
+		row-gap: .5rem;
 		list-style-type: none;
 	}
 
+	/* Hide nested lists */
 	& ul ul {
 		display: none;
 		margin-inline-start: 1rem;
@@ -74,7 +77,6 @@ nav#content-nav {
 			color: var(--primary-120);
 			font-weight: 600;
 			background: var(--primary-background-50);
-			margin-block: .5rem;
 			border-inline-start: 2px solid;
 			border-image-slice: 1;
 			border-image-source: radial-gradient(
