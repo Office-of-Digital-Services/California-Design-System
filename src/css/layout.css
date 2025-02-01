@@ -9,9 +9,12 @@ ca-layout,
 		background-color: var(--primary-background-20);
 	}
 
+	& > ca-site-logo {
+		grid-area: logo;
+	}
+
 	& > header {
 		grid-area: header;
-		padding: 1rem;
 	}
 
 	& > search {
@@ -37,11 +40,6 @@ ca-layout,
 
 	& > footer {
 		grid-area: footer;
-		background: linear-gradient(
-			0deg,
-			var(--primary-background-10) 77%,
-			var(--primary-background-20) 100%
-		);
 	}
 }
 
@@ -73,9 +71,10 @@ ca-layout,
 	ca-layout,
 	.ca-layout {
 		grid-template-columns: 15rem 1fr;
-		grid-template-rows: auto max-content 1fr auto;
+		grid-template-rows: auto max-content max-content 1fr auto;
 		grid-template-areas:
-			"header utility-nav"
+			"logo utility-nav"
+			"logo main"
 			"header main"
 			"content-nav main"
 			"content-nav footer";
@@ -91,8 +90,8 @@ ca-layout,
 	:is(ca-layout, .ca-layout)[format="horizon"] {
 		grid-template-columns: 7rem auto 1fr;
 		grid-template-areas:
-			"header header utility-nav"
-			"blank content-nav content-nav" /* Note the "blank" spot. */
+			"logo header utility-nav"
+			"logo content-nav content-nav" /* Note the "blank" spot. */
 			"main main main"
 			"footer footer footer";
 
@@ -109,11 +108,11 @@ ca-layout,
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
 	:is(ca-layout, .ca-layout)[format="skyline"] {
-		grid-template-columns: max-content auto max-content;
+		grid-template-columns: max-content max-content auto max-content;
 		grid-template-areas:
-			"header content-nav utility-nav"
-			"main main main"
-			"footer footer footer";
+			"logo header content-nav utility-nav"
+			"main main main main"
+			"footer footer footer footer";
 	}
 }
 

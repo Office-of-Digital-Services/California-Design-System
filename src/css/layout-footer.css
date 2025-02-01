@@ -1,6 +1,11 @@
 :is(ca-layout, .ca-layout) > footer {
 	container: footer / inline-size;
 	padding-block: 5rem 3rem;
+	background: linear-gradient(
+		0deg,
+		var(--primary-background-10) 77%,
+		var(--primary-background-20) 100%
+	);
 
 	& a {
 		color: var(--primary-text);
