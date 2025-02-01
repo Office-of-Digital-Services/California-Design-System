@@ -1,44 +1,57 @@
 class ColorSchemeToggle extends HTMLElement {
 	storageKey = "color-scheme-preference";
+
 	shadowHtml = `
-		<button>Change color scheme</button>
+		<style>
+			button {
+				all: unset;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			svg {
+				color: var(--primary-110);
+			}
+		</style>
+		<button title="Toggle light and dark mode" aria-label="Change color scheme">
+			<svg width="24" height="24" aria-hidden="true">
+				<use></use>
+			</svg>
+		</button>
 	`;
 
 	schemes = {
 		light: "light",
-		dark: "dark"
-	}
+		dark: "dark",
+	};
 
 	scheme = this.schemes.light;
 
-
-  constructor() {
-    super();
-
+	constructor() {
+		super();
 		this.attachShadow({ mode: "open" });
-		const template = document.createElement('template');
-    template.innerHTML = this.shadowHtml;
-    this.shadowRoot.append(template.content.cloneNode(true));
-  }
+	}
 
-  connectedCallback() {		
+	connectedCallback() {
+		this.iconFile = this.getAttribute("icons");
 		this.setInitialScheme();
+		this.shadowRoot.innerHTML = this.shadowHtml;
 		this.applyScheme();
 
-    const toggle = this.shadowRoot.querySelector("button");
+		const toggle = this.shadowRoot.querySelector("button");
 		toggle.addEventListener("click", () => {
 			this.scheme = this.getOppositeScheme();
 			this.applyScheme();
 		});
-  }
+	}
 
 	/**
 	 * Gets the opposite of the currently set scheme. Useful for toggles.
 	 * @returns The opposite scheme, as a string.
 	 */
 	getOppositeScheme() {
-		return this.scheme === this.schemes.light 
-			? this.schemes.dark 
+		return this.scheme === this.schemes.light
+			? this.schemes.dark
 			: this.schemes.light;
 	}
 
@@ -61,9 +74,9 @@ class ColorSchemeToggle extends HTMLElement {
 		}
 
 		// Finally, if still undetermined, check user agent for the system preference.
-		this.scheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+		this.scheme = window.matchMedia("(prefers-color-scheme: dark)").matches
 			? this.schemes.dark
-			: this.schemes.light
+			: this.schemes.light;
 	}
 
 	/**
@@ -75,8 +88,10 @@ class ColorSchemeToggle extends HTMLElement {
 		const root = document.querySelector("html");
 		root.setAttribute("data-color-scheme", this.scheme);
 
-		const returnLabel = this.getOppositeScheme();
-		this.shadowRoot.querySelector("button").innerHTML = `Change to ${returnLabel} mode`;
+		const useEl = this.shadowRoot.querySelector("use");
+		const iconId =
+			this.scheme === this.schemes.light ? "light-mode" : "dark-mode";
+		useEl.setAttribute("href", `${this.iconFile}#${iconId}`);
 	}
 }
 

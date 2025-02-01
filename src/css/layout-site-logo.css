@@ -5,6 +5,10 @@ ca-site-logo {
 	& > a {
 		all: unset;
 		display: inline-flex;
+
+		& > :is(img, svg) {
+			cursor: pointer;
+		}
 	}
 
 	& :is(img, svg) {

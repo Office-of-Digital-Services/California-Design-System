@@ -10,6 +10,10 @@ Layout header
 	& > a {
 		all: unset;
 		padding: 0;
+
+		& > span {
+			cursor: pointer;
+		}
 	}
 
 	&:has(> :not(a)),
