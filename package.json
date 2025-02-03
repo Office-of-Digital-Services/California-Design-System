@@ -1,28 +1,28 @@
 {
-	"name": "@cagovweb/design-system",
-	"version": "1.5.0",
-	"type": "module",
-	"main": "dist/bundle.js",
-	"description": "This system makes it easy to build digital services that meet the needs of Californians.",
-	"scripts": {
-		"start": "npx @11ty/eleventy --serve",
-		"site": "npx @11ty/eleventy",
-		"site:gh-pages": "npx @11ty/eleventy --pathprefix /California-Design-System/",
-		"bundle": "node tools/bundlers/run-bundlers.js",
-		"format": "npx @biomejs/biome format --write",
-		"lint": "npx @biomejs/biome lint --write",
-		"check": "npx @biomejs/biome check --write"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@11ty/eleventy": "^3.0.0-beta.1",
-		"@biomejs/biome": "1.9.4",
-		"archiver": "^7.0.1",
-		"chalk": "^5.3.0",
-		"esbuild": "^0.24.0",
-		"glob": "^11.0.0",
-		"lightningcss": "^1.27.0"
-	}
+  "name": "@cagovweb/design-system",
+  "version": "1.5.0",
+  "type": "module",
+  "main": "dist/bundle.js",
+  "description": "This system makes it easy to build digital services that meet the needs of Californians.",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "site": "npx @11ty/eleventy",
+    "site:gh-pages": "npx @11ty/eleventy --pathprefix /California-Design-System/",
+    "bundle": "node tools/bundlers/run-bundlers.js",
+    "format": "npx @biomejs/biome format --write",
+    "lint": "npx @biomejs/biome lint --write",
+    "check": "npx @biomejs/biome check --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0-beta.1",
+    "@biomejs/biome": "1.9.4",
+    "archiver": "^7.0.1",
+    "chalk": "^5.3.0",
+    "esbuild": "^0.24.0",
+    "glob": "^11.0.0",
+    "lightningcss": "^1.27.0"
+  }
 }

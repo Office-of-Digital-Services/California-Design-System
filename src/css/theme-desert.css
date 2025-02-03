@@ -1,75 +1,75 @@
 /* Not complete yet. See theme-coastal.css for latest structure. */
 
 :root {
-	/* Basic palette */
-	--desert-tan-10: #fefefe;
-	--desert-tan-20: #f1e9d9;
-	--desert-tan-30: #e4d3b3;
-	--desert-tan-40: #d6be8e;
-	--desert-tan-50: #c9a868;
-	--desert-tan-60: #c29d51;
-	--desert-tan-70: #b58e41;
-	--desert-tan-80: #967535;
-	--desert-tan-90: #705828;
-	--desert-tan-100: #4b3a1a;
-	--desert-tan-110: #251d0d;
-	--desert-tan-120: #0f0c05;
+  /* Basic palette */
+  --desert-tan-10: #fefefe;
+  --desert-tan-20: #f1e9d9;
+  --desert-tan-30: #e4d3b3;
+  --desert-tan-40: #d6be8e;
+  --desert-tan-50: #c9a868;
+  --desert-tan-60: #c29d51;
+  --desert-tan-70: #b58e41;
+  --desert-tan-80: #967535;
+  --desert-tan-90: #705828;
+  --desert-tan-100: #4b3a1a;
+  --desert-tan-110: #251d0d;
+  --desert-tan-120: #0f0c05;
 
-	/* Foreground/background shades */
-	--desert-tan-lightest: var(--desert-tan-10);
-	--desert-tan-lighter: #fcfaf7;
-	--desert-tan-light: #f9f6ef;
-	--desert-tan-palest: #f6f1e8;
-	--desert-tan-paler: #f1e8d8;
-	--desert-tan-pale: #ebe0c9;
-	--desert-tan-dim: #443618;
-	--desert-tan-dimmer: #352a13;
-	--desert-tan-dimmest: #261e0d;
-	--desert-tan-dark: #261e0d;
-	--desert-tan-darker: #161208;
-	--desert-tan-darkest: var(--desert-tan-120);
+  /* Foreground/background shades */
+  --desert-tan-lightest: var(--desert-tan-10);
+  --desert-tan-lighter: #fcfaf7;
+  --desert-tan-light: #f9f6ef;
+  --desert-tan-palest: #f6f1e8;
+  --desert-tan-paler: #f1e8d8;
+  --desert-tan-pale: #ebe0c9;
+  --desert-tan-dim: #443618;
+  --desert-tan-dimmer: #352a13;
+  --desert-tan-dimmest: #261e0d;
+  --desert-tan-dark: #261e0d;
+  --desert-tan-darker: #161208;
+  --desert-tan-darkest: var(--desert-tan-120);
 
-	/* Highlight, call-to-action */
-	--desert-tan-highlight: var(--desert-tan-70);
-	--desert-tan-highlight-light: var(--desert-tan-60);
-	--desert-tan-highlight-dark: var(--desert-tan-80);
+  /* Highlight, call-to-action */
+  --desert-tan-highlight: var(--desert-tan-70);
+  --desert-tan-highlight-light: var(--desert-tan-60);
+  --desert-tan-highlight-dark: var(--desert-tan-80);
 
-	/* Light mode (default) */
-	--primary-background-10: var(--desert-tan-lightest);
-	--primary-background-20: var(--desert-tan-lighter);
-	--primary-background-30: var(--desert-tan-light);
-	--primary-background-40: var(--desert-tan-palest);
-	--primary-background-50: var(--desert-tan-paler);
-	--primary-background-60: var(--desert-tan-pale);
+  /* Light mode (default) */
+  --primary-background-10: var(--desert-tan-lightest);
+  --primary-background-20: var(--desert-tan-lighter);
+  --primary-background-30: var(--desert-tan-light);
+  --primary-background-40: var(--desert-tan-palest);
+  --primary-background-50: var(--desert-tan-paler);
+  --primary-background-60: var(--desert-tan-pale);
 
-	--primary-foreground-60: var(--desert-tan-dim);
-	--primary-foreground-50: var(--desert-tan-dimmer);
-	--primary-foreground-40: var(--desert-tan-dimmest);
-	--primary-foreground-30: var(--desert-tan-dark);
-	--primary-foreground-20: var(--desert-tan-darker);
-	--primary-foreground-10: var(--desert-tan-darkest);
+  --primary-foreground-60: var(--desert-tan-dim);
+  --primary-foreground-50: var(--desert-tan-dimmer);
+  --primary-foreground-40: var(--desert-tan-dimmest);
+  --primary-foreground-30: var(--desert-tan-dark);
+  --primary-foreground-20: var(--desert-tan-darker);
+  --primary-foreground-10: var(--desert-tan-darkest);
 
-	--primary-highlight-active: var(--desert-tan-highlight-dark);
+  --primary-highlight-active: var(--desert-tan-highlight-dark);
 
-	--primary-highlight: var(--desert-tan-highlight);
-	--primary-text: var(--primary-foreground-10);
+  --primary-highlight: var(--desert-tan-highlight);
+  --primary-text: var(--primary-foreground-10);
 }
 
 /* Dark mode */
 [data-color-scheme="dark"] {
-	--primary-foreground-10: var(--desert-tan-lightest);
-	--primary-foreground-20: var(--desert-tan-lighter);
-	--primary-foreground-30: var(--desert-tan-light);
-	--primary-foreground-40: var(--desert-tan-palest);
-	--primary-foreground-50: var(--desert-tan-paler);
-	--primary-foreground-60: var(--desert-tan-pale);
+  --primary-foreground-10: var(--desert-tan-lightest);
+  --primary-foreground-20: var(--desert-tan-lighter);
+  --primary-foreground-30: var(--desert-tan-light);
+  --primary-foreground-40: var(--desert-tan-palest);
+  --primary-foreground-50: var(--desert-tan-paler);
+  --primary-foreground-60: var(--desert-tan-pale);
 
-	--primary-background-60: var(--desert-tan-dim);
-	--primary-background-50: var(--desert-tan-dimmer);
-	--primary-background-40: var(--desert-tan-dimmest);
-	--primary-background-30: var(--desert-tan-dark);
-	--primary-background-20: var(--desert-tan-darker);
-	--primary-background-10: var(--desert-tan-darkest);
+  --primary-background-60: var(--desert-tan-dim);
+  --primary-background-50: var(--desert-tan-dimmer);
+  --primary-background-40: var(--desert-tan-dimmest);
+  --primary-background-30: var(--desert-tan-dark);
+  --primary-background-20: var(--desert-tan-darker);
+  --primary-background-10: var(--desert-tan-darkest);
 
-	--primary-highlight-active: var(--desert-tan-highlight-light);
+  --primary-highlight-active: var(--desert-tan-highlight-light);
 }

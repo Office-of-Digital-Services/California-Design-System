@@ -3,55 +3,55 @@ Layout header
 */
 
 :is(ca-layout, .ca-layout) > header {
-	padding-block: .5rem 1rem;
-	padding-inline: 1rem;
-	background-color: var(--primary-background-20);
+  padding-block: .5rem 1rem;
+  padding-inline: 1rem;
+  background-color: var(--primary-background-20);
 
-	& > a {
-		all: unset;
-		padding: 0;
+  & > a {
+    all: unset;
+    padding: 0;
 
-		& > span {
-			cursor: pointer;
-		}
-	}
+    & > span {
+      cursor: pointer;
+    }
+  }
 
-	&:has(> :not(a)),
-	& > a {
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		justify-content: center;
+  &:has(> :not(a)),
+  & > a {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 
-		/* "California" */
-		& > span:first-of-type {
-			font-weight: 700;
-			font-size: var(--text-size-4);
-			line-height: 2.1875rem;
-		}
+    /* "California" */
+    & > span:first-of-type {
+      font-weight: 700;
+      font-size: var(--text-size-4);
+      line-height: 2.1875rem;
+    }
 
-		/* Department website */
-		& > span:nth-of-type(2) {
-			line-height: 1.6rem;
-		}
-	}
+    /* Department website */
+    & > span:nth-of-type(2) {
+      line-height: 1.6rem;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
-	/* Default (Eureka), small desktop */
-	:is(ca-layout, .ca-layout) > header {
-		padding-block: 1rem;
-		padding-inline: 2rem;
-	}
+  /* Default (Eureka), small desktop */
+  :is(ca-layout, .ca-layout) > header {
+    padding-block: 1rem;
+    padding-inline: 2rem;
+  }
 
-	/* Horizon, small desktop */
-	:is(ca-layout, .ca-layout)[format="horizon"] > header {
-		padding-block: 1rem .5rem;
-		padding-inline: 1rem;
-	}
+  /* Horizon, small desktop */
+  :is(ca-layout, .ca-layout)[format="horizon"] > header {
+    padding-block: 1rem .5rem;
+    padding-inline: 1rem;
+  }
 
-	/* Skyline, small desktop */
-	:is(ca-layout, .ca-layout)[format="skyline"] > header {
-		padding-inline: 1rem;
-	}
+  /* Skyline, small desktop */
+  :is(ca-layout, .ca-layout)[format="skyline"] > header {
+    padding-inline: 1rem;
+  }
 }

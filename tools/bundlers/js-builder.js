@@ -10,20 +10,20 @@ import esbuild from "esbuild";
  * @returns {Promise}
  */
 export default async function (distPath, { banner = "", minify = false } = {}) {
-	const srcPath = "src/js/_bundle.js";
+  const srcPath = "src/js/_bundle.js";
 
-	console.log(
-		`${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (JavaScript)`)}`,
-	);
+  console.log(
+    `${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (JavaScript)`)}`,
+  );
 
-	// https://esbuild.github.io/api/#bundle
-	return esbuild.build({
-		entryPoints: [srcPath],
-		bundle: true,
-		banner: {
-			js: banner,
-		},
-		outfile: distPath,
-		minify,
-	});
+  // https://esbuild.github.io/api/#bundle
+  return esbuild.build({
+    entryPoints: [srcPath],
+    bundle: true,
+    banner: {
+      js: banner,
+    },
+    outfile: distPath,
+    minify,
+  });
 }

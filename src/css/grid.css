@@ -1,95 +1,95 @@
 ca-grid,
 .ca-grid {
-	/* End-user can override any of these vars. */
-	/* Consider adding sm/md/lg shortcut attributes. */
-	--min-cell-inline-size: 32ch;
-	--min-columns: 1;
-	--max-columns: 6;
-	--col-gap: 1rem;
-	--row-gap: 1rem;
-	--flow-style: auto-fit;
+  /* End-user can override any of these vars. */
+  /* Consider adding sm/md/lg shortcut attributes. */
+  --min-cell-inline-size: 32ch;
+  --min-columns: 1;
+  --max-columns: 6;
+  --col-gap: 1rem;
+  --row-gap: 1rem;
+  --flow-style: auto-fit;
 
-	display: grid;
-	container: ca-grid / inline-size;
-	/* We'll need to teach a whole course to explain this one. */
-	grid-template-columns: repeat(
-			var(--flow-style),
-			minmax(
-				min(
-					calc(
-						(100% - ((var(--max-columns) - 1) * var(--col-gap))) /
-						var(--min-columns)
-					),
-					max(
-						var(--min-cell-inline-size),
-						calc(
-							(100% - ((var(--max-columns) - 1) * var(--col-gap))) /
-							var(--max-columns)
-						)
-					)
-				),
-				1fr
-			)
-		);
-	grid-template-rows: auto;
-	column-gap: var(--col-gap);
-	row-gap: var(--row-gap);
+  display: grid;
+  container: ca-grid / inline-size;
+  /* We'll need to teach a whole course to explain this one. */
+  grid-template-columns: repeat(
+      var(--flow-style),
+      minmax(
+        min(
+          calc(
+            (100% - ((var(--max-columns) - 1) * var(--col-gap))) /
+            var(--min-columns)
+          ),
+          max(
+            var(--min-cell-inline-size),
+            calc(
+              (100% - ((var(--max-columns) - 1) * var(--col-gap))) /
+              var(--max-columns)
+            )
+          )
+        ),
+        1fr
+      )
+    );
+  grid-template-rows: auto;
+  column-gap: var(--col-gap);
+  row-gap: var(--row-gap);
 
-	/* Set maximum number of columns on the grid. */
-	&[max-col="2"],
-	&.ca-grid-max-col-2 {
-		--max-columns: 2;
-	}
-	&[max-col="3"],
-	&.ca-grid-max-col-3 {
-		--max-columns: 3;
-	}
-	&[max-col="4"],
-	&.ca-grid-max-col-4 {
-		--max-columns: 4;
-	}
-	&[max-col="5"],
-	&.ca-grid-max-col-5 {
-		--max-columns: 5;
-	}
-	&[max-col="6"],
-	&.ca-grid-max-col-6 {
-		--max-columns: 6;
-	}
-	/* Set minimum number of columns on the grid. */
-	&[min-col="2"],
-	&.ca-grid-min-col-2 {
-		--min-columns: 2;
-	}
-	&[min-col="3"],
-	&.ca-grid-min-col-3 {
-		--min-columns: 3;
-	}
-	&[min-col="4"],
-	&.ca-grid-min-col-4 {
-		--min-columns: 4;
-	}
-	&[min-col="5"],
-	&.ca-grid-min-col-5 {
-		--min-columns: 5;
-	}
-	&[min-col="6"],
-	&.ca-grid-min-col-6 {
-		--min-columns: 6;
-	}
+  /* Set maximum number of columns on the grid. */
+  &[max-col="2"],
+  &.ca-grid-max-col-2 {
+    --max-columns: 2;
+  }
+  &[max-col="3"],
+  &.ca-grid-max-col-3 {
+    --max-columns: 3;
+  }
+  &[max-col="4"],
+  &.ca-grid-max-col-4 {
+    --max-columns: 4;
+  }
+  &[max-col="5"],
+  &.ca-grid-max-col-5 {
+    --max-columns: 5;
+  }
+  &[max-col="6"],
+  &.ca-grid-max-col-6 {
+    --max-columns: 6;
+  }
+  /* Set minimum number of columns on the grid. */
+  &[min-col="2"],
+  &.ca-grid-min-col-2 {
+    --min-columns: 2;
+  }
+  &[min-col="3"],
+  &.ca-grid-min-col-3 {
+    --min-columns: 3;
+  }
+  &[min-col="4"],
+  &.ca-grid-min-col-4 {
+    --min-columns: 4;
+  }
+  &[min-col="5"],
+  &.ca-grid-min-col-5 {
+    --min-columns: 5;
+  }
+  &[min-col="6"],
+  &.ca-grid-min-col-6 {
+    --min-columns: 6;
+  }
 
-	/* An example cell size shortcut. */
-	&[cell-size="large"] {
-		--min-cell-inline-size: 48ch;
-	}
+  /* An example cell size shortcut. */
+  &[cell-size="large"] {
+    --min-cell-inline-size: 48ch;
+  }
 
-	/* Change the fit/fill style of the grid columns. */
-	&[flow="fit"] {
-		--flow-style: auto-fit;
-	}
-	&[flow="fill"] {
-		--flow-style: auto-fill;
-	}
+  /* Change the fit/fill style of the grid columns. */
+  &[flow="fit"] {
+    --flow-style: auto-fit;
+  }
+  &[flow="fill"] {
+    --flow-style: auto-fill;
+  }
 }
 
 /* 

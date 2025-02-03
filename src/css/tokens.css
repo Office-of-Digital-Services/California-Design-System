@@ -1,39 +1,39 @@
 :root {
-	/* transition */
-	--scale: 1.04;
-	--transition: 0.3s;
+  /* transition */
+  --scale: 1.04;
+  --transition: 0.3s;
 
-	--columns-gap: 1.674vw;
-	--desktop-max-width: 1920px;
-	--mobile-breakpoint-width: 1080px;
-	--sidebar-max-width: 15rem;
-	--main-content-max-width: 82rem;
-	--main-content-left-margin-max-width: 19rem;
-	--breakpoint-width-small: 34rem;
-	--breakpoint-width-medium: 48rem;
-	--breakpoint-width-large: 67rem;
-	--flex-grow-max: 9999;
+  --columns-gap: 1.674vw;
+  --desktop-max-width: 1920px;
+  --mobile-breakpoint-width: 1080px;
+  --sidebar-max-width: 15rem;
+  --main-content-max-width: 82rem;
+  --main-content-left-margin-max-width: 19rem;
+  --breakpoint-width-small: 34rem;
+  --breakpoint-width-medium: 48rem;
+  --breakpoint-width-large: 67rem;
+  --flex-grow-max: 9999;
 
-	--border-1px: 1px;
-	--border-2px: calc(1px * 2);
-	--border-4px: calc(1px * 4);
-	--border-8px: calc(1px * 8);
-	--border-radius-sm: calc(0.5rem / 2);
-	--border-radius: 0.5rem;
-	--border-radius-lg: calc(0.5rem * 2);
-	--border-radius-round: 50%;
-	--rounded-buttons: 50px;
+  --border-1px: 1px;
+  --border-2px: calc(1px * 2);
+  --border-4px: calc(1px * 4);
+  --border-8px: calc(1px * 8);
+  --border-radius-sm: calc(0.5rem / 2);
+  --border-radius: 0.5rem;
+  --border-radius-lg: calc(0.5rem * 2);
+  --border-radius-round: 50%;
+  --rounded-buttons: 50px;
 
-	/* spacing variables */
-	--space-unit-1: 0.5rem;
-	--space-unit-x2: calc(0.5rem * 2);
-	--space-unit-x3: calc(0.5rem * 3);
-	--space-unit-x4: calc(0.5rem * 4);
-	--space-unit-x8: calc(0.5rem * 8);
-	--space-unit-x16: calc(0.5rem * 16);
+  /* spacing variables */
+  --space-unit-1: 0.5rem;
+  --space-unit-x2: calc(0.5rem * 2);
+  --space-unit-x3: calc(0.5rem * 3);
+  --space-unit-x4: calc(0.5rem * 4);
+  --space-unit-x8: calc(0.5rem * 8);
+  --space-unit-x16: calc(0.5rem * 16);
 
-	/* shadows */
-	--shadow: 0.2rem 0.2rem 0.5em 0 rgba(0, 0, 0, 0.25);
-	--shadow-focus: 0.1rem 0.1rem 0.25em 0 rgba(0, 0, 0, 0.1);
-	--shadow-active: 0.2rem 0.2rem 0.5em 0 rgba(0, 0, 0, 0.6);
+  /* shadows */
+  --shadow: 0.2rem 0.2rem 0.5em 0 rgba(0, 0, 0, 0.25);
+  --shadow-focus: 0.1rem 0.1rem 0.25em 0 rgba(0, 0, 0, 0.1);
+  --shadow-active: 0.2rem 0.2rem 0.5em 0 rgba(0, 0, 0, 0.6);
 }

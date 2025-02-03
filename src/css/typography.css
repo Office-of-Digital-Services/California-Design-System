@@ -1,46 +1,46 @@
 :root {
-	/* 
+  /* 
 	 * Removing responsive typography for now, while making sense of the layout.
 	 * See the following URL to restore.
 	 * https://github.com/Office-of-Digital-Services/California-Design-System/blob/v1.5.0/src/css/typography.css
 	 * Let's revisit after both layout and typography are settled.
 	 */
 
-	--font-family: Noto Sans;
-	--text-max-width: 65ch;
+  --font-family: Noto Sans;
+  --text-max-width: 65ch;
 
-	--text-size-sm: 0.9375rem;
-	--text-size-1: 1rem; /* H5, H6, and menu items */
-	--text-size-2: 1.125rem; /* Base text */
-	--text-size-3: 1.25rem; /* H4 and lead text */
-	--text-size-4: 1.5625rem; /* H3 */
-	--text-size-5: 2rem; /* H2 */
-	--text-size-6: 3.375rem; /* H1 */
+  --text-size-sm: 0.9375rem;
+  --text-size-1: 1rem; /* H5, H6, and menu items */
+  --text-size-2: 1.125rem; /* Base text */
+  --text-size-3: 1.25rem; /* H4 and lead text */
+  --text-size-4: 1.5625rem; /* H3 */
+  --text-size-5: 2rem; /* H2 */
+  --text-size-6: 3.375rem; /* H1 */
 }
 
 /* Prevent font size inflation. */
 html {
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
-	font-family: var(--font-family), system-ui, -apple-system, "Roboto",
-		"Helvetica Neue", sans-serif;
-	font-size: var(--text-size-2);
-	font-weight: 400;
+  font-family: var(--font-family), system-ui, -apple-system, "Roboto",
+    "Helvetica Neue", sans-serif;
+  font-size: var(--text-size-2);
+  font-weight: 400;
 }
 
 p {
-	line-height: 1.6rem;
+  line-height: 1.6rem;
 }
 
 p,
 blockquote,
 figcaption {
-	max-width: var(--text-max-width);
-	text-wrap: pretty;
+  max-width: var(--text-max-width);
+  text-wrap: pretty;
 }
 
 h1,
@@ -49,75 +49,75 @@ h3,
 h4,
 h5,
 h6 {
-	text-wrap: balance;
-	margin-block-end: 1.5rem;
+  text-wrap: balance;
+  margin-block-end: 1.5rem;
 }
 
 h1 {
-	font-weight: 600;
-	font-size: var(--text-size-6);
-	line-height: 4.625rem;
+  font-weight: 600;
+  font-size: var(--text-size-6);
+  line-height: 4.625rem;
 }
 
 h2 {
-	font-weight: 600;
-	font-size: var(--text-size-5);
-	line-height: 2.625rem;
+  font-weight: 600;
+  font-size: var(--text-size-5);
+  line-height: 2.625rem;
 }
 
 h3 {
-	font-weight: 600;
-	font-size: var(--text-size-4);
-	line-height: 2.1875rem;
+  font-weight: 600;
+  font-size: var(--text-size-4);
+  line-height: 2.1875rem;
 }
 
 h4 {
-	font-weight: 600;
-	font-size: var(--text-size-3);
-	line-height: 1.875rem;
+  font-weight: 600;
+  font-size: var(--text-size-3);
+  line-height: 1.875rem;
 }
 
 h5 {
-	font-weight: 600;
-	font-size: var(--text-size-1);
+  font-weight: 600;
+  font-size: var(--text-size-1);
 }
 
 h6 {
-	font-size: var(--text-size-1);
+  font-size: var(--text-size-1);
 }
 
 p,
 li {
-	margin-block-end: 1.5rem;
+  margin-block-end: 1.5rem;
 }
 
 h1 + p,
 .lead {
-	font-weight: 400;
-	font-size: var(--text-size-3);
-	line-height: 1.875rem;
-	margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: var(--text-size-3);
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
 }
 
 small,
 .small {
-	font-size: var(--text-size-sm);
-	margin-bottom: 1rem;
+  font-size: var(--text-size-sm);
+  margin-bottom: 1rem;
 }
 
 code,
 pre,
 samp {
-	font-family: monospace;
+  font-family: monospace;
 }
 
 cite {
-	font-style: italic;
+  font-style: italic;
 }
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
