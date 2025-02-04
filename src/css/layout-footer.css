@@ -1,158 +1,163 @@
 :is(ca-layout, .ca-layout) > footer {
-	container: footer / inline-size;
-	padding-block: 5rem 3rem;
+  container: footer / inline-size;
+  padding-block: 5rem 3rem;
+  background: linear-gradient(
+    0deg,
+    var(--primary-background-10) 77%,
+    var(--primary-background-20) 100%
+  );
 
-	& a {
-		color: var(--primary-text);
-		text-decoration: none;
-	}
+  & a {
+    color: var(--primary-text);
+    text-decoration: none;
+  }
 
-	& ul {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		padding: 0;
-		margin: 0;
-		list-style-type: none;
-	}
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
 
-	& li {
-		padding: 0;
-		margin: 0;
-		font-size: var(--text-size-sm);
-	}
+  & li {
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-size-sm);
+  }
 
-	& ca-grid {
-		--col-gap: 2rem;
-		--row-gap: 2rem;
-		--flow-style: auto-fill;
-		--min-cell-inline-size: 20rem;
+  & ca-grid {
+    --col-gap: 2rem;
+    --row-gap: 2rem;
+    --flow-style: auto-fill;
+    --min-cell-inline-size: 20rem;
 
-		margin-block-end: 2rem;
-		padding-block-end: 2rem;
-		border-block-end: 2px solid;
-		border-image-slice: 1;
-		border-image-source: linear-gradient(
-			to right,
-			var(--primary-background-10),
-			var(--primary-40),
-			var(--primary-background-10)
-		);
-	}
+    margin-block-end: 2rem;
+    padding-block-end: 2rem;
+    border-block-end: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      to right,
+      var(--primary-background-10),
+      var(--primary-40),
+      var(--primary-background-10)
+    );
+  }
 
-	& section {
-		padding: 0;
-	}
+  & section {
+    padding: 0;
+  }
 
-	/* Support all heading levels for footer sections, just in case. */
-	& :is(h2, h3, h4, h5, h6) {
-		font-size: var(--text-size-3);
-		line-height: normal;
-		font-weight: 600;
-		margin-block: 0 1rem;
-		padding-block: 0 1rem;
-		border-block-end: 2px solid;
-		border-image-slice: 1;
-		border-image-source: linear-gradient(
-			to right,
-			var(--primary-background-10),
-			var(--primary-40),
-			var(--primary-background-10)
-		);
-	}
+  /* Support all heading levels for footer sections, just in case. */
+  & :is(h2, h3, h4, h5, h6) {
+    font-size: var(--text-size-3);
+    line-height: normal;
+    font-weight: 600;
+    margin-block: 0 1rem;
+    padding-block: 0 1rem;
+    border-block-end: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      to right,
+      var(--primary-background-10),
+      var(--primary-40),
+      var(--primary-background-10)
+    );
+  }
 }
 
 ca-footer-links {
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: space-between;
-	gap: 1.5rem;
-	margin-block-end: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-block-end: 2rem;
 
-	& > ul:nth-of-type(2) {
-		flex-direction: row;
-	}
+  & > ul:nth-of-type(2) {
+    flex-direction: row;
+  }
 
-	& svg {
-		min-block-size: 1.5rem;
-		min-inline-size: 1.5rem;
-		color: var(--primary-110);
-	}
+  & svg {
+    min-block-size: 1.5rem;
+    min-inline-size: 1.5rem;
+    color: var(--primary-110);
+  }
 }
 
 @container footer (width > 50rem) {
-	:is(ca-layout, .ca-layout) > footer > * {
-		/* Apply side margin to all top-level children of footer. */
-		margin-inline: 3rem;
-	}
+  :is(ca-layout, .ca-layout) > footer > * {
+    /* Apply side margin to all top-level children of footer. */
+    margin-inline: 3rem;
+  }
 
-	ca-footer-links {
-		flex-direction: row;
+  ca-footer-links {
+    flex-direction: row;
 
-		& > ul:first-of-type {
-			flex-direction: row;
-			flex-wrap: wrap;
-			column-gap: 1.5rem;
+    & > ul:first-of-type {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 1.5rem;
 
-			& > li:first-of-type {
-				min-inline-size: 100%;
-				font-size: var(--text-size-2);
-			}
-		}
-	}
+      & > li:first-of-type {
+        min-inline-size: 100%;
+        font-size: var(--text-size-2);
+      }
+    }
+  }
 }
 
 ca-footer-end {
-	display: flex;
-	flex-direction: row;
-	align-items: end;
-	justify-content: space-between;
-	column-gap: 1rem;
-	row-gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 1rem;
 
-	& p {
-		margin: 0;
-		font-size: var(--text-size-1);
-		line-height: normal;
-	}
+  & p {
+    margin: 0;
+    font-size: var(--text-size-1);
+    line-height: normal;
+  }
 
-	& > div {
-		display: flex;
-		flex-direction: column;
-		row-gap: 1rem;
-		column-gap: 1rem;
-	}
+  & > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 1rem;
+  }
 
-	& > div:first-of-type {
-		flex-basis: 100%; /* Expand first div to fill space. */
+  & > div:first-of-type {
+    flex-basis: 100%; /* Expand first div to fill space. */
 
-		& > *:last-child {
-			font-size: var(--text-size-sm);
-		}
-	}
+    & > *:last-child {
+      font-size: var(--text-size-sm);
+    }
+  }
 
-	/* Icon links in 2nd div */
-	& > div:nth-of-type(2) > a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		justify-self: end;
-		block-size: 3rem;
-		inline-size: 3rem;
-		color: var(--primary-110);
-		border: solid 2px var(--primary-110);
-	}
+  /* Icon links in 2nd div */
+  & > div:nth-of-type(2) > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    block-size: 3rem;
+    inline-size: 3rem;
+    color: var(--primary-110);
+    border: solid 2px var(--primary-110);
+  }
 }
 
 @container footer (width > 56rem) {
-	ca-footer-end {
-		& > div {
-			flex-direction: row;
-		}
+  ca-footer-end {
+    & > div {
+      flex-direction: row;
+    }
 
-		& > div:first-of-type > *:last-child {
-			margin-inline-start: auto; /* Push copyright line to edge. */
-		}
-	}
+    & > div:first-of-type > *:last-child {
+      margin-inline-start: auto; /* Push copyright line to edge. */
+    }
+  }
 }

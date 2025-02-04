@@ -26,35 +26,8 @@
 
     <link rel="stylesheet" href="/css/bundle.css" id="main-stylesheet" />
     <script src="/js/bundle.js"></script>
-
-		<style>
-			/* Dev-only styles */
-			ca-dev-controls {
-				display: flex;
-				align-items: center;
-				justify-content: right;
-				gap: 1rem;
-				width: 100%;
-				padding: 1rem;
-				border-bottom: dimgray dashed 2px;
-				background: repeating-linear-gradient(
-					135deg,
-					whitesmoke,
-					whitesmoke 3rem,
-					white 3rem,
-					white 6rem
-				);
-			}
-		</style>
   </head>
   <body>
-		<ca-dev-controls>
-			{% if page.url !== "/" %}
-				<a href="/">Back to TOC</a>
-			{% endif %}
-			<ca-color-scheme-toggle></ca-color-scheme-toggle>
-		</ca-dev-controls>
-
     {% block content -%} 
       {{ content | safe }} 
     {%- endblock -%}

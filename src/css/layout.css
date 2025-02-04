@@ -4,45 +4,43 @@
 
 ca-layout,
 .ca-layout {
-	& > ca-site-menu {
-		grid-area: burger;
-		background-color: var(--primary-background-20);
-	}
+  & > ca-site-menu {
+    grid-area: burger;
+    background-color: var(--primary-background-20);
+  }
 
-	& > header {
-		grid-area: header;
-		padding: 1rem;
-	}
+  & > ca-site-logo {
+    grid-area: logo;
+  }
 
-	& > search {
-		grid-area: search;
-		padding: 1rem;
-		background-color: lightgreen;
-	}
+  & > header {
+    grid-area: header;
+  }
 
-	& > nav#utility-nav {
-		grid-area: utility-nav;
-	}
+  & > search {
+    grid-area: search;
+    padding: 1rem;
+    background-color: lightgreen;
+  }
 
-	& > nav#content-nav {
-		grid-area: content-nav;
-		padding: 1rem;
-		background-color: var(--primary-background-20);
-	}
+  & > nav#utility-nav {
+    grid-area: utility-nav;
+  }
 
-	& > main {
-		grid-area: main;
-		background-color: var(--primary-background-10);
-	}
+  & > nav#content-nav {
+    grid-area: content-nav;
+    padding: 1rem;
+    background-color: var(--primary-background-20);
+  }
 
-	& > footer {
-		grid-area: footer;
-		background: linear-gradient(
-			0deg,
-			var(--primary-background-10) 77%,
-			var(--primary-background-20) 100%
-		);
-	}
+  & > main {
+    grid-area: main;
+    background-color: var(--primary-background-10);
+  }
+
+  & > footer {
+    grid-area: footer;
+  }
 }
 
 /* 
@@ -52,87 +50,88 @@ ca-layout,
 /* Default, mobile and tablet */
 ca-layout,
 .ca-layout {
-	display: grid;
-	grid-template-columns: max-content 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		"burger utility-nav"
-		"header header"
-		"main main"
-		"content-nav content-nav"
-		"footer footer";
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "burger utility-nav"
+    "header header"
+    "main main"
+    "content-nav content-nav"
+    "footer footer";
 
-	/* :where() drops specificity so it's easy to override on responsive queries. */
-	& > :where(nav#content-nav) {
-		display: none;
-	}
+  /* :where() drops specificity so it's easy to override on responsive queries. */
+  & > :where(nav#content-nav) {
+    display: none;
+  }
 }
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-	ca-layout,
-	.ca-layout {
-		grid-template-columns: 15rem 1fr;
-		grid-template-rows: auto max-content 1fr auto;
-		grid-template-areas:
-			"header utility-nav"
-			"header main"
-			"content-nav main"
-			"content-nav footer";
-	}
+  ca-layout,
+  .ca-layout {
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: auto max-content max-content 1fr auto;
+    grid-template-areas:
+      "logo utility-nav"
+      "logo main"
+      "header main"
+      "content-nav main"
+      "content-nav footer";
+  }
 
-	& > nav#content-nav {
-		display: block;
-	}
+  & > nav#content-nav {
+    display: block;
+  }
 }
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout)[format="horizon"] {
-		grid-template-columns: 7rem auto 1fr;
-		grid-template-areas:
-			"header header utility-nav"
-			"blank content-nav content-nav" /* Note the "blank" spot. */
-			"main main main"
-			"footer footer footer";
+  :is(ca-layout, .ca-layout)[format="horizon"] {
+    grid-template-columns: 7rem auto 1fr;
+    grid-template-areas:
+      "logo header utility-nav"
+      "logo content-nav content-nav" /* Note the "blank" spot. */
+      "main main main"
+      "footer footer footer";
 
-		/* This little trick plugs the blank grid cell, below the overhanging logo. */
-		&::after {
-			content: "";
-			grid-area: blank;
-			background-color: var(--primary-background-20);
-			z-index: -100;
-		}
-	}
+    /* This little trick plugs the blank grid cell, below the overhanging logo. */
+    &::after {
+      content: "";
+      grid-area: blank;
+      background-color: var(--primary-background-20);
+      z-index: -100;
+    }
+  }
 }
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout)[format="skyline"] {
-		grid-template-columns: max-content auto max-content;
-		grid-template-areas:
-			"header content-nav utility-nav"
-			"main main main"
-			"footer footer footer";
-	}
+  :is(ca-layout, .ca-layout)[format="skyline"] {
+    grid-template-columns: max-content max-content auto max-content;
+    grid-template-areas:
+      "logo header content-nav utility-nav"
+      "main main main main"
+      "footer footer footer footer";
+  }
 }
 
 nav#utility-nav {
-	& > ul {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
+  & > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 
-		& > li:last-child {
-			margin-block-end: 0;
-		}
-	}
+    & > li:last-child {
+      margin-block-end: 0;
+    }
+  }
 }
 
 search svg {
-	color: var(--primary-text);
+  color: var(--primary-text);
 }
 
 search {
-	display: none;
+  display: none;
 }

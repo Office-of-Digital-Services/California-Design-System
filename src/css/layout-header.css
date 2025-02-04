@@ -1,113 +1,57 @@
-/* Layout header */
+/* 
+Layout header 
+*/
 
 :is(ca-layout, .ca-layout) > header {
-	display: grid;
+  padding-block: .5rem 1rem;
+  padding-inline: 1rem;
+  background-color: var(--primary-background-20);
 
-	/* Default grid setup on mobile. */
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		"state"
-		"dept";
-	row-gap: .5rem;
-	background-color: var(--primary-background-20);
+  & > a {
+    all: unset;
+    padding: 0;
 
-	& > :is(img, svg) {
-		grid-area: logo;
-		align-self: center;
-		display: none; /* Don't display image on mobile */
-	}
+    & > span {
+      cursor: pointer;
+    }
+  }
 
-	/* "California" */
-	& > span:first-of-type {
-		grid-area: state;
-		font-weight: 700;
-		font-size: var(--text-size-4);
-		line-height: 2.1875rem;
-	}
+  &:has(> :not(a)),
+  & > a {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 
-	/* Department website */
-	& > span:nth-of-type(2) {
-		grid-area: dept;
-		line-height: 1.6rem;
-	}
+    /* "California" */
+    & > span:first-of-type {
+      font-weight: 700;
+      font-size: var(--text-size-4);
+      line-height: 2.1875rem;
+    }
 
-	/* Apply this if there's only one single span. */
-	&:not(:has(span:nth-of-type(2))) {
-		& > span {
-			align-self: center;
-		}
-	}
-
-	/* If there are two spans, style differently. */
-	&:has(span:nth-of-type(2)) {
-		/* Bold on top. */
-		& > span:first-of-type {
-			align-self: end;
-		}
-
-		/* Plain on bottom. */
-		& > span:nth-of-type(2) {
-			align-self: start;
-		}
-	}
+    /* Department website */
+    & > span:nth-of-type(2) {
+      line-height: 1.6rem;
+    }
+  }
 }
 
-/* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout) > header {
-		grid-template-columns: auto;
-		grid-template-rows: max-content max-content max-content;
-		grid-template-areas:
-			"logo"
-			"state"
-			"dept";
+  /* Default (Eureka), small desktop */
+  :is(ca-layout, .ca-layout) > header {
+    padding-block: 1rem;
+    padding-inline: 2rem;
+  }
 
-		padding-inline: 2rem;
+  /* Horizon, small desktop */
+  :is(ca-layout, .ca-layout)[format="horizon"] > header {
+    padding-block: 1rem .5rem;
+    padding-inline: 1rem;
+  }
 
-		& > :is(img, svg) {
-			display: block;
-			block-size: 6rem;
-			inline-size: 6rem;
-			margin-block: 0 .5rem;
-		}
-	}
-}
-
-/* Horizon, small desktop */
-@media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout)[format="horizon"] > header {
-		grid-template-columns: 6rem 1fr;
-		grid-template-rows: 2rem auto;
-		grid-template-areas:
-			"logo state"
-			"logo dept";
-		column-gap: 1rem;
-		block-size: 5.5rem;
-		overflow-y: visible;
-		padding-inline: 1rem;
-
-		& > :is(img, svg) {
-			margin: 0;
-		}
-	}
-}
-
-/* Skyline, small desktop */
-@media screen and (min-width: 1024px) {
-	:is(ca-layout, .ca-layout)[format="skyline"] > header {
-		grid-template-columns: auto 1fr;
-		grid-template-rows: auto;
-		grid-template-areas:
-			"logo state"
-			"logo dept";
-		column-gap: 1rem;
-		padding-inline: 1rem;
-
-		& > :is(img, svg) {
-			block-size: 4rem;
-			inline-size: auto;
-			margin: 0;
-		}
-	}
+  /* Skyline, small desktop */
+  :is(ca-layout, .ca-layout)[format="skyline"] > header {
+    padding-inline: 1rem;
+  }
 }

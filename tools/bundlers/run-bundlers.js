@@ -4,8 +4,8 @@ import jsBuilder from "./js-builder.js";
 import zipBuilder from "./zip-builder.js";
 
 const packageData = await fs
-	.readFile("package.json")
-	.then((data) => JSON.parse(data));
+  .readFile("package.json")
+  .then((data) => JSON.parse(data));
 
 // Common fileName for bundle files.
 const fileSlug = "dist/California-Design-System";

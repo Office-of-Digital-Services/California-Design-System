@@ -9,18 +9,25 @@
 		</a>
 	</ca-site-menu>
 
+	<ca-site-logo>
+		<a href="/">
+			<svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
+				<circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
+			</svg>
+		</a>
+	</ca-site-logo>
+
 	<header>
-		<svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
-			<circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
-		</svg>
-		<span>California</span>
-		<span>Department Website</span>
+		<a href="/">
+			<span>California</span>
+			<span>Department Website</span>
+		</a>
 	</header>
 
 	<search>
 		<form>
 			<label for="site-search" class="visually-hidden">Search this site</label>
-			<input type="search" id="site-search" placeholder="Search here..." />
+			<input type="search" id="site-search" placeholder="Search" />
 			<button type="submit">
 				<svg width="24" height="24">
 					<use href="../../images/icons.svg#search"></use>
@@ -31,6 +38,7 @@
 	</search>
 
 	<nav id="utility-nav" aria-label="Utility navigation">
+		<ca-color-scheme-toggle icons="../../images/icons.svg"></ca-color-scheme-toggle>
 		<a href="#" title="Login">
 			<svg width="24" height="24" aria-hidden="true">
 				<use href="../../images/icons.svg#account-circle"></use>
@@ -61,14 +69,14 @@
 		<ul>
 			<li><a href="#">Navigation link</a></li>
 			<li>
-				<a class="active" href="#">Nav link</a>
+				<a class="active" href="#">Nested link</a>
 				<ul>
 					<li><a href="#">Drawer 1</a></li>
 					<li><a href="#">Sub-link 2</a></li>
 					<li><a href="#">Nested link 3</a></li>
 				</ul>
 			</li>
-			<li><a href="#">Another link</a></li>
+			<li><a href="#">Another link that's super long</a></li>
 			<li><a href="#">Differ widths</a></li>
 			<li><a href="#">Test box model</a></li>
 		</ul>

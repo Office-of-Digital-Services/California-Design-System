@@ -12,21 +12,21 @@ import { Features, bundle } from "lightningcss";
  * @returns {Promise}
  */
 export default async function (distPath, { banner = "", minify = false } = {}) {
-	const srcPath = "src/css/_bundle.css";
+  const srcPath = "src/css/_bundle.css";
 
-	// https://lightningcss.dev/bundling.html
-	const { code, map } = bundle({
-		filename: srcPath,
-		include: Features.Nesting,
-		minify,
-	});
+  // https://lightningcss.dev/bundling.html
+  const { code, map } = bundle({
+    filename: srcPath,
+    include: Features.Nesting,
+    minify,
+  });
 
-	const fileData = `${banner}\n${code}`;
+  const fileData = `${banner}\n${code}`;
 
-	console.log(
-		`${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (CSS)`)}`,
-	);
+  console.log(
+    `${chalk.blue("[Eureka]")} Writing ./${distPath} ${chalk.gray(`from ./${srcPath} (CSS)`)}`,
+  );
 
-	await fs.mkdir(path.dirname(distPath), { recursive: true });
-	return fs.writeFile(distPath, fileData);
+  await fs.mkdir(path.dirname(distPath), { recursive: true });
+  return fs.writeFile(distPath, fileData);
 }
