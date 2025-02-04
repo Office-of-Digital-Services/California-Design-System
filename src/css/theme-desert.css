@@ -1,22 +1,23 @@
-/* Not complete yet. See theme-coastal.css for latest structure. */
-
 :root {
-  /* Basic palette */
-  --desert-tan-10: #fefefe;
-  --desert-tan-20: #f1e9d9;
-  --desert-tan-30: #e4d3b3;
-  --desert-tan-40: #d6be8e;
-  --desert-tan-50: #c9a868;
-  --desert-tan-60: #c29d51;
-  --desert-tan-70: #b58e41;
-  --desert-tan-80: #967535;
-  --desert-tan-90: #705828;
-  --desert-tan-100: #4b3a1a;
-  --desert-tan-110: #251d0d;
-  --desert-tan-120: #0f0c05;
+  /* 
+	 * Color definitions for desert-tan
+	 */
 
-  /* Foreground/background shades */
-  --desert-tan-lightest: var(--desert-tan-10);
+  /* Basic palette */
+  --desert-tan-static-10: #fefefe;
+  --desert-tan-static-20: #f1e9d9;
+  --desert-tan-static-30: #e4d3b3;
+  --desert-tan-static-40: #d6be8e;
+  --desert-tan-static-50: #c9a868;
+  --desert-tan-static-60: #c29d51;
+  --desert-tan-static-70: #b58e41;
+  --desert-tan-static-80: #967535;
+  --desert-tan-static-90: #705828;
+  --desert-tan-static-100: #4b3a1a;
+  --desert-tan-static-110: #251d0d;
+  --desert-tan-static-120: #0f0c05;
+  /* Background shades */
+  --desert-tan-lightest: var(--desert-tan-static-10);
   --desert-tan-lighter: #fcfaf7;
   --desert-tan-light: #f9f6ef;
   --desert-tan-palest: #f6f1e8;
@@ -27,49 +28,113 @@
   --desert-tan-dimmest: #261e0d;
   --desert-tan-dark: #261e0d;
   --desert-tan-darker: #161208;
-  --desert-tan-darkest: var(--desert-tan-120);
-
+  --desert-tan-darkest: var(--desert-tan-static-120);
   /* Highlight, call-to-action */
-  --desert-tan-highlight: var(--desert-tan-70);
-  --desert-tan-highlight-light: var(--desert-tan-60);
-  --desert-tan-highlight-dark: var(--desert-tan-80);
+  --desert-tan-highlight: var(--desert-tan-static-70);
+  --desert-tan-highlight-light: var(--desert-tan-static-60);
+  --desert-tan-highlight-dark: var(--desert-tan-static-80);
 
-  /* Light mode (default) */
-  --primary-background-10: var(--desert-tan-lightest);
-  --primary-background-20: var(--desert-tan-lighter);
-  --primary-background-30: var(--desert-tan-light);
-  --primary-background-40: var(--desert-tan-palest);
-  --primary-background-50: var(--desert-tan-paler);
-  --primary-background-60: var(--desert-tan-pale);
+  /* The dynamic palette inverts based on light or dark mode. Light here. */
+  --desert-tan-10: var(--desert-tan-static-10);
+  --desert-tan-20: var(--desert-tan-static-20);
+  --desert-tan-30: var(--desert-tan-static-30);
+  --desert-tan-40: var(--desert-tan-static-40);
+  --desert-tan-50: var(--desert-tan-static-50);
+  --desert-tan-60: var(--desert-tan-static-60);
+  --desert-tan-70: var(--desert-tan-static-70);
+  --desert-tan-80: var(--desert-tan-static-80);
+  --desert-tan-90: var(--desert-tan-static-90);
+  --desert-tan-100: var(--desert-tan-static-100);
+  --desert-tan-110: var(--desert-tan-static-110);
+  --desert-tan-120: var(--desert-tan-static-120);
+  --desert-tan-background-10: var(--desert-tan-lightest);
+  --desert-tan-background-20: var(--desert-tan-lighter);
+  --desert-tan-background-30: var(--desert-tan-light);
+  --desert-tan-background-40: var(--desert-tan-palest);
+  --desert-tan-background-50: var(--desert-tan-paler);
+  --desert-tan-background-60: var(--desert-tan-pale);
+  --desert-tan-text: var(--desert-tan-120);
+  --desert-tan-background: var(--desert-tan-background-10);
+  --desert-tan-highlight-active: var(--desert-tan-highlight-dark);
 
-  --primary-foreground-60: var(--desert-tan-dim);
-  --primary-foreground-50: var(--desert-tan-dimmer);
-  --primary-foreground-40: var(--desert-tan-dimmest);
-  --primary-foreground-30: var(--desert-tan-dark);
-  --primary-foreground-20: var(--desert-tan-darker);
-  --primary-foreground-10: var(--desert-tan-darkest);
+  /* 
+	 * Theme configuration
+	 * Here we set coastal blue as the active theme color: primary.
+	 */
 
-  --primary-highlight-active: var(--desert-tan-highlight-dark);
-
+  /* Settings for both light and dark mode */
   --primary-highlight: var(--desert-tan-highlight);
-  --primary-text: var(--primary-foreground-10);
+
+  /* Light mode is default! */
+  /* Light mode general palette */
+  --primary-10: var(--desert-tan-10);
+  --primary-20: var(--desert-tan-20);
+  --primary-30: var(--desert-tan-30);
+  --primary-40: var(--desert-tan-40);
+  --primary-50: var(--desert-tan-50);
+  --primary-60: var(--desert-tan-60);
+  --primary-70: var(--desert-tan-70);
+  --primary-80: var(--desert-tan-80);
+  --primary-90: var(--desert-tan-90);
+  --primary-100: var(--desert-tan-100);
+  --primary-110: var(--desert-tan-110);
+  --primary-120: var(--desert-tan-120);
+  --primary-background-10: var(--desert-tan-background-10);
+  --primary-background-20: var(--desert-tan-background-20);
+  --primary-background-30: var(--desert-tan-background-30);
+  --primary-background-40: var(--desert-tan-background-40);
+  --primary-background-50: var(--desert-tan-background-50);
+  --primary-background-60: var(--desert-tan-background-60);
+  --primary-text: var(--desert-tan-text);
+  --primary-background: var(--desert-tan-background);
+  --primary-highlight-active: var(--desert-tan-highlight-active);
 }
 
 /* Dark mode */
 [data-color-scheme="dark"] {
-  --primary-foreground-10: var(--desert-tan-lightest);
-  --primary-foreground-20: var(--desert-tan-lighter);
-  --primary-foreground-30: var(--desert-tan-light);
-  --primary-foreground-40: var(--desert-tan-palest);
-  --primary-foreground-50: var(--desert-tan-paler);
-  --primary-foreground-60: var(--desert-tan-pale);
+  /* Inverted palettes for dark mode. */
+  --desert-tan-120: var(--desert-tan-static-10);
+  --desert-tan-110: var(--desert-tan-static-20);
+  --desert-tan-100: var(--desert-tan-static-30);
+  --desert-tan-90: var(--desert-tan-static-40);
+  --desert-tan-80: var(--desert-tan-static-50);
+  --desert-tan-70: var(--desert-tan-static-60);
+  --desert-tan-60: var(--desert-tan-static-70);
+  --desert-tan-50: var(--desert-tan-static-80);
+  --desert-tan-40: var(--desert-tan-static-90);
+  --desert-tan-30: var(--desert-tan-static-100);
+  --desert-tan-20: var(--desert-tan-static-110);
+  --desert-tan-10: var(--desert-tan-static-120);
+  --desert-tan-background-10: var(--desert-tan-darkest);
+  --desert-tan-background-20: var(--desert-tan-darker);
+  --desert-tan-background-30: var(--desert-tan-dark);
+  --desert-tan-background-40: var(--desert-tan-dimmest);
+  --desert-tan-background-50: var(--desert-tan-dimmer);
+  --desert-tan-background-60: var(--desert-tan-dim);
+  --desert-tan-text: var(--desert-tan-120);
+  --desert-tan-background: var(--desert-tan-background-10);
+  --desert-tan-highlight-active: var(--desert-tan-highlight-light);
 
-  --primary-background-60: var(--desert-tan-dim);
-  --primary-background-50: var(--desert-tan-dimmer);
-  --primary-background-40: var(--desert-tan-dimmest);
-  --primary-background-30: var(--desert-tan-dark);
-  --primary-background-20: var(--desert-tan-darker);
-  --primary-background-10: var(--desert-tan-darkest);
-
-  --primary-highlight-active: var(--desert-tan-highlight-light);
+  /* Dark mode theme configuration */
+  --primary-10: var(--desert-tan-10);
+  --primary-20: var(--desert-tan-20);
+  --primary-30: var(--desert-tan-30);
+  --primary-40: var(--desert-tan-40);
+  --primary-50: var(--desert-tan-50);
+  --primary-60: var(--desert-tan-60);
+  --primary-70: var(--desert-tan-70);
+  --primary-80: var(--desert-tan-80);
+  --primary-90: var(--desert-tan-90);
+  --primary-100: var(--desert-tan-100);
+  --primary-110: var(--desert-tan-110);
+  --primary-120: var(--desert-tan-120);
+  --primary-background-10: var(--desert-tan-background-10);
+  --primary-background-20: var(--desert-tan-background-20);
+  --primary-background-30: var(--desert-tan-background-30);
+  --primary-background-40: var(--desert-tan-background-40);
+  --primary-background-50: var(--desert-tan-background-50);
+  --primary-background-60: var(--desert-tan-background-60);
+  --primary-text: var(--desert-tan-text);
+  --primary-background: var(--desert-tan-background);
+  --primary-highlight-active: var(--desert-tan-highlight-active);
 }

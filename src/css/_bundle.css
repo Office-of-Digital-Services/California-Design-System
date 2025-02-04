@@ -1,9 +1,13 @@
 @import "tokens.css";
 @import "typography.css";
-@import "theme.css";
-@import "theme-coastal.css";
-@import "elements.css";
 
+@import "theme.css";
+@import "theme-desert.css";
+@import "theme-mountain.css";
+@import "theme-valley.css";
+@import "theme-coastal.css"; /* Last theme is active by default. */
+
+@import "elements.css";
 @import "layout.css";
 @import "layout-header.css";
 @import "layout-main.css";

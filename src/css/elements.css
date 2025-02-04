@@ -15,7 +15,7 @@
 
 body {
   background-color: var(--primary-background-10);
-  color: var(--primary-foreground-10);
+  color: var(--primary-120);
   position: relative;
   min-height: 100vh;
 }

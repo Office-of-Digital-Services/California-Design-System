@@ -10,21 +10,20 @@
   --link-active: var(--link-dark-active);
 
   /* Basic grayscale palette */
-  --gray-10: #fefefe;
-  --gray-20: #e7e7e7;
-  --gray-30: #d0d0d0;
-  --gray-40: #b9b9b9;
-  --gray-50: #a2a2a2;
-  --gray-60: #8b8b8b;
-  --gray-70: #737373;
-  --gray-80: #5c5c5c;
-  --gray-90: #454545;
-  --gray-100: #292929;
-  --gray-110: #171717;
-  --gray-120: #0f0f0f;
-
+  --gray-static-10: #fefefe;
+  --gray-static-20: #e7e7e7;
+  --gray-static-30: #d0d0d0;
+  --gray-static-40: #b9b9b9;
+  --gray-static-50: #a2a2a2;
+  --gray-static-60: #8b8b8b;
+  --gray-static-70: #737373;
+  --gray-static-80: #5c5c5c;
+  --gray-static-90: #454545;
+  --gray-static-100: #292929;
+  --gray-static-110: #171717;
+  --gray-static-120: #0f0f0f;
   /* Foreground/background grayscale shades */
-  --gray-lightest: var(--gray-10);
+  --gray-lightest: var(--gray-static-10);
   --gray-lighter: #f9f9f9;
   --gray-light: #f4f4f4;
   --gray-palest: #efefef;
@@ -35,33 +34,62 @@
   --gray-dimmest: #1f1f1f;
   --gray-dark: #1a1a1a;
   --gray-darker: #141414;
-  --gray-darkest: var(--gray-120);
-
+  --gray-darkest: var(--gray-static-120);
   /* Grayscale highlight, call-to-action */
-  --gray-highlight: var(--gray-100);
-  --gray-highlight-light: var(--gray-90);
-  --gray-highlight-dark: var(--gray-110);
+  --gray-highlight: var(--gray-static-100);
+  --gray-highlight-light: var(--gray-static-90);
+  --gray-highlight-dark: var(--gray-static-110);
 
-  /* Grayscale light mode (default) */
-  --primary-background-10: var(--gray-lightest);
-  --primary-background-20: var(--gray-lighter);
-  --primary-background-30: var(--gray-light);
-  --primary-background-40: var(--gray-palest);
-  --primary-background-50: var(--gray-paler);
-  --primary-background-60: var(--gray-pale);
-  --primary-foreground-60: var(--gray-dim);
-  --primary-foreground-50: var(--gray-dimmer);
-  --primary-foreground-40: var(--gray-dimmest);
-  --primary-foreground-30: var(--gray-dark);
-  --primary-foreground-20: var(--gray-darker);
-  --primary-foreground-10: var(--gray-darkest);
+  /* The dynamic palette inverts based on light or dark mode. Light here. */
+  --gray-10: var(--gray-static-10);
+  --gray-20: var(--gray-static-20);
+  --gray-30: var(--gray-static-30);
+  --gray-40: var(--gray-static-40);
+  --gray-50: var(--gray-static-50);
+  --gray-60: var(--gray-static-60);
+  --gray-70: var(--gray-static-70);
+  --gray-80: var(--gray-static-80);
+  --gray-90: var(--gray-static-90);
+  --gray-100: var(--gray-static-100);
+  --gray-110: var(--gray-static-110);
+  --gray-120: var(--gray-static-120);
+  --gray-background-10: var(--gray-lightest);
+  --gray-background-20: var(--gray-lighter);
+  --gray-background-30: var(--gray-light);
+  --gray-background-40: var(--gray-palest);
+  --gray-background-50: var(--gray-paler);
+  --gray-background-60: var(--gray-pale);
+  --gray-text: var(--gray-120);
+  --gray-background: var(--gray-background-10);
+  --gray-highlight-active: var(--gray-highlight-dark);
 
-  --primary-highlight-active: var(--gray-highlight-dark);
+  /* Default theme configuration. Set gray if coastal is not present. */
+  /* Light mode (default) */
+  --primary-10: var(--gray-10);
+  --primary-20: var(--gray-20);
+  --primary-30: var(--gray-30);
+  --primary-40: var(--gray-40);
+  --primary-50: var(--gray-50);
+  --primary-60: var(--gray-60);
+  --primary-70: var(--gray-70);
+  --primary-80: var(--gray-80);
+  --primary-90: var(--gray-90);
+  --primary-100: var(--gray-100);
+  --primary-110: var(--gray-110);
+  --primary-120: var(--gray-120);
+  --primary-background-10: var(--gray-background-10);
+  --primary-background-20: var(--gray-background-20);
+  --primary-background-30: var(--gray-background-30);
+  --primary-background-40: var(--gray-background-40);
+  --primary-background-50: var(--gray-background-50);
+  --primary-background-60: var(--gray-background-60);
   --primary-highlight: var(--gray-highlight);
-  --primary-text: var(--primary-foreground-10);
-  --primary-background: var(--primary-background-10);
+  --primary-highlight-active: var(--gray-highlight-active);
+  --primary-text: var(--gray-text);
+  --primary-background: var(--gray-background);
 
-  --text: var(--gray-foreground-10);
+  --text: var(--gray-text);
+  --background: var(--gray-background);
 }
 
 /* Dark mode */
@@ -69,22 +97,52 @@
   --link: var(--link-light);
   --link-active: var(--link-light-active);
 
-  /* Grayscale palette swaps */
-  --primary-foreground-10: var(--gray-lightest);
-  --primary-foreground-20: var(--gray-lighter);
-  --primary-foreground-30: var(--gray-light);
-  --primary-foreground-40: var(--gray-palest);
-  --primary-foreground-50: var(--gray-paler);
-  --primary-foreground-60: var(--gray-pale);
-  --primary-background-60: var(--gray-dim);
-  --primary-background-50: var(--gray-dimmer);
-  --primary-background-40: var(--gray-dimmest);
-  --primary-background-30: var(--gray-dark);
-  --primary-background-20: var(--gray-darker);
-  --primary-background-10: var(--gray-darkest);
-  --primary-highlight-active: var(--gray-highlight-light);
-  --primary-text: var(--gray-foreground-10);
-  --primary-background: var(--gray-background-10);
+  /* Invert for dark mode. */
+  --gray-10: var(--gray-static-120);
+  --gray-20: var(--gray-static-110);
+  --gray-30: var(--gray-static-100);
+  --gray-40: var(--gray-static-90);
+  --gray-50: var(--gray-static-80);
+  --gray-60: var(--gray-static-70);
+  --gray-70: var(--gray-static-60);
+  --gray-80: var(--gray-static-50);
+  --gray-90: var(--gray-static-40);
+  --gray-100: var(--gray-static-30);
+  --gray-110: var(--gray-static-20);
+  --gray-120: var(--gray-static-10);
+  --gray-background-10: var(--gray-darkest);
+  --gray-background-20: var(--gray-darker);
+  --gray-background-30: var(--gray-dark);
+  --gray-background-40: var(--gray-dimmest);
+  --gray-background-50: var(--gray-dimmer);
+  --gray-background-60: var(--gray-dim);
+  --gray-text: var(--gray-120);
+  --gray-background: var(--gray-background-10);
+  --gray-highlight-active: var(--gray-highlight-light);
 
-  --text: var(--primary-foreground-10);
+  /* Default gray theme configuration for dark mode. */
+  --primary-10: var(--gray-10);
+  --primary-20: var(--gray-20);
+  --primary-30: var(--gray-30);
+  --primary-40: var(--gray-40);
+  --primary-50: var(--gray-50);
+  --primary-60: var(--gray-60);
+  --primary-70: var(--gray-70);
+  --primary-80: var(--gray-80);
+  --primary-90: var(--gray-90);
+  --primary-100: var(--gray-100);
+  --primary-110: var(--gray-110);
+  --primary-120: var(--gray-120);
+  --primary-background-10: var(--gray-background-10);
+  --primary-background-20: var(--gray-background-20);
+  --primary-background-30: var(--gray-background-30);
+  --primary-background-40: var(--gray-background-40);
+  --primary-background-50: var(--gray-background-50);
+  --primary-background-60: var(--gray-background-60);
+  --primary-highlight-active: var(--gray-highlight-active);
+  --primary-text: var(--gray-text);
+  --primary-background: var(--gray-background);
+
+  --text: var(--gray-text);
+  --background: var(--gray-background);
 }
