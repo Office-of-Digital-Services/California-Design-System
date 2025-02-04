@@ -2,9 +2,11 @@ ca-site-menu {
   display: flex;
   align-items: center;
 
-  & > a {
+  & > :is(a, button) {
+    all: unset;
     color: var(--primary-110);
     padding: 0.5rem 1rem;
+    cursor: pointer;
   }
 
   & svg {
@@ -18,15 +20,42 @@ ca-site-menu {
   }
 }
 
+/* Fix the burger after user has scrolled down the page. */
 ca-site-menu[position="scrolled"] {
-  & > a {
-    padding: .1rem;
+  & > :is(a, button) {
     position: fixed;
     block-size: 4rem;
     inline-size: 4rem;
-    margin: 1rem;
+    inset-block-start: 1rem;
+    inset-inline-start: 1rem;
+    padding: .5rem;
     background-color: var(--primary-110);
     color: var(--primary-background-10);
+  }
+
+  & svg {
+    block-size: 100%;
+    inline-size: auto;
+  }
+}
+
+/* Slide the burger menu in from top, after scroll. */
+@keyframes reveal-scrolled-burger {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Only add animation if user is okay with it. */
+@media (prefers-reduced-motion: no-preference) {
+  ca-site-menu[position="scrolled"] > :is(a, button) {
+    opacity: 0;
+    animation: reveal-scrolled-burger ease 0.4s forwards;
   }
 }
 

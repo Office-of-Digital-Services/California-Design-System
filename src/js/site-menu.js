@@ -8,19 +8,22 @@ class SiteMenu extends HTMLElement {
     /* Some browsers need a tick to see current DOM contents of the custom element. */
     /* Without timeout, we'll append instead of replace. */
     window.setTimeout(() => {
-      if (width < 1025) {
-        const header = layout.querySelector("header");
-        console.log(header);
-        const observer = new IntersectionObserver((entries) => {
-          for (const entry of entries) {
-            const intersecting = entry.isIntersecting;
-            const scrollStatus = intersecting ? "initial" : "scrolled";
-            this.setAttribute("position", scrollStatus);
-          }
-        });
+      /* First, convert the burger link into a burger button. */
+      const link = this.querySelector("a");
+      const button = document.createElement("button");
+      button.innerHTML = link.innerHTML;
+      link.replaceWith(button);
 
-        observer.observe(header);
-      }
+      const header = layout.querySelector("header");
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          const intersecting = entry.isIntersecting;
+          const scrollStatus = intersecting ? "initial" : "scrolled";
+          this.setAttribute("position", scrollStatus);
+        }
+      });
+
+      observer.observe(header);
     }, 1);
   }
 }
