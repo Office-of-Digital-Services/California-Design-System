@@ -3,13 +3,13 @@ class ColorSchemeToggle extends HTMLElement {
 
   shadowHtml = `
 		<style>
+			:host {
+				color: var(--primary-110);
+			}
 			button {
 				all: unset;
 				display: flex;
 				cursor: pointer;
-			}
-			svg {
-				color: var(--primary-110);
 			}
 		</style>
 		<button title="Toggle light and dark mode" aria-label="Change color scheme">
