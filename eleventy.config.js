@@ -1,16 +1,33 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import cssBuilder from "./tools/bundlers/css-builder.js";
 import jsBuilder from "./tools/bundlers/js-builder.js";
+import { build } from "esbuild";
 
 let firstBuild = true;
-const cssBuildPath = "_site/css/bundle.css";
 const jsBuildPath = "_site/js/bundle.js";
+
+async function build11tyCss() {
+  // CSS Bundle
+  await cssBuilder("src/css/_bundle.css", "_site/css/bundle.css");
+  // CSS Coastal Blue Theme
+  await cssBuilder("src/css/theme-coastal.css", "_site/css/theme.coastal.css");
+  // CSS Desert Tan Theme
+  await cssBuilder("src/css/theme-desert.css", "_site/css/theme.desert.css");
+  // CSS Mountain Gray Theme
+  await cssBuilder(
+    "src/css/theme-mountain.css",
+    "_site/css/theme.mountain.css",
+  );
+  // CSS Valley Green Theme
+  await cssBuilder("src/css/theme-valley.css", "_site/css/theme.valley.css");
+}
 
 export default async function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", async ({ runMode }) => {
     // Only build all of the bundle files during first run, not on every change.
     if (firstBuild || runMode !== "serve") {
-      await cssBuilder(cssBuildPath);
+      await build11tyCss();
+
       await jsBuilder(jsBuildPath);
       firstBuild = false;
     }
@@ -20,7 +37,7 @@ export default async function (eleventyConfig) {
     // During development changes, only reload the bundles that need reloading.
     for (const changedFile of changedFiles) {
       if (changedFile.endsWith(".css")) {
-        await cssBuilder(cssBuildPath);
+        await build11tyCss();
       }
       if (changedFile.endsWith(".js")) {
         await jsBuilder(jsBuildPath);
