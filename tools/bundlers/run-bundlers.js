@@ -29,8 +29,75 @@ await fs.copyFile("static/images/icons.svg", "dist/images/icons.svg");
 await fs.copyFile("static/images/favicon.ico", "dist/images/favicon.ico");
 
 // Build all files first.
-await cssBuilder(`${fileSlug}.css`, { banner });
-await cssBuilder(`${fileSlug}.min.css`, { banner, minify: true });
+
+// CSS Bundle
+await cssBuilder("src/css/_bundle.css", `${fileSlug}.css`, { banner });
+await cssBuilder("src/css/_bundle.css", `${fileSlug}.min.css`, {
+  banner,
+  minify: true,
+});
+
+// CSS Coastal Blue Theme
+await cssBuilder(
+  "src/css/theme-coastal.css",
+  `${fileSlug}.theme.coastal-blue.css`,
+  { banner },
+);
+await cssBuilder(
+  "src/css/theme-coastal.css",
+  `${fileSlug}.theme.coastal-blue.min.css`,
+  {
+    banner,
+    minify: true,
+  },
+);
+
+// CSS Desert Tan Theme
+await cssBuilder(
+  "src/css/theme-desert.css",
+  `${fileSlug}.theme.desert-tan.css`,
+  { banner },
+);
+await cssBuilder(
+  "src/css/theme-desert.css",
+  `${fileSlug}.theme.desert-tan.min.css`,
+  {
+    banner,
+    minify: true,
+  },
+);
+
+// CSS Mountain Gray Theme
+await cssBuilder(
+  "src/css/theme-mountain.css",
+  `${fileSlug}.theme.mountain-gray.css`,
+  { banner },
+);
+await cssBuilder(
+  "src/css/theme-mountain.css",
+  `${fileSlug}.theme.mountain-gray.min.css`,
+  {
+    banner,
+    minify: true,
+  },
+);
+
+// CSS Valley Green Theme
+await cssBuilder(
+  "src/css/theme-valley.css",
+  `${fileSlug}.theme.valley-green.css`,
+  { banner },
+);
+await cssBuilder(
+  "src/css/theme-valley.css",
+  `${fileSlug}.theme.valley-green.min.css`,
+  {
+    banner,
+    minify: true,
+  },
+);
+
+// JavaScript
 await jsBuilder(`${fileSlug}.js`, { banner });
 await jsBuilder(`${fileSlug}.min.js`, { banner, minify: true });
 

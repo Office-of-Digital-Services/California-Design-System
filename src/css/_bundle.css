@@ -2,10 +2,6 @@
 @import "typography.css";
 
 @import "theme.css";
-@import "theme-desert.css";
-@import "theme-mountain.css";
-@import "theme-valley.css";
-@import "theme-coastal.css"; /* Last theme is active by default. */
 
 @import "elements.css";
 @import "layout.css";

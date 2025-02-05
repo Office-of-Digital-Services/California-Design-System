@@ -11,9 +11,11 @@ import { Features, bundle } from "lightningcss";
  * @param {boolean} options.minify A toggle to enable minification of the build output.
  * @returns {Promise}
  */
-export default async function (distPath, { banner = "", minify = false } = {}) {
-  const srcPath = "src/css/_bundle.css";
-
+export default async function (
+  srcPath,
+  distPath,
+  { banner = "", minify = false } = {},
+) {
   // https://lightningcss.dev/bundling.html
   const { code, map } = bundle({
     filename: srcPath,

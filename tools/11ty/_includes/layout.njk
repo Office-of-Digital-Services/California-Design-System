@@ -24,8 +24,17 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="/css/bundle.css" id="main-stylesheet" />
+		<!-- Core CSS bundle -->
+    <link rel="stylesheet" href="/css/bundle.css" data-theme="grayscale" />
+
+		<!-- Core JS bundle -->
     <script src="/js/bundle.js"></script>
+
+		<!-- Theme files, last theme wins -->
+		<link rel="stylesheet" href="/css/theme.desert.css" data-theme="desert" />
+		<link rel="stylesheet" href="/css/theme.mountain.css" data-theme="mountain" />
+		<link rel="stylesheet" href="/css/theme.valley.css" data-theme="valley" />
+		<link rel="stylesheet" href="/css/theme.coastal.css" data-theme="coastal" />
   </head>
   <body>
     {% block content -%} 
