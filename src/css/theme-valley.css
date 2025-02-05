@@ -1,188 +1,65 @@
 :root {
   /* 
-	 * Color definitions for Coastal Blue
+	 * Color definitions for valley
 	 */
 
   /* Basic palette */
-  --valley-green-static-10: #feffff;
-  --valley-green-static-20: #dbecef;
-  --valley-green-static-30: #b8dadf;
-  --valley-green-static-40: #94c8d0;
-  --valley-green-static-50: #71b6c0;
-  --valley-green-static-60: #4da4b1;
-  --valley-green-static-70: #46919c;
-  --valley-green-static-80: #3c7f89;
-  --valley-green-static-90: #2e626a;
-  --valley-green-static-100: #1f4146;
-  --valley-green-static-110: #0f2023;
-  --valley-green-static-120: #060d0e;
+  --valley-static-10: #feffff;
+  --valley-static-20: #dbecef;
+  --valley-static-30: #b8dadf;
+  --valley-static-40: #94c8d0;
+  --valley-static-50: #71b6c0;
+  --valley-static-60: #4da4b1;
+  --valley-static-70: #46919c;
+  --valley-static-80: #3c7f89;
+  --valley-static-90: #2e626a;
+  --valley-static-100: #1f4146;
+  --valley-static-110: #0f2023;
+  --valley-static-120: #060d0e;
   /* Background shades */
-  --valley-green-lightest: var(--valley-green-static-10);
-  --valley-green-lighter: #f7fbfb;
-  --valley-green-light: #f0f7f8;
-  --valley-green-palest: #e9f3f5;
-  --valley-green-paler: #daecef;
-  --valley-green-pale: #cce5e8;
-  --valley-green-dim: #1c3c41;
-  --valley-green-dimmer: #162e32;
-  --valley-green-dimmest: #0f2124;
-  --valley-green-dark: #0c1a1c;
-  --valley-green-darker: #091415;
-  --valley-green-darkest: var(--valley-green-static-120);
+  --valley-lightest: var(--valley-static-10);
+  --valley-lighter: #f7fbfb;
+  --valley-light: #f0f7f8;
+  --valley-palest: #e9f3f5;
+  --valley-paler: #daecef;
+  --valley-pale: #cce5e8;
+  --valley-dim: #1c3c41;
+  --valley-dimmer: #162e32;
+  --valley-dimmest: #0f2124;
+  --valley-dark: #0c1a1c;
+  --valley-darker: #091415;
+  --valley-darkest: var(--valley-static-120);
+  /* Optional accent */
+  --valley-accent-dark: #e7e7bf;
+  --valley-accent-light: #f64d13;
+  --valley-accent: var(--valley-static-80);
   /* Highlight, call-to-action */
-  --valley-green-highlight: var(--valley-green-static-80);
-  --valley-green-highlight-light: var(--valley-green-static-70);
-  --valley-green-highlight-dark: var(--valley-green-static-90);
-
-  /* The "flip" palette inverts based on light or dark mode. */
-  --valley-green-flip-10: var(--valley-green-10);
-  --valley-green-flip-20: var(--valley-green-20);
-  --valley-green-flip-30: var(--valley-green-30);
-  --valley-green-flip-40: var(--valley-green-40);
-  --valley-green-flip-50: var(--valley-green-50);
-  --valley-green-flip-60: var(--valley-green-60);
-  --valley-green-flip-70: var(--valley-green-70);
-  --valley-green-flip-80: var(--valley-green-80);
-  --valley-green-flip-90: var(--valley-green-90);
-  --valley-green-flip-100: var(--valley-green-100);
-  --valley-green-flip-110: var(--valley-green-110);
-  --valley-green-flip-120: var(--valley-green-120);
-
-  /* 
-	 * Theme configuration
-	 * Here we set coastal blue as the active theme color: primary.
-	 */
-
-  /* Settings for both light and dark mode */
-  --primary-highlight: var(--valley-green-highlight);
-
-  /* Light mode is default! */
-  /* Light mode general palette */
-  --primary-10: var(--valley-green-flip-10);
-  --primary-20: var(--valley-green-flip-20);
-  --primary-30: var(--valley-green-flip-30);
-  --primary-40: var(--valley-green-flip-40);
-  --primary-50: var(--valley-green-flip-50);
-  --primary-60: var(--valley-green-flip-60);
-  --primary-70: var(--valley-green-flip-70);
-  --primary-80: var(--valley-green-flip-80);
-  --primary-90: var(--valley-green-flip-90);
-  --primary-100: var(--valley-green-flip-100);
-  --primary-110: var(--valley-green-flip-110);
-  --primary-120: var(--valley-green-flip-120);
-  /* Light mode background shades */
-  --primary-background-10: var(--valley-green-lightest);
-  --primary-background-20: var(--valley-green-lighter);
-  --primary-background-30: var(--valley-green-light);
-  --primary-background-40: var(--valley-green-palest);
-  --primary-background-50: var(--valley-green-paler);
-  --primary-background-60: var(--valley-green-pale);
-  /* General light mode settings */
-  --primary-highlight-active: var(--valley-green-highlight-dark);
-  --primary-text: var(--primary-120);
-  --primary-background: var(--primary-background-10);
-}
-
-/* Dark mode */
-[data-color-scheme="dark"] {
-  /* The "flip" palette inverts based on light or dark mode. */
-  --valley-green-flip-120: var(--valley-green-10);
-  --valley-green-flip-110: var(--valley-green-20);
-  --valley-green-flip-100: var(--valley-green-30);
-  --valley-green-flip-90: var(--valley-green-40);
-  --valley-green-flip-80: var(--valley-green-50);
-  --valley-green-flip-70: var(--valley-green-60);
-  --valley-green-flip-60: var(--valley-green-70);
-  --valley-green-flip-50: var(--valley-green-80);
-  --valley-green-flip-40: var(--valley-green-90);
-  --valley-green-flip-30: var(--valley-green-100);
-  --valley-green-flip-20: var(--valley-green-110);
-  --valley-green-flip-10: var(--valley-green-120);
-
-  /* Dark mode general palette */
-  --primary-10: var(--valley-green-flip-10);
-  --primary-20: var(--valley-green-flip-20);
-  --primary-30: var(--valley-green-flip-30);
-  --primary-40: var(--valley-green-flip-40);
-  --primary-50: var(--valley-green-flip-50);
-  --primary-60: var(--valley-green-flip-60);
-  --primary-70: var(--valley-green-flip-70);
-  --primary-80: var(--valley-green-flip-80);
-  --primary-90: var(--valley-green-flip-90);
-  --primary-100: var(--valley-green-flip-100);
-  --primary-110: var(--valley-green-flip-110);
-  --primary-120: var(--valley-green-flip-120);
-  /* Dark mode background shades */
-  --primary-background-60: var(--valley-green-dim);
-  --primary-background-50: var(--valley-green-dimmer);
-  --primary-background-40: var(--valley-green-dimmest);
-  --primary-background-30: var(--valley-green-dark);
-  --primary-background-20: var(--valley-green-darker);
-  --primary-background-10: var(--valley-green-darkest);
-  /* General dark mode settings */
-  --primary-highlight-active: var(--valley-green-highlight-light);
-  --primary-text: var(--primary-120);
-  --primary-background: var(--primary-background-10);
-}
-
-:root {
-  /* 
-	 * Color definitions for valley-green
-	 */
-
-  /* Basic palette */
-  --valley-green-static-10: #feffff;
-  --valley-green-static-20: #dbecef;
-  --valley-green-static-30: #b8dadf;
-  --valley-green-static-40: #94c8d0;
-  --valley-green-static-50: #71b6c0;
-  --valley-green-static-60: #4da4b1;
-  --valley-green-static-70: #46919c;
-  --valley-green-static-80: #3c7f89;
-  --valley-green-static-90: #2e626a;
-  --valley-green-static-100: #1f4146;
-  --valley-green-static-110: #0f2023;
-  --valley-green-static-120: #060d0e;
-  /* Background shades */
-  --valley-green-lightest: var(--valley-green-static-10);
-  --valley-green-lighter: #f7fbfb;
-  --valley-green-light: #f0f7f8;
-  --valley-green-palest: #e9f3f5;
-  --valley-green-paler: #daecef;
-  --valley-green-pale: #cce5e8;
-  --valley-green-dim: #1c3c41;
-  --valley-green-dimmer: #162e32;
-  --valley-green-dimmest: #0f2124;
-  --valley-green-dark: #0c1a1c;
-  --valley-green-darker: #091415;
-  --valley-green-darkest: var(--valley-green-static-120);
-  /* Highlight, call-to-action */
-  --valley-green-highlight: var(--valley-green-static-80);
-  --valley-green-highlight-light: var(--valley-green-static-70);
-  --valley-green-highlight-dark: var(--valley-green-static-90);
+  --valley-highlight: var(--valley-static-80);
+  --valley-highlight-active-dark: var(--valley-static-70);
+  --valley-highlight-active-light: var(--valley-static-90);
 
   /* The dynamic palette inverts based on light or dark mode. Light here. */
-  --valley-green-10: var(--valley-green-static-10);
-  --valley-green-20: var(--valley-green-static-20);
-  --valley-green-30: var(--valley-green-static-30);
-  --valley-green-40: var(--valley-green-static-40);
-  --valley-green-50: var(--valley-green-static-50);
-  --valley-green-60: var(--valley-green-static-60);
-  --valley-green-70: var(--valley-green-static-70);
-  --valley-green-80: var(--valley-green-static-80);
-  --valley-green-90: var(--valley-green-static-90);
-  --valley-green-100: var(--valley-green-static-100);
-  --valley-green-110: var(--valley-green-static-110);
-  --valley-green-120: var(--valley-green-static-120);
-  --valley-green-background-10: var(--valley-green-lightest);
-  --valley-green-background-20: var(--valley-green-lighter);
-  --valley-green-background-30: var(--valley-green-light);
-  --valley-green-background-40: var(--valley-green-palest);
-  --valley-green-background-50: var(--valley-green-paler);
-  --valley-green-background-60: var(--valley-green-pale);
-  --valley-green-text: var(--valley-green-120);
-  --valley-green-background: var(--valley-green-background-10);
-  --valley-green-highlight-active: var(--valley-green-highlight-dark);
+  --valley-10: var(--valley-static-10);
+  --valley-20: var(--valley-static-20);
+  --valley-30: var(--valley-static-30);
+  --valley-40: var(--valley-static-40);
+  --valley-50: var(--valley-static-50);
+  --valley-60: var(--valley-static-60);
+  --valley-70: var(--valley-static-70);
+  --valley-80: var(--valley-static-80);
+  --valley-90: var(--valley-static-90);
+  --valley-100: var(--valley-static-100);
+  --valley-110: var(--valley-static-110);
+  --valley-120: var(--valley-static-120);
+  --valley-background-10: var(--valley-lightest);
+  --valley-background-20: var(--valley-lighter);
+  --valley-background-30: var(--valley-light);
+  --valley-background-40: var(--valley-palest);
+  --valley-background-50: var(--valley-paler);
+  --valley-background-60: var(--valley-pale);
+  --valley-text: var(--valley-120);
+  --valley-background: var(--valley-background-10);
+  --valley-highlight-active: var(--valley-highlight-active-light);
 
   /* 
 	 * Theme configuration
@@ -190,78 +67,86 @@
 	 */
 
   /* Settings for both light and dark mode */
-  --primary-highlight: var(--valley-green-highlight);
+  --primary-highlight: var(--valley-highlight);
+  --primary-accent: var(--valley-accent);
 
   /* Light mode is default! */
   /* Light mode general palette */
-  --primary-10: var(--valley-green-10);
-  --primary-20: var(--valley-green-20);
-  --primary-30: var(--valley-green-30);
-  --primary-40: var(--valley-green-40);
-  --primary-50: var(--valley-green-50);
-  --primary-60: var(--valley-green-60);
-  --primary-70: var(--valley-green-70);
-  --primary-80: var(--valley-green-80);
-  --primary-90: var(--valley-green-90);
-  --primary-100: var(--valley-green-100);
-  --primary-110: var(--valley-green-110);
-  --primary-120: var(--valley-green-120);
-  --primary-background-10: var(--valley-green-background-10);
-  --primary-background-20: var(--valley-green-background-20);
-  --primary-background-30: var(--valley-green-background-30);
-  --primary-background-40: var(--valley-green-background-40);
-  --primary-background-50: var(--valley-green-background-50);
-  --primary-background-60: var(--valley-green-background-60);
-  --primary-text: var(--valley-green-text);
-  --primary-background: var(--valley-green-background);
-  --primary-highlight-active: var(--valley-green-highlight-active);
+  --primary-10: var(--valley-10);
+  --primary-20: var(--valley-20);
+  --primary-30: var(--valley-30);
+  --primary-40: var(--valley-40);
+  --primary-50: var(--valley-50);
+  --primary-60: var(--valley-60);
+  --primary-70: var(--valley-70);
+  --primary-80: var(--valley-80);
+  --primary-90: var(--valley-90);
+  --primary-100: var(--valley-100);
+  --primary-110: var(--valley-110);
+  --primary-120: var(--valley-120);
+  --primary-background-10: var(--valley-background-10);
+  --primary-background-20: var(--valley-background-20);
+  --primary-background-30: var(--valley-background-30);
+  --primary-background-40: var(--valley-background-40);
+  --primary-background-50: var(--valley-background-50);
+  --primary-background-60: var(--valley-background-60);
+  --primary-text: var(--valley-text);
+  --primary-background: var(--valley-background);
+  --primary-highlight-active: var(--valley-highlight-active);
 }
 
 /* Dark mode */
 [data-color-scheme="dark"] {
   /* Inverted palettes for dark mode. */
-  --valley-green-120: var(--valley-green-static-10);
-  --valley-green-110: var(--valley-green-static-20);
-  --valley-green-100: var(--valley-green-static-30);
-  --valley-green-90: var(--valley-green-static-40);
-  --valley-green-80: var(--valley-green-static-50);
-  --valley-green-70: var(--valley-green-static-60);
-  --valley-green-60: var(--valley-green-static-70);
-  --valley-green-50: var(--valley-green-static-80);
-  --valley-green-40: var(--valley-green-static-90);
-  --valley-green-30: var(--valley-green-static-100);
-  --valley-green-20: var(--valley-green-static-110);
-  --valley-green-10: var(--valley-green-static-120);
-  --valley-green-background-10: var(--valley-green-darkest);
-  --valley-green-background-20: var(--valley-green-darker);
-  --valley-green-background-30: var(--valley-green-dark);
-  --valley-green-background-40: var(--valley-green-dimmest);
-  --valley-green-background-50: var(--valley-green-dimmer);
-  --valley-green-background-60: var(--valley-green-dim);
-  --valley-green-text: var(--valley-green-120);
-  --valley-green-background: var(--valley-green-background-10);
-  --valley-green-highlight-active: var(--valley-green-highlight-light);
+  --valley-120: var(--valley-static-10);
+  --valley-110: var(--valley-static-20);
+  --valley-100: var(--valley-static-30);
+  --valley-90: var(--valley-static-40);
+  --valley-80: var(--valley-static-50);
+  --valley-70: var(--valley-static-60);
+  --valley-60: var(--valley-static-70);
+  --valley-50: var(--valley-static-80);
+  --valley-40: var(--valley-static-90);
+  --valley-30: var(--valley-static-100);
+  --valley-20: var(--valley-static-110);
+  --valley-10: var(--valley-static-120);
+  --valley-background-10: var(--valley-darkest);
+  --valley-background-20: var(--valley-darker);
+  --valley-background-30: var(--valley-dark);
+  --valley-background-40: var(--valley-dimmest);
+  --valley-background-50: var(--valley-dimmer);
+  --valley-background-60: var(--valley-dim);
+  --valley-text: var(--valley-120);
+  --valley-background: var(--valley-background-10);
+  --valley-highlight-active: var(--valley-highlight-active-dark);
 
   /* Dark mode theme configuration */
-  --primary-10: var(--valley-green-10);
-  --primary-20: var(--valley-green-20);
-  --primary-30: var(--valley-green-30);
-  --primary-40: var(--valley-green-40);
-  --primary-50: var(--valley-green-50);
-  --primary-60: var(--valley-green-60);
-  --primary-70: var(--valley-green-70);
-  --primary-80: var(--valley-green-80);
-  --primary-90: var(--valley-green-90);
-  --primary-100: var(--valley-green-100);
-  --primary-110: var(--valley-green-110);
-  --primary-120: var(--valley-green-120);
-  --primary-background-10: var(--valley-green-background-10);
-  --primary-background-20: var(--valley-green-background-20);
-  --primary-background-30: var(--valley-green-background-30);
-  --primary-background-40: var(--valley-green-background-40);
-  --primary-background-50: var(--valley-green-background-50);
-  --primary-background-60: var(--valley-green-background-60);
-  --primary-text: var(--valley-green-text);
-  --primary-background: var(--valley-green-background);
-  --primary-highlight-active: var(--valley-green-highlight-active);
+  --primary-10: var(--valley-10);
+  --primary-20: var(--valley-20);
+  --primary-30: var(--valley-30);
+  --primary-40: var(--valley-40);
+  --primary-50: var(--valley-50);
+  --primary-60: var(--valley-60);
+  --primary-70: var(--valley-70);
+  --primary-80: var(--valley-80);
+  --primary-90: var(--valley-90);
+  --primary-100: var(--valley-100);
+  --primary-110: var(--valley-110);
+  --primary-120: var(--valley-120);
+  --primary-background-10: var(--valley-background-10);
+  --primary-background-20: var(--valley-background-20);
+  --primary-background-30: var(--valley-background-30);
+  --primary-background-40: var(--valley-background-40);
+  --primary-background-50: var(--valley-background-50);
+  --primary-background-60: var(--valley-background-60);
+  --primary-text: var(--valley-text);
+  --primary-background: var(--valley-background);
+  --primary-highlight-active: var(--valley-highlight-active);
+}
+
+[data-accent="secondary"] {
+  --valley-accent: var(--valley-accent-light);
+}
+[data-color-scheme="dark"][data-accent="secondary"] {
+  --valley-accent: var(--valley-accent-dark);
 }

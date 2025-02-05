@@ -1,61 +1,65 @@
 :root {
   /* 
-	 * Color definitions for mountain-gray
+	 * Color definitions for mountain
 	 */
 
   /* Basic palette */
-  --mountain-gray-static-10: #fefeff;
-  --mountain-gray-static-20: #e0e7ea;
-  --mountain-gray-static-30: #c1cfd6;
-  --mountain-gray-static-40: #a2b8c2;
-  --mountain-gray-static-50: #83a0ae;
-  --mountain-gray-static-60: #688c9d;
-  --mountain-gray-static-70: #5e8394;
-  --mountain-gray-static-80: #506d7b;
-  --mountain-gray-static-90: #3c525c;
-  --mountain-gray-static-100: #28363d;
-  --mountain-gray-static-110: #141b1e;
-  --mountain-gray-static-120: #080b0c;
+  --mountain-static-10: #fefeff;
+  --mountain-static-20: #e0e7ea;
+  --mountain-static-30: #c1cfd6;
+  --mountain-static-40: #a2b8c2;
+  --mountain-static-50: #83a0ae;
+  --mountain-static-60: #688c9d;
+  --mountain-static-70: #5e8394;
+  --mountain-static-80: #506d7b;
+  --mountain-static-90: #3c525c;
+  --mountain-static-100: #28363d;
+  --mountain-static-110: #141b1e;
+  --mountain-static-120: #080b0c;
   /* Background shades */
-  --mountain-gray-lightest: var(--mountain-gray-static-10);
-  --mountain-gray-lighter: #f8fafa;
-  --mountain-gray-light: #f2f5f6;
-  --mountain-gray-palest: #ecf0f2;
-  --mountain-gray-paler: #dfe6ea;
-  --mountain-gray-pale: #d2dde2;
-  --mountain-gray-dim: #243238;
-  --mountain-gray-dimmer: #1c272c;
-  --mountain-gray-dimmest: #141c1f;
-  --mountain-gray-dark: #101619;
-  --mountain-gray-darker: #0c1012;
-  --mountain-gray-darkest: var(--mountain-gray-static-120);
+  --mountain-lightest: var(--mountain-static-10);
+  --mountain-lighter: #f8fafa;
+  --mountain-light: #f2f5f6;
+  --mountain-palest: #ecf0f2;
+  --mountain-paler: #dfe6ea;
+  --mountain-pale: #d2dde2;
+  --mountain-dim: #243238;
+  --mountain-dimmer: #1c272c;
+  --mountain-dimmest: #141c1f;
+  --mountain-dark: #101619;
+  --mountain-darker: #0c1012;
+  --mountain-darkest: var(--mountain-static-120);
+  /* Optional accent */
+  --mountain-accent-dark: #bee6ff;
+  --mountain-accent-light: #167837;
+  --mountain-accent: var(--mountain-static-60);
   /* Highlight, call-to-action */
-  --mountain-gray-highlight: var(--mountain-gray-static-60);
-  --mountain-gray-highlight-light: var(--mountain-gray-static-50);
-  --mountain-gray-highlight-dark: var(--mountain-gray-static-70);
+  --mountain-highlight: var(--mountain-static-60);
+  --mountain-highlight-active-dark: var(--mountain-static-50);
+  --mountain-highlight-active-light: var(--mountain-static-70);
 
   /* The dynamic palette inverts based on light or dark mode. Light here. */
-  --mountain-gray-10: var(--mountain-gray-static-10);
-  --mountain-gray-20: var(--mountain-gray-static-20);
-  --mountain-gray-30: var(--mountain-gray-static-30);
-  --mountain-gray-40: var(--mountain-gray-static-40);
-  --mountain-gray-50: var(--mountain-gray-static-50);
-  --mountain-gray-60: var(--mountain-gray-static-60);
-  --mountain-gray-70: var(--mountain-gray-static-70);
-  --mountain-gray-80: var(--mountain-gray-static-80);
-  --mountain-gray-90: var(--mountain-gray-static-90);
-  --mountain-gray-100: var(--mountain-gray-static-100);
-  --mountain-gray-110: var(--mountain-gray-static-110);
-  --mountain-gray-120: var(--mountain-gray-static-120);
-  --mountain-gray-background-10: var(--mountain-gray-lightest);
-  --mountain-gray-background-20: var(--mountain-gray-lighter);
-  --mountain-gray-background-30: var(--mountain-gray-light);
-  --mountain-gray-background-40: var(--mountain-gray-palest);
-  --mountain-gray-background-50: var(--mountain-gray-paler);
-  --mountain-gray-background-60: var(--mountain-gray-pale);
-  --mountain-gray-text: var(--mountain-gray-120);
-  --mountain-gray-background: var(--mountain-gray-background-10);
-  --mountain-gray-highlight-active: var(--mountain-gray-highlight-dark);
+  --mountain-10: var(--mountain-static-10);
+  --mountain-20: var(--mountain-static-20);
+  --mountain-30: var(--mountain-static-30);
+  --mountain-40: var(--mountain-static-40);
+  --mountain-50: var(--mountain-static-50);
+  --mountain-60: var(--mountain-static-60);
+  --mountain-70: var(--mountain-static-70);
+  --mountain-80: var(--mountain-static-80);
+  --mountain-90: var(--mountain-static-90);
+  --mountain-100: var(--mountain-static-100);
+  --mountain-110: var(--mountain-static-110);
+  --mountain-120: var(--mountain-static-120);
+  --mountain-background-10: var(--mountain-lightest);
+  --mountain-background-20: var(--mountain-lighter);
+  --mountain-background-30: var(--mountain-light);
+  --mountain-background-40: var(--mountain-palest);
+  --mountain-background-50: var(--mountain-paler);
+  --mountain-background-60: var(--mountain-pale);
+  --mountain-text: var(--mountain-120);
+  --mountain-background: var(--mountain-background-10);
+  --mountain-highlight-active: var(--mountain-highlight-active-light);
 
   /* 
 	 * Theme configuration
@@ -63,78 +67,86 @@
 	 */
 
   /* Settings for both light and dark mode */
-  --primary-highlight: var(--mountain-gray-highlight);
+  --primary-highlight: var(--mountain-highlight);
+  --primary-accent: var(--mountain-accent);
 
   /* Light mode is default! */
   /* Light mode general palette */
-  --primary-10: var(--mountain-gray-10);
-  --primary-20: var(--mountain-gray-20);
-  --primary-30: var(--mountain-gray-30);
-  --primary-40: var(--mountain-gray-40);
-  --primary-50: var(--mountain-gray-50);
-  --primary-60: var(--mountain-gray-60);
-  --primary-70: var(--mountain-gray-70);
-  --primary-80: var(--mountain-gray-80);
-  --primary-90: var(--mountain-gray-90);
-  --primary-100: var(--mountain-gray-100);
-  --primary-110: var(--mountain-gray-110);
-  --primary-120: var(--mountain-gray-120);
-  --primary-background-10: var(--mountain-gray-background-10);
-  --primary-background-20: var(--mountain-gray-background-20);
-  --primary-background-30: var(--mountain-gray-background-30);
-  --primary-background-40: var(--mountain-gray-background-40);
-  --primary-background-50: var(--mountain-gray-background-50);
-  --primary-background-60: var(--mountain-gray-background-60);
-  --primary-text: var(--mountain-gray-text);
-  --primary-background: var(--mountain-gray-background);
-  --primary-highlight-active: var(--mountain-gray-highlight-active);
+  --primary-10: var(--mountain-10);
+  --primary-20: var(--mountain-20);
+  --primary-30: var(--mountain-30);
+  --primary-40: var(--mountain-40);
+  --primary-50: var(--mountain-50);
+  --primary-60: var(--mountain-60);
+  --primary-70: var(--mountain-70);
+  --primary-80: var(--mountain-80);
+  --primary-90: var(--mountain-90);
+  --primary-100: var(--mountain-100);
+  --primary-110: var(--mountain-110);
+  --primary-120: var(--mountain-120);
+  --primary-background-10: var(--mountain-background-10);
+  --primary-background-20: var(--mountain-background-20);
+  --primary-background-30: var(--mountain-background-30);
+  --primary-background-40: var(--mountain-background-40);
+  --primary-background-50: var(--mountain-background-50);
+  --primary-background-60: var(--mountain-background-60);
+  --primary-text: var(--mountain-text);
+  --primary-background: var(--mountain-background);
+  --primary-highlight-active: var(--mountain-highlight-active);
 }
 
 /* Dark mode */
 [data-color-scheme="dark"] {
   /* Inverted palettes for dark mode. */
-  --mountain-gray-120: var(--mountain-gray-static-10);
-  --mountain-gray-110: var(--mountain-gray-static-20);
-  --mountain-gray-100: var(--mountain-gray-static-30);
-  --mountain-gray-90: var(--mountain-gray-static-40);
-  --mountain-gray-80: var(--mountain-gray-static-50);
-  --mountain-gray-70: var(--mountain-gray-static-60);
-  --mountain-gray-60: var(--mountain-gray-static-70);
-  --mountain-gray-50: var(--mountain-gray-static-80);
-  --mountain-gray-40: var(--mountain-gray-static-90);
-  --mountain-gray-30: var(--mountain-gray-static-100);
-  --mountain-gray-20: var(--mountain-gray-static-110);
-  --mountain-gray-10: var(--mountain-gray-static-120);
-  --mountain-gray-background-10: var(--mountain-gray-darkest);
-  --mountain-gray-background-20: var(--mountain-gray-darker);
-  --mountain-gray-background-30: var(--mountain-gray-dark);
-  --mountain-gray-background-40: var(--mountain-gray-dimmest);
-  --mountain-gray-background-50: var(--mountain-gray-dimmer);
-  --mountain-gray-background-60: var(--mountain-gray-dim);
-  --mountain-gray-text: var(--mountain-gray-120);
-  --mountain-gray-background: var(--mountain-gray-background-10);
-  --mountain-gray-highlight-active: var(--mountain-gray-highlight-light);
+  --mountain-120: var(--mountain-static-10);
+  --mountain-110: var(--mountain-static-20);
+  --mountain-100: var(--mountain-static-30);
+  --mountain-90: var(--mountain-static-40);
+  --mountain-80: var(--mountain-static-50);
+  --mountain-70: var(--mountain-static-60);
+  --mountain-60: var(--mountain-static-70);
+  --mountain-50: var(--mountain-static-80);
+  --mountain-40: var(--mountain-static-90);
+  --mountain-30: var(--mountain-static-100);
+  --mountain-20: var(--mountain-static-110);
+  --mountain-10: var(--mountain-static-120);
+  --mountain-background-10: var(--mountain-darkest);
+  --mountain-background-20: var(--mountain-darker);
+  --mountain-background-30: var(--mountain-dark);
+  --mountain-background-40: var(--mountain-dimmest);
+  --mountain-background-50: var(--mountain-dimmer);
+  --mountain-background-60: var(--mountain-dim);
+  --mountain-text: var(--mountain-120);
+  --mountain-background: var(--mountain-background-10);
+  --mountain-highlight-active: var(--mountain-highlight-active-dark);
 
   /* Dark mode theme configuration */
-  --primary-10: var(--mountain-gray-10);
-  --primary-20: var(--mountain-gray-20);
-  --primary-30: var(--mountain-gray-30);
-  --primary-40: var(--mountain-gray-40);
-  --primary-50: var(--mountain-gray-50);
-  --primary-60: var(--mountain-gray-60);
-  --primary-70: var(--mountain-gray-70);
-  --primary-80: var(--mountain-gray-80);
-  --primary-90: var(--mountain-gray-90);
-  --primary-100: var(--mountain-gray-100);
-  --primary-110: var(--mountain-gray-110);
-  --primary-120: var(--mountain-gray-120);
-  --primary-background-10: var(--mountain-gray-background-10);
-  --primary-background-20: var(--mountain-gray-background-20);
-  --primary-background-30: var(--mountain-gray-background-30);
-  --primary-background-40: var(--mountain-gray-background-40);
-  --primary-background-50: var(--mountain-gray-background-50);
-  --primary-background-60: var(--mountain-gray-background-60);
-  --primary-text: var(--mountain-gray-text);
-  --primary-background: var(--mountain-gray-background);
-  --primary-highlight-active: var(--mountain-gray-highlight-active);
+  --primary-10: var(--mountain-10);
+  --primary-20: var(--mountain-20);
+  --primary-30: var(--mountain-30);
+  --primary-40: var(--mountain-40);
+  --primary-50: var(--mountain-50);
+  --primary-60: var(--mountain-60);
+  --primary-70: var(--mountain-70);
+  --primary-80: var(--mountain-80);
+  --primary-90: var(--mountain-90);
+  --primary-100: var(--mountain-100);
+  --primary-110: var(--mountain-110);
+  --primary-120: var(--mountain-120);
+  --primary-background-10: var(--mountain-background-10);
+  --primary-background-20: var(--mountain-background-20);
+  --primary-background-30: var(--mountain-background-30);
+  --primary-background-40: var(--mountain-background-40);
+  --primary-background-50: var(--mountain-background-50);
+  --primary-background-60: var(--mountain-background-60);
+  --primary-text: var(--mountain-text);
+  --primary-background: var(--mountain-background);
+  --primary-highlight-active: var(--mountain-highlight-active);
+}
+
+[data-accent="secondary"] {
+  --mountain-accent: var(--mountain-accent-light);
+}
+[data-color-scheme="dark"][data-accent="secondary"] {
+  --mountain-accent: var(--mountain-accent-dark);
 }

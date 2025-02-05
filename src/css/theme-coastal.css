@@ -1,61 +1,65 @@
 :root {
   /* 
-	 * Color definitions for coastal-blue
+	 * Color definitions for coastal
 	 */
 
   /* Basic palette */
-  --coastal-blue-static-10: #fefeff;
-  --coastal-blue-static-20: #d0f0ff;
-  --coastal-blue-static-30: #a2e2ff;
-  --coastal-blue-static-40: #73d3ff;
-  --coastal-blue-static-50: #45c5fe;
-  --coastal-blue-static-60: #17b6ff;
-  --coastal-blue-static-70: #009fe7;
-  --coastal-blue-static-80: #007fb9;
-  --coastal-blue-static-90: #00618d;
-  --coastal-blue-static-100: #003f5c;
-  --coastal-blue-static-110: #001f2e;
-  --coastal-blue-static-120: #000e14;
+  --coastal-static-10: #fefeff;
+  --coastal-static-20: #d0f0ff;
+  --coastal-static-30: #a2e2ff;
+  --coastal-static-40: #73d3ff;
+  --coastal-static-50: #45c5fe;
+  --coastal-static-60: #17b6ff;
+  --coastal-static-70: #009fe7;
+  --coastal-static-80: #007fb9;
+  --coastal-static-90: #00618d;
+  --coastal-static-100: #003f5c;
+  --coastal-static-110: #001f2e;
+  --coastal-static-120: #000e14;
   /* Background shades */
-  --coastal-blue-lightest: var(--coastal-blue-static-10);
-  --coastal-blue-lighter: #f4fbff;
-  --coastal-blue-light: #eaf8ff;
-  --coastal-blue-palest: #dff5ff;
-  --coastal-blue-paler: #caeeff;
-  --coastal-blue-pale: #b6e8ff;
-  --coastal-blue-dim: #00405d;
-  --coastal-blue-dimmer: #003248;
-  --coastal-blue-dimmest: #002334;
-  --coastal-blue-dark: #001c29;
-  --coastal-blue-darker: #00151f;
-  --coastal-blue-darkest: var(--coastal-blue-static-120);
+  --coastal-lightest: var(--coastal-static-10);
+  --coastal-lighter: #f4fbff;
+  --coastal-light: #eaf8ff;
+  --coastal-palest: #dff5ff;
+  --coastal-paler: #caeeff;
+  --coastal-pale: #b6e8ff;
+  --coastal-dim: #00405d;
+  --coastal-dimmer: #003248;
+  --coastal-dimmest: #002334;
+  --coastal-dark: #001c29;
+  --coastal-darker: #00151f;
+  --coastal-darkest: var(--coastal-static-120);
+  /* Optional accent */
+  --coastal-accent-dark: #d9b983;
+  --coastal-accent-light: #cc860c;
+  --coastal-accent: var(--coastal-static-90);
   /* Highlight, call-to-action */
-  --coastal-blue-highlight: var(--coastal-blue-static-90);
-  --coastal-blue-highlight-light: var(--coastal-blue-static-80);
-  --coastal-blue-highlight-dark: var(--coastal-blue-static-100);
+  --coastal-highlight: var(--coastal-static-90);
+  --coastal-highlight-active-dark: var(--coastal-static-80);
+  --coastal-highlight-active-light: var(--coastal-static-100);
 
   /* The dynamic palette inverts based on light or dark mode. Light here. */
-  --coastal-blue-10: var(--coastal-blue-static-10);
-  --coastal-blue-20: var(--coastal-blue-static-20);
-  --coastal-blue-30: var(--coastal-blue-static-30);
-  --coastal-blue-40: var(--coastal-blue-static-40);
-  --coastal-blue-50: var(--coastal-blue-static-50);
-  --coastal-blue-60: var(--coastal-blue-static-60);
-  --coastal-blue-70: var(--coastal-blue-static-70);
-  --coastal-blue-80: var(--coastal-blue-static-80);
-  --coastal-blue-90: var(--coastal-blue-static-90);
-  --coastal-blue-100: var(--coastal-blue-static-100);
-  --coastal-blue-110: var(--coastal-blue-static-110);
-  --coastal-blue-120: var(--coastal-blue-static-120);
-  --coastal-blue-background-10: var(--coastal-blue-lightest);
-  --coastal-blue-background-20: var(--coastal-blue-lighter);
-  --coastal-blue-background-30: var(--coastal-blue-light);
-  --coastal-blue-background-40: var(--coastal-blue-palest);
-  --coastal-blue-background-50: var(--coastal-blue-paler);
-  --coastal-blue-background-60: var(--coastal-blue-pale);
-  --coastal-blue-text: var(--coastal-blue-120);
-  --coastal-blue-background: var(--coastal-blue-background-10);
-  --coastal-blue-highlight-active: var(--coastal-blue-highlight-dark);
+  --coastal-10: var(--coastal-static-10);
+  --coastal-20: var(--coastal-static-20);
+  --coastal-30: var(--coastal-static-30);
+  --coastal-40: var(--coastal-static-40);
+  --coastal-50: var(--coastal-static-50);
+  --coastal-60: var(--coastal-static-60);
+  --coastal-70: var(--coastal-static-70);
+  --coastal-80: var(--coastal-static-80);
+  --coastal-90: var(--coastal-static-90);
+  --coastal-100: var(--coastal-static-100);
+  --coastal-110: var(--coastal-static-110);
+  --coastal-120: var(--coastal-static-120);
+  --coastal-background-10: var(--coastal-lightest);
+  --coastal-background-20: var(--coastal-lighter);
+  --coastal-background-30: var(--coastal-light);
+  --coastal-background-40: var(--coastal-palest);
+  --coastal-background-50: var(--coastal-paler);
+  --coastal-background-60: var(--coastal-pale);
+  --coastal-text: var(--coastal-120);
+  --coastal-background: var(--coastal-background-10);
+  --coastal-highlight-active: var(--coastal-highlight-active-light);
 
   /* 
 	 * Theme configuration
@@ -63,78 +67,86 @@
 	 */
 
   /* Settings for both light and dark mode */
-  --primary-highlight: var(--coastal-blue-highlight);
+  --primary-highlight: var(--coastal-highlight);
+  --primary-accent: var(--coastal-accent);
 
   /* Light mode is default! */
   /* Light mode general palette */
-  --primary-10: var(--coastal-blue-10);
-  --primary-20: var(--coastal-blue-20);
-  --primary-30: var(--coastal-blue-30);
-  --primary-40: var(--coastal-blue-40);
-  --primary-50: var(--coastal-blue-50);
-  --primary-60: var(--coastal-blue-60);
-  --primary-70: var(--coastal-blue-70);
-  --primary-80: var(--coastal-blue-80);
-  --primary-90: var(--coastal-blue-90);
-  --primary-100: var(--coastal-blue-100);
-  --primary-110: var(--coastal-blue-110);
-  --primary-120: var(--coastal-blue-120);
-  --primary-background-10: var(--coastal-blue-background-10);
-  --primary-background-20: var(--coastal-blue-background-20);
-  --primary-background-30: var(--coastal-blue-background-30);
-  --primary-background-40: var(--coastal-blue-background-40);
-  --primary-background-50: var(--coastal-blue-background-50);
-  --primary-background-60: var(--coastal-blue-background-60);
-  --primary-text: var(--coastal-blue-text);
-  --primary-background: var(--coastal-blue-background);
-  --primary-highlight-active: var(--coastal-blue-highlight-active);
+  --primary-10: var(--coastal-10);
+  --primary-20: var(--coastal-20);
+  --primary-30: var(--coastal-30);
+  --primary-40: var(--coastal-40);
+  --primary-50: var(--coastal-50);
+  --primary-60: var(--coastal-60);
+  --primary-70: var(--coastal-70);
+  --primary-80: var(--coastal-80);
+  --primary-90: var(--coastal-90);
+  --primary-100: var(--coastal-100);
+  --primary-110: var(--coastal-110);
+  --primary-120: var(--coastal-120);
+  --primary-background-10: var(--coastal-background-10);
+  --primary-background-20: var(--coastal-background-20);
+  --primary-background-30: var(--coastal-background-30);
+  --primary-background-40: var(--coastal-background-40);
+  --primary-background-50: var(--coastal-background-50);
+  --primary-background-60: var(--coastal-background-60);
+  --primary-text: var(--coastal-text);
+  --primary-background: var(--coastal-background);
+  --primary-highlight-active: var(--coastal-highlight-active);
 }
 
 /* Dark mode */
 [data-color-scheme="dark"] {
   /* Inverted palettes for dark mode. */
-  --coastal-blue-120: var(--coastal-blue-static-10);
-  --coastal-blue-110: var(--coastal-blue-static-20);
-  --coastal-blue-100: var(--coastal-blue-static-30);
-  --coastal-blue-90: var(--coastal-blue-static-40);
-  --coastal-blue-80: var(--coastal-blue-static-50);
-  --coastal-blue-70: var(--coastal-blue-static-60);
-  --coastal-blue-60: var(--coastal-blue-static-70);
-  --coastal-blue-50: var(--coastal-blue-static-80);
-  --coastal-blue-40: var(--coastal-blue-static-90);
-  --coastal-blue-30: var(--coastal-blue-static-100);
-  --coastal-blue-20: var(--coastal-blue-static-110);
-  --coastal-blue-10: var(--coastal-blue-static-120);
-  --coastal-blue-background-10: var(--coastal-blue-darkest);
-  --coastal-blue-background-20: var(--coastal-blue-darker);
-  --coastal-blue-background-30: var(--coastal-blue-dark);
-  --coastal-blue-background-40: var(--coastal-blue-dimmest);
-  --coastal-blue-background-50: var(--coastal-blue-dimmer);
-  --coastal-blue-background-60: var(--coastal-blue-dim);
-  --coastal-blue-text: var(--coastal-blue-120);
-  --coastal-blue-background: var(--coastal-blue-background-10);
-  --coastal-blue-highlight-active: var(--coastal-blue-highlight-light);
+  --coastal-120: var(--coastal-static-10);
+  --coastal-110: var(--coastal-static-20);
+  --coastal-100: var(--coastal-static-30);
+  --coastal-90: var(--coastal-static-40);
+  --coastal-80: var(--coastal-static-50);
+  --coastal-70: var(--coastal-static-60);
+  --coastal-60: var(--coastal-static-70);
+  --coastal-50: var(--coastal-static-80);
+  --coastal-40: var(--coastal-static-90);
+  --coastal-30: var(--coastal-static-100);
+  --coastal-20: var(--coastal-static-110);
+  --coastal-10: var(--coastal-static-120);
+  --coastal-background-10: var(--coastal-darkest);
+  --coastal-background-20: var(--coastal-darker);
+  --coastal-background-30: var(--coastal-dark);
+  --coastal-background-40: var(--coastal-dimmest);
+  --coastal-background-50: var(--coastal-dimmer);
+  --coastal-background-60: var(--coastal-dim);
+  --coastal-text: var(--coastal-120);
+  --coastal-background: var(--coastal-background-10);
+  --coastal-highlight-active: var(--coastal-highlight-active-dark);
 
   /* Dark mode theme configuration */
-  --primary-10: var(--coastal-blue-10);
-  --primary-20: var(--coastal-blue-20);
-  --primary-30: var(--coastal-blue-30);
-  --primary-40: var(--coastal-blue-40);
-  --primary-50: var(--coastal-blue-50);
-  --primary-60: var(--coastal-blue-60);
-  --primary-70: var(--coastal-blue-70);
-  --primary-80: var(--coastal-blue-80);
-  --primary-90: var(--coastal-blue-90);
-  --primary-100: var(--coastal-blue-100);
-  --primary-110: var(--coastal-blue-110);
-  --primary-120: var(--coastal-blue-120);
-  --primary-background-10: var(--coastal-blue-background-10);
-  --primary-background-20: var(--coastal-blue-background-20);
-  --primary-background-30: var(--coastal-blue-background-30);
-  --primary-background-40: var(--coastal-blue-background-40);
-  --primary-background-50: var(--coastal-blue-background-50);
-  --primary-background-60: var(--coastal-blue-background-60);
-  --primary-text: var(--coastal-blue-text);
-  --primary-background: var(--coastal-blue-background);
-  --primary-highlight-active: var(--coastal-blue-highlight-active);
+  --primary-10: var(--coastal-10);
+  --primary-20: var(--coastal-20);
+  --primary-30: var(--coastal-30);
+  --primary-40: var(--coastal-40);
+  --primary-50: var(--coastal-50);
+  --primary-60: var(--coastal-60);
+  --primary-70: var(--coastal-70);
+  --primary-80: var(--coastal-80);
+  --primary-90: var(--coastal-90);
+  --primary-100: var(--coastal-100);
+  --primary-110: var(--coastal-110);
+  --primary-120: var(--coastal-120);
+  --primary-background-10: var(--coastal-background-10);
+  --primary-background-20: var(--coastal-background-20);
+  --primary-background-30: var(--coastal-background-30);
+  --primary-background-40: var(--coastal-background-40);
+  --primary-background-50: var(--coastal-background-50);
+  --primary-background-60: var(--coastal-background-60);
+  --primary-text: var(--coastal-text);
+  --primary-background: var(--coastal-background);
+  --primary-highlight-active: var(--coastal-highlight-active);
+}
+
+[data-accent="secondary"] {
+  --coastal-accent: var(--coastal-accent-light);
+}
+[data-color-scheme="dark"][data-accent="secondary"] {
+  --coastal-accent: var(--coastal-accent-dark);
 }
