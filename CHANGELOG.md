@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.6.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.5.0...v1.6.0) (2025-02-05)
+
+
+### Features
+
+* Accent and alert colors ([0cf2d27](https://github.com/Office-of-Digital-Services/California-Design-System/commit/0cf2d27067bb71c169d079e768362e6be7c35014))
+* Accent color ([93a2e78](https://github.com/Office-of-Digital-Services/California-Design-System/commit/93a2e78ac00ca9618e343dd7ac6d0343200a295b))
+* Add grayscale colors ([a549898](https://github.com/Office-of-Digital-Services/California-Design-System/commit/a549898ed149c533fa82908f7aebb926719fdf75))
+* Implement colors and temp typography ([036ab02](https://github.com/Office-of-Digital-Services/California-Design-System/commit/036ab02f37496187fef6c85c7142f4433812fba9))
+* Include images in release bundle ([90dc205](https://github.com/Office-of-Digital-Services/California-Design-System/commit/90dc20532595bae4f9645259558bf1e36a0e8f6b))
+* Theme and layout toggles ([0507908](https://github.com/Office-of-Digital-Services/California-Design-System/commit/05079086f46bfe85a0542fa1db5855651f3fa85e))
+* Up-to-date theme colors ([321ce80](https://github.com/Office-of-Digital-Services/California-Design-System/commit/321ce8083fba8fcb2eb57ecac08395da1d9c8df0))
+
+
+### Bug Fixes
+
+* Change theme color names ([fab36b2](https://github.com/Office-of-Digital-Services/California-Design-System/commit/fab36b2a3aae2bc20c2540ba536d877ca8aacf39))
+
 ## [1.5.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.4.0...v1.5.0) (2025-01-27)
 
 
