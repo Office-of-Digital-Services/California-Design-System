@@ -32,6 +32,7 @@
   /* Optional accent */
   --coastal-accent-dark: #d9b983;
   --coastal-accent-light: #cc860c;
+  --coastal-accent: var(--coastal-static-90);
   /* Highlight, call-to-action */
   --coastal-highlight: var(--coastal-static-90);
   --coastal-highlight-active-dark: var(--coastal-static-80);
@@ -67,6 +68,7 @@
 
   /* Settings for both light and dark mode */
   --primary-highlight: var(--coastal-highlight);
+  --primary-accent: var(--coastal-accent);
 
   /* Light mode is default! */
   /* Light mode general palette */
@@ -140,4 +142,11 @@
   --primary-text: var(--coastal-text);
   --primary-background: var(--coastal-background);
   --primary-highlight-active: var(--coastal-highlight-active);
+}
+
+[data-accent="secondary"] {
+  --coastal-accent: var(--coastal-accent-light);
+}
+[data-color-scheme="dark"][data-accent="secondary"] {
+  --coastal-accent: var(--coastal-accent-dark);
 }

@@ -29,6 +29,10 @@
   --mountain-dark: #101619;
   --mountain-darker: #0c1012;
   --mountain-darkest: var(--mountain-static-120);
+  /* Optional accent */
+  --mountain-accent-dark: #bee6ff;
+  --mountain-accent-light: #167837;
+  --mountain-accent: var(--mountain-static-60);
   /* Highlight, call-to-action */
   --mountain-highlight: var(--mountain-static-60);
   --mountain-highlight-active-dark: var(--mountain-static-50);
@@ -64,6 +68,7 @@
 
   /* Settings for both light and dark mode */
   --primary-highlight: var(--mountain-highlight);
+  --primary-accent: var(--mountain-accent);
 
   /* Light mode is default! */
   /* Light mode general palette */
@@ -137,4 +142,11 @@
   --primary-text: var(--mountain-text);
   --primary-background: var(--mountain-background);
   --primary-highlight-active: var(--mountain-highlight-active);
+}
+
+[data-accent="secondary"] {
+  --mountain-accent: var(--mountain-accent-light);
+}
+[data-color-scheme="dark"][data-accent="secondary"] {
+  --mountain-accent: var(--mountain-accent-dark);
 }

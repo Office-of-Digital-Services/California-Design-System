@@ -34,6 +34,7 @@
   --gray-dark: #1a1a1a;
   --gray-darker: #141414;
   --gray-darkest: var(--gray-static-120);
+  --gray-accent: var(--gray-accent-70);
   --gray-highlight: var(--gray-static-100);
   --gray-highlight-active-dark: var(--gray-static-90);
   --gray-highlight-active-light: var(--gray-static-110);
@@ -292,6 +293,7 @@
   --primary-background-40: var(--gray-background-40);
   --primary-background-50: var(--gray-background-50);
   --primary-background-60: var(--gray-background-60);
+  --primary-accent: var(--gray-accent);
   --primary-highlight: var(--gray-highlight);
   --primary-highlight-active: var(--gray-highlight-active);
   --primary-text: var(--gray-text);
