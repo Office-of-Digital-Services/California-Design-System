@@ -35,10 +35,10 @@
   --gray-darker: #141414;
   --gray-darkest: var(--gray-static-120);
   --gray-highlight: var(--gray-static-100);
-  --gray-highlight-light: var(--gray-static-90);
-  --gray-highlight-dark: var(--gray-static-110);
+  --gray-highlight-active-dark: var(--gray-static-90);
+  --gray-highlight-active-light: var(--gray-static-110);
 
-  /* Magenta palette, accent */
+  /* Magenta palette, bright */
   --magenta-static-10: #fffefe;
   --magenta-static-20: #fdcde3;
   --magenta-static-30: #fc9bc8;
@@ -52,10 +52,10 @@
   --magenta-static-110: #310117;
   --magenta-static-120: #140009;
   --magenta-highlight: var(--magenta-static-60);
-  --magenta-highlight-light: var(--magenta-static-50);
-  --magenta-highlight-dark: var(--magenta-static-70);
+  --magenta-highlight-active-dark: var(--magenta-static-50);
+  --magenta-highlight-active-light: var(--magenta-static-70);
 
-  /* Orange palette, accent */
+  /* Orange palette, bright */
   --orange-static-10: #fffefe;
   --orange-static-20: #fdd9cd;
   --orange-static-30: #fbb49c;
@@ -69,10 +69,10 @@
   --orange-static-110: #310d01;
   --orange-static-120: #140500;
   --orange-highlight: var(--orange-static-60);
-  --orange-highlight-light: var(--orange-static-50);
-  --orange-highlight-dark: var(--orange-static-70);
+  --orange-highlight-active-dark: var(--orange-static-50);
+  --orange-highlight-active-light: var(--orange-static-70);
 
-  /* Green palette, accent */
+  /* Green palette, bright */
   --green-static-10: #fefefe;
   --green-static-20: #cdfdea;
   --green-static-30: #9cfbd5;
@@ -86,10 +86,10 @@
   --green-static-110: #01311e;
   --green-static-120: #00140c;
   --green-highlight: var(--green-static-80);
-  --green-highlight-light: var(--green-static-70);
-  --green-highlight-dark: var(--green-static-90);
+  --green-highlight-active-dark: var(--green-static-70);
+  --green-highlight-active-light: var(--green-static-90);
 
-  /* Blue palette, accent */
+  /* Blue palette, bright */
   --blue-static-10: #fefeff;
   --blue-static-20: #cce0fe;
   --blue-static-30: #99c2ff;
@@ -103,10 +103,10 @@
   --blue-static-110: #001433;
   --blue-static-120: #000814;
   --blue-highlight: var(--blue-static-70);
-  --blue-highlight-light: var(--blue-static-60);
-  --blue-highlight-dark: var(--blue-static-80);
+  --blue-highlight-active-dark: var(--blue-static-60);
+  --blue-highlight-active-light: var(--blue-static-80);
 
-  /* Purple palette, accent */
+  /* Purple palette, bright */
   --purple-static-10: #fefeff;
   --purple-static-20: #d0cdfd;
   --purple-static-30: #a29bfc;
@@ -120,8 +120,8 @@
   --purple-static-110: #040131;
   --purple-static-120: #020014;
   --purple-highlight: var(--purple-static-50);
-  --purple-highlight-light: var(--purple-static-40);
-  --purple-highlight-dark: var(--purple-static-60);
+  --purple-highlight-active-dark: var(--purple-static-40);
+  --purple-highlight-active-light: var(--purple-static-60);
 
   /* Red palette, alert */
   --red-static-10: #fffefe;
@@ -137,8 +137,8 @@
   --red-static-110: #300205;
   --red-static-120: #130002;
   --red-highlight: var(--red-static-60);
-  --red-highlight-light: var(--red-static-50);
-  --red-highlight-dark: var(--red-static-70);
+  --red-highlight-active-dark: var(--red-static-50);
+  --red-highlight-active-light: var(--red-static-70);
 
   /* Yellow palette, alert */
   --yellow-static-10: #fffefe;
@@ -154,8 +154,8 @@
   --yellow-static-110: #301f02;
   --yellow-static-120: #130c01;
   --yellow-highlight: var(--yellow-static-70);
-  --yellow-highlight-light: var(--yellow-static-60);
-  --yellow-highlight-dark: var(--yellow-static-80);
+  --yellow-highlight-active-dark: var(--yellow-static-60);
+  --yellow-highlight-active-light: var(--yellow-static-80);
 
   /* The dynamic palette inverts based on light or dark mode. Light here. */
   --gray-10: var(--gray-static-10);
@@ -178,7 +178,7 @@
   --gray-background-60: var(--gray-pale);
   --gray-text: var(--gray-120);
   --gray-background: var(--gray-background-10);
-  --gray-highlight-active: var(--gray-highlight-dark);
+  --gray-highlight-active: var(--gray-highlight-active-light);
 
   --magenta-10: var(--magenta-static-10);
   --magenta-20: var(--magenta-static-20);
@@ -192,7 +192,7 @@
   --magenta-100: var(--magenta-static-100);
   --magenta-110: var(--magenta-static-110);
   --magenta-120: var(--magenta-static-120);
-  --magenta-highlight-active: var(--magenta-highlight-dark);
+  --magenta-highlight-active: var(--magenta-highlight-active-light);
   --orange-10: var(--orange-static-10);
   --orange-20: var(--orange-static-20);
   --orange-30: var(--orange-static-30);
@@ -205,7 +205,7 @@
   --orange-100: var(--orange-static-100);
   --orange-110: var(--orange-static-110);
   --orange-120: var(--orange-static-120);
-  --orange-highlight-active: var(--orange-highlight-dark);
+  --orange-highlight-active: var(--orange-highlight-active-light);
   --green-10: var(--green-static-10);
   --green-20: var(--green-static-20);
   --green-30: var(--green-static-30);
@@ -218,7 +218,7 @@
   --green-100: var(--green-static-100);
   --green-110: var(--green-static-110);
   --green-120: var(--green-static-120);
-  --green-highlight-active: var(--green-highlight-dark);
+  --green-highlight-active: var(--green-highlight-active-light);
   --blue-10: var(--blue-static-10);
   --blue-20: var(--blue-static-20);
   --blue-30: var(--blue-static-30);
@@ -231,7 +231,7 @@
   --blue-100: var(--blue-static-100);
   --blue-110: var(--blue-static-110);
   --blue-120: var(--blue-static-120);
-  --blue-highlight-active: var(--blue-highlight-dark);
+  --blue-highlight-active: var(--blue-highlight-active-light);
   --purple-10: var(--purple-static-10);
   --purple-20: var(--purple-static-20);
   --purple-30: var(--purple-static-30);
@@ -244,7 +244,7 @@
   --purple-100: var(--purple-static-100);
   --purple-110: var(--purple-static-110);
   --purple-120: var(--purple-static-120);
-  --purple-highlight-active: var(--purple-highlight-dark);
+  --purple-highlight-active: var(--purple-highlight-active-light);
   --red-10: var(--red-static-10);
   --red-20: var(--red-static-20);
   --red-30: var(--red-static-30);
@@ -257,7 +257,7 @@
   --red-100: var(--red-static-100);
   --red-110: var(--red-static-110);
   --red-120: var(--red-static-120);
-  --red-highlight-active: var(--red-highlight-dark);
+  --red-highlight-active: var(--red-highlight-active-light);
   --yellow-10: var(--yellow-static-10);
   --yellow-20: var(--yellow-static-20);
   --yellow-30: var(--yellow-static-30);
@@ -270,7 +270,7 @@
   --yellow-100: var(--yellow-static-100);
   --yellow-110: var(--yellow-static-110);
   --yellow-120: var(--yellow-static-120);
-  --yellow-highlight-active: var(--yellow-highlight-dark);
+  --yellow-highlight-active: var(--yellow-highlight-active-light);
 
   /* Default theme configuration. Set gray if coastal is not present. */
   /* Light mode (default) */
@@ -327,7 +327,7 @@
   --gray-background-60: var(--gray-dim);
   --gray-text: var(--gray-120);
   --gray-background: var(--gray-background-10);
-  --gray-highlight-active: var(--gray-highlight-light);
+  --gray-highlight-active: var(--gray-highlight-active-dark);
 
   --magenta-10: var(--magenta-static-120);
   --magenta-20: var(--magenta-static-110);
@@ -341,7 +341,7 @@
   --magenta-100: var(--magenta-static-30);
   --magenta-110: var(--magenta-static-20);
   --magenta-120: var(--magenta-static-10);
-  --magenta-highlight-active: var(--magenta-highlight-light);
+  --magenta-highlight-active: var(--magenta-highlight-active-dark);
   --orange-10: var(--orange-static-120);
   --orange-20: var(--orange-static-110);
   --orange-30: var(--orange-static-100);
@@ -354,7 +354,7 @@
   --orange-100: var(--orange-static-30);
   --orange-110: var(--orange-static-20);
   --orange-120: var(--orange-static-10);
-  --orange-highlight-active: var(--orange-highlight-light);
+  --orange-highlight-active: var(--orange-highlight-active-dark);
   --green-10: var(--green-static-120);
   --green-20: var(--green-static-110);
   --green-30: var(--green-static-100);
@@ -367,7 +367,7 @@
   --green-100: var(--green-static-30);
   --green-110: var(--green-static-20);
   --green-120: var(--green-static-10);
-  --green-highlight-active: var(--green-highlight-light);
+  --green-highlight-active: var(--green-highlight-active-dark);
   --blue-10: var(--blue-static-120);
   --blue-20: var(--blue-static-110);
   --blue-30: var(--blue-static-100);
@@ -380,7 +380,7 @@
   --blue-100: var(--blue-static-30);
   --blue-110: var(--blue-static-20);
   --blue-120: var(--blue-static-10);
-  --blue-highlight-active: var(--blue-highlight-light);
+  --blue-highlight-active: var(--blue-highlight-active-dark);
   --purple-10: var(--purple-static-120);
   --purple-20: var(--purple-static-110);
   --purple-30: var(--purple-static-100);
@@ -393,7 +393,7 @@
   --purple-100: var(--purple-static-30);
   --purple-110: var(--purple-static-20);
   --purple-120: var(--purple-static-10);
-  --purple-highlight-active: var(--purple-highlight-light);
+  --purple-highlight-active: var(--purple-highlight-active-dark);
   --red-10: var(--red-static-120);
   --red-20: var(--red-static-110);
   --red-30: var(--red-static-100);
@@ -406,7 +406,7 @@
   --red-100: var(--red-static-30);
   --red-110: var(--red-static-20);
   --red-120: var(--red-static-10);
-  --red-highlight-active: var(--red-highlight-light);
+  --red-highlight-active: var(--red-highlight-active-dark);
   --yellow-10: var(--yellow-static-120);
   --yellow-20: var(--yellow-static-110);
   --yellow-30: var(--yellow-static-100);
@@ -419,7 +419,7 @@
   --yellow-100: var(--yellow-static-30);
   --yellow-110: var(--yellow-static-30);
   --yellow-120: var(--yellow-static-10);
-  --yellow-highlight-active: var(--yellow-highlight-light);
+  --yellow-highlight-active: var(--yellow-highlight-active-dark);
 
   /* Default gray theme configuration for dark mode. */
   --primary-10: var(--gray-10);
