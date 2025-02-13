@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.6.0...v1.7.0) (2025-02-13)
+
+
+### Features
+
+* Basic utility classes ([cf016df](https://github.com/Office-of-Digital-Services/California-Design-System/commit/cf016df09523227557bbd32d6a730c6e41006648))
+
 ## [1.6.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.5.0...v1.6.0) (2025-02-05)
 
 
