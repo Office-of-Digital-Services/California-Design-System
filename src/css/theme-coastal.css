@@ -1,8 +1,5 @@
+/* Static color definitions for Coastal Blue */
 :root {
-  /* 
-	 * Color definitions for coastal
-	 */
-
   /* Basic palette */
   --coastal-static-10: #fefeff;
   --coastal-static-20: #d0f0ff;
@@ -29,15 +26,22 @@
   --coastal-dark: #001c29;
   --coastal-darker: #00151f;
   --coastal-darkest: var(--coastal-static-120);
+  /* Default accent */
+  --coastal-primary-accent: var(--coastal-static-90);
   /* Optional accent */
-  --coastal-accent-dark: #d9b983;
-  --coastal-accent-light: #cc860c;
-  --coastal-accent: var(--coastal-static-90);
+  --coastal-secondary-accent-dark: #d9b983;
+  --coastal-secondary-accent-light: #cc860c;
   /* Highlight, call-to-action */
   --coastal-highlight: var(--coastal-static-90);
   --coastal-highlight-active-dark: var(--coastal-static-80);
   --coastal-highlight-active-light: var(--coastal-static-100);
+}
 
+/* Everything below here can be copy/pasted to create a new theme. Just change "coastal" to "your-theme-name".
+
+/* Light mode (default) */
+:root,
+[data-color-scheme="light"] {
   /* The dynamic palette inverts based on light or dark mode. Light here. */
   --coastal-10: var(--coastal-static-10);
   --coastal-20: var(--coastal-static-20);
@@ -57,21 +61,12 @@
   --coastal-background-40: var(--coastal-palest);
   --coastal-background-50: var(--coastal-paler);
   --coastal-background-60: var(--coastal-pale);
+  --coastal-secondary-accent: var(--coastal-secondary-accent-light);
   --coastal-text: var(--coastal-120);
   --coastal-background: var(--coastal-background-10);
   --coastal-highlight-active: var(--coastal-highlight-active-light);
 
-  /* 
-	 * Theme configuration
-	 * Here we set coastal blue as the active theme color: primary.
-	 */
-
-  /* Settings for both light and dark mode */
-  --primary-highlight: var(--coastal-highlight);
-  --primary-accent: var(--coastal-accent);
-
-  /* Light mode is default! */
-  /* Light mode general palette */
+  /* Theme configuration */
   --primary-10: var(--coastal-10);
   --primary-20: var(--coastal-20);
   --primary-30: var(--coastal-30);
@@ -93,6 +88,7 @@
   --primary-text: var(--coastal-text);
   --primary-background: var(--coastal-background);
   --primary-highlight-active: var(--coastal-highlight-active);
+  --primary-highlight: var(--coastal-highlight);
 }
 
 /* Dark mode */
@@ -116,11 +112,12 @@
   --coastal-background-40: var(--coastal-dimmest);
   --coastal-background-50: var(--coastal-dimmer);
   --coastal-background-60: var(--coastal-dim);
+  --coastal-secondary-accent: var(--coastal-secondary-accent-dark);
   --coastal-text: var(--coastal-120);
   --coastal-background: var(--coastal-background-10);
   --coastal-highlight-active: var(--coastal-highlight-active-dark);
 
-  /* Dark mode theme configuration */
+  /* Theme configuration. */
   --primary-10: var(--coastal-10);
   --primary-20: var(--coastal-20);
   --primary-30: var(--coastal-30);
@@ -142,11 +139,42 @@
   --primary-text: var(--coastal-text);
   --primary-background: var(--coastal-background);
   --primary-highlight-active: var(--coastal-highlight-active);
+  --primary-highlight: var(--coastal-highlight);
 }
 
-[data-accent="secondary"] {
-  --coastal-accent: var(--coastal-accent-light);
+:root,
+[data-accent*="primary"] {
+  --coastal-accent: var(--coastal-primary-accent);
+  --primary-accent: var(--coastal-accent);
 }
-[data-color-scheme="dark"][data-accent="secondary"] {
-  --coastal-accent: var(--coastal-accent-dark);
+[data-accent*="secondary"] {
+  --coastal-accent: var(--coastal-secondary-accent);
+  --primary-accent: var(--coastal-accent);
+}
+
+:root,
+[data-accent*="left"] {
+  --coastal-accent-border-image: linear-gradient(
+    to right,
+    var(--coastal-accent),
+    transparent
+  );
+  --primary-accent-border-image: var(--coastal-accent-border-image);
+}
+[data-accent*="solid"] {
+  --coastal-accent-border-image: linear-gradient(
+    to right,
+    var(--coastal-accent),
+    var(--coastal-accent)
+  );
+  --primary-accent-border-image: var(--coastal-accent-border-image);
+}
+[data-accent*="center"] {
+  --coastal-accent-border-image: linear-gradient(
+    to right,
+    transparent,
+    var(--coastal-accent),
+    transparent
+  );
+  --primary-accent-border-image: var(--coastal-accent-border-image);
 }
