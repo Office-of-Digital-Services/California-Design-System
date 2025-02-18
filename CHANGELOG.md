@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.7.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.6.0...v1.7.0) (2025-02-18)
+
+
+### Features
+
+* Accents ([aaaf3cd](https://github.com/Office-of-Digital-Services/California-Design-System/commit/aaaf3cd4afc53bcc30bdde4ad1de7318b2b3036d))
+* Basic utility classes ([cf016df](https://github.com/Office-of-Digital-Services/California-Design-System/commit/cf016df09523227557bbd32d6a730c6e41006648))
+* Consolidated layout toggle ([ce941b2](https://github.com/Office-of-Digital-Services/California-Design-System/commit/ce941b2af0c063c309fb5fe1befa6e5e37d2b42e))
+
 ## [1.6.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.5.0...v1.6.0) (2025-02-05)
 
 
