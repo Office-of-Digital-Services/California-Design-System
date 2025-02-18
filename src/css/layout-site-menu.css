@@ -122,8 +122,8 @@ nav#content-nav {
       border-image-slice: 1;
       border-image-source: radial-gradient(
         circle closest-corner at left,
-        var(--primary-90),
-        var(--primary-background-50) 80%
+        var(--primary-accent),
+        transparent 80%
       );
 
       &:hover {
@@ -159,9 +159,9 @@ nav#content-nav {
     border-image-slice: 1;
     border-image-source: linear-gradient(
       to right,
-      var(--primary-background-10),
-      var(--primary-40),
-      var(--primary-background-10)
+      transparent,
+      var(--primary-accent),
+      transparent
     );
 
     & > ul {
@@ -189,6 +189,7 @@ nav#content-nav {
 
     & > ul {
       flex-direction: row;
+      align-items: center;
       column-gap: 4rem;
     }
 

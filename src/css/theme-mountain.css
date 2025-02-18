@@ -1,8 +1,5 @@
+/* Static color definitions for Mountain Gray*/
 :root {
-  /* 
-	 * Color definitions for mountain
-	 */
-
   /* Basic palette */
   --mountain-static-10: #fefeff;
   --mountain-static-20: #e0e7ea;
@@ -29,15 +26,20 @@
   --mountain-dark: #101619;
   --mountain-darker: #0c1012;
   --mountain-darkest: var(--mountain-static-120);
+  /* Default accent */
+  --mountain-primary-accent: var(--mountain-static-60);
   /* Optional accent */
-  --mountain-accent-dark: #bee6ff;
-  --mountain-accent-light: #167837;
-  --mountain-accent: var(--mountain-static-60);
+  --mountain-secondary-accent-dark: #bee6ff;
+  --mountain-secondary-accent-light: #167837;
   /* Highlight, call-to-action */
   --mountain-highlight: var(--mountain-static-60);
   --mountain-highlight-active-dark: var(--mountain-static-50);
   --mountain-highlight-active-light: var(--mountain-static-70);
+}
 
+/* Light mode (default) */
+:root,
+[data-color-scheme="light"] {
   /* The dynamic palette inverts based on light or dark mode. Light here. */
   --mountain-10: var(--mountain-static-10);
   --mountain-20: var(--mountain-static-20);
@@ -57,21 +59,12 @@
   --mountain-background-40: var(--mountain-palest);
   --mountain-background-50: var(--mountain-paler);
   --mountain-background-60: var(--mountain-pale);
+  --mountain-secondary-accent: var(--mountain-secondary-accent-light);
   --mountain-text: var(--mountain-120);
   --mountain-background: var(--mountain-background-10);
   --mountain-highlight-active: var(--mountain-highlight-active-light);
 
-  /* 
-	 * Theme configuration
-	 * Here we set coastal blue as the active theme color: primary.
-	 */
-
-  /* Settings for both light and dark mode */
-  --primary-highlight: var(--mountain-highlight);
-  --primary-accent: var(--mountain-accent);
-
-  /* Light mode is default! */
-  /* Light mode general palette */
+  /* Theme configuration */
   --primary-10: var(--mountain-10);
   --primary-20: var(--mountain-20);
   --primary-30: var(--mountain-30);
@@ -93,6 +86,7 @@
   --primary-text: var(--mountain-text);
   --primary-background: var(--mountain-background);
   --primary-highlight-active: var(--mountain-highlight-active);
+  --primary-highlight: var(--mountain-highlight);
 }
 
 /* Dark mode */
@@ -116,11 +110,12 @@
   --mountain-background-40: var(--mountain-dimmest);
   --mountain-background-50: var(--mountain-dimmer);
   --mountain-background-60: var(--mountain-dim);
+  --mountain-secondary-accent: var(--mountain-secondary-accent-dark);
   --mountain-text: var(--mountain-120);
   --mountain-background: var(--mountain-background-10);
   --mountain-highlight-active: var(--mountain-highlight-active-dark);
 
-  /* Dark mode theme configuration */
+  /* Theme configuration. */
   --primary-10: var(--mountain-10);
   --primary-20: var(--mountain-20);
   --primary-30: var(--mountain-30);
@@ -142,11 +137,42 @@
   --primary-text: var(--mountain-text);
   --primary-background: var(--mountain-background);
   --primary-highlight-active: var(--mountain-highlight-active);
+  --primary-highlight: var(--mountain-highlight);
 }
 
-[data-accent="secondary"] {
-  --mountain-accent: var(--mountain-accent-light);
+:root,
+[data-accent*="primary"] {
+  --mountain-accent: var(--mountain-primary-accent);
+  --primary-accent: var(--mountain-accent);
 }
-[data-color-scheme="dark"][data-accent="secondary"] {
-  --mountain-accent: var(--mountain-accent-dark);
+[data-accent*="secondary"] {
+  --mountain-accent: var(--mountain-secondary-accent);
+  --primary-accent: var(--mountain-accent);
+}
+
+:root,
+[data-accent*="left"] {
+  --mountain-accent-border-image: linear-gradient(
+    to right,
+    var(--mountain-accent),
+    transparent
+  );
+  --primary-accent-border-image: var(--mountain-accent-border-image);
+}
+[data-accent*="solid"] {
+  --mountain-accent-border-image: linear-gradient(
+    to right,
+    var(--mountain-accent),
+    var(--mountain-accent)
+  );
+  --primary-accent-border-image: var(--mountain-accent-border-image);
+}
+[data-accent*="center"] {
+  --mountain-accent-border-image: linear-gradient(
+    to right,
+    transparent,
+    var(--mountain-accent),
+    transparent
+  );
+  --primary-accent-border-image: var(--mountain-accent-border-image);
 }

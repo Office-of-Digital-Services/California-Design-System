@@ -1,8 +1,5 @@
+/* Static color definitions for Desert Tan */
 :root {
-  /* 
-	 * Color definitions for desert
-	 */
-
   /* Basic palette */
   --desert-static-10: #fefefe;
   --desert-static-20: #f1e9d9;
@@ -29,15 +26,20 @@
   --desert-dark: #261e0d;
   --desert-darker: #161208;
   --desert-darkest: var(--desert-static-120);
+  /* Default accent */
+  --desert-primary-accent: var(--desert-static-70);
   /* Optional accent */
-  --desert-accent-dark: #83a0ff;
-  --desert-accent-light: #2f65da;
-  --desert-accent: var(--coastal-static-70);
+  --desert-secondary-accent-dark: #83a0ff;
+  --desert-secondary-accent-light: #2f65da;
   /* Highlight, call-to-action */
   --desert-highlight: var(--desert-static-70);
   --desert-highlight-active-dark: var(--desert-static-60);
   --desert-highlight-active-light: var(--desert-static-80);
+}
 
+/* Light mode (default) */
+:root,
+[data-color-scheme="light"] {
   /* The dynamic palette inverts based on light or dark mode. Light here. */
   --desert-10: var(--desert-static-10);
   --desert-20: var(--desert-static-20);
@@ -57,21 +59,12 @@
   --desert-background-40: var(--desert-palest);
   --desert-background-50: var(--desert-paler);
   --desert-background-60: var(--desert-pale);
+  --desert-secondary-accent: var(--desert-secondary-accent-light);
   --desert-text: var(--desert-120);
   --desert-background: var(--desert-background-10);
   --desert-highlight-active: var(--desert-highlight-active-light);
 
-  /* 
-	 * Theme configuration
-	 * Here we set coastal blue as the active theme color: primary.
-	 */
-
-  /* Settings for both light and dark mode */
-  --primary-highlight: var(--desert-highlight);
-  --primary-accent: var(--desert-accent);
-
-  /* Light mode is default! */
-  /* Light mode general palette */
+  /* Theme configuration */
   --primary-10: var(--desert-10);
   --primary-20: var(--desert-20);
   --primary-30: var(--desert-30);
@@ -93,6 +86,7 @@
   --primary-text: var(--desert-text);
   --primary-background: var(--desert-background);
   --primary-highlight-active: var(--desert-highlight-active);
+  --primary-highlight: var(--desert-highlight);
 }
 
 /* Dark mode */
@@ -116,11 +110,12 @@
   --desert-background-40: var(--desert-dimmest);
   --desert-background-50: var(--desert-dimmer);
   --desert-background-60: var(--desert-dim);
+  --desert-secondary-accent: var(--desert-secondary-accent-dark);
   --desert-text: var(--desert-120);
   --desert-background: var(--desert-background-10);
   --desert-highlight-active: var(--desert-highlight-active-dark);
 
-  /* Dark mode theme configuration */
+  /* Theme configuration. */
   --primary-10: var(--desert-10);
   --primary-20: var(--desert-20);
   --primary-30: var(--desert-30);
@@ -142,11 +137,42 @@
   --primary-text: var(--desert-text);
   --primary-background: var(--desert-background);
   --primary-highlight-active: var(--desert-highlight-active);
+  --primary-highlight: var(--desert-highlight);
 }
 
-[data-accent="secondary"] {
-  --desert-accent: var(--desert-accent-light);
+:root,
+[data-accent*="primary"] {
+  --desert-accent: var(--desert-primary-accent);
+  --primary-accent: var(--desert-accent);
 }
-[data-color-scheme="dark"][data-accent="secondary"] {
-  --desert-accent: var(--desert-accent-dark);
+[data-accent*="secondary"] {
+  --desert-accent: var(--desert-secondary-accent);
+  --primary-accent: var(--desert-accent);
+}
+
+:root,
+[data-accent*="left"] {
+  --desert-accent-border-image: linear-gradient(
+    to right,
+    var(--desert-accent),
+    transparent
+  );
+  --primary-accent-border-image: var(--desert-accent-border-image);
+}
+[data-accent*="solid"] {
+  --desert-accent-border-image: linear-gradient(
+    to right,
+    var(--desert-accent),
+    var(--desert-accent)
+  );
+  --primary-accent-border-image: var(--desert-accent-border-image);
+}
+[data-accent*="center"] {
+  --desert-accent-border-image: linear-gradient(
+    to right,
+    transparent,
+    var(--desert-accent),
+    transparent
+  );
+  --primary-accent-border-image: var(--desert-accent-border-image);
 }

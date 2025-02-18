@@ -8,3 +8,17 @@
     margin-inline: 3rem;
   }
 }
+
+/* Skyline, small desktop */
+@media screen and (min-width: 1024px) {
+  :is(ca-layout, .ca-layout)[format="skyline"] > main {
+    border-block-start: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      to right,
+      var(--primary-background-10),
+      var(--primary-accent),
+      var(--primary-background-10)
+    );
+  }
+}
