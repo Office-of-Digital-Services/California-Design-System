@@ -384,14 +384,14 @@
   background-color: var(--brand-primary);
 }
 /* Typography */
-.text-left {
-  text-align: left;
+.text-left, .text-start {
+  text-align: start;
 }
 .text-center {
   text-align: center;
 }
-.text-right {
-  text-align: right;
+.text-right, .text-end {
+  text-align: end;
 }
 .text-small {
   font-size: var(--text-size-sm);
