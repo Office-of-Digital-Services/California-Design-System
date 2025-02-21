@@ -15,22 +15,22 @@
   --flex-grow-max: 9999;
 
   --border-1px: 1px;
-  --border-2px: calc(1px * 2);
-  --border-4px: calc(1px * 4);
-  --border-8px: calc(1px * 8);
-  --border-radius-sm: calc(0.5rem / 2);
+  --border-2px: 2px;
+  --border-4px: 4px;
+  --border-8px: 8px;
+  --border-radius-sm: 0.25rem;
   --border-radius: 0.5rem;
-  --border-radius-lg: calc(0.5rem * 2);
+  --border-radius-lg: 1rem;
   --border-radius-round: 50%;
   --rounded-buttons: 50px;
 
   /* spacing variables */
   --space-unit-1: 0.5rem;
-  --space-unit-x2: calc(0.5rem * 2);
-  --space-unit-x3: calc(0.5rem * 3);
-  --space-unit-x4: calc(0.5rem * 4);
-  --space-unit-x8: calc(0.5rem * 8);
-  --space-unit-x16: calc(0.5rem * 16);
+  --space-unit-x2: 1rem;
+  --space-unit-x3: 1.5rem;
+  --space-unit-x4: 2rem;
+  --space-unit-x8: 4rem;
+  --space-unit-x16: 8rem;
 
   /* shadows */
   --shadow: 0.2rem 0.2rem 0.5em 0 rgba(0, 0, 0, 0.25);
