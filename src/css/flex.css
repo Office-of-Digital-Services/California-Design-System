@@ -1,0 +1,322 @@
+ca-flex,
+ca-self[display="flex"],
+.flex {
+  display: flex;
+}
+ca-flex[display="inline"],
+ca-self[display="inline"],
+.inline-flex {
+  display: inline-flex;
+}
+
+/* Flex direction */
+ca-flex[direction="row"],
+.flex-row {
+  flex-direction: row;
+}
+ca-flex[direction="row-reverse"],
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+ca-flex[direction="column"],
+.flex-column {
+  flex-direction: column;
+}
+ca-flex[direction="column-reverse"],
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Keeping flex-grow and flex-shrink simple, for now. */
+/* We can add more values based on what we discover about usage. */
+ca-self[grow],
+.flex-grow {
+  flex-grow: 1;
+}
+ca-self[grow="0"],
+.flex-grow-0 {
+  flex-grow: 0;
+}
+ca-self[shrink],
+.flex-shrink {
+  flex-shrink: 1;
+}
+ca-self[shrink="0"],
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* 
+	To do flex-basis well, We need some "standard block sizes" for content components. 
+	Then we could implement like so: 
+
+	ca-flex[basis="medium"] { flex-basis: 30rem }
+
+	Or whatever we want the standard "medium" size to be. Repeat for the whole scale.
+*/
+ca-self[basis="auto"],
+.flex-basis-auto {
+  flex-basis: auto;
+}
+ca-self[basis="half"],
+.flex-basis-half {
+  flex-basis: 50%;
+}
+ca-self[basis="full"],
+.flex-basis-full {
+  flex-basis: 100%;
+}
+ca-self[basis="content"],
+.flex-basis-content {
+  flex-basis: content;
+}
+ca-self[basis="min-content"],
+.flex-basis-min-content {
+  flex-basis: min-content;
+}
+ca-self[basis="max-content"],
+.flex-basis-max-content {
+  flex-basis: max-content;
+}
+ca-self[basis="fit-content"],
+.flex-basis-fit-content {
+  flex-basis: fit-content;
+}
+
+/* flex-wrap */
+ca-flex[wrap],
+.flex-wrap {
+  flex-wrap: wrap;
+}
+ca-flex[nowrap],
+ca-flex[wrap="no"],
+ca-flex[wrap="none"],
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+ca-flex[wrap="reverse"],
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* flex-gap */
+ca-flex[gap="1"],
+.gap-1 {
+  gap: .5rem;
+}
+ca-flex[gap="2"],
+.gap-2 {
+  gap: 1rem;
+}
+ca-flex[gap="3"],
+.gap-3 {
+  gap: 1.5rem;
+}
+ca-flex[gap="4"],
+.gap-4 {
+  gap: 2rem;
+}
+ca-flex[gap="5"],
+.gap-5 {
+  gap: 2.5rem;
+}
+ca-flex[gap="6"],
+.gap-6 {
+  gap: 3rem;
+}
+ca-flex[gap="7"],
+.gap-7 {
+  gap: 3.5rem;
+}
+ca-flex[gap="8"],
+.gap-8 {
+  gap: 4rem;
+}
+ca-flex[gap-y="1"],
+.gap-y-1 {
+  row-gap: .5rem;
+}
+ca-flex[gap-y="2"],
+.gap-y-2 {
+  row-gap: 1rem;
+}
+ca-flex[gap-y="3"],
+.gap-y-3 {
+  row-gap: 1.5rem;
+}
+ca-flex[gap-y="4"],
+.gap-y-4 {
+  row-gap: 2rem;
+}
+ca-flex[gap-y="5"],
+.gap-y-5 {
+  row-gap: 2.5rem;
+}
+ca-flex[gap-y="6"],
+.gap-y-6 {
+  row-gap: 3rem;
+}
+ca-flex[gap-y="7"],
+.gap-y-7 {
+  row-gap: 3.5rem;
+}
+ca-flex[gap-y="8"],
+.gap-y-8 {
+  row-gap: 4rem;
+}
+ca-flex[gap-x="1"],
+.gap-x-1 {
+  column-gap: .5rem;
+}
+ca-flex[gap-x="2"],
+.gap-x-2 {
+  column-gap: 1rem;
+}
+ca-flex[gap-x="3"],
+.gap-x-3 {
+  column-gap: 1.5rem;
+}
+ca-flex[gap-x="4"],
+.gap-x-4 {
+  column-gap: 2rem;
+}
+ca-flex[gap-x="5"],
+.gap-x-5 {
+  column-gap: 2.5rem;
+}
+ca-flex[gap-x="6"],
+.gap-x-6 {
+  column-gap: 3rem;
+}
+ca-flex[gap-x="7"],
+.gap-x-7 {
+  column-gap: 3.5rem;
+}
+ca-flex[gap-x="8"],
+.gap-x-8 {
+  column-gap: 4rem;
+}
+
+/* align-items */
+ca-flex[align-items="start"],
+.align-items-start {
+  align-items: start;
+}
+ca-flex[align-items="center"],
+.align-items-center {
+  align-items: center;
+}
+ca-flex[align-items="end"],
+.align-items-end {
+  align-items: end;
+}
+ca-flex[align-items="baseline"],
+.align-items-baseline {
+  align-items: baseline;
+}
+ca-flex[align-items="stretch"],
+.align-items-stretch {
+  align-items: stretch;
+}
+
+/* align-content */
+ca-flex[align-content="start"],
+.align-content-start {
+  align-content: start;
+}
+ca-flex[align-content="center"],
+.align-content-center {
+  align-content: center;
+}
+ca-flex[align-content="end"],
+.align-content-end {
+  align-content: end;
+}
+ca-flex[align-content="baseline"],
+.align-content-baseline {
+  align-content: baseline;
+}
+ca-flex[align-content="stretch"],
+.align-content-stretch {
+  align-content: stretch;
+}
+ca-flex[align-content="normal"],
+.align-content-normal {
+  align-content: normal;
+}
+ca-flex[align-content="between"],
+.align-content-between {
+  align-content: space-between;
+}
+ca-flex[align-content="around"],
+.align-content-around {
+  align-content: space-around;
+}
+ca-flex[align-content="evenly"],
+.align-content-evenly {
+  align-content: space-evenly;
+}
+
+/* align-self */
+ca-self[flex-align="start"],
+.align-self-start {
+  align-self: start;
+}
+ca-self[flex-align="center"],
+.align-self-center {
+  align-self: center;
+}
+ca-self[flex-align="end"],
+.align-self-end {
+  align-self: end;
+}
+ca-self[flex-align="auto"],
+.align-self-auto {
+  align-self: auto;
+}
+ca-self[flex-align="stretch"],
+.align-self-stretch {
+  align-self: stretch;
+}
+ca-self[flex-align="baseline"],
+.align-self-baseline {
+  align-self: baseline;
+}
+
+/* justify-content */
+ca-flex[justify-content="start"],
+.justify-content-start {
+  justify-content: start;
+}
+ca-flex[justify-content="center"],
+.justify-content-center {
+  justify-content: center;
+}
+ca-flex[justify-content="end"],
+.justify-content-end {
+  justify-content: end;
+}
+ca-flex[justify-content="baseline"],
+.justify-content-baseline {
+  justify-content: baseline;
+}
+ca-flex[justify-content="stretch"],
+.justify-content-stretch {
+  justify-content: stretch;
+}
+ca-flex[justify-content="normal"],
+.justify-content-normal {
+  justify-content: normal;
+}
+ca-flex[justify-content="between"],
+.justify-content-between {
+  justify-content: space-between;
+}
+ca-flex[justify-content="around"],
+.justify-content-around {
+  justify-content: space-around;
+}
+ca-flex[justify-content="evenly"],
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
