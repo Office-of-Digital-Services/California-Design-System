@@ -1,10 +1,8 @@
 ca-flex,
-ca-self[display="flex"],
 .flex {
   display: flex;
 }
 ca-flex[display="inline"],
-ca-self[display="inline"],
 .inline-flex {
   display: inline-flex;
 }
