@@ -258,27 +258,31 @@ ca-flex[align-content="evenly"],
 }
 
 /* align-self */
-ca-self[flex-align="start"],
+/* 
+	The align attribute has been obsolete for decades, so I'm not too worried HTML spec conflicts here. 
+	Still, we should test this thorougly.
+*/
+ca-self[align="start"],
 .align-self-start {
   align-self: start;
 }
-ca-self[flex-align="center"],
+ca-self[align="center"],
 .align-self-center {
   align-self: center;
 }
-ca-self[flex-align="end"],
+ca-self[align="end"],
 .align-self-end {
   align-self: end;
 }
-ca-self[flex-align="auto"],
+ca-self[align="auto"],
 .align-self-auto {
   align-self: auto;
 }
-ca-self[flex-align="stretch"],
+ca-self[align="stretch"],
 .align-self-stretch {
   align-self: stretch;
 }
-ca-self[flex-align="baseline"],
+ca-self[align="baseline"],
 .align-self-baseline {
   align-self: baseline;
 }
