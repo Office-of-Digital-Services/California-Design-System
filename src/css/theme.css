@@ -477,3 +477,15 @@
   );
   --primary-accent-border-image: var(--gray-accent-border-image);
 }
+
+:root,
+[data-corners="soft"] {
+  /* Roundedness default */
+  --border-radius: 0.25rem;
+}
+[data-corners="sharp"] {
+  --border-radius: 0;
+}
+[data-corners="round"] {
+  --border-radius: 3.125rem;
+}

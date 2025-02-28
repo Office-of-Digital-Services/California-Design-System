@@ -11,6 +11,7 @@ class LayoutToggle extends HTMLElement {
 				color: var(--primary-110);
 				font-size: .75rem;
 				border: 1px solid var(--primary-110);
+				border-radius: var(--border-radius);
 			}
 			button svg {
 				margin-inline-start: .5rem;
@@ -72,6 +73,12 @@ class LayoutToggle extends HTMLElement {
 				<label><input type="radio" name="accent" value="secondary-center" /> Secondary, center</label>
 				<label><input type="radio" name="accent" value="secondary-solid" /> Secondary, solid</label>
 			</fieldset>
+			<fieldset id="corners">
+				<legend>Corner</legend>
+				<label><input type="radio" name="corners" value="soft" /> Soft</label>
+				<label><input type="radio" name="corners" value="sharp" /> Sharp</label>
+				<label><input type="radio" name="corners" value="round" /> Round</label>
+			</fieldset>
 		</form>
 	`;
 
@@ -119,6 +126,17 @@ class LayoutToggle extends HTMLElement {
     // Change accent
     accentFieldset.addEventListener("change", (event) => {
       layout.setAttribute("data-accent", event.target.value);
+    });
+
+    // Set initial corners
+    const cornersFieldset = this.shadowRoot.querySelector("fieldset#corners");
+    const initialCorners = layout.getAttribute("data-corners") || "soft";
+    cornersFieldset
+      .querySelector(`input[value="${initialCorners}"]`)
+      .setAttribute("checked", "");
+    // Change accent
+    cornersFieldset.addEventListener("change", (event) => {
+      layout.setAttribute("data-corners", event.target.value);
     });
 
     // Set initial theme
