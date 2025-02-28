@@ -6,13 +6,9 @@
   gap: 1rem;
   background-color: var(--primary-background-20);
 
-  & a {
-    color: var(--primary-110);
-  }
-
-  & svg {
-    block-size: 1.5rem;
-    inline-size: 1.5rem;
+  & a,
+  ca-utility-icon {
+    color: var(--primary-100);
   }
 }
 
