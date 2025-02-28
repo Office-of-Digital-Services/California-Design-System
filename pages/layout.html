@@ -1,10 +1,7 @@
 <ca-layout format="">
 	<ca-site-menu>
 		<a href="#content-nav" title="Menu">
-			<svg aria-hidden="true">
-				<use data-open href="../../images/icons.svg#hambearger"></use>
-				<use data-close href="../../images/icons.svg#close"></use>
-			</svg>
+			<ca-icon name="bear-menu"></ca-icon>
 			<span class="visually-hidden">Menu</span>
 		</a>
 	</ca-site-menu>
@@ -29,9 +26,7 @@
 			<label for="site-search" class="visually-hidden">Search this site</label>
 			<input type="search" id="site-search" placeholder="Search" />
 			<button type="submit">
-				<svg width="24" height="24">
-					<use href="../../images/icons.svg#search"></use>
-				</svg>
+				<ca-icon name="search"></ca-icon>
 				<span class="visually-hidden">Search</span>
 			</button>
 		</form>
@@ -39,18 +34,20 @@
 
 	<nav id="utility-nav" aria-label="Utility navigation">
 		<ca-layout-toggle></ca-layout-toggle>
-		<ca-color-scheme-toggle icons="../../images/icons.svg"></ca-color-scheme-toggle>
+		<ca-utility-icon>
+			<ca-color-scheme-toggle></ca-color-scheme-toggle>
+		</ca-utility-icon>
 		<a href="#" title="Login">
-			<svg width="24" height="24" aria-hidden="true">
-				<use href="../../images/icons.svg#account-circle"></use>
-			</svg>
-			<span class="visually-hidden">Login</span>
+			<ca-utility-icon>
+				<ca-icon name="account-circle"></ca-icon>
+				<span class="visually-hidden">Login</span>
+			</ca-utility-icon>
 		</a>
 		<a href="#" title="Translate">
-			<svg width="24" height="24" aria-hidden="true">
-				<use href="../../images/icons.svg#language"></use>
-			</svg>
-			<span class="visually-hidden">Translate</span>
+			<ca-utility-icon>
+				<ca-icon name="language"></ca-icon>
+				<span class="visually-hidden">Translate</span>
+			</ca-utility-icon>
 		</a>
 	</nav>
 
@@ -152,12 +149,16 @@
 			</div>
 			<div>
 				<a href="#">
-					<ca-icon name="help"></ca-icon>
-					<span class="visually-hidden">Help</span>
+					<ca-utility-icon with-border>
+						<ca-icon name="help"></ca-icon>
+						<span class="visually-hidden">Help</span>
+					</ca-utility-icon>
 				</a>
 				<a href="#">
-					<ca-icon name="back-to-top"></ca-icon>
-					<span class="visually-hidden">Back to top</span>
+					<ca-utility-icon with-border>
+						<ca-icon name="back-to-top"></ca-icon>
+						<span class="visually-hidden">Back to top</span>
+					</ca-utility-icon>
 				</a>
 			</div>
 		</ca-footer-end>

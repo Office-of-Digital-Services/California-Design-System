@@ -156,20 +156,11 @@ ca-footer-end {
 
   /* Icon links in 2nd div */
   & > div:nth-of-type(2) > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     justify-self: end;
-    block-size: 3rem;
-    inline-size: 3rem;
-    color: var(--primary-100);
-    border: solid 2px var(--primary-100);
-    border-radius: var(--border-radius);
+  }
 
-    & :is(ca-icon, svg, img) {
-      block-size: 1.5rem;
-      inline-size: auto;
-    }
+  & ca-utility-icon {
+    color: var(--primary-100);
   }
 }
 
