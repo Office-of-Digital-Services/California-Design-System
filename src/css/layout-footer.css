@@ -76,6 +76,28 @@ ca-footer-links {
   }
 }
 
+ca-social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    block-size: 2rem;
+    inline-size: 2rem;
+    background-color: var(--primary-100);
+    border-radius: var(--border-radius);
+  }
+
+  & :is(ca-icon, svg, img) {
+    block-size: 1.25rem;
+    inline-size: 1.25rem;
+    color: var(--primary-background-10);
+  }
+}
+
 @container footer (width > 50rem) {
   :is(ca-layout, .ca-layout) > footer > * {
     /* Apply side margin to all top-level children of footer. */
@@ -127,6 +149,11 @@ ca-footer-end {
     }
   }
 
+  & ca-icon[name="ca-bear"] {
+    inline-size: 3.12325rem;
+    block-size: 1.75rem;
+  }
+
   /* Icon links in 2nd div */
   & > div:nth-of-type(2) > a {
     display: flex;
@@ -135,8 +162,14 @@ ca-footer-end {
     justify-self: end;
     block-size: 3rem;
     inline-size: 3rem;
-    color: var(--primary-110);
-    border: solid 2px var(--primary-110);
+    color: var(--primary-100);
+    border: solid 2px var(--primary-100);
+    border-radius: var(--border-radius);
+
+    & :is(ca-icon, svg, img) {
+      block-size: 1.5rem;
+      inline-size: auto;
+    }
   }
 }
 
