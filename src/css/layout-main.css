@@ -1,9 +1,9 @@
-:is(ca-layout, .ca-layout) > main {
+ca-layout > main {
   container: main / inline-size;
 }
 
 @container main (width > 50rem) {
-  :is(ca-layout, .ca-layout) > main > * {
+  ca-layout > main > * {
     /* Apply side margin to all top-level children of footer. */
     margin-inline: 3rem;
   }
@@ -11,7 +11,7 @@
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="skyline"] > main {
+  ca-layout[format="skyline"] > main {
     border-block-start: 2px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(

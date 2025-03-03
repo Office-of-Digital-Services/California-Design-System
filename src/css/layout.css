@@ -2,8 +2,7 @@
  * Layout grid area definitions
  */
 
-ca-layout,
-.ca-layout {
+ca-layout {
   & > ca-site-menu {
     grid-area: burger;
     background-color: var(--primary-background-20);
@@ -48,8 +47,7 @@ ca-layout,
  */
 
 /* Default, mobile and tablet */
-ca-layout,
-.ca-layout {
+ca-layout {
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: auto;
@@ -68,8 +66,7 @@ ca-layout,
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout,
-  .ca-layout {
+  ca-layout {
     grid-template-columns: 15rem 1fr;
     grid-template-rows: auto max-content max-content 1fr auto;
     grid-template-areas:
@@ -87,7 +84,7 @@ ca-layout,
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="horizon"] {
+  ca-layout[format="horizon"] {
     grid-template-columns: 7rem auto 1fr;
     grid-template-areas:
       "logo header utility-nav"
@@ -107,7 +104,7 @@ ca-layout,
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="skyline"] {
+  ca-layout[format="skyline"] {
     grid-template-columns: max-content max-content auto max-content;
     grid-template-areas:
       "logo header content-nav utility-nav"

@@ -18,7 +18,7 @@
     background-color: var(--primary-background-10);
   }
 
-  :is(ca-layout, .ca-layout) {
+  ca-layout {
     &[format="horizon"],
     &[format="skyline"] {
       & > :where(nav#utility-nav) {

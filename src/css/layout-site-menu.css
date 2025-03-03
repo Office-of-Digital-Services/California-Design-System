@@ -60,7 +60,7 @@ ca-site-menu[position="scrolled"] {
 }
 
 /* Go ahead and display content-nav if JS disabled. */
-:is(ca-layout, .ca-layout):has(ca-site-menu:not(:defined)) > nav#content-nav {
+ca-layout:has(ca-site-menu:not(:defined)) > nav#content-nav {
   display: block;
 
   /* Without JS, display the nested lists too. */
@@ -170,7 +170,7 @@ nav#content-nav {
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="horizon"] > nav#content-nav {
+  ca-layout[format="horizon"] > nav#content-nav {
     padding: 0 1rem 0 0;
     border-block-start: 2px solid;
     border-image-slice: 1;
@@ -199,7 +199,7 @@ nav#content-nav {
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="skyline"] > nav#content-nav {
+  ca-layout[format="skyline"] > nav#content-nav {
     display: flex;
     align-items: center;
     padding: 1rem 3rem;
