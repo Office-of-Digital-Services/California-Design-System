@@ -40,6 +40,11 @@ ca-layout {
   & > footer {
     grid-area: footer;
   }
+
+  /* For hiding elements with the dev tool. */
+  & > *[hidden] {
+    display: none !important;
+  }
 }
 
 /* 
@@ -127,8 +132,4 @@ nav#utility-nav {
 
 search svg {
   color: var(--primary-text);
-}
-
-search {
-  display: none;
 }

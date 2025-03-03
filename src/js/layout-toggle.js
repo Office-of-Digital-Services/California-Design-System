@@ -48,12 +48,21 @@ class LayoutToggle extends HTMLElement {
 			}
 			form {
 				position: absolute;
+				display: flex;
+				flex-direction: row;
+				gap: 1rem;
 				background-color: var(--primary-background-40);
-				width: 12rem;
 				padding: 1rem;
 				top: 100%;
 				right: 0;
 				box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+				border-radius: var(--border-radius);
+			}
+			form > div {
+				width: 12rem;
+			}
+			form[hidden] {
+				display: none;
 			}
 		</style>
 		<button>
@@ -75,34 +84,48 @@ class LayoutToggle extends HTMLElement {
 		</button>
 		<div class="form-wrap">
 			<form hidden>
-				<fieldset id="layout">
-					<legend>Layout</legend>
-					<label><input type="radio" name="layout" value="eureka" /> Eureka</label>
-					<label><input type="radio" name="layout" value="horizon" /> Horizon</label>
-					<label><input type="radio" name="layout" value="skyline" /> Skyline</label>
-				</fieldset>
-				<fieldset id="theme">
-					<legend>Theme</legend>
-					<label><input type="radio" name="theme" value="coastal" /> Coastal</label>
-					<label><input type="radio" name="theme" value="desert" /> Desert</label>
-					<label><input type="radio" name="theme" value="mountain" /> Mountain</label>
-					<label><input type="radio" name="theme" value="valley" /> Valley</label>
-				</fieldset>
-				<fieldset id="accent">
-					<legend>Accent</legend>
-					<label><input type="radio" name="accent" value="primary-left" /> Primary, left</label>
-					<label><input type="radio" name="accent" value="primary-center" /> Primary, center</label>
-					<label><input type="radio" name="accent" value="primary-solid" /> Primary, solid</label>
-					<label><input type="radio" name="accent" value="secondary-left" /> Secondary, left</label>
-					<label><input type="radio" name="accent" value="secondary-center" /> Secondary, center</label>
-					<label><input type="radio" name="accent" value="secondary-solid" /> Secondary, solid</label>
-				</fieldset>
-				<fieldset id="corners">
-					<legend>Corner</legend>
-					<label><input type="radio" name="corners" value="soft" /> Soft</label>
-					<label><input type="radio" name="corners" value="sharp" /> Sharp</label>
-					<label><input type="radio" name="corners" value="round" /> Round</label>
-				</fieldset>
+				<div>
+					<fieldset id="include">
+						<legend>Include</legend>
+						<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
+						<label><input type="checkbox" name="header" value="header" /> Header</label>
+						<label><input type="checkbox" name="search" value="search" /> Search</label>
+						<label><input type="checkbox" name="utility-nav" value="utility-nav" /> Utility nav</label>
+						<label><input type="checkbox" name="content-nav" value="content-nav" /> Content nav</label>
+						<label><input type="checkbox" name="main" value="main" /> Main</label>
+						<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
+					</fieldset>
+				</div>
+				<div>
+					<fieldset id="layout">
+						<legend>Layout</legend>
+						<label><input type="radio" name="layout" value="eureka" /> Eureka</label>
+						<label><input type="radio" name="layout" value="horizon" /> Horizon</label>
+						<label><input type="radio" name="layout" value="skyline" /> Skyline</label>
+					</fieldset>
+					<fieldset id="theme">
+						<legend>Theme</legend>
+						<label><input type="radio" name="theme" value="coastal" /> Coastal</label>
+						<label><input type="radio" name="theme" value="desert" /> Desert</label>
+						<label><input type="radio" name="theme" value="mountain" /> Mountain</label>
+						<label><input type="radio" name="theme" value="valley" /> Valley</label>
+					</fieldset>
+					<fieldset id="accent">
+						<legend>Accent</legend>
+						<label><input type="radio" name="accent" value="primary-left" /> Primary, left</label>
+						<label><input type="radio" name="accent" value="primary-center" /> Primary, center</label>
+						<label><input type="radio" name="accent" value="primary-solid" /> Primary, solid</label>
+						<label><input type="radio" name="accent" value="secondary-left" /> Secondary, left</label>
+						<label><input type="radio" name="accent" value="secondary-center" /> Secondary, center</label>
+						<label><input type="radio" name="accent" value="secondary-solid" /> Secondary, solid</label>
+					</fieldset>
+					<fieldset id="corners">
+						<legend>Corner</legend>
+						<label><input type="radio" name="corners" value="soft" /> Soft</label>
+						<label><input type="radio" name="corners" value="sharp" /> Sharp</label>
+						<label><input type="radio" name="corners" value="round" /> Round</label>
+					</fieldset>
+				</div>
 			</form>
 		</div>
 	`;
@@ -116,6 +139,23 @@ class LayoutToggle extends HTMLElement {
     form.toggleAttribute("hidden");
     button.querySelector("svg[data-open]").toggleAttribute("hidden");
     button.querySelector("svg[data-close]").toggleAttribute("hidden");
+  }
+
+  setupIncludeToggle(layout, toggleName, layoutElementSelector) {
+    const toggle = this.shadowRoot.querySelector(`input[name="${toggleName}"]`);
+    const layoutElement = layout.querySelector(layoutElementSelector);
+    console.log(toggleName, layoutElement);
+    const layoutElementAlreadyEnabled = !layoutElement.hasAttribute("hidden");
+    if (layoutElementAlreadyEnabled) {
+      toggle.checked = true;
+    }
+    toggle.addEventListener("change", (event) => {
+      if (event.target.checked) {
+        layoutElement.removeAttribute("hidden");
+      } else {
+        layoutElement.setAttribute("hidden", "");
+      }
+    });
   }
 
   connectedCallback() {
@@ -179,6 +219,16 @@ class LayoutToggle extends HTMLElement {
       );
       head.appendChild(desiredTheme);
     });
+
+    window.setTimeout(() => {
+      this.setupIncludeToggle(layout, "site-logo", "ca-site-logo");
+      this.setupIncludeToggle(layout, "header", "header");
+      this.setupIncludeToggle(layout, "search", "search");
+      this.setupIncludeToggle(layout, "utility-nav", "nav#utility-nav");
+      this.setupIncludeToggle(layout, "content-nav", "nav#content-nav");
+      this.setupIncludeToggle(layout, "main", "main");
+      this.setupIncludeToggle(layout, "footer", "footer");
+    }, 1);
   }
 }
 
