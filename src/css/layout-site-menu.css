@@ -4,13 +4,13 @@ ca-site-menu {
 
   & > :is(a, button) {
     all: unset;
-    color: var(--primary-110);
+    color: var(--primary-100);
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
 
-  & svg {
-    block-size: 2.6rem;
+  & ca-icon {
+    block-size: auto;
     inline-size: 2.5rem;
   }
 
@@ -33,7 +33,7 @@ ca-site-menu[position="scrolled"] {
     color: var(--primary-background-10);
   }
 
-  & svg {
+  & ca-icon {
     block-size: 100%;
     inline-size: auto;
   }

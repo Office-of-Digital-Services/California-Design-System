@@ -18,8 +18,6 @@ ca-layout {
 
   & > search {
     grid-area: search;
-    padding: 1rem;
-    background-color: lightgreen;
   }
 
   & > nav#utility-nav {
@@ -54,14 +52,14 @@ ca-layout {
 /* Default, mobile and tablet */
 ca-layout {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content 1fr max-content;
   grid-template-rows: auto;
   grid-template-areas:
-    "burger utility-nav"
-    "header header"
-    "main main"
-    "content-nav content-nav"
-    "footer footer";
+    "burger search utility-nav"
+    "header header header"
+    "main main main"
+    "content-nav content-nav content-nav"
+    "footer footer footer";
 
   /* :where() drops specificity so it's easy to override on responsive queries. */
   & > :where(nav#content-nav) {
@@ -73,11 +71,12 @@ ca-layout {
 @media screen and (min-width: 1024px) {
   ca-layout {
     grid-template-columns: 15rem 1fr;
-    grid-template-rows: auto max-content max-content 1fr auto;
+    grid-template-rows: auto max-content max-content max-content 1fr auto;
     grid-template-areas:
       "logo utility-nav"
       "logo main"
       "header main"
+      "search main"
       "content-nav main"
       "content-nav footer";
   }
@@ -90,12 +89,12 @@ ca-layout {
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="horizon"] {
-    grid-template-columns: 7rem auto 1fr;
+    grid-template-columns: 7rem auto max-content 1fr;
     grid-template-areas:
-      "logo header utility-nav"
-      "logo content-nav content-nav" /* Note the "blank" spot. */
-      "main main main"
-      "footer footer footer";
+      "logo header search utility-nav"
+      "logo content-nav content-nav content-nav" /* Note the "blank" spot. */
+      "main main main main"
+      "footer footer footer footer";
 
     /* This little trick plugs the blank grid cell, below the overhanging logo. */
     &::after {
@@ -110,11 +109,11 @@ ca-layout {
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="skyline"] {
-    grid-template-columns: max-content max-content auto max-content;
+    grid-template-columns: max-content max-content auto max-content max-content;
     grid-template-areas:
-      "logo header content-nav utility-nav"
-      "main main main main"
-      "footer footer footer footer";
+      "logo header content-nav search utility-nav"
+      "main main main main main"
+      "footer footer footer footer footer";
   }
 }
 
@@ -128,8 +127,4 @@ nav#utility-nav {
       margin-block-end: 0;
     }
   }
-}
-
-search svg {
-  color: var(--primary-text);
 }
