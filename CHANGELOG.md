@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.1.0...v0.1.1) (2025-03-04)
+
+
+### Bug Fixes
+
+* Remove SVG sprites from bundle ([e69297f](https://github.com/Office-of-Digital-Services/California-Design-System/commit/e69297fd1c4e8c9dfa83bea0bed783d039da784f))
+
 ## [0.1.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.6.0...v0.1.0) (2025-03-04)
 
 
