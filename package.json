@@ -1,6 +1,6 @@
 {
   "name": "@cagovweb/design-system",
-  "version": "1.6.0",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/bundle.js",
   "description": "This system makes it easy to build digital services that meet the needs of Californians.",
@@ -21,7 +21,7 @@
     "@biomejs/biome": "1.9.4",
     "archiver": "^7.0.1",
     "chalk": "^5.3.0",
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "glob": "^11.0.0",
     "lightningcss": "^1.27.0"
   }
