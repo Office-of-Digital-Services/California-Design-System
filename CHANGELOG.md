@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.7.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.6.0...v1.7.0) (2025-03-04)
+
+
+### Features
+
+* Accents ([aaaf3cd](https://github.com/Office-of-Digital-Services/California-Design-System/commit/aaaf3cd4afc53bcc30bdde4ad1de7318b2b3036d))
+* Add includes to layout dev tool ([41d7f50](https://github.com/Office-of-Digital-Services/California-Design-System/commit/41d7f50b5943657fab5c794285db1b53a6b8af82))
+* Basic utility classes ([cf016df](https://github.com/Office-of-Digital-Services/California-Design-System/commit/cf016df09523227557bbd32d6a730c6e41006648))
+* Configurable corners ([3ca4f88](https://github.com/Office-of-Digital-Services/California-Design-System/commit/3ca4f88f4f595bb8c2360bb2205da6f7f9b943ed))
+* Consolidated layout toggle ([ce941b2](https://github.com/Office-of-Digital-Services/California-Design-System/commit/ce941b2af0c063c309fb5fe1befa6e5e37d2b42e))
+* Flex ([d4f1645](https://github.com/Office-of-Digital-Services/California-Design-System/commit/d4f1645c03325e82584ee83449b2e6ea95c90f4c))
+* Mask icons ([f865dac](https://github.com/Office-of-Digital-Services/California-Design-System/commit/f865dac4b91bffeba882cc45e03ea41841c2cedb))
+* Search ([d53cfe2](https://github.com/Office-of-Digital-Services/California-Design-System/commit/d53cfe200245ac7435aba31a54f1e7ddaf9eb566))
+
 ## [1.6.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v1.5.0...v1.6.0) (2025-02-05)
 
 
