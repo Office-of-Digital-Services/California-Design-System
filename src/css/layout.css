@@ -33,7 +33,6 @@ ca-layout {
 
   & > main {
     grid-area: main;
-    background-color: var(--primary-background-10);
   }
 
   & > footer {

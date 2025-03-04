@@ -1,5 +1,6 @@
 ca-layout > main {
   container: main / inline-size;
+  background-color: var(--primary-background-10);
 }
 
 @container main (width > 50rem) {
