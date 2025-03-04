@@ -25,7 +25,6 @@ await fs.mkdir("dist");
 
 // Include critical image files
 await fs.mkdir("dist/images");
-await fs.copyFile("static/images/icons.svg", "dist/images/icons.svg");
 await fs.copyFile("static/images/favicon.ico", "dist/images/favicon.ico");
 
 // Build all files first.
