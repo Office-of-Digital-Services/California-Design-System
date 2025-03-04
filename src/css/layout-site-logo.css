@@ -26,13 +26,13 @@ ca-site-logo {
   }
 
   /* Horizon, small desktop */
-  :is(ca-layout, .ca-layout)[format="horizon"] > ca-site-logo {
+  ca-layout[format="horizon"] > ca-site-logo {
     padding-inline: 1rem 0;
     padding-block: 1rem;
   }
 
   /* Skyline, small desktop */
-  :is(ca-layout, .ca-layout)[format="skyline"] > ca-site-logo {
+  ca-layout[format="skyline"] > ca-site-logo {
     padding-inline: 1rem 0;
     padding-block: 1rem;
     align-items: center;

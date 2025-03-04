@@ -4,13 +4,13 @@ ca-site-menu {
 
   & > :is(a, button) {
     all: unset;
-    color: var(--primary-110);
+    color: var(--primary-100);
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
 
-  & svg {
-    block-size: 2.6rem;
+  & ca-icon {
+    block-size: auto;
     inline-size: 2.5rem;
   }
 
@@ -33,7 +33,7 @@ ca-site-menu[position="scrolled"] {
     color: var(--primary-background-10);
   }
 
-  & svg {
+  & ca-icon {
     block-size: 100%;
     inline-size: auto;
   }
@@ -60,7 +60,7 @@ ca-site-menu[position="scrolled"] {
 }
 
 /* Go ahead and display content-nav if JS disabled. */
-:is(ca-layout, .ca-layout):has(ca-site-menu:not(:defined)) > nav#content-nav {
+ca-layout:has(ca-site-menu:not(:defined)) > nav#content-nav {
   display: block;
 
   /* Without JS, display the nested lists too. */
@@ -70,6 +70,8 @@ ca-site-menu[position="scrolled"] {
 }
 
 nav#content-nav {
+  padding: 1rem;
+
   & ul {
     display: flex;
     flex-direction: column;
@@ -170,7 +172,7 @@ nav#content-nav {
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="horizon"] > nav#content-nav {
+  ca-layout[format="horizon"] > nav#content-nav {
     padding: 0 1rem 0 0;
     border-block-start: 2px solid;
     border-image-slice: 1;
@@ -199,7 +201,7 @@ nav#content-nav {
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="skyline"] > nav#content-nav {
+  ca-layout[format="skyline"] > nav#content-nav {
     display: flex;
     align-items: center;
     padding: 1rem 3rem;

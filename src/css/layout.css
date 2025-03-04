@@ -1,12 +1,14 @@
+ca-layout {
+  background-color: var(--primary-background-20);
+}
+
 /*
  * Layout grid area definitions
  */
 
-ca-layout,
-.ca-layout {
+ca-layout {
   & > ca-site-menu {
     grid-area: burger;
-    background-color: var(--primary-background-20);
   }
 
   & > ca-site-logo {
@@ -19,8 +21,6 @@ ca-layout,
 
   & > search {
     grid-area: search;
-    padding: 1rem;
-    background-color: lightgreen;
   }
 
   & > nav#utility-nav {
@@ -29,17 +29,19 @@ ca-layout,
 
   & > nav#content-nav {
     grid-area: content-nav;
-    padding: 1rem;
-    background-color: var(--primary-background-20);
   }
 
   & > main {
     grid-area: main;
-    background-color: var(--primary-background-10);
   }
 
   & > footer {
     grid-area: footer;
+  }
+
+  /* For hiding elements with the dev tool. */
+  & > *[hidden] {
+    display: none !important;
   }
 }
 
@@ -48,17 +50,16 @@ ca-layout,
  */
 
 /* Default, mobile and tablet */
-ca-layout,
-.ca-layout {
+ca-layout {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 4.5rem minmax(15rem, 1fr) auto;
   grid-template-rows: auto;
   grid-template-areas:
-    "burger utility-nav"
-    "header header"
-    "main main"
-    "content-nav content-nav"
-    "footer footer";
+    "burger search utility-nav"
+    "header header header"
+    "main main main"
+    "content-nav content-nav content-nav"
+    "footer footer footer";
 
   /* :where() drops specificity so it's easy to override on responsive queries. */
   & > :where(nav#content-nav) {
@@ -68,70 +69,67 @@ ca-layout,
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout,
-  .ca-layout {
+  ca-layout {
     grid-template-columns: 15rem 1fr;
-    grid-template-rows: auto max-content max-content 1fr auto;
+    grid-template-rows: auto max-content max-content max-content 1fr auto;
     grid-template-areas:
       "logo utility-nav"
       "logo main"
       "header main"
+      "search main"
       "content-nav main"
       "content-nav footer";
-  }
 
-  & > nav#content-nav {
-    display: block;
+    &:has(ca-site-logo[hidden]),
+    &:not(:has(ca-site-logo)) {
+      grid-template-rows: auto max-content 1fr auto;
+      grid-template-areas:
+        "header utility-nav"
+        "search main"
+        "content-nav main"
+        "content-nav footer";
+    }
   }
 }
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="horizon"] {
-    grid-template-columns: 7rem auto 1fr;
+  ca-layout[format="horizon"] {
+    grid-template-columns: 7rem max-content minmax(15rem, 1fr) auto;
     grid-template-areas:
-      "logo header utility-nav"
-      "logo content-nav content-nav" /* Note the "blank" spot. */
-      "main main main"
-      "footer footer footer";
+      "logo header search utility-nav"
+      "logo content-nav content-nav content-nav"
+      "main main main main"
+      "footer footer footer footer";
 
-    /* This little trick plugs the blank grid cell, below the overhanging logo. */
-    &::after {
-      content: "";
-      grid-area: blank;
-      background-color: var(--primary-background-20);
-      z-index: -100;
+    &:has(ca-site-logo[hidden]),
+    &:not(:has(ca-site-logo)) {
+      grid-template-columns: max-content minmax(15rem, 1fr) auto;
+      grid-template-areas:
+        "header search utility-nav"
+        "content-nav content-nav content-nav"
+        "main main main"
+        "footer footer footer";
     }
   }
 }
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  :is(ca-layout, .ca-layout)[format="skyline"] {
-    grid-template-columns: max-content max-content auto max-content;
+  ca-layout[format="skyline"] {
+    grid-template-columns: auto auto auto minmax(15rem, 1fr) max-content;
     grid-template-areas:
-      "logo header content-nav utility-nav"
-      "main main main main"
-      "footer footer footer footer";
-  }
-}
+      "logo header content-nav search utility-nav"
+      "main main main main main"
+      "footer footer footer footer footer";
 
-nav#utility-nav {
-  & > ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    & > li:last-child {
-      margin-block-end: 0;
+    &:has(ca-site-logo[hidden]),
+    &:not(:has(ca-site-logo)) {
+      grid-template-columns: auto auto minmax(15rem, 1fr) max-content;
+      grid-template-areas:
+        "header content-nav search utility-nav"
+        "main main main main"
+        "footer footer footer footer";
     }
   }
-}
-
-search svg {
-  color: var(--primary-text);
-}
-
-search {
-  display: none;
 }

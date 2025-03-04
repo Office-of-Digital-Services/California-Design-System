@@ -1,4 +1,4 @@
-:is(ca-layout, .ca-layout) > footer {
+ca-layout > footer {
   container: footer / inline-size;
   padding-block: 5rem 3rem;
   background: linear-gradient(
@@ -99,7 +99,7 @@ ca-social-links {
 }
 
 @container footer (width > 50rem) {
-  :is(ca-layout, .ca-layout) > footer > * {
+  ca-layout > footer > * {
     /* Apply side margin to all top-level children of footer. */
     margin-inline: 3rem;
   }
