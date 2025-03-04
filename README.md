@@ -57,3 +57,26 @@ To build the CSS/JS bundle files, run `npm run bundle`.
 Files will be written to the `dist` folder.
 
 > This is useful for packaging activities, such as GitHub Releases, NPM, and CDN.
+
+## Deprecated NPM packages
+
+We previously published NPM packages in the `1.X.X` series. Since then, we decided to republish as beta in `0.X.X`. Therefore, several npm packages from the past work have been deprecated, to prevent stale downloads while we're still in beta. 
+
+To bring those packages back and remove the deprecation warning, run the following command.
+
+```sh
+npm deprecate @cagovweb/design-system@1.1.0 ""
+```
+
+npm deprecate @cagovweb/design-system@1.6.0 "The Design System is currently in beta. This post-1.0 package is an artifact of past work. It does not represent the latest progress on this project."
+
+The following package version numbers apply.
+
+* 1.1.0
+* 1.2.0
+* 1.3.1
+* 1.4.0
+* 1.5.0
+* 1.6.0
+
+See more at [npm's deprecation page](https://docs.npmjs.com/deprecating-and-undeprecating-packages-or-package-versions).
