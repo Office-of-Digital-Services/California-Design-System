@@ -70,6 +70,8 @@ ca-layout:has(ca-site-menu:not(:defined)) > nav#content-nav {
 }
 
 nav#content-nav {
+  padding: 1rem;
+
   & ul {
     display: flex;
     flex-direction: column;

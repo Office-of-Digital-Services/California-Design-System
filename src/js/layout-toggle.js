@@ -61,8 +61,12 @@ class LayoutToggle extends HTMLElement {
 			form > div {
 				width: 12rem;
 			}
-			form[hidden] {
+			*[hidden] {
 				display: none;
+			}
+			.disabled {
+				opacity: 66%;
+				pointer-events: none;
 			}
 		</style>
 		<button>
@@ -87,6 +91,7 @@ class LayoutToggle extends HTMLElement {
 				<div>
 					<fieldset id="include">
 						<legend>Include</legend>
+						<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
 						<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
 						<label><input type="checkbox" name="header" value="header" /> Header</label>
 						<label><input type="checkbox" name="search" value="search" /> Search</label>
@@ -144,7 +149,13 @@ class LayoutToggle extends HTMLElement {
   setupIncludeToggle(layout, toggleName, layoutElementSelector) {
     const toggle = this.shadowRoot.querySelector(`input[name="${toggleName}"]`);
     const layoutElement = layout.querySelector(layoutElementSelector);
-    console.log(toggleName, layoutElement);
+
+    // If this layout element is not in the HTML, hide the control and abort.
+    if (layoutElement === null) {
+      toggle.closest("label").classList.add("disabled");
+      return;
+    }
+
     const layoutElementAlreadyEnabled = !layoutElement.hasAttribute("hidden");
     if (layoutElementAlreadyEnabled) {
       toggle.checked = true;
@@ -221,6 +232,7 @@ class LayoutToggle extends HTMLElement {
     });
 
     window.setTimeout(() => {
+      this.setupIncludeToggle(layout, "site-menu", "ca-site-menu");
       this.setupIncludeToggle(layout, "site-logo", "ca-site-logo");
       this.setupIncludeToggle(layout, "header", "header");
       this.setupIncludeToggle(layout, "search", "search");

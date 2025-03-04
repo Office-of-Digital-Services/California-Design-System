@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: end;
+  padding: .5rem 1rem;
   gap: 1rem;
   background-color: var(--primary-background-20);
 
