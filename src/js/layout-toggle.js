@@ -24,16 +24,16 @@ class LayoutToggle extends HTMLElement {
 				width: .75rem;
 				height: .75rem;
 			}
-			button svg {
+			svg {
 				position: absolute;
 				display: inline-block;
 				transition: opacity .3s, transform .3s;
 			}
-			button svg[hidden] {
+			svg[hidden] {
 				transform: rotate(-180deg);
 				opacity: 0;
 			}
-			button svg[data-open]:not([hidden]) {
+			svg[data-open]:not([hidden]) {
 				transform: translateY(3px);
 			}
 			fieldset {
@@ -57,11 +57,12 @@ class LayoutToggle extends HTMLElement {
 				right: 0;
 				box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 				border-radius: var(--border-radius);
+				z-index: 100;
 			}
 			form > div {
 				width: 12rem;
 			}
-			*[hidden] {
+			form[hidden] {
 				display: none;
 			}
 			.disabled {
