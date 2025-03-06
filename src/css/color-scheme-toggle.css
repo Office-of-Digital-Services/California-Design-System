@@ -1,0 +1,8 @@
+ca-color-scheme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  inline-size: 3rem;
+  block-size: 3rem;
+}

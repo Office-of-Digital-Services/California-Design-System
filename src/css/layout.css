@@ -1,5 +1,5 @@
 ca-layout {
-  background-color: var(--primary-background-20);
+  min-block-size: 100vh;
 }
 
 /*
@@ -11,30 +11,38 @@ ca-layout {
     grid-area: burger;
   }
 
+  /* Optional */
   & > ca-site-logo {
     grid-area: logo;
   }
 
+  /* Required */
   & > header {
     grid-area: header;
   }
 
+  /* Optional */
   & > search {
     grid-area: search;
   }
 
+  /* Optional */
   & > nav#utility-nav {
     grid-area: utility-nav;
   }
 
+  /* Required for horizon, otherwise just use skyline. */
+  /* Required when the ca-site-menu is present too. */
   & > nav#content-nav {
     grid-area: content-nav;
   }
 
+  /* Required */
   & > main {
     grid-area: main;
   }
 
+  /* Optional */
   & > footer {
     grid-area: footer;
   }
@@ -49,29 +57,66 @@ ca-layout {
  * Layout grid shifts 
  */
 
-/* Default, mobile and tablet */
 ca-layout {
   display: grid;
-  grid-template-columns: 4.5rem minmax(15rem, 1fr) auto;
   grid-template-rows: auto;
-  grid-template-areas:
-    "burger search utility-nav"
-    "header header header"
-    "main main main"
-    "content-nav content-nav content-nav"
-    "footer footer footer";
+}
 
-  /* :where() drops specificity so it's easy to override on responsive queries. */
-  & > :where(nav#content-nav) {
-    display: none;
+/* Mobile */
+/* Apply a mobile-only media query, so these mods don't mess with desktop. */
+@media screen and (max-width: 1023px) {
+  ca-layout {
+    grid-template-columns: minmax(4.5rem, 100vw) fit-content(15rem) auto;
+    grid-template-areas:
+      "burger search utility-nav"
+      "header header header"
+      "main main main"
+      "content-nav content-nav content-nav"
+      "footer footer footer";
+
+    /* :where() drops specificity so it's easy to override on responsive queries. */
+    & > :where(nav#content-nav) {
+      display: none;
+    }
+
+    /* Since none of the top row items are required on mobile, we can't "fr" any of them, so we need to redefine grid when some are missing. */
+    &:has(ca-site-menu[hidden]),
+    &:not(:has(ca-site-menu)) {
+      grid-template-columns: minmax(15rem, 100vw) max-content;
+      grid-template-areas:
+        "search utility-nav"
+        "header header"
+        "main main"
+        "content-nav content-nav"
+        "footer footer";
+
+      &:has(search[hidden]),
+      &:not(:has(search)) {
+        grid-template-columns: auto;
+        grid-template-areas:
+          "utility-nav"
+          "header"
+          "main"
+          "content-nav"
+          "footer";
+      }
+    }
+
+    /* For when there's no burger menu. */
+    &:has(search[hidden]):has(nav#utility-nav[hidden]),
+    &:not(:has(search)):not(:has(nav#utility-nav)) {
+      & > ca-site-menu {
+        grid-column: span 3;
+      }
+    }
   }
 }
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout {
+  ca-layout:not([format="horizon"]):not([format="skyline"]) {
     grid-template-columns: 15rem 1fr;
-    grid-template-rows: auto max-content max-content max-content 1fr auto;
+    grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr auto;
     grid-template-areas:
       "logo utility-nav"
       "logo main"
@@ -89,47 +134,41 @@ ca-layout {
         "content-nav main"
         "content-nav footer";
     }
+
+    &:has(nav#content-nav[hidden]),
+    &:not(:has(nav#content-nav)) {
+      & > search {
+        grid-row: span 3;
+        align-items: start;
+      }
+
+      &:has(search[hidden]) header,
+      &:not(:has(search)) header {
+        grid-row: span 4;
+      }
+    }
   }
 }
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="horizon"] {
-    grid-template-columns: 7rem max-content minmax(15rem, 1fr) auto;
+    grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) max-content;
     grid-template-areas:
       "logo header search utility-nav"
       "logo content-nav content-nav content-nav"
       "main main main main"
       "footer footer footer footer";
-
-    &:has(ca-site-logo[hidden]),
-    &:not(:has(ca-site-logo)) {
-      grid-template-columns: max-content minmax(15rem, 1fr) auto;
-      grid-template-areas:
-        "header search utility-nav"
-        "content-nav content-nav content-nav"
-        "main main main"
-        "footer footer footer";
-    }
   }
 }
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="skyline"] {
-    grid-template-columns: auto auto auto minmax(15rem, 1fr) max-content;
+    grid-template-columns: fit-content(7rem) 1fr auto fit-content(15rem) max-content;
     grid-template-areas:
       "logo header content-nav search utility-nav"
       "main main main main main"
       "footer footer footer footer footer";
-
-    &:has(ca-site-logo[hidden]),
-    &:not(:has(ca-site-logo)) {
-      grid-template-columns: auto auto minmax(15rem, 1fr) max-content;
-      grid-template-areas:
-        "header content-nav search utility-nav"
-        "main main main main"
-        "footer footer footer footer";
-    }
   }
 }

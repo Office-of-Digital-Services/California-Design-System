@@ -2,11 +2,12 @@ search {
   padding: .5rem 1rem;
   background-color: var(--primary-background-20);
   display: flex;
-  justify-self: end;
+  align-items: center;
+  justify-content: end;
+  inline-size: 100%;
+  block-size: 100%;
 
   & form {
-    align-self: center;
-    justify-self: end;
     display: flex;
     flex-direction: row;
     align-items: center;

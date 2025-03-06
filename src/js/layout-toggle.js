@@ -15,7 +15,6 @@ class LayoutToggle extends HTMLElement {
 				inline-size: auto;
 				font-size: .8rem;
 				color: var(--primary-100);
-				border: 1px solid var(--primary-100);
 				border-radius: var(--border-radius);
 				box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 			}
@@ -227,7 +226,7 @@ class LayoutToggle extends HTMLElement {
     // Change theme
     themeFieldset.addEventListener("change", (event) => {
       const desiredTheme = head.querySelector(
-        `link[data-theme="${event.target.value}"]`,
+        `link[data-theme="${event.target.value}"]`
       );
       head.appendChild(desiredTheme);
     });
