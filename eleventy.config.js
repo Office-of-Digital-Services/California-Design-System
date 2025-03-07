@@ -47,7 +47,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
-  eleventyConfig.addGlobalData("layout", "layout");
+  eleventyConfig.addGlobalData("layout", "base-layout");
   eleventyConfig.addPassthroughCopy({
     "static/images": "images",
     "static/images/favicon.ico": "/favicon.ico",
