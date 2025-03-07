@@ -65,6 +65,18 @@
   --desert-highlight-active: var(--desert-highlight-active-light);
 
   /* Theme configuration */
+  --primary-static-10: var(--desert-static-10);
+  --primary-static-20: var(--desert-static-20);
+  --primary-static-30: var(--desert-static-30);
+  --primary-static-40: var(--desert-static-40);
+  --primary-static-50: var(--desert-static-50);
+  --primary-static-60: var(--desert-static-60);
+  --primary-static-70: var(--desert-static-70);
+  --primary-static-80: var(--desert-static-80);
+  --primary-static-90: var(--desert-static-90);
+  --primary-static-100: var(--desert-static-100);
+  --primary-static-110: var(--desert-static-110);
+  --primary-static-120: var(--desert-static-120);
   --primary-10: var(--desert-10);
   --primary-20: var(--desert-20);
   --primary-30: var(--desert-30);

@@ -65,6 +65,18 @@
   --mountain-highlight-active: var(--mountain-highlight-active-light);
 
   /* Theme configuration */
+  --primary-static-10: var(--mountain-static-10);
+  --primary-static-20: var(--mountain-static-20);
+  --primary-static-30: var(--mountain-static-30);
+  --primary-static-40: var(--mountain-static-40);
+  --primary-static-50: var(--mountain-static-50);
+  --primary-static-60: var(--mountain-static-60);
+  --primary-static-70: var(--mountain-static-70);
+  --primary-static-80: var(--mountain-static-80);
+  --primary-static-90: var(--mountain-static-90);
+  --primary-static-100: var(--mountain-static-100);
+  --primary-static-110: var(--mountain-static-110);
+  --primary-static-120: var(--mountain-static-120);
   --primary-10: var(--mountain-10);
   --primary-20: var(--mountain-20);
   --primary-30: var(--mountain-30);

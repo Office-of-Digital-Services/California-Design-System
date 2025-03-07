@@ -1,5 +1,5 @@
 button {
-  --text-color: var(--primary-10);
+  --text-color: var(--primary-static-10);
   --background-color: var(--primary-highlight);
   --hover-color: var(--primary-highlight-active);
 
@@ -20,42 +20,42 @@ button {
   }
 
   &.gray {
-    --text-color: var(--gray-10);
+    --text-color: var(--gray-static-10);
     --background-color: var(--gray-highlight);
     --hover-color: var(--gray-highlight-active);
   }
   &.magenta {
-    --text-color: var(--magenta-10);
+    --text-color: var(--magenta-static-10);
     --background-color: var(--magenta-highlight);
     --hover-color: var(--magenta-highlight-active);
   }
   &.orange {
-    --text-color: var(--orange-10);
+    --text-color: var(--orange-static-10);
     --background-color: var(--orange-highlight);
     --hover-color: var(--orange-highlight-active);
   }
   &.green {
-    --text-color: var(--green-10);
+    --text-color: var(--green-static-10);
     --background-color: var(--green-highlight);
     --hover-color: var(--green-highlight-active);
   }
   &.blue {
-    --text-color: var(--blue-10);
+    --text-color: var(--blue-static-10);
     --background-color: var(--blue-highlight);
     --hover-color: var(--blue-highlight-active);
   }
   &.purple {
-    --text-color: var(--purple-10);
+    --text-color: var(--purple-static-10);
     --background-color: var(--purple-highlight);
     --hover-color: var(--purple-highlight-active);
   }
   &.yellow {
-    --text-color: var(--yellow-10);
+    --text-color: var(--yellow-static-10);
     --background-color: var(--yellow-highlight);
     --hover-color: var(--yellow-highlight-active);
   }
   &.red {
-    --text-color: var(--red-10);
+    --text-color: var(--red-static-10);
     --background-color: var(--red-highlight);
     --hover-color: var(--red-highlight-active);
   }
