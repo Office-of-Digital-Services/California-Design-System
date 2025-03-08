@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.1.1...v0.2.0) (2025-03-08)
+
+
+### Features
+
+* Basic button ([660c47e](https://github.com/Office-of-Digital-Services/California-Design-System/commit/660c47e27b28fd8d5647b51fcc6c62fee3212569))
+
+
+### Bug Fixes
+
+* Dev menu dropdown ([c5ba7ce](https://github.com/Office-of-Digital-Services/California-Design-System/commit/c5ba7ce38d9f7ac0742ebdc22fa919df02f7de54))
+* Primary button colors ([0b1d69f](https://github.com/Office-of-Digital-Services/California-Design-System/commit/0b1d69f127a079880eddc20059af83e17b407591))
+
 ## [0.1.1](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.1.0...v0.1.1) (2025-03-04)
 
 
