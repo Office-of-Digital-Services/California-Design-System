@@ -65,6 +65,18 @@
   --valley-highlight-active: var(--valley-highlight-active-light);
 
   /* Theme configuration */
+  --primary-static-10: var(--valley-static-10);
+  --primary-static-20: var(--valley-static-20);
+  --primary-static-30: var(--valley-static-30);
+  --primary-static-40: var(--valley-static-40);
+  --primary-static-50: var(--valley-static-50);
+  --primary-static-60: var(--valley-static-60);
+  --primary-static-70: var(--valley-static-70);
+  --primary-static-80: var(--valley-static-80);
+  --primary-static-90: var(--valley-static-90);
+  --primary-static-100: var(--valley-static-100);
+  --primary-static-110: var(--valley-static-110);
+  --primary-static-120: var(--valley-static-120);
   --primary-10: var(--valley-10);
   --primary-20: var(--valley-20);
   --primary-30: var(--valley-30);

@@ -1,140 +1,138 @@
-<main>
-	<h1>Grid</h1>
+<h1>Grid</h1>
 
-	<!-- styles only for testing purposes -->
-	<style>
-		:is(ca-grid, .ca-grid)>p {
-			margin: 0;
-			padding: 1rem;
-			max-width: 100%;
-			background-color: lightseagreen;
-		}
-	</style>
+<!-- styles only for testing purposes -->
+<style>
+  :is(ca-grid, .ca-grid)>p {
+    margin: 0;
+    padding: 1rem;
+    max-width: 100%;
+    background-color: lightseagreen;
+  }
+</style>
 
-	<h2>Max six columns (default)</h2>
+<h2>Max six columns (default)</h2>
 
-	<p>Expand your window to see how the grid reflows.</p>
+<p>Expand your window to see how the grid reflows.</p>
 
-	<ca-grid>
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid>
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Max three columns</h2>
+<h2>Max three columns</h2>
 
-	<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
+<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
 
-	<ca-grid max-col="3">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid max-col="3">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Same three-column grid with div</h2>
+<h2>Same three-column grid with div</h2>
 
-	<p>
-		This is the same grid as above, but using <code>div.ca-grid</code> instead of <code>&lt;ca-grid&gt;</code>.
-		Both TAC-based custom element and fallback div-based styles can be supported.
-	</p>
+<p>
+  This is the same grid as above, but using <code>div.ca-grid</code> instead of <code>&lt;ca-grid&gt;</code>.
+  Both TAC-based custom element and fallback div-based styles can be supported.
+</p>
 
-	<div class="ca-grid ca-grid-max-col-3">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</div>
+<div class="ca-grid ca-grid-max-col-3">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</div>
 
-	<h2>Minimum two columns</h2>
+<h2>Minimum two columns</h2>
 
-	<p>This grid will maintain a minimum of two columns, even on mobile.</p>
+<p>This grid will maintain a minimum of two columns, even on mobile.</p>
 
-	<ca-grid min-col="2">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid min-col="2">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Min two columns, max three columns</h2>
+<h2>Min two columns, max three columns</h2>
 
-	<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
+<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
 
-	<ca-grid min-col="2" max-col="3">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid min-col="2" max-col="3">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Cell width override</h2>
+<h2>Cell width override</h2>
 
-	<p>CSS vars can be overriden to increase the size of the grid cells.</p>
+<p>CSS vars can be overriden to increase the size of the grid cells.</p>
 
-	<ca-grid style="--min-cell-inline-size: 48ch;">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid style="--min-cell-inline-size: 48ch;">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Cell width override with shortcut</h2>
+<h2>Cell width override with shortcut</h2>
 
-	<p>We can create convenient attributes, like <code>cell-size="large"</code> for applying popular cell sizes.</p>
+<p>We can create convenient attributes, like <code>cell-size="large"</code> for applying popular cell sizes.</p>
 
-	<ca-grid cell-size="large">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid cell-size="large">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Cell width and gap override</h2>
+<h2>Cell width and gap override</h2>
 
-	<p>Gaps can also be modified.</p>
+<p>Gaps can also be modified.</p>
 
-	<ca-grid style="--min-cell-inline-size: 20ch; --col-gap: 2rem;">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-		<p>Cell four.</p>
-		<p>Cell five.</p>
-		<p>Cell six.</p>
-	</ca-grid>
+<ca-grid style="--min-cell-inline-size: 20ch; --col-gap: 2rem;">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
+</ca-grid>
 
-	<h2>Grid flow with auto-fit (default)</h2>
+<h2>Grid flow with auto-fit (default)</h2>
 
-	<p>Fill excess width.</p>
+<p>Fill excess width.</p>
 
-	<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-	</ca-grid>
+<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+</ca-grid>
 
-	<h2>Grid flow with auto-fill</h2>
+<h2>Grid flow with auto-fill</h2>
 
-	<p>Don't fill excess width.</p>
+<p>Don't fill excess width.</p>
 
-	<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
-		<p>Cell one.</p>
-		<p>Cell two.</p>
-		<p>Cell three.</p>
-	</ca-grid>
-</main>
+<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+</ca-grid>

@@ -67,6 +67,18 @@
   --coastal-highlight-active: var(--coastal-highlight-active-light);
 
   /* Theme configuration */
+  --primary-static-10: var(--coastal-static-10);
+  --primary-static-20: var(--coastal-static-20);
+  --primary-static-30: var(--coastal-static-30);
+  --primary-static-40: var(--coastal-static-40);
+  --primary-static-50: var(--coastal-static-50);
+  --primary-static-60: var(--coastal-static-60);
+  --primary-static-70: var(--coastal-static-70);
+  --primary-static-80: var(--coastal-static-80);
+  --primary-static-90: var(--coastal-static-90);
+  --primary-static-100: var(--coastal-static-100);
+  --primary-static-110: var(--coastal-static-110);
+  --primary-static-120: var(--coastal-static-120);
   --primary-10: var(--coastal-10);
   --primary-20: var(--coastal-20);
   --primary-30: var(--coastal-30);

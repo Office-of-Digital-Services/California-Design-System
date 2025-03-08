@@ -275,6 +275,18 @@
 
   /* Default theme configuration. Set gray if coastal is not present. */
   /* Light mode (default) */
+  --primary-static-10: var(--gray-static-10);
+  --primary-static-20: var(--gray-static-20);
+  --primary-static-30: var(--gray-static-30);
+  --primary-static-40: var(--gray-static-40);
+  --primary-static-50: var(--gray-static-50);
+  --primary-static-60: var(--gray-static-60);
+  --primary-static-70: var(--gray-static-70);
+  --primary-static-80: var(--gray-static-80);
+  --primary-static-90: var(--gray-static-90);
+  --primary-static-100: var(--gray-static-100);
+  --primary-static-110: var(--gray-static-110);
+  --primary-static-120: var(--gray-static-120);
   --primary-10: var(--gray-10);
   --primary-20: var(--gray-20);
   --primary-30: var(--gray-30);

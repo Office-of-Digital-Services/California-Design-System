@@ -1,312 +1,324 @@
-<main>
-	<h1>Element defaults</h1>
+<h1>Element defaults</h1>
 
 
-	<h2>Blockquote</h2>
+<h2>Blockquote</h2>
 
-	<blockquote>
-		<p>Here's my excellent quote. It's so excellent that I'm highlighting it. Let's hope it wraps correctly.</p>
-		<p>Let's also see how this second paragraph behaves.</p>
-	</blockquote>
+<blockquote>
+  <p>Here's my excellent quote. It's so excellent that I'm highlighting it. Let's hope it wraps correctly.</p>
+  <p>Let's also see how this second paragraph behaves.</p>
+</blockquote>
 
-
-	<h2>Description list</h2>
-
-	<dl>
-		<dt>HTML</dt>
-		<dd>HyperText Markup Language</dd>
-		<dt>CSS</dt>
-		<dd>Cascading StyleSheet</dd>
-		<dt>JS</dt>
-		<dd>JavaScript</dd>
-	</dl>
-
-	<h2>Figure</h2>
-
-	<figure>
-		<img src="https://live.staticflickr.com/5718/30570616183_8c044d2a85_b.jpg" alt="A beautiful forest" />
-		<figcaption>The sun's rays pierce the think canopy of the forest.</figcaption>
-	</figure>
-
-	<h2>Horizontal rule</h2>
-
-	<hr />
-
-	<h2>Lists</h2>
-
-	<p>Here are the best condiments (in no particular order).</p>
-	<ul>
-		<li>Mayonnaise</li>
-		<li>Chimichurri</li>
-		<li>BBQ Sauce</li>
-	</ul>
-
-	<p>When you need more condiments, follow these steps (in order).</p>
-	<ol>
-		<li>Go to store.</li>
-		<li>Find desired condiments.</li>
-		<li>Pay money for said condiments.</li>
-		<li>Take condiments home.</li>
-	</ol>
-
-	<h2>Editor's marks</h2>
-
-	<p>
-		<del>This text should be deleted.</del> <ins>This text should be inserted.</ins> <mark>This text should be
-			highlighted.</mark>
-	</p>
-
-	<h2>Input instructions</h2>
-
-	<p>Please press <kbd>Ctrl</kbd> + <kbd>R</kbd> to reload.</p>
-
-	<h2>Abbreviations</h2>
-
-	<p>We look to <abbr>CDT</abbr> (California Department of Technology) for guidance on digital security.</p>
-
-	<h2>Forms</h2>
-
-	<form action="" method="get">
-		<ca-form-field>
-			<label for="text">Enter some text:</label>
-			<input type="text" name="text" id="text" required invalid />
-			<p><small>Enter whatever text you like. But you must enter something!</small></p>
-		</ca-form-field>
-
-		<!-- `div.ca-form-field` also works. Have our cake and eat it too. -->
-		<div class="ca-form-field">
-			<label for="textarea">Enter more text:</label>
-			<textarea name="textarea" id="textarea">Replace this default text...</textarea>
-		</div>
-
-		<ca-form-field>
-			<label for="email">Enter your email:</label>
-			<input type="email" name="email" id="email" required />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="password">Enter your password:</label>
-			<input type="password" name="password" id="password" required />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="date">Pick a date: </label>
-			<input type="date" name="date" id="date" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="datetime">Pick a date and time:</label>
-			<input type="datetime-local" name="datetime" id="datetime" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="month">Pick a month:</label>
-			<input type="month" name="month" id="month" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="week">Pick a week:</label>
-			<input type="week" name="week" id="week" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="time">Pick a time:</label>
-			<input type="time" name="time" id="time" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="number">Pick a number:</label>
-			<input type="number" name="number" id="number" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="tel">Enter a telephone number:</label>
-			<input type="tel" name="tel" id="tel" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<input type="checkbox" name="checkbox" id="checkbox" />
-			<label for="checkbox">I agree to the whatever.</label>
-			<p><small>By agreeing to the whatever, you will also be bound by the additional whatevers of this small
-					print.</small></p>
-		</ca-form-field>
-
-		<ca-form-field>
-			<input type="radio" name="radio" id="radio" />
-			<label for="radio">I select this default single option against my will.</label>
-		</ca-form-field>
-
-		<fieldset>
-			<legend>Choose your favorite condiments:</legend>
-
-			<ca-form-field>
-				<input type="checkbox" id="mustard" name="condiments" value="mustard" />
-				<label for="mustard">Mustard</label>
-			</ca-form-field>
-
-			<ca-form-field>
-				<input type="checkbox" id="wasabi" name="condiments" value="wasabi" />
-				<label for="wasabi">Wasabi</label>
-			</ca-form-field>
-
-			<ca-form-field>
-				<input type="checkbox" id="horshradish" name="condiments" value="horshradish" />
-				<label for="horshradish">Horseradish</label>
-			</ca-form-field>
-		</fieldset>
-
-		<fieldset>
-			<legend>What's the correct spelling?</legend>
-
-			<ca-form-field>
-				<input type="radio" id="ketchup" name="spelling" value="ketchup" />
-				<label for="ketchup">Ketchup</label>
-			</ca-form-field>
-
-			<ca-form-field>
-				<input type="radio" id="catsup" name="spelling" value="catsup" />
-				<label for="catsup">Catsup</label>
-			</ca-form-field>
-
-			<ca-form-field>
-				<input type="radio" id="what" name="spelling" value="what" />
-				<label for="what">What's up?</label>
-			</ca-form-field>
-		</fieldset>
-
-		<ca-form-field>
-			<label for="pet-select">Choose a pet:</label>
-			<select name="pets" id="pet-select">
-				<option value="dog">Dog</option>
-				<option value="cat">Cat</option>
-				<option value="hamster">Hamster</option>
-				<option value="parrot">Parrot</option>
-				<option value="spider">Spider</option>
-				<option value="goldfish">Goldfish</option>
-			</select>
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="dino-select">Choose a dinosaur:</label>
-			<select id="dino-select">
-				<optgroup label="Theropods">
-					<option>Tyrannosaurus</option>
-					<option>Velociraptor</option>
-					<option>Deinonychus</option>
-				</optgroup>
-				<optgroup label="Sauropods">
-					<option>Diplodocus</option>
-					<option>Saltasaurus</option>
-					<option>Apatosaurus</option>
-				</optgroup>
-			</select>
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="range">Adjust the range slider:</label>
-			<input type="range" name="range" id="range" min="0" max="100" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="color">Pick a color:</label>
-			<input type="color" name="color" id="color" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="search">Search:</label>
-			<input type="search" name="search" id="search" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="url">Enter a URL:</label>
-			<input type="url" name="url" id="url" />
-		</ca-form-field>
-
-		<ca-form-field>
-			<label for="file">Upload a file:</label>
-			<input type="file" name="file" id="file" />
-		</ca-form-field>
-
-		<input type="reset" value="Reset" />
-		<input type="submit" value="Submit" />
-	</form>
-
-	<h2>Meter</h2>
-
-	<p>
-		Battery charge level:
-		<meter min="0" low="50" high="80" max="100" value="84">84%</meter>
-	</p>
-
-	<h2>Progress</h2>
-
-	<label for="progress">File progress:</label>
-	<progress id="progress" max="100" value="70">70%</progress>
-
-	<h2>Details</h2>
-
-	<details>
-		<summary>Important details</summary>
-		<p>Are you really going to read the whole EULA?</p>
-	</details>
-
-	<h2>Accordion (multi-details)</h2>
-
-	<details>
-		<summary>Item #1</summary>
-		<p>First drawer.</p>
-	</details>
-	<details>
-		<summary>Item #2</summary>
-		<p>Second drawer.</p>
-	</details>
-	<details open>
-		<summary>Item #3</summary>
-		<p>Third drawer.</p>
-	</details>
-
-	<h2>Tables</h2>
-
-	<table>
-		<caption>
-			Front-end web developer course 2021
-		</caption>
-		<thead>
-			<tr>
-				<th scope="col">Person</th>
-				<th scope="col">Most interest in</th>
-				<th scope="col">Age</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">Chris</th>
-				<td>HTML tables</td>
-				<td>22</td>
-			</tr>
-			<tr>
-				<th scope="row">Dennis</th>
-				<td>Web accessibility</td>
-				<td>45</td>
-			</tr>
-			<tr>
-				<th scope="row">Sarah</th>
-				<td>JavaScript frameworks</td>
-				<td>29</td>
-			</tr>
-			<tr>
-				<th scope="row">Karen</th>
-				<td>Web performance</td>
-				<td>36</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<th scope="row" colspan="2">Average age</th>
-				<td>33</td>
-			</tr>
-		</tfoot>
-	</table>
+<h2>Links and buttons</h2>
+<p>
+  This is a <a href="#">link</a>. And here are the buttons.
+</p>
+<ca-flex gap="2" wrap class="margin-bottom-4">
+  <button>Primary</button>
+  <button class="gray">Gray</button>
+  <button class="yellow">Yellow</button>
+  <button class="red">Red</button>
+  <button class="magenta">Magenta</button>
+  <button class="orange">Orange</button>
+  <button class="green">Green</button>
+  <button class="blue">Blue</button>
+  <button class="purple">Purple</button>
+</ca-flex>
 
 
-</main>
+<h2>Description list</h2>
+
+<dl>
+  <dt>HTML</dt>
+  <dd>HyperText Markup Language</dd>
+  <dt>CSS</dt>
+  <dd>Cascading StyleSheet</dd>
+  <dt>JS</dt>
+  <dd>JavaScript</dd>
+</dl>
+
+<h2>Figure</h2>
+
+<figure>
+  <img src="https://live.staticflickr.com/5718/30570616183_8c044d2a85_b.jpg" alt="A beautiful forest" />
+  <figcaption>The sun's rays pierce the think canopy of the forest.</figcaption>
+</figure>
+
+<h2>Horizontal rule</h2>
+
+<hr />
+
+<h2>Lists</h2>
+
+<p>Here are the best condiments (in no particular order).</p>
+<ul>
+  <li>Mayonnaise</li>
+  <li>Chimichurri</li>
+  <li>BBQ Sauce</li>
+</ul>
+
+<p>When you need more condiments, follow these steps (in order).</p>
+<ol>
+  <li>Go to store.</li>
+  <li>Find desired condiments.</li>
+  <li>Pay money for said condiments.</li>
+  <li>Take condiments home.</li>
+</ol>
+
+<h2>Editor's marks</h2>
+
+<p>
+  <del>This text should be deleted.</del> <ins>This text should be inserted.</ins> <mark>This text should be
+    highlighted.</mark>
+</p>
+
+<h2>Input instructions</h2>
+
+<p>Please press <kbd>Ctrl</kbd> + <kbd>R</kbd> to reload.</p>
+
+<h2>Abbreviations</h2>
+
+<p>We look to <abbr>CDT</abbr> (California Department of Technology) for guidance on digital security.</p>
+
+<h2>Forms</h2>
+
+<form action="" method="get">
+  <ca-form-field>
+    <label for="text">Enter some text:</label>
+    <input type="text" name="text" id="text" required invalid />
+    <p><small>Enter whatever text you like. But you must enter something!</small></p>
+  </ca-form-field>
+
+  <!-- `div.ca-form-field` also works. Have our cake and eat it too. -->
+  <div class="ca-form-field">
+    <label for="textarea">Enter more text:</label>
+    <textarea name="textarea" id="textarea">Replace this default text...</textarea>
+  </div>
+
+  <ca-form-field>
+    <label for="email">Enter your email:</label>
+    <input type="email" name="email" id="email" required />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="password">Enter your password:</label>
+    <input type="password" name="password" id="password" required />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="date">Pick a date: </label>
+    <input type="date" name="date" id="date" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="datetime">Pick a date and time:</label>
+    <input type="datetime-local" name="datetime" id="datetime" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="month">Pick a month:</label>
+    <input type="month" name="month" id="month" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="week">Pick a week:</label>
+    <input type="week" name="week" id="week" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="time">Pick a time:</label>
+    <input type="time" name="time" id="time" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="number">Pick a number:</label>
+    <input type="number" name="number" id="number" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="tel">Enter a telephone number:</label>
+    <input type="tel" name="tel" id="tel" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <input type="checkbox" name="checkbox" id="checkbox" />
+    <label for="checkbox">I agree to the whatever.</label>
+    <p><small>By agreeing to the whatever, you will also be bound by the additional whatevers of this small
+        print.</small></p>
+  </ca-form-field>
+
+  <ca-form-field>
+    <input type="radio" name="radio" id="radio" />
+    <label for="radio">I select this default single option against my will.</label>
+  </ca-form-field>
+
+  <fieldset>
+    <legend>Choose your favorite condiments:</legend>
+
+    <ca-form-field>
+      <input type="checkbox" id="mustard" name="condiments" value="mustard" />
+      <label for="mustard">Mustard</label>
+    </ca-form-field>
+
+    <ca-form-field>
+      <input type="checkbox" id="wasabi" name="condiments" value="wasabi" />
+      <label for="wasabi">Wasabi</label>
+    </ca-form-field>
+
+    <ca-form-field>
+      <input type="checkbox" id="horshradish" name="condiments" value="horshradish" />
+      <label for="horshradish">Horseradish</label>
+    </ca-form-field>
+  </fieldset>
+
+  <fieldset>
+    <legend>What's the correct spelling?</legend>
+
+    <ca-form-field>
+      <input type="radio" id="ketchup" name="spelling" value="ketchup" />
+      <label for="ketchup">Ketchup</label>
+    </ca-form-field>
+
+    <ca-form-field>
+      <input type="radio" id="catsup" name="spelling" value="catsup" />
+      <label for="catsup">Catsup</label>
+    </ca-form-field>
+
+    <ca-form-field>
+      <input type="radio" id="what" name="spelling" value="what" />
+      <label for="what">What's up?</label>
+    </ca-form-field>
+  </fieldset>
+
+  <ca-form-field>
+    <label for="pet-select">Choose a pet:</label>
+    <select name="pets" id="pet-select">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="hamster">Hamster</option>
+      <option value="parrot">Parrot</option>
+      <option value="spider">Spider</option>
+      <option value="goldfish">Goldfish</option>
+    </select>
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="dino-select">Choose a dinosaur:</label>
+    <select id="dino-select">
+      <optgroup label="Theropods">
+        <option>Tyrannosaurus</option>
+        <option>Velociraptor</option>
+        <option>Deinonychus</option>
+      </optgroup>
+      <optgroup label="Sauropods">
+        <option>Diplodocus</option>
+        <option>Saltasaurus</option>
+        <option>Apatosaurus</option>
+      </optgroup>
+    </select>
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="range">Adjust the range slider:</label>
+    <input type="range" name="range" id="range" min="0" max="100" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="color">Pick a color:</label>
+    <input type="color" name="color" id="color" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="search">Search:</label>
+    <input type="search" name="search" id="search" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="url">Enter a URL:</label>
+    <input type="url" name="url" id="url" />
+  </ca-form-field>
+
+  <ca-form-field>
+    <label for="file">Upload a file:</label>
+    <input type="file" name="file" id="file" />
+  </ca-form-field>
+
+  <input type="reset" value="Reset" />
+  <input type="submit" value="Submit" />
+</form>
+
+<h2>Meter</h2>
+
+<p>
+  Battery charge level:
+  <meter min="0" low="50" high="80" max="100" value="84">84%</meter>
+</p>
+
+<h2>Progress</h2>
+
+<label for="progress">File progress:</label>
+<progress id="progress" max="100" value="70">70%</progress>
+
+<h2>Details</h2>
+
+<details>
+  <summary>Important details</summary>
+  <p>Are you really going to read the whole EULA?</p>
+</details>
+
+<h2>Accordion (multi-details)</h2>
+
+<details>
+  <summary>Item #1</summary>
+  <p>First drawer.</p>
+</details>
+<details>
+  <summary>Item #2</summary>
+  <p>Second drawer.</p>
+</details>
+<details open>
+  <summary>Item #3</summary>
+  <p>Third drawer.</p>
+</details>
+
+<h2>Tables</h2>
+
+<table>
+  <caption>
+    Front-end web developer course 2021
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Person</th>
+      <th scope="col">Most interest in</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Chris</th>
+      <td>HTML tables</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th scope="row">Dennis</th>
+      <td>Web accessibility</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th scope="row">Sarah</th>
+      <td>JavaScript frameworks</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th scope="row">Karen</th>
+      <td>Web performance</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" colspan="2">Average age</th>
+      <td>33</td>
+    </tr>
+  </tfoot>
+</table>

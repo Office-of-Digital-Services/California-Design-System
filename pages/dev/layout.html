@@ -1,0 +1,169 @@
+<ca-layout format="">
+  <ca-site-menu>
+    <a href="#content-nav" title="Menu">
+      <ca-icon name="bear-menu"></ca-icon>
+      <span class="visually-hidden">Menu</span>
+    </a>
+  </ca-site-menu>
+
+  <ca-site-logo>
+    <a href="/">
+      <svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
+        <circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
+      </svg>
+    </a>
+  </ca-site-logo>
+
+  <header>
+    <a href="/">
+      <span>California</span>
+      <span>Department Website</span>
+    </a>
+  </header>
+
+  <search>
+    <form>
+      <label for="site-search" class="visually-hidden">Search this site</label>
+      <input type="search" id="site-search" placeholder="Search" />
+      <button type="submit">
+        <ca-icon name="search"></ca-icon>
+        <span class="visually-hidden">Search</span>
+      </button>
+    </form>
+  </search>
+
+  <nav id="utility-nav" aria-label="Utility navigation">
+    <ca-layout-toggle></ca-layout-toggle>
+    <ca-utility-icon>
+      <ca-color-scheme-toggle></ca-color-scheme-toggle>
+    </ca-utility-icon>
+    <a href="#" title="Login">
+      <ca-utility-icon>
+        <ca-icon name="account-circle"></ca-icon>
+        <span class="visually-hidden">Login</span>
+      </ca-utility-icon>
+    </a>
+    <a href="#" title="Translate">
+      <ca-utility-icon>
+        <ca-icon name="language"></ca-icon>
+        <span class="visually-hidden">Translate</span>
+      </ca-utility-icon>
+    </a>
+  </nav>
+
+  <main>
+    <h1>Layout page</h1>
+    <p>Lead text.</p>
+    <p>Normal text.</p>
+    <h2>Heading</h2>
+    <p><a href="#">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+      anim id
+      est laborum.</p>
+  </main>
+
+  <nav id="content-nav" aria-label="Content navigation">
+    <ul>
+      <li><a href="#">Navigation link</a></li>
+      <li>
+        <a class="active" href="#">Nested link</a>
+        <ul>
+          <li><a href="#">Drawer 1</a></li>
+          <li><a href="#">Sub-link 2</a></li>
+          <li><a href="#">Nested link 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Another link that's super long</a></li>
+      <li><a href="#">Differ widths</a></li>
+      <li><a href="#">Test box model</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ca-grid>
+      <section>
+        <h2>Footer column heading</h2>
+        <ul>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Footer column heading</h2>
+        <ul>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Footer column heading</h2>
+        <ul>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+        </ul>
+      </section>
+    </ca-grid>
+
+    <ca-footer-links>
+      <ul>
+        <li><a href="#">Website Accessibility Certification</a></li>
+        <li><a href="#">Conditions of use</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+
+      <ca-social-links>
+        <a href="#">
+          <ca-icon name="mail"></ca-icon>
+          <span class="visually-hidden">Email</span>
+        </a>
+        <a href="#">
+          <ca-icon name="facebook"></ca-icon>
+          <span class="visually-hidden">Facebook</span>
+        </a>
+        <a href="#">
+          <ca-icon name="linked-in"></ca-icon>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+        <a href="#">
+          <ca-icon name="x-dot-com"></ca-icon>
+          <span class="visually-hidden">X.com</span>
+        </a>
+        <a href="#">
+          <ca-icon name="youtube"></ca-icon>
+          <span class="visually-hidden">YouTube</span>
+        </a>
+      </ca-social-links>
+    </ca-footer-links>
+
+    <ca-footer-end>
+      <div>
+        <ca-icon name="ca-bear"></ca-icon>
+        <p>An official California state website</p>
+        <p>© <ca-current-year>2025</ca-current-year> State of California</p>
+      </div>
+      <div>
+        <a href="#">
+          <ca-utility-icon with-border>
+            <ca-icon name="help"></ca-icon>
+            <span class="visually-hidden">Help</span>
+          </ca-utility-icon>
+        </a>
+        <a href="#">
+          <ca-utility-icon with-border>
+            <ca-icon name="back-to-top"></ca-icon>
+            <span class="visually-hidden">Back to top</span>
+          </ca-utility-icon>
+        </a>
+      </div>
+    </ca-footer-end>
+  </footer>
+</ca-layout>

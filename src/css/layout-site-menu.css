@@ -1,6 +1,7 @@
 ca-site-menu {
   display: flex;
   align-items: center;
+  background-color: var(--primary-background-20);
 
   & > :is(a, button) {
     all: unset;
@@ -71,6 +72,7 @@ ca-layout:has(ca-site-menu:not(:defined)) > nav#content-nav {
 
 nav#content-nav {
   padding: 1rem;
+  background-color: var(--primary-background-20);
 
   & ul {
     display: flex;
