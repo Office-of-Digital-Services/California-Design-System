@@ -1,4 +1,4 @@
-button,
+:where(button),
 a.button {
   --text-color: var(--primary-static-10);
   --background-color: var(--primary-highlight);
@@ -18,7 +18,7 @@ a.button {
       color-mix(in srgb, var(--text-color), transparent 80%) 100%
     ), var(--background-color);
 
-  &:hover {
+  &:where(:hover) {
     background-color: var(--hover-color);
   }
 

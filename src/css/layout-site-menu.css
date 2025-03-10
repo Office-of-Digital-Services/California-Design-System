@@ -6,8 +6,14 @@ ca-site-menu {
   & > :is(a, button) {
     all: unset;
     color: var(--primary-100);
+    background-color: var(--primary-background-20);
     padding: 0.5rem 1rem;
     cursor: pointer;
+
+    &:hover {
+      color: var(--primary-120);
+      background-color: var(--primary-background-50);
+    }
   }
 
   & ca-icon {
@@ -25,13 +31,18 @@ ca-site-menu {
 ca-site-menu[position="scrolled"] {
   & > :is(a, button) {
     position: fixed;
-    block-size: 4rem;
-    inline-size: 4rem;
+    block-size: 3rem;
+    inline-size: 3rem;
     inset-block-start: 1rem;
     inset-inline-start: 1rem;
     padding: .5rem;
     background-color: var(--primary-110);
     color: var(--primary-background-10);
+
+    &:hover {
+      color: var(--primary-background-40);
+      background-color: var(--primary-120);
+    }
   }
 
   & ca-icon {

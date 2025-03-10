@@ -18,12 +18,6 @@
       margin: 0;
     }
   }
-
-  & a,
-  ca-utility-icon {
-    color: var(--primary-100);
-    background-color: var(--primary-background-10);
-  }
 }
 
 /* Small desktop */
