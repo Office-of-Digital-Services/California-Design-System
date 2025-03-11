@@ -15,6 +15,7 @@ class LayoutToggle extends HTMLElement {
 				inline-size: auto;
 				font-size: .8rem;
 				color: var(--primary-100);
+				background-color: var(--primary-background-10);
 				border-radius: var(--border-radius);
 				box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 			}

@@ -1,15 +1,22 @@
 :where(nav#utility-nav) {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: end;
   padding: .5rem 1rem;
-  gap: 1rem;
   background-color: var(--primary-background-20);
 
-  & a,
-  ca-utility-icon {
-    color: var(--primary-100);
+  & > ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
+
+    & > li {
+      margin: 0;
+    }
   }
 }
 

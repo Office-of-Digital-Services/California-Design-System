@@ -41,10 +41,16 @@ search {
     justify-content: center;
     inline-size: 3rem;
     block-size: 100%;
+
     & ca-icon {
       display: inline;
       block-size: 100%;
       inline-size: 1rem;
+    }
+
+    &:hover {
+      color: var(--primary-120);
+      background-color: var(--primary-background-50);
     }
   }
 }

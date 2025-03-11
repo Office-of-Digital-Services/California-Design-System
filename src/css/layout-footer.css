@@ -158,10 +158,6 @@ ca-footer-end {
   & > div:nth-of-type(2) > a {
     justify-self: end;
   }
-
-  & ca-utility-icon {
-    color: var(--primary-100);
-  }
 }
 
 @container footer (width > 56rem) {
