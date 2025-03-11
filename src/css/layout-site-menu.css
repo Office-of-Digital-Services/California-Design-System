@@ -1,4 +1,5 @@
 ca-site-menu {
+  z-index: 4;
   display: flex;
   align-items: center;
   background-color: var(--primary-background-20);
@@ -33,11 +34,12 @@ ca-site-menu[position="scrolled"] {
     position: fixed;
     block-size: 3rem;
     inline-size: 3rem;
-    inset-block-start: 1rem;
-    inset-inline-start: 1rem;
+    top: 1rem;
+    left: 1rem;
     padding: .5rem;
     background-color: var(--primary-110);
     color: var(--primary-background-10);
+    box-shadow: .25rem .25rem .25rem 0px rgba(0, 0, 0, 0.25);
 
     &:hover {
       color: var(--primary-background-40);
@@ -117,6 +119,7 @@ ca-layout:has(ca-site-menu:not(:defined)) > nav#content-nav {
 
 nav#content-nav {
   padding: 1rem;
+  z-index: 3;
   background-color: var(--primary-background-20);
 
   & ul {
@@ -203,6 +206,88 @@ nav#content-nav {
     }
   }
 }
+
+/* The peeking drawer that slightly pops out when hovering over a nested nav item. */
+nav#content-nav > ul > li:has(ul):hover::before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  block-size: 100%;
+  inline-size: 1rem;
+  inset-block-start: 0;
+  inset-inline-start: 15rem;
+  background-color: var(--primary-background-30);
+  box-shadow: .25rem 0 .25rem 0 rgba(0, 0, 0, 0.05);
+}
+/* We need to lock the upper shadow in place, so it doesn't dance with the animation. */
+nav#content-nav > ul > li:has(ul):hover::after {
+  content: "";
+  z-index: 3;
+  position: absolute;
+  block-size: 100%;
+  inline-size: .5rem;
+  inset-block-start: 0;
+  inset-inline-start: 15rem;
+  background-color: var(--primary-background-30);
+  box-shadow: .25rem 0 .25rem 0 rgba(0, 0, 0, 0.05) inset;
+}
+
+@keyframes reveal-subnav-drawer {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+
+  16% {
+    opacity: 1;
+    transform: translateX(0.1rem);
+  }
+
+  28% {
+    transform: translateX(-0.05rem);
+  }
+
+  44% {
+    transform: translateX(0.001rem);
+  }
+
+  59% {
+    transform: translateX(-0.0001rem);
+  }
+
+  88% {
+    transform: translateX(0.00001rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Only add animation if user is okay with it. */
+@media (prefers-reduced-motion: no-preference) {
+  nav#content-nav > ul > li:has(ul):hover::before {
+    opacity: 0;
+    animation: reveal-subnav-drawer ease-out 0.8s forwards;
+  }
+}
+
+/*
+nav#content-nav ul ul {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 15rem;
+  display: flex;
+  padding: 3.5rem 1rem 1rem 1rem;
+  inline-size: 15rem;
+  block-size: 100%;
+  z-index: 2;
+  background-color: var(--primary-background-30);
+  box-shadow: .25rem 0 .25rem 0 rgba(0, 0, 0, 0.05);
+}
+*/
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {

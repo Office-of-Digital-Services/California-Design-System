@@ -9,6 +9,7 @@ ca-layout > header {
   display: inline-flex;
   align-items: center;
   align-content: center;
+  z-index: 3;
 
   & > a {
     all: unset;
