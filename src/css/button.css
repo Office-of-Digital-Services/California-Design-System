@@ -1,4 +1,4 @@
-:where(button),
+button,
 a.button {
   --text-color: var(--primary-static-10);
   --background-color: var(--primary-highlight);
