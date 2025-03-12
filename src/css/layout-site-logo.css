@@ -1,5 +1,6 @@
 ca-site-logo {
   display: none;
+  z-index: 3;
   background-color: var(--primary-background-20);
 
   & > a {

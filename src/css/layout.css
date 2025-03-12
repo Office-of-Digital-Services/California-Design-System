@@ -1,5 +1,6 @@
 /* General CSS rules */
 ca-layout {
+  position: relative;
   min-block-size: 100vh;
 }
 

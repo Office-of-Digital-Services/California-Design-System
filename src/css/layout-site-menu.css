@@ -1,4 +1,5 @@
 ca-site-menu {
+  z-index: 4;
   display: flex;
   align-items: center;
   background-color: var(--primary-background-20);
@@ -33,11 +34,12 @@ ca-site-menu[position="scrolled"] {
     position: fixed;
     block-size: 3rem;
     inline-size: 3rem;
-    inset-block-start: 1rem;
-    inset-inline-start: 1rem;
+    top: 1rem;
+    left: 1rem;
     padding: .5rem;
     background-color: var(--primary-110);
     color: var(--primary-background-10);
+    box-shadow: .25rem .25rem .25rem 0px rgba(0, 0, 0, 0.25);
 
     &:hover {
       color: var(--primary-background-40);
@@ -102,166 +104,5 @@ ca-site-menu[position="scrolled"] {
   ca-site-menu[position="scrolled"] > :is(a, button) {
     opacity: 0;
     animation: reveal-scrolled-burger ease-out 0.8s forwards;
-  }
-}
-
-/* Go ahead and display content-nav if JS disabled. */
-ca-layout:has(ca-site-menu:not(:defined)) > nav#content-nav {
-  display: block;
-
-  /* Without JS, display the nested lists too. */
-  & ul ul {
-    display: flex;
-  }
-}
-
-nav#content-nav {
-  padding: 1rem;
-  background-color: var(--primary-background-20);
-
-  & ul {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    row-gap: .5rem;
-    list-style-type: none;
-  }
-
-  /* Hide nested lists */
-  & ul ul {
-    display: none;
-    margin-inline-start: 1rem;
-  }
-
-  & li {
-    margin: 0;
-  }
-
-  & a {
-    box-sizing: border-box;
-    display: block;
-    font-size: var(--text-size-1);
-    padding: .5rem 1rem;
-    text-decoration: none;
-    color: var(--primary-110);
-    border-radius: var(--border-radius);
-
-    &:hover {
-      background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.0) 62%,
-          rgba(0, 97, 141, 0.14) 100%
-        ), var(--primary-background-40);
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
-
-    /* In-click state */
-    &:active {
-      background-color: var(--primary-background-50);
-      border: 1px solid var(--primary-80);
-    }
-
-    /* Defined as "active" link in UI, with class or data attribute. */
-    &.active,
-    &[data-active] {
-      position: relative;
-      color: var(--primary-120);
-      font-weight: 600;
-      background: var(--primary-background-50);
-      z-index: 0;
-
-      /* Need this wild mask to combine gradient border with rounded border. */
-      &::after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        inset: 0;
-        border-radius: var(--border-radius);
-        padding: 2px; /* Padding creates the border width. */
-        /* Apply the gradient background to the padding-box. */
-        background: radial-gradient(
-            circle closest-corner at left,
-            var(--primary-accent),
-            transparent 80%
-          )
-          padding-box;
-        /* Exclude the first layer of the mask (the content-box), from the second layer (everything). */
-        /* This mask clips the radial-gradient background above, so we only see the edge of it. */
-        mask: linear-gradient(black 0 0) content-box, linear-gradient(black 0 0);
-        mask-composite: exclude;
-      }
-
-      &:hover {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      }
-    }
-
-    &:focus-visible {
-      border: 2px solid var(--primary-10);
-      outline: 2px solid var(--primary-120);
-    }
-  }
-}
-
-/* Default (Eureka), small desktop */
-@media screen and (min-width: 1024px) {
-  /* Hide the burger */
-  ca-site-menu {
-    display: none;
-  }
-
-  /* Show the full nav. */
-  nav#content-nav {
-    display: block;
-  }
-}
-
-/* Horizon, small desktop */
-@media screen and (min-width: 1024px) {
-  ca-layout[format="horizon"] > nav#content-nav {
-    padding: 0 1rem 0 0;
-    border-block-start: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-      to right,
-      transparent,
-      var(--primary-accent),
-      transparent
-    );
-
-    & > ul {
-      flex-direction: row;
-      column-gap: 4rem;
-    }
-
-    a {
-      padding-block: 1rem;
-    }
-
-    a.active,
-    a[data-active] {
-      margin-block: 0;
-    }
-  }
-}
-
-/* Skyline, small desktop */
-@media screen and (min-width: 1024px) {
-  ca-layout[format="skyline"] > nav#content-nav {
-    display: flex;
-    align-items: center;
-    padding: 1rem 3rem;
-
-    & > ul {
-      flex-direction: row;
-      align-items: center;
-      column-gap: 4rem;
-    }
-
-    a.active,
-    a[data-active] {
-      margin-block: 0;
-    }
   }
 }

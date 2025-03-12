@@ -77,20 +77,24 @@
   </main>
 
   <nav id="content-nav" aria-label="Content navigation">
-    <ul>
-      <li><a href="#">Navigation link</a></li>
-      <li>
-        <a class="active" href="#">Nested link</a>
-        <ul>
-          <li><a href="#">Drawer 1</a></li>
-          <li><a href="#">Sub-link 2</a></li>
-          <li><a href="#">Nested link 3</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Another link that's super long</a></li>
-      <li><a href="#">Differ widths</a></li>
-      <li><a href="#">Test box model</a></li>
-    </ul>
+    <ca-nav-menu>
+      <ul>
+        <li><a href="#">Navigation link</a></li>
+        <li>
+          <ca-nav-menu>
+            <a href="#">Navigation</a>
+            <ul>
+              <li><a href="#">Drawer 1</a></li>
+              <li><a href="#">Sub-link 2</a></li>
+              <li><a href="#">Nested link 3</a></li>
+            </ul>
+          </ca-nav-menu>
+        </li>
+        <li><a href="#">Another link that's super long</a></li>
+        <li><a href="#">Differ widths</a></li>
+        <li><a href="#">Test box model</a></li>
+      </ul>
+    </ca-nav-menu>
   </nav>
 
   <footer>
