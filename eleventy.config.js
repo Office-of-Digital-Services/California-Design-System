@@ -20,6 +20,21 @@ async function build11tyCss() {
   );
   // CSS Valley Green Theme
   await cssBuilder("src/css/theme-valley.css", "_site/css/theme.valley.css");
+  // Non-system demo-site CSS
+  await cssBuilder(
+    "tools/demo-site-only-src/css/_bundle.css",
+    "_site/css/demo-only.css",
+  );
+}
+
+async function build11tyJs() {
+  // JS Bundle
+  await jsBuilder("src/js/_bundle.js", "_site/js/bundle.js");
+  // Non-system demo-site JS
+  await jsBuilder(
+    "tools/demo-site-only-src/js/_bundle.js",
+    "_site/js/demo-only.js",
+  );
 }
 
 export default async function (eleventyConfig) {
@@ -27,8 +42,7 @@ export default async function (eleventyConfig) {
     // Only build all of the bundle files during first run, not on every change.
     if (firstBuild || runMode !== "serve") {
       await build11tyCss();
-
-      await jsBuilder(jsBuildPath);
+      await build11tyJs();
       firstBuild = false;
     }
   });
@@ -40,7 +54,7 @@ export default async function (eleventyConfig) {
         await build11tyCss();
       }
       if (changedFile.endsWith(".js")) {
-        await jsBuilder(jsBuildPath);
+        await build11tyJs();
       }
     }
   });

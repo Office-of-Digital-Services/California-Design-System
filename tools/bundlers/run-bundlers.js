@@ -91,8 +91,11 @@ await cssBuilder(
 );
 
 // JavaScript
-await jsBuilder(`${fileSlug}.js`, { banner });
-await jsBuilder(`${fileSlug}.min.js`, { banner, minify: true });
+await jsBuilder("src/js/_bundle.js", `${fileSlug}.js`, { banner });
+await jsBuilder("src/js/_bundle.js", `${fileSlug}.min.js`, {
+  banner,
+  minify: true,
+});
 
 // Then compile builds into the zip.
 await zipBuilder("dist", `${fileSlug}-${packageData.version}.zip`);
