@@ -5,6 +5,7 @@ import { Features, bundle } from "lightningcss";
 
 /**
  * Compiles the CSS bundle to a given path.
+ * @param {string} srcPath The input path of the CSS bundle.
  * @param {string} distPath The output path of the finished CSS file.
  * @param {Object} options An optional collection of settings.
  * @param {string} options.banner A commented banner to place at the top of the built file.
