@@ -12,16 +12,25 @@
 
   <ca-site-logo>
     <a href="/">
-      <svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
-        <circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
-      </svg>
+      <svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1506_25118)">
+          <path d="M26.8588 17.1376V3.04688C12.8933 7.79347 2.36677 20.0374 0 35.0192H13.1283C14.967 27.2853 20.058 20.8086 26.8588 17.1376Z" fill="#007FB9"/>
+          <path d="M39.749 68.962C26.9008 68.962 16.1006 60.0067 13.1671 47.9766H0.0258789C3.13971 67.2254 19.7393 81.922 39.749 81.922C46.5176 81.922 52.8966 80.2372 58.4931 77.2662V61.4647C53.5921 66.1108 46.9974 68.962 39.749 68.962Z" fill="#007FB9"/>
+          <path d="M39.749 0.921875C39.749 0.921875 39.7426 0.921875 39.7394 0.921875V13.8819C39.7394 13.8819 39.7458 13.8819 39.749 13.8819C52.6487 13.8819 63.4875 22.9118 66.3631 35.0164H39.7329V47.9764H66.3309H79.4721C79.8166 45.8412 80.0002 43.6542 80.0002 41.4219C80.0002 19.0529 61.9773 0.921875 39.749 0.921875Z" fill="#007FB9"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_1506_25118">
+            <rect width="80" height="81" fill="white" transform="translate(0 0.921875)"/>
+          </clipPath>
+        </defs>
+     </svg>
     </a>
   </ca-site-logo>
 
   <header>
     <a href="/">
       <span>California</span>
-      <span>Department Website</span>
+      <span>Design System, Eureka</span>
     </a>
   </header>
 
@@ -72,19 +81,42 @@
   <nav id="content-nav" aria-label="Content navigation">
 		<ca-nav-menu>
       <ul>
-        <li><a href="/get-started.html">Get started</a></li>
         <li>
-          <ca-nav-menu>
-            <a href="#">Design</a>
+				<ca-nav-menu><a href="/get-started.html">Get started</a>
+					<ul>
+						<li><a href="">Content</a></li>
+						<li><a href="">Principles</a></li>
+					</ul>
+				</ca-nav-menu>
+				</li>
+        <li>
+          <ca-nav-menu><a href="#">Design</a>
             <ul>
-              <li><a href="#">Drawer 1</a></li>
-              <li><a href="#">Sub-link 2</a></li>
-              <li><a href="#">Nested link 3</a></li>
+              <li><a href="#">CA-grid layout</a></li>
+              <li><a href="#">CA-flex layout</a></li>
+							<li><a href="#">Typography</a></li>
+							<li><a href="#">UI-kit</a></li>
             </ul>
           </ca-nav-menu>
         </li>
-        <li><a href="#">Develop</a></li>
-				<li><a href="#">Building blocks</a></li>
+        <li>
+					<ca-nav-menu><a href="#">Develop</a>
+						<ul>
+							<li><a href="">Devleopment checklist</a></li>
+						</ul>
+					</ca-nav-menu>
+				</li>
+				<li>
+					<ca-nav-menu><a href="#">Building blocks</a>
+						<ul>
+							<li><a href="">Header | navigation</a></li>
+							<li><a href="">Cards</a></li>
+							<li><a href="">Tables</a></li>
+							<li><a href="">Alerts</a></li>
+							<li><a href="/pages/building-blocks/footer.html">Footer</a></li>
+						</ul>
+					</ca-nav-menu>
+				</li>
       </ul>
     </ca-nav-menu>
   </nav>
@@ -92,7 +124,15 @@
   <footer>
     <ca-grid>
       <section>
-        <h2>Footer column heading</h2>
+        <h2>Community of practice</h2>
+        <ul>
+          <li><a href="#">Digital Web Services Network (DWSN)</a></li>
+          <li><a href="#">Footer link</a></li>
+          <li><a href="#">Footer link</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>State resources</h2>
         <ul>
           <li><a href="#">Footer link</a></li>
           <li><a href="#">Footer link</a></li>
@@ -100,15 +140,7 @@
         </ul>
       </section>
       <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Footer column heading</h2>
+        <h2>External resources</h2>
         <ul>
           <li><a href="#">Footer link</a></li>
           <li><a href="#">Footer link</a></li>
