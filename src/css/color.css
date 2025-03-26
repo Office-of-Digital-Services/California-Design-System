@@ -1,9 +1,11 @@
 :root {
-  /* Universal link colors */
-  --link-light: #87cefa;
-  --link-light-active: #f692b9;
-  --link-dark: #0057ad;
-  --link-dark-active: #8a0071;
+  /* Link colors */
+  --link-light: #0057ad;
+  --link-light-active: #8a0071;
+  --link-dark: #87cefa;
+  --link-dark-active: #c686b9;
+  --text-light: #292929;
+  --text-dark: #fefefe;
 
   /* Grayscale palette, can be used as theme */
   --gray-static-10: #fefefe;
@@ -48,18 +50,18 @@
   --coastal-static-100: #003f5c;
   --coastal-static-110: #001f2e;
   --coastal-static-120: #000e14;
-  --coastal-lightest: var(--coastal-static-10);
+  --coastal-lightest: #fefeff;
   --coastal-lighter: #f4fbff;
   --coastal-light: #eaf8ff;
   --coastal-palest: #dff5ff;
   --coastal-paler: #caeeff;
   --coastal-pale: #b6e8ff;
-  --coastal-dim: #00405d;
-  --coastal-dimmer: #003248;
-  --coastal-dimmest: #002334;
-  --coastal-dark: #001c29;
-  --coastal-darker: #00151f;
-  --coastal-darkest: var(--coastal-static-120);
+  --coastal-dim: #004e72;
+  --coastal-dimmmer: #00405d;
+  --coastal-dimmest: #003248;
+  --coastal-dark: #002334;
+  --coastal-darker: #001c29;
+  --coastal-darkest: #00151f;
   --coastal-main-accent: var(--coastal-static-90);
   --coastal-optional-accent-dark: #d9b983;
   --coastal-optional-accent-light: #cc860c;
@@ -80,18 +82,18 @@
   --desert-static-100: #4b3a1a;
   --desert-static-110: #251d0d;
   --desert-static-120: #0f0c05;
-  --desert-lightest: var(--desert-static-10);
+  --desert-lightest: #fefefe;
   --desert-lighter: #fcfaf7;
   --desert-light: #f9f6ef;
   --desert-palest: #f6f1e8;
   --desert-paler: #f1e8d8;
   --desert-pale: #ebe0c9;
-  --desert-dim: #443618;
-  --desert-dimmer: #352a13;
-  --desert-dimmest: #261e0d;
+  --desert-dim: #54421e;
+  --desert-dimmer: #443618;
+  --desert-dimmest: #352a13;
   --desert-dark: #261e0d;
-  --desert-darker: #161208;
-  --desert-darkest: var(--desert-static-120);
+  --desert-darker: #261e0d;
+  --desert-darkest: #161208;
   --desert-main-accent: var(--desert-static-70);
   --desert-optional-accent-dark: #83a0ff;
   --desert-optional-accent-light: #2f65da;
@@ -112,18 +114,18 @@
   --mountain-static-100: #28363d;
   --mountain-static-110: #141b1e;
   --mountain-static-120: #080b0c;
-  --mountain-lightest: var(--mountain-static-10);
+  --mountain-lightest: #fefeff;
   --mountain-lighter: #f8fafa;
   --mountain-light: #f2f5f6;
   --mountain-palest: #ecf0f2;
   --mountain-paler: #dfe6ea;
   --mountain-pale: #d2dde2;
-  --mountain-dim: #243238;
-  --mountain-dimmer: #1c272c;
-  --mountain-dimmest: #141c1f;
-  --mountain-dark: #101619;
-  --mountain-darker: #0c1012;
-  --mountain-darkest: var(--mountain-static-120);
+  --mountain-dim: #2d3d45;
+  --mountain-dimmer: #243238;
+  --mountain-dimmest: #1c272c;
+  --mountain-dark: #141c1f;
+  --mountain-darker: #101619;
+  --mountain-darkest: #0c1012;
   --mountain-main-accent: var(--mountain-static-60);
   --mountain-optional-accent-dark: #bee6ff;
   --mountain-optional-accent-light: #167837;
@@ -144,18 +146,18 @@
   --valley-static-100: #1f4146;
   --valley-static-110: #0f2023;
   --valley-static-120: #060d0e;
-  --valley-lightest: var(--valley-static-10);
+  --valley-lightest: #feffff;
   --valley-lighter: #f7fbfb;
   --valley-light: #f0f7f8;
   --valley-palest: #e9f3f5;
   --valley-paler: #daecef;
   --valley-pale: #cce5e8;
-  --valley-dim: #1c3c41;
-  --valley-dimmer: #162e32;
-  --valley-dimmest: #0f2124;
-  --valley-dark: #0c1a1c;
-  --valley-darker: #091415;
-  --valley-darkest: var(--valley-static-120);
+  --valley-dim: #22494f;
+  --valley-dimmer: #1c3c41;
+  --valley-dimmest: #162e32;
+  --valley-dark: #0f2124;
+  --valley-darker: #0c1a1c;
+  --valley-darkest: #091415;
   --valley-main-accent: var(--valley-static-80);
   --valley-optional-accent-dark: #e7e7bf;
   --valley-optional-accent-light: #f64d13;
@@ -286,8 +288,9 @@
 /* Light mode (default) */
 :root,
 [data-color-scheme="light"] {
-  --link: var(--link-dark);
-  --link-active: var(--link-dark-active);
+  --link: var(--link-light);
+  --link-active: var(--link-light-active);
+  --text: var(--text-light);
 
   /* The dynamic palette inverts based on light or dark mode. Light here. */
   --gray-10: var(--gray-static-10);
@@ -490,15 +493,13 @@
   --yellow-110: var(--yellow-static-110);
   --yellow-120: var(--yellow-static-120);
   --yellow-highlight-active: var(--yellow-highlight-active-light);
-
-  --text: var(--gray-text);
-  --background: var(--gray-background);
 }
 
 /* Dark mode */
 [data-color-scheme="dark"] {
-  --link: var(--link-light);
-  --link-active: var(--link-light-active);
+  --link: var(--link-dark);
+  --link-active: var(--link-dark-active);
+  --text: var(--text-dark);
 
   /* Invert for dark mode. */
   --gray-10: var(--gray-static-120);
@@ -701,9 +702,6 @@
   --yellow-110: var(--yellow-static-30);
   --yellow-120: var(--yellow-static-10);
   --yellow-highlight-active: var(--yellow-highlight-active-dark);
-
-  --text: var(--gray-text);
-  --background: var(--gray-background);
 }
 
 :root,
