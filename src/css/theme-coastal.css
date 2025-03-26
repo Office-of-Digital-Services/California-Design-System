@@ -1,72 +1,4 @@
-/* Static color definitions for Coastal Blue */
 :root {
-  /* Basic palette */
-  --coastal-static-10: #fefeff;
-  --coastal-static-20: #d0f0ff;
-  --coastal-static-30: #a2e2ff;
-  --coastal-static-40: #73d3ff;
-  --coastal-static-50: #45c5fe;
-  --coastal-static-60: #17b6ff;
-  --coastal-static-70: #009fe7;
-  --coastal-static-80: #007fb9;
-  --coastal-static-90: #00618d;
-  --coastal-static-100: #003f5c;
-  --coastal-static-110: #001f2e;
-  --coastal-static-120: #000e14;
-  /* Background shades */
-  --coastal-lightest: var(--coastal-static-10);
-  --coastal-lighter: #f4fbff;
-  --coastal-light: #eaf8ff;
-  --coastal-palest: #dff5ff;
-  --coastal-paler: #caeeff;
-  --coastal-pale: #b6e8ff;
-  --coastal-dim: #00405d;
-  --coastal-dimmer: #003248;
-  --coastal-dimmest: #002334;
-  --coastal-dark: #001c29;
-  --coastal-darker: #00151f;
-  --coastal-darkest: var(--coastal-static-120);
-  /* Default accent */
-  --coastal-primary-accent: var(--coastal-static-90);
-  /* Optional accent */
-  --coastal-secondary-accent-dark: #d9b983;
-  --coastal-secondary-accent-light: #cc860c;
-  /* Highlight, call-to-action */
-  --coastal-highlight: var(--coastal-static-90);
-  --coastal-highlight-active-dark: var(--coastal-static-80);
-  --coastal-highlight-active-light: var(--coastal-static-100);
-}
-
-/* Everything below here can be copy/pasted to create a new theme. Just change "coastal" to "your-theme-name".
-
-/* Light mode (default) */
-:root,
-[data-color-scheme="light"] {
-  /* The dynamic palette inverts based on light or dark mode. Light here. */
-  --coastal-10: var(--coastal-static-10);
-  --coastal-20: var(--coastal-static-20);
-  --coastal-30: var(--coastal-static-30);
-  --coastal-40: var(--coastal-static-40);
-  --coastal-50: var(--coastal-static-50);
-  --coastal-60: var(--coastal-static-60);
-  --coastal-70: var(--coastal-static-70);
-  --coastal-80: var(--coastal-static-80);
-  --coastal-90: var(--coastal-static-90);
-  --coastal-100: var(--coastal-static-100);
-  --coastal-110: var(--coastal-static-110);
-  --coastal-120: var(--coastal-static-120);
-  --coastal-background-10: var(--coastal-lightest);
-  --coastal-background-20: var(--coastal-lighter);
-  --coastal-background-30: var(--coastal-light);
-  --coastal-background-40: var(--coastal-palest);
-  --coastal-background-50: var(--coastal-paler);
-  --coastal-background-60: var(--coastal-pale);
-  --coastal-secondary-accent: var(--coastal-secondary-accent-light);
-  --coastal-text: var(--coastal-120);
-  --coastal-background: var(--coastal-background-10);
-  --coastal-highlight-active: var(--coastal-highlight-active-light);
-
-  /* Theme configuration */
   --primary-static-10: var(--coastal-static-10);
   --primary-static-20: var(--coastal-static-20);
   --primary-static-30: var(--coastal-static-30);
@@ -79,114 +11,54 @@
   --primary-static-100: var(--coastal-static-100);
   --primary-static-110: var(--coastal-static-110);
   --primary-static-120: var(--coastal-static-120);
-  --primary-10: var(--coastal-10);
-  --primary-20: var(--coastal-20);
-  --primary-30: var(--coastal-30);
-  --primary-40: var(--coastal-40);
-  --primary-50: var(--coastal-50);
-  --primary-60: var(--coastal-60);
-  --primary-70: var(--coastal-70);
-  --primary-80: var(--coastal-80);
-  --primary-90: var(--coastal-90);
-  --primary-100: var(--coastal-100);
-  --primary-110: var(--coastal-110);
-  --primary-120: var(--coastal-120);
-  --primary-background-10: var(--coastal-background-10);
-  --primary-background-20: var(--coastal-background-20);
-  --primary-background-30: var(--coastal-background-30);
-  --primary-background-40: var(--coastal-background-40);
-  --primary-background-50: var(--coastal-background-50);
-  --primary-background-60: var(--coastal-background-60);
-  --primary-text: var(--coastal-text);
-  --primary-background: var(--coastal-background);
-  --primary-highlight-active: var(--coastal-highlight-active);
+  --primary-lightest: var(--coastal-lightest);
+  --primary-lighter: var(--coastal-lighter);
+  --primary-light: var(--coastal-light);
+  --primary-palest: var(--coastal-palest);
+  --primary-paler: var(--coastal-paler);
+  --primary-pale: var(--coastal-pale);
+  --primary-dim: var(--coastal-dim);
+  --primary-dimmer: var(--coastal-dimmer);
+  --primary-dimmest: var(--coastal-dimmest);
+  --primary-dark: var(--coastal-dark);
+  --primary-darker: var(--coastal-darker);
+  --primary-darkest: var(--coastal-darkest);
+
+  --primary-main-accent: var(--coastal-main-accent);
   --primary-highlight: var(--coastal-highlight);
 }
 
+/* Light mode */
+:root,
+[data-color-scheme="light"] {
+  --primary-optional-accent: var(--coastal-optional-accent-light);
+  --primary-highlight-active: var(--coastal-highlight-active-light);
+}
 /* Dark mode */
 [data-color-scheme="dark"] {
-  /* Inverted palettes for dark mode. */
-  --coastal-120: var(--coastal-static-10);
-  --coastal-110: var(--coastal-static-20);
-  --coastal-100: var(--coastal-static-30);
-  --coastal-90: var(--coastal-static-40);
-  --coastal-80: var(--coastal-static-50);
-  --coastal-70: var(--coastal-static-60);
-  --coastal-60: var(--coastal-static-70);
-  --coastal-50: var(--coastal-static-80);
-  --coastal-40: var(--coastal-static-90);
-  --coastal-30: var(--coastal-static-100);
-  --coastal-20: var(--coastal-static-110);
-  --coastal-10: var(--coastal-static-120);
-  --coastal-background-10: var(--coastal-darkest);
-  --coastal-background-20: var(--coastal-darker);
-  --coastal-background-30: var(--coastal-dark);
-  --coastal-background-40: var(--coastal-dimmest);
-  --coastal-background-50: var(--coastal-dimmer);
-  --coastal-background-60: var(--coastal-dim);
-  --coastal-secondary-accent: var(--coastal-secondary-accent-dark);
-  --coastal-text: var(--coastal-120);
-  --coastal-background: var(--coastal-background-10);
-  --coastal-highlight-active: var(--coastal-highlight-active-dark);
-
-  /* Theme configuration. */
-  --primary-10: var(--coastal-10);
-  --primary-20: var(--coastal-20);
-  --primary-30: var(--coastal-30);
-  --primary-40: var(--coastal-40);
-  --primary-50: var(--coastal-50);
-  --primary-60: var(--coastal-60);
-  --primary-70: var(--coastal-70);
-  --primary-80: var(--coastal-80);
-  --primary-90: var(--coastal-90);
-  --primary-100: var(--coastal-100);
-  --primary-110: var(--coastal-110);
-  --primary-120: var(--coastal-120);
-  --primary-background-10: var(--coastal-background-10);
-  --primary-background-20: var(--coastal-background-20);
-  --primary-background-30: var(--coastal-background-30);
-  --primary-background-40: var(--coastal-background-40);
-  --primary-background-50: var(--coastal-background-50);
-  --primary-background-60: var(--coastal-background-60);
-  --primary-text: var(--coastal-text);
-  --primary-background: var(--coastal-background);
-  --primary-highlight-active: var(--coastal-highlight-active);
-  --primary-highlight: var(--coastal-highlight);
+  --primary-optional-accent: var(--coastal-optional-accent-dark);
+  --primary-highlight-active: var(--coastal-highlight-active-dark);
 }
 
+/* The below definitions do not need to be spelled out like this in every theme. 
+ * We're just doing this for convenience in standard set-ups.
+ * In your custom theme, just define --primary-accent and --border-radius directly.
+*/
 :root,
 [data-accent*="primary"] {
-  --coastal-accent: var(--coastal-primary-accent);
-  --primary-accent: var(--coastal-accent);
+  --primary-accent: var(--primary-main-accent);
 }
 [data-accent*="secondary"] {
-  --coastal-accent: var(--coastal-secondary-accent);
-  --primary-accent: var(--coastal-accent);
+  --primary-accent: var(--primary-optional-accent);
 }
-
 :root,
-[data-accent*="left"] {
-  --coastal-accent-border-image: linear-gradient(
-    to right,
-    var(--coastal-accent),
-    transparent
-  );
-  --primary-accent-border-image: var(--coastal-accent-border-image);
+[data-corners="soft"] {
+  /* Roundedness default */
+  --border-radius: 0.25rem;
 }
-[data-accent*="solid"] {
-  --coastal-accent-border-image: linear-gradient(
-    to right,
-    var(--coastal-accent),
-    var(--coastal-accent)
-  );
-  --primary-accent-border-image: var(--coastal-accent-border-image);
+[data-corners="sharp"] {
+  --border-radius: 0;
 }
-[data-accent*="center"] {
-  --coastal-accent-border-image: linear-gradient(
-    to right,
-    transparent,
-    var(--coastal-accent),
-    transparent
-  );
-  --primary-accent-border-image: var(--coastal-accent-border-image);
+[data-corners="round"] {
+  --border-radius: 3.125rem;
 }

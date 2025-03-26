@@ -118,12 +118,8 @@ class LayoutToggle extends HTMLElement {
 					</fieldset>
 					<fieldset id="accent">
 						<legend>Accent</legend>
-						<label><input type="radio" name="accent" value="primary-left" /> Primary, left</label>
-						<label><input type="radio" name="accent" value="primary-center" /> Primary, center</label>
-						<label><input type="radio" name="accent" value="primary-solid" /> Primary, solid</label>
-						<label><input type="radio" name="accent" value="secondary-left" /> Secondary, left</label>
-						<label><input type="radio" name="accent" value="secondary-center" /> Secondary, center</label>
-						<label><input type="radio" name="accent" value="secondary-solid" /> Secondary, solid</label>
+						<label><input type="radio" name="accent" value="primary" />Primary</label>
+						<label><input type="radio" name="accent" value="secondary" />Secondary</label>
 					</fieldset>
 					<fieldset id="corners">
 						<legend>Corner</legend>
@@ -196,7 +192,7 @@ class LayoutToggle extends HTMLElement {
 
     // Set initial accent
     const accentFieldset = this.shadowRoot.querySelector("fieldset#accent");
-    const initialAccent = layout.getAttribute("data-accent") || "primary-left";
+    const initialAccent = layout.getAttribute("data-accent") || "primary";
     accentFieldset
       .querySelector(`input[value="${initialAccent}"]`)
       .setAttribute("checked", "");
@@ -227,7 +223,7 @@ class LayoutToggle extends HTMLElement {
     // Change theme
     themeFieldset.addEventListener("change", (event) => {
       const desiredTheme = head.querySelector(
-        `link[data-theme="${event.target.value}"]`
+        `link[data-theme="${event.target.value}"]`,
       );
       head.appendChild(desiredTheme);
     });
