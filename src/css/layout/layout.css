@@ -6,14 +6,14 @@ ca-layout {
 
 /* Layout grid area definitions */
 ca-layout {
-  /* Required when nav#content-nav is present. */
+  /* Required when ca-page-bar is present. */
   & > ca-site-menu {
     grid-area: burger;
   }
 
   /* Required when the ca-site-menu is present. */
   /* Horizon layout really needs this to work too. */
-  & > nav#content-nav {
+  & > ca-page-bar {
     grid-area: content-nav;
   }
 
@@ -28,12 +28,12 @@ ca-layout {
   }
 
   /* Optional */
-  & > search {
+  & > ca-priority-bar {
     grid-area: search;
   }
 
   /* Optional */
-  & > nav#utility-nav {
+  & > ca-utility-bar {
     grid-area: utility-nav;
   }
 
@@ -76,7 +76,7 @@ ca-layout {
       "footer footer footer";
 
     /* :where() drops specificity so it's easy to override on responsive queries. */
-    & > :where(nav#content-nav) {
+    & > :where(ca-page-bar) {
       display: none;
     }
 
@@ -91,8 +91,8 @@ ca-layout {
         "content-nav content-nav"
         "footer footer";
 
-      &:has(search[hidden]),
-      &:not(:has(search)) {
+      &:has(ca-priority-bar[hidden]),
+      &:not(:has(ca-priority-bar)) {
         grid-template-columns: auto;
         grid-template-areas:
           "utility-nav"
@@ -104,8 +104,8 @@ ca-layout {
     }
 
     /* For when there's no burger menu. */
-    &:has(search[hidden]):has(nav#utility-nav[hidden]),
-    &:not(:has(search)):not(:has(nav#utility-nav)) {
+    &:has(ca-priority-bar[hidden]):has(ca-utility-bar[hidden]),
+    &:not(:has(ca-priority-bar)):not(:has(ca-utility-bar)) {
       & > ca-site-menu {
         grid-column: span 3;
       }
@@ -140,15 +140,15 @@ ca-layout {
         "content-nav footer";
     }
 
-    &:has(nav#content-nav[hidden]),
-    &:not(:has(nav#content-nav)) {
-      & > search {
+    &:has(ca-page-bar[hidden]),
+    &:not(:has(ca-page-bar)) {
+      & > ca-priority-bar {
         grid-row: span 3;
         align-items: start;
       }
 
-      &:has(search[hidden]) header,
-      &:not(:has(search)) header {
+      &:has(ca-priority-bar[hidden]) header,
+      &:not(:has(ca-priority-bar)) header {
         grid-row: span 4;
       }
     }

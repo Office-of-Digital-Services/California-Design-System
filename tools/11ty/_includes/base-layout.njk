@@ -34,92 +34,98 @@
     </a>
   </header>
 
-  <search>
-    <form>
-      <label for="site-search" class="visually-hidden">Search this site</label>
-      <input type="search" id="site-search" placeholder="Search" />
-      <button type="submit">
-        <ca-icon name="search"></ca-icon>
-        <span class="visually-hidden">Search</span>
-      </button>
-    </form>
-  </search>
+	<ca-priority-bar>
+		<search>
+			<form>
+				<label for="site-search" class="visually-hidden">Search this site</label>
+				<input type="search" id="site-search" placeholder="Search" />
+				<button type="submit">
+					<ca-icon name="search"></ca-icon>
+					<span class="visually-hidden">Search</span>
+				</button>
+			</form>
+		</search>
+	</ca-priority-bar>
 
-  <nav id="utility-nav" aria-label="Utility navigation">
-    <ul>
-      <li>
-        <ca-layout-toggle></ca-layout-toggle>
-      </li>
-      <li>
-        <ca-utility-icon>
-          <ca-color-scheme-toggle></ca-color-scheme-toggle>
-        </ca-utility-icon>
-      </li>
-      <li>
-        <a href="#" title="Login">
-          <ca-utility-icon>
-            <ca-icon name="account-circle"></ca-icon>
-            <span class="visually-hidden">Login</span>
-          </ca-utility-icon>
-        </a>
-      </li>
-      <li>
-        <a href="#" title="Translate">
-          <ca-utility-icon>
-            <ca-icon name="language"></ca-icon>
-            <span class="visually-hidden">Translate</span>
-          </ca-utility-icon>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <main>
-    {{ content | safe }} 
-  </main>
-
-  <nav id="content-nav" aria-label="Content navigation">
-		<ca-nav-menu>
-      <ul>
-        <li>
-				<ca-nav-menu><a href="/pages/get-started/index">Get started</a>
-					<ul>
-						<li><a href="/pages/get-started/content">Content</a></li>
-						<li><a href="/pages/get-started/principles">Principles</a></li>
-					</ul>
-				</ca-nav-menu>
-				</li>
-        <li>
-          <ca-nav-menu><a href="/pages/design/index">Design</a>
-            <ul>
-              <li><a href="/pages/design/ca-grid">CA-grid layout</a></li>
-              <li><a href="/pages/design/ca-flex">CA-flex layout</a></li>
-							<li><a href="/pages/design/typography">Typography</a></li>
-							<li><a href="/pages/design/ui-kit">UI-kit</a></li>
-            </ul>
-          </ca-nav-menu>
-        </li>
-        <li>
-					<ca-nav-menu><a href="/pages/develop/index">Develop</a>
-						<ul>
-							<li><a href="/pages/develop/development-checklist">Devleopment checklist</a></li>
-						</ul>
-					</ca-nav-menu>
+	<ca-utility-bar>
+		<nav id="utility-nav" aria-label="Utility navigation">
+			<ul>
+				<li>
+					<ca-layout-toggle></ca-layout-toggle>
 				</li>
 				<li>
-					<ca-nav-menu><a href="/pages/building-blocks/index">Building blocks</a>
+					<ca-utility-icon>
+						<ca-color-scheme-toggle></ca-color-scheme-toggle>
+					</ca-utility-icon>
+				</li>
+				<li>
+					<a href="#" title="Login">
+						<ca-utility-icon>
+							<ca-icon name="account-circle"></ca-icon>
+							<span class="visually-hidden">Login</span>
+						</ca-utility-icon>
+					</a>
+				</li>
+				<li>
+					<a href="#" title="Translate">
+						<ca-utility-icon>
+							<ca-icon name="language"></ca-icon>
+							<span class="visually-hidden">Translate</span>
+						</ca-utility-icon>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</ca-utility-bar>
+
+	<ca-page-bar>
+		<nav id="content-nav" aria-label="Content navigation">
+			<ca-nav-menu>
+				<ul>
+					<li>
+					<ca-nav-menu><a href="/pages/get-started/index">Get started</a>
 						<ul>
-							<li><a href="/pages/building-blocks/header-navigation">Header | navigation</a></li>
-							<li><a href="/pages/building-blocks/cards">Cards</a></li>
-							<li><a href="/pages/building-blocks/tables">Tables</a></li>
-							<li><a href="/pages/building-blocks/alerts">Alerts</a></li>
-							<li><a href="/pages/building-blocks/footer">Footer</a></li>
+							<li><a href="/pages/get-started/content">Content</a></li>
+							<li><a href="/pages/get-started/principles">Principles</a></li>
 						</ul>
 					</ca-nav-menu>
-				</li>
-      </ul>
-    </ca-nav-menu>
-  </nav>
+					</li>
+					<li>
+						<ca-nav-menu><a href="/pages/design/index">Design</a>
+							<ul>
+								<li><a href="/pages/design/ca-grid">CA-grid layout</a></li>
+								<li><a href="/pages/design/ca-flex">CA-flex layout</a></li>
+								<li><a href="/pages/design/typography">Typography</a></li>
+								<li><a href="/pages/design/ui-kit">UI-kit</a></li>
+							</ul>
+						</ca-nav-menu>
+					</li>
+					<li>
+						<ca-nav-menu><a href="/pages/develop/index">Develop</a>
+							<ul>
+								<li><a href="/pages/develop/development-checklist">Devleopment checklist</a></li>
+							</ul>
+						</ca-nav-menu>
+					</li>
+					<li>
+						<ca-nav-menu><a href="/pages/building-blocks/index">Building blocks</a>
+							<ul>
+								<li><a href="/pages/building-blocks/header-navigation">Header | navigation</a></li>
+								<li><a href="/pages/building-blocks/cards">Cards</a></li>
+								<li><a href="/pages/building-blocks/tables">Tables</a></li>
+								<li><a href="/pages/building-blocks/alerts">Alerts</a></li>
+								<li><a href="/pages/building-blocks/footer">Footer</a></li>
+							</ul>
+						</ca-nav-menu>
+					</li>
+				</ul>
+			</ca-nav-menu>
+		</nav>
+	</ca-page-bar>
+
+	<main>
+    {{ content | safe }} 
+  </main>
 
   <footer>
     <ca-grid>
