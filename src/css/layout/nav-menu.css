@@ -1,9 +1,3 @@
-ca-page-bar {
-  padding: 1rem;
-  z-index: 3;
-  background-color: var(--primary-background-20);
-}
-
 @media screen and (min-width: 1024px) {
   /* Horizon, small desktop */
   ca-layout[format="horizon"] > ca-page-bar {
@@ -91,12 +85,12 @@ ca-nav-menu {
     }
     /* When needed, apply background color to bring it to life. */
     &:is(:hover, :active, .active)::before {
-      background: var(--primary-accent);
+      background-color: var(--primary-accent);
       clip-path: inset(15% 0); /* Clip the size of the block slightly. */
     }
 
     &:hover {
-      background: var(--primary-background-40);
+      background-color: var(--primary-background-40);
     }
 
     /* In-click state */
@@ -109,16 +103,16 @@ ca-nav-menu {
     &.active {
       color: var(--primary-120);
       font-weight: 600;
-      background: var(--primary-background-50);
+      background-color: var(--primary-background-50);
       z-index: 0;
 
       &:hover {
-        background: var(--primary-background-60);
+        background-color: var(--primary-background-60);
       }
     }
 
     &:focus-visible {
-      background: var(--primary-background-20);
+      background-color: var(--primary-background-20);
       border: 2px solid var(--primary-10);
       outline: 2px solid var(--primary-120);
     }
@@ -137,96 +131,8 @@ ca-nav-menu {
   }
 }
 
-@keyframes reveal-subnav-drawer-eureka {
-  0% {
-    opacity: 0;
-    transform: translateX(-1rem);
-  }
-
-  16% {
-    opacity: 1;
-    transform: translateX(0.1rem);
-  }
-
-  28% {
-    transform: translateX(-0.05rem);
-  }
-
-  44% {
-    transform: translateX(0.001rem);
-  }
-
-  59% {
-    transform: translateX(-0.0001rem);
-  }
-
-  88% {
-    transform: translateX(0.00001rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pull-subnav-drawer-eureka {
-  0% {
-    opacity: 0;
-    transform: translateX(-2rem);
-  }
-
-  16% {
-    opacity: 1;
-    transform: translateX(.5rem);
-  }
-
-  28% {
-    transform: translateX(-0.25rem);
-  }
-
-  44% {
-    transform: translateX(0.05rem);
-  }
-
-  59% {
-    transform: translateX(-0.001rem);
-  }
-
-  88% {
-    transform: translateX(0.00001rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes reveal-pulldown-menu {
-  from {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translatey(0);
-  }
-}
-
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  /* Hide the burger */
-  ca-site-menu {
-    display: none;
-  }
-
-  /* Show the full nav. */
-  ca-page-bar {
-    display: block;
-  }
-
   ca-layout:not([format="horizon"]):not([format="skyline"]) {
     /* The peeking drawer that slightly pops out when hovering over a nested nav item. */
     & ca-nav-menu {
@@ -320,7 +226,7 @@ ca-nav-menu {
         }
 
         &:is(:hover, .active) {
-          background: unset;
+          background-color: unset;
         }
 
         /* In-click state */
@@ -403,6 +309,47 @@ ca-nav-menu {
     }
   }
 }
+
+/* 
+ * Animations 
+ */
+
+@keyframes reveal-subnav-drawer-eureka {
+  from {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pull-subnav-drawer-eureka {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-pulldown-menu {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Animations for desktop. */
 @media screen and (min-width: 1024px) and (
     prefers-reduced-motion: no-preference
@@ -410,17 +357,17 @@ ca-nav-menu {
   ca-layout:not([format="horizon"]):not([format="skyline"]) {
     & ca-nav-menu:not([expanded]):has(> button:hover)::before {
       opacity: 0;
-      animation: reveal-subnav-drawer-eureka ease-out 0.8s forwards;
+      animation: reveal-subnav-drawer-eureka ease-out 0.2s forwards;
     }
     & ca-nav-menu[expanded] > ul {
       opacity: 0;
-      animation: pull-subnav-drawer-eureka ease-out 0.8s forwards;
+      animation: pull-subnav-drawer-eureka ease-out 0.2s forwards;
     }
   }
   ca-layout[format="horizon"] {
     & ca-nav-menu[expanded] > ul {
       opacity: 0;
-      animation: reveal-pulldown-menu ease-out 0.3s forwards;
+      animation: reveal-pulldown-menu ease-out 0.2s forwards;
     }
   }
 }

@@ -5,6 +5,7 @@ search {
     align-items: center;
     justify-content: space-between;
     block-size: 3rem;
+    min-inline-size: 13rem;
     max-inline-size: 62ch;
     background-color: var(--primary-background-40);
     border-radius: var(--border-radius);

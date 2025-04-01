@@ -1,4 +1,4 @@
-:where(ca-utility-bar) {
+ca-utility-bar {
   display: flex;
   align-items: center;
   justify-content: end;
@@ -22,14 +22,14 @@
 
 /* Small desktop */
 @media screen and (min-width: 1024px) {
-  :where(ca-utility-bar) {
+  ca-utility-bar {
     background-color: unset;
   }
 
   ca-layout {
     &[format="horizon"],
     &[format="skyline"] {
-      & > :where(ca-utility-bar) {
+      & > ca-utility-bar {
         background-color: var(--primary-background-20);
       }
     }

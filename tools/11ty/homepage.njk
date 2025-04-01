@@ -1,15 +1,13 @@
-<main>
-	<h1>Design System Dev</h1>
-	<p>Use demo pages to test the system, in part and in full.</p>
-	<p>Demo pages are located in the <em>pages</em> folder.</p>
-	{% for folder in pages %}
-	<h2>{{ folder[0].dir }}</h2>
-	<ul>
-	{% for link in folder %}
-		<li>
-			<a href="{{link.href}}">{{link.name}}</a>
-		</li>
-	{% endfor %}
-	</ul>
-	{% endfor %}
-</main>
+<h1>Design System Dev</h1>
+<p>Use demo pages to test the system, in part and in full.</p>
+<p>Demo pages are located in the <em>pages</em> folder.</p>
+{% for folder in pages %}
+<h2>{{ folder[0].dir }}</h2>
+<ul>
+{% for link in folder %}
+	<li>
+		<a href="{{link.href}}">{{link.name}}</a>
+	</li>
+{% endfor %}
+</ul>
+{% endfor %}

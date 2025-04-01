@@ -106,3 +106,11 @@ ca-site-menu[position="scrolled"] {
     animation: reveal-scrolled-burger ease-out 0.8s forwards;
   }
 }
+
+/* Default (Eureka), small desktop */
+@media screen and (min-width: 1024px) {
+  /* Hide the burger */
+  ca-site-menu {
+    display: none;
+  }
+}

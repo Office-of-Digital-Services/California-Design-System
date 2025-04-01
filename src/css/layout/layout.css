@@ -75,11 +75,6 @@ ca-layout {
       "content-nav content-nav content-nav"
       "footer footer footer";
 
-    /* :where() drops specificity so it's easy to override on responsive queries. */
-    & > :where(ca-page-bar) {
-      display: none;
-    }
-
     /* Since none of the top row items are required on mobile, we can't "fr" any of them, so we need to redefine grid when some are missing. */
     &:has(ca-site-menu[hidden]),
     &:not(:has(ca-site-menu)) {
