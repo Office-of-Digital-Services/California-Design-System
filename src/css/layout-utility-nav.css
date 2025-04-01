@@ -23,7 +23,7 @@
 /* Small desktop */
 @media screen and (min-width: 1024px) {
   :where(nav#utility-nav) {
-    background-color: var(--primary-background-10);
+    background-color: unset;
   }
 
   ca-layout {
