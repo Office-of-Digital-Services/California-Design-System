@@ -1,0 +1,172 @@
+<style>
+	th {
+		font-size: 1.35rem;
+		text-align: left;
+	}
+
+	code {
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+</style>
+<h1>CA-flexbox</h1>
+<p><code>Flexbox</code> is a tool in <code>CSS</code> that helps organize and arrange items inside a container. It
+	makes it easy to
+	adjust the
+	size, spacing, and alignment of items so they look good on different screen sizes. It's especially useful for
+	designing web pages that work well on both big and small screens.</p>
+<h2>Live demo</h2>
+<p>Coming soon.</p>
+<h2>Anatomy</h2>
+<ol>
+	<li><code>Flex container</code> is the parent element that has display: flex or display: inline-flex applied to
+		it, defining the layout rules.</li>
+	<li><code>Flex items</code> are the direct children of the flex container that are arranged within the container.
+	</li>
+	<li><code>Main-axis</code> is the primary direction in which flex items are arranged, determined by the
+		flex-direction property.</li>
+	<li><code>Cross-axis</code> is perpendicular to the main axis, used for alignment and spacing.</li>
+	<li><code>Flex properties</code> are a set of CSS properties used to control the layout of flex items within the
+		flex container,
+		including flex-direction, justify-content, align-items, flex-wrap, etc.</li>
+</ol>
+<h3>Usage</h3>
+<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
+	<section>
+		<h4>Do</h4>
+		<ul>
+			<li>I made a change.</li>
+			<li></li>
+		</ul>
+	</section>
+	<section>
+		<h4>Don't </h4>
+		<ul>
+			<li></li>
+			<li></li>
+		</ul>
+	</section>
+</ca-grid>
+<h2>Developer notes</h2>
+<table>
+	<thead>
+		<tr>
+			<th scope="col" style="width: 20%;">Tags, attributes, classes</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><code>ca-flex</code></th>
+			<td>Custom building block for our <code>flex-box</code> containers.</td>
+		</tr>
+		<tr>
+			<th scope="row"><code>ca-self</code></th>
+			<td>Custom building block you can use to apply <code>CSS flexbox</code> properties without
+				needing additional utility classes, though, we
+				have utility classes in case they are needed.</td>
+		</tr>
+		<tr>
+			<th scope="row"><code>display: flex;</code></th>
+			<td>Sets the container to display as a <code>flexbox</code>.</td>
+		</tr>
+		<tr>
+			<th scope="row"><code>display: inline-flex;</code></th>
+			<td>Sets the container to display as an <code>inline-flexbox</code>.</td>
+		</tr>
+		<tr>
+			<th scope="row"><code>direction=""</code></th>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>grow=""</code></th>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>shrink=""</code></th>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>basis=""</code></th>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>name=""</code></th>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>.visually-hidden</code></th>
+			<td><code></code></td>
+		</tr>
+	</tbody>
+</table>
+<h2>Accessibility</h2>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Element or property</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>footer</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-grid</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-footer-links</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-social-links</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-footer-end</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-current-year</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-utility-icon</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>ca-icon</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>name=""</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>.visually-hidden</code></td>
+			<td><code></code></td>
+		</tr>
+	</tbody>
+</table>
+<h2>Changelog</h2>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Date</th>
+			<th scope="col">Version</th>
+			<th scope="col">Affects</th>
+			<th scope="col">Notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>MM/DD/YYYY</td>
+			<td>0.0.0.0</td>
+			<td>Something</td>
+			<td>This is the first release.</td>
+		</tr>
+	</tbody>
+</table>
