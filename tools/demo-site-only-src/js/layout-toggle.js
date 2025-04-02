@@ -95,7 +95,7 @@ class LayoutToggle extends HTMLElement {
 						<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
 						<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
 						<label><input type="checkbox" name="header" value="header" /> Header</label>
-						<label><input type="checkbox" name="search" value="search" /> Search</label>
+						<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> ca-priority-bar</label>
 						<label><input type="checkbox" name="utility-nav" value="utility-nav" /> Utility nav</label>
 						<label><input type="checkbox" name="content-nav" value="content-nav" /> Content nav</label>
 						<label><input type="checkbox" name="main" value="main" /> Main</label>
@@ -118,12 +118,8 @@ class LayoutToggle extends HTMLElement {
 					</fieldset>
 					<fieldset id="accent">
 						<legend>Accent</legend>
-						<label><input type="radio" name="accent" value="primary-left" /> Primary, left</label>
-						<label><input type="radio" name="accent" value="primary-center" /> Primary, center</label>
-						<label><input type="radio" name="accent" value="primary-solid" /> Primary, solid</label>
-						<label><input type="radio" name="accent" value="secondary-left" /> Secondary, left</label>
-						<label><input type="radio" name="accent" value="secondary-center" /> Secondary, center</label>
-						<label><input type="radio" name="accent" value="secondary-solid" /> Secondary, solid</label>
+						<label><input type="radio" name="accent" value="primary" />Primary</label>
+						<label><input type="radio" name="accent" value="secondary" />Secondary</label>
 					</fieldset>
 					<fieldset id="corners">
 						<legend>Corner</legend>
@@ -196,7 +192,7 @@ class LayoutToggle extends HTMLElement {
 
     // Set initial accent
     const accentFieldset = this.shadowRoot.querySelector("fieldset#accent");
-    const initialAccent = layout.getAttribute("data-accent") || "primary-left";
+    const initialAccent = layout.getAttribute("data-accent") || "primary";
     accentFieldset
       .querySelector(`input[value="${initialAccent}"]`)
       .setAttribute("checked", "");
@@ -227,7 +223,7 @@ class LayoutToggle extends HTMLElement {
     // Change theme
     themeFieldset.addEventListener("change", (event) => {
       const desiredTheme = head.querySelector(
-        `link[data-theme="${event.target.value}"]`
+        `link[data-theme="${event.target.value}"]`,
       );
       head.appendChild(desiredTheme);
     });
@@ -236,9 +232,9 @@ class LayoutToggle extends HTMLElement {
       this.setupIncludeToggle(layout, "site-menu", "ca-site-menu");
       this.setupIncludeToggle(layout, "site-logo", "ca-site-logo");
       this.setupIncludeToggle(layout, "header", "header");
-      this.setupIncludeToggle(layout, "search", "search");
-      this.setupIncludeToggle(layout, "utility-nav", "nav#utility-nav");
-      this.setupIncludeToggle(layout, "content-nav", "nav#content-nav");
+      this.setupIncludeToggle(layout, "ca-priority-bar", "ca-priority-bar");
+      this.setupIncludeToggle(layout, "utility-nav", "ca-utility-bar");
+      this.setupIncludeToggle(layout, "content-nav", "ca-page-bar");
       this.setupIncludeToggle(layout, "main", "main");
       this.setupIncludeToggle(layout, "footer", "footer");
     }, 1);

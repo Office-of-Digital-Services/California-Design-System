@@ -38,7 +38,11 @@ ca-layout > footer {
     padding-block-end: 2rem;
     border-block-end: 2px solid;
     border-image-slice: 1;
-    border-image-source: var(--primary-accent-border-image);
+    border-image-source: linear-gradient(
+      to right,
+      var(--primary-accent),
+      transparent
+    );
   }
 
   & section {
@@ -52,9 +56,6 @@ ca-layout > footer {
     font-weight: 600;
     margin-block: 0 1rem;
     padding-block: 0 1rem;
-    border-block-end: 2px solid;
-    border-image-slice: 1;
-    border-image-source: var(--primary-accent-border-image);
   }
 }
 
