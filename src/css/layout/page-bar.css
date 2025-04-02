@@ -1,0 +1,19 @@
+ca-page-bar {
+  display: none; /* Hide by default on mobile. */
+  padding: 1rem;
+  z-index: 3;
+  background-color: var(--primary-background-20);
+}
+
+/* Small desktop */
+@media screen and (min-width: 1024px) {
+  /* Hide the burger */
+  ca-site-menu {
+    display: none;
+  }
+
+  /* Show the full nav on desktop. */
+  ca-page-bar {
+    display: block;
+  }
+}

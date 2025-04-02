@@ -5,22 +5,22 @@
 
 /// BEGIN ARROW ROTATION ///
 ////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("details").forEach((details) => {
+document.addEventListener("DOMContentLoaded", () => {
+  for (const details of document.querySelectorAll("details")) {
     // Set initial rotation state based on whether details is open
-    let arrow = details.querySelector(".arrow");
+    const arrow = details.querySelector(".arrow");
     if (arrow) {
       arrow.style.transform = details.open ? "rotate(180deg)" : "rotate(0deg)";
     }
 
     // Add event listener for each <details>
     details.addEventListener("toggle", function () {
-      let arrow = this.querySelector(".arrow");
+      const arrow = this.querySelector(".arrow");
       if (arrow) {
         arrow.style.transform = this.open ? "rotate(180deg)" : "rotate(0deg)";
       }
     });
-  });
+  }
 });
 
 /// END ARROW ROTATION ///
@@ -28,24 +28,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /// Tabs (HTML, CSS, JS) for Code Snippet ///
 /////////////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Find all tab groups
-  document.querySelectorAll(".tab-container").forEach((tabContainer) => {
+  for (const tabContainer of document.querySelectorAll(".tab-container")) {
     const tabButtons = tabContainer.querySelectorAll(".tablinks");
     const tabContents = tabContainer.querySelectorAll(".tabcontent");
 
     // Add event listeners to tab buttons
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", function (event) {
+    for (const button of tabButtons) {
+      button.addEventListener("click", (event) => {
         openTab(event, button.dataset.code, tabContainer);
       });
-    });
+    }
 
     // Open the first tab in this group by default
     if (tabButtons.length > 0) {
       tabButtons[0].click(); // Simulate a click to open the first tab
     }
-  });
+  }
 });
 
 function openTab(evt, codeType, tabContainer) {
@@ -53,14 +53,14 @@ function openTab(evt, codeType, tabContainer) {
   const tabContents = tabContainer.querySelectorAll(".tabcontent");
 
   // Hide all tab contents in this group
-  tabContents.forEach((content) => {
+  for (const content of tabContents) {
     content.style.display = "none";
-  });
+  }
 
   // Remove "active" class from all buttons in this group
-  tabButtons.forEach((button) => {
+  for (const button of tabButtons) {
     button.classList.remove("active");
-  });
+  }
 
   // Show the selected tab content
   const selectedTab = tabContainer.querySelector(`#${codeType}`);
@@ -69,7 +69,7 @@ function openTab(evt, codeType, tabContainer) {
   }
 
   // Add "active" class to the clicked tab
-  if (evt && evt.currentTarget) {
+  if (evt?.currentTarget) {
     evt.currentTarget.classList.add("active");
   }
 }
@@ -78,7 +78,7 @@ function openTab(evt, codeType, tabContainer) {
 
 /// BUILDING BLOCK OPTION TOGGLER ///
 /////////////////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Open the first <details> element by default
   const firstDetails = document.querySelector("details");
   if (firstDetails) {
@@ -86,23 +86,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add event listeners to all <details> elements
-  document.querySelectorAll("details").forEach((details) => {
+  for (details of document.querySelectorAll("details")) {
     details.addEventListener("click", function () {
       // Get the target output container ID from the data-target attribute
       const targetId = this.getAttribute("data-target");
       const outputContainer = document.getElementById(targetId);
 
       // Hide all output containers first
-      document.querySelectorAll(".output-container").forEach((item) => {
+      for (const item of document.querySelectorAll(".output-container")) {
         item.style.display = "none";
-      });
+      }
 
       // Show the selected output container
       if (outputContainer) {
         outputContainer.style.display = "block";
       }
     });
-  });
+  }
 });
 
 /// END TOGGLER ///
@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /// BEGIN COPY BUTTON ///
 /////////////////////////
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".copy-btn").forEach((button) => {
+document.addEventListener("DOMContentLoaded", () => {
+  for (const button of document.querySelectorAll(".copy-btn")) {
     button.addEventListener("click", function () {
       const container = this.closest(".copy-container");
       const textElement = container.querySelector(".textToCopy");
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
       }
     });
-  });
+  }
 });
 /// END COPY BUTTON ///
 ///////////////////////
@@ -143,28 +143,30 @@ document.addEventListener("DOMContentLoaded", function () {
 /////////////////////////////////////////////////////
 
 function encodeHTML(str) {
-  return str.replace(/[&<>"']/g, function (match) {
-    return {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    }[match];
-  });
+  return str.replace(
+    /[&<>"']/g,
+    (match) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[match],
+  );
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".lint").forEach((element) => {
+document.addEventListener("DOMContentLoaded", () => {
+  for (const element of document.querySelectorAll(".lint")) {
     if (element.childNodes.length) {
-      element.childNodes.forEach((node) => {
+      for (const node of element.childNodes) {
         if (node.nodeType === 3) {
           // Text nodes only
           node.nodeValue = encodeHTML(node.nodeValue);
         }
-      });
+      }
     }
-  });
+  }
 });
 /// END CODE LINTING FUNCTION FOR <PRE> CONTENT ///
 ///////////////////////////////////////////////////
@@ -172,12 +174,13 @@ document.addEventListener("DOMContentLoaded", function () {
 /// BEGIN LIGHT/DARK TOGGLE AND <DETAILS> REMAINS OPEN FUNCTION ///
 ///////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
-  const colorMode = document.querySelector("ca-code-tool").dataset.colorScheme;
+  const colorMode =
+    document.querySelector("ca-code-tool")?.dataset?.colorScheme;
   const darkModeButton = document.getElementById("dark-mode-svg");
   const lightModeButton = document.getElementById("light-mode-svg");
-  const element = document.querySelector(".output-container").children[0];
+  const element = document.querySelector(".output-container")?.children[0];
 
-  console.log(colorMode);
+  // console.log(colorMode);
   if (colorMode === "dark") {
     darkModeButton.style.display = "none";
     element.dataset.colorSchemeElement = "dark";
@@ -193,13 +196,11 @@ const toggleColor = () => {
   const lightModeButton = document.getElementById("light-mode-svg");
   let openDetailIndex;
 
-  element.forEach((el) => {
+  for (const el of element) {
     const elementChild = el.children[0];
     let elementColorScheme = elementChild.dataset.colorSchemeElement;
 
-    elementColorScheme === "dark"
-      ? (elementChild.dataset.colorSchemeElement = "light")
-      : (elementChild.dataset.colorSchemeElement = "dark");
+    elementColorScheme = elementColorScheme === "dark" ? "light" : "dark";
 
     //
     // Setting SVG attributes doesn't seem to be working with JS
@@ -214,100 +215,7 @@ const toggleColor = () => {
       lightModeButton.style.display = "block";
       darkModeButton.style.display = "none";
     }
-  });
+  }
 };
 /// END LIGHT/DARK TOGGLE AND <DETAILS> REMAINS OPEN ///
 ////////////////////////////////////////////////////////
-
-/// BEGIN NAV MENU ///
-//////////////////////
-class NavMenu extends HTMLElement {
-  connectedCallback() {
-    // Get layout and browser variables for later use.
-    const layout = this.closest("ca-layout");
-    const parentMenu = this.closest("ca-nav-menu ca-nav-menu");
-
-    window.setTimeout(() => {
-      const list = this.querySelector(":scope > ul");
-      const menuLabel = this.querySelector(":scope > :is(a, span)");
-
-      // If the menu's label is a link, preserve the link within the sub-menu.
-      if (menuLabel?.nodeName === "A") {
-        const listItem = document.createElement("li");
-        listItem.append(menuLabel);
-        list.prepend(listItem);
-      }
-
-      // Create a button for toggling the sub-menu open and closed.
-      if (menuLabel !== null) {
-        const menuButton = document.createElement("button");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-icon name="right"></ca-icon>`;
-        this.prepend(menuButton);
-
-        menuButton.addEventListener("click", (event) => {
-          menuButton.classList.toggle("active");
-          const expanded = menuButton.getAttribute("aria-expanded");
-          const wasExpanded = expanded === "true";
-
-          const menuButtonIcon = menuButton.querySelector("ca-icon");
-
-          this.toggleAttribute("expanded");
-          menuButtonIcon.setAttribute("name", wasExpanded ? "right" : "close");
-          menuButton.setAttribute(
-            "aria-expanded",
-            wasExpanded ? "false" : "true"
-          );
-        });
-      }
-    }, 1);
-  }
-}
-
-customElements.define("ca-nav-menu", NavMenu);
-
-class SiteMenu extends HTMLElement {
-  connectedCallback() {
-    // Get layout and browser variables for later use.
-    const layout = this.closest("ca-layout");
-    const format = layout.getAttribute("format");
-    const width = window.innerWidth;
-
-    /* Some browsers need a tick to see current DOM contents of the custom element. */
-    window.setTimeout(() => {
-      /* First, convert the burger link into a burger button. */
-      const link = this.querySelector("a");
-      const button = document.createElement("button");
-      button.setAttribute("aria-expanded", "false");
-      button.innerHTML = link.innerHTML;
-      link.replaceWith(button);
-
-      const header = layout.querySelector("header");
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          const intersecting = entry.isIntersecting;
-          const scrollStatus = intersecting ? "initial" : "scrolled";
-          this.setAttribute("position", scrollStatus);
-        }
-      });
-
-      observer.observe(header);
-
-      button.addEventListener("click", (event) => {
-        const expanded = button.getAttribute("aria-expanded");
-        const wasExpanded = expanded === "true";
-
-        const buttonIcon = button.querySelector("ca-icon");
-
-        this.toggleAttribute("expanded");
-        buttonIcon.setAttribute("name", wasExpanded ? "bear-menu" : "close");
-        button.setAttribute("aria-expanded", wasExpanded ? "false" : "true");
-      });
-    }, 1);
-  }
-}
-
-customElements.define("ca-site-menu", SiteMenu);
-
-/// END NAV MENU ///
-////////////////////

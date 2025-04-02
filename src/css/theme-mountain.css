@@ -1,70 +1,4 @@
-/* Static color definitions for Mountain Gray*/
 :root {
-  /* Basic palette */
-  --mountain-static-10: #fefeff;
-  --mountain-static-20: #e0e7ea;
-  --mountain-static-30: #c1cfd6;
-  --mountain-static-40: #a2b8c2;
-  --mountain-static-50: #83a0ae;
-  --mountain-static-60: #688c9d;
-  --mountain-static-70: #5e8394;
-  --mountain-static-80: #506d7b;
-  --mountain-static-90: #3c525c;
-  --mountain-static-100: #28363d;
-  --mountain-static-110: #141b1e;
-  --mountain-static-120: #080b0c;
-  /* Background shades */
-  --mountain-lightest: var(--mountain-static-10);
-  --mountain-lighter: #f8fafa;
-  --mountain-light: #f2f5f6;
-  --mountain-palest: #ecf0f2;
-  --mountain-paler: #dfe6ea;
-  --mountain-pale: #d2dde2;
-  --mountain-dim: #243238;
-  --mountain-dimmer: #1c272c;
-  --mountain-dimmest: #141c1f;
-  --mountain-dark: #101619;
-  --mountain-darker: #0c1012;
-  --mountain-darkest: var(--mountain-static-120);
-  /* Default accent */
-  --mountain-primary-accent: var(--mountain-static-60);
-  /* Optional accent */
-  --mountain-secondary-accent-dark: #bee6ff;
-  --mountain-secondary-accent-light: #167837;
-  /* Highlight, call-to-action */
-  --mountain-highlight: var(--mountain-static-60);
-  --mountain-highlight-active-dark: var(--mountain-static-50);
-  --mountain-highlight-active-light: var(--mountain-static-70);
-}
-
-/* Light mode (default) */
-:root,
-[data-color-scheme="light"] {
-  /* The dynamic palette inverts based on light or dark mode. Light here. */
-  --mountain-10: var(--mountain-static-10);
-  --mountain-20: var(--mountain-static-20);
-  --mountain-30: var(--mountain-static-30);
-  --mountain-40: var(--mountain-static-40);
-  --mountain-50: var(--mountain-static-50);
-  --mountain-60: var(--mountain-static-60);
-  --mountain-70: var(--mountain-static-70);
-  --mountain-80: var(--mountain-static-80);
-  --mountain-90: var(--mountain-static-90);
-  --mountain-100: var(--mountain-static-100);
-  --mountain-110: var(--mountain-static-110);
-  --mountain-120: var(--mountain-static-120);
-  --mountain-background-10: var(--mountain-lightest);
-  --mountain-background-20: var(--mountain-lighter);
-  --mountain-background-30: var(--mountain-light);
-  --mountain-background-40: var(--mountain-palest);
-  --mountain-background-50: var(--mountain-paler);
-  --mountain-background-60: var(--mountain-pale);
-  --mountain-secondary-accent: var(--mountain-secondary-accent-light);
-  --mountain-text: var(--mountain-120);
-  --mountain-background: var(--mountain-background-10);
-  --mountain-highlight-active: var(--mountain-highlight-active-light);
-
-  /* Theme configuration */
   --primary-static-10: var(--mountain-static-10);
   --primary-static-20: var(--mountain-static-20);
   --primary-static-30: var(--mountain-static-30);
@@ -77,114 +11,55 @@
   --primary-static-100: var(--mountain-static-100);
   --primary-static-110: var(--mountain-static-110);
   --primary-static-120: var(--mountain-static-120);
-  --primary-10: var(--mountain-10);
-  --primary-20: var(--mountain-20);
-  --primary-30: var(--mountain-30);
-  --primary-40: var(--mountain-40);
-  --primary-50: var(--mountain-50);
-  --primary-60: var(--mountain-60);
-  --primary-70: var(--mountain-70);
-  --primary-80: var(--mountain-80);
-  --primary-90: var(--mountain-90);
-  --primary-100: var(--mountain-100);
-  --primary-110: var(--mountain-110);
-  --primary-120: var(--mountain-120);
-  --primary-background-10: var(--mountain-background-10);
-  --primary-background-20: var(--mountain-background-20);
-  --primary-background-30: var(--mountain-background-30);
-  --primary-background-40: var(--mountain-background-40);
-  --primary-background-50: var(--mountain-background-50);
-  --primary-background-60: var(--mountain-background-60);
-  --primary-text: var(--mountain-text);
-  --primary-background: var(--mountain-background);
-  --primary-highlight-active: var(--mountain-highlight-active);
+
+  --primary-lightest: var(--mountain-lightest);
+  --primary-lighter: var(--mountain-lighter);
+  --primary-light: var(--mountain-light);
+  --primary-palest: var(--mountain-palest);
+  --primary-paler: var(--mountain-paler);
+  --primary-pale: var(--mountain-pale);
+  --primary-dim: var(--mountain-dim);
+  --primary-dimmer: var(--mountain-dimmer);
+  --primary-dimmest: var(--mountain-dimmest);
+  --primary-dark: var(--mountain-dark);
+  --primary-darker: var(--mountain-darker);
+  --primary-darkest: var(--mountain-darkest);
+
+  --primary-main-accent: var(--mountain-main-accent);
   --primary-highlight: var(--mountain-highlight);
 }
 
+/* Light mode */
+:root,
+[data-color-scheme="light"] {
+  --primary-optional-accent: var(--mountain-optional-accent-light);
+  --primary-highlight-active: var(--mountain-highlight-active-light);
+}
 /* Dark mode */
 [data-color-scheme="dark"] {
-  /* Inverted palettes for dark mode. */
-  --mountain-120: var(--mountain-static-10);
-  --mountain-110: var(--mountain-static-20);
-  --mountain-100: var(--mountain-static-30);
-  --mountain-90: var(--mountain-static-40);
-  --mountain-80: var(--mountain-static-50);
-  --mountain-70: var(--mountain-static-60);
-  --mountain-60: var(--mountain-static-70);
-  --mountain-50: var(--mountain-static-80);
-  --mountain-40: var(--mountain-static-90);
-  --mountain-30: var(--mountain-static-100);
-  --mountain-20: var(--mountain-static-110);
-  --mountain-10: var(--mountain-static-120);
-  --mountain-background-10: var(--mountain-darkest);
-  --mountain-background-20: var(--mountain-darker);
-  --mountain-background-30: var(--mountain-dark);
-  --mountain-background-40: var(--mountain-dimmest);
-  --mountain-background-50: var(--mountain-dimmer);
-  --mountain-background-60: var(--mountain-dim);
-  --mountain-secondary-accent: var(--mountain-secondary-accent-dark);
-  --mountain-text: var(--mountain-120);
-  --mountain-background: var(--mountain-background-10);
-  --mountain-highlight-active: var(--mountain-highlight-active-dark);
-
-  /* Theme configuration. */
-  --primary-10: var(--mountain-10);
-  --primary-20: var(--mountain-20);
-  --primary-30: var(--mountain-30);
-  --primary-40: var(--mountain-40);
-  --primary-50: var(--mountain-50);
-  --primary-60: var(--mountain-60);
-  --primary-70: var(--mountain-70);
-  --primary-80: var(--mountain-80);
-  --primary-90: var(--mountain-90);
-  --primary-100: var(--mountain-100);
-  --primary-110: var(--mountain-110);
-  --primary-120: var(--mountain-120);
-  --primary-background-10: var(--mountain-background-10);
-  --primary-background-20: var(--mountain-background-20);
-  --primary-background-30: var(--mountain-background-30);
-  --primary-background-40: var(--mountain-background-40);
-  --primary-background-50: var(--mountain-background-50);
-  --primary-background-60: var(--mountain-background-60);
-  --primary-text: var(--mountain-text);
-  --primary-background: var(--mountain-background);
-  --primary-highlight-active: var(--mountain-highlight-active);
-  --primary-highlight: var(--mountain-highlight);
+  --primary-optional-accent: var(--mountain-optional-accent-dark);
+  --primary-highlight-active: var(--mountain-highlight-active-dark);
 }
 
+/* The below definitions do not need to be spelled out like this in every theme. 
+ * We're just doing this for convenience in standard set-ups.
+ * In your custom theme, just define --primary-accent and --border-radius directly.
+*/
 :root,
 [data-accent*="primary"] {
-  --mountain-accent: var(--mountain-primary-accent);
-  --primary-accent: var(--mountain-accent);
+  --primary-accent: var(--primary-main-accent);
 }
 [data-accent*="secondary"] {
-  --mountain-accent: var(--mountain-secondary-accent);
-  --primary-accent: var(--mountain-accent);
+  --primary-accent: var(--primary-optional-accent);
 }
-
 :root,
-[data-accent*="left"] {
-  --mountain-accent-border-image: linear-gradient(
-    to right,
-    var(--mountain-accent),
-    transparent
-  );
-  --primary-accent-border-image: var(--mountain-accent-border-image);
+[data-corners="soft"] {
+  /* Roundedness default */
+  --border-radius: 0.25rem;
 }
-[data-accent*="solid"] {
-  --mountain-accent-border-image: linear-gradient(
-    to right,
-    var(--mountain-accent),
-    var(--mountain-accent)
-  );
-  --primary-accent-border-image: var(--mountain-accent-border-image);
+[data-corners="sharp"] {
+  --border-radius: 0;
 }
-[data-accent*="center"] {
-  --mountain-accent-border-image: linear-gradient(
-    to right,
-    transparent,
-    var(--mountain-accent),
-    transparent
-  );
-  --primary-accent-border-image: var(--mountain-accent-border-image);
+[data-corners="round"] {
+  --border-radius: 3.125rem;
 }

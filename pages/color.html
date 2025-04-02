@@ -177,8 +177,6 @@
 
 <p>There are four theme colors: coastal, desert, mountain, and valley.</p>
 
-<p>When no theme is supplied, the plain gray palette can also stand in as a default grayscale theme.</p>
-
 <p>Themes have additional background colors. Use these theme backgrounds to create complex layouts and heirarchies
   when needed.</p>
 
@@ -187,6 +185,22 @@
 <p>Use "primary" to access the current active theme.</p>
 
 <ca-x-color-set>
+  <ca-x-swatch>
+    <ca-x-color-tab color="primary-static-120" text-color="primary-static-10"
+      text-label="Static primary palette"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-120" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-110" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-100" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-90" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-80" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-70" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-60" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-50" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-40" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-30" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-20" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-static-10" text-color="primary-static-120"></ca-x-color-tab>
+  </ca-x-swatch>
   <ca-x-swatch>
     <ca-x-color-tab color="primary-120" text-color="primary-10" text-label="Dynamic primary palette"></ca-x-color-tab>
     <ca-x-color-tab color="primary-120" text-color="primary-10"></ca-x-color-tab>
@@ -204,6 +218,23 @@
   </ca-x-swatch>
 
   <ca-x-swatch>
+    <ca-x-color-tab color="primary-darkest" text-color="primary-static-10"
+      text-label="Static primary backgrounds"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-darkest" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-darker" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-dark" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-dimmest" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-dimmer" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-dim" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-pale" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-paler" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-palest" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-light" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-lighter" text-color="primary-static-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-lightest" text-color="primary-static-120"></ca-x-color-tab>
+  </ca-x-swatch>
+
+  <ca-x-swatch>
     <ca-x-color-tab color="primary-background-10" text-color="primary-120"
       text-label="Dynamic primary backgrounds"></ca-x-color-tab>
     <ca-x-color-tab color="primary-background-10" text-color="primary-120"></ca-x-color-tab>
@@ -214,16 +245,17 @@
     <ca-x-color-tab color="primary-background-60" text-color="primary-120"></ca-x-color-tab>
 
     <ca-x-color-tab color="primary-background-10" text-color="primary-120" text-label="Misc"></ca-x-color-tab>
-    <ca-x-color-tab color="primary-highlight" text-color="primary-120"></ca-x-color-tab>
-    <ca-x-color-tab color="primary-highlight-active" text-color="primary-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-highlight" text-color="primary-static-10"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-highlight-active" text-color="primary-static-10"></ca-x-color-tab>
     <ca-x-color-tab color="primary-text" text-color="primary-10"></ca-x-color-tab>
     <ca-x-color-tab color="primary-background" text-color="primary-120"></ca-x-color-tab>
+    <ca-x-color-tab color="primary-accent" text-color="primary-static-10"></ca-x-color-tab>
   </ca-x-swatch>
 </ca-x-color-set>
 
 <h2>Standard gray</h2>
 
-<p>Standard gray is always available. When a theme is not included, it will be used as the default theme color.</p>
+<p>Standard gray.</p>
 
 <ca-x-color-set>
   <ca-x-swatch>
@@ -290,6 +322,7 @@
     <ca-x-color-tab color="gray-highlight-active" text-color="gray-static-10"></ca-x-color-tab>
     <ca-x-color-tab color="gray-text" text-color="gray-10"></ca-x-color-tab>
     <ca-x-color-tab color="gray-background" text-color="gray-120"></ca-x-color-tab>
+    <ca-x-color-tab color="gray-accent" text-color="gray-static-10"></ca-x-color-tab>
   </ca-x-swatch>
 </ca-x-color-set>
 
@@ -362,6 +395,7 @@
     <ca-x-color-tab color="coastal-highlight-active" text-color="coastal-static-10"></ca-x-color-tab>
     <ca-x-color-tab color="coastal-text" text-color="coastal-10"></ca-x-color-tab>
     <ca-x-color-tab color="coastal-background" text-color="coastal-120"></ca-x-color-tab>
+    <ca-x-color-tab color="coastal-accent" text-color="coastal-static-10"></ca-x-color-tab>
   </ca-x-swatch>
 </ca-x-color-set>
 
@@ -434,6 +468,7 @@
     <ca-x-color-tab color="desert-highlight-active" text-color="desert-static-10"></ca-x-color-tab>
     <ca-x-color-tab color="desert-text" text-color="desert-10"></ca-x-color-tab>
     <ca-x-color-tab color="desert-background" text-color="desert-120"></ca-x-color-tab>
+    <ca-x-color-tab color="desert-accent" text-color="desert-static-10"></ca-x-color-tab>
   </ca-x-swatch>
 </ca-x-color-set>
 
@@ -507,6 +542,7 @@
     <ca-x-color-tab color="mountain-highlight-active" text-color="mountain-static-10"></ca-x-color-tab>
     <ca-x-color-tab color="mountain-text" text-color="mountain-10"></ca-x-color-tab>
     <ca-x-color-tab color="mountain-background" text-color="mountain-120"></ca-x-color-tab>
+    <ca-x-color-tab color="mountain-accent" text-color="mountain-static-10"></ca-x-color-tab>
   </ca-x-swatch>
 </ca-x-color-set>
 
@@ -579,6 +615,7 @@
     <ca-x-color-tab color="valley-highlight-active" text-color="valley-static-10"></ca-x-color-tab>
     <ca-x-color-tab color="valley-text" text-color="valley-10"></ca-x-color-tab>
     <ca-x-color-tab color="valley-background" text-color="valley-120"></ca-x-color-tab>
+    <ca-x-color-tab color="valley-accent" text-color="valley-static-10"></ca-x-color-tab>
   </ca-x-swatch>
 </ca-x-color-set>
 

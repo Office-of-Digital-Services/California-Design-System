@@ -70,6 +70,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src");
   eleventyConfig.addWatchTarget("./pages");
   eleventyConfig.addWatchTarget("./tools/11ty");
+  eleventyConfig.addWatchTarget("./tools/demo-site-only-src");
 
   // Ignores
   eleventyConfig.ignores.add("*.md"); // Repo root markdowns

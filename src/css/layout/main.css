@@ -1,6 +1,5 @@
 ca-layout > main {
   container: main / inline-size;
-  background-color: var(--primary-background-10);
   z-index: 1;
 }
 

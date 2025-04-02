@@ -1,70 +1,4 @@
-/* Static color definitions for Valley Green*/
 :root {
-  /* Basic palette */
-  --valley-static-10: #feffff;
-  --valley-static-20: #dbecef;
-  --valley-static-30: #b8dadf;
-  --valley-static-40: #94c8d0;
-  --valley-static-50: #71b6c0;
-  --valley-static-60: #4da4b1;
-  --valley-static-70: #46919c;
-  --valley-static-80: #3c7f89;
-  --valley-static-90: #2e626a;
-  --valley-static-100: #1f4146;
-  --valley-static-110: #0f2023;
-  --valley-static-120: #060d0e;
-  /* Background shades */
-  --valley-lightest: var(--valley-static-10);
-  --valley-lighter: #f7fbfb;
-  --valley-light: #f0f7f8;
-  --valley-palest: #e9f3f5;
-  --valley-paler: #daecef;
-  --valley-pale: #cce5e8;
-  --valley-dim: #1c3c41;
-  --valley-dimmer: #162e32;
-  --valley-dimmest: #0f2124;
-  --valley-dark: #0c1a1c;
-  --valley-darker: #091415;
-  --valley-darkest: var(--valley-static-120);
-  /* Default accent */
-  --valley-primary-accent: var(--valley-static-80);
-  /* Optional accent */
-  --valley-secondary-accent-dark: #e7e7bf;
-  --valley-secondary-accent-light: #f64d13;
-  /* Highlight, call-to-action */
-  --valley-highlight: var(--valley-static-80);
-  --valley-highlight-active-dark: var(--valley-static-70);
-  --valley-highlight-active-light: var(--valley-static-90);
-}
-
-/* Light mode (default) */
-:root,
-[data-color-scheme="light"] {
-  /* The dynamic palette inverts based on light or dark mode. Light here. */
-  --valley-10: var(--valley-static-10);
-  --valley-20: var(--valley-static-20);
-  --valley-30: var(--valley-static-30);
-  --valley-40: var(--valley-static-40);
-  --valley-50: var(--valley-static-50);
-  --valley-60: var(--valley-static-60);
-  --valley-70: var(--valley-static-70);
-  --valley-80: var(--valley-static-80);
-  --valley-90: var(--valley-static-90);
-  --valley-100: var(--valley-static-100);
-  --valley-110: var(--valley-static-110);
-  --valley-120: var(--valley-static-120);
-  --valley-background-10: var(--valley-lightest);
-  --valley-background-20: var(--valley-lighter);
-  --valley-background-30: var(--valley-light);
-  --valley-background-40: var(--valley-palest);
-  --valley-background-50: var(--valley-paler);
-  --valley-background-60: var(--valley-pale);
-  --valley-secondary-accent: var(--valley-secondary-accent-light);
-  --valley-text: var(--valley-120);
-  --valley-background: var(--valley-background-10);
-  --valley-highlight-active: var(--valley-highlight-active-light);
-
-  /* Theme configuration */
   --primary-static-10: var(--valley-static-10);
   --primary-static-20: var(--valley-static-20);
   --primary-static-30: var(--valley-static-30);
@@ -77,114 +11,55 @@
   --primary-static-100: var(--valley-static-100);
   --primary-static-110: var(--valley-static-110);
   --primary-static-120: var(--valley-static-120);
-  --primary-10: var(--valley-10);
-  --primary-20: var(--valley-20);
-  --primary-30: var(--valley-30);
-  --primary-40: var(--valley-40);
-  --primary-50: var(--valley-50);
-  --primary-60: var(--valley-60);
-  --primary-70: var(--valley-70);
-  --primary-80: var(--valley-80);
-  --primary-90: var(--valley-90);
-  --primary-100: var(--valley-100);
-  --primary-110: var(--valley-110);
-  --primary-120: var(--valley-120);
-  --primary-background-10: var(--valley-background-10);
-  --primary-background-20: var(--valley-background-20);
-  --primary-background-30: var(--valley-background-30);
-  --primary-background-40: var(--valley-background-40);
-  --primary-background-50: var(--valley-background-50);
-  --primary-background-60: var(--valley-background-60);
-  --primary-text: var(--valley-text);
-  --primary-background: var(--valley-background);
-  --primary-highlight-active: var(--valley-highlight-active);
+
+  --primary-lightest: var(--valley-lightest);
+  --primary-lighter: var(--valley-lighter);
+  --primary-light: var(--valley-light);
+  --primary-palest: var(--valley-palest);
+  --primary-paler: var(--valley-paler);
+  --primary-pale: var(--valley-pale);
+  --primary-dim: var(--valley-dim);
+  --primary-dimmer: var(--valley-dimmer);
+  --primary-dimmest: var(--valley-dimmest);
+  --primary-dark: var(--valley-dark);
+  --primary-darker: var(--valley-darker);
+  --primary-darkest: var(--valley-darkest);
+
+  --primary-main-accent: var(--valley-main-accent);
   --primary-highlight: var(--valley-highlight);
 }
 
+/* Light mode */
+:root,
+[data-color-scheme="light"] {
+  --primary-optional-accent: var(--valley-optional-accent-light);
+  --primary-highlight-active: var(--valley-highlight-active-light);
+}
 /* Dark mode */
 [data-color-scheme="dark"] {
-  /* Inverted palettes for dark mode. */
-  --valley-120: var(--valley-static-10);
-  --valley-110: var(--valley-static-20);
-  --valley-100: var(--valley-static-30);
-  --valley-90: var(--valley-static-40);
-  --valley-80: var(--valley-static-50);
-  --valley-70: var(--valley-static-60);
-  --valley-60: var(--valley-static-70);
-  --valley-50: var(--valley-static-80);
-  --valley-40: var(--valley-static-90);
-  --valley-30: var(--valley-static-100);
-  --valley-20: var(--valley-static-110);
-  --valley-10: var(--valley-static-120);
-  --valley-background-10: var(--valley-darkest);
-  --valley-background-20: var(--valley-darker);
-  --valley-background-30: var(--valley-dark);
-  --valley-background-40: var(--valley-dimmest);
-  --valley-background-50: var(--valley-dimmer);
-  --valley-background-60: var(--valley-dim);
-  --valley-secondary-accent: var(--valley-secondary-accent-dark);
-  --valley-text: var(--valley-120);
-  --valley-background: var(--valley-background-10);
-  --valley-highlight-active: var(--valley-highlight-active-dark);
-
-  /* Theme configuration. */
-  --primary-10: var(--valley-10);
-  --primary-20: var(--valley-20);
-  --primary-30: var(--valley-30);
-  --primary-40: var(--valley-40);
-  --primary-50: var(--valley-50);
-  --primary-60: var(--valley-60);
-  --primary-70: var(--valley-70);
-  --primary-80: var(--valley-80);
-  --primary-90: var(--valley-90);
-  --primary-100: var(--valley-100);
-  --primary-110: var(--valley-110);
-  --primary-120: var(--valley-120);
-  --primary-background-10: var(--valley-background-10);
-  --primary-background-20: var(--valley-background-20);
-  --primary-background-30: var(--valley-background-30);
-  --primary-background-40: var(--valley-background-40);
-  --primary-background-50: var(--valley-background-50);
-  --primary-background-60: var(--valley-background-60);
-  --primary-text: var(--valley-text);
-  --primary-background: var(--valley-background);
-  --primary-highlight-active: var(--valley-highlight-active);
-  --primary-highlight: var(--valley-highlight);
+  --primary-optional-accent: var(--valley-optional-accent-dark);
+  --primary-highlight-active: var(--valley-highlight-active-dark);
 }
 
+/* The below definitions do not need to be spelled out like this in every theme. 
+ * We're just doing this for convenience in standard set-ups.
+ * In your custom theme, just define --primary-accent and --border-radius directly.
+*/
 :root,
 [data-accent*="primary"] {
-  --valley-accent: var(--valley-primary-accent);
-  --primary-accent: var(--valley-accent);
+  --primary-accent: var(--primary-main-accent);
 }
 [data-accent*="secondary"] {
-  --valley-accent: var(--valley-secondary-accent);
-  --primary-accent: var(--valley-accent);
+  --primary-accent: var(--primary-optional-accent);
 }
-
 :root,
-[data-accent*="left"] {
-  --valley-accent-border-image: linear-gradient(
-    to right,
-    var(--valley-accent),
-    transparent
-  );
-  --primary-accent-border-image: var(--valley-accent-border-image);
+[data-corners="soft"] {
+  /* Roundedness default */
+  --border-radius: 0.25rem;
 }
-[data-accent*="solid"] {
-  --valley-accent-border-image: linear-gradient(
-    to right,
-    var(--valley-accent),
-    var(--valley-accent)
-  );
-  --primary-accent-border-image: var(--valley-accent-border-image);
+[data-corners="sharp"] {
+  --border-radius: 0;
 }
-[data-accent*="center"] {
-  --valley-accent-border-image: linear-gradient(
-    to right,
-    transparent,
-    var(--valley-accent),
-    transparent
-  );
-  --primary-accent-border-image: var(--valley-accent-border-image);
+[data-corners="round"] {
+  --border-radius: 3.125rem;
 }
