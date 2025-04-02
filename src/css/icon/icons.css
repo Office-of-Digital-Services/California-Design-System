@@ -15,43 +15,6 @@ ca-icon::after {
   mask-repeat: no-repeat;
 }
 
-/* A wrapper that we use often in the standard layouts. */
-ca-utility-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  block-size: 3rem;
-  inline-size: 3rem;
-  color: var(--primary-100);
-  border-radius: var(--border-radius);
-
-  & :is(ca-icon, svg, img) {
-    block-size: 1.5rem;
-    inline-size: auto;
-  }
-
-  /* This pseudo element is the easiest way to apply opacity to a named background color. */
-  &::before {
-    position: absolute;
-    content: "";
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    block-size: 100%;
-    inline-size: 100%;
-    background: var(--primary-background-30);
-    opacity: 0.8;
-  }
-
-  &:hover::before {
-    background: var(--primary-background-40);
-  }
-
-  &:active::before {
-    background: var(--primary-background-60);
-  }
-}
-
 /* Social media */
 ca-icon[name="mail"]::after {
   aspect-ratio: 18 / 15;

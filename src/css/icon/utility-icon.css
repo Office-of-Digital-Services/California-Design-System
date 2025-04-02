@@ -1,0 +1,55 @@
+/* A wrapper that we use often in the standard layouts. */
+ca-utility-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 3rem;
+  inline-size: 3rem;
+  color: var(--primary-100);
+  background: var(--primary-background-30);
+  border-radius: var(--border-radius);
+
+  & :is(ca-icon, svg, img) {
+    block-size: 1.5rem;
+    inline-size: auto;
+  }
+
+  &:hover {
+    background: var(--primary-background-40);
+  }
+
+  &:active {
+    background: var(--primary-background-60);
+  }
+
+  &[transparent] {
+    background: unset;
+
+    /* This pseudo element is the easiest way to apply opacity to a named background color. */
+    &::before {
+      position: absolute;
+      content: "";
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      block-size: 100%;
+      inline-size: 100%;
+      background: var(--primary-background-30);
+      opacity: 0.8;
+    }
+
+    &:hover {
+      background: unset;
+    }
+    &:active {
+      background: unset;
+    }
+
+    &:hover::before {
+      background: var(--primary-background-40);
+    }
+    &:active::before {
+      background: var(--primary-background-60);
+    }
+  }
+}
