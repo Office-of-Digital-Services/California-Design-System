@@ -10,16 +10,16 @@ async function build11tyCss() {
   // CSS Bundle
   await cssBuilder("src/css/_bundle.css", "_site/css/bundle.css");
   // CSS Coastal Blue Theme
-  await cssBuilder("src/css/theme/coastal.css", "_site/css/theme.coastal.css");
+  await cssBuilder("src/css/theme/_coastal.css", "_site/css/theme.coastal.css");
   // CSS Desert Tan Theme
-  await cssBuilder("src/css/theme/desert.css", "_site/css/theme.desert.css");
+  await cssBuilder("src/css/theme/_desert.css", "_site/css/theme.desert.css");
   // CSS Mountain Gray Theme
   await cssBuilder(
-    "src/css/theme/mountain.css",
+    "src/css/theme/_mountain.css",
     "_site/css/theme.mountain.css",
   );
   // CSS Valley Green Theme
-  await cssBuilder("src/css/theme/valley.css", "_site/css/theme.valley.css");
+  await cssBuilder("src/css/theme/_valley.css", "_site/css/theme.valley.css");
   // Non-system demo-site CSS
   await cssBuilder(
     "tools/demo-site-only-src/css/_bundle.css",
