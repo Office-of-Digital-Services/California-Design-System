@@ -5,4 +5,5 @@ ca-color-scheme-toggle {
 
   inline-size: 3rem;
   block-size: 3rem;
+  z-index: 5;
 }

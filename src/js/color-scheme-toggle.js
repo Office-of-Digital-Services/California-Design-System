@@ -16,12 +16,16 @@ class ColorSchemeToggle extends HTMLElement {
   shadowHtml = /* html */ `
 		<style>
 			:host {
-				color: currentColor;
+				color: var(--primary-100);
 			}
 			button {
 				all: unset;
 				display: flex;
+				align-items: center;
+				justify-content: center;
 				cursor: pointer;
+				block-size: 100%;
+				inline-size: 100%;
 			}
 		</style>
 		<button title="Toggle light and dark mode" aria-label="Change color scheme">

@@ -12,7 +12,7 @@ ca-utility-bar {
     display: flex;
     align-items: center;
     justify-content: end;
-    gap: 1rem;
+    gap: 1.5rem;
 
     & > li {
       margin: 0;
