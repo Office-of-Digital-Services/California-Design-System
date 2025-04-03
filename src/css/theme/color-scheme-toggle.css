@@ -1,9 +1,10 @@
 ca-color-scheme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  & > button {
+    all: unset;
+    cursor: pointer;
 
-  inline-size: 3rem;
-  block-size: 3rem;
-  z-index: 5;
+    &:hover {
+      background: none;
+    }
+  }
 }

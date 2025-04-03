@@ -21,7 +21,7 @@ class NavMenu extends HTMLElement {
       if (menuLabel !== null) {
         this.menuButton = document.createElement("button");
         this.menuButton.setAttribute("aria-expanded", "false");
-        this.menuButton.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-icon name="right"></ca-icon>`;
+        this.menuButton.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-icon glyph="right"></ca-icon>`;
         this.prepend(this.menuButton);
 
         this.menuButton.addEventListener("click", this.toggleEventHandler());

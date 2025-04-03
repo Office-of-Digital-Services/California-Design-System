@@ -189,7 +189,7 @@ ca-nav-menu {
         column-gap: 2rem;
       }
 
-      & button > ca-icon[name="right"] {
+      & button > ca-icon[glyph="right"] {
         transform: rotate(90deg);
       }
 

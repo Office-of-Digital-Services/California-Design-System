@@ -82,26 +82,6 @@ ca-social-links {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-
-  & a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    block-size: 2rem;
-    inline-size: 2rem;
-    background-color: var(--primary-100);
-    border-radius: var(--border-radius);
-
-    &:hover {
-      background-color: var(--primary-110);
-    }
-  }
-
-  & :is(ca-icon, svg, img) {
-    block-size: 1.25rem;
-    inline-size: 1.25rem;
-    color: var(--primary-background-10);
-  }
 }
 
 @container footer (width > 50rem) {
@@ -159,9 +139,9 @@ ca-footer-end {
     column-gap: 1.5rem;
   }
 
-  & ca-icon[name="ca-bear"] {
-    inline-size: 3.12325rem;
-    block-size: 1.75rem;
+  & ca-icon[glyph="ca-bear"] {
+    --icon-x-size: 3.12325rem;
+    --icon-y-size: 1.75rem;
   }
 
   /* Icon links in 2nd div */

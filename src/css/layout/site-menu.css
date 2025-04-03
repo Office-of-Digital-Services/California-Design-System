@@ -8,7 +8,7 @@ ca-site-menu {
     all: unset;
     color: var(--primary-100);
     background-color: var(--primary-background-20);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     cursor: pointer;
 
     &:hover {
@@ -19,7 +19,7 @@ ca-site-menu {
 
   & ca-icon {
     block-size: auto;
-    inline-size: 2.5rem;
+    inline-size: 1.5rem;
   }
 
   /* Hide the X symbol in the burger icon. */
@@ -32,8 +32,8 @@ ca-site-menu {
 ca-site-menu[position="scrolled"] {
   & > :is(a, button) {
     position: fixed;
-    block-size: 3rem;
-    inline-size: 3rem;
+    block-size: 2.5rem;
+    inline-size: 2.5rem;
     top: 1rem;
     left: 1rem;
     padding: .5rem;
