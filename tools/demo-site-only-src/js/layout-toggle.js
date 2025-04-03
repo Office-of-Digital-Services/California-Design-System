@@ -94,9 +94,9 @@ class LayoutToggle extends HTMLElement {
 						<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
 						<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
 						<label><input type="checkbox" name="header" value="header" /> Header</label>
-						<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> ca-priority-bar</label>
-						<label><input type="checkbox" name="utility-nav" value="utility-nav" /> Utility nav</label>
-						<label><input type="checkbox" name="content-nav" value="content-nav" /> Content nav</label>
+						<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> Priority bar</label>
+						<label><input type="checkbox" name="utility-nav" value="utility-nav" /> Utility bar</label>
+						<label><input type="checkbox" name="content-nav" value="content-nav" /> Page bar</label>
 						<label><input type="checkbox" name="main" value="main" /> Main</label>
 						<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
 					</fieldset>

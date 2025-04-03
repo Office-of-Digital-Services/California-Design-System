@@ -1,10 +1,18 @@
 ca-priority-bar {
+  display: none; /* Should be flex when shown. */
+
   padding: .5rem 1rem;
   background-color: var(--primary-background-20);
-  display: flex;
   align-items: center;
   justify-content: end;
   inline-size: 100%;
   block-size: 100%;
   z-index: 3;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  ca-priority-bar {
+    display: flex;
+  }
 }
