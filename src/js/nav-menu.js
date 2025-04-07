@@ -19,12 +19,12 @@ class NavMenu extends HTMLElement {
 
       // Create a button for toggling the sub-menu open and closed.
       if (menuLabel !== null) {
-        this.menuButton = document.createElement("button");
-        this.menuButton.setAttribute("aria-expanded", "false");
-        this.menuButton.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-icon glyph="right"></ca-icon>`;
-        this.prepend(this.menuButton);
+        this.button = document.createElement("button");
+        this.button.setAttribute("aria-expanded", "false");
+        this.button.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-icon glyph="right"></ca-icon>`;
+        this.prepend(this.button);
 
-        this.menuButton.addEventListener("click", this.toggleEventHandler());
+        this.button.addEventListener("click", this.toggleEventHandler());
       }
     }, 1);
   }
@@ -57,10 +57,10 @@ class NavMenu extends HTMLElement {
     this.addEventListener("close-other-menu", this.otherMenuEventHandler());
 
     this.setAttribute("expanded", "");
-    this.menuButton.classList.add("active");
-    this.menuButton.setAttribute("aria-expanded", "true");
+    this.button.classList.add("active");
+    this.button.setAttribute("aria-expanded", "true");
 
-    const menuButtonIcon = this.menuButton.querySelector("ca-icon");
+    const menuButtonIcon = this.button.querySelector("ca-icon");
     menuButtonIcon.setAttribute("name", "close");
   }
 
@@ -69,11 +69,11 @@ class NavMenu extends HTMLElement {
     this.removeEventListener("close-other-menu", this.otherMenuEventHandler());
 
     this.removeAttribute("expanded");
-    this.menuButton.classList.remove("active");
-    this.menuButton.setAttribute("aria-expanded", "false");
+    this.button.classList.remove("active");
+    this.button.setAttribute("aria-expanded", "false");
 
-    const menuButtonIcon = this.menuButton.querySelector("ca-icon");
-    menuButtonIcon.setAttribute("name", "right");
+    const buttonIcon = this.button.querySelector("ca-icon");
+    buttonIcon.setAttribute("name", "right");
   }
 
   // An event handler for reacting to the custom "close all menus" event.

@@ -1,3 +1,20 @@
+ca-icon[format="burger"] {
+  --color: var(--primary-10);
+  --background: var(--primary-100);
+  --background-hover: var(--primary-110);
+  --icon-size: 1.5rem;
+  --background-size: 2.5rem;
+}
+
+ca-icon[format="social"] {
+  --color: var(--primary-10);
+  --background: var(--primary-100);
+  --background-hover: var(--primary-110);
+  --background-active: var(--primary-120);
+  --icon-size: 1.25rem;
+  --background-size: 2rem;
+}
+
 ca-icon[format="utility"] {
   --color: var(--primary-100);
   --background: var(--primary-background-30);

@@ -2,29 +2,12 @@ ca-site-menu {
   z-index: 4;
   display: flex;
   align-items: center;
+  padding: .5rem 1rem;
   background-color: var(--primary-background-20);
 
   & > :is(a, button) {
     all: unset;
-    color: var(--primary-100);
-    background-color: var(--primary-background-20);
-    padding: 1rem;
     cursor: pointer;
-
-    &:hover {
-      color: var(--primary-120);
-      background-color: var(--primary-background-50);
-    }
-  }
-
-  & ca-icon {
-    block-size: auto;
-    inline-size: 1.5rem;
-  }
-
-  /* Hide the X symbol in the burger icon. */
-  & use[data-close] {
-    display: none;
   }
 }
 
@@ -32,38 +15,10 @@ ca-site-menu {
 ca-site-menu[position="scrolled"] {
   & > :is(a, button) {
     position: fixed;
-    block-size: 2.5rem;
-    inline-size: 2.5rem;
-    top: 1rem;
+    top: .5rem;
     left: 1rem;
-    padding: .5rem;
-    background-color: var(--primary-110);
-    color: var(--primary-background-10);
-    box-shadow: .25rem .25rem .25rem 0px rgba(0, 0, 0, 0.25);
-
-    &:hover {
-      color: var(--primary-background-40);
-      background-color: var(--primary-120);
-    }
-  }
-
-  & ca-icon {
-    block-size: 100%;
-    inline-size: auto;
   }
 }
-
-/* Slide the burger menu in from top, after scroll.
-@keyframes reveal-scrolled-burger {
-  from {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
 
 @keyframes reveal-scrolled-burger {
   0% {
