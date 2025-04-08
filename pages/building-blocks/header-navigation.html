@@ -26,10 +26,14 @@
 	}
 
 	img:hover {
-		-webkit-transform: scale(1.2);
+		-webkit-transform: scale(1.5);
 		/* or some other value */
-		transform: scale(1.2);
+		transform: scale(1.5);
 		cursor: pointer;
+	}
+
+	:is(ca-grid, .ca-grid)[cell-size="small"] {
+		--max-cell-inline-size: 5rem;
 	}
 </style>
 
@@ -57,23 +61,23 @@
 	<li><code>utility-nav</code> for things like light/dark toggle or account login.</li>
 	<!--<li><code>cagov-waffle-menu</code> for California resources which is also optional.</li>-->
 </ol>
-<ca-flex wrap gap="8">
-	<section>
+<ca-flex>
+	<ca-self shrink>
 		<h3>Eureka</h3>
-		<img src="/images/eureka-header-nav.jpg"
+		<img src="/images/eureka-header-nav.jpg" height="65%"
 			alt="Eureka anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-	</section>
-	<ca-flex direction="column" gap-y="8">
-		<section>
+	</ca-self>
+	<ca-flex direction="column" gap-y="4">
+		<ca-self shrink>
 			<h3>Horizon</h3>
-			<img src="/images/horizon-header-nav.jpg" width="80%"
+			<img src="/images/horizon-header-nav.jpg" width="65%"
 				alt="Horizon anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-		</section>
-		<section>
+		</ca-self>
+		<ca-self shrink>
 			<h3>Skyline</h3>
-			<img src="/images/horizon-header-nav.jpg" width="80%"
+			<img src="/images/horizon-header-nav.jpg" width="65%"
 				alt="Skyline anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-		</section>
+		</ca-self>
 	</ca-flex>
 </ca-flex>
 <h2>Usage</h2>
