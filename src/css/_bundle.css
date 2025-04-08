@@ -1,12 +1,11 @@
 @import "tokens.css";
 @import "typography.css";
 
-@import "color.css";
-@import "theme.css";
-
 @import "elements.css";
 
+@import "theme/_theme_bundle.css";
 @import "layout/_layout_bundle.css";
+@import "icon/_icon_bundle.css";
 
 @import "button.css";
 @import "utilities.css";
@@ -14,6 +13,3 @@
 @import "grid.css";
 @import "card.css";
 @import "flex.css";
-@import "icons.css";
-
-@import "color-scheme-toggle.css";

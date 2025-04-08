@@ -1,0 +1,10 @@
+ca-color-scheme-toggle {
+  & > button {
+    all: unset;
+    cursor: pointer;
+
+    &:hover {
+      background: none;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+ca-icon {
+  --color: currentColor;
+  --background: transparent;
+  --background-hover: initial;
+  --background-active: initial;
+  --icon-size: 1rem;
+  --icon-y-size: auto;
+  --icon-x-size: var(--icon-size);
+  --background-size: var(--background-x-size, var(--icon-size));
+  --background-y-size: var(--background-size, var(--icon-y-size));
+  --background-x-size: var(--background-size, var(--icon-x-size));
+
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: var(--color);
+  background: var(--background);
+  block-size: var(--background-y-size);
+  inline-size: var(--background-x-size);
+  border-radius: var(--border-radius);
+
+  &:hover {
+    background: var(--background-hover, var(--background));
+  }
+
+  &:active {
+    background: var(--background-active, var(--background));
+  }
+
+  &[translucent] {
+    background: unset;
+
+    /* This pseudo element is the easiest way to apply opacity to a named background color. */
+    &::before {
+      position: absolute;
+      content: "";
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      block-size: 100%;
+      inline-size: 100%;
+      background: var(--background);
+      opacity: 0.8;
+    }
+
+    &:hover {
+      background: unset;
+    }
+    &:active {
+      background: unset;
+    }
+
+    &:hover::before {
+      background: var(--background-hover, var(--background));
+    }
+    &:active::before {
+      background: var(--background-active, var(--background));
+    }
+  }
+}
+
+/* Allow use of custom images */
+ca-icon > :is(img, svg) {
+  block-size: var(--icon-y-size);
+  inline-size: var(--icon-x-size);
+}
+
+/* When the icon is using a built-in glpyh, set up the plumbing here. */
+ca-icon[glyph]::after {
+  content: "";
+  block-size: var(--icon-y-size);
+  inline-size: var(--icon-x-size);
+  display: inline-block;
+  background-color: var(--color);
+  mask-position: center center;
+  mask-size: 100% auto;
+  mask-repeat: no-repeat;
+}

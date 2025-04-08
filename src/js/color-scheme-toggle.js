@@ -14,17 +14,9 @@ class ColorSchemeToggle extends HTMLElement {
   storageKey = "color-scheme-preference";
 
   shadowHtml = /* html */ `
-		<style>
-			:host {
-				color: currentColor;
-			}
-			button {
-				all: unset;
-				display: flex;
-				cursor: pointer;
-			}
-		</style>
-		<button title="Toggle light and dark mode" aria-label="Change color scheme">
+		<button>
+			<ca-icon glyph="light-mode" format="utility"></ca-icon>
+			<span class="visually-hidden">Switch between light and dark modes</span>
 		</button>
 	`;
 
@@ -35,17 +27,12 @@ class ColorSchemeToggle extends HTMLElement {
 
   scheme = this.schemes.light;
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
-
   connectedCallback() {
     this.setInitialScheme();
-    this.shadowRoot.innerHTML = this.shadowHtml;
+    this.innerHTML = this.shadowHtml;
     this.applyScheme();
 
-    const toggle = this.shadowRoot.querySelector("button");
+    const toggle = this.querySelector("button");
     toggle.addEventListener("click", () => {
       this.scheme = this.getOppositeScheme();
       this.applyScheme();
@@ -95,10 +82,11 @@ class ColorSchemeToggle extends HTMLElement {
     const root = document.querySelector("html");
     root.setAttribute("data-color-scheme", this.scheme);
 
-    const button = this.shadowRoot.querySelector("button");
-    const icon =
-      this.scheme === this.schemes.light ? lightModeIcon : darkModeIcon;
-    button.innerHTML = icon;
+    const button = this.querySelector("button");
+    const icon = this.querySelector("ca-icon");
+    const newGlyph =
+      this.scheme === this.schemes.light ? "light-mode" : "dark-mode";
+    icon.setAttribute("name", newGlyph);
   }
 }
 

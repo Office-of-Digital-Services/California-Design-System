@@ -1,20 +1,19 @@
 class SiteMenu extends HTMLElement {
   connectedCallback() {
     // Get layout and browser variables for later use.
-    const layout = this.closest("ca-layout");
-    const format = layout.getAttribute("format");
-    const width = window.innerWidth;
+    this.layout = this.closest("ca-layout");
+    this.layoutWidth = this.layout.offsetWidth;
 
     /* Some browsers need a tick to see current DOM contents of the custom element. */
     window.setTimeout(() => {
       /* First, convert the burger link into a burger button. */
       const link = this.querySelector("a");
-      const button = document.createElement("button");
-			button.setAttribute("aria-expanded", "false");
-      button.innerHTML = link.innerHTML;
-      link.replaceWith(button);
+      this.button = document.createElement("button");
+      this.button.setAttribute("aria-expanded", "false");
+      this.button.innerHTML = link.innerHTML;
+      link.replaceWith(this.button);
 
-      const header = layout.querySelector("header");
+      const header = this.layout.querySelector("header");
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           const intersecting = entry.isIntersecting;
@@ -25,17 +24,142 @@ class SiteMenu extends HTMLElement {
 
       observer.observe(header);
 
-			button.addEventListener("click", (event) => {
-				const expanded = button.getAttribute("aria-expanded");
-				const wasExpanded = (expanded === "true");
-
-				const buttonIcon = button.querySelector("ca-icon");
-
-				this.toggleAttribute("expanded");
-				buttonIcon.setAttribute("name", (wasExpanded ? "bear-menu" : "close"));
-				button.setAttribute("aria-expanded", (wasExpanded ? "false" : "true"));
-			});
+      this.button.addEventListener("click", this.toggleEventHandler());
+      this.layoutResizeObserver = this.createLayoutResizeObserver();
     }, 1);
+  }
+
+  layoutFormat() {
+    return this.layout.getAttribute("format");
+  }
+
+  createLayoutResizeObserver() {
+    return new ResizeObserver(() => {
+      const openAttribute = this.layout.getAttribute("site-menu");
+      const isOpen = openAttribute === "open";
+      const oldWidth = this.layoutWidth;
+      const newWidth = this.layout.offsetWidth;
+
+      // Set new layout width for later reference.
+      this.layoutWidth = newWidth;
+
+      // If the resize has gone to desktop size, kill the menu.
+      if (isOpen && newWidth >= 1024) {
+        this.close();
+        return;
+      }
+
+      // If the resize is truly a resize, rapidly close and reopen the menu.
+      // This resets the positioning of the layout elements as needed.
+      // Kind of a hack but okay for now.
+      if (isOpen && oldWidth !== newWidth) {
+        this.close();
+        this.open();
+      }
+    });
+  }
+
+  // Handle button clicks for opening/closing the menu.
+  toggle() {
+    const expanded = this.hasAttribute("expanded");
+
+    if (expanded) {
+      this.close();
+    }
+
+    if (!expanded) {
+      this.open();
+    }
+  }
+
+  // A click handler for button events.
+  toggleEventHandler(event) {
+    return (event) => {
+      this.toggle();
+    };
+  }
+
+  bodyClickEventHandler(event) {
+    return (event) => {
+      this.close();
+    };
+  }
+
+  // Open the menu.
+  open() {
+    this.layout.setAttribute("site-menu", "open");
+    this.applyTopOffsets();
+
+    this.setAttribute("expanded", "");
+    this.button.setAttribute("aria-expanded", "true");
+
+    const buttonIcon = this.button.querySelector("ca-icon");
+    buttonIcon.setAttribute("glyph", "close");
+
+    const content = [...this.layout.querySelectorAll("main, footer")];
+    for (const element of content) {
+      element.addEventListener("click", this.bodyClickEventHandler());
+    }
+
+    this.layoutResizeObserver.observe(this.layout);
+  }
+
+  // Close the menu.
+  close() {
+    this.removeAttribute("expanded");
+    this.removeTopOffsets();
+
+    this.layout.setAttribute("site-menu", "closed");
+    this.button.setAttribute("aria-expanded", "false");
+
+    const buttonIcon = this.button.querySelector("ca-icon");
+    buttonIcon.setAttribute("glyph", "bear-menu");
+
+    const content = [...this.layout.querySelectorAll("main, footer")];
+    for (const element of content) {
+      element.removeEventListener("click", this.bodyClickEventHandler());
+    }
+
+    this.layoutResizeObserver.disconnect();
+  }
+
+  // Apply inline styles to layout elements to ensure they look good in expanded menu.
+  applyTopOffsets() {
+    let headersHeight = 0;
+    const elements = ["ca-site-menu", "ca-utility-bar", "header"];
+    for (const element of elements) {
+      const el = this.layout.querySelector(element);
+      if (el) {
+        const top = el.offsetTop;
+        el.style.top = `${top}px`;
+
+        if (element === "ca-site-menu" || element === "header") {
+          headersHeight += el.offsetHeight;
+        }
+      }
+    }
+
+    const pageBar = this.layout.querySelector("ca-page-bar");
+    if (pageBar) {
+      const pageBarHeight = headersHeight - 1;
+      pageBar.style.top = `${pageBarHeight}px`;
+    }
+  }
+
+  // Remove inline styles from layout elements.
+  removeTopOffsets() {
+    const elements = [
+      "ca-site-menu",
+      "ca-utility-bar",
+      "header",
+      "ca-page-bar",
+    ];
+    for (const element of elements) {
+      const el = this.layout.querySelector(element);
+      if (el) {
+        el.style.removeProperty("top");
+      }
+    }
   }
 }
 

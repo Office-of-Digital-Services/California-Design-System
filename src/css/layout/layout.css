@@ -14,7 +14,7 @@ ca-layout {
   /* Required when the ca-site-menu is present. */
   /* Horizon layout really needs this to work too. */
   & > ca-page-bar {
-    grid-area: content-nav;
+    grid-area: page-bar;
   }
 
   /* Optional */
@@ -29,12 +29,12 @@ ca-layout {
 
   /* Optional */
   & > ca-priority-bar {
-    grid-area: search;
+    grid-area: priority-bar;
   }
 
   /* Optional */
   & > ca-utility-bar {
-    grid-area: utility-nav;
+    grid-area: utility-bar;
   }
 
   /* Required */
@@ -66,44 +66,25 @@ ca-layout {
 /* Apply a mobile-only media query, so these mods don't mess with desktop. */
 @media screen and (max-width: 1023px) {
   ca-layout {
-    grid-template-columns: minmax(4.5rem, 100vw) fit-content(15rem) auto;
+    grid-template-columns: 1fr auto;
     grid-template-rows: max-content max-content auto max-content max-content;
     grid-template-areas:
-      "burger search utility-nav"
-      "header header header"
-      "main main main"
-      "content-nav content-nav content-nav"
-      "footer footer footer";
+      "burger utility-bar"
+      "header header"
+      "main main"
+      "page-bar page-bar"
+      "footer footer";
 
     /* Since none of the top row items are required on mobile, we can't "fr" any of them, so we need to redefine grid when some are missing. */
     &:has(ca-site-menu[hidden]),
     &:not(:has(ca-site-menu)) {
-      grid-template-columns: minmax(15rem, 100vw) max-content;
+      grid-template-columns: auto;
       grid-template-areas:
-        "search utility-nav"
-        "header header"
-        "main main"
-        "content-nav content-nav"
-        "footer footer";
-
-      &:has(ca-priority-bar[hidden]),
-      &:not(:has(ca-priority-bar)) {
-        grid-template-columns: auto;
-        grid-template-areas:
-          "utility-nav"
-          "header"
-          "main"
-          "content-nav"
-          "footer";
-      }
-    }
-
-    /* For when there's no burger menu. */
-    &:has(ca-priority-bar[hidden]):has(ca-utility-bar[hidden]),
-    &:not(:has(ca-priority-bar)):not(:has(ca-utility-bar)) {
-      & > ca-site-menu {
-        grid-column: span 3;
-      }
+        "utility-bar"
+        "header"
+        "main"
+        "page-bar"
+        "footer";
     }
   }
 }
@@ -114,12 +95,12 @@ ca-layout {
     grid-template-columns: 15rem 1fr;
     grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr auto;
     grid-template-areas:
-      "logo utility-nav"
+      "logo utility-bar"
       "logo main"
       "header main"
-      "search main"
-      "content-nav main"
-      "content-nav footer";
+      "priority-bar main"
+      "page-bar main"
+      "page-bar footer";
 
     & > header {
       align-items: start;
@@ -129,10 +110,10 @@ ca-layout {
     &:not(:has(ca-site-logo)) {
       grid-template-rows: auto max-content 1fr auto;
       grid-template-areas:
-        "header utility-nav"
-        "search main"
-        "content-nav main"
-        "content-nav footer";
+        "header utility-bar"
+        "priority-bar main"
+        "page-bar main"
+        "page-bar footer";
     }
 
     &:has(ca-page-bar[hidden]),
@@ -156,8 +137,8 @@ ca-layout {
     grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) max-content;
     grid-template-rows: max-content max-content auto max-content;
     grid-template-areas:
-      "logo header search utility-nav"
-      "logo content-nav content-nav content-nav"
+      "logo header priority-bar utility-bar"
+      "logo page-bar page-bar page-bar"
       "main main main main"
       "footer footer footer footer";
   }
@@ -169,8 +150,70 @@ ca-layout {
     grid-template-columns: fit-content(7rem) 1fr auto fit-content(15rem) max-content;
     grid-template-rows: max-content auto max-content;
     grid-template-areas:
-      "logo header content-nav search utility-nav"
+      "logo header page-bar priority-bar utility-bar"
       "main main main main main"
       "footer footer footer footer footer";
+  }
+}
+
+ca-layout[site-menu="open"] {
+  & > :is(ca-site-menu, ca-utility-bar, header) {
+    position: sticky;
+    /* Exact positioning will be inlined by JS. */
+    z-index: 1000;
+  }
+
+  & > ca-page-bar {
+    position: fixed;
+    display: block;
+    height: 100%;
+    z-index: 999;
+  }
+
+  & > :is(main, footer) {
+    filter: blur(.2rem);
+  }
+
+  & > :is(main, footer) {
+    overflow-x: hidden;
+  }
+}
+
+@keyframes burger-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes burger-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1023px) and (
+    prefers-reduced-motion: no-preference
+  ) {
+  ca-layout[site-menu="open"] {
+    & :is(ca-site-menu, ca-utility-bar, header) {
+      opacity: 0;
+      animation: burger-from-top ease-out 0.2s forwards;
+    }
+    & :is(ca-page-bar) {
+      opacity: 0;
+      animation: burger-from-left ease-out 0.2s forwards;
+    }
   }
 }

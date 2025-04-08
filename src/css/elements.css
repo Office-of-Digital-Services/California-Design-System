@@ -27,7 +27,6 @@ body {
 article,
 aside,
 hgroup,
-main,
 section,
 footer {
   padding: 1rem;
@@ -71,9 +70,9 @@ figcaption {
 
 hr {
   border: none;
-  border-block-start: .25rem solid var(--primary-background-40);
-  height: .25rem;
-  margin: 1rem 0;
+  border-block-start: .125rem solid var(--primary-accent);
+  height: .125rem;
+  margin: 1.5rem 0;
   line-height: 1rem;
 }
 

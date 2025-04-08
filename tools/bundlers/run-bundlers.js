@@ -37,11 +37,15 @@ await cssBuilder("src/css/_bundle.css", `${fileSlug}.min.css`, {
 });
 
 // CSS Coastal Blue Theme
-await cssBuilder("src/css/theme-coastal.css", `${fileSlug}.theme.coastal.css`, {
-  banner,
-});
 await cssBuilder(
-  "src/css/theme-coastal.css",
+  "src/css/theme/_coastal.css",
+  `${fileSlug}.theme.coastal.css`,
+  {
+    banner,
+  },
+);
+await cssBuilder(
+  "src/css/theme/_coastal.css",
   `${fileSlug}.theme.coastal.min.css`,
   {
     banner,
@@ -50,11 +54,11 @@ await cssBuilder(
 );
 
 // CSS Desert Tan Theme
-await cssBuilder("src/css/theme-desert.css", `${fileSlug}.theme.desert.css`, {
+await cssBuilder("src/css/theme/_desert.css", `${fileSlug}.theme.desert.css`, {
   banner,
 });
 await cssBuilder(
-  "src/css/theme-desert.css",
+  "src/css/theme/_desert.css",
   `${fileSlug}.theme.desert.min.css`,
   {
     banner,
@@ -64,12 +68,12 @@ await cssBuilder(
 
 // CSS Mountain Gray Theme
 await cssBuilder(
-  "src/css/theme-mountain.css",
+  "src/css/theme/_mountain.css",
   `${fileSlug}.theme.mountain.css`,
   { banner },
 );
 await cssBuilder(
-  "src/css/theme-mountain.css",
+  "src/css/theme/_mountain.css",
   `${fileSlug}.theme.mountain.min.css`,
   {
     banner,
@@ -78,11 +82,11 @@ await cssBuilder(
 );
 
 // CSS Valley Green Theme
-await cssBuilder("src/css/theme-valley.css", `${fileSlug}.theme.valley.css`, {
+await cssBuilder("src/css/theme/_valley.css", `${fileSlug}.theme.valley.css`, {
   banner,
 });
 await cssBuilder(
-  "src/css/theme-valley.css",
+  "src/css/theme/_valley.css",
   `${fileSlug}.theme.valley.min.css`,
   {
     banner,

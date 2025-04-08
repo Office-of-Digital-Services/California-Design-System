@@ -1,7 +1,7 @@
 <ca-layout format="">
   <ca-site-menu>
     <a href="#content-nav" title="Menu">
-      <ca-icon name="bear-menu"></ca-icon>
+      <ca-icon glyph="bear-menu" format="burger"></ca-icon>
       <span class="visually-hidden">Menu</span>
     </a>
   </ca-site-menu>
@@ -27,7 +27,7 @@
         <label for="site-search" class="visually-hidden">Search this site</label>
         <input type="search" id="site-search" placeholder="Search" />
         <button type="submit">
-          <ca-icon name="search"></ca-icon>
+          <ca-icon glyph="search"></ca-icon>
           <span class="visually-hidden">Search</span>
         </button>
       </form>
@@ -41,24 +41,18 @@
           <ca-layout-toggle></ca-layout-toggle>
         </li>
         <li>
-          <ca-utility-icon>
-            <ca-color-scheme-toggle></ca-color-scheme-toggle>
-          </ca-utility-icon>
+          <ca-color-scheme-toggle></ca-color-scheme-toggle>
         </li>
         <li>
           <a href="#" title="Login">
-            <ca-utility-icon>
-              <ca-icon name="account-circle"></ca-icon>
-              <span class="visually-hidden">Login</span>
-            </ca-utility-icon>
+            <ca-icon glyph="account-circle" format="utility" translucent></ca-icon>
+            <span class="visually-hidden">Login</span>
           </a>
         </li>
         <li>
           <a href="#" title="Translate">
-            <ca-utility-icon>
-              <ca-icon name="language"></ca-icon>
-              <span class="visually-hidden">Translate</span>
-            </ca-utility-icon>
+            <ca-icon glyph="language" format="utility"></ca-icon>
+            <span class="visually-hidden">Translate</span>
           </a>
         </li>
       </ul>
@@ -89,16 +83,8 @@
   </ca-page-bar>
 
   <main>
-    <search>
-      <form>
-        <label for="site-search" class="visually-hidden">Search this site</label>
-        <input type="search" id="site-search" placeholder="Search" />
-        <button type="submit">
-          <ca-icon name="search"></ca-icon>
-          <span class="visually-hidden">Search</span>
-        </button>
-      </form>
-    </search>
+    <p>Icon test: <ca-icon glyph="mail"></ca-icon> </p>
+
     <h1>Layout page</h1>
     <p>Lead text.</p>
     <p>Normal text.</p>
@@ -114,7 +100,7 @@
   </main>
 
   <footer>
-    <ca-grid>
+    <ca-grid format="footer-link-grid">
       <section>
         <h2>Footer column heading</h2>
         <ul>
@@ -141,59 +127,77 @@
       </section>
     </ca-grid>
 
-    <ca-footer-links>
-      <ul>
-        <li><a href="#">Website Accessibility Certification</a></li>
-        <li><a href="#">Conditions of use</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Accessibility</a></li>
-        <li><a href="#">Sitemap</a></li>
+    <hr>
+
+    <ca-flex format="footer-split-links">
+      <ul class="compliance-link-list">
+        <li class="flex-basis-full">
+          <a href="#">Website Accessibility Certification</a>
+        </li>
+        <li>
+          <a href="#">Conditions of use</a>
+        </li>
+        <li>
+          <a href="#">Privacy</a>
+        </li>
+        <li>
+          <a href="#">Accessibility</a>
+        </li>
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
       </ul>
 
-      <ca-social-links>
-        <a href="#">
-          <ca-icon name="mail"></ca-icon>
-          <span class="visually-hidden">Email</span>
-        </a>
-        <a href="#">
-          <ca-icon name="facebook"></ca-icon>
-          <span class="visually-hidden">Facebook</span>
-        </a>
-        <a href="#">
-          <ca-icon name="linked-in"></ca-icon>
-          <span class="visually-hidden">LinkedIn</span>
-        </a>
-        <a href="#">
-          <ca-icon name="x-dot-com"></ca-icon>
-          <span class="visually-hidden">X.com</span>
-        </a>
-        <a href="#">
-          <ca-icon name="youtube"></ca-icon>
-          <span class="visually-hidden">YouTube</span>
-        </a>
-      </ca-social-links>
-    </ca-footer-links>
+      <ul class="social-icon-list">
+        <li>
+          <a href="#">
+            <ca-icon glyph="mail" format="social"></ca-icon>
+            <span class="visually-hidden">Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="facebook" format="social"></ca-icon>
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="linked-in" format="social"></ca-icon>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="x-dot-com" format="social"></ca-icon>
+            <span class="visually-hidden">X.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="youtube" format="social"></ca-icon>
+            <span class="visually-hidden">YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </ca-flex>
 
-    <ca-footer-end>
-      <div>
-        <ca-icon name="ca-bear"></ca-icon>
+    <ca-flex format="footer-end">
+      <ca-flex format="copyright-stamp">
+        <ca-icon glyph="ca-bear" format="footer-bear"></ca-icon>
         <p>An official California state website</p>
         <p>© <ca-current-year>2025</ca-current-year> State of California</p>
-      </div>
-      <div>
+      </ca-flex>
+      <ca-flex format="footer-utility">
         <a href="#">
-          <ca-utility-icon with-border>
-            <ca-icon name="help"></ca-icon>
-            <span class="visually-hidden">Help</span>
-          </ca-utility-icon>
+          <ca-icon glyph="help" format="utility"></ca-icon>
+          <span class="visually-hidden">Help</span>
         </a>
         <a href="#">
-          <ca-utility-icon with-border>
-            <ca-icon name="back-to-top"></ca-icon>
-            <span class="visually-hidden">Back to top</span>
-          </ca-utility-icon>
+          <ca-icon glyph="back-to-top" format="utility"></ca-icon>
+          <span class="visually-hidden">Back to top</span>
         </a>
-      </div>
-    </ca-footer-end>
+      </ca-flex>
+    </ca-flex>
   </footer>
 </ca-layout>

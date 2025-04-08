@@ -1,12 +1,18 @@
 ca-layout > main {
   container: main / inline-size;
   z-index: 1;
+  padding-block-end: 4rem;
+
+  > * {
+    /* Apply side margin to all top-level children of main. */
+    margin-inline: 1rem;
+  }
 }
 
 @container main (width > 50rem) {
   ca-layout > main > * {
-    /* Apply side margin to all top-level children of footer. */
-    margin-inline: 3rem;
+    /* Apply side margin to all top-level children of main. */
+    margin-inline: 5rem;
   }
 }
 
