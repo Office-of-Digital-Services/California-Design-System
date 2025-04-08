@@ -1,11 +1,21 @@
+<!---
+title: Eureka Design System, CA-flex
+description: This page provides a detailed desctiption of how we devloped and the useage of ca-flex.
+keywords: eureka, design system, design, ca-flex, .ca-flex, flexbox
+--->
+
 <style>
+	table {
+		margin-block-end: 2rem;
+	}
+
 	th {
 		font-size: 1.35rem;
 		text-align: left;
 	}
 
 	code {
-		font-size: 1.25rem;
+		font-size: 1.35rem;
 		font-weight: 700;
 	}
 </style>
@@ -17,34 +27,40 @@
 	designing web pages that work well on both big and small screens.</p>
 <h2>Live demo</h2>
 <p>Coming soon.</p>
-<h2>Anatomy</h2>
-<ol>
-	<li><code>Flex container</code> is the parent element that has display: flex or display: inline-flex applied to
-		it, defining the layout rules.</li>
-	<li><code>Flex items</code> are the direct children of the flex container that are arranged within the container.
-	</li>
-	<li><code>Main-axis</code> is the primary direction in which flex items are arranged, determined by the
-		flex-direction property.</li>
-	<li><code>Cross-axis</code> is perpendicular to the main axis, used for alignment and spacing.</li>
-	<li><code>Flex properties</code> are a set of CSS properties used to control the layout of flex items within the
-		flex container,
-		including flex-direction, justify-content, align-items, flex-wrap, etc.</li>
-</ol>
-<h3>Usage</h3>
-<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
+<ca-grid>
 	<section>
-		<h4>Do</h4>
-		<ul>
-			<li>I made a change.</li>
-			<li></li>
-		</ul>
+		<h2>Anatomy</h2>
+		<ol>
+			<li><code>Flex container</code> is the parent element that has display: flex or display: inline-flex applied to
+				it, defining the layout rules.</li>
+			<li><code>Flex items</code> are the direct children of the flex container that are arranged within the container.
+			</li>
+			<li><code>Main-axis</code> is the primary direction in which flex items are arranged, determined by the
+				flex-direction property.</li>
+			<li><code>Cross-axis</code> is perpendicular to the main axis, used for alignment and spacing.</li>
+			<li><code>Flex properties</code> are a set of CSS properties used to control the layout of flex items within the
+				flex container,
+				including flex-direction, justify-content, align-items, flex-wrap, etc.</li>
+		</ol>
 	</section>
 	<section>
-		<h4>Don't </h4>
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
+		<h3>Usage</h3>
+		<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
+			<section>
+				<h4>Do</h4>
+				<ul>
+					<li>I made a change.</li>
+					<li></li>
+				</ul>
+			</section>
+			<section>
+				<h4>Don't </h4>
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>
+			</section>
+		</ca-grid>
 	</section>
 </ca-grid>
 <h2>Developer notes</h2>

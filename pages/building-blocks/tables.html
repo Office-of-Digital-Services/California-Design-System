@@ -1,0 +1,161 @@
+<style>
+	code {
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+
+	table {
+		margin-block-end: 2rem;
+
+		& p {
+			margin-block-end: 0;
+		}
+	}
+
+	th {
+		font-size: 1.25rem;
+		text-align: left;
+	}
+
+	tbody {
+		width: 70ch;
+	}
+
+	img {
+		transition: transform 1s ease;
+	}
+
+	img:hover {
+		-webkit-transform: scale(1.2);
+		/* or some other value */
+		transform: scale(1.2);
+		cursor: pointer;
+	}
+</style>
+
+<h1>Tables</h1>
+<p>A table is a way to organize data using rows and columns.
+	Since data drives tables, it helps to present data clearly so it's easy to read and understand.
+</p>
+<h2>Live demo</h2>
+<p>Coming soon.</p>
+<h2>Anatomy</h2>
+<ca-flex wrap gap="4">
+	<ol>
+		<li><code>table</code> applies base Eureka CSS to your table.</li>
+		<li><code>caption</code> if your table needs a description.
+		</li>
+		<li><code>thead</code> that contains the header rows of your table.</li>
+		<li><code>tbody</code> containing the data in your table.</li>
+		<li><code>tfoot</code> is optional. Use it if your totaling numerical data.</li>
+		<li><code>tr</code> is used to insert rows into your table.</li>
+		<li><code>th</code> is in the <code>thead</code> and contains header text.</li>
+		<li><code>td</code> is in the <code>tbody</code> and contain tabular data..</li>
+	</ol>
+	<section>
+		<img src="/images/eureka-table.jpg" alt="">
+	</section>
+</ca-flex>
+<h3>Usage</h3>
+<p>Tables are typically used to present tabular data in a way that’s easy to read and is accessible to those with screen
+	readers.</p>
+<ca-grid flow="fill">
+	<section>
+		<h4>Do</h4>
+		<ul>
+			<li>Use tables for tabular data.</li>
+			<li>Use table headers, i.e., a <code>thead</code> tag followed by a <code>tr</code> tag and it's child
+				<code>th</code> tag.
+			</li>
+			<li>Apply accessibility features.</li>
+			<li>Keep it simple: Stick to clean, readable content with consistent alignment and spacing.</li>
+		</ul>
+	</section>
+	<section>
+		<h4>Don't </h4>
+		<ul>
+			<li>Use tables to structure web pages. We use <code><a href="/pages/design/ca-grid">CSS grid</a></code> and <code><a
+					href="/pages/design/ca-flex">flexbox</a></code> instead.</li>
+			<li>Center text. It goes against accessibility, usability, and design best practices.</li>
+			<li>Nest tables or make them overly complex; it reduces readability.</li>
+			<li>Rely on color alone to convey meaning.</li>
+		</ul>
+	</section>
+</ca-grid>
+<h2>Developer notes</h2>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Tags, attributes, classes</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>table</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>thead</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>tbody</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>tfoot</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>tr</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>th</code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code>td</code></td>
+			<td><code></code></td>
+		</tr>
+	</tbody>
+</table>
+<h2>Accessibility</h2>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Element or property</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code></code></td>
+			<td><code></code></td>
+		</tr>
+		<tr>
+			<td><code></code></td>
+			<td><code></code></td>
+		</tr>
+	</tbody>
+</table>
+<h2>Changelog</h2>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Date</th>
+			<th scope="col">Version</th>
+			<th scope="col">Affects</th>
+			<th scope="col">Notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>MM/DD/YYYY</td>
+			<td>0.0.0.0</td>
+			<td>Something</td>
+			<td>This is the first release.</td>
+		</tr>
+	</tbody>
+</table>
