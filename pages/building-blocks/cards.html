@@ -1,7 +1,35 @@
 <style>
 	code {
-		font-size: 1.35rem;
+		font-size: 1.25rem;
 		font-weight: 700;
+	}
+
+	table {
+		margin-block-end: 2rem;
+
+		& p {
+			margin-block-end: 0;
+		}
+	}
+
+	th {
+		font-size: 1.25rem;
+		text-align: left;
+	}
+
+	tbody {
+		width: 70ch;
+	}
+
+	img {
+		transition: transform 1s ease;
+	}
+
+	img:hover {
+		-webkit-transform: scale(1.2);
+		/* or some other value */
+		transform: scale(1.2);
+		cursor: pointer;
 	}
 </style>
 
@@ -25,15 +53,14 @@
 		<li><code>li</code>, the card container.
 		</li>
 		<li><code>div</code>, that contains headings, content, anchor, and image.</li>
-		<li><code>new-code-coming-soon</code>.</li>
+		<li><code>new-code-coming-soon </code>.</li>
 	</ol>
 	<section>
-		<h3>Card anatomy image coming.</h3>
-		<img src="" alt="">
+		<img src="/images/eureka-card.jpg" alt="">
 	</section>
 </ca-grid>
 <h3>Usage</h3>
-<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
+<ca-grid flow="fill">
 	<section>
 		<h4>Do</h4>
 		<ul>
@@ -44,8 +71,8 @@
 	<section>
 		<h4>Don't </h4>
 		<ul>
-			<li>No buttons in interactive cards.</li>
-			<li>No centering text. It goes against accessibility, usability, and design best practices.</li>
+			<li>Use buttons in interactive cards.</li>
+			<li>Center text. It goes against accessibility, usability, and design best practices.</li>
 		</ul>
 	</section>
 </ca-grid>
