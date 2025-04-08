@@ -1,12 +1,10 @@
 ca-layout > footer {
   z-index: 1;
   container: footer / inline-size;
-  padding-block: 5rem 3rem;
-  background: linear-gradient(
-    0deg,
-    var(--primary-background-10) 77%,
-    var(--primary-background-20) 100%
-  );
+  padding-block: 4rem 3rem;
+  padding-inline: 0;
+  background: var(--primary-background-10);
+  border-block-start: 1px solid var(--gray-50);
 
   & a {
     color: var(--primary-text);
@@ -28,23 +26,6 @@ ca-layout > footer {
     font-size: var(--text-size-sm);
   }
 
-  & ca-grid {
-    --col-gap: 2rem;
-    --row-gap: 2rem;
-    --flow-style: auto-fill;
-    --min-cell-inline-size: 20rem;
-
-    margin-block-end: 2rem;
-    padding-block-end: 2rem;
-    border-block-end: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-      to right,
-      var(--primary-accent),
-      transparent
-    );
-  }
-
   & section {
     padding: 0;
   }
@@ -55,64 +36,66 @@ ca-layout > footer {
     line-height: normal;
     font-weight: 600;
     margin-block: 0 1rem;
-    padding-block: 0 1rem;
+  }
+
+  > * {
+    /* Apply side margin to all top-level children of footer. */
+    margin-inline: 1rem;
   }
 }
 
-ca-footer-links {
-  display: flex;
+@container footer (width > 50rem) {
+  ca-layout > footer > * {
+    /* Apply side margin to all top-level children of footer. */
+    margin-inline: 5rem;
+  }
+}
+
+ca-grid[format="footer-link-grid"] {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --flow-style: auto-fill;
+  --min-cell-inline-size: 20rem;
+}
+
+ca-flex[format="footer-split-links"] {
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
   gap: 1.5rem;
   margin-block-end: 2rem;
 
-  & > ul:nth-of-type(2) {
+  & > ul.social-icon-list {
     flex-direction: row;
+    gap: 1.5rem;
   }
-
-  & svg {
-    min-block-size: 1.5rem;
-    min-inline-size: 1.5rem;
-    color: var(--primary-110);
-  }
-}
-
-ca-social-links {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
 }
 
 @container footer (width > 50rem) {
-  ca-layout > footer > * {
-    /* Apply side margin to all top-level children of footer. */
-    margin-inline: 3rem;
-  }
-
-  ca-footer-links {
+  ca-flex[format="footer-split-links"] {
     flex-direction: row;
 
-    & > ul:first-of-type {
+    & > ul.compliance-link-list {
       flex-direction: row;
       flex-wrap: wrap;
       column-gap: 1.5rem;
-
-      & > li:first-of-type {
-        min-inline-size: 100%;
-        font-size: var(--text-size-2);
-      }
     }
   }
 }
 
-ca-footer-end {
-  display: flex;
+ca-flex[format="footer-end"] {
   flex-direction: row;
   align-items: end;
   justify-content: space-between;
   column-gap: 2rem;
   row-gap: 1rem;
+}
+
+ca-flex[format="copyright-stamp"] {
+  flex-direction: column;
+  flex-basis: 100%;
+  row-gap: 1rem;
+  column-gap: 1rem;
 
   & p {
     margin: 0;
@@ -120,44 +103,28 @@ ca-footer-end {
     line-height: normal;
   }
 
-  & > div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
+  & > *:last-child {
+    font-size: var(--text-size-sm);
   }
+}
 
-  & > div:first-of-type {
-    flex-basis: 100%; /* Expand first div to fill space. */
-    column-gap: 1rem;
+ca-flex[format="footer-utility"] {
+  flex-direction: column;
+  row-gap: 1rem;
+  column-gap: 1.5rem;
 
-    & > *:last-child {
-      font-size: var(--text-size-sm);
-    }
-  }
-
-  & > div:nth-of-type(2) {
-    column-gap: 1.5rem;
-  }
-
-  & ca-icon[glyph="ca-bear"] {
-    --icon-x-size: 3.12325rem;
-    --icon-y-size: 1.75rem;
-  }
-
-  /* Icon links in 2nd div */
-  & > div:nth-of-type(2) > a {
+  & > a {
     justify-self: end;
   }
 }
 
 @container footer (width > 56rem) {
-  ca-footer-end {
-    & > div {
-      flex-direction: row;
-    }
+  ca-flex[format="copyright-stamp"],
+  ca-flex[format="footer-utility"] {
+    flex-direction: row;
+  }
 
-    & > div:first-of-type > *:last-child {
-      margin-inline-start: auto; /* Push copyright line to edge. */
-    }
+  ca-flex[format="copyright-stamp"] > *:last-child {
+    margin-inline-start: auto; /* Push copyright line to edge. */
   }
 }

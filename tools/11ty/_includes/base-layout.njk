@@ -123,7 +123,7 @@
   </main>
 
   <footer>
-    <ca-grid>
+    <ca-grid format="footer-link-grid">
       <section>
         <h2>Community of practice</h2>
         <ul>
@@ -150,60 +150,79 @@
       </section>
     </ca-grid>
 
-    <ca-footer-links>
-      <ul>
-        <li><a href="#">Website Accessibility Certification</a></li>
-        <li><a href="#">Conditions of use</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Accessibility</a></li>
-        <li><a href="#">Sitemap</a></li>
+		<hr>
+
+    <ca-flex format="footer-split-links">
+      <ul class="compliance-link-list">
+        <li class="flex-basis-full">
+          <a href="#">Website Accessibility Certification</a>
+        </li>
+        <li>
+          <a href="#">Conditions of use</a>
+        </li>
+        <li>
+          <a href="#">Privacy</a>
+        </li>
+        <li>
+          <a href="#">Accessibility</a>
+        </li>
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
       </ul>
 
-      <ca-social-links>
-        <a href="#">
-          <ca-icon glyph="mail" format="social"></ca-icon>
-          <span class="visually-hidden">Email</span>
-        </a>
-        <a href="#">
-          <ca-icon glyph="facebook" format="social"></ca-icon>
-          <span class="visually-hidden">Facebook</span>
-        </a>
-        <a href="#">
-          <ca-icon glyph="linked-in" format="social"></ca-icon>
-          <span class="visually-hidden">LinkedIn</span>
-        </a>
-        <a href="#">
-          <ca-icon glyph="x-dot-com" format="social"></ca-icon>
-          <span class="visually-hidden">X.com</span>
-        </a>
-        <a href="#">
-          <ca-icon glyph="youtube" format="social"></ca-icon>
-          <span class="visually-hidden">YouTube</span>
-        </a>
-      </ca-social-links>
-    </ca-footer-links>
+      <ul class="social-icon-list">
+        <li>
+          <a href="#">
+            <ca-icon glyph="mail" format="social"></ca-icon>
+            <span class="visually-hidden">Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="facebook" format="social"></ca-icon>
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="linked-in" format="social"></ca-icon>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="x-dot-com" format="social"></ca-icon>
+            <span class="visually-hidden">X.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ca-icon glyph="youtube" format="social"></ca-icon>
+            <span class="visually-hidden">YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </ca-flex>
 
-    <ca-footer-end>
-      <div>
-        <ca-icon glyph="ca-bear"></ca-icon>
+    <ca-flex format="footer-end">
+      <ca-flex format="copyright-stamp">
+        <ca-icon glyph="ca-bear" format="footer-bear"></ca-icon>
         <p>An official California state website</p>
         <p>© <ca-current-year>2025</ca-current-year> State of California</p>
-      </div>
-      <div>
+      </ca-flex>
+
+      <ca-flex format="footer-utility">
         <a href="#">
-          <ca-utility-icon with-border>
-            <ca-icon glyph="help" format="utility"></ca-icon>
-            <span class="visually-hidden">Help</span>
-          </ca-utility-icon>
+          <ca-icon glyph="help" format="utility"></ca-icon>
+          <span class="visually-hidden">Help</span>
         </a>
         <a href="#">
-          <ca-utility-icon with-border>
-            <ca-icon glyph="back-to-top" format="utility"></ca-icon>
-            <span class="visually-hidden">Back to top</span>
-          </ca-utility-icon>
+          <ca-icon glyph="back-to-top" format="utility"></ca-icon>
+          <span class="visually-hidden">Back to top</span>
         </a>
-      </div>
-    </ca-footer-end>
+      </ca-flex>
+    </ca-flex>
   </footer>
 </ca-layout>
 

@@ -31,3 +31,9 @@ ca-icon[format="utility"] {
     --background-size: 3rem;
   }
 }
+
+ca-icon[glyph="ca-bear"][format="footer-bear"] {
+  --icon-x-size: 3.12325rem;
+  --icon-y-size: 1.75rem;
+  justify-content: start;
+}
