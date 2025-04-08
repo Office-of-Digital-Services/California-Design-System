@@ -61,7 +61,7 @@ class NavMenu extends HTMLElement {
     this.button.setAttribute("aria-expanded", "true");
 
     const menuButtonIcon = this.button.querySelector("ca-icon");
-    menuButtonIcon.setAttribute("name", "close");
+    menuButtonIcon.setAttribute("glyph", "close");
   }
 
   // Close the menu.
@@ -73,7 +73,7 @@ class NavMenu extends HTMLElement {
     this.button.setAttribute("aria-expanded", "false");
 
     const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("name", "right");
+    buttonIcon.setAttribute("glyph", "right");
   }
 
   // An event handler for reacting to the custom "close all menus" event.
