@@ -1,4 +1,4 @@
-<ca-layout format="">
+<ca-layout format="horizon">
   <ca-site-menu>
     <a href="#content-nav" title="Menu">
       <ca-icon glyph="bear-menu" format="burger"></ca-icon>
@@ -41,9 +41,6 @@
           <ca-layout-toggle></ca-layout-toggle>
         </li>
         <li>
-          <ca-color-scheme-toggle></ca-color-scheme-toggle>
-        </li>
-        <li>
           <a href="#" title="Login">
             <ca-icon glyph="account-circle" format="utility" translucent></ca-icon>
             <span class="visually-hidden">Login</span>
@@ -76,11 +73,24 @@
           </li>
           <li><a href="#">Another link that's super long</a></li>
           <li><a href="#">Differ widths</a></li>
-          <li><a href="#">Test box model</a></li>
         </ul>
       </ca-nav-menu>
     </nav>
   </ca-page-bar>
+
+  <ca-service-bar>
+    <ca-nav-menu>
+      <ul>
+        <li><a href="#">Utility link</a></li>
+        <li><a href="#">Utility link</a></li>
+      </ul>
+    </ca-nav-menu>
+    <!--
+    <div class="padding-top-1 padding-x-2">
+      <ca-color-scheme-toggle></ca-color-scheme-toggle>
+    </div>
+    -->
+  </ca-service-bar>
 
   <main>
     <p>Icon test: <ca-icon glyph="mail"></ca-icon> </p>

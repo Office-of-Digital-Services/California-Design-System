@@ -95,8 +95,9 @@ class LayoutToggle extends HTMLElement {
 						<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
 						<label><input type="checkbox" name="header" value="header" /> Header</label>
 						<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> Priority bar</label>
-						<label><input type="checkbox" name="utility-nav" value="utility-nav" /> Utility bar</label>
-						<label><input type="checkbox" name="content-nav" value="content-nav" /> Page bar</label>
+						<label><input type="checkbox" name="utility-bar" value="utility-bar" /> Utility bar</label>
+						<label><input type="checkbox" name="page-bar" value="page-bar" /> Page bar</label>
+						<label><input type="checkbox" name="service-bar" value="service-bar" /> Service bar</label>
 						<label><input type="checkbox" name="main" value="main" /> Main</label>
 						<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
 					</fieldset>
@@ -232,8 +233,9 @@ class LayoutToggle extends HTMLElement {
       this.setupIncludeToggle(layout, "site-logo", "ca-site-logo");
       this.setupIncludeToggle(layout, "header", "header");
       this.setupIncludeToggle(layout, "ca-priority-bar", "ca-priority-bar");
-      this.setupIncludeToggle(layout, "utility-nav", "ca-utility-bar");
-      this.setupIncludeToggle(layout, "content-nav", "ca-page-bar");
+      this.setupIncludeToggle(layout, "utility-bar", "ca-utility-bar");
+      this.setupIncludeToggle(layout, "page-bar", "ca-page-bar");
+      this.setupIncludeToggle(layout, "service-bar", "ca-service-bar");
       this.setupIncludeToggle(layout, "main", "main");
       this.setupIncludeToggle(layout, "footer", "footer");
     }, 1);

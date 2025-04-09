@@ -15,7 +15,7 @@ class ColorSchemeToggle extends HTMLElement {
 
   shadowHtml = /* html */ `
 		<button>
-			<ca-icon glyph="light-mode" format="utility"></ca-icon>
+			<ca-icon glyph="light-mode" format="page-utility"></ca-icon>
 			<span class="visually-hidden">Switch between light and dark modes</span>
 		</button>
 	`;
@@ -86,7 +86,7 @@ class ColorSchemeToggle extends HTMLElement {
     const icon = this.querySelector("ca-icon");
     const newGlyph =
       this.scheme === this.schemes.light ? "light-mode" : "dark-mode";
-    icon.setAttribute("name", newGlyph);
+    icon.setAttribute("glyph", newGlyph);
   }
 }
 

@@ -1,37 +1,5 @@
-@media screen and (min-width: 1024px) {
-  /* Horizon, small desktop */
-  ca-layout[format="horizon"] > ca-page-bar {
-    padding: 0 1rem 0 0;
-    border-block-start: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-      to right,
-      transparent,
-      var(--primary-accent),
-      transparent
-    );
-  }
-
-  /* Skyline, small desktop */
-  ca-layout[format="skyline"] > ca-page-bar {
-    display: flex;
-    align-items: center;
-    padding: 1rem 3rem;
-  }
-}
-
-/* Go ahead and display content-nav if JS disabled. */
-ca-layout:has(ca-site-menu:not(:defined)) > ca-page-bar {
-  display: block;
-
-  /* Without JS, display the nested lists too. */
-  & ul ul {
-    display: flex;
-  }
-}
-
 ca-nav-menu {
-  block-size: 100%;
+  /* block-size: 100%; */
   display: flex;
 
   & ul {

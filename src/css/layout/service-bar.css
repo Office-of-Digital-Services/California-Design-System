@@ -1,0 +1,28 @@
+ca-service-bar {
+  display: none;
+  padding: 1rem;
+  background-color: var(--primary-background-20);
+}
+
+/* Small desktop */
+@media screen and (min-width: 1024px) {
+  /* Hide the burger on desktop. */
+  ca-service-bar {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  ca-layout[format="horizon"] > ca-service-bar {
+    padding: 0;
+
+    & > ca-nav-menu > ul {
+      gap: .5rem;
+    }
+  }
+
+  ca-layout[format="skyline"] > ca-service-bar {
+    display: none;
+  }
+}

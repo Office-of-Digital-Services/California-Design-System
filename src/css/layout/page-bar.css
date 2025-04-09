@@ -5,9 +5,41 @@ ca-page-bar {
   background-color: var(--primary-background-20);
 }
 
+@media screen and (min-width: 1024px) {
+  /* Horizon, small desktop */
+  ca-layout[format="horizon"] > ca-page-bar {
+    padding: 0 1rem 0 0;
+    border-block-start: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      to right,
+      transparent,
+      var(--primary-accent),
+      transparent
+    );
+  }
+
+  /* Skyline, small desktop */
+  ca-layout[format="skyline"] > ca-page-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+}
+
+/* Go ahead and display content-nav if JS disabled. */
+ca-layout:has(ca-site-menu:not(:defined)) > ca-page-bar {
+  display: block;
+
+  /* Without JS, display the nested lists too. */
+  & ul ul {
+    display: flex;
+  }
+}
+
 /* Small desktop */
 @media screen and (min-width: 1024px) {
-  /* Hide the burger */
+  /* Hide the burger on desktop. */
   ca-site-menu {
     display: none;
   }
