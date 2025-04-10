@@ -9,11 +9,13 @@ keywords: eureka, design system, building blocks, header, navigation, cards, foo
 		margin-block-start: 2rem;
 	}
 
-	:is(ca-grid, .ca-grid)>p {
+	:is(ca-grid, .ca-grid)>a {
 		margin: 0;
+		margin-block-start: 2rem;
 		padding: 1rem;
 		max-width: 100%;
-		background-color: lightseagreen;
+		background-color: var(--primary-30);
+		color: var(--primary-text)
 	}
 </style>
 
@@ -23,10 +25,10 @@ keywords: eureka, design system, building blocks, header, navigation, cards, foo
 	They ensure consistency and efficient user experience across all our products.
 </p>
 <ca-grid>
-	<p>Header | Nav card</p>
-	<p>Cards card</p>
-	<p>Tables card</p>
-	<p>Footer card</p>
+	<a href="/pages/building-blocks/header-navigation">Header and Navigation</a>
+	<a href="/pages/building-blocks/cards">Cards</a>
+	<a href="/pages/building-blocks/tables">Tables</a>
+	<a href="/pages/building-blocks/footer">Footer</a>
 </ca-grid>
 <h2>Why building blocks</h2>
 <p>Inherently, to build websites designers and developers use block elements. Through research, we found that people get

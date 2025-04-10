@@ -8,11 +8,13 @@ keywords: eureka, design system, design, ca-grid, ca-flex, typography, color, ui
 		margin-block-start: 2rem;
 	}
 
-	:is(ca-grid, .ca-grid)>p {
+	:is(ca-grid, .ca-grid)>a {
 		margin: 0;
+		margin-block-start: 2rem;
 		padding: 1rem;
 		max-width: 100%;
-		background-color: lightseagreen;
+		background-color: var(--primary-30);
+		color: var(--primary-text)
 	}
 </style>
 <h1>Design</h1>
@@ -22,8 +24,7 @@ keywords: eureka, design system, design, ca-grid, ca-flex, typography, color, ui
 	our Design System provides the structure, clarity, and tools to help you do your best work.
 </p>
 <ca-grid>
-	<p>CA-grid layout card</p>
-	<p>Typography card</p>
-	<p>Color card</p>
-	<p>UI kit card</p>
+	<a href="/pages/design/typography">Typography</a>
+	<a href="/pages/design/color">Color</a>
+	<a href="/pages/design/ui-kit">UI kit</a>
 </ca-grid>
