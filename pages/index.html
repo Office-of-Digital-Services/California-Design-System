@@ -11,11 +11,14 @@
 		margin-block-end: auto;
 	}
 
+	:is(ca-grid, .ca-grid)>a,
 	:is(ca-grid, .ca-grid)>p {
 		margin: 0;
+		margin-block-start: 2rem;
 		padding: 1rem;
 		max-width: 100%;
-		background-color: lightseagreen;
+		background-color: var(--primary-30);
+		color: var(--primary-text)
 	}
 
 	:is(ca-flex, .flex) div,
@@ -43,15 +46,15 @@
 	}
 </style>
 
-<h1>Eureka Design System</h1>
-<p>Discover and create digital experiences. Check out our UI kit in Figma to get started.</p>
-<button>UI kit</button>
+<h1>Discover and create digital experiences</h1>
+<p>Check out our UI kit in Figma to get started.</p>
+<button class="yellow">UI kit</button>
 <br>
 <ca-grid>
-	<p>Get started card</p>
-	<p>Design card</p>
-	<p>Develop card</p>
-	<p>Building blocks</p>
+	<a href="/pages/get-started/index">Get started</a>
+	<a href="/ages/design/index">Design</a>
+	<a href="/pages/develop/index">Develop</a>
+	<a href="/pages/building-blocks/index">Building blocks</a>
 </ca-grid>
 <h2>Showcase</h2>
 <p>We're working on some fun and innovative ways for you to devlop a beautiful digital product for your customers.</p>
