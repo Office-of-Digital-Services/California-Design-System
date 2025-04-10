@@ -1,0 +1,83 @@
+<style>
+	h2 {
+		margin-block-start: 2rem;
+	}
+
+	button {
+		margin-block-end: 2rem;
+	}
+
+	button.gray {
+		margin-block-end: auto;
+	}
+
+	:is(ca-grid, .ca-grid)>p {
+		margin: 0;
+		padding: 1rem;
+		max-width: 100%;
+		background-color: lightseagreen;
+	}
+
+	:is(ca-flex, .flex) div,
+	ca-self {
+		display: block;
+		padding: 1rem 2rem;
+		background-color: var(--primary-30);
+		border: 2px solid var(--primary-100);
+		border-radius: .5rem;
+	}
+
+	div>a.button {
+		margin-block-end: 2rem;
+	}
+
+
+	ul[type="unstyled"] {
+		list-style-type: none;
+		margin-block-end: 2rem;
+		padding-inline-start: 0;
+
+		& li {
+			margin-block-end: .5rem;
+		}
+	}
+</style>
+
+<h1>Eureka Design System</h1>
+<p>Discover and create digital experiences. Check out our UI kit in Figma to get started.</p>
+<button>UI kit</button>
+<br>
+<ca-grid>
+	<p>Get started card</p>
+	<p>Design card</p>
+	<p>Develop card</p>
+	<p>Building blocks</p>
+</ca-grid>
+<h2>Showcase</h2>
+<p>We're working on some fun and innovative ways for you to devlop a beautiful digital product for your customers.</p>
+<ca-grid>
+	<p>Cool thing 1</p>
+	<p>Cool thing 2</p>
+</ca-grid>
+<h2>Community of practice</h2>
+<p>We aim to empower state and local entities to work together and help mold the future of digital strategy across the
+	Golden State.</p>
+<h3>Events</h3>
+<ca-flex gap="4">
+	<div>
+		<h4>Digital Web Services Network (DWSN)</h4>
+		<ul type="unstyled">
+			<li>Thursday: June 5, 2025</li>
+			<li>Via MS Teams</li>
+		</ul>
+		<button class="gray">Request an invite</button>
+	</div>
+	<div>
+		<h4>A UX | Dev | Accessibility thing</h4>
+		<ul type="unstyled">
+			<li><strong>Day:</strong> Month 00, 20YY</li>
+			<li><strong>Location:</strong> TBD</li>
+		</ul>
+		<button class="gray">Request an invite</button>
+	</div>
+</ca-flex>
