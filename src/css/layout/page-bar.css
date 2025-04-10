@@ -6,8 +6,16 @@ ca-page-bar {
 }
 
 @media screen and (min-width: 1024px) {
+  /* Show the full nav on desktop. */
+  ca-page-bar {
+    display: block;
+  }
+
   /* Horizon, small desktop */
   ca-layout[format="horizon"] > ca-page-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 0 1rem 0 0;
     border-block-start: 2px solid;
     border-image-slice: 1;
@@ -34,18 +42,5 @@ ca-layout:has(ca-site-menu:not(:defined)) > ca-page-bar {
   /* Without JS, display the nested lists too. */
   & ul ul {
     display: flex;
-  }
-}
-
-/* Small desktop */
-@media screen and (min-width: 1024px) {
-  /* Hide the burger on desktop. */
-  ca-site-menu {
-    display: none;
-  }
-
-  /* Show the full nav on desktop. */
-  ca-page-bar {
-    display: block;
   }
 }

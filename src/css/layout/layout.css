@@ -17,10 +17,6 @@ ca-layout {
     grid-area: page-bar;
   }
 
-  & > ca-service-bar {
-    grid-area: service-bar;
-  }
-
   /* Optional */
   & > ca-site-logo {
     grid-area: logo;
@@ -97,15 +93,14 @@ ca-layout {
 @media screen and (min-width: 1024px) {
   ca-layout:not([format="horizon"]):not([format="skyline"]) {
     grid-template-columns: 15rem 1fr;
-    grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr max-content max-content;
+    grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr max-content;
     grid-template-areas:
       "logo utility-bar"
       "logo main"
       "header main"
       "priority-bar main"
       "page-bar main"
-      "page-bar footer"
-      "service-bar footer";
+      "page-bar footer";
 
     & > header {
       align-items: start;
@@ -129,30 +124,19 @@ ca-layout {
       background: var(--primary-background-20);
       grid-area: page-bar;
     }
-
-    /* Likewise, when the service-bar is missing, plug the grid with psuedo element. */
-    &:has(ca-service-bar[hidden])::after,
-    &:not(:has(ca-service-bar))::after {
-      content: "";
-      block-size: 100%;
-      inline-size: 100%;
-      display: block;
-      background: var(--primary-background-20);
-      grid-area: service-bar;
-    }
   }
 }
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="horizon"] {
-    grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) auto auto;
+    grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) auto;
     grid-template-rows: max-content max-content 1fr max-content;
     grid-template-areas:
-      "logo header priority-bar utility-bar utility-bar"
-      "logo page-bar page-bar page-bar service-bar"
-      "main main main main main"
-      "footer footer footer footer footer";
+      "logo header priority-bar utility-bar"
+      "logo page-bar page-bar page-bar"
+      "main main main main"
+      "footer footer footer footer";
 
     /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
     &:has(ca-page-bar[hidden]),
@@ -164,21 +148,6 @@ ca-layout {
         display: block;
         background: var(--primary-background-20);
         grid-area: page-bar;
-      }
-
-      &:has(ca-service-bar[hidden]),
-      &:not(:has(ca-service-bar)) {
-        &::before {
-          grid-column: span 4;
-        }
-      }
-    }
-
-    /* When service-bar is missing, extend the page-bar to fill the space. */
-    &:has(ca-service-bar[hidden]),
-    &:not(:has(ca-service-bar)) {
-      & > ca-page-bar {
-        grid-column: span 4;
       }
     }
 
@@ -200,12 +169,25 @@ ca-layout {
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="skyline"] {
-    grid-template-columns: fit-content(7rem) 1fr auto fit-content(15rem) max-content;
+    grid-template-columns: fit-content(7rem) max-content 1fr fit-content(15rem) max-content;
     grid-template-rows: max-content auto max-content;
     grid-template-areas:
       "logo header page-bar priority-bar utility-bar"
       "main main main main main"
       "footer footer footer footer footer";
+
+    /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
+    &:has(ca-page-bar[hidden]),
+    &:not(:has(ca-page-bar)) {
+      &::before {
+        content: "";
+        block-size: 100%;
+        inline-size: 100%;
+        display: block;
+        background: var(--primary-background-20);
+        grid-area: page-bar;
+      }
+    }
   }
 }
 

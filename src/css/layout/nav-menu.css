@@ -1,5 +1,5 @@
 ca-nav-menu {
-  /* block-size: 100%; */
+  block-size: 100%;
   display: flex;
 
   & ul {

@@ -1,20 +1,23 @@
-ca-service-bar {
+ca-page-utility {
   display: none;
-  padding: 1rem;
+  padding: 1rem 0;
   background-color: var(--primary-background-20);
 }
 
 /* Small desktop */
 @media screen and (min-width: 1024px) {
   /* Hide the burger on desktop. */
-  ca-service-bar {
+  ca-layout:not([format="horizon"]) ca-page-utility {
     display: block;
-    position: sticky;
+    position: fixed;
+    width: 13rem;
     bottom: 0;
     z-index: 10;
+    border-block-start: .125rem solid var(--primary-accent);
   }
 
-  ca-layout[format="horizon"] > ca-service-bar {
+  ca-layout[format="horizon"] ca-page-utility {
+    display: block;
     padding: 0;
 
     & > ca-nav-menu > ul {
@@ -22,7 +25,7 @@ ca-service-bar {
     }
   }
 
-  ca-layout[format="skyline"] > ca-service-bar {
+  ca-layout[format="skyline"] ca-page-utility {
     display: none;
   }
 }

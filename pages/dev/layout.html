@@ -1,4 +1,4 @@
-<ca-layout format="horizon">
+<ca-layout format="">
   <ca-site-menu>
     <a href="#content-nav" title="Menu">
       <ca-icon glyph="bear-menu" format="burger"></ca-icon>
@@ -41,6 +41,9 @@
           <ca-layout-toggle></ca-layout-toggle>
         </li>
         <li>
+          <ca-color-scheme-toggle></ca-color-scheme-toggle>
+        </li>
+        <li>
           <a href="#" title="Login">
             <ca-icon glyph="account-circle" format="utility" translucent></ca-icon>
             <span class="visually-hidden">Login</span>
@@ -76,21 +79,21 @@
         </ul>
       </ca-nav-menu>
     </nav>
-  </ca-page-bar>
 
-  <ca-service-bar>
-    <ca-nav-menu>
-      <ul>
-        <li><a href="#">Utility link</a></li>
-        <li><a href="#">Utility link</a></li>
-      </ul>
-    </ca-nav-menu>
-    <!--
-    <div class="padding-top-1 padding-x-2">
-      <ca-color-scheme-toggle></ca-color-scheme-toggle>
-    </div>
+    <ca-page-utility>
+      <ca-nav-menu>
+        <ul>
+          <li><a href="#">Utility link</a></li>
+          <li><a href="#">Utility link</a></li>
+        </ul>
+      </ca-nav-menu>
+      <!--
+      <div class="padding-top-1 padding-x-2">
+        <ca-color-scheme-toggle></ca-color-scheme-toggle>
+      </div>
     -->
-  </ca-service-bar>
+    </ca-page-utility>
+  </ca-page-bar>
 
   <main>
     <p>Icon test: <ca-icon glyph="mail"></ca-icon> </p>
