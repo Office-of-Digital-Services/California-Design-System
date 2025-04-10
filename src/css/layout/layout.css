@@ -66,7 +66,7 @@ ca-layout {
 /* Apply a mobile-only media query, so these mods don't mess with desktop. */
 @media screen and (max-width: 1023px) {
   ca-layout {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr;
     grid-template-rows: max-content max-content auto max-content max-content;
     grid-template-areas:
       "burger utility-bar"
@@ -193,10 +193,24 @@ ca-layout {
 
 /* Burger menu */
 ca-layout[site-menu="open"] {
+  overflow-x: clip;
+
   & > :is(ca-site-menu, ca-utility-bar, header) {
     position: sticky;
     /* Exact positioning will be inlined by JS. */
     z-index: 1000;
+  }
+
+  & > header {
+    padding-inline-start: 2rem;
+  }
+
+  & > ca-priority-bar {
+    position: fixed;
+    display: block;
+    overflow-y: auto;
+    block-size: unset;
+    z-index: 999;
   }
 
   & > ca-page-bar {
@@ -204,14 +218,17 @@ ca-layout[site-menu="open"] {
     display: block;
     overflow-y: auto;
     height: 100%;
-    z-index: 999;
+    z-index: 998;
+  }
+
+  & > :is(header, ca-priority-bar, ca-page-bar) {
+    width: 15rem;
   }
 
   & > :is(main, footer) {
+    inset-inline-start: 16rem;
+    position: relative;
     filter: blur(.2rem);
-  }
-
-  & > :is(main, footer) {
     overflow-x: hidden;
   }
 }
@@ -231,7 +248,7 @@ ca-layout[site-menu="open"] {
 @keyframes burger-from-left {
   from {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(-16rem);
   }
 
   to {
@@ -240,17 +257,33 @@ ca-layout[site-menu="open"] {
   }
 }
 
+@keyframes content-to-right {
+  from {
+    filter: none;
+    transform: translateX(-16rem);
+  }
+
+  to {
+    filter: blur(.2rem);
+    transform: translateX(0);
+  }
+}
+
 @media screen and (max-width: 1023px) and (
     prefers-reduced-motion: no-preference
   ) {
   ca-layout[site-menu="open"] {
-    & :is(ca-site-menu, ca-utility-bar, header) {
+    & :is(ca-site-menu, ca-utility-bar) {
       opacity: 0;
-      animation: burger-from-top ease-out 0.2s forwards;
+      animation: burger-from-top ease-out 0.3s forwards;
     }
-    & :is(ca-page-bar) {
+    & :is(header, ca-priority-bar, ca-page-bar) {
       opacity: 0;
-      animation: burger-from-left ease-out 0.2s forwards;
+      animation: burger-from-left ease-out 0.3s forwards;
+    }
+    & :is(main, footer) {
+      filter: none;
+      animation: content-to-right ease-out 0.3s forwards;
     }
   }
 }

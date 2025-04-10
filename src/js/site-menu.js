@@ -125,7 +125,7 @@ class SiteMenu extends HTMLElement {
 
   // Apply inline styles to layout elements to ensure they look good in expanded menu.
   applyTopOffsets() {
-    let headersHeight = 0;
+    let depth = 0;
     const elements = ["ca-site-menu", "ca-utility-bar", "header"];
     for (const element of elements) {
       const el = this.layout.querySelector(element);
@@ -134,14 +134,21 @@ class SiteMenu extends HTMLElement {
         el.style.top = `${top}px`;
 
         if (element === "ca-site-menu" || element === "header") {
-          headersHeight += el.offsetHeight;
+          depth += el.offsetHeight;
         }
       }
     }
 
+    const priorityBar = this.layout.querySelector("ca-priority-bar");
+    if (priorityBar) {
+      const priorityBarHeight = depth - 1;
+      priorityBar.style.top = `${priorityBarHeight}px`;
+      depth += priorityBar.offsetHeight;
+    }
+
     const pageBar = this.layout.querySelector("ca-page-bar");
     if (pageBar) {
-      const pageBarHeight = headersHeight - 1;
+      const pageBarHeight = depth - 1;
       pageBar.style.top = `${pageBarHeight}px`;
     }
   }
