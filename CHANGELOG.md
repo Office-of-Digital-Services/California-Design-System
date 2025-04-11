@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.2.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.1.1...v0.2.0) (2025-04-11)
+
+
+### Features
+
+* Basic button ([660c47e](https://github.com/Office-of-Digital-Services/California-Design-System/commit/660c47e27b28fd8d5647b51fcc6c62fee3212569))
+* Elastic burger button ([71275a7](https://github.com/Office-of-Digital-Services/California-Design-System/commit/71275a766c2068b2b907138e33efdf1d25a6e272))
+* Initial navigation submenus ([32febd5](https://github.com/Office-of-Digital-Services/California-Design-System/commit/32febd59a691b75c11039cca497a0ff533267d6d))
+* Links as buttons ([69a94f5](https://github.com/Office-of-Digital-Services/California-Design-System/commit/69a94f52bf7d0473ecc3be1d3688aaf420d89e01))
+* Menu events ([0847a10](https://github.com/Office-of-Digital-Services/California-Design-System/commit/0847a10fb93ddbf56a7123635f9793716a858b0d))
+* Partial burger menu ([57d2f10](https://github.com/Office-of-Digital-Services/California-Design-System/commit/57d2f1052d49e87ca847e8cb6283e85479234f66))
+* Service bar ([f0b330d](https://github.com/Office-of-Digital-Services/California-Design-System/commit/f0b330d8b02d04b0b405ed3d7a607145e62b8bd7))
+
+
+### Bug Fixes
+
+* Button specificity ([14fac5c](https://github.com/Office-of-Digital-Services/California-Design-System/commit/14fac5cc50c4925dae953bd249eb18e6344e0c5d))
+* Clean up utility nav ([0e42774](https://github.com/Office-of-Digital-Services/California-Design-System/commit/0e42774a8bca6938241a63d47ef8c2b335be632f))
+* Dev menu dropdown ([c5ba7ce](https://github.com/Office-of-Digital-Services/California-Design-System/commit/c5ba7ce38d9f7ac0742ebdc22fa919df02f7de54))
+* More button specificity ([000f0a3](https://github.com/Office-of-Digital-Services/California-Design-System/commit/000f0a3d623f02b946429dda49f3fe2fb327984d))
+* Primary button colors ([0b1d69f](https://github.com/Office-of-Digital-Services/California-Design-System/commit/0b1d69f127a079880eddc20059af83e17b407591))
+
 ## [0.1.1](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.1.0...v0.1.1) (2025-03-04)
 
 
