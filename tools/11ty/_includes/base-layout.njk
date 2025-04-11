@@ -11,7 +11,7 @@
   </ca-site-menu>
 
   <ca-site-logo>
-    <a href="/">
+    <a href="/pages/index">
       <svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1506_25118)">
           <path d="M26.8588 17.1376V3.04688C12.8933 7.79347 2.36677 20.0374 0 35.0192H13.1283C14.967 27.2853 20.058 20.8086 26.8588 17.1376Z" fill="#007FB9"/>
@@ -28,9 +28,9 @@
   </ca-site-logo>
 
   <header>
-    <a href="/">
+    <a href="/pages/index">
       <span>California</span>
-      <span>Design System Eureka<sup>α0.0.1</sup></span> 
+      <span>Design System<sup>α0.0.1</sup></span> 
     </a>
   </header>
 
@@ -63,7 +63,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#" title="Translate">
+					<a href="/pages/translate-disclaimer" title="Translate">
 						<ca-icon glyph="language" format="utility"></ca-icon>
 						<span class="visually-hidden">Translate</span>
 					</a>
@@ -76,19 +76,13 @@
 		<nav id="content-nav" aria-label="Content navigation">
 			<ca-nav-menu>
 				<ul>
-					<li>
-					<ca-nav-menu><a href="/pages/get-started/index">Get started</a>
-						<ul>
-							<li><a href="/pages/get-started/content">Content</a></li>
-							<li><a href="/pages/get-started/principles">Principles</a></li>
-						</ul>
-					</ca-nav-menu>
+					<li><a href="/pages/get-started/index">Get started</a>
 					</li>
 					<li>
 						<ca-nav-menu><a href="/pages/design/index">Design</a>
 							<ul>
-								<li><a href="/pages/design/ca-grid">CA-grid layout</a></li>
-								<li><a href="/pages/design/ca-flex">CA-flex layout</a></li>
+								<li><a href="/pages/design/principles">UX principles</a></li>
+								<li><a href="/pages/design/content">Content guidelines</a></li>
 								<li><a href="/pages/design/typography">Typography</a></li>
 								<li><a href="/pages/design/color">Color</a></li>
 								<li><a href="/pages/design/ui-kit">UI-kit</a></li>
@@ -105,6 +99,8 @@
 					<li>
 						<ca-nav-menu><a href="/pages/building-blocks/index">Building blocks</a>
 							<ul>
+								<li><a href="/pages/building-blocks/ca-grid">CA-grid layout</a></li>
+								<li><a href="/pages/building-blocks/ca-flex">CA-flex layout</a></li>
 								<li><a href="/pages/building-blocks/header-navigation">Header | navigation</a></li>
 								<li><a href="/pages/building-blocks/cards">Cards</a></li>
 								<li><a href="/pages/building-blocks/tables">Tables</a></li>
@@ -113,6 +109,7 @@
 							</ul>
 						</ca-nav-menu>
 					</li>
+					<li><ca-nav-menu><a href="/pages/building-blocks/index">Showcase</a></ca-nav-menu></li>
 				</ul>
 			</ca-nav-menu>
 		</nav>
@@ -155,19 +152,19 @@
     <ca-flex format="footer-split-links">
       <ul class="compliance-link-list">
         <li class="flex-basis-full">
-          <a href="#">Website Accessibility Certification</a>
+          <a href="https://www.ca.gov/images/WebsiteAccessibilityCert-ca.gov.pdf">Website Accessibility Certification</a>
         </li>
         <li>
-          <a href="#">Conditions of use</a>
+          <a href="/pages/conditions-of-use">Conditions of use</a>
         </li>
         <li>
-          <a href="#">Privacy</a>
+          <a href="/pages/privacy">Privacy</a>
         </li>
         <li>
-          <a href="#">Accessibility</a>
+          <a href="/pages/accessibility">Accessibility</a>
         </li>
         <li>
-          <a href="#">Sitemap</a>
+          <a href="/pages/sitemap">Sitemap</a>
         </li>
       </ul>
 
@@ -208,7 +205,7 @@
     <ca-flex format="footer-end">
       <ca-flex format="copyright-stamp">
         <ca-icon glyph="ca-bear" format="footer-bear"></ca-icon>
-        <p>An official California state website</p>
+        <p>An official California state website.</p>
         <p>© <ca-current-year>2025</ca-current-year> State of California</p>
       </ca-flex>
 
@@ -226,4 +223,11 @@
   </footer>
 </ca-layout>
 
+<!-- Google Translate Widgrt JS -->
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+ 		new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+	}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 {% endblock %}
