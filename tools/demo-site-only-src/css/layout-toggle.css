@@ -1,6 +1,6 @@
 ca-layout-toggle {
   display: flex;
-  align-items: end;
+  align-items: center;
 
   inline-size: 5rem;
   block-size: 3rem;

@@ -13,7 +13,7 @@ const darkModeIcon = /* html */ `
 class ColorSchemeToggle extends HTMLElement {
   storageKey = "color-scheme-preference";
 
-  shadowHtml = /* html */ `
+  template = /* html */ `
 		<button>
 			<ca-icon glyph="light-mode" format="utility"></ca-icon>
 			<span class="visually-hidden">Switch between light and dark modes</span>
@@ -29,7 +29,7 @@ class ColorSchemeToggle extends HTMLElement {
 
   connectedCallback() {
     this.setInitialScheme();
-    this.innerHTML = this.shadowHtml;
+    this.innerHTML = this.template;
     this.applyScheme();
 
     const toggle = this.querySelector("button");
@@ -86,7 +86,7 @@ class ColorSchemeToggle extends HTMLElement {
     const icon = this.querySelector("ca-icon");
     const newGlyph =
       this.scheme === this.schemes.light ? "light-mode" : "dark-mode";
-    icon.setAttribute("name", newGlyph);
+    icon.setAttribute("glyph", newGlyph);
   }
 }
 

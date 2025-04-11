@@ -42,24 +42,32 @@ class LayoutToggle extends HTMLElement {
 				gap: .25rem;
 				padding: .5rem;
 			}
-			div.form-wrap {
-				position: relative;
-			}
 			form {
 				position: absolute;
 				display: flex;
 				flex-direction: row;
+				flex-wrap: wrap;
 				gap: 1rem;
-				background-color: var(--primary-background-40);
+				background-image: repeating-linear-gradient(
+					-55deg,
+					var(--primary-background-40),
+					var(--primary-background-40) 5rem,
+					var(--primary-background-60) 5rem,
+					var(--primary-background-60) 10rem
+				);
 				padding: 1rem;
-				top: 100%;
-				right: 0;
+				top: 5rem;
+				right: 1rem;
+				max-width: 70%;
 				box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 				border-radius: var(--border-radius);
 				z-index: 100;
 			}
-			form > div {
-				width: 12rem;
+			form > p {
+				flex-basis: 100%;
+				margin: 0;
+				padding: .5rem;
+				font-weight: 700;
 			}
 			form[hidden] {
 				display: none;
@@ -88,45 +96,42 @@ class LayoutToggle extends HTMLElement {
 		</button>
 		<div class="form-wrap">
 			<form hidden>
-				<div>
-					<fieldset id="include">
-						<legend>Include</legend>
-						<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
-						<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
-						<label><input type="checkbox" name="header" value="header" /> Header</label>
-						<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> Priority bar</label>
-						<label><input type="checkbox" name="utility-nav" value="utility-nav" /> Utility bar</label>
-						<label><input type="checkbox" name="content-nav" value="content-nav" /> Page bar</label>
-						<label><input type="checkbox" name="main" value="main" /> Main</label>
-						<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
-					</fieldset>
-				</div>
-				<div>
-					<fieldset id="layout">
-						<legend>Layout</legend>
-						<label><input type="radio" name="layout" value="eureka" /> Eureka</label>
-						<label><input type="radio" name="layout" value="horizon" /> Horizon</label>
-						<label><input type="radio" name="layout" value="skyline" /> Skyline</label>
-					</fieldset>
-					<fieldset id="theme">
-						<legend>Theme</legend>
-						<label><input type="radio" name="theme" value="coastal" /> Coastal</label>
-						<label><input type="radio" name="theme" value="desert" /> Desert</label>
-						<label><input type="radio" name="theme" value="mountain" /> Mountain</label>
-						<label><input type="radio" name="theme" value="valley" /> Valley</label>
-					</fieldset>
-					<fieldset id="accent">
-						<legend>Accent</legend>
-						<label><input type="radio" name="accent" value="primary" />Primary</label>
-						<label><input type="radio" name="accent" value="secondary" />Secondary</label>
-					</fieldset>
-					<fieldset id="corners">
-						<legend>Corner</legend>
-						<label><input type="radio" name="corners" value="soft" /> Soft</label>
-						<label><input type="radio" name="corners" value="sharp" /> Sharp</label>
-						<label><input type="radio" name="corners" value="round" /> Round</label>
-					</fieldset>
-				</div>
+				<p>Debug panel</p>
+				<fieldset id="include">
+					<legend>Include</legend>
+					<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
+					<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
+					<label><input type="checkbox" name="header" value="header" /> Header</label>
+					<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> Priority bar</label>
+					<label><input type="checkbox" name="utility-bar" value="utility-bar" /> Utility bar</label>
+					<label><input type="checkbox" name="page-bar" value="page-bar" /> Page bar</label>
+					<label><input type="checkbox" name="main" value="main" /> Main</label>
+					<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
+				</fieldset>
+				<fieldset id="layout">
+					<legend>Layout</legend>
+					<label><input type="radio" name="layout" value="eureka" /> Eureka</label>
+					<label><input type="radio" name="layout" value="horizon" /> Horizon</label>
+					<label><input type="radio" name="layout" value="skyline" /> Skyline</label>
+				</fieldset>
+				<fieldset id="theme">
+					<legend>Theme</legend>
+					<label><input type="radio" name="theme" value="coastal" /> Coastal</label>
+					<label><input type="radio" name="theme" value="desert" /> Desert</label>
+					<label><input type="radio" name="theme" value="mountain" /> Mountain</label>
+					<label><input type="radio" name="theme" value="valley" /> Valley</label>
+				</fieldset>
+				<fieldset id="accent">
+					<legend>Accent</legend>
+					<label><input type="radio" name="accent" value="primary" />Primary</label>
+					<label><input type="radio" name="accent" value="secondary" />Secondary</label>
+				</fieldset>
+				<fieldset id="corners">
+					<legend>Corner</legend>
+					<label><input type="radio" name="corners" value="soft" /> Soft</label>
+					<label><input type="radio" name="corners" value="sharp" /> Sharp</label>
+					<label><input type="radio" name="corners" value="round" /> Round</label>
+				</fieldset>
 			</form>
 		</div>
 	`;
@@ -232,8 +237,8 @@ class LayoutToggle extends HTMLElement {
       this.setupIncludeToggle(layout, "site-logo", "ca-site-logo");
       this.setupIncludeToggle(layout, "header", "header");
       this.setupIncludeToggle(layout, "ca-priority-bar", "ca-priority-bar");
-      this.setupIncludeToggle(layout, "utility-nav", "ca-utility-bar");
-      this.setupIncludeToggle(layout, "content-nav", "ca-page-bar");
+      this.setupIncludeToggle(layout, "utility-bar", "ca-utility-bar");
+      this.setupIncludeToggle(layout, "page-bar", "ca-page-bar");
       this.setupIncludeToggle(layout, "main", "main");
       this.setupIncludeToggle(layout, "footer", "footer");
     }, 1);

@@ -125,7 +125,7 @@ class SiteMenu extends HTMLElement {
 
   // Apply inline styles to layout elements to ensure they look good in expanded menu.
   applyTopOffsets() {
-    let headersHeight = 0;
+    let depth = 0;
     const elements = ["ca-site-menu", "ca-utility-bar", "header"];
     for (const element of elements) {
       const el = this.layout.querySelector(element);
@@ -134,15 +134,24 @@ class SiteMenu extends HTMLElement {
         el.style.top = `${top}px`;
 
         if (element === "ca-site-menu" || element === "header") {
-          headersHeight += el.offsetHeight;
+          depth += el.offsetHeight;
         }
       }
     }
 
+    const priorityBar = this.layout.querySelector("ca-priority-bar");
+    if (priorityBar) {
+      const priorityBarTop = depth - 1;
+      priorityBar.style.top = `${priorityBarTop}px`;
+      depth += priorityBar.offsetHeight;
+    }
+
     const pageBar = this.layout.querySelector("ca-page-bar");
     if (pageBar) {
-      const pageBarHeight = headersHeight - 1;
-      pageBar.style.top = `${pageBarHeight}px`;
+      const pageBarTop = depth - 1;
+      pageBar.style.top = `${pageBarTop}px`;
+      const pageBarHeight = window.innerHeight - depth + 1;
+      pageBar.style.height = `${pageBarHeight}px`;
     }
   }
 
@@ -150,6 +159,7 @@ class SiteMenu extends HTMLElement {
   removeTopOffsets() {
     const elements = [
       "ca-site-menu",
+      "ca-priority-bar",
       "ca-utility-bar",
       "header",
       "ca-page-bar",
@@ -158,6 +168,7 @@ class SiteMenu extends HTMLElement {
       const el = this.layout.querySelector(element);
       if (el) {
         el.style.removeProperty("top");
+        el.style.removeProperty("height");
       }
     }
   }

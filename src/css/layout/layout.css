@@ -66,7 +66,7 @@ ca-layout {
 /* Apply a mobile-only media query, so these mods don't mess with desktop. */
 @media screen and (max-width: 1023px) {
   ca-layout {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr;
     grid-template-rows: max-content max-content auto max-content max-content;
     grid-template-areas:
       "burger utility-bar"
@@ -93,7 +93,7 @@ ca-layout {
 @media screen and (min-width: 1024px) {
   ca-layout:not([format="horizon"]):not([format="skyline"]) {
     grid-template-columns: 15rem 1fr;
-    grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr auto;
+    grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr max-content;
     grid-template-areas:
       "logo utility-bar"
       "logo main"
@@ -106,27 +106,23 @@ ca-layout {
       align-items: start;
     }
 
+    /* When the site-logo is missing, fill the empty grid cells with the header. */
     &:has(ca-site-logo[hidden]),
     &:not(:has(ca-site-logo)) {
-      grid-template-rows: auto max-content 1fr auto;
-      grid-template-areas:
-        "header utility-bar"
-        "priority-bar main"
-        "page-bar main"
-        "page-bar footer";
+      & > header {
+        grid-row: 1 / 4;
+      }
     }
 
-    &:has(ca-page-bar[hidden]),
-    &:not(:has(ca-page-bar)) {
-      & > ca-priority-bar {
-        grid-row: span 3;
-        align-items: start;
-      }
-
-      &:has(ca-priority-bar[hidden]) header,
-      &:not(:has(ca-priority-bar)) header {
-        grid-row: span 4;
-      }
+    /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
+    &:has(ca-page-bar[hidden])::before,
+    &:not(:has(ca-page-bar))::before {
+      content: "";
+      block-size: 100%;
+      inline-size: 100%;
+      display: block;
+      background: var(--primary-background-20);
+      grid-area: page-bar;
     }
   }
 }
@@ -134,47 +130,104 @@ ca-layout {
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="horizon"] {
-    grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) max-content;
-    grid-template-rows: max-content max-content auto max-content;
+    grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) auto;
+    grid-template-rows: max-content max-content 1fr max-content;
     grid-template-areas:
       "logo header priority-bar utility-bar"
       "logo page-bar page-bar page-bar"
       "main main main main"
       "footer footer footer footer";
+
+    /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
+    &:has(ca-page-bar[hidden]),
+    &:not(:has(ca-page-bar)) {
+      &::before {
+        content: "";
+        block-size: 100%;
+        inline-size: 100%;
+        display: block;
+        background: var(--primary-background-20);
+        grid-area: page-bar;
+      }
+    }
+
+    /* When the utility-bar is missing, add a psuedo element to fill the grid slot. */
+    &:has(ca-utility-bar[hidden]),
+    &:not(:has(ca-utility-bar)) {
+      &::after {
+        content: "";
+        block-size: 100%;
+        inline-size: 100%;
+        display: block;
+        background: var(--primary-background-20);
+        grid-area: utility-bar;
+      }
+    }
   }
 }
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="skyline"] {
-    grid-template-columns: fit-content(7rem) 1fr auto fit-content(15rem) max-content;
+    grid-template-columns: fit-content(7rem) max-content 1fr fit-content(15rem) max-content;
     grid-template-rows: max-content auto max-content;
     grid-template-areas:
       "logo header page-bar priority-bar utility-bar"
       "main main main main main"
       "footer footer footer footer footer";
+
+    /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
+    &:has(ca-page-bar[hidden]),
+    &:not(:has(ca-page-bar)) {
+      &::before {
+        content: "";
+        block-size: 100%;
+        inline-size: 100%;
+        display: block;
+        background: var(--primary-background-20);
+        grid-area: page-bar;
+      }
+    }
   }
 }
 
+/* Burger menu */
 ca-layout[site-menu="open"] {
+  overflow-x: clip;
+
   & > :is(ca-site-menu, ca-utility-bar, header) {
     position: sticky;
     /* Exact positioning will be inlined by JS. */
     z-index: 1000;
   }
 
-  & > ca-page-bar {
+  & > header {
+    padding-inline-start: 2rem;
+  }
+
+  & > ca-priority-bar {
     position: fixed;
     display: block;
-    height: 100%;
+    overflow-y: auto;
+    block-size: unset;
     z-index: 999;
   }
 
-  & > :is(main, footer) {
-    filter: blur(.2rem);
+  & > ca-page-bar {
+    position: fixed;
+    display: block;
+    overflow-y: auto;
+    z-index: 998;
+  }
+
+  & > :is(header, ca-priority-bar, ca-page-bar) {
+    width: 15rem;
   }
 
   & > :is(main, footer) {
+    inset-inline-start: 16rem;
+    position: relative;
+    filter: blur(.2rem);
     overflow-x: hidden;
   }
 }
@@ -194,7 +247,7 @@ ca-layout[site-menu="open"] {
 @keyframes burger-from-left {
   from {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(-16rem);
   }
 
   to {
@@ -203,17 +256,33 @@ ca-layout[site-menu="open"] {
   }
 }
 
+@keyframes content-to-right {
+  from {
+    filter: none;
+    transform: translateX(-16rem);
+  }
+
+  to {
+    filter: blur(.2rem);
+    transform: translateX(0);
+  }
+}
+
 @media screen and (max-width: 1023px) and (
     prefers-reduced-motion: no-preference
   ) {
   ca-layout[site-menu="open"] {
-    & :is(ca-site-menu, ca-utility-bar, header) {
+    & :is(ca-site-menu, ca-utility-bar) {
       opacity: 0;
-      animation: burger-from-top ease-out 0.2s forwards;
+      animation: burger-from-top ease-out 0.3s forwards;
     }
-    & :is(ca-page-bar) {
+    & :is(header, ca-priority-bar, ca-page-bar) {
       opacity: 0;
-      animation: burger-from-left ease-out 0.2s forwards;
+      animation: burger-from-left ease-out 0.3s forwards;
+    }
+    & :is(main, footer) {
+      filter: none;
+      animation: content-to-right ease-out 0.3s forwards;
     }
   }
 }
