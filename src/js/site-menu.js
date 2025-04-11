@@ -141,15 +141,17 @@ class SiteMenu extends HTMLElement {
 
     const priorityBar = this.layout.querySelector("ca-priority-bar");
     if (priorityBar) {
-      const priorityBarHeight = depth - 1;
-      priorityBar.style.top = `${priorityBarHeight}px`;
+      const priorityBarTop = depth - 1;
+      priorityBar.style.top = `${priorityBarTop}px`;
       depth += priorityBar.offsetHeight;
     }
 
     const pageBar = this.layout.querySelector("ca-page-bar");
     if (pageBar) {
-      const pageBarHeight = depth - 1;
-      pageBar.style.top = `${pageBarHeight}px`;
+      const pageBarTop = depth - 1;
+      pageBar.style.top = `${pageBarTop}px`;
+      const pageBarHeight = window.innerHeight - depth + 1;
+      pageBar.style.height = `${pageBarHeight}px`;
     }
   }
 
@@ -157,6 +159,7 @@ class SiteMenu extends HTMLElement {
   removeTopOffsets() {
     const elements = [
       "ca-site-menu",
+      "ca-priority-bar",
       "ca-utility-bar",
       "header",
       "ca-page-bar",
@@ -165,6 +168,7 @@ class SiteMenu extends HTMLElement {
       const el = this.layout.querySelector(element);
       if (el) {
         el.style.removeProperty("top");
+        el.style.removeProperty("height");
       }
     }
   }

@@ -25,16 +25,6 @@ ca-icon[format="utility"] {
   --background-size: 2.5rem;
 }
 
-ca-icon[format="page-utility"] {
-  --color: var(--primary-110);
-  --background: var(--primary-background-40);
-  --background-hover: var(--primary-background-50);
-  --background-active: var(--primary-background-60);
-  --icon-x-size: 2rem;
-  --icon-y-size: auto;
-  --background-size: 3rem;
-}
-
 @media screen and (min-width: 1024px) {
   ca-icon[format="utility"] {
     --icon-x-size: 1.5rem;

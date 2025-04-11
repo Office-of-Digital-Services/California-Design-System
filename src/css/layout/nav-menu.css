@@ -98,6 +98,55 @@ ca-nav-menu {
   }
 }
 
+/* Mobile */
+@media screen and (max-width: 1023px) {
+  ca-layout[site-menu="open"] {
+    /* The peeking drawer that slightly pops out when hovering over a nested nav item. */
+    & ca-nav-menu {
+      &:not([expanded]):has(> button:hover)::before {
+        content: "";
+        z-index: 3;
+        position: absolute;
+        block-size: 100%;
+        inline-size: 1rem;
+        inset-block-start: 0;
+        inset-inline-start: 15rem;
+        background-color: var(--primary-background-30);
+        box-shadow: .25rem 0 .25rem 0 rgba(0, 0, 0, 0.05);
+      }
+      /* We need to lock the upper shadow in place, so it doesn't dance with the animation. */
+      &[expanded]::after,
+      &:not([expanded]):has(> button:hover)::after {
+        content: "";
+        z-index: 4;
+        position: absolute;
+        block-size: 100%;
+        inline-size: .5rem;
+        inset-block-start: 0;
+        inset-inline-start: 15rem;
+        background-color: var(--primary-background-30);
+        box-shadow: .25rem 0 .25rem 0 rgba(0, 0, 0, 0.05) inset;
+      }
+      &[expanded]::after {
+        inline-size: 1rem;
+      }
+      &[expanded] > ul {
+        position: absolute;
+        margin: 0;
+        inset-block-start: 0;
+        inset-inline-start: 15rem;
+        display: flex;
+        padding: 3.5rem 1rem 1rem 1rem;
+        inline-size: 15rem;
+        block-size: 100%;
+        z-index: 1;
+        background-color: var(--primary-background-30);
+        box-shadow: .25rem 0 .25rem 0 rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
+
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout:not([format="horizon"]):not([format="skyline"]) {

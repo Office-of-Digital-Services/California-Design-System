@@ -217,7 +217,6 @@ ca-layout[site-menu="open"] {
     position: fixed;
     display: block;
     overflow-y: auto;
-    height: 100%;
     z-index: 998;
   }
 
