@@ -62,12 +62,13 @@
   --coastal-dark: #002334;
   --coastal-darker: #001c29;
   --coastal-darkest: #00151f;
-  --coastal-main-accent: var(--coastal-static-90);
-  --coastal-optional-accent-dark: #d9b983;
-  --coastal-optional-accent-light: #cc860c;
+  --coastal-accent-dark: #d9b983;
+  --coastal-accent-light: #cc860c;
   --coastal-highlight: var(--coastal-static-90);
   --coastal-highlight-active-dark: var(--coastal-static-80);
   --coastal-highlight-active-light: var(--coastal-static-100);
+  --coastal-shadow-light: #00405d;
+  --coastal-shadow-dark: #000e14;
 
   /* Desert Tan, theme */
   --desert-static-10: #fefefe;
@@ -94,12 +95,13 @@
   --desert-dark: #261e0d;
   --desert-darker: #261e0d;
   --desert-darkest: #161208;
-  --desert-main-accent: var(--desert-static-70);
-  --desert-optional-accent-dark: #83a0ff;
-  --desert-optional-accent-light: #2f65da;
+  --desert-accent-dark: #83a0ff;
+  --desert-accent-light: #2f65da;
   --desert-highlight: var(--desert-static-70);
   --desert-highlight-active-dark: var(--desert-static-60);
   --desert-highlight-active-light: var(--desert-static-80);
+  --desert-shadow-light: #443618;
+  --desert-shadow-dark: #0f0c05;
 
   /* Mountain Gray, theme */
   --mountain-static-10: #fefeff;
@@ -126,12 +128,13 @@
   --mountain-dark: #141c1f;
   --mountain-darker: #101619;
   --mountain-darkest: #0c1012;
-  --mountain-main-accent: var(--mountain-static-60);
-  --mountain-optional-accent-dark: #bee6ff;
-  --mountain-optional-accent-light: #167837;
+  --mountain-accent-dark: #bee6ff;
+  --mountain-accent-light: #167837;
   --mountain-highlight: var(--mountain-static-60);
   --mountain-highlight-active-dark: var(--mountain-static-50);
   --mountain-highlight-active-light: var(--mountain-static-70);
+  --mountain-shadow-light: #243238;
+  --mountain-shadow-dark: #080b0c;
 
   /* Valley Green, theme */
   --valley-static-10: #feffff;
@@ -158,12 +161,13 @@
   --valley-dark: #0f2124;
   --valley-darker: #0c1a1c;
   --valley-darkest: #091415;
-  --valley-main-accent: var(--valley-static-80);
-  --valley-optional-accent-dark: #e7e7bf;
-  --valley-optional-accent-light: #f64d13;
+  --valley-accent-dark: #e7e7bf;
+  --valley-accent-light: #f64d13;
   --valley-highlight: var(--valley-static-80);
   --valley-highlight-active-dark: var(--valley-static-70);
   --valley-highlight-active-light: var(--valley-static-90);
+  --valley-shadow-light: #1c3c41;
+  --valley-shadow-dark: #060d0e;
 
   /* Magenta palette, bright */
   --magenta-static-10: #fffefe;
@@ -332,10 +336,11 @@
   --coastal-background-40: var(--coastal-palest);
   --coastal-background-50: var(--coastal-paler);
   --coastal-background-60: var(--coastal-pale);
-  --coastal-optional-accent: var(--coastal-optional-accent-light);
+  --coastal-accent: var(--coastal-accent-light);
   --coastal-text: var(--coastal-120);
   --coastal-background: var(--coastal-background-10);
   --coastal-highlight-active: var(--coastal-highlight-active-light);
+  --coastal-shadow: var(--coastal-shadow-light);
   --desert-10: var(--desert-static-10);
   --desert-20: var(--desert-static-20);
   --desert-30: var(--desert-static-30);
@@ -354,10 +359,11 @@
   --desert-background-40: var(--desert-palest);
   --desert-background-50: var(--desert-paler);
   --desert-background-60: var(--desert-pale);
-  --desert-optional-accent: var(--desert-optional-accent-light);
+  --desert-accent: var(--desert-accent-light);
   --desert-text: var(--desert-120);
   --desert-background: var(--desert-background-10);
   --desert-highlight-active: var(--desert-highlight-active-light);
+  --desert-shadow: var(--desert-shadow-light);
   --mountain-10: var(--mountain-static-10);
   --mountain-20: var(--mountain-static-20);
   --mountain-30: var(--mountain-static-30);
@@ -376,10 +382,11 @@
   --mountain-background-40: var(--mountain-palest);
   --mountain-background-50: var(--mountain-paler);
   --mountain-background-60: var(--mountain-pale);
-  --mountain-optional-accent: var(--mountain-optional-accent-light);
+  --mountain-accent: var(--mountain-accent-light);
   --mountain-text: var(--mountain-120);
   --mountain-background: var(--mountain-background-10);
   --mountain-highlight-active: var(--mountain-highlight-active-light);
+  --mountain-shadow: var(--mountain-shadow-light);
   --valley-10: var(--valley-static-10);
   --valley-20: var(--valley-static-20);
   --valley-30: var(--valley-static-30);
@@ -398,10 +405,11 @@
   --valley-background-40: var(--valley-palest);
   --valley-background-50: var(--valley-paler);
   --valley-background-60: var(--valley-pale);
-  --valley-optional-accent: var(--valley-optional-accent-light);
+  --valley-accent: var(--valley-accent-light);
   --valley-text: var(--valley-120);
   --valley-background: var(--valley-background-10);
   --valley-highlight-active: var(--valley-highlight-active-light);
+  --valley-shadow: var(--valley-shadow-light);
   --magenta-10: var(--magenta-static-10);
   --magenta-20: var(--magenta-static-20);
   --magenta-30: var(--magenta-static-30);
@@ -541,10 +549,11 @@
   --coastal-background-40: var(--coastal-dimmest);
   --coastal-background-50: var(--coastal-dimmer);
   --coastal-background-60: var(--coastal-dim);
-  --coastal-optional-accent: var(--coastal-optional-accent-dark);
+  --coastal-accent: var(--coastal-accent-dark);
   --coastal-text: var(--coastal-120);
   --coastal-background: var(--coastal-background-10);
   --coastal-highlight-active: var(--coastal-highlight-active-dark);
+  --coastal-shadow: var(--coastal-shadow-dark);
   --desert-120: var(--desert-static-10);
   --desert-110: var(--desert-static-20);
   --desert-100: var(--desert-static-30);
@@ -563,10 +572,11 @@
   --desert-background-40: var(--desert-dimmest);
   --desert-background-50: var(--desert-dimmer);
   --desert-background-60: var(--desert-dim);
-  --desert-optional-accent: var(--desert-optional-accent-dark);
+  --desert-accent: var(--desert-accent-dark);
   --desert-text: var(--desert-120);
   --desert-background: var(--desert-background-10);
   --desert-highlight-active: var(--desert-highlight-active-dark);
+  --desert-shadow: var(--desert-shadow-dark);
   --mountain-120: var(--mountain-static-10);
   --mountain-110: var(--mountain-static-20);
   --mountain-100: var(--mountain-static-30);
@@ -585,10 +595,11 @@
   --mountain-background-40: var(--mountain-dimmest);
   --mountain-background-50: var(--mountain-dimmer);
   --mountain-background-60: var(--mountain-dim);
-  --mountain-optional-accent: var(--mountain-optional-accent-dark);
+  --mountain-accent: var(--mountain-accent-dark);
   --mountain-text: var(--mountain-120);
   --mountain-background: var(--mountain-background-10);
   --mountain-highlight-active: var(--mountain-highlight-active-dark);
+  --mountain-shadow: var(--mountain-shadow-dark);
   --valley-120: var(--valley-static-10);
   --valley-110: var(--valley-static-20);
   --valley-100: var(--valley-static-30);
@@ -607,10 +618,11 @@
   --valley-background-40: var(--valley-dimmest);
   --valley-background-50: var(--valley-dimmer);
   --valley-background-60: var(--valley-dim);
-  --valley-optional-accent: var(--valley-optional-accent-dark);
+  --valley-accent: var(--valley-accent-dark);
   --valley-text: var(--valley-120);
   --valley-background: var(--valley-background-10);
   --valley-highlight-active: var(--valley-highlight-active-dark);
+  --valley-shadow: var(--valley-shadow-dark);
   --magenta-10: var(--magenta-static-120);
   --magenta-20: var(--magenta-static-110);
   --magenta-30: var(--magenta-static-100);
@@ -702,18 +714,4 @@
   --yellow-110: var(--yellow-static-30);
   --yellow-120: var(--yellow-static-10);
   --yellow-highlight-active: var(--yellow-highlight-active-dark);
-}
-
-:root,
-[data-accent*="primary"] {
-  --coastal-accent: var(--coastal-main-accent);
-  --mountain-accent: var(--mountain-main-accent);
-  --desert-accent: var(--desert-main-accent);
-  --valley-accent: var(--valley-main-accent);
-}
-[data-accent*="secondary"] {
-  --coastal-accent: var(--coastal-optional-accent);
-  --mountain-accent: var(--mountain-optional-accent);
-  --desert-accent: var(--desert-optional-accent);
-  --valley-accent: var(--valley-optional-accent);
 }
