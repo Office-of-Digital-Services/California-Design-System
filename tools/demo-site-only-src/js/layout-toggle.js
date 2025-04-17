@@ -121,11 +121,6 @@ class LayoutToggle extends HTMLElement {
 					<label><input type="radio" name="theme" value="mountain" /> Mountain</label>
 					<label><input type="radio" name="theme" value="valley" /> Valley</label>
 				</fieldset>
-				<fieldset id="accent">
-					<legend>Accent</legend>
-					<label><input type="radio" name="accent" value="primary" />Primary</label>
-					<label><input type="radio" name="accent" value="secondary" />Secondary</label>
-				</fieldset>
 				<fieldset id="corners">
 					<legend>Corner</legend>
 					<label><input type="radio" name="corners" value="soft" /> Soft</label>
@@ -192,17 +187,6 @@ class LayoutToggle extends HTMLElement {
     layoutFieldset.addEventListener("change", (event) => {
       layout.setAttribute("format", event.target.value);
       this.closeMenu(button, form);
-    });
-
-    // Set initial accent
-    const accentFieldset = this.shadowRoot.querySelector("fieldset#accent");
-    const initialAccent = layout.getAttribute("data-accent") || "primary";
-    accentFieldset
-      .querySelector(`input[value="${initialAccent}"]`)
-      .setAttribute("checked", "");
-    // Change accent
-    accentFieldset.addEventListener("change", (event) => {
-      layout.setAttribute("data-accent", event.target.value);
     });
 
     // Set initial corners

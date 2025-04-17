@@ -25,33 +25,15 @@
   --primary-darker: var(--valley-darker);
   --primary-darkest: var(--valley-darkest);
 
-  --primary-main-accent: var(--valley-main-accent);
+  --primary-accent: var(--valley-accent);
   --primary-highlight: var(--valley-highlight);
-}
-
-/* Light mode */
-:root,
-[data-color-scheme="light"] {
-  --primary-optional-accent: var(--valley-optional-accent-light);
-  --primary-highlight-active: var(--valley-highlight-active-light);
-}
-/* Dark mode */
-[data-color-scheme="dark"] {
-  --primary-optional-accent: var(--valley-optional-accent-dark);
-  --primary-highlight-active: var(--valley-highlight-active-dark);
+  --primary-shadow: var(--valley-shadow);
 }
 
 /* The below definitions do not need to be spelled out like this in every theme. 
  * We're just doing this for convenience in standard set-ups.
- * In your custom theme, just define --primary-accent and --border-radius directly.
+ * In your custom theme, just define --border-radius directly.
 */
-:root,
-[data-accent*="primary"] {
-  --primary-accent: var(--primary-main-accent);
-}
-[data-accent*="secondary"] {
-  --primary-accent: var(--primary-optional-accent);
-}
 :root,
 [data-corners="soft"] {
   /* Roundedness default */

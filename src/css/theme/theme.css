@@ -21,6 +21,12 @@
   --primary-background-60: var(--primary-pale);
   --primary-text: var(--primary-120);
   --primary-background: var(--primary-background-10);
+  --primary-shadow-1: 0 0 0.0625rem 0
+    rgba(from var(--primary-shadow) r g b / 0.5), 0 0.0625rem 0.0625rem 0
+    rgba(from var(--primary-shadow) r g b / 0.4);
+  --primary-shadow-2: 0 0 0.0625rem 0
+    rgba(from var(--primary-shadow) r g b / 0.5), 0 0.5rem 0.938rem 0
+    rgba(from var(--primary-shadow) r g b / 0.2);
 }
 
 /* Dark mode */
@@ -45,4 +51,9 @@
   --primary-background-60: var(--primary-dim);
   --primary-text: var(--primary-120);
   --primary-background: var(--primary-background-10);
+  --primary-shadow-1: 0 0 0.0625rem 0 var(--primary-shadow), 0 0.0625rem
+    0.0625rem 0 var(--primary-shadow), 0 0 0 0.0625rem rgba(0, 0, 0, 0.0) inset;
+  --primary-shadow-2: 0 0 0.0625rem 0 var(--primary-shadow), 0 0.5rem 0.75rem 0
+    var(--primary-shadow), 0 0 0 0.0625rem
+    rgba(from var(--primary-background-40) r g b / 0.5) inset;
 }
