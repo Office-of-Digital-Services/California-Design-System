@@ -48,16 +48,6 @@
 	.main {
 		grid-area: main;
 	}
-
-	:is(ca-grid, .ca-grid)>div {
-		height: auto;
-		margin: 0;
-		margin-block-start: 2rem;
-		padding: 1rem;
-		max-width: 100%;
-		background-color: var(--primary-30);
-		color: var(--primary-text)
-	}
 </style>
 
 <div class="container">
@@ -69,18 +59,25 @@
 		<a style="width: 6.25rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
 	</ca-flex>
 	<div class="banner-img"></div>
-	<ca-grid class="main">
-		<div>
-			<h2>Design</h2>
-			<a href="/pages/design/index">Design</a> beautiful interfaces.
-		</div>
-		<div>
-			<h2>Develop</h2>
-			<a href="/pages/develop/index">Develop</a> accessible, user friendly experiences.</a>
-		</div>
-		<div>
-			<h2>Building blocks</h2>
-			<p>Use <a href="/pages/building-blocks/index">Building blocks</a> that piece together your product journey.</p>
-		</div>
-	</ca-grid>
+
 </div>
+<ca-grid class="main">
+	<ca-card interactive="full">
+		<article>
+			<h2><a href="/pages/design/index">Design</a></h2>
+			<p>Create beautiful digital interfaces.</p>
+		</article>
+	</ca-card>
+	<ca-card interactive="full">
+		<article>
+			<h2><a href="/pages/develop/index">Develop</a></h2>
+			<p>Build accessible, user friendly experiences.</p>
+		</article>
+	</ca-card>
+	<ca-card interactive="full">
+		<article>
+			<h2><a href="/pages/building-blocks/index">Building blocks</a></h2>
+			<p>Piece together your product journey.</p>
+		</article>
+	</ca-card>
+</ca-grid>
