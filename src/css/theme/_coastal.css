@@ -26,6 +26,7 @@
 
   --primary-accent: var(--coastal-accent);
   --primary-highlight: var(--coastal-highlight);
+  --primary-highlight-active: var(--coastal-highlight-active);
   --primary-shadow: var(--coastal-shadow);
 }
 

@@ -27,6 +27,7 @@
 
   --primary-accent: var(--mountain-accent);
   --primary-highlight: var(--mountain-highlight);
+  --primary-highlight-active: var(--mountain-highlight-active);
   --primary-shadow: var(--mountain-shadow);
 }
 

@@ -27,6 +27,7 @@
 
   --primary-accent: var(--desert-main-accent);
   --primary-highlight: var(--desert-highlight);
+  --primary-highlight-active: var(--desert-highlight-active);
   --primary-shadow: var(--desert-shadow);
 }
 
