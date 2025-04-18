@@ -94,6 +94,12 @@ a {
   }
 }
 
+code {
+  background-color: var(--gray-background-60);
+  padding: .25rem;
+  border-radius: min(.25rem, var(--border-radius)); /* Border radius not to exceed .25rem. */
+}
+
 abbr {
   font-weight: 700;
 }
