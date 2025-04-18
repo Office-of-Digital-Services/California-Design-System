@@ -3,13 +3,8 @@
 		margin-block-start: 2rem;
 	}
 
-	:is(ca-grid, .ca-grid)>a {
-		margin: 0;
-		margin-block-start: 2rem;
-		padding: 1rem;
-		max-width: 100%;
-		background-color: var(--primary-30);
-		color: var(--primary-text)
+	ca-grid>ca-card {
+		margin-block-start: 4rem;
 	}
 
 	a.button {
@@ -25,10 +20,25 @@
 <a title="Eureka DS download"
 	href="https://github.com/Office-of-Digital-Services/California-Design-System/archive/refs/heads/main.zip"
 	class="button gray">CA Desin System Latest Release</a>
+
+
 <ca-grid>
-	<a href="/pages/design/content">Content guidelines</a>
-	<a href="/pages/design/principles">Principles</a>
+	<ca-card interactive="full" fit="cover" direction="horizontal" image-min-size="extra-small">
+		<div>
+			<h2><a href="/pages/design/content">Content guidelines</a></h2>
+			<p>Take a dive into how we approach content for the web.</p>
+		</div>
+		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+	</ca-card>
+	<ca-card interactive="full" fit="cover" direction="horizontal" image-min-size="extra-small">
+		<div>
+			<h2><a href="#">Principles</a></h2>
+			<p>Understand our why, behind our approach to providing the best user experinces we can for our users.</p>
+		</div>
+		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+	</ca-card>
 </ca-grid>
+
 <h2>GitHub documentation</h2>
 <p>For more detailed development documentation head over to our <a
 		href="https://github.com/Office-of-Digital-Services/California-Design-System">CA Design System GitHub</a> site.
