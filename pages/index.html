@@ -6,10 +6,11 @@
 	h1 span {
 		color: var(--gray-static-30);
 		font-size: 70%;
+		font-weight: 500;
 	}
 
 	h2 {
-		margin-block-start: 2rem;
+		font-size: 1.5rem;
 	}
 
 	p {
@@ -27,24 +28,29 @@
 		position: relative;
 		margin: auto;
 		margin-inline: 5rem;
-		grid-gap: 10px;
+		grid-gap: 1rem;
 		grid-template-areas:
-			"banner"
-			"main";
-		grid-template-columns: auto;
-		grid-template-rows: 40rem;
+			"banner banner-img"
+			"main main";
+		grid-template-columns: auto 60vw;
+		grid-template-rows: 30rem;
 	}
 
 	.banner {
 		grid-area: banner;
 	}
 
+	.banner-img {
+		grid-area: banner-img;
+		overflow: visible;
+	}
+
 	.main {
 		grid-area: main;
 	}
 
-	:is(ca-grid, .ca-grid)>a,
-	:is(ca-grid, .ca-grid)>p {
+	:is(ca-grid, .ca-grid)>div {
+		height: auto;
 		margin: 0;
 		margin-block-start: 2rem;
 		padding: 1rem;
@@ -59,12 +65,22 @@
 		<h1>California<br>
 			<span>Design System</span>
 		</h1>
-		<p style="width: 33%">Bring digital experiences together.</p>
+		<p style="width: auto">Bring digital experiences together.</p>
 		<a style="width: 6.25rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
 	</ca-flex>
+	<div class="banner-img"></div>
 	<ca-grid class="main">
-		<a href="/pages/design/index">Design</a>
-		<a href="/pages/develop/index">Develop</a>
-		<a href="/pages/building-blocks/index">Building blocks</a>
+		<div>
+			<h2>Design</h2>
+			<a href="/pages/design/index">Design</a> beautiful interfaces.
+		</div>
+		<div>
+			<h2>Develop</h2>
+			<a href="/pages/develop/index">Develop</a> accessible, user friendly experiences.</a>
+		</div>
+		<div>
+			<h2>Building blocks</h2>
+			<p>Use <a href="/pages/building-blocks/index">Building blocks</a> that piece together your product journey.</p>
+		</div>
 	</ca-grid>
 </div>
