@@ -6,10 +6,11 @@
 	h1 span {
 		color: var(--gray-static-30);
 		font-size: 70%;
+		font-weight: 500;
 	}
 
 	h2 {
-		margin-block-start: 2rem;
+		font-size: 1.5rem;
 	}
 
 	p {
@@ -27,30 +28,25 @@
 		position: relative;
 		margin: auto;
 		margin-inline: 5rem;
-		grid-gap: 10px;
+		grid-gap: 1rem;
 		grid-template-areas:
-			"banner"
-			"main";
-		grid-template-columns: auto;
-		grid-template-rows: 40rem;
+			"banner banner-img"
+			"main main";
+		grid-template-columns: auto 60vw;
+		grid-template-rows: 30rem;
 	}
 
 	.banner {
 		grid-area: banner;
 	}
 
-	.main {
-		grid-area: main;
+	.banner-img {
+		grid-area: banner-img;
+		overflow: visible;
 	}
 
-	:is(ca-grid, .ca-grid)>a,
-	:is(ca-grid, .ca-grid)>p {
-		margin: 0;
-		margin-block-start: 2rem;
-		padding: 1rem;
-		max-width: 100%;
-		background-color: var(--primary-30);
-		color: var(--primary-text)
+	.main {
+		grid-area: main;
 	}
 </style>
 
@@ -59,12 +55,29 @@
 		<h1>California<br>
 			<span>Design System</span>
 		</h1>
-		<p style="width: 33%">Bring digital experiences together.</p>
+		<p style="width: auto">Bring digital experiences together.</p>
 		<a style="width: 6.25rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
 	</ca-flex>
-	<ca-grid class="main">
-		<a href="/pages/design/index">Design</a>
-		<a href="/pages/develop/index">Develop</a>
-		<a href="/pages/building-blocks/index">Building blocks</a>
-	</ca-grid>
+	<div class="banner-img"></div>
+
 </div>
+<ca-grid class="main">
+	<ca-card interactive="full">
+		<article>
+			<h2><a href="/pages/design/index">Design</a></h2>
+			<p>Create beautiful digital interfaces.</p>
+		</article>
+	</ca-card>
+	<ca-card interactive="full">
+		<article>
+			<h2><a href="/pages/develop/index">Develop</a></h2>
+			<p>Build accessible, user friendly experiences.</p>
+		</article>
+	</ca-card>
+	<ca-card interactive="full">
+		<article>
+			<h2><a href="/pages/building-blocks/index">Building blocks</a></h2>
+			<p>Piece together your product journey.</p>
+		</article>
+	</ca-card>
+</ca-grid>
