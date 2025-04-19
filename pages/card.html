@@ -9,7 +9,9 @@
 <p>Cards combine imagery, a short description, and a link or call-to-action.</p>
 
 <p>I've avoided styling the content of the card, for now. I'd prefer card content to be driven by
-  standard building blocks, like the rest of the DS.</p>
+  standard building blocks, like the rest of the DS. We could provide utility classes to size things like card headings.
+  This would be much more flexible and encourage emergent use.
+</p>
 
 <p>Cards themselves have no explicit size. They flow into their container. This makes them useful in many different
   scenarios.</p>
@@ -268,11 +270,12 @@
   overall card. Both percentages and static values may be used. Note that this is a minimum image size. The image will
   still grow to fit available space.</p>
 
-<p><code>--image-min-size</code> defaults to <code>25%</code>.</p>
+<p><code>--image-min-size</code> defaults to <code>5rem</code>. We'll probably change this value with further testing.
+</p>
 
 <p><code>--image-min-size</code> is applied based on the <code>direction</code> of the card. If the image is on top,
   then <code>--image-min-size</code> is applied to the height of the image. If the image is on the side, then
-  <code>direction</code> of the card. If the image is on top, then <code>--image-min-size</code> applies to the width.
+  <code>--image-min-size</code> applies to the width.
 </p>
 
 <style>
@@ -308,7 +311,9 @@
   </ca-grid>
 </div>
 
-<p>There's a shorthand attribute, <code>image-min-size</code>, that can be used to set the image size.</p>
+<p>There's a shorthand attribute, <code>image-min-size</code>, that can be used to set the image size. The
+  percentage-based values can lead to some weird outcomes at the moment.
+  Stay tuned.</p>
 
 <ca-grid>
   <ca-card fit="cover" direction="horizontal" image-min-size="medium">
@@ -538,7 +543,7 @@
 
 <p>Use as hero banner?</p>
 
-<ca-card direction="horizontal">
+<ca-card fit="cover" direction="horizontal">
   <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
   <article>
     <h3><a href="#">Card heading</a></h3>
