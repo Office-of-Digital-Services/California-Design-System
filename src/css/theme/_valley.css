@@ -27,6 +27,7 @@
 
   --primary-accent: var(--valley-accent);
   --primary-highlight: var(--valley-highlight);
+  --primary-highlight-active: var(--valley-highlight-active);
   --primary-shadow: var(--valley-shadow);
 }
 

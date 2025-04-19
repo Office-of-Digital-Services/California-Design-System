@@ -1,6 +1,6 @@
 /* Basic cards, with or without visual */
 ca-card {
-  --image-min-size: auto;
+  --image-min-size: 5rem;
   --image-max-size: 1fr;
 
   display: block;
@@ -102,8 +102,21 @@ ca-card:has(> img, > svg, > ca-visual) {
     inline-size: 100%;
   }
 
-  &[fit|="pad"] > :is(img, svg, ca-visual) {
-    padding: 1rem;
+  &[fit|="pad"] {
+    & > :is(img:first-child, svg:first-child, ca-visual:first-child) {
+      padding: 1rem 1rem 0 1rem;
+    }
+    & > :is(img:last-child, svg:last-child, ca-visual:last-child) {
+      padding: 0 1rem 1rem 1rem;
+    }
+    &[direction="horizontal"]
+      > :is(img:first-child, svg:first-child, ca-visual:first-child) {
+      padding: 1rem 0 1rem 1rem;
+    }
+    &[direction="horizontal"]
+      > :is(img:last-child, svg:last-child, ca-visual:last-child) {
+      padding: 1rem 1rem 1rem 0;
+    }
   }
 
   &[fit*="fill"] > :is(img, svg, ca-visual) {

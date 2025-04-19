@@ -4,10 +4,10 @@ a.button {
   --background-color: var(--primary-highlight);
   --hover-color: var(--primary-highlight-active);
 
-  all: unset;
   cursor: pointer;
   padding: .75rem 2rem;
   color: var(--text-color);
+  border: none;
   border-radius: var(--border-radius);
   font-size: var(--text-size-2);
   font-weight: 600;

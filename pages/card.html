@@ -1,7 +1,7 @@
 <style>
-	ca-grid {
-		margin-bottom: 2rem;
-	}
+  ca-grid {
+    margin-bottom: 2rem;
+  }
 </style>
 
 <h1>Cards</h1>
@@ -9,137 +9,139 @@
 <p>Cards combine imagery, a short description, and a link or call-to-action.</p>
 
 <p>I've avoided styling the content of the card, for now. I'd prefer card content to be driven by
-	standard building blocks, like the rest of the DS.</p>
+  standard building blocks, like the rest of the DS. We could provide utility classes to size things like card headings.
+  This would be much more flexible and encourage emergent use.
+</p>
 
 <p>Cards themselves have no explicit size. They flow into their container. This makes them useful in many different
-	scenarios.</p>
+  scenarios.</p>
 
 <h2>With grid</h2>
 
 <p>Cards work well with the dynamic <code>ca-grid</code> element.</p>
 
 <ca-grid>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>When fewer cards are provided, the <code>ca-grid</code> expands the size of each card.</p>
 
 <ca-grid>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>When more cards are provided...</p>
 
 <ca-grid>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>Card sizes can be locked by directly applying a size, and/or by controlling the size of the parent element. Below, we
-	use the grid's sizing capabilities to change the flow of the cards.</p>
+  use the grid's sizing capabilities to change the flow of the cards.</p>
 
 <ca-grid style="--min-cell-inline-size: 15rem;">
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <h2>With lists</h2>
@@ -147,55 +149,55 @@
 <p>If a semantic list is desired, cards work fine. Just embed the cards in a list.</p>
 
 <style>
-	@scope (.list-demo-scope) {
-		ul {
-			padding: 0;
-			list-style-type: none;
-			margin-bottom: 2rem;
-		}
+  @scope (.list-demo-scope) {
+    ul {
+      padding: 0;
+      list-style-type: none;
+      margin-bottom: 2rem;
+    }
 
-		li {
-			height: 100%;
-			width: 100%;
-			margin: 0;
-		}
+    li {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
 
-		ca-card {
-			height: 100%;
-			width: 100%;
-		}
-	}
+    ca-card {
+      height: 100%;
+      width: 100%;
+    }
+  }
 </style>
 <div class="list-demo-scope">
-	<ul class="ca-grid">
-		<li>
-			<ca-card fit="cover">
-				<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-				<article>
-					<h3><a href="#">Card heading</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</article>
-			</ca-card>
-		</li>
-		<li>
-			<ca-card fit="cover">
-				<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-				<article>
-					<h3><a href="#">Card heading</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</article>
-			</ca-card>
-		</li>
-		<li>
-			<ca-card fit="cover">
-				<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-				<article>
-					<h3><a href="#">Card heading</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-				</article>
-			</ca-card>
-		</li>
-	</ul>
+  <ul class="ca-grid">
+    <li>
+      <ca-card fit="cover">
+        <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+        <article>
+          <h3><a href="#">Card heading</a></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </article>
+      </ca-card>
+    </li>
+    <li>
+      <ca-card fit="cover">
+        <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+        <article>
+          <h3><a href="#">Card heading</a></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </article>
+      </ca-card>
+    </li>
+    <li>
+      <ca-card fit="cover">
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+        <article>
+          <h3><a href="#">Card heading</a></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+        </article>
+      </ca-card>
+    </li>
+  </ul>
 </div>
 
 <h2>Without images</h2>
@@ -203,21 +205,21 @@
 <p>Images are optional in our cards.</p>
 
 <ca-grid>
-	<ca-card>
-		<!-- The content container (div, article, etc.) may be omitted when there's no image.-->
-		<h3><a href="#">Card heading</a></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur</p>
-	</ca-card>
-	<ca-card>
-		<h3><a href="#">Card heading</a></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur</p>
-	</ca-card>
-	<ca-card>
-		<article> <!-- But the content container from other cards (with images) will still work. -->
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card>
+    <!-- The content container (div, article, etc.) may be omitted when there's no image.-->
+    <h3><a href="#">Card heading</a></h3>
+    <p>Lorem ipsum dolor sit amet, consectetur</p>
+  </ca-card>
+  <ca-card>
+    <h3><a href="#">Card heading</a></h3>
+    <p>Lorem ipsum dolor sit amet, consectetur</p>
+  </ca-card>
+  <ca-card>
+    <article> <!-- But the content container from other cards (with images) will still work. -->
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <h2>In horizontal orientation</h2>
@@ -227,200 +229,203 @@
 <p>Use the <code>direction="horizontal"</code> attribute.</p>
 
 <ca-grid>
-	<ca-card fit="cover" direction="horizontal" image-min-size="extra-small">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover" direction="horizontal" image-min-size="extra-small">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover" direction="horizontal" image-min-size="extra-small">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover" direction="horizontal" image-min-size="extra-small">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>If horizontal direction is only desired on desktop, use <code>direction="large:horizontal"</code>.</p>
 
 <ca-grid>
-	<ca-card fit="cover" direction="large:horizontal" image-min-size="extra-small">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover" direction="large:horizontal" image-min-size="extra-small">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover" direction="large:horizontal" image-min-size="extra-small">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover" direction="large:horizontal" image-min-size="extra-small">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <h2>With controlled image size</h2>
 
 <p>The <code>--image-min-size</code> CSS variable can be used to control the relative size of the image within the
-	overall card. Both percentages and static values may be used. Note that this is a minimum image size. The image will
-	still grow to fit available space.</p>
+  overall card. Both percentages and static values may be used. Note that this is a minimum image size. The image will
+  still grow to fit available space.</p>
 
-<p><code>--image-min-size</code> defaults to <code>25%</code>.</p>
+<p><code>--image-min-size</code> defaults to <code>5rem</code>. We'll probably change this value with further testing.
+</p>
 
 <p><code>--image-min-size</code> is applied based on the <code>direction</code> of the card. If the image is on top,
-	then <code>--image-min-size</code> is applied to the height of the image. If the image is on the side, then
-	<code>direction</code> of the card. If the image is on top, then <code>--image-min-size</code> applies to the width.
+  then <code>--image-min-size</code> is applied to the height of the image. If the image is on the side, then
+  <code>--image-min-size</code> applies to the width.
 </p>
 
 <style>
-	@scope (.image-size-demo-scope) {
-		ca-card {
-			--image-min-size: 15rem;
-		}
-	}
+  @scope (.image-size-demo-scope) {
+    ca-card {
+      --image-min-size: 15rem;
+    }
+  }
 </style>
 <div class="image-size-demo-scope">
-	<ca-grid>
-		<ca-card fit="cover">
-			<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-			<div>
-				<h3><a href="#">Card heading</a></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
-			</div>
-		</ca-card>
-		<ca-card fit="cover">
-			<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-			<article>
-				<h3><a href="#">Card heading</a></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
-			</article>
-		</ca-card>
-		<ca-card fit="cover">
-			<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-			<article>
-				<h3><a href="#">Card heading</a></h3>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
-			</article>
-		</ca-card>
-	</ca-grid>
+  <ca-grid>
+    <ca-card fit="cover">
+      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+      <div>
+        <h3><a href="#">Card heading</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+      </div>
+    </ca-card>
+    <ca-card fit="cover">
+      <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+      <article>
+        <h3><a href="#">Card heading</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+      </article>
+    </ca-card>
+    <ca-card fit="cover">
+      <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+      <article>
+        <h3><a href="#">Card heading</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+      </article>
+    </ca-card>
+  </ca-grid>
 </div>
 
-<p>There's a shorthand attribute, <code>image-min-size</code>, that can be used to set the image size.</p>
+<p>There's a shorthand attribute, <code>image-min-size</code>, that can be used to set the image size. The
+  percentage-based values can lead to some weird outcomes at the moment.
+  Stay tuned.</p>
 
 <ca-grid>
-	<ca-card fit="cover" direction="horizontal" image-min-size="medium">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover" direction="horizontal" image-min-size="medium">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover" direction="horizontal" image-min-size="medium">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover" direction="horizontal" image-min-size="medium">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>Note that there's a corresponding <code>--image-max-size</code> variable and <code>image-max-size</code> attribute
-	too. Not shown here yet.</p>
+  too. Not shown here yet.</p>
 
 <h2>Image fit</h2>
 
 <p>On all our cards so far, we've applied <code>fit="cover"</code>. This tells the card to stretch the image to fit the
-	full size of the card.</p>
+  full size of the card.</p>
 
 <p>But we have other options! (Apologies in advance; these images don't highlight the differences well at the moment.)
 </p>
 
 <ca-grid>
-	<ca-card fit="cover">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="cover"</code></p>
-		</div>
-	</ca-card>
-	<ca-card fit="contain">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="contain"</code></p>
-		</article>
-	</ca-card>
-	<ca-card fit="fill">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="fill"</code></p>
-		</article>
-	</ca-card>
-	<ca-card fit="pad">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="pad"</code></p>
-		</article>
-	</ca-card>
-	<ca-card fit="pad-cover">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="pad-cover"</code></p>
-		</div>
-	</ca-card>
-	<ca-card fit="pad-contain">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="pad-contain"</code></p>
-		</article>
-	</ca-card>
-	<ca-card fit="pad-fill">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p><code>fit="pad-fill"</code></p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="cover"</code></p>
+    </div>
+  </ca-card>
+  <ca-card fit="contain">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="contain"</code></p>
+    </article>
+  </ca-card>
+  <ca-card fit="fill">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="fill"</code></p>
+    </article>
+  </ca-card>
+  <ca-card fit="pad">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="pad"</code></p>
+    </article>
+  </ca-card>
+  <ca-card fit="pad-cover">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="pad-cover"</code></p>
+    </div>
+  </ca-card>
+  <ca-card fit="pad-contain">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="pad-contain"</code></p>
+    </article>
+  </ca-card>
+  <ca-card fit="pad-fill">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p><code>fit="pad-fill"</code></p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>The <code>pad</code> options will be helpful when creating cards with simple branding or iconography. For example.
 </p>
 
 <ca-grid>
-	<ca-card fit="pad" direction="horizontal" image-max-size="small">
-		<svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
-			<circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
-		</svg>
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="pad" direction="horizontal" image-max-size="small">
-		<svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
-			<circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
-		</svg>
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="pad" direction="horizontal" image-max-size="small">
-		<svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
-			<circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
-		</svg>
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="pad" direction="horizontal" image-max-size="small">
+    <svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
+      <circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
+    </svg>
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="pad" direction="horizontal" image-max-size="small">
+    <svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
+      <circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
+    </svg>
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="pad" direction="horizontal" image-max-size="small">
+    <svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
+      <circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
+    </svg>
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <h2>With interactive effects</h2>
@@ -431,53 +436,53 @@
 </p>
 
 <ca-grid>
-	<ca-card fit="cover" interactive="links">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover" interactive="links">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover" interactive="links">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover" interactive="links">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover" interactive="links">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover" interactive="links">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <p>With <code>interactive="full"</code>, we can make the whole card clickable.</p>
 
 <ca-grid>
-	<ca-card fit="cover" interactive="full">
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-	</ca-card>
-	<ca-card fit="cover" interactive="full">
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
-	<ca-card fit="cover" interactive="full">
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-	</ca-card>
+  <ca-card fit="cover" interactive="full">
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+  </ca-card>
+  <ca-card fit="cover" interactive="full">
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
+  <ca-card fit="cover" interactive="full">
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+  </ca-card>
 </ca-grid>
 
 <h2>Flip image position</h2>
@@ -485,63 +490,63 @@
 <p>To put the image at the end of the card, just switch the position of the image element.</p>
 
 <ca-grid>
-	<ca-card fit="cover" interactive="full">
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-	</ca-card>
-	<ca-card fit="cover" interactive="full">
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-	</ca-card>
-	<ca-card fit="cover" interactive="full">
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-	</ca-card>
+  <ca-card fit="cover" interactive="full">
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+  </ca-card>
+  <ca-card fit="cover" interactive="full">
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+  </ca-card>
+  <ca-card fit="cover" interactive="full">
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+  </ca-card>
 </ca-grid>
 
 <p>Works with horizontal cards too.</p>
 
 <ca-grid>
-	<ca-card fit="cover" direction="horizontal" interactive="full" image-min-size="extra-small">
-		<div>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</div>
-		<img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-	</ca-card>
-	<ca-card fit="cover" direction="horizontal" interactive="full" image-min-size="extra-small">
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-		<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-	</ca-card>
-	<ca-card fit="cover" direction="horizontal" interactive="full" image-min-size="extra-small">
-		<article>
-			<h3><a href="#">Card heading</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur</p>
-		</article>
-		<img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-	</ca-card>
+  <ca-card fit="cover" direction="horizontal" interactive="full" image-min-size="extra-small">
+    <div>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </div>
+    <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+  </ca-card>
+  <ca-card fit="cover" direction="horizontal" interactive="full" image-min-size="extra-small">
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+    <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+  </ca-card>
+  <ca-card fit="cover" direction="horizontal" interactive="full" image-min-size="extra-small">
+    <article>
+      <h3><a href="#">Card heading</a></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur</p>
+    </article>
+    <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+  </ca-card>
 </ca-grid>
 
 <h2>Single card</h2>
 
 <p>Use as hero banner?</p>
 
-<ca-card direction="horizontal">
-	<img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-	<article>
-		<h3><a href="#">Card heading</a></h3>
-		<p>Lorem ipsum dolor sit amet, consectetur</p>
-	</article>
+<ca-card fit="cover" direction="horizontal">
+  <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+  <article>
+    <h3><a href="#">Card heading</a></h3>
+    <p>Lorem ipsum dolor sit amet, consectetur</p>
+  </article>
 </ca-card>
