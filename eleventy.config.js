@@ -1,7 +1,9 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import * as cheerio from "cheerio";
+import hljs from "highlight.js";
+import htmlPrettify from "html-prettify";
 import cssBuilder from "./tools/bundlers/css-builder.js";
 import jsBuilder from "./tools/bundlers/js-builder.js";
-import { build } from "esbuild";
 
 let firstBuild = true;
 const jsBuildPath = "_site/js/bundle.js";
@@ -57,6 +59,30 @@ export default async function (eleventyConfig) {
         await build11tyJs();
       }
     }
+  });
+
+  eleventyConfig.addTransform("html-transform", async (content) => {
+    const $ = cheerio.load(content);
+    const demos = $("ca-code-demo");
+
+    if (demos.length > 0) {
+      demos.each((i, el) => {
+        const $template = $(el).find("template").clone();
+
+        if ($template.length > 0) {
+          const templateHtml = htmlPrettify($template.html());
+          const highlightedCode = hljs.highlight(templateHtml, {
+            language: "html",
+          }).value;
+          $(el).append(`<div class="example-block">${templateHtml}</div>`);
+          $(el).append(
+            `<div class="example-code"><pre class="hljs"><code>${highlightedCode}</code></pre></div>`,
+          );
+        }
+      });
+    }
+
+    return $.html();
   });
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);

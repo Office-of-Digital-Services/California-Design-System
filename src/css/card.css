@@ -2,13 +2,15 @@
 ca-card {
   --image-min-size: 5rem;
   --image-max-size: 1fr;
+  --size: auto;
 
-  display: block;
+  display: inline-block;
   padding: 1rem;
   overflow: hidden;
   background: var(--primary-background-30);
   border-radius: var(--border-radius);
   box-shadow: var(--primary-shadow-1);
+  max-inline-size: var(--size);
 
   & a {
     text-decoration: none;
@@ -74,7 +76,7 @@ ca-card {
 ca-card:has(> img, > svg, > ca-visual) {
   padding: 0;
   /* Grid gives us better tools over flex where we don't want images to fill full width/height of the card. */
-  display: grid;
+  display: inline-grid;
 
   &:has(img:first-child, svg:first-child, ca-visual:first-child) {
     grid-template-columns: auto;
@@ -129,6 +131,18 @@ ca-card:has(> img, > svg, > ca-visual) {
 
   &[fit*="contain"] > :is(img, svg, ca-visual) {
     object-fit: contain;
+  }
+
+  &[size="small"] {
+    --size: 15rem;
+  }
+
+  &[size="medium"] {
+    --size: 31rem;
+  }
+
+  &[size="large"] {
+    --size: 47rem;
   }
 
   &[image-min-size="extra-small"] {
@@ -222,4 +236,9 @@ ca-visual {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+li > ca-card {
+  block-size: 100%;
+  inline-size: 100%;
 }
