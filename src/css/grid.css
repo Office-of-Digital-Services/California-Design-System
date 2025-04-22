@@ -92,6 +92,18 @@ ca-grid,
   }
 }
 
+/* Since the grid class will be used with lists often, provide some help here. */
+:is(ul, ol).ca-grid {
+  padding: 0;
+  list-style-type: none;
+
+  & > li {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
 /* 
  * COLSPAN
  * 
