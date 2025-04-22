@@ -1,8 +1,16 @@
-<h1>Principles</h1>
-<p>These are our guiding principles for creating this design system for you.</p>
+<style>
+	ca-grid {
+		margin-block-end: 4rem;
+		;
+	}
+</style>
 
-<ca-grid class="gap-8">
-	<section>
+
+<h1>Principles</h1>
+<p>These are our guiding principles for creating positive and engaging user experiences.</p>
+<ca-grid flow="fit" class="gap-8">
+	<ca-card>
+		<!-- The content container (div, article, etc.) may be omitted when there's no image.-->
 		<h2>1. Start with people’s needs</h2>
 		<ul>
 			<li><strong>Prioritize accessibly</strong> – make your services accessible for all Californians. Think about
@@ -22,8 +30,8 @@
 				keeps us focused on
 				their needs, not preconceived solutions.</li>
 		</ul>
-	</section>
-	<section>
+	</ca-card>
+	<ca-card>
 		<h2>2. Design with purpose and data</h2>
 		<ul>
 			<li><strong>Purpose</strong> – start with problems not solutions.</li>
@@ -36,12 +44,8 @@
 				Utilize page feedback to
 				collect pain points. Understand real problems before coming up with solutions.</li>
 		</ul>
-	</section>
-
-</ca-grid>
-
-<ca-grid>
-	<section>
+	</ca-card>
+	<ca-card>
 		<h2>3. Do the hard work to make it simple</h2>
 		<ul>
 			<li><strong>Standardize code</strong> – we’re using the <a
@@ -72,16 +76,19 @@
 				</ul>
 			</li>
 		</ul>
-	</section>
-	<section>
+	</ca-card>
+</ca-grid>
+
+<ca-grid class="gap-8">
+	<ca-card>
 		<h2>4. Be consistent and concise</h2>
 		<ul>
 			<li><a href="https://innovation.ca.gov/blog/posts/why-we-use-content-design/"><strong>Consistent
 						experiences</strong></a> make engagement easier across different services and products.</li>
 			<li><strong>Succinct content</strong> makes sure important information stands out and is understood.</li>
 		</ul>
-	</section>
-	<section>
+	</ca-card>
+	<ca-card>
 		<h2>5. Make it adoptable</h2>
 		<ul>
 			<li><strong>Open-source code</strong> – our <a href="https://github.com/cagov/design-system">Design System
@@ -102,5 +109,5 @@
 				foundation to
 				make it easier to scale across more frameworks.</li>
 		</ul>
-	</section>
+	</ca-card>
 </ca-grid>
