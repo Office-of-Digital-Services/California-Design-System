@@ -39,7 +39,7 @@ p {
 p,
 blockquote,
 figcaption {
-  max-width: var(--text-max-width);
+  /* max-width: var(--text-max-width); */
   text-wrap: pretty;
 }
 

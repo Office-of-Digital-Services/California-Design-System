@@ -1,0 +1,539 @@
+<style>
+  ca-grid {
+    margin-bottom: 2rem;
+  }
+</style>
+
+<section class="container">
+  <h1>Cards</h1>
+
+  <p>Still work in progress.</p>
+
+  <p>Cards combine imagery, a short description, and a link or call-to-action.</p>
+
+  <p>I've avoided styling the content of the card, for now. I'd prefer card content to be driven by
+    standard building blocks, like the rest of the DS. We could provide utility classes to size things like card
+    headings.
+    This would be much more flexible and encourage emergent use.
+  </p>
+
+  <p>Cards themselves have no explicit size. They flow into their container. This makes them useful in many different
+    scenarios.</p>
+</section>
+
+<section class="container">
+  <h2>Simple card</h2>
+
+  <p>Here's a basic card, all alone.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card>
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" height="320"
+          alt="California poppy flower" />
+        <article>
+          <h3><a href="#">My first card</a></h3>
+          <p>Nothing fancy yet!</p>
+        </article>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+
+  <p>A card consists of two possible elements.</p>
+
+  <ul>
+    <li>An image, such as an <code>img</code> or <code>svg</code> element. The abstract <code>ca-visual</code> element
+      may
+      also be used for more advanced situations.</li>
+    <li>A content section. This can be <code>article</code>, <code>div</code>, or <code>section</code>, depending upon
+      desired semantics.</li>
+  </ul>
+</section>
+
+<section class="container">
+  <h2>Card sizing</h2>
+
+  <p>Cards have no explicit size themselves. They expand to fit image and content.
+  </p>
+
+  <p>Note the <code>height="320"</code> on the image above. If we increase the image's height to <code>450</code>, the
+    whole card will expand to match.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card>
+        <!-- Note the image height. -->
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" height="450"
+          alt="California poppy flower" />
+        <article>
+          <h3><a href="#">My first card, larger</a></h3>
+          <p>The larger image creates a larger card, by default.</p>
+        </article>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+
+  <p>We can also shrink cards to fit wherever we need to fit them. The most intuitive way to shrink a card is to
+    directly
+    apply a <code>max-width</code>. And doing so will work.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card style="max-width: 31rem;">
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" height="450"
+          alt="California poppy flower" />
+        <article>
+          <h3><a href="#">My first card, constrained</a></h3>
+          <p>The <code>max-width</code> limits the size of the card. (But doesn't the image look a bit stretched?)</p>
+        </article>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+
+  <p>With that said, in most scenarios, we will want to fit the card into a parent container, such as a
+    <code>div</code>,
+    grid, or list. Cards also shrink to fit their parent container.
+  </p>
+
+  <p>Below, we place the card within a <code>div</code> that's locked to a max width of <code>31rem</code>.</p>
+
+  <ca-code-demo>
+    <template>
+      <div style="max-width: 31rem;">
+        <ca-card>
+          <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" height="450"
+            alt="California poppy flower" />
+          <article>
+            <h3><a href="#">My first card, in a div</a></h3>
+            <p>We have controlled the width of this card via parent element. (But again, the image looks wrong.)</p>
+          </article>
+        </ca-card>
+      </div>
+    </template>
+  </ca-code-demo>
+
+  <p>However, in both of the previous two examples, we've stretched the image. That will not do, and that's where the
+    <code>fit</code> attribute comes to
+    the rescue.
+  </p>
+</section>
+
+<section class="container">
+  <h2>Image fit</h2>
+
+  <p>As seen above, the card's image may stretch into unnatural shapes if we try to control the card's size. We can use
+    the <code>fit</code> attribute to control how the image fits into the card.</p>
+
+  <p>We'll take the same code from the stretched card above, but this time apply <code>fit="cover"</code>.</p>
+
+  <ca-code-demo>
+    <template>
+      <div style="max-width: 31rem;">
+        <ca-card fit="cover">
+          <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" height="450"
+            alt="California poppy flower" />
+          <article>
+            <h3><a href="#">Using fit</a></h3>
+            <p>Here we get the image under control in our smaller card.</p>
+          </article>
+        </ca-card>
+      </div>
+    </template>
+  </ca-code-demo>
+
+  <p>Much better!</p>
+
+  <p>Here's a list of all available options for <code>fit</code>.</p>
+
+  <table style="margin-bottom: 2rem;">
+    <thead>
+      <tr>
+        <th scope="col">Attribute</th>
+        <th scope="col">Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><code>fit="cover"</code></th>
+        <td>Instructs the image to fill all available space, without breaking aspect ratio. Some content may be hidden
+          along the edges.</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>fit="contain"</code></th>
+        <td>Instructs the image to expand, but without breaking aspect ratio or hiding anything. This may result in some
+          margin around the image.</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>fit="fill"</code></th>
+        <td>Instructs the image to fill all available space by stretching itself, breaking aspect ratio.</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>fit="pad"</code></th>
+        <td>Applies padding to the image, creating a small "border" around it.</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>fit="pad-cover"</code></th>
+        <td>Same as <code>fit="cover"</code>, with padding included.</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>fit="pad-contain"</code></th>
+        <td>Same as <code>fit="contain"</code>, with padding included.</td>
+      </tr>
+      <tr>
+        <th scope="row"><code>fit="pad-fill"</code></th>
+        <td>Same as <code>fit="fill"</code>, with padding included.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The <code>pad</code> options will be helpful when creating cards with simple branding or iconography. Here's an
+    example.
+  </p>
+
+  <ca-code-demo>
+    <template>
+      <div style="max-width: 350px;">
+        <ca-card fit="pad-cover">
+          <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+          <article>
+            <h3><a href="#">Using pad</a></h3>
+            <p>The <code>fit="pad"</code> attributes add a border around the image.</p>
+          </article>
+        </ca-card>
+      </div>
+    </template>
+  </ca-code-demo>
+
+  <p>In addition to the <code>fit</code> attribute, we also have two CSS variables we can use to control the size of the
+    image.</p>
+
+  <p><code>--image-min-size</code> controls the minimum available space for the image within the card. It can be a
+    relative size,
+    like <code>25%</code>, or an actual size, like <code>5rem</code>.</p>
+
+  <p>We also have <code>--image-max-size</code>. Same story, same rules.</p>
+
+  <ca-code-demo>
+    <template>
+      <div style="max-width: 350px;">
+        <ca-card fit="cover" style="--image-max-size: 50%">
+          <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+          <article>
+            <h3><a href="#">Using CSS vars</a></h3>
+            <p>With the <code>--image-max-size</code> set to <code>50%</code>, the image will never take more than 50%
+              of
+              the card's space.</p>
+          </article>
+        </ca-card>
+      </div>
+    </template>
+  </ca-code-demo>
+</section>
+
+<section class="container">
+  <h2>With interactive effects</h2>
+
+  <p>The <code>interactive</code> attribute can set visual hover effects on the card.</p>
+
+  <p>Here we set it to <code>interactive="links"</code>. This will raise the whole card when a link or button is
+    hovered.
+  </p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card interactive="links" fit="cover" size="medium">
+        <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" width="300" height="200"
+          alt="Half dome" />
+        <div>
+          <h3><a href="#">Interactive hover on the links</a></h3>
+          <p>When hovering a link, the whole card will rise.</p>
+        </div>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+
+  <p>With <code>interactive="full"</code>, we can make the whole card clickable.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card interactive="full" fit="cover" size="medium">
+        <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" width="300" height="200"
+          alt="Half dome" />
+        <div>
+          <h3><a href="#">Fully clickable card</a></h3>
+          <p>Through the magic of CSS, the whole card is now clickable.</p>
+        </div>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+</section>
+
+<section>
+  <ca-container>
+    <h2>With grid</h2>
+
+    <p>Thus far, we've constrained our cards by sizing a parent <code>div</code>. But in many real-world use cases,
+      we will be displaying many cards together, in list-like structures.</p>
+
+    <p>One way to do this is with our own <code>ca-grid</code> component.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-grid>
+          <ca-card fit="cover">
+            <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+            <div>
+              <h3><a href="#">Grid card 1</a></h3>
+              <p>Resize the window to see how the cards respond to changes in the grid.</p>
+            </div>
+          </ca-card>
+          <ca-card fit="contain">
+            <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+            <article>
+              <h3><a href="#">Grid card 2</a></h3>
+              <p>Note how we can mix different <code>fit</code> attributes. The group still maintains the same card
+                size.
+              </p>
+            </article>
+          </ca-card>
+          <ca-card fit="pad-cover">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <section>
+              <h3><a href="#">Grid card 3</a></h3>
+              <p>Let's throw in a <code>pad</code> too, for fun.</p>
+            </section>
+          </ca-card>
+        </ca-grid>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>A card is nearly always displayed with friends, in a grid-like structure. We usually want every card to be the
+      same
+      size, nicely aligned.</p>
+
+    <p>Below, we use the <code>ca-grid</code> component's sizing capabilities to change the flow of all cards together.
+    </p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <!-- The --min-cell-inline-size variable is a function of the ca-grid component. -->
+        <ca-grid style="--min-cell-inline-size: 15rem;">
+          <ca-card fit="cover">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <div>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </div>
+          </ca-card>
+          <ca-card fit="cover">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+          <ca-card fit="cover">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+          <ca-card fit="cover">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+          <ca-card fit="cover">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+        </ca-grid>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>
+
+<section>
+  <ca-container>
+    <h2>With lists</h2>
+
+    <p>Many scenarios call for cards to be displayed within a semantic <code>ul</code> or <code>ol</code> list. No
+      problem.
+    </p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <!-- Note our use of the ca-grid class here. -->
+        <ul class="ca-grid">
+          <li>
+            <ca-card fit="cover">
+              <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+              <article>
+                <h3><a href="#">Card heading</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+              </article>
+            </ca-card>
+          </li>
+          <li>
+            <ca-card fit="cover">
+              <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+              <article>
+                <h3><a href="#">Card heading</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+              </article>
+            </ca-card>
+          </li>
+          <li>
+            <ca-card fit="cover">
+              <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg"
+                alt="California poppy flower" />
+              <article>
+                <h3><a href="#">Card heading</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur</p>
+              </article>
+            </ca-card>
+          </li>
+        </ul>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>
+
+<section>
+  <ca-container>
+    <h2>Without images</h2>
+
+    <p>Images are optional in our cards.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-grid>
+          <ca-card>
+            <!-- The content container (div, article, etc.) may be omitted when there's no image.-->
+            <h3><a href="#">Card heading</a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur</p>
+          </ca-card>
+          <ca-card>
+            <h3><a href="#">Card heading</a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur</p>
+          </ca-card>
+          <ca-card>
+            <!-- But the content container will still work too. Here we use article. -->
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+        </ca-grid>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>
+
+<section class="container">
+  <h2>In horizontal orientation</h2>
+
+  <p>Cards can be tipped over, placing images on the side instead.</p>
+
+  <p>Use the <code>direction="horizontal"</code> attribute.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card direction="horizontal" fit="cover" image-min-size="small" size="large">
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+        <article>
+          <h3><a href="#">Using direction</a></h3>
+          <p>The <code>direction="horizontal"</code> attribute puts the image on the side.</p>
+        </article>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+
+  <p>If horizontal direction is only desired on desktop, use <code>direction="large:horizontal"</code>.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card direction="large:horizontal" fit="cover" image-min-size="small" size="large">
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+        <article>
+          <h3><a href="#">Using direction, responsive</a></h3>
+          <p>The <code>direction="large:horizontal"</code> will switch the card back the vertical orientation on mobile.
+          </p>
+        </article>
+      </ca-card>
+    </template>
+  </ca-code-demo>
+</section>
+
+<section class="container">
+  <h2>Flip image position</h2>
+
+  <p>To put the image at the end of the card, just switch the position of the image element.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card fit="cover" size="medium">
+        <article>
+          <h3><a href="#">Flipping position</a></h3>
+          <p>By changing the position of the <code>img</code> element, we we can put the image at bottom of the card.
+          </p>
+        </article>
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+      </ca-card>
+    </template>
+  </ca-code-demo>
+
+  <p>Works with horizontal cards too.</p>
+
+  <ca-code-demo>
+    <template>
+      <ca-card direction="large:horizontal" fit="cover" image-min-size="small" size="large">
+        <article>
+          <h3><a href="#">Flipping position, horizontal</a></h3>
+          <p>We can put the image on the right in horizontal cards too.
+          </p>
+        </article>
+        <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+      </ca-card>
+    </template>
+  </ca-code-demo>
+</section>
+
+<section>
+  <ca-container>
+    <h2>Jumbo card</h2>
+
+    <p>Use as hero banner?</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <ca-card fit="cover" direction="large:horizontal" image-min-size="large">
+          <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+          <article>
+            <h3><a href="#">Big card</a></h3>
+            <p>Might be useful for featured content. There's no specific code for this. We can do this as a natural
+              consequence of the way our cards size themselves.</p>
+          </article>
+        </ca-card>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>

@@ -28,8 +28,8 @@ ca-utility-bar {
   }
 
   ca-layout {
-    &[format="horizon"],
-    &[format="skyline"] {
+    &[format="top-full"],
+    &[format="top-lite"] {
       & > ca-utility-bar {
         background-color: var(--primary-background-20);
       }

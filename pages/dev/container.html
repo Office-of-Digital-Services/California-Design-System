@@ -1,0 +1,123 @@
+<style>
+  ca-code-demo p {
+    margin: 0;
+  }
+
+  ca-code-demo :is(ca-container, .container, .container-small, .container-medium, .container-large, .container-full) {
+    padding: 2rem;
+    background-color: var(--primary-background-60);
+
+    &+ :is(ca-container, .container, .container-small, .container-medium, .container-large, .container-full) {
+      margin-top: 1rem;
+    }
+  }
+</style>
+
+<section class="container">
+  <h1>Containers</h1>
+
+  <p>Containers help position content on the page. They apply margins at different screen sizes, in different layouts,
+    to ensure content stays aligned.</p>
+</section>
+
+<section>
+  <ca-container>
+    <h2>Basic container</h2>
+
+    <p>Here's an example of the basic container.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <ca-container>
+          <p>Standard <code>ca-container</code></p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>Try resizing the window and switching layouts to see how the container responds.</p>
+
+    <p>Classes also work.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <div class="container">
+          <p>Standard <code>.container</code> class</p>
+        </div>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>Try resizing the window and switching layouts to see how the container responds.</p>
+  </ca-container>
+</section>
+
+<section>
+  <ca-container>
+    <h2>Sizes</h2>
+
+    <p>Containers come in many sizes.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <ca-container size="small">
+          <p>Small <code>ca-container</code> with <code>size="small"</code></p>
+        </ca-container>
+
+        <ca-container>
+          <p>Default <code>ca-container</code> at medium size</p>
+        </ca-container>
+
+        <ca-container size="medium">
+          <p>Medium <code>ca-container</code> with <code>size="medium"</code></p>
+        </ca-container>
+
+        <ca-container size="large">
+          <p>Large <code>ca-container</code> with <code>size="large"</code></p>
+        </ca-container>
+
+        <ca-container size="full">
+          <p>Full <code>ca-container</code> with <code>size="full"</code></p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>And again, we have equivalent classes for each size.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <div class="container-small">
+          <p>Small <code>.container-small</code> class</p>
+        </div>
+
+        <div class="container">
+          <p>Default <code>.container</code> class at medium size</p>
+        </div>
+
+        <div class="container-medium">
+          <p>Medium <code>.container-medium</code> class</p>
+        </div>
+
+        <div class="container-large">
+          <p>Large <code>.container-large</code> class</p>
+        </div>
+
+        <div class="container-full">
+          <p>Full <code>.container-full</code> class</p>
+        </div>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>

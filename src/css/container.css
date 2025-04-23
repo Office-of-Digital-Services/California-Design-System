@@ -1,0 +1,79 @@
+ca-container {
+  /* Don't switch the classes to display:block. Might disrupt styling of the content. */
+  display: block;
+}
+
+ca-container,
+.container,
+.container-small,
+.container-medium,
+.container-large,
+.container-full {
+  margin-inline: 1rem;
+}
+
+ca-container,
+.container,
+ca-container[size="medium"],
+.container-medium {
+  max-width: 65rem; /* Default */
+}
+
+ca-container[size="small"],
+.container-small {
+  max-width: 45rem;
+}
+
+ca-container[size="large"],
+.container-large {
+  max-width: 85rem;
+}
+
+ca-container[size="full"],
+.container-full {
+  max-width: unset;
+}
+
+@container main (width > 66rem) {
+  ca-container,
+  .container,
+  ca-container[size="medium"],
+  .container-medium {
+    margin-inline: 5rem;
+  }
+
+  ca-layout[format|="top"]
+    :is(
+      ca-container,
+      .container,
+      ca-container[size="medium"],
+      .container-medium
+    ) {
+    margin-inline: auto;
+  }
+}
+
+@container main (width > 46rem) {
+  ca-container[size="small"],
+  .container-small {
+    margin-inline: 5rem;
+  }
+
+  ca-layout[format|="top"] :is(ca-container[size="small"], .container-small) {
+    margin-inline: auto;
+  }
+}
+
+@container main (width > 86rem) {
+  ca-container[size="large"],
+  .container-large,
+  ca-container[size="full"],
+  .container-full,
+  ca-layout[format|="top"] :is(ca-container[size="full"], .container-full) {
+    margin-inline: 5rem;
+  }
+
+  ca-layout[format|="top"] :is(ca-container[size="large"], .container-large) {
+    margin-inline: auto;
+  }
+}
