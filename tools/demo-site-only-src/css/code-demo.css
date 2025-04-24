@@ -29,6 +29,14 @@ ca-code-demo {
       margin-block-end: 0;
     }
   }
+
+  &[hide="code"] .example-code {
+    display: none;
+  }
+
+  &[hide="example"] .example-block {
+    display: none;
+  }
 }
 
 /* 

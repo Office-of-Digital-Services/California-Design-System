@@ -47,12 +47,11 @@ ca-container[size="full"],
 
   ca-layout[format|="top"]
     :is(
-      ca-container,
+      ca-container:not([size="full"]),
       .container,
       .container-small,
       .container-medium,
-      .container-large,
-      .container-full
+      .container-large
     ) {
     margin-inline: auto;
   }
