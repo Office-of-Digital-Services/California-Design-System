@@ -2,137 +2,140 @@
 
 <!-- styles only for testing purposes -->
 <style>
-  :is(ca-grid, .grid)>p {
-    margin: 0;
-    padding: 1rem;
-    max-width: 100%;
-    background-color: lightseagreen;
-  }
+	:is(ca-grid, .grid)>p {
+		margin: 0;
+		padding: 1rem;
+		max-width: 100%;
+		background-color: lightseagreen;
+	}
 </style>
 
-<h2>Max six columns (default)</h2>
 
-<p>Expand your window to see how the grid reflows.</p>
+<ca-container>
+	<h2>Max six columns (default)</h2>
 
-<ca-grid>
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>Expand your window to see how the grid reflows.</p>
 
-<h2>Max three columns</h2>
+	<ca-grid>
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
+	<h2>Max three columns</h2>
 
-<ca-grid max-col="3">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
 
-<h2>Same three-column grid with div</h2>
+	<ca-grid max-col="3">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>
-  This is the same grid as above, but using <code>div.grid</code> instead of <code>&lt;ca-grid&gt;</code>.
-  Both TAC-based custom element and fallback div-based styles can be supported.
-</p>
+	<h2>Same three-column grid with div</h2>
 
-<div class="grid grid-max-col-3">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</div>
+	<p>
+		This is the same grid as above, but using <code>div.grid</code> instead of <code>&lt;ca-grid&gt;</code>.
+		Both TAC-based custom element and fallback div-based styles can be supported.
+	</p>
 
-<h2>Minimum two columns</h2>
+	<div class="grid grid-max-col-3">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</div>
 
-<p>This grid will maintain a minimum of two columns, even on mobile.</p>
+	<h2>Minimum two columns</h2>
 
-<ca-grid min-col="2">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>This grid will maintain a minimum of two columns, even on mobile.</p>
 
-<h2>Min two columns, max three columns</h2>
+	<ca-grid min-col="2">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
+	<h2>Min two columns, max three columns</h2>
 
-<ca-grid min-col="2" max-col="3">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
 
-<h2>Cell width override</h2>
+	<ca-grid min-col="2" max-col="3">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>CSS vars can be overriden to increase the size of the grid cells.</p>
+	<h2>Cell width override</h2>
 
-<ca-grid style="--min-cell-inline-size: 48ch;">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>CSS vars can be overriden to increase the size of the grid cells.</p>
 
-<h2>Cell width override with shortcut</h2>
+	<ca-grid style="--min-cell-inline-size: 48ch;">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>We can create convenient attributes, like <code>cell-size="large"</code> for applying popular cell sizes.</p>
+	<h2>Cell width override with shortcut</h2>
 
-<ca-grid cell-size="large">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>We can create convenient attributes, like <code>cell-size="large"</code> for applying popular cell sizes.</p>
 
-<h2>Cell width and gap override</h2>
+	<ca-grid cell-size="large">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>Gaps can also be modified.</p>
+	<h2>Cell width and gap override</h2>
 
-<ca-grid style="--min-cell-inline-size: 20ch; --col-gap: 2rem;">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-  <p>Cell four.</p>
-  <p>Cell five.</p>
-  <p>Cell six.</p>
-</ca-grid>
+	<p>Gaps can also be modified.</p>
 
-<h2>Grid flow with auto-fit (default)</h2>
+	<ca-grid style="--min-cell-inline-size: 20ch; --col-gap: 2rem;">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+		<p>Cell four.</p>
+		<p>Cell five.</p>
+		<p>Cell six.</p>
+	</ca-grid>
 
-<p>Fill excess width.</p>
+	<h2>Grid flow with auto-fit (default)</h2>
 
-<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-</ca-grid>
+	<p>Fill excess width.</p>
 
-<h2>Grid flow with auto-fill</h2>
+	<ca-grid flow="fit" style="--min-cell-inline-size: 15ch;">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+	</ca-grid>
 
-<p>Don't fill excess width.</p>
+	<h2>Grid flow with auto-fill</h2>
 
-<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
-  <p>Cell one.</p>
-  <p>Cell two.</p>
-  <p>Cell three.</p>
-</ca-grid>
+	<p>Don't fill excess width.</p>
+
+	<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
+		<p>Cell one.</p>
+		<p>Cell two.</p>
+		<p>Cell three.</p>
+	</ca-grid>
+</ca-container>

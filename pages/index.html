@@ -22,17 +22,16 @@
 		padding-inline: 1rem;
 	}
 
-	.container {
+	.container-home {
 		display: grid;
 		max-width: inherit;
 		position: relative;
 		margin: auto;
-		margin-inline: 5rem;
 		grid-gap: 1rem;
 		grid-template-areas:
 			"banner banner-img"
 			"main main";
-		grid-template-columns: auto 60vw;
+		grid-template-columns: 30vw 60vw;
 		grid-template-rows: 30rem;
 	}
 
@@ -50,34 +49,36 @@
 	}
 </style>
 
-<div class="container">
-	<ca-flex class="banner" direction="column">
-		<h1>California<br>
-			<span>Design System</span>
-		</h1>
-		<p style="width: auto">Bring digital experiences together.</p>
-		<a style="width: 8.5rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
-	</ca-flex>
-	<div class="banner-img"></div>
+<ca-container>
+	<div class="container-home">
+		<ca-flex class="banner" direction="column">
+			<h1>California<br>
+				<span>Design System</span>
+			</h1>
+			<p style="width: auto">Bring digital experiences together.</p>
+			<a style="width: 8.5rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
+		</ca-flex>
+		<div class="banner-img"></div>
 
-</div>
-<ca-grid class="main">
-	<ca-card interactive="full">
-		<article>
-			<h2><a href="/pages/design/index">Design</a></h2>
-			<p>Create beautiful digital interfaces.</p>
-		</article>
-	</ca-card>
-	<ca-card interactive="full">
-		<article>
-			<h2><a href="/pages/develop/index">Develop</a></h2>
-			<p>Build accessible, user friendly experiences.</p>
-		</article>
-	</ca-card>
-	<ca-card interactive="full">
-		<article>
-			<h2><a href="/pages/building-blocks/index">Building blocks</a></h2>
-			<p>Piece together your product journey.</p>
-		</article>
-	</ca-card>
-</ca-grid>
+	</div>
+	<ca-grid class="main">
+		<ca-card interactive="full">
+			<article>
+				<h2><a href="/pages/design/index">Design</a></h2>
+				<p>Create beautiful digital interfaces.</p>
+			</article>
+		</ca-card>
+		<ca-card interactive="full">
+			<article>
+				<h2><a href="/pages/develop/index">Develop</a></h2>
+				<p>Build accessible, user friendly experiences.</p>
+			</article>
+		</ca-card>
+		<ca-card interactive="full">
+			<article>
+				<h2><a href="/pages/building-blocks/index">Building blocks</a></h2>
+				<p>Piece together your product journey.</p>
+			</article>
+		</ca-card>
+	</ca-grid>
+</ca-container>
