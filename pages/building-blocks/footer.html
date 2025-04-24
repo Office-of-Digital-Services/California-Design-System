@@ -1,6 +1,5 @@
 <style>
 	ca-code-demo {
-		width: 50%;
 		height: 40rem;
 
 		& div.example-block {
@@ -50,108 +49,109 @@ them.
 keywords: eureka, design system, building blocks, cards
 --->
 
-<h1>Footer</h1>
-<p>A website footer is the section at the very end of a webpage. It often contains helpful links and important
-	information, such as:</p>
-<ul>
-	<li><strong>Contact information</strong> so people can get in touch with you.</li>
-	<li><strong>Navigation</strong> links for links to key pages, like "About Us," "Privacy Policy," or "Accessibility."
-	</li>
-	<li><strong>Social media</strong> buttons that take you to the website's social media profiles.</li>
-	<li><strong>Copyright</strong> showing who owns the website content and the year it was last updated.</li>
-</ul>
+<ca-container>
+	<h1>Footer</h1>
+	<p>A website footer is the section at the very end of a webpage. It often contains helpful links and important
+		information, such as:</p>
+	<ul>
+		<li><strong>Contact information</strong> so people can get in touch with you.</li>
+		<li><strong>Navigation</strong> links for links to key pages, like "About Us," "Privacy Policy," or "Accessibility."
+		</li>
+		<li><strong>Social media</strong> buttons that take you to the website's social media profiles.</li>
+		<li><strong>Copyright</strong> showing who owns the website content and the year it was last updated.</li>
+	</ul>
 
-<h2>Code</h2>
-<p>Content explaining our <code>footer</code>.</p>
+	<h2>Code</h2>
+	<p>Content explaining our <code>footer</code>.</p>
 
-<ca-code-demo>
-	<template>
-		<footer>
+	<ca-code-demo>
+		<template>
+			<footer>
 
-			<p>A product of the California Design System.</p>
-			<ca-flex format="footer-split-links">
-				<ul class="social-icon-list">
-					<li>
-						<a href="#">
-							<ca-icon glyph="mail" format="social"></ca-icon>
-							<span class="visually-hidden">Email</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<ca-icon glyph="facebook" format="social"></ca-icon>
-							<span class="visually-hidden">Facebook</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<ca-icon glyph="linked-in" format="social"></ca-icon>
-							<span class="visually-hidden">LinkedIn</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<ca-icon glyph="x-dot-com" format="social"></ca-icon>
-							<span class="visually-hidden">X.com</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<ca-icon glyph="youtube" format="social"></ca-icon>
-							<span class="visually-hidden">YouTube</span>
-						</a>
-					</li>
-				</ul>
-			</ca-flex>
-
-			<hr>
-
-			<ca-flex format="footer-split-links">
-				<ul class="compliance-link-list">
-					<li class="flex-basis-full">
-						<a href="https://www.ca.gov/images/WebsiteAccessibilityCert-ca.gov.pdf">Website Accessibility
-							Certification</a>
-					</li>
-					<li>
-						<a href="/pages/conditions-of-use">Conditions of use</a>
-					</li>
-					<li>
-						<a href="/pages/privacy">Privacy</a>
-					</li>
-					<li>
-						<a href="/pages/accessibility">Accessibility</a>
-					</li>
-					<li>
-						<a href="/pages/sitemap">Sitemap</a>
-					</li>
-				</ul>
-
-
-			</ca-flex><ca-flex format="footer-end">
-				<ca-flex format="copyright-stamp">
-					<ca-icon glyph="ca-bear" format="footer-bear"></ca-icon>
-					<p>An official California state website.</p>
-					<p>© <ca-current-year>2025</ca-current-year> State of California</p>
+				<p>A product of the California Design System.</p>
+				<ca-flex format="footer-split-links">
+					<ul class="social-icon-list">
+						<li>
+							<a href="#">
+								<ca-icon glyph="mail" format="social"></ca-icon>
+								<span class="visually-hidden">Email</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<ca-icon glyph="facebook" format="social"></ca-icon>
+								<span class="visually-hidden">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<ca-icon glyph="linked-in" format="social"></ca-icon>
+								<span class="visually-hidden">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<ca-icon glyph="x-dot-com" format="social"></ca-icon>
+								<span class="visually-hidden">X.com</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<ca-icon glyph="youtube" format="social"></ca-icon>
+								<span class="visually-hidden">YouTube</span>
+							</a>
+						</li>
+					</ul>
 				</ca-flex>
 
-				<ca-flex format="footer-utility">
-					<a href="#">
-						<ca-icon glyph="help" format="utility"></ca-icon>
-						<span class="visually-hidden">Help</span>
-					</a>
-					<a href="#">
-						<ca-icon glyph="back-to-top" format="utility"></ca-icon>
-						<span class="visually-hidden">Back to top</span>
-					</a>
+				<hr>
+
+				<ca-flex format="footer-split-links">
+					<ul class="compliance-link-list">
+						<li class="flex-basis-full">
+							<a href="https://www.ca.gov/images/WebsiteAccessibilityCert-ca.gov.pdf">Website Accessibility
+								Certification</a>
+						</li>
+						<li>
+							<a href="/pages/conditions-of-use">Conditions of use</a>
+						</li>
+						<li>
+							<a href="/pages/privacy">Privacy</a>
+						</li>
+						<li>
+							<a href="/pages/accessibility">Accessibility</a>
+						</li>
+						<li>
+							<a href="/pages/sitemap">Sitemap</a>
+						</li>
+					</ul>
+
+
+				</ca-flex><ca-flex format="footer-end">
+					<ca-flex format="copyright-stamp">
+						<ca-icon glyph="ca-bear" format="footer-bear"></ca-icon>
+						<p>An official California state website.</p>
+						<p>© <ca-current-year>2025</ca-current-year> State of California</p>
+					</ca-flex>
+
+					<ca-flex format="footer-utility">
+						<a href="#">
+							<ca-icon glyph="help" format="utility"></ca-icon>
+							<span class="visually-hidden">Help</span>
+						</a>
+						<a href="#">
+							<ca-icon glyph="back-to-top" format="utility"></ca-icon>
+							<span class="visually-hidden">Back to top</span>
+						</a>
+					</ca-flex>
 				</ca-flex>
-			</ca-flex>
-		</footer>
-	</template>
-</ca-code-demo>
+			</footer>
+		</template>
+	</ca-code-demo>
 
 
-<!--<h2>Live demo</h2>-->
-<!--<ca-code-tool data-color-scheme="dark">
+	<!--<h2>Live demo</h2>-->
+	<!--<ca-code-tool data-color-scheme="dark">
 	 BEGIN OPTIONS COLUMN 
 	<section id="code">
 		<div type="heading">
@@ -1095,13 +1095,13 @@ ca-footer-end {
 			</div>
 		</article>
 	</section>-->
-<!-- END OPTIONS COLUMN -->
+	<!-- END OPTIONS COLUMN -->
 
-<!-- BEGIN OUTPUT COLUMN 
+	<!-- BEGIN OUTPUT COLUMN 
 	<section id="output">
 		<div type="heading">
 			<h3>Display</h3>-->
-<!-- BEGIN LIGHT/DARK TOGGLE 
+	<!-- BEGIN LIGHT/DARK TOGGLE 
 			<ca-color-scheme-toggle> <small>Try light or dark mode. </small>
 				<button role="button" title="Toggle light and dark mode" aria-label="Change color scheme"
 					onClick="toggleColor()">
@@ -1117,7 +1117,7 @@ ca-footer-end {
 					</svg>
 				</button>
 			</ca-color-scheme-toggle>-->
-<!-- END LIGHT/DARK TOGGLE 
+	<!-- END LIGHT/DARK TOGGLE 
 		</div>
 		<article id="body" data-toggle="darth-thumb">
 			<div id="output1" class="output-container">
@@ -1376,189 +1376,190 @@ ca-footer-end {
 			</div>
 		</article>
 	</section>-->
-<!-- END OUTPUT COLUMN 
+	<!-- END OUTPUT COLUMN 
 </ca-code-tool>-->
-<h2>Anatomy</h2>
-<ca-grid>
-	<ol>
-		<li><code>footer</code> that provides structure for your footer content.</li>
-		<li><code>ca-grid</code> with Eureka Design System product stamp and
-			<code>nav</code> list for social media links that are optional.
-		</li>
-		<li><code>ca-footer-links</code> containing policy and accessibility certification links along with
-			CA.gov branding and site copyright.</li>
-		<li><code>ca-footer-end</code> containing copyright, website help that’s optional, and back-to-top
-			button.</li>
-	</ol>
-	<section>
-		<h3>Minimalist</h3>
-		<img src="" alt="">
-		<h3>Expanded</h3>
-		<img src="" alt="">
-		<h3>Branded</h3>
-		<img src="" alt="">
-	</section>
-</ca-grid>
-<h3>Usage</h3>
-<ca-grid flow="fill">
-	<section>
-		<h4>Do</h4>
-		<ul>
-			<li>I made a change.</li>
-			<li></li>
-		</ul>
-	</section>
-	<section>
-		<h4>Don't </h4>
-		<ul>
-			<li></li>
-			<li></li>
-		</ul>
-	</section>
-</ca-grid>
-<h3>Responsive footers</h3>
-<ca-grid>
-	<ol>
-		<li><code>footer</code> that provides structure for your footer content.</li>
-		<li><code>ca-grid</code> with Eureka Design System product stamp and
-			<code>nav</code> list for social media links that are optional.
-		</li>
-		<li><code>ca-footer-links</code> containing policy and accessibility certification links along with
-			CA.gov branding and site copyright.</li>
-		<li><code>ca-footer-end</code> containing copyright, website help that’s optional, and back-to-top
-			button.</li>
-	</ol>
-	<section>
-		<h4>Minimalist</h4>
-		<img src="" alt="">
-	</section>
-	<section>
-		<h4>Expanded</h4>
-		<img src="" alt="">
-	</section>
-	<section>
-		<h4>Branded</h4>
-		<img src="" alt="">
-	</section>
-</ca-grid>
-<h2>Developer notes</h2>
-<table>
-	<thead>
-		<tr>
-			<th scope="col">Tags, attributes, classes</th>
-			<th scope="col">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code><strong>footer</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-grid</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-footer-links</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-social-links</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-footer-end</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-current-year</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-utility-icon</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-icon</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>name=""</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>.visually-hidden</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-	</tbody>
-</table>
-<h2>Accessibility</h2>
-<table>
-	<thead>
-		<tr>
-			<th scope="col">Element or property</th>
-			<th scope="col">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><code><strong>footer</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-grid</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-footer-links</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-social-links</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-footer-end</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-current-year</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-utility-icon</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>ca-icon</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>name=""</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-		<tr>
-			<td><code><strong>.visually-hidden</strong></code></td>
-			<td><code><strong></strong></code></td>
-		</tr>
-	</tbody>
-</table>
-<h2>Changelog</h2>
-<table>
-	<thead>
-		<tr>
-			<th scope="col">Date</th>
-			<th scope="col">Version</th>
-			<th scope="col">Affects</th>
-			<th scope="col">Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>MM/DD/YYYY</td>
-			<td>0.0.0.0</td>
-			<td>Something</td>
-			<td>This is the first release.</td>
-		</tr>
-	</tbody>
-</table>
+	<h2>Anatomy</h2>
+	<ca-grid>
+		<ol>
+			<li><code>footer</code> that provides structure for your footer content.</li>
+			<li><code>ca-grid</code> with Eureka Design System product stamp and
+				<code>nav</code> list for social media links that are optional.
+			</li>
+			<li><code>ca-footer-links</code> containing policy and accessibility certification links along with
+				CA.gov branding and site copyright.</li>
+			<li><code>ca-footer-end</code> containing copyright, website help that’s optional, and back-to-top
+				button.</li>
+		</ol>
+		<section>
+			<h3>Minimalist</h3>
+			<img src="" alt="">
+			<h3>Expanded</h3>
+			<img src="" alt="">
+			<h3>Branded</h3>
+			<img src="" alt="">
+		</section>
+	</ca-grid>
+	<h3>Usage</h3>
+	<ca-grid flow="fill">
+		<section>
+			<h4>Do</h4>
+			<ul>
+				<li>I made a change.</li>
+				<li></li>
+			</ul>
+		</section>
+		<section>
+			<h4>Don't </h4>
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+	</ca-grid>
+	<h3>Responsive footers</h3>
+	<ca-grid>
+		<ol>
+			<li><code>footer</code> that provides structure for your footer content.</li>
+			<li><code>ca-grid</code> with Eureka Design System product stamp and
+				<code>nav</code> list for social media links that are optional.
+			</li>
+			<li><code>ca-footer-links</code> containing policy and accessibility certification links along with
+				CA.gov branding and site copyright.</li>
+			<li><code>ca-footer-end</code> containing copyright, website help that’s optional, and back-to-top
+				button.</li>
+		</ol>
+		<section>
+			<h4>Minimalist</h4>
+			<img src="" alt="">
+		</section>
+		<section>
+			<h4>Expanded</h4>
+			<img src="" alt="">
+		</section>
+		<section>
+			<h4>Branded</h4>
+			<img src="" alt="">
+		</section>
+	</ca-grid>
+	<h2>Developer notes</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Tags, attributes, classes</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code><strong>footer</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-grid</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-footer-links</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-social-links</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-footer-end</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-current-year</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-utility-icon</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-icon</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>name=""</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>.visually-hidden</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Accessibility</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Element or property</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code><strong>footer</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-grid</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-footer-links</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-social-links</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-footer-end</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-current-year</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-utility-icon</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>ca-icon</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>name=""</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+			<tr>
+				<td><code><strong>.visually-hidden</strong></code></td>
+				<td><code><strong></strong></code></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Changelog</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Version</th>
+				<th scope="col">Affects</th>
+				<th scope="col">Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>MM/DD/YYYY</td>
+				<td>0.0.0.0</td>
+				<td>Something</td>
+				<td>This is the first release.</td>
+			</tr>
+		</tbody>
+	</table>
+</ca-container>
