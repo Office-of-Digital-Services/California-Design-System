@@ -1,0 +1,222 @@
+ca-container {
+  /* Don't switch the classes to display:block. Might disrupt styling of the content. */
+  display: block;
+}
+
+ca-container,
+.container,
+.container-small,
+.container-medium,
+.container-large,
+.container-full {
+  margin-inline: 1rem;
+  max-width: var(--max-width);
+}
+
+ca-container,
+.container,
+ca-container[size="medium"],
+.container-medium {
+  --max-width: 65rem; /* Default */
+}
+
+ca-container[size="small"],
+.container-small {
+  --max-width: 45rem;
+}
+
+ca-container[size="large"],
+.container-large {
+  --max-width: 85rem;
+}
+
+ca-container[size="full"],
+.container-full {
+  --max-width: unset;
+}
+
+@container main (inline-size > 66rem) {
+  ca-container,
+  .container,
+  .container-small,
+  .container-medium,
+  .container-large,
+  .container-full {
+    margin-inline: 5rem;
+  }
+
+  ca-layout[format|="top"]
+    :is(
+      ca-container,
+      .container,
+      .container-small,
+      .container-medium,
+      .container-large,
+      .container-full
+    ) {
+    margin-inline: auto;
+  }
+}
+
+ca-container[columns],
+.container-columns,
+.container-columns-2,
+.container-columns-3,
+.container-columns-4,
+.container-columns-5,
+.container-columns-6 {
+  --columns: 2; /* Default 2 columns */
+  --gap: 0rem; /* Default no gap between columns */
+  --gap-x: var(--gap);
+  --gap-y: var(--gap);
+  /* The shrink-factor helps columns shrink responsively a bit. 
+	 * Otherwise they always break at first pixel below max-width. 
+	 * We'll probably want to adjust this over time, with testing.
+	 */
+  --shrink-factor: 0.8;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: var(--gap-x);
+  row-gap: var(--gap-y);
+  container: container / inline-size;
+
+  & > * {
+    --span: 1;
+    --column-size: calc(
+      (
+        (var(--max-width) - ((var(--columns) - 1) * var(--gap-x))) /
+        var(--columns)
+      ) *
+      var(--shrink-factor)
+    );
+    --cell-size: calc(
+      (var(--column-size) * var(--span)) +
+      ((var(--span) - 1) * var(--gap-x))
+    );
+
+    inline-size: var(--cell-size);
+    flex: 1 1 auto;
+  }
+
+  & > :is(ca-column[span="2"], .span-2) {
+    --span: 2;
+  }
+  & > :is(ca-column[span="3"], .span-3) {
+    --span: 3;
+  }
+  & > :is(ca-column[span="4"], .span-4) {
+    --span: 4;
+  }
+  & > :is(ca-column[span="5"], .span-5) {
+    --span: 5;
+  }
+  & > :is(ca-column[span="6"], .span-6) {
+    --span: 6;
+  }
+
+  &[gap="1"],
+  &.gap-1 {
+    --gap: 0.5rem;
+  }
+  &[gap="2"],
+  &.gap-2 {
+    --gap: 1rem;
+  }
+  &[gap="3"],
+  &.gap-3 {
+    --gap: 1.5rem;
+  }
+  &[gap="4"],
+  &.gap-4 {
+    --gap: 2rem;
+  }
+  &[gap="5"],
+  &.gap-5 {
+    --gap: 2.5rem;
+  }
+  &[gap="6"],
+  &.gap-6 {
+    --gap: 3rem;
+  }
+
+  &[x-gap="0"],
+  &.gap-x-0 {
+    --gap-x: 0rem;
+  }
+  &[x-gap="1"],
+  &.gap-x-1 {
+    --gap-x: 0.5rem;
+  }
+  &[x-gap="2"],
+  &.gap-x-2 {
+    --gap-x: 1rem;
+  }
+  &[x-gap="3"],
+  &.gap-x-3 {
+    --gap-x: 1.5rem;
+  }
+  &[x-gap="4"],
+  &.gap-x-4 {
+    --gap-x: 2rem;
+  }
+  &[x-gap="5"],
+  &.gap-x-5 {
+    --gap-x: 2.5rem;
+  }
+  &[x-gap="6"],
+  &.gap-x-6 {
+    --gap-x: 3rem;
+  }
+
+  &[y-gap="0"],
+  &.gap-y-0 {
+    --gap-y: 0rem;
+  }
+  &[y-gap="1"],
+  &.gap-y-1 {
+    --gap-y: 0.5rem;
+  }
+  &[y-gap="2"],
+  &.gap-y-2 {
+    --gap-y: 1rem;
+  }
+  &[y-gap="3"],
+  &.gap-y-3 {
+    --gap-y: 1.5rem;
+  }
+  &[y-gap="4"],
+  &.gap-y-4 {
+    --gap-y: 2rem;
+  }
+  &[y-gap="5"],
+  &.gap-y-5 {
+    --gap-y: 2.5rem;
+  }
+  &[y-gap="6"],
+  &.gap-y-6 {
+    --gap-y: 3rem;
+  }
+}
+
+ca-container[columns="2"],
+.container-columns-2 {
+  --columns: 2; /* Default */
+}
+ca-container[columns="3"],
+.container-columns-3 {
+  --columns: 3;
+}
+ca-container[columns="4"],
+.container-columns-4 {
+  --columns: 4;
+}
+ca-container[columns="5"],
+.container-columns-5 {
+  --columns: 5;
+}
+ca-container[columns="6"],
+.container-columns-6 {
+  --columns: 6;
+}

@@ -91,7 +91,7 @@ ca-layout {
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout:not([format="horizon"]):not([format="skyline"]) {
+  ca-layout:not([format="top-full"]):not([format="top-lite"]) {
     grid-template-columns: 15rem 1fr;
     grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr max-content;
     grid-template-areas:
@@ -129,7 +129,7 @@ ca-layout {
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout[format="horizon"] {
+  ca-layout[format="top-full"] {
     grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) auto;
     grid-template-rows: max-content max-content 1fr max-content;
     grid-template-areas:
@@ -168,7 +168,7 @@ ca-layout {
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout[format="skyline"] {
+  ca-layout[format="top-lite"] {
     grid-template-columns: fit-content(7rem) max-content 1fr fit-content(15rem) max-content;
     grid-template-rows: max-content auto max-content;
     grid-template-areas:

@@ -110,9 +110,9 @@ class LayoutToggle extends HTMLElement {
 				</fieldset>
 				<fieldset id="layout">
 					<legend>Layout</legend>
-					<label><input type="radio" name="layout" value="eureka" /> Eureka</label>
-					<label><input type="radio" name="layout" value="horizon" /> Horizon</label>
-					<label><input type="radio" name="layout" value="skyline" /> Skyline</label>
+					<label><input type="radio" name="layout" value="side" /> Side</label>
+					<label><input type="radio" name="layout" value="top-full" /> Top (full)</label>
+					<label><input type="radio" name="layout" value="top-lite" /> Top (lite)</label>
 				</fieldset>
 				<fieldset id="theme">
 					<legend>Theme</legend>
@@ -179,7 +179,7 @@ class LayoutToggle extends HTMLElement {
 
     // Set initial layout
     const layoutFieldset = this.shadowRoot.querySelector("fieldset#layout");
-    const initialFormat = layout.getAttribute("format") || "eureka";
+    const initialFormat = layout.getAttribute("format") || "side";
     layoutFieldset
       .querySelector(`input[value="${initialFormat}"]`)
       .setAttribute("checked", "");

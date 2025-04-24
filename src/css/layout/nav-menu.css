@@ -149,7 +149,7 @@ ca-nav-menu {
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout:not([format="horizon"]):not([format="skyline"]) {
+  ca-layout:not([format="top-full"]):not([format="top-lite"]) {
     /* The peeking drawer that slightly pops out when hovering over a nested nav item. */
     & ca-nav-menu {
       &:not([expanded]):has(> button:hover)::before {
@@ -195,8 +195,8 @@ ca-nav-menu {
     }
   }
 
-  ca-layout[format="horizon"],
-  ca-layout[format="skyline"] {
+  ca-layout[format="top-full"],
+  ca-layout[format="top-lite"] {
     & ca-nav-menu {
       position: relative;
 
@@ -280,8 +280,8 @@ ca-nav-menu {
   }
 
   /* Horizon dropdown and Skyline top-level */
-  ca-layout[format="skyline"] ca-nav-menu,
-  ca-layout[format="horizon"] ca-nav-menu[expanded] > ul {
+  ca-layout[format="top-lite"] ca-nav-menu,
+  ca-layout[format="top-full"] ca-nav-menu[expanded] > ul {
     & button {
       display: none;
     }
@@ -310,7 +310,7 @@ ca-nav-menu {
     }
   }
 
-  ca-layout[format="skyline"] {
+  ca-layout[format="top-lite"] {
     & ca-nav-menu {
       & ul {
         flex-direction: row;
@@ -370,7 +370,7 @@ ca-nav-menu {
 @media screen and (min-width: 1024px) and (
     prefers-reduced-motion: no-preference
   ) {
-  ca-layout:not([format="horizon"]):not([format="skyline"]) {
+  ca-layout:not([format="top-full"]):not([format="top-lite"]) {
     & ca-nav-menu:not([expanded]):has(> button:hover)::before {
       opacity: 0;
       animation: reveal-subnav-drawer-eureka ease-out 0.2s forwards;
@@ -380,7 +380,7 @@ ca-nav-menu {
       animation: pull-subnav-drawer-eureka ease-out 0.2s forwards;
     }
   }
-  ca-layout[format="horizon"] {
+  ca-layout[format="top-full"] {
     & ca-nav-menu[expanded] > ul {
       opacity: 0;
       animation: reveal-pulldown-menu ease-out 0.2s forwards;

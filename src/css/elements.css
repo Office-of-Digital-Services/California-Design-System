@@ -21,18 +21,6 @@ body {
 }
 
 /*
- * Sectioning
- */
-
-article,
-aside,
-hgroup,
-section,
-footer {
-  padding: 1rem;
-}
-
-/*
  * Content
  *
  * Many content rules are in typography.css.

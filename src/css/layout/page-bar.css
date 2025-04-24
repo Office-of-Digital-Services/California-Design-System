@@ -12,7 +12,7 @@ ca-page-bar {
   }
 
   /* Horizon, small desktop */
-  ca-layout[format="horizon"] > ca-page-bar {
+  ca-layout[format="top-full"] > ca-page-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,7 +28,7 @@ ca-page-bar {
   }
 
   /* Skyline, small desktop */
-  ca-layout[format="skyline"] > ca-page-bar {
+  ca-layout[format="top-lite"] > ca-page-bar {
     display: flex;
     align-items: center;
     padding: 1rem 3rem;

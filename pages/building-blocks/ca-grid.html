@@ -1,75 +1,75 @@
 <!---
 title: Eureka Design System, CA-grid
 description: This page gives a detailed explnation of how we built and use the ca-grid layouts.
-keywords: eureka, design system, design, ca-grid, .ca-grid, grid css
+keywords: eureka, design system, design, ca-grid, .grid, grid css
 --->
 
 <style>
-	h2 {
-		margin-block: 2rem;
-	}
+  h2 {
+    margin-block: 2rem;
+  }
 
-	h4 {
-		margin-block-start: 1.5rem;
-	}
+  h4 {
+    margin-block-start: 1.5rem;
+  }
 
-	table {
-		margin-block-end: 2rem;
-	}
+  table {
+    margin-block-end: 2rem;
+  }
 
-	th {
-		text-align: left;
-	}
+  th {
+    text-align: left;
+  }
 
-	:is(ca-grid, .ca-grid)>p {
-		margin: 0;
-		padding: 1rem;
-		max-width: 100%;
-		background-color: lightseagreen;
-	}
+  :is(ca-grid, .grid)>p {
+    margin: 0;
+    padding: 1rem;
+    max-width: 100%;
+    background-color: lightseagreen;
+  }
 
-	/** TEST CSS for images **/
-	img {
-		transition: transform 1s ease;
-	}
+  /** TEST CSS for images **/
+  img {
+    transition: transform 1s ease;
+  }
 
-	img:hover {
-		-webkit-transform: scale(1.5);
-		/* or some other value */
-		transform: scale(1.35);
-		cursor: pointer;
-	}
+  img:hover {
+    -webkit-transform: scale(1.5);
+    /* or some other value */
+    transform: scale(1.35);
+    cursor: pointer;
+  }
 </style>
 <h1>CA-grid </h1>
 <p><code>CSS-grid</code> is a tool that helps you create layouts for webpages. It allows you to divide a webpage into
-	rows and columns and place
-	content exactly where you want it to go.</p>
+  rows and columns and place
+  content exactly where you want it to go.</p>
 <h2>Why use CSS grid</h2>
 <ul>
-	<li><strong>Responsiveness</strong>: It’s easy to make responsive layouts that adjust for different screen sizes.</li>
-	<li><strong>Preciseness</strong>: It gives you precise control over where things go.</li>
-	<li><strong>Scalable</strong>: It works well with other layout tools like Flexbox.</li>
+  <li><strong>Responsiveness</strong>: It’s easy to make responsive layouts that adjust for different screen sizes.</li>
+  <li><strong>Preciseness</strong>: It gives you precise control over where things go.</li>
+  <li><strong>Scalable</strong>: It works well with other layout tools like Flexbox.</li>
 </ul>
 <h2>Anatomy</h2>
 <p>Just a reminder we’ve adopted the <a href="https://jordanbrennan.hashnode.dev/tac-a-new-css-methodology">TAC</a>
-	(tag, attribute, class) CSS methodology. So, you may notice a few custom HTML tags
-	in the Eureka Design System. The <code>ca-grid</code> is one of those custom tags.
+  (tag, attribute, class) CSS methodology. So, you may notice a few custom HTML tags
+  in the Eureka Design System. The <code>ca-grid</code> is one of those custom tags.
 </p>
 <ol>
-	<li><code>ca-layout</code> is used as the parent building block for our <code>grid-template-layouts</code>, Eureka,
-		Horizon, and Skyline.</li>
-	<li><code>ca-grid</code> is the parent tag where a grid is created. Think of it as the box that holds
-		your
-		grid. The rest is CSS at
-		work. Enjoy!</li>
-	<li><code>grid-template-areas</code> identify the placement of the areas in your grid using names (e.g., A, B, C,
-		or
-		header, aside, main, footer).
-	</li>
-	<li><code>grid-template-columns</code> define the sizing of the grid-columns.</li>
-	<li><code>grid-template-rows</code> define the sizing of the grid-rows.</li>
-	<li><code>column-gap</code> applies space between the grid-columns.</li>
-	<li><code>row-gap</code> applies space between the grid-rows.</li>
+  <li><code>ca-layout</code> is used as the parent building block for our <code>grid-template-layouts</code>, Eureka,
+    Horizon, and Skyline.</li>
+  <li><code>ca-grid</code> is the parent tag where a grid is created. Think of it as the box that holds
+    your
+    grid. The rest is CSS at
+    work. Enjoy!</li>
+  <li><code>grid-template-areas</code> identify the placement of the areas in your grid using names (e.g., A, B, C,
+    or
+    header, aside, main, footer).
+  </li>
+  <li><code>grid-template-columns</code> define the sizing of the grid-columns.</li>
+  <li><code>grid-template-rows</code> define the sizing of the grid-rows.</li>
+  <li><code>column-gap</code> applies space between the grid-columns.</li>
+  <li><code>row-gap</code> applies space between the grid-rows.</li>
 </ol>
 <!--<ca-grid>
 	<section>
@@ -97,39 +97,39 @@ keywords: eureka, design system, design, ca-grid, .ca-grid, grid css
 </ca-grid>-->
 <h2>Grid-template layouts</h2>
 <p>We’re using a <code>grid-template</code>, so you’ll only need to edit the content
-	regions of the
-	<code>grid-template-areas</code>.
+  regions of the
+  <code>grid-template-areas</code>.
 </p>
 <p>Remember, the <code>ca-layout</code> tag that contains all the grid-template-areas listed below.</p>
 <ol>
-	<li><code>ca-site-logo</code> with your branding.</li>
-	<li><code>header</code> with your agency name.</li>
-	<li><code>search</code> giving users the ability to search your site.</li>
-	<li><code>nav (global)</code> so users can easily navigate your site.</li>
-	<li><code>nav (utility)</code> for things like login, translate, or other site utilities.</li>
-	<li><code>main</code> where your page content will live.</li>
-	<li><code>footer</code> where you can place additional site or external resources for your users.</li>
+  <li><code>ca-site-logo</code> with your branding.</li>
+  <li><code>header</code> with your agency name.</li>
+  <li><code>search</code> giving users the ability to search your site.</li>
+  <li><code>nav (global)</code> so users can easily navigate your site.</li>
+  <li><code>nav (utility)</code> for things like login, translate, or other site utilities.</li>
+  <li><code>main</code> where your page content will live.</li>
+  <li><code>footer</code> where you can place additional site or external resources for your users.</li>
 </ol>
 <ca-grid>
-	<section>
-		<h3>Side-nav layout</h3>
-		<p>Our side-nav has a 3-level dropdown navigation allowing for two sub-folders within a main-navigation folder.</p>
-		<img src="/images/eureka-grid-template-layout.jpg"
-			alt="The seven grid-template-areas of the Eureka layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
-	</section>
-	<section>
-		<h3>Top-nav</h3>
-		<p>Our top-nav has a 2-level dropdown navigation allowing for one sub-folder within a main-navigation folder.</p>
-		<img src="/images/horizon-grid-template-layout.jpg"
-			alt="The seven grid-template-areas of the Horizon layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
-	</section>
-	<section>
-		<h3>Micro-nav</h3>
-		<p>This navigation is meant for small-scale site with three to five main pages in your site navigation and utilities
-			in the footer, if needed.</p>
-		<img src="/images/skyline-grid-template-layout.jpg"
-			alt="The seven grid-template-areas of the Skyline layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
-	</section>
+  <section>
+    <h3>Side-nav layout</h3>
+    <p>Our side-nav has a 3-level dropdown navigation allowing for two sub-folders within a main-navigation folder.</p>
+    <img src="/images/eureka-grid-template-layout.jpg"
+      alt="The seven grid-template-areas of the Eureka layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
+  </section>
+  <section>
+    <h3>Top-nav</h3>
+    <p>Our top-nav has a 2-level dropdown navigation allowing for one sub-folder within a main-navigation folder.</p>
+    <img src="/images/horizon-grid-template-layout.jpg"
+      alt="The seven grid-template-areas of the Horizon layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
+  </section>
+  <section>
+    <h3>Micro-nav</h3>
+    <p>This navigation is meant for small-scale site with three to five main pages in your site navigation and utilities
+      in the footer, if needed.</p>
+    <img src="/images/skyline-grid-template-layout.jpg"
+      alt="The seven grid-template-areas of the Skyline layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
+  </section>
 </ca-grid>
 <h2>In-page ca-grid layouts</h2>
 <p>If you use an in-page <code>ca-grid</code> layout you can have as many as six columns in your grid or a few as one.
@@ -138,96 +138,96 @@ keywords: eureka, design system, design, ca-grid, .ca-grid, grid css
 <h3>Live demo</h3>
 <h4>Max six columns (default)</h4>
 <ca-grid>
-	<p>Stretch your browser window.</p>
-	<p>The grid is responsive to your viewport size.</p>
-	<p>Cell three.</p>
-	<p>Cell four.</p>
-	<p>Cell five.</p>
-	<p>Cell six.</p>
+  <p>Stretch your browser window.</p>
+  <p>The grid is responsive to your viewport size.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
 </ca-grid>
 <h4>Max three columns</h4>
 <p>Add the attribute <code>max-col="3"</code> to your <code>ca-grid</code> tag.</p>
 <ca-grid max-col="3">
-	<p>Cell one.</p>
-	<p>Cell two.</p>
-	<p>Cell three.</p>
-	<p>Cell four.</p>
-	<p>Cell five.</p>
-	<p>Cell six.</p>
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
 </ca-grid>
 <h4>Same three-column grid with <code>div</code></h4>
-<p>Add the CSS classes <code>.ca-grid</code> and <code>.ca-grid-max-col-3</code></p>
-<div class="ca-grid ca-grid-max-col-3">
-	<p>Cell one.</p>
-	<p>Cell two.</p>
-	<p>Cell three.</p>
-	<p>Cell four.</p>
-	<p>Cell five.</p>
-	<p>Cell six.</p>
+<p>Add the CSS classes <code>.grid</code> and <code>.grid-max-col-3</code></p>
+<div class="grid grid-max-col-3">
+  <p>Cell one.</p>
+  <p>Cell two.</p>
+  <p>Cell three.</p>
+  <p>Cell four.</p>
+  <p>Cell five.</p>
+  <p>Cell six.</p>
 </div>
 <h2>Developer notes</h2>
 <table>
-	<thead>
-		<tr>
-			<th scope="col" style="width: 20%;">Tags, attributes, classes</th>
-			<th scope="col">Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row"><code>ca-layout</code></th>
-			<td>Custom tag that contains our <code>grid-templte-areas</code>.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>ca-grid</code></th>
-			<td>Custom HTML in-page grid tag for Eureka Design System.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>any-block-element</code></th>
-			<td>Use any combination of HTML block elements to set up an in-page grid layout.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>ca-grid-max-col-numericalValue</code></th>
-			<td>Maximum of 6 columns.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>ca-grid-min-col-numericalValue</code></th>
-			<td>Minimum of 1 column.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>ca-grid-span-numericalValue</code></th>
-			<td>Sets an <code>@container</code> query for creating your own column span.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>data-max-col="numericalValue"</code></th>
-			<td>Sets maximum number of columns on the grid.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>data-min-col="numericalValue"</code></th>
-			<td>Sets minimum number of columns on the grid.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>data-cell-size="large"</code></th>
-			<td>Cell size shortcut.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>data-flow="fit"</code></th>
-			<td>Change the fit style of the grid columns, like auto-fit.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>data-flow="fill"</code></th>
-			<td>Change the fill style of the grid columns auto-fill.</td>
-		</tr>
-		<tr>
-			<th scope="row"><code>.ca-grid</code></th>
-			<td>Custom HTML grid class for Eureka Design System.</td>
-		</tr>
-	</tbody>
+  <thead>
+    <tr>
+      <th scope="col" style="width: 20%;">Tags, attributes, classes</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><code>ca-layout</code></th>
+      <td>Custom tag that contains our <code>grid-templte-areas</code>.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>ca-grid</code></th>
+      <td>Custom HTML in-page grid tag for Eureka Design System.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>any-block-element</code></th>
+      <td>Use any combination of HTML block elements to set up an in-page grid layout.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>ca-grid-max-col-numericalValue</code></th>
+      <td>Maximum of 6 columns.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>ca-grid-min-col-numericalValue</code></th>
+      <td>Minimum of 1 column.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>ca-grid-span-numericalValue</code></th>
+      <td>Sets an <code>@container</code> query for creating your own column span.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>data-max-col="numericalValue"</code></th>
+      <td>Sets maximum number of columns on the grid.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>data-min-col="numericalValue"</code></th>
+      <td>Sets minimum number of columns on the grid.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>data-cell-size="large"</code></th>
+      <td>Cell size shortcut.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>data-flow="fit"</code></th>
+      <td>Change the fit style of the grid columns, like auto-fit.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>data-flow="fill"</code></th>
+      <td>Change the fill style of the grid columns auto-fill.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.grid</code></th>
+      <td>Custom HTML grid class for Eureka Design System.</td>
+    </tr>
+  </tbody>
 </table>
 <h2>Accessibility</h2>
 <p><code>CSS-grid</code> is inherently responsive and keyboard accessiblle. Visit W3C draft documentation on <a
-		href="https://drafts.csswg.org/css-grid/#order-accessibility">Re-ordering and the accessibility</a> of your
-	<code>grid</code>.
+    href="https://drafts.csswg.org/css-grid/#order-accessibility">Re-ordering and the accessibility</a> of your
+  <code>grid</code>.
 </p>
 <!--
 <table>
@@ -282,20 +282,20 @@ keywords: eureka, design system, design, ca-grid, .ca-grid, grid css
 </table>-->
 <h2>Changelog</h2>
 <table>
-	<thead>
-		<tr>
-			<th scope="col">Date</th>
-			<th scope="col">Version</th>
-			<th scope="col">Affects</th>
-			<th scope="col">Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>MM/DD/YYYY</td>
-			<td>0.0.0.0</td>
-			<td>Something</td>
-			<td>This is the first release.</td>
-		</tr>
-	</tbody>
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Version</th>
+      <th scope="col">Affects</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MM/DD/YYYY</td>
+      <td>0.0.0.0</td>
+      <td>Something</td>
+      <td>This is the first release.</td>
+    </tr>
+  </tbody>
 </table>

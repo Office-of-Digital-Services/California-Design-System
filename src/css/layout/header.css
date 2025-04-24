@@ -50,13 +50,13 @@ ca-layout > header {
   }
 
   /* Horizon, small desktop */
-  ca-layout[format="horizon"] > header {
+  ca-layout[format="top-full"] > header {
     padding-block: 1rem .5rem;
     padding-inline: 1rem;
   }
 
   /* Skyline, small desktop */
-  ca-layout[format="skyline"] > header {
+  ca-layout[format="top-lite"] > header {
     padding-inline: 1rem;
   }
 }

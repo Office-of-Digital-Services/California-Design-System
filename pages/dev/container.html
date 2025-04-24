@@ -1,0 +1,292 @@
+<style>
+  ca-code-demo :is(p, ca-column) {
+    margin: 0;
+    padding: 2rem;
+    border: 1px solid var(--primary-text);
+    background-color: var(--primary-background-60);
+  }
+
+  ca-code-demo :is(ca-container, .container)+ :is(ca-container, .container) {
+    margin-top: 1rem;
+  }
+</style>
+
+<section class="container">
+  <h1>Containers</h1>
+
+  <p>Containers help position content on the page. They apply margins at different screen sizes,
+    in different layouts,
+    to ensure content stays aligned.</p>
+</section>
+
+<section>
+  <ca-container>
+    <h2>Basic container</h2>
+
+    <p>Here's an example of the basic container.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <ca-container>
+          <p>Standard <code>ca-container</code></p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>Try resizing the window and switching layouts to see how the container responds.</p>
+
+    <p>Classes also work.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <div class="container">
+          <p>Standard <code>.container</code> class</p>
+        </div>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>Try resizing the window and switching layouts to see how the container responds.</p>
+  </ca-container>
+</section>
+
+<section>
+  <ca-container>
+    <h2>Sizes</h2>
+
+    <p>Containers come in many sizes.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <ca-container size="small">
+          <p>Small <code>ca-container</code> with <code>size="small"</code></p>
+        </ca-container>
+
+        <ca-container>
+          <p>Default <code>ca-container</code> at medium size</p>
+        </ca-container>
+
+        <ca-container size="medium">
+          <p>Medium <code>ca-container</code> with <code>size="medium"</code></p>
+        </ca-container>
+
+        <ca-container size="large">
+          <p>Large <code>ca-container</code> with <code>size="large"</code></p>
+        </ca-container>
+
+        <ca-container size="full">
+          <p>Full <code>ca-container</code> with <code>size="full"</code></p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>And again, we have equivalent classes for each size.</p>
+  </ca-container>
+
+  <ca-container size="full">
+    <ca-code-demo>
+      <template>
+        <div class="container-small">
+          <p>Small <code>.container-small</code> class</p>
+        </div>
+
+        <div class="container">
+          <p>Default <code>.container</code> class at medium size</p>
+        </div>
+
+        <div class="container-medium">
+          <p>Medium <code>.container-medium</code> class</p>
+        </div>
+
+        <div class="container-large">
+          <p>Large <code>.container-large</code> class</p>
+        </div>
+
+        <div class="container-full">
+          <p>Full <code>.container-full</code> class</p>
+        </div>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>
+
+
+<section>
+  <ca-container>
+    <h2>Columns</h2>
+
+    <p>A container can be divided into multiple columns. This can be used to create multi-column pages.</p>
+
+    <p>Our containers combine the container/row/column grid-based layout tools often seen in other popular CSS
+      frameworks.</p>
+
+    <p>Note that this will not work with a full-width container. (Because a full-width container has no defined size
+      overall,
+      I don't see a good way for us to define the ideal size of each column for responsive purposes.)</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <h3>Each column</h3>
+
+    <p>When using container columns, you have the option of using the <code>ca-column</code> tag to define each column.
+      But it's not a requirement. Any element will work.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <!-- Using the ca-column tag here. -->
+          <ca-column>Column 1</ca-column>
+          <ca-column>Column 2</ca-column>
+        </ca-container>
+        <ca-container columns="2">
+          <!-- Just using plain p tags here. Still works. -->
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <h3>Span</h3>
+
+    <p>The container supports up to six columns. When using more than three or four, you'll probably want some columns
+      to be bigger than others. That's where <code>span</code> comes into play.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="3">
+          <ca-column span="2">Columns 1, 2</ca-column>
+          <ca-column>Column 3</ca-column>
+        </ca-container>
+        <ca-container columns="3">
+          <ca-column>Columns 1, 2</ca-column>
+          <ca-column span="2">Column 3</ca-column>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>We also have equivalent classes.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <div class="container container-columns-3">
+          <!-- Just using plain p tags here. Still works. -->
+          <p class="span-2">Columns 1, 2</p>
+          <p>Column 3</p>
+        </div>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <h3>The test matrix</h3>
+
+    <p>Jon uses this in testing.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <p>Column A-1</p>
+          <p>Column A-2</p>
+        </ca-container>
+
+        <ca-container columns="3">
+          <p>Column B-1</p>
+          <p>Column B-2</p>
+          <p>Column B-3</p>
+        </ca-container>
+
+        <ca-container columns="3">
+          <p class="span-2">Columns C1, C2</p>
+          <p>Column C-3</p>
+        </ca-container>
+
+        <ca-container columns="4">
+          <p>Column D-1</p>
+          <p>Column D-2</p>
+          <p>Column D-3</p>
+          <p>Column D-4</p>
+        </ca-container>
+
+        <ca-container columns="4">
+          <p class="span-2">Columns E1, E2</p>
+          <p class="span-2">Columns E3, E4</p>
+        </ca-container>
+
+        <ca-container columns="4">
+          <p class="span-3">Columns F1 to F3</p>
+          <p>Column F-4</p>
+        </ca-container>
+
+        <ca-container columns="5">
+          <p class="span-3">Columns G1 to G3</p>
+          <p class="span-2">Columns G4, G5</p>
+        </ca-container>
+
+        <ca-container columns="6">
+          <p class="span-4">Columns H1 to H4</p>
+          <p class="span-2">Column H5, H6</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <h3>Container column recursion</h3>
+
+    <p>Let's do some nesting with our code demos.</p>
+  </ca-container>
+
+
+  <ca-container size="large" columns="2" x-gap="2">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+</section>
