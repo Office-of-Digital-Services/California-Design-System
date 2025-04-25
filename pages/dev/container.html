@@ -131,6 +131,8 @@
     <p>Our containers combine the container/row/column grid-based layout tools often seen in other popular CSS
       frameworks.</p>
 
+    <p>When a column shrinks too far, it will break onto a new line. Good for mobile.</p>
+
     <p>Note that this will not work with a full-width container. (Because a full-width container has no defined size
       overall,
       I don't see a good way for us to define the ideal size of each column for responsive purposes.)</p>
@@ -205,6 +207,71 @@
           <p class="span-2">Columns 1, 2</p>
           <p>Column 3</p>
         </div>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <h3>Container column gaps</h3>
+
+    <p>Gutters can be placed between columns if desired.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2" gap="2">
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <p>Gaps can be applied in just one direction too.</p>
+  </ca-container>
+
+  <ca-container size="large">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2" gap-x="2">
+          <!-- The gap will be placed between columns, but not between "rows" on mobile. -->
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+
+        <ca-container columns="2" gap-y="2">
+          <!-- The gap will only be applied between "rows". In this case, mostly on mobile. -->
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+  </ca-container>
+
+  <ca-container>
+    <h3>Container column recursion</h3>
+
+    <p>Let's do some nesting with our code demos.</p>
+  </ca-container>
+
+
+  <ca-container size="large" columns="2" gap-x="2">
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
+      </template>
+    </ca-code-demo>
+    <ca-code-demo>
+      <template>
+        <ca-container columns="2">
+          <p>Column 1</p>
+          <p>Column 2</p>
+        </ca-container>
       </template>
     </ca-code-demo>
   </ca-container>
@@ -320,32 +387,6 @@
         <ca-container columns="5" gap-x="2">
           <p class="span-3">Columns J-1 to J-3</p>
           <p class="span-2">Columns J-4, J-5</p>
-        </ca-container>
-      </template>
-    </ca-code-demo>
-  </ca-container>
-
-  <ca-container>
-    <h3>Container column recursion</h3>
-
-    <p>Let's do some nesting with our code demos.</p>
-  </ca-container>
-
-
-  <ca-container size="large" columns="2" gap-x="2">
-    <ca-code-demo>
-      <template>
-        <ca-container columns="2">
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-container>
-      </template>
-    </ca-code-demo>
-    <ca-code-demo>
-      <template>
-        <ca-container columns="2">
-          <p>Column 1</p>
-          <p>Column 2</p>
         </ca-container>
       </template>
     </ca-code-demo>
