@@ -53,21 +53,26 @@
 				<li>
 					<ca-layout-toggle></ca-layout-toggle>
 				</li>
-				<li>
-					<ca-color-scheme-toggle></ca-color-scheme-toggle>
-				</li>
-				<li>
-					<a href="#" title="Login">
-						<ca-icon glyph="account-circle" format="utility"></ca-icon>
-						<span class="visually-hidden">Login</span>
-					</a>
-				</li>
-				<li>
-					<a href="/pages/translate-disclaimer" title="Translate">
-						<ca-icon glyph="language" format="utility"></ca-icon>
-						<span class="visually-hidden">Translate</span>
-					</a>
-				</li>
+        <li>
+          <ca-color-scheme-toggle>
+            <button class="utility">
+              <ca-icon glyph="light-mode"></ca-icon>
+              <span class="visually-hidden">Switch between light and dark modes</span>
+            </button>
+          </ca-color-scheme-toggle>
+        </li>
+        <li>
+          <a href="#" title="Login" class="button utility">
+            <ca-icon glyph="account-circle"></ca-icon>
+            <span class="visually-hidden">Login</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Translate" class="button utility">
+            <ca-icon glyph="language"></ca-icon>
+            <span class="visually-hidden">Translate</span>
+          </a>
+        </li>
 			</ul>
 		</nav>
 	</ca-utility-bar>
@@ -122,38 +127,40 @@
 <footer>
     
 <p>A product of the California Design System.</p>
-		<ca-flex format="footer-split-links"> <ul class="social-icon-list">
+		<ca-flex format="footer-split-links"> 
+      <ul class="social-icon-list">
         <li>
-          <a href="#">
-            <ca-icon glyph="mail" format="social"></ca-icon>
+          <a href="#" class="button social">
+            <ca-icon glyph="mail"></ca-icon>
             <span class="visually-hidden">Email</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <ca-icon glyph="facebook" format="social"></ca-icon>
+          <a href="#" class="button social">
+            <ca-icon glyph="facebook"></ca-icon>
             <span class="visually-hidden">Facebook</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <ca-icon glyph="linked-in" format="social"></ca-icon>
+          <a href="#" class="button social">
+            <ca-icon glyph="linked-in"></ca-icon>
             <span class="visually-hidden">LinkedIn</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <ca-icon glyph="x-dot-com" format="social"></ca-icon>
+          <a href="#" class="button social">
+            <ca-icon glyph="x-dot-com"></ca-icon>
             <span class="visually-hidden">X.com</span>
           </a>
         </li>
         <li>
-          <a href="#">
-            <ca-icon glyph="youtube" format="social"></ca-icon>
+          <a href="#" class="button social">
+            <ca-icon glyph="youtube"></ca-icon>
             <span class="visually-hidden">YouTube</span>
           </a>
         </li>
-      </ul></ca-flex>
+      </ul>
+		</ca-flex>
 
     <hr>
 
@@ -179,18 +186,18 @@
      
     </ca-flex><ca-flex format="footer-end">
       <ca-flex format="copyright-stamp">
-        <ca-icon glyph="ca-bear" format="footer-bear"></ca-icon>
+        <ca-icon glyph="footer-ca-bear"></ca-icon>
         <p>An official California state website.</p>
         <p>© <ca-current-year>2025</ca-current-year> State of California</p>
       </ca-flex>
 
       <ca-flex format="footer-utility">
-        <a href="#">
-          <ca-icon glyph="help" format="utility"></ca-icon>
+        <a href="#" class="button utility">
+          <ca-icon glyph="help"></ca-icon>
           <span class="visually-hidden">Help</span>
         </a>
-        <a href="#">
-          <ca-icon glyph="back-to-top" format="utility"></ca-icon>
+        <a href="#" class="button utility">
+          <ca-icon glyph="back-to-top"></ca-icon>
           <span class="visually-hidden">Back to top</span>
         </a>
       </ca-flex>

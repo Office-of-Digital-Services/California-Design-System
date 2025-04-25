@@ -92,6 +92,7 @@ ca-container[columns],
   row-gap: var(--gap-y);
   container: container / inline-size;
 
+  /* Each column */
   & > * {
     --span: 1; /* Default column span of 1 */
 

@@ -5,7 +5,7 @@
 
 @import "theme/_theme_bundle.css";
 @import "layout/_layout_bundle.css";
-@import "icon/_icon_bundle.css";
+@import "icon.css";
 
 @import "button.css";
 @import "utilities.css";
