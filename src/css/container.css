@@ -69,6 +69,22 @@ ca-container[columns],
   --gap-x: var(--gap);
   --gap-y: var(--gap);
 
+  /* 
+		The --shrink-factor helps columns shrink responsively a bit. 
+		Otherwise they always break at first pixel below max-width. 
+		We'll probably want to adjust this over time, with testing.
+	*/
+  --shrink-factor: 0.8;
+
+  /* --column-size uses all of our variables to figure out the ideal size for each column. */
+  --column-size: calc(
+    (
+      (var(--max-width) - ((var(--columns) - 1) * var(--gap-x))) /
+      var(--columns)
+    ) *
+    var(--shrink-factor)
+  );
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -77,27 +93,15 @@ ca-container[columns],
   container: container / inline-size;
 
   & > * {
-    --span: 1;
-    /* The shrink-factor helps columns shrink responsively a bit. 
-	 	 * Otherwise they always break at first pixel below max-width. 
-	 	 * We'll probably want to adjust this over time, with testing.
-	 	 */
-    --shrink-factor: 0.8;
+    --span: 1; /* Default column span of 1 */
 
-    --column-size: calc(
-      (
-        (var(--max-width) - ((var(--columns) - 1) * var(--gap-x))) /
-        var(--columns)
-      ) *
-      var(--shrink-factor)
-    );
-    --cell-size: calc(
+    /* Start with the ideal --column-size, then factor in --span for this particular column. */
+    inline-size: calc(
       (var(--column-size) * var(--span)) +
       ((var(--span) - 1) * var(--gap-x))
     );
-    inline-size: var(--cell-size);
 
-    /* Larger spanned columns need a larger flex-grow. */
+    /* Larger spanned columns need a larger flex-grow to maintain alignment. */
     flex: var(--span) 1 auto;
   }
 
