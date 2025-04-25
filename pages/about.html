@@ -1,6 +1,6 @@
 <style>
 	ca-grid {
-		margin-block-end: 2rem;
+		margin-block-end: 2.5rem;
 	}
 
 	input[type="submit"] {
@@ -10,11 +10,13 @@
 	}
 </style>
 
-<ca-container>
+<ca-container size="small">
 	<h1>About</h1>
 	<p>It can be challenging to connect government services to Californians who need them most. We must consider a wide
 		range
 		of experiences, abilities, education, and technical literacy.</p>
+</ca-container>
+<ca-container>
 	<p>The California Design System empowers California state government to develop accessible, equitable, and inclusive
 		digital
 		products and services. Our mission is to help make digital information and services easier to use, by:</p>
@@ -29,8 +31,9 @@
 	<h2>Problems we want to solve</h2>
 	<p>Users’ needs drive our work. Responsive to these user needs and challenges, we’ve identified how the Design System
 		addresses them.</p>
-	<h2></h2>
-	<ca-grid>
+</ca-container>
+<ca-container size="full">
+	<ca-grid class="gap-5">
 		<ca-card>
 			<!-- The content container (div, article, etc.) may be omitted when there's no image.-->
 			<h3>Government websites feel old</h3>
@@ -52,7 +55,7 @@
 				better.</p>
 		</ca-card>
 	</ca-grid>
-	<ca-grid>
+	<ca-grid class="gap-5">
 		<ca-card>
 			<h3>Departments outsourcing web development</h3>
 			<p>State agencies are required to use outside contractors rather than being able to hire in-house developers.
@@ -80,6 +83,8 @@
 				them in their work.</p>
 		</ca-card>
 	</ca-grid>
+</ca-container>
+<ca-container>
 	<h2>Leave feedback</h2>
 	<p>Get in touch with us about the Design System. Or leave feedback about the following things:</p>
 	<ul>

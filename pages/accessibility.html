@@ -1,4 +1,10 @@
-<ca-container>
+<style>
+	ca-grid {
+		margin-block-end: 2rem;
+	}
+</style>
+
+<ca-container size="small">
 	<h1>Accessibility</h1>
 	<p>The State of California is committed to creating digital products that are:</p>
 	<ul>
@@ -7,6 +13,8 @@
 	</ul>
 	<p>This website links to external websites and documents. We accept no responsibility for their content or
 		accessibility.</p>
+</ca-container>
+<ca-container>
 	<h2>Policy</h2>
 	<p>We designed, developed, and maintain the Eureka Design System to be in compliance with California Government Code:
 	</p>
@@ -27,6 +35,8 @@
 		requirements. It confirms our website is compliant with accessibility standards outlined in our policy. We renew
 		this
 		certification every two years.</p>
+</ca-container>
+<ca-container size="full">
 	<h2>Guidelines</h2>
 	<p>Our website follows <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a>,
 		<strong>Level AA Guidelines and Success Criteria</strong>.
@@ -34,8 +44,9 @@
 	<p>WCAG 2.2 supports these <a
 			href="https://www.w3.org/WAI/WCAG21/Understanding/intro#understanding-the-four-principles-of-accessibility">4
 			principles of web accessibility</a>:</p>
+
 	<ca-grid>
-		<section>
+		<ca-card>
 			<h3>Perceivable</h3>
 			<ul>
 				<li>Provide text alternatives for non-text content.</li>
@@ -46,8 +57,8 @@
 				<li>Make it easier for users to see and hear content.</li>
 
 			</ul>
-		</section>
-		<section>
+		</ca-card>
+		<ca-card>
 			<h3>Operable</h3>
 			<ul>
 				<li>Make all functionality available from a keyboard.</li>
@@ -55,22 +66,24 @@
 				<li>Do not use content that causes seizures.</li>
 				<li>Help users navigate and find content.</li>
 			</ul>
-		</section>
-		<section>
+		</ca-card>
+		<ca-card>
 			<h3>Understandable</h3>
 			<ul>
 				<li>Make text readable and understandable.</li>
 				<li>Make content appear and operate in predictable ways.</li>
 				<li>Help users avoid and correct mistakes.</li>
 			</ul>
-		</section>
-		<section>
+		</ca-card>
+		<ca-card>
 			<h3>Robust</h3>
 			<ul>
 				<li>Maximize compatibility with current and future user tools.</li>
 			</ul>
-		</section>
+		</ca-card>
 	</ca-grid>
+</ca-container>
+<ca-container>
 	<h2>Assisstive technology</h2>
 	<p>We review assistive technology to determine the most common software and browser combinations. We test our website
 		using
@@ -121,12 +134,12 @@
 		<li><a href="https://www.dgs.ca.gov/ccda">California Commission on Disability Access (CCDA)</a>.</li>
 		<li><a href="https://www.dol.gov/general/topic/disability/ada">Americans with Disabilities Act</a>.</li>
 	</ul>
-	<h2>Contact us about accessibility</h2>
+	<!--<h2>Contact us about accessibility</h2>
 	<p>Email us at <a href="mailto:someone@state.ca.gov">add-new-email@tate.ca.gov</a> for any of the following reasons:
 	</p>
 	<ul>
 		<li>Report an issue with accessibility.</li>
 		<li>Submit a question about accessibility.</li>
 		<li>Request information in an alternative format.</li>
-	</ul>
+	</ul> -->
 </ca-container>
