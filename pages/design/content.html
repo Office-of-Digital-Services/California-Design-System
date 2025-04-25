@@ -1,28 +1,30 @@
 <style>
-	ca-grid section[type="card"] {
-		background-color: var(--primary-30);
+	ca-grid {
 		margin-block-end: 2rem;
 	}
 </style>
 
-<ca-container>
+<ca-container size="small">
 	<h1>Content</h1>
 	<p>When redesigning or creating a new website, always start with content. Content will help inform design decisions.
 	</p>
+</ca-container>
+<ca-container size="medium">
+	<p>Starting with ontent principles is very important. These are some things to think about:</p>
 	<ul>
-		<li>Content principles (including readability / plain language guidelines).
-			<ul>
-				<li>General body content line length. Exception: Cards (link to cards). </li>
-			</ul>
-		</li>
-		<li>How to create good content.
-			<ul>
-				<li>Content audit.</li>
-				<li>Information architecture.</li>
-				<li>Content standards and priciples.</li>
-				<li>How content informs design.</li>
-			</ul>
-		</li>
+		<li>Readability / plain language guidelines - <a
+				href="https://www.law.cornell.edu/regulations/california/10-CCR-6452">California law</a> requires we make every
+			attempt at creating content that
+			reads at ninth-grade level, and ideally at a sixth-grade level.</li>
+		<li>General body content line length. Exception: Cards (link to cards).</li>
+	</ul>
+	<p>Below are some good approaches to creating good content:</p>
+	<ul>
+		<li>Sheduling regular content audits.</li>
+		<li>Information architecture (IA) that helps guide users to the correct page, the first time. <code>(IS HIS REALLY A
+			THING? I JUST COPIED IT IN FROM THE OLD DS OR TEMPLATE PAGE.)</code></li>
+		<li>Content standards and <a href="/pages/design/principles">priciples</a>.</li>
+		<li>How content informs design.</li>
 	</ul>
 	<h2>Focus on user needs and services</h2>
 	<p>People come to a government website to do something. This could be completing a transaction or learning what they
@@ -42,8 +44,10 @@
 			</ul>
 		</li>
 	</ul>
-	<ca-grid>
-		<section type="card">
+</ca-container>
+<ca-container size="full">
+	<ca-grid class="gap-8">
+		<ca-card>
 			<h4>Ensure content addresses user need</h4>
 			<p>Make the top user needs central in your writing, such as:</p>
 			<ul>
@@ -56,8 +60,8 @@
 					</ul>
 				</li>
 			</ul>
-		</section>
-		<section type="card">
+		</ca-card>
+		<ca-card>
 			<h4>Encourage stakeholders</h4>
 			<p>Focus content on requirements instead of recommendations by:</p>
 			<ul>
@@ -69,43 +73,51 @@
 						href="https://www.plainlanguage.gov/guidelines/conversational/use-must-to-indicate-requirements/">plainlanguage.gov</a>.
 				</li>
 			</ul>
-		</section>
+		</ca-card>
 	</ca-grid>
+
 	<h2>Meet your audience where they are</h2>
-	<ca-grid>
-		<section type="card">
+	<ca-grid class="gap-8">
+		<ca-card>
 			<h3>Why this is important</h3>
-			<p>When you write with your audience in mind, your content is more likely to be useful to them. Content designed
-				with
-				an
-				audience in mind makes people feel like they’re heard and understood.</p>
-			<p>When content meets an audience where they are, it reduces the struggle to complete tasks. The audience’s
-				cognitive
-				burden is lower and they’re more pleased with their experience.</p>
-			<p>Meeting the audience where they are shifts the burden of understanding processes from the user back to the
-				government,
-				where it belongs. It puts the “serve” back in “services.”</p>
-		</section>
-		<section type="card">
+			<ul>
+				<li>When you write with your audience in mind, your content is more likely to be useful to them. Content
+					designed
+					with
+					an
+					audience in mind makes people feel like they’re heard and understood.</li>
+				<li>When content meets an audience where they are, it reduces the struggle to complete tasks. The audience’s
+					cognitive
+					burden is lower and they’re more pleased with their experience.</li>
+				<li>Meeting the audience where they are shifts the burden of understanding processes from the user back to the
+					government,
+					where it belongs. It puts the “serve” back in “services.”</li>
+			</ul>
+		</ca-card>
+		<ca-card>
 			<h3>Do this in your writing</h3>
 			<ul>
 				<li>Do people come to this content as part of a larger process? Processes can span multiple agencies.</li>
 				<li>What friction points exist in the process? Highlight how to work through them if you cannot solve them.</li>
 				<li>Does your audience have concerns that would block them from using your service? Address them.</li>
 			</ul>
-		</section>
+		</ca-card>
 	</ca-grid>
+</ca-container>
+<ca-container size="medium">
+	<h2>User testing</h2>
+	<p>If possible, test your content with your audience before publishing it. Even if you only talk to one or two people,
+		you can learn things you can use to improve your content.</p>
+	<p>Need some more content here...</p>
 	<!-- <p>Do not assume you know everything about your audience and what they need. Work with user researchers to understand
 	who
 	your users are and how well they can complete tasks on your website. You may discover audiences and needs you do not
 	know about.</p>
-<p>If possible, test your content with your audience before publishing it. Even if you only talk to one or two people,
-	you
-	can learn things you can use to improve your content.</p>
+
 <p>You cannot cover every situation or fix every aspect of a service. Focus on what you can do with content to make
 	things
 	better.</p>-->
-	<h3>Google analytics</h3>
+	<h2>Google analytics</h2>
 	<p>Google Analytics tracks user behavior on websites. It’s an easy way to learn about your audience and how well
 		you’re
 		meeting their needs. Performing full user research is important, but Google Analytics can answer a lot of questions
