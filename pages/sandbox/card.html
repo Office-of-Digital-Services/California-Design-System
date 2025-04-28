@@ -207,20 +207,21 @@
   <p>In addition to the <code>fit</code> attribute, we also have two CSS variables we can use to control the size of the
     image.</p>
 
-  <p><code>--image-min-size</code> controls the minimum available space for the image within the card. It can be a
+  <p><code>--card-image-min-size</code> controls the minimum available space for the image within the card. It can be a
     relative size,
     like <code>25%</code>, or an actual size, like <code>5rem</code>.</p>
 
-  <p>We also have <code>--image-max-size</code>. Same story, same rules.</p>
+  <p>We also have <code>--card-image-max-size</code>. Same story, same rules.</p>
 
   <ca-code-demo>
     <template>
       <div style="max-width: 350px;">
-        <ca-card fit="cover" style="--image-max-size: 50%">
+        <ca-card fit="cover" style="--card-image-max-size: 50%">
           <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
           <article>
             <h3><a href="#">Using CSS vars</a></h3>
-            <p>With the <code>--image-max-size</code> set to <code>50%</code>, the image will never take more than 50%
+            <p>With the <code>--card-image-max-size</code> set to <code>50%</code>, the image will never take more than
+              50%
               of
               the card's space.</p>
           </article>
