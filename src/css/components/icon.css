@@ -1,9 +1,8 @@
 /* Global default icon values */
 :root {
   --icon-color: currentColor;
-  --icon-size: 1rem;
   --icon-y-size: auto;
-  --icon-x-size: var(--icon-size);
+  --icon-x-size: 1rem;
 }
 
 ca-icon {
