@@ -67,9 +67,9 @@ class ColorSchemeToggle extends HTMLElement {
     const root = document.querySelector("html");
     root.setAttribute("data-color-scheme", this.scheme);
 
-    const newGlyph =
+    const newsymbol =
       this.scheme === this.schemes.light ? "light-mode" : "dark-mode";
-    this.icon.setAttribute("glyph", newGlyph);
+    this.icon.setAttribute("symbol", newsymbol);
   }
 }
 

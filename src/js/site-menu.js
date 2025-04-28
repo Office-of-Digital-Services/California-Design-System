@@ -95,7 +95,7 @@ class SiteMenu extends HTMLElement {
     this.button.setAttribute("aria-expanded", "true");
 
     const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("glyph", "close");
+    buttonIcon.setAttribute("symbol", "close");
 
     const content = [...this.layout.querySelectorAll("main, footer")];
     for (const element of content) {
@@ -114,7 +114,7 @@ class SiteMenu extends HTMLElement {
     this.button.setAttribute("aria-expanded", "false");
 
     const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("glyph", "bear-menu");
+    buttonIcon.setAttribute("symbol", "bear-menu");
 
     const content = [...this.layout.querySelectorAll("main, footer")];
     for (const element of content) {

@@ -92,7 +92,7 @@ ca-nav-menu {
     flex: 0 0 1.5rem;
     transition: transform 0.4s ease;
 
-    &[glyph="close"] {
+    &[symbol="close"] {
       transform: rotate(180deg);
     }
   }
@@ -205,7 +205,7 @@ ca-nav-menu {
         column-gap: 2rem;
       }
 
-      & button > ca-icon[glyph="right"] {
+      & button > ca-icon[symbol="right"] {
         transform: rotate(90deg);
       }
 
