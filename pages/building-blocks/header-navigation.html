@@ -61,6 +61,33 @@
     margin-block-end: 0;
   }
 </style>
+<ca-container size="medium">
+	<h1>Header | navigation</h1>
+	<p>A website header is the first section of a website. It’s usually the same throughout the site. Having the same
+		header
+		provides a consistent user experience.</p>
+</ca-container>
+<ca-container size="medium">
+	<h2 class="h5">On this page</h2>
+	<small>
+		<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
+			<section>
+				<ul>
+					<li>Code</li>
+					<li>Usage</li>
+					<li>Anatomy</li>
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>Developer notes</li>
+					<li>Accessibility</li>
+					<li>Change log</li>
+				</ul>
+			</section>
+		</ca-grid>
+	</small>
+	<hr>
 
 <ca-container size="small">
   <h1>Header | navigation</h1>
@@ -90,6 +117,7 @@
   </small>
   <hr>
 </ca-container>
+  
 <ca-container size="medium">
   <p>There are three variations of our header/navigation:</p>
   <ul>
@@ -112,7 +140,16 @@
     <li>Top-nav-lite layout: <code>format="top-lite"</code></li>
   </ul>
 
-
+<ca-container-testing-testing
+	<ca-code-demo>
+		<template>
+			<ca-layout format="">
+				<ca-site-menu>
+					<a href="#content-nav" title="Menu">
+						<ca-icon glyph="bear-menu" format="burger"></ca-icon>
+						<span class="visually-hidden">Menu</span>
+					</a>
+				</ca-site-menu>
 
   <ca-code-demo>
     <template>
@@ -214,6 +251,7 @@
   </ca-code-demo>
 
 </ca-container>
+
 <!--
 	<pre type="code">
 Your ca-layout tag will have the format attribute set accordingly so your layout
@@ -368,8 +406,175 @@ CSS and JS applies correctly.
   </ol>
 </ca-container>
 
+<ca-container-testing-testing
+<ca-container size="medium" columns="3">
+	<ca-column>
+		<h3>Side-nav</h3>
+		<img src="/images/eureka-header-nav.jpg" height="85%"
+			alt="Eureka anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
+	</ca-column>
+	<ca-column span="2">
+		<ca-flex direction="column" gap-y="4">
+			<ca-self>
+				<h3>Top-nav</h3>
+				<img src="/images/horizon-header-nav.jpg"
+					alt="Horizon anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
+			</ca-self>
+			<ca-self>
+				<h3>Top-nav-lite</h3>
+				<img src="/images/horizon-header-nav.jpg"
+					alt="Skyline anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
+			</ca-self>
+		</ca-flex>
+	</ca-column>
+</ca-container>
 
-<ca-container size="large" columns="3">
+<ca-container size="medium">
+	<h2>Usage</h2>
+	<ca-container type="inner-container" columns="2" size="medium">
+		<ca-column>
+			<h4>Do</h4>
+			<ul>
+				<li>Use Side-nav if you have a larger site, i.e., a deep information architecture.</li>
+				<li>Use Top-nav if your site is mid-sized.</li>
+				<li>Use Top-nav-lite for smaller sites with no sub-folders.</li>
+			</ul>
+		</ca-column>
+		<ca-column>
+			<h4>Don't</h4>
+			<ul>
+				<li>Use extremely long names for navigation or utility link text.</li>
+			</ul>
+			</section>
+			</ca-grid>
+		</ca-column>
+	</ca-container>
+</ca-container>
+
+<ca-container size="medium">
+	<h2>Developer notes</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Tags, attributes, classes</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>ca-layout</code></td>
+				<td>
+					<p>This tag and, for example <code>format="eureka"</code> attribute sets the your global layout to the
+						Eureka
+						side navigation. Use <code>format="horizon"</code> or <code>format="skyline"</code> to achieve those
+						layouts.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>ca-site-menu</code></td>
+				<td>Responsive navigation.</td>
+			</tr>
+			<tr>
+				<td><code>ca-icon</code></td>
+				<td>Responsive navigation icon.</td>
+			</tr>
+			<tr>
+				<td><code>ca-site-logo</code></td>
+				<td><code>Grid-template-area</code> for your depatment's branding or logo w/ an
+					<code>anchor</code> to the site's home
+					page.
+				</td>
+			</tr>
+			<tr>
+				<td><code>header</code></td>
+				<td><code>Grid-template-area</code> for the name of your department w/ an <code>anchor</code> to the site's
+					home
+					page.</td>
+			</tr>
+			<tr>
+				<td><code>ca-priority-bar</code></td>
+				<td>Container for your search bar.</td>
+			</tr>
+			<tr>
+				<td><code>search</code></td>
+				<td><code>Grid-template-area</code> for your Search form.</td>
+			</tr>
+			<tr>
+				<td><code>ca-utility-bar</code></td>
+				<td>Container for your utility navigation.</td>
+			</tr>
+			<tr>
+				<td><code>ca-utility-icon</code></td>
+				<td>Container for your utilty icons.</td>
+			</tr>
+			<tr>
+				<td><code>nav</code></td>
+				<td><code>Grid-template-areas</code> and parent containers for utility and site navigation</td>
+			</tr>
+			<tr>
+				<td><code>ca-nav-menu</code></td>
+				<td>
+					<p>Containers for your site navigation and any nested navigation list items. When using Eureka or Horizon
+						navigation, you can utilize nested navigation if you have a deeper information architecture.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>format=""</code></td>
+				<td>
+					<p>This attribute is set on the <code>ca-layout</code> tag which will apply the appropriate CSS and JS for
+						the Eureka, Horizon, or
+						Skyline header/nav combos.</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Accessibility</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Element or property</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>aria-label=""</code></td>
+				<td>Identifies a specified region on a page for asistive technologies.</td>
+			</tr>
+			<tr>
+				<td><code>title=""</code></td>
+				<td>Assitive technologies read the <code>title</code> and it adds a tooltip to utility icons for our sighted
+					uers.
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Changelog</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Version</th>
+				<th scope="col">Affects</th>
+				<th scope="col">Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>04/07/2025</td>
+				<td>0.0.0.1</td>
+				<td>Entire system.</td>
+				<td>
+					<p>This is the first alpha release. We are still developing the header/nav. There may be some minor bugs
+						that
+						we're fixing</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+  <ca-container size="large" columns="3">
   <ca-column>
     <h3>Side-nav</h3>
     <img src="/images/eureka-header-nav.jpg" height="85%"
@@ -513,4 +718,5 @@ CSS and JS applies correctly.
       </tr>
     </tbody>
   </table>
+
 </ca-container>
