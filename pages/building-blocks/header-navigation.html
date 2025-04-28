@@ -1,73 +1,71 @@
 <style>
-  img {
-    transition: transform 1s ease;
-  }
+	img {
+		transition: transform 1s ease;
+	}
 
-  img:hover {
-    -webkit-transform: scale(1.15);
-    /* or some other value */
-    transform: scale(1.5);
-    cursor: pointer;
-  }
+	img:hover {
+		-webkit-transform: scale(1.15);
+		/* or some other value */
+		transform: scale(1.5);
+		cursor: pointer;
+	}
 
-  table {
-    margin-block-end: 2rem;
+	table {
+		margin-block-end: 2rem;
 
-    & p {
-      margin-block-end: 0;
-    }
-  }
+		& p {
+			margin-block-end: 0;
+		}
+	}
 
-  th {
-    font-size: 1.25rem;
-    text-align: left;
-  }
+	th {
+		font-size: 1.25rem;
+		text-align: left;
+	}
 
-  tbody {
-    width: 70ch;
-  }
+	tbody {
+		width: 70ch;
+	}
 
-  ca-container[type="inner-container"] {
-    margin-inline-start: 0;
-  }
+	ca-container[type="inner-container"] {
+		margin-inline-start: 0;
+	}
 
-  ca-code-demo {
-    height: 40rem;
+	ca-code-demo {
+		height: 40rem;
 
-    & div.example-block {
-      display: none;
-    }
+		& div.example-block {
+			display: none;
+		}
 
-    & div.example-code {
-      overflow: auto;
-    }
-  }
+		& div.example-code {
+			overflow: auto;
+		}
+	}
 
-  pre {
-    white-space: pre-wrap;
-    /* css-3 */
-    white-space: -moz-pre-wrap;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    word-wrap: break-word;
-    /* Internet Explorer 5.5+ */
-  }
+	pre {
+		white-space: pre-wrap;
+		/* css-3 */
+		white-space: -moz-pre-wrap;
+		/* Mozilla, since 1999 */
+		white-space: -pre-wrap;
+		/* Opera 4-6 */
+		white-space: -o-pre-wrap;
+		/* Opera 7 */
+		word-wrap: break-word;
+		/* Internet Explorer 5.5+ */
+	}
 
-  .h5 {
-    font-size: var(--text-size-3);
-    margin-block-end: 0;
-  }
+	.h5 {
+		font-size: var(--text-size-3);
+		margin-block-end: 0;
+	}
 </style>
 <ca-container size="medium">
 	<h1>Header | navigation</h1>
 	<p>A website header is the first section of a website. It’s usually the same throughout the site. Having the same
 		header
 		provides a consistent user experience.</p>
-</ca-container>
-<ca-container size="medium">
 	<h2 class="h5">On this page</h2>
 	<small>
 		<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
@@ -88,348 +86,159 @@
 		</ca-grid>
 	</small>
 	<hr>
+	<p>There are three variations of our header/navigation:</p>
+	<ul>
+		<li><strong>Side-nav</strong> which offers up to three levels of nested navigation.</li>
+		<li><strong>Top-nav</strong> offers two levels of nested navigation.
+		</li>
+		<li><strong>Top-nav-lite</strong> is meant for smaller scale sites and does not offer nested navigation.</li>
+	</ul>
+	<p>Our header/navigation is also fully responsive.</p>
+	<h2>Code</h2>
+	<p>Here's our header and navigation HTML. The HTML for the different layouts is the same. The only thing you'll need
+		to
+		adjust is the <code>format</code> attribute in the <code>ca-layout</code> tag.</p>
+	<p>The setup is as follows:</p>
+	<ul>
+		<li>Side-nav layout: <code>format=""</code>. This is our default layout so <code>format</code> is
+			<code>null</code>.
+		</li>
+		<li>Top-nav layout: <code>format="top"</code></li>
+		<li>Top-nav-lite layout: <code>format="top-lite"</code></li>
+	</ul>
 
-<ca-container size="small">
-  <h1>Header | navigation</h1>
-  <p>A website header is the first section of a website. It’s usually the same throughout the site. Having the same
-    header
-    provides a consistent user experience.</p>
-</ca-container>
-<ca-container size="full">
-  <h2 class="h5">On this page</h2>
-  <small>
-    <ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
-      <section>
-        <ul>
-          <li>Code</li>
-          <li>Usage</li>
-          <li>Anatomy</li>
-        </ul>
-      </section>
-      <section>
-        <ul>
-          <li>Developer notes</li>
-          <li>Accessibility</li>
-          <li>Change log</li>
-        </ul>
-      </section>
-    </ca-grid>
-  </small>
-  <hr>
-</ca-container>
-  
-<ca-container size="medium">
-  <p>There are three variations of our header/navigation:</p>
-  <ul>
-    <li><strong>Side-nav</strong> which offers up to three levels of nested navigation.</li>
-    <li><strong>Top-nav</strong> offers two levels of nested navigation.
-    </li>
-    <li><strong>Top-nav-lite</strong> is meant for smaller scale sites and does not offer nested navigation.</li>
-  </ul>
-  <p>Our header/navigation is also fully responsive.</p>
-  <h2>Code</h2>
-  <p>Here's our header and navigation HTML. The HTML for the different layouts is the same. The only thing you'll need
-    to
-    adjust is the <code>format</code> attribute in the <code>ca-layout</code> tag.</p>
-  <p>The setup is as follows:</p>
-  <ul>
-    <li>Side-nav layout: <code>format=""</code>. This is our default layout so <code>format</code> is
-      <code>null</code>.
-    </li>
-    <li>Top-nav layout: <code>format="top"</code></li>
-    <li>Top-nav-lite layout: <code>format="top-lite"</code></li>
-  </ul>
-
-<ca-container-testing-testing
 	<ca-code-demo>
 		<template>
 			<ca-layout format="">
 				<ca-site-menu>
 					<a href="#content-nav" title="Menu">
-						<ca-icon glyph="bear-menu" format="burger"></ca-icon>
+						<ca-icon symbol="bear-menu" format="burger"></ca-icon>
 						<span class="visually-hidden">Menu</span>
 					</a>
 				</ca-site-menu>
 
-  <ca-code-demo>
-    <template>
-      <ca-layout format="">
-        <ca-site-menu>
-          <a href="#content-nav" title="Menu">
-            <ca-icon symbol="bear-menu" format="burger"></ca-icon>
-            <span class="visually-hidden">Menu</span>
-          </a>
-        </ca-site-menu>
+				<ca-site-logo>
+					<a href="/pages/index">
+						<svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_1506_25118)">
+								<path
+									d="M26.8588 17.1376V3.04688C12.8933 7.79347 2.36677 20.0374 0 35.0192H13.1283C14.967 27.2853 20.058 20.8086 26.8588 17.1376Z"
+									fill="#007FB9" />
+								<path
+									d="M39.749 68.962C26.9008 68.962 16.1006 60.0067 13.1671 47.9766H0.0258789C3.13971 67.2254 19.7393 81.922 39.749 81.922C46.5176 81.922 52.8966 80.2372 58.4931 77.2662V61.4647C53.5921 66.1108 46.9974 68.962 39.749 68.962Z"
+									fill="#007FB9" />
+								<path
+									d="M39.749 0.921875C39.749 0.921875 39.7426 0.921875 39.7394 0.921875V13.8819C39.7394 13.8819 39.7458 13.8819 39.749 13.8819C52.6487 13.8819 63.4875 22.9118 66.3631 35.0164H39.7329V47.9764H66.3309H79.4721C79.8166 45.8412 80.0002 43.6542 80.0002 41.4219C80.0002 19.0529 61.9773 0.921875 39.749 0.921875Z"
+									fill="#007FB9" />
+							</g>
+							<defs>
+								<clipPath id="clip0_1506_25118">
+									<rect width="80" height="81" fill="white" transform="translate(0 0.921875)" />
+								</clipPath>
+							</defs>
+						</svg>
+					</a>
+				</ca-site-logo>
 
-        <ca-site-logo>
-          <a href="/pages/index">
-            <svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1506_25118)">
-                <path
-                  d="M26.8588 17.1376V3.04688C12.8933 7.79347 2.36677 20.0374 0 35.0192H13.1283C14.967 27.2853 20.058 20.8086 26.8588 17.1376Z"
-                  fill="#007FB9" />
-                <path
-                  d="M39.749 68.962C26.9008 68.962 16.1006 60.0067 13.1671 47.9766H0.0258789C3.13971 67.2254 19.7393 81.922 39.749 81.922C46.5176 81.922 52.8966 80.2372 58.4931 77.2662V61.4647C53.5921 66.1108 46.9974 68.962 39.749 68.962Z"
-                  fill="#007FB9" />
-                <path
-                  d="M39.749 0.921875C39.749 0.921875 39.7426 0.921875 39.7394 0.921875V13.8819C39.7394 13.8819 39.7458 13.8819 39.749 13.8819C52.6487 13.8819 63.4875 22.9118 66.3631 35.0164H39.7329V47.9764H66.3309H79.4721C79.8166 45.8412 80.0002 43.6542 80.0002 41.4219C80.0002 19.0529 61.9773 0.921875 39.749 0.921875Z"
-                  fill="#007FB9" />
-              </g>
-              <defs>
-                <clipPath id="clip0_1506_25118">
-                  <rect width="80" height="81" fill="white" transform="translate(0 0.921875)" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-        </ca-site-logo>
+				<header>
+					<a href="/pages/index">
+						<span>California</span>
+						<span>Design System<sup>α0.0.1</sup></span>
+					</a>
+				</header>
 
-        <header>
-          <a href="/pages/index">
-            <span>California</span>
-            <span>Design System<sup>α0.0.1</sup></span>
-          </a>
-        </header>
+				<ca-priority-bar>
+					<search>
+						<form>
+							<label for="site-search" class="visually-hidden">Search this site</label>
+							<input type="search" id="site-search" placeholder="Search" />
+							<button type="submit">
+								<ca-icon symbol="search"></ca-icon>
+								<span class="visually-hidden">Search</span>
+							</button>
+						</form>
+					</search>
+				</ca-priority-bar>
 
-        <ca-priority-bar>
-          <search>
-            <form>
-              <label for="site-search" class="visually-hidden">Search this site</label>
-              <input type="search" id="site-search" placeholder="Search" />
-              <button type="submit">
-                <ca-icon symbol="search"></ca-icon>
-                <span class="visually-hidden">Search</span>
-              </button>
-            </form>
-          </search>
-        </ca-priority-bar>
+				<ca-page-bar>
+					<nav id="content-nav" aria-label="Content navigation">
+						<ca-nav-menu>
+							<ul>
+								<li><a href="/pages/get-started/index">Get started</a>
+								</li>
+								<li>
+									<ca-nav-menu><a href="/pages/design/index">Design</a>
+										<ul>
+											<li><a href="/pages/design/principles">UX principles</a></li>
+											<li><a href="/pages/design/content">Content guidelines</a></li>
+											<li><a href="/pages/design/typography">Typography</a></li>
+											<li><a href="/pages/design/color">Color</a></li>
+											<li><a href="/pages/design/ui-kit">UI-kit</a></li>
+										</ul>
+									</ca-nav-menu>
+								</li>
+								<li>
+									<ca-nav-menu><a href="/pages/develop/index">Develop</a>
+										<ul>
+											<li><a href="/pages/develop/development-checklist">Devleopment checklist</a></li>
+										</ul>
+									</ca-nav-menu>
+								</li>
+								<li>
+									<ca-nav-menu><a href="/pages/building-blocks/index">Building blocks</a>
+										<ul>
+											<li><a href="/pages/building-blocks/ca-grid">CA-grid layout</a></li>
+											<li><a href="/pages/building-blocks/ca-flex">CA-flex layout</a></li>
+											<li><a href="/pages/building-blocks/header-navigation">Header | navigation</a></li>
+											<li><a href="/pages/building-blocks/cards">Cards</a></li>
+											<li><a href="/pages/building-blocks/tables">Tables</a></li>
+											<!--<li><a href="/pages/building-blocks/alerts">Alerts</a></li>-->
+											<li><a href="/pages/building-blocks/footer">Footer</a></li>
+										</ul>
+									</ca-nav-menu>
+								</li>
+								<li><ca-nav-menu><a href="/pages/building-blocks/index">Showcase</a></ca-nav-menu></li>
+							</ul>
+						</ca-nav-menu>
+					</nav>
+				</ca-page-bar>
+			</ca-layout>
+		</template>
+	</ca-code-demo>
 
-        <ca-page-bar>
-          <nav id="content-nav" aria-label="Content navigation">
-            <ca-nav-menu>
-              <ul>
-                <li><a href="/pages/get-started/index">Get started</a>
-                </li>
-                <li>
-                  <ca-nav-menu><a href="/pages/design/index">Design</a>
-                    <ul>
-                      <li><a href="/pages/design/principles">UX principles</a></li>
-                      <li><a href="/pages/design/content">Content guidelines</a></li>
-                      <li><a href="/pages/design/typography">Typography</a></li>
-                      <li><a href="/pages/design/color">Color</a></li>
-                      <li><a href="/pages/design/ui-kit">UI-kit</a></li>
-                    </ul>
-                  </ca-nav-menu>
-                </li>
-                <li>
-                  <ca-nav-menu><a href="/pages/develop/index">Develop</a>
-                    <ul>
-                      <li><a href="/pages/develop/development-checklist">Devleopment checklist</a></li>
-                    </ul>
-                  </ca-nav-menu>
-                </li>
-                <li>
-                  <ca-nav-menu><a href="/pages/building-blocks/index">Building blocks</a>
-                    <ul>
-                      <li><a href="/pages/building-blocks/ca-grid">CA-grid layout</a></li>
-                      <li><a href="/pages/building-blocks/ca-flex">CA-flex layout</a></li>
-                      <li><a href="/pages/building-blocks/header-navigation">Header | navigation</a></li>
-                      <li><a href="/pages/building-blocks/cards">Cards</a></li>
-                      <li><a href="/pages/building-blocks/tables">Tables</a></li>
-                      <!--<li><a href="/pages/building-blocks/alerts">Alerts</a></li>-->
-                      <li><a href="/pages/building-blocks/footer">Footer</a></li>
-                    </ul>
-                  </ca-nav-menu>
-                </li>
-                <li><ca-nav-menu><a href="/pages/building-blocks/index">Showcase</a></ca-nav-menu></li>
-              </ul>
-            </ca-nav-menu>
-          </nav>
-        </ca-page-bar>
-      </ca-layout>
-    </template>
-  </ca-code-demo>
+	<h2>Anatomy </h2>
+	<ol>
+		<li><code>ca-site-logo</code> for logo of department, agency, or office.</li>
+		<li><code>header</code> displaying department, agency, or office name.</li>
+		<li><code>search</code> - some sites have search in their homepage banner. You shouldn’t have two
+			search fields on the same page.</li>
+		<li><code>nav</code> that takes users where they need to go</li>
+		<li><code>utility-nav</code> for things like light/dark toggle or account login.</li>
+		<li><code>cagov-waffle-menu</code> for California resources which is also optional.</li>
+	</ol>
 
-</ca-container>
+	<ca-container size="medium" columns="3">
+		<ca-column>
+			<h3>Side-nav</h3>
+			<img src="/images/eureka-header-nav.jpg" height="85%"
+				alt="Eureka anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
+		</ca-column>
+		<ca-column span="2">
+			<ca-flex direction="column" gap-y="4">
+				<ca-self>
+					<h3>Top-nav</h3>
+					<img src="/images/horizon-header-nav.jpg"
+						alt="Horizon anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
+				</ca-self>
+				<ca-self>
+					<h3>Top-nav-lite</h3>
+					<img src="/images/horizon-header-nav.jpg"
+						alt="Skyline anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
+				</ca-self>
+			</ca-flex>
+		</ca-column>
+	</ca-container>
 
-<!--
-	<pre type="code">
-Your ca-layout tag will have the format attribute set accordingly so your layout
-CSS and JS applies correctly.
-
-&lt;ca-layout format=""&gt; &lt;!-- DO NOT COPY THIS ca-layout tag. UPDATE IT IN YOUR HTML SOURCE CODE. --&gt;
-		
-&lt;ca-site-menu&gt; &lt;a href="#content-nav" title="Menu"&gt;
-    &lt;ca-icon symbol="bear-menu" format="burger"&gt;&lt;/ca-icon&gt;
-    &lt;span class="visually-hidden"&gt;Menu&lt;/span&gt; &lt;/a&gt; &lt;/ca-site-menu&gt;
-&lt;ca-site-logo&gt; &lt;a href="/pages/index"&gt;
-    &lt;svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-        &lt;g clip-path="url(#clip0_1506_25118)"&gt;
-            &lt;path d="M26.8588 17.1376V3.04688C12.8933 7.79347 2.36677 20.0374 0 
-						35.0192H13.1283C14.967 27.2853 20.058 20.8086 
-						26.8588 17.1376Z" fill="#007FB9"/&gt;
-            &lt;path d="M39.749 68.962C26.9008 68.962 16.1006 60.0067 13.1671 
-						47.9766H0.0258789C3.13971 67.2254 19.7393 81.922 
-						39.749 81.922C46.5176	81.922 52.8966 80.2372 
-						58.4931	77.2662V61.4647C53.5921 66.1108	46.9974 
-						68.962 39.749	68.962Z" fill="#007FB9"/&gt;
-            &lt;path d="M39.749 0.921875C39.749 0.921875 39.7426 0.921875 
-						39.7394 0.921875V13.8819C39.7394 13.8819 39.7458 
-						13.8819 39.749 13.8819C52.6487 13.8819 63.4875 
-						22.9118 66.3631 35.0164H39.7329V47.9764H66.3309H79
-						.4721C79.8166 45.8412 80.0002 43.6542	80.0002	
-						41.4219C80.0002	19.0529 61.9773 0.921875 39.749 
-						0.921875Z" fill="#007FB9"/&gt;
-        &lt;/g&gt;
-        &lt;defs&gt;
-            &lt;clipPath id="clip0_1506_25118"&gt;
-                &lt;rect width="80" height="81" fill="white" transform="translate(0 0.921875)"/&gt;
-            &lt;/clipPath&gt;
-        &lt;/defs&gt;
-    &lt;/svg&gt;
-    &lt;/a&gt; &lt;/ca-site-logo&gt;
-&lt;header&gt; &lt;a href="/pages/index"&gt; &lt;span&gt;California&lt;/span&gt; 
-&lt;span&gt;Design System&lt;sup&gt;α0.0.1&lt;/sup&gt;&lt;/span&gt; &lt;/a&gt; &lt;/header&gt;
-&lt;ca-priority-bar&gt;
-    &lt;search&gt;
-        &lt;form&gt;
-            &lt;label for="site-search" class="visually-hidden"&gt;Search this site&lt;/label&gt;
-            &lt;input type="search" id="site-search" placeholder="Search" /&gt;
-            &lt;button type="submit"&gt;
-            &lt;ca-icon symbol="search"&gt;&lt;/ca-icon&gt;
-            &lt;span class="visually-hidden"&gt;Search&lt;/span&gt; &lt;/button&gt;
-        &lt;/form&gt;
-    &lt;/search&gt;
-&lt;/ca-priority-bar&gt;
-&lt;ca-utility-bar&gt;
-    &lt;nav id="utility-nav" aria-label="Utility navigation"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;
-                &lt;ca-layout-toggle&gt;&lt;/ca-layout-toggle&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-                &lt;ca-color-scheme-toggle&gt;&lt;/ca-color-scheme-toggle&gt;
-            &lt;/li&gt;
-            &lt;li&gt; &lt;a href="#" title="Login"&gt;
-                &lt;ca-icon symbol="account-circle" format="utility"&gt;&lt;/ca-icon&gt;
-                &lt;span class="visually-hidden"&gt;Login&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
-            &lt;li&gt; &lt;a href="/pages/translate-disclaimer" title="Translate"&gt;
-                &lt;ca-icon symbol="language" format="utility"&gt;&lt;/ca-icon&gt;
-                &lt;span class="visually-hidden"&gt;Translate&lt;/span&gt; &lt;/a&gt; &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-&lt;/ca-utility-bar&gt;
-&lt;ca-page-bar&gt;
-    &lt;nav id="content-nav" aria-label="Content navigation"&gt;
-        &lt;ca-nav-menu&gt;
-            &lt;ul&gt;
-                &lt;li&gt;
-                    &lt;ca-nav-menu&gt;&lt;a href="/pages/get-started/index"&gt;Get started&lt;/a&gt;
-                        &lt;ul&gt;
-                            &lt;li&gt;&lt;a href="/pages/get-started/content"&gt;Content&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/get-started/principles"&gt;Principles&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;/ca-nav-menu&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;ca-nav-menu&gt;&lt;a href="/pages/design/index"&gt;Design&lt;/a&gt;
-                        &lt;ul&gt;
-                            &lt;li&gt;&lt;a href="/pages/design/typography"&gt;Typography&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/design/color"&gt;Color&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/design/ui-kit"&gt;UI-kit&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;/ca-nav-menu&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;ca-nav-menu&gt;&lt;a href="/pages/develop/index"&gt;Develop&lt;/a&gt;
-                        &lt;ul&gt;
-                            &lt;li&gt;&lt;a href="/pages/develop/development-checklist"&gt;Devleopment 
-                            checklist&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;/ca-nav-menu&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;ca-nav-menu&gt;&lt;a href="/pages/building-blocks/index"&gt;Building blocks&lt;/a&gt;
-                        &lt;ul&gt;
-                            &lt;li&gt;&lt;a href="/pages/building-blocks/ca-grid"&gt;CA-grid layout&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/building-blocks/ca-flex"&gt;CA-flex layout&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/building-blocks/header-navigation"&gt;Header | 
-	                    navigation&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/building-blocks/cards"&gt;Cards&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href="/pages/building-blocks/tables"&gt;Tables&lt;/a&gt;&lt;/li&gt;
-                            &lt;!--&lt;li&gt;&lt;a href="/pages/building-blocks/alerts"&gt;Alerts&lt;/a&gt;&lt;/li&gt;--&gt;
-                            &lt;li&gt;&lt;a href="/pages/building-blocks/footer"&gt;Footer&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;/ca-nav-menu&gt;
-                &lt;/li&gt;
-                &lt;li&gt;
-                    &lt;ca-nav-menu&gt;&lt;a href="/pages/building-blocks/index"&gt;Showcase&lt;/a&gt;&lt;/ca-nav-menu&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/ca-nav-menu&gt;
-    &lt;/nav&gt;
-&lt;/ca-page-bar&gt;	
-</pre>-->
-
-<ca-container size="full">
-  <h2>Usage</h2>
-  <ca-container type="inner-container" columns="2" size="medium">
-    <ca-column>
-      <h4>Do</h4>
-      <ul>
-        <li>Use Side-nav if you have a larger site, i.e., a deep information architecture.</li>
-        <li>Use Top-nav if your site is mid-sized.</li>
-        <li>Use Top-nav-lite for smaller sites with no sub-folders.</li>
-      </ul>
-    </ca-column>
-    <ca-column>
-      <h4>Don't</h4>
-      <ul>
-        <li>Use extremely long names for navigation or utility link text.</li>
-      </ul>
-      </section>
-      </ca-grid>
-    </ca-column>
-  </ca-container>
-</ca-container>
-
-<ca-container size="medium">
-  <h2>Anatomy </h2>
-  <ol>
-    <li><code>ca-site-logo</code> for logo of department, agency, or office.</li>
-    <li><code>header</code> displaying department, agency, or office name.</li>
-    <li><code>search</code> - some sites have search in their homepage banner. You shouldn’t have two
-      search fields on the same page.</li>
-    <li><code>nav</code> that takes users where they need to go</li>
-    <li><code>utility-nav</code> for things like light/dark toggle or account login.</li>
-    <li><code>cagov-waffle-menu</code> for California resources which is also optional.</li>
-  </ol>
-</ca-container>
-
-<ca-container-testing-testing
-<ca-container size="medium" columns="3">
-	<ca-column>
-		<h3>Side-nav</h3>
-		<img src="/images/eureka-header-nav.jpg" height="85%"
-			alt="Eureka anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-	</ca-column>
-	<ca-column span="2">
-		<ca-flex direction="column" gap-y="4">
-			<ca-self>
-				<h3>Top-nav</h3>
-				<img src="/images/horizon-header-nav.jpg"
-					alt="Horizon anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-			</ca-self>
-			<ca-self>
-				<h3>Top-nav-lite</h3>
-				<img src="/images/horizon-header-nav.jpg"
-					alt="Skyline anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-			</ca-self>
-		</ca-flex>
-	</ca-column>
-</ca-container>
-
-<ca-container size="medium">
 	<h2>Usage</h2>
 	<ca-container type="inner-container" columns="2" size="medium">
 		<ca-column>
@@ -449,9 +258,6 @@ CSS and JS applies correctly.
 			</ca-grid>
 		</ca-column>
 	</ca-container>
-</ca-container>
-
-<ca-container size="medium">
 	<h2>Developer notes</h2>
 	<table>
 		<thead>
@@ -488,7 +294,8 @@ CSS and JS applies correctly.
 			</tr>
 			<tr>
 				<td><code>header</code></td>
-				<td><code>Grid-template-area</code> for the name of your department w/ an <code>anchor</code> to the site's
+				<td><code>Grid-template-area</code> for the name of your department w/ an <code>anchor</code> to the
+					site's
 					home
 					page.</td>
 			</tr>
@@ -515,14 +322,16 @@ CSS and JS applies correctly.
 			<tr>
 				<td><code>ca-nav-menu</code></td>
 				<td>
-					<p>Containers for your site navigation and any nested navigation list items. When using Eureka or Horizon
+					<p>Containers for your site navigation and any nested navigation list items. When using Eureka or
+						Horizon
 						navigation, you can utilize nested navigation if you have a deeper information architecture.</p>
 				</td>
 			</tr>
 			<tr>
 				<td><code>format=""</code></td>
 				<td>
-					<p>This attribute is set on the <code>ca-layout</code> tag which will apply the appropriate CSS and JS for
+					<p>This attribute is set on the <code>ca-layout</code> tag which will apply the appropriate CSS and JS
+						for
 						the Eureka, Horizon, or
 						Skyline header/nav combos.</p>
 				</td>
@@ -544,7 +353,8 @@ CSS and JS applies correctly.
 			</tr>
 			<tr>
 				<td><code>title=""</code></td>
-				<td>Assitive technologies read the <code>title</code> and it adds a tooltip to utility icons for our sighted
+				<td>Assitive technologies read the <code>title</code> and it adds a tooltip to utility icons for our
+					sighted
 					uers.
 				</td>
 			</tr>
@@ -573,150 +383,4 @@ CSS and JS applies correctly.
 			</tr>
 		</tbody>
 	</table>
-
-  <ca-container size="large" columns="3">
-  <ca-column>
-    <h3>Side-nav</h3>
-    <img src="/images/eureka-header-nav.jpg" height="85%"
-      alt="Eureka anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-  </ca-column>
-  <ca-column span="2">
-    <ca-flex direction="column" gap-y="4">
-      <ca-self>
-        <h3>Top-nav</h3>
-        <img src="/images/horizon-header-nav.jpg"
-          alt="Horizon anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-      </ca-self>
-      <ca-self>
-        <h3>Top-nav-lite</h3>
-        <img src="/images/horizon-header-nav.jpg"
-          alt="Skyline anatomy: 1:logo, 2:header, 3:search, 4:site-nav, 5:utility-nav">
-      </ca-self>
-    </ca-flex>
-  </ca-column>
-</ca-container>
-
-<ca-container size="medium">
-  <h2>Developer notes</h2>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Tags, attributes, classes</th>
-        <th scope="col">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>ca-layout</code></td>
-        <td>
-          <p>This tag and, for example <code>format="eureka"</code> attribute sets the your global layout to the
-            Eureka
-            side navigation. Use <code>format="horizon"</code> or <code>format="skyline"</code> to achieve those
-            layouts.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td><code>ca-site-menu</code></td>
-        <td>Responsive navigation.</td>
-      </tr>
-      <tr>
-        <td><code>ca-icon</code></td>
-        <td>Responsive navigation icon.</td>
-      </tr>
-      <tr>
-        <td><code>ca-site-logo</code></td>
-        <td><code>Grid-template-area</code> for your depatment's branding or logo w/ an
-          <code>anchor</code> to the site's home
-          page.
-        </td>
-      </tr>
-      <tr>
-        <td><code>header</code></td>
-        <td><code>Grid-template-area</code> for the name of your department w/ an <code>anchor</code> to the site's
-          home
-          page.</td>
-      </tr>
-      <tr>
-        <td><code>ca-priority-bar</code></td>
-        <td>Container for your search bar.</td>
-      </tr>
-      <tr>
-        <td><code>search</code></td>
-        <td><code>Grid-template-area</code> for your Search form.</td>
-      </tr>
-      <tr>
-        <td><code>ca-utility-bar</code></td>
-        <td>Container for your utility navigation.</td>
-      </tr>
-      <tr>
-        <td><code>ca-utility-icon</code></td>
-        <td>Container for your utilty icons.</td>
-      </tr>
-      <tr>
-        <td><code>nav</code></td>
-        <td><code>Grid-template-areas</code> and parent containers for utility and site navigation</td>
-      </tr>
-      <tr>
-        <td><code>ca-nav-menu</code></td>
-        <td>
-          <p>Containers for your site navigation and any nested navigation list items. When using Eureka or Horizon
-            navigation, you can utilize nested navigation if you have a deeper information architecture.</p>
-        </td>
-      </tr>
-      <tr>
-        <td><code>format=""</code></td>
-        <td>
-          <p>This attribute is set on the <code>ca-layout</code> tag which will apply the appropriate CSS and JS for
-            the Eureka, Horizon, or
-            Skyline header/nav combos.</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h2>Accessibility</h2>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Element or property</th>
-        <th scope="col">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>aria-label=""</code></td>
-        <td>Identifies a specified region on a page for asistive technologies.</td>
-      </tr>
-      <tr>
-        <td><code>title=""</code></td>
-        <td>Assitive technologies read the <code>title</code> and it adds a tooltip to utility icons for our sighted
-          uers.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h2>Changelog</h2>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Date</th>
-        <th scope="col">Version</th>
-        <th scope="col">Affects</th>
-        <th scope="col">Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>04/07/2025</td>
-        <td>0.0.0.1</td>
-        <td>Entire system.</td>
-        <td>
-          <p>This is the first alpha release. We are still developing the header/nav. There may be some minor bugs
-            that
-            we're fixing</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
 </ca-container>
