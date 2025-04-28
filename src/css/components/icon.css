@@ -1,14 +1,17 @@
-ca-icon {
-  --color: currentColor;
+/* Global default icon values */
+:root {
+  --icon-color: currentColor;
   --icon-size: 1rem;
   --icon-y-size: auto;
   --icon-x-size: var(--icon-size);
+}
 
+ca-icon {
   display: inline-flex;
   position: relative;
   align-items: center;
   justify-content: center;
-  color: var(--color);
+  color: var(--icon-color);
   border-radius: var(--border-radius);
 }
 
@@ -18,7 +21,7 @@ ca-icon[symbol]::after {
   block-size: var(--icon-y-size);
   inline-size: var(--icon-x-size);
   display: inline-block;
-  background-color: var(--color);
+  background-color: var(--icon-color);
   mask-position: center center;
   mask-size: 100% auto;
   mask-repeat: no-repeat;

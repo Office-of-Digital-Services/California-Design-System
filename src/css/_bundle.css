@@ -2,15 +2,8 @@
 @import "typography.css";
 
 @import "elements.css";
+@import "utilities.css";
 
 @import "theme/_theme_bundle.css";
 @import "layout/_layout_bundle.css";
-@import "icon.css";
-
-@import "button.css";
-@import "utilities.css";
-@import "container.css";
-@import "search.css";
-@import "grid.css";
-@import "card.css";
-@import "flex.css";
+@import "components/_components_bundle.css";
