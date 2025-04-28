@@ -1,0 +1,184 @@
+button,
+a.button {
+  --color: var(--primary-static-10);
+  --background: var(--primary-highlight);
+  --background-hover: var(--primary-highlight-active);
+  --background-active: var(--background-hover);
+  --padding: .75rem 2rem;
+  --block-size: initial;
+  --gap: .75rem;
+
+  cursor: pointer;
+  padding: var(--padding);
+  color: var(--color);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--text-size-2);
+  font-weight: 600;
+  background: var(--background);
+  block-size: var(--block-size);
+  min-inline-size: var(--block-size);
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+
+  &:where(:hover) {
+    background: var(--background-hover);
+  }
+
+  &:where(:active) {
+    background: var(--background-active);
+  }
+
+  &:focus-visible {
+    border: 2px solid var(--primary-10);
+    outline: 2px solid var(--primary-120);
+  }
+
+  &.translucent {
+    background: unset;
+
+    /* This pseudo element is the easiest way to apply opacity to a named background color. */
+    &::before {
+      position: absolute;
+      content: "";
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      block-size: 100%;
+      inline-size: 100%;
+      background: var(--background);
+      opacity: 0.8;
+    }
+
+    &:hover {
+      background: unset;
+    }
+    &:active {
+      background: unset;
+    }
+
+    &:hover::before {
+      background: var(--background-hover, var(--background));
+    }
+    &:active::before {
+      background: var(--background-active, var(--background));
+    }
+  }
+
+  &.gray {
+    --color: var(--gray-static-10);
+    --background: var(--gray-highlight);
+    --background-hover: var(--gray-highlight-active);
+  }
+  &.magenta {
+    --color: var(--magenta-static-10);
+    --background: var(--magenta-highlight);
+    --background-hover: var(--magenta-highlight-active);
+  }
+  &.orange {
+    --color: var(--orange-static-10);
+    --background: var(--orange-highlight);
+    --background-hover: var(--orange-highlight-active);
+  }
+  &.green {
+    --color: var(--green-static-10);
+    --background: var(--green-highlight);
+    --background-hover: var(--green-highlight-active);
+  }
+  &.blue {
+    --color: var(--blue-static-10);
+    --background: var(--blue-highlight);
+    --background-hover: var(--blue-highlight-active);
+  }
+  &.purple {
+    --color: var(--purple-static-10);
+    --background: var(--purple-highlight);
+    --background-hover: var(--purple-highlight-active);
+  }
+  &.yellow {
+    --color: var(--yellow-static-10);
+    --background: var(--yellow-highlight);
+    --background-hover: var(--yellow-highlight-active);
+  }
+  &.red {
+    --color: var(--red-static-10);
+    --background: var(--red-highlight);
+    --background-hover: var(--red-highlight-active);
+  }
+  &.coastal {
+    --color: var(--coastal-static-10);
+    --background: var(--coastal-highlight);
+    --background-hover: var(--coastal-highlight-active);
+  }
+  &.desert {
+    --color: var(--desert-static-10);
+    --background: var(--desert-highlight);
+    --background-hover: var(--desert-highlight-active);
+  }
+  &.mountain {
+    --color: var(--mountain-static-10);
+    --background: var(--mountain-highlight);
+    --background-hover: var(--mountain-highlight-active);
+  }
+  &.valley {
+    --color: var(--valley-static-10);
+    --background: var(--valley-highlight);
+    --background-hover: var(--valley-highlight-active);
+  }
+
+  &.utility {
+    --color: var(--primary-100);
+    --background: var(--primary-background-30);
+    --background-hover: var(--primary-background-40);
+    --background-active: var(--primary-background-60);
+    --padding: .625rem;
+    --block-size: 2.5rem;
+
+    & > ca-icon {
+      --icon-x-size: 1.25rem;
+      --icon-y-size: auto;
+    }
+  }
+
+  &.social {
+    --color: var(--primary-10);
+    --background: var(--primary-100);
+    --background-hover: var(--primary-110);
+    --background-active: var(--primary-120);
+    --padding: .375rem;
+    --block-size: 2rem;
+
+    & > ca-icon {
+      --icon-x-size: 1.25rem;
+      --icon-y-size: auto;
+    }
+  }
+
+  &.burger {
+    --color: var(--primary-10);
+    --background: var(--primary-100);
+    --background-hover: var(--primary-110);
+    --padding: .5rem;
+    --block-size: 2.5rem;
+
+    & > ca-icon {
+      --icon-x-size: 1.5rem;
+      --icon-y-size: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :is(button, a.button).utility {
+    --block-size: 3rem;
+    --padding: .75rem;
+
+    & > ca-icon {
+      --icon-x-size: 1.5rem;
+    }
+  }
+}

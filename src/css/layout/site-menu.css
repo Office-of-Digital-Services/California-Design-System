@@ -4,11 +4,6 @@ ca-site-menu {
   align-items: center;
   padding: .5rem 1rem;
   background-color: var(--primary-background-20);
-
-  & > :is(a, button) {
-    all: unset;
-    cursor: pointer;
-  }
 }
 
 /* Fix the burger after user has scrolled down the page. */

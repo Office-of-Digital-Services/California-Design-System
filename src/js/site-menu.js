@@ -9,6 +9,7 @@ class SiteMenu extends HTMLElement {
       /* First, convert the burger link into a burger button. */
       const link = this.querySelector("a");
       this.button = document.createElement("button");
+      this.button.classList.add("burger");
       this.button.setAttribute("aria-expanded", "false");
       this.button.innerHTML = link.innerHTML;
       link.replaceWith(this.button);
@@ -94,7 +95,7 @@ class SiteMenu extends HTMLElement {
     this.button.setAttribute("aria-expanded", "true");
 
     const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("glyph", "close");
+    buttonIcon.setAttribute("symbol", "close");
 
     const content = [...this.layout.querySelectorAll("main, footer")];
     for (const element of content) {
@@ -113,7 +114,7 @@ class SiteMenu extends HTMLElement {
     this.button.setAttribute("aria-expanded", "false");
 
     const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("glyph", "bear-menu");
+    buttonIcon.setAttribute("symbol", "bear-menu");
 
     const content = [...this.layout.querySelectorAll("main, footer")];
     for (const element of content) {

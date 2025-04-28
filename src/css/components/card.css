@@ -1,16 +1,19 @@
+/* Global default card values */
+:root {
+  --card-image-min-size: 5rem;
+  --card-image-max-size: 1fr;
+  --card-size: auto;
+}
+
 /* Basic cards, with or without visual */
 ca-card {
-  --image-min-size: 5rem;
-  --image-max-size: 1fr;
-  --size: auto;
-
   display: inline-block;
   padding: 1rem;
   overflow: hidden;
   background: var(--primary-background-30);
   border-radius: var(--border-radius);
   box-shadow: var(--primary-shadow-1);
-  max-inline-size: var(--size);
+  max-inline-size: var(--card-size);
 
   & a {
     text-decoration: none;
@@ -80,14 +83,17 @@ ca-card:has(> img, > svg, > ca-visual) {
 
   &:has(img:first-child, svg:first-child, ca-visual:first-child) {
     grid-template-columns: auto;
-    grid-template-rows: minmax(var(--image-min-size), var(--image-max-size)) auto;
+    grid-template-rows: minmax(
+        var(--card-image-min-size),
+        var(--card-image-max-size)
+      ) auto;
   }
 
   &:has(img:last-child, svg:last-child, ca-visual:last-child) {
     grid-template-columns: auto;
     grid-template-rows: auto minmax(
-        var(--image-min-size),
-        var(--image-max-size)
+        var(--card-image-min-size),
+        var(--card-image-max-size)
       );
   }
 
@@ -134,55 +140,55 @@ ca-card:has(> img, > svg, > ca-visual) {
   }
 
   &[size="small"] {
-    --size: 15rem;
+    --card-size: 15rem;
   }
 
   &[size="medium"] {
-    --size: 31rem;
+    --card-size: 31rem;
   }
 
   &[size="large"] {
-    --size: 47rem;
+    --card-size: 47rem;
   }
 
   &[image-min-size="extra-small"] {
-    --image-min-size: 25%;
+    --card-image-min-size: 25%;
   }
 
   &[image-min-size="small"] {
-    --image-min-size: 33%;
+    --card-image-min-size: 33%;
   }
 
   &[image-min-size="medium"] {
-    --image-min-size: 50%;
+    --card-image-min-size: 50%;
   }
 
   &[image-min-size="large"] {
-    --image-min-size: 66%;
+    --card-image-min-size: 66%;
   }
 
   &[image-min-size="extra-large"] {
-    --image-min-size: 75%;
+    --card-image-min-size: 75%;
   }
 
   &[image-max-size="extra-small"] {
-    --image-max-size: 25%;
+    --card-image-max-size: 25%;
   }
 
   &[image-max-size="small"] {
-    --image-max-size: 33%;
+    --card-image-max-size: 33%;
   }
 
   &[image-max-size="medium"] {
-    --image-max-size: 50%;
+    --card-image-max-size: 50%;
   }
 
   &[image-max-size="large"] {
-    --image-max-size: 66%;
+    --card-image-max-size: 66%;
   }
 
   &[image-max-size="extra-large"] {
-    --image-max-size: 75%;
+    --card-image-max-size: 75%;
   }
 
   /* Switch up the grid when direction is set to horizontal. */
@@ -190,16 +196,16 @@ ca-card:has(> img, > svg, > ca-visual) {
     &:has(img:first-child, svg:first-child, ca-visual:first-child) {
       grid-template-rows: auto;
       grid-template-columns: minmax(
-          var(--image-min-size),
-          var(--image-max-size)
+          var(--card-image-min-size),
+          var(--card-image-max-size)
         ) auto;
     }
 
     &:has(img:last-child, svg:last-child, ca-visual:last-child) {
       grid-template-rows: auto;
       grid-template-columns: auto minmax(
-          var(--image-min-size),
-          var(--image-max-size)
+          var(--card-image-min-size),
+          var(--card-image-max-size)
         );
     }
   }
@@ -210,16 +216,16 @@ ca-card:has(> img, > svg, > ca-visual) {
     &:has(img:first-child, svg:first-child, ca-visual:first-child) {
       grid-template-rows: auto;
       grid-template-columns: minmax(
-          var(--image-min-size),
-          var(--image-max-size)
+          var(--card-image-min-size),
+          var(--card-image-max-size)
         ) auto;
     }
 
     &:has(img:last-child, svg:last-child, ca-visual:last-child) {
       grid-template-rows: auto;
       grid-template-columns: auto minmax(
-          var(--image-min-size),
-          var(--image-max-size)
+          var(--card-image-min-size),
+          var(--card-image-max-size)
         );
     }
   }
