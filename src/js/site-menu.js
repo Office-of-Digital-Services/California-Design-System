@@ -9,7 +9,7 @@ class SiteMenu extends HTMLElement {
       /* First, convert the burger link into a burger button. */
       const link = this.querySelector("a");
       this.button = document.createElement("button");
-      this.button.classList.add("burger");
+      this.button.classList.add("button", "button-burger");
       this.button.setAttribute("aria-expanded", "false");
       this.button.innerHTML = link.innerHTML;
       link.replaceWith(this.button);
