@@ -1,0 +1,107 @@
+<style>
+	ca-container>div.container-small,
+	ca-container>div.container-medium,
+	ca-container>div.container-large {
+		margin-inline: 0 !important;
+	}
+
+	h2 {
+		margin-block: 2rem;
+	}
+
+	h4 {
+		margin-block-start: 1.5rem;
+	}
+
+	table {
+		margin-block-end: 2rem;
+	}
+
+	th {
+		text-align: left;
+	}
+
+	:is(ca-grid, .grid)>p {
+		margin: 0;
+		padding: 1rem;
+		max-width: 100%;
+		background-color: lightseagreen;
+	}
+
+	/** TEST CSS for images **/
+	img {
+		transition: transform 1s ease;
+	}
+
+	img:hover {
+		-webkit-transform: scale(1.5);
+		/* or some other value */
+		transform: scale(1.35);
+		cursor: pointer;
+	}
+</style>
+
+<ca-container size="full">
+	<div class="container-small">
+		<h1>Layouts</h1>
+		<p>Sitewide layouts are important to get you started on your new webiste. You'll need to determine what layout best
+			suitrs your users' needs.</p>
+		<h2>Apply a layout</h2>
+		<p>To set the layout you'd like for your site, you can simply update the <code>format</code> attribute, in the
+			<code>&lt;ca-layout&gt;</code> tag, to one of the
+			following settings:
+		</p>
+		<ul>
+			<li>Side-nav layout: <code>&lt;ca-layout format&gt; </code>. This is our default layout so <code>format</code>
+				is
+				<code>null</code>.
+			</li>
+			<li>Top-nav layout: <code>&lt;ca-layout format="top"&gt;</code></li>
+			<li>Top-nav-lite layout: <code>&lt;ca-layout format="top-lite"&gt;</code></li>
+		</ul>
+	</div>
+	<div class="container-large">
+		<h2>Anatomy</h2>
+		<p>We’re using a <code>grid-template</code>, so you’ll only need to edit the content
+			regions of the
+			<code>grid-template-areas</code>.
+		</p>
+		<p>Remember, the <code>ca-layout</code> tag is the parent container for the different
+			<code>grid-template-areas</code> listed
+			below.
+		</p>
+		<ol>
+			<li><code>ca-site-logo</code> with your branding.</li>
+			<li><code>header</code> with your agency name.</li>
+			<li><code>search</code> giving users the ability to search your site.</li>
+			<li><code>nav (global)</code> so users can easily navigate your site.</li>
+			<li><code>nav (utility)</code> for things like login, translate, or other site utilities.</li>
+			<li><code>main</code> where your page content will live.</li>
+			<li><code>footer</code> where you can place additional site or external resources for your users.</li>
+		</ol>
+		<ca-grid>
+			<section>
+				<h3>Side-nav layout</h3>
+				<p>Our side-nav has a 3-level dropdown navigation allowing for two sub-folders within a main-navigation folder.
+				</p>
+				<img src="/images/eureka-grid-template-layout.jpg"
+					alt="The seven grid-template-areas of the Eureka layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
+			</section>
+			<section>
+				<h3>Top-nav</h3>
+				<p>Our top-nav has a 2-level dropdown navigation allowing for one sub-folder within a main-navigation folder.
+				</p>
+				<img src="/images/horizon-grid-template-layout.jpg"
+					alt="The seven grid-template-areas of the Horizon layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
+			</section>
+			<section>
+				<h3>Top-nav-lite</h3>
+				<p>This navigation is meant for small-scale site with three to five main pages in your site navigation and
+					utilities
+					in the footer, if needed.</p>
+				<img src="/images/skyline-grid-template-layout.jpg"
+					alt="The seven grid-template-areas of the Skyline layout: ca-site-logo, header, search, nac (global), nav (utility), main, footer.">
+			</section>
+		</ca-grid>
+	</div>
+</ca-container>
