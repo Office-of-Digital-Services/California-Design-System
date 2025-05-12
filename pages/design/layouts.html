@@ -28,6 +28,31 @@
 		background-color: lightseagreen;
 	}
 
+	ca-code-demo {
+		height: 40rem;
+
+		& div.example-block {
+			display: none;
+		}
+
+		& div.example-code {
+			overflow: auto;
+		}
+	}
+
+	pre {
+		white-space: pre-wrap;
+		/* css-3 */
+		white-space: -moz-pre-wrap;
+		/* Mozilla, since 1999 */
+		white-space: -pre-wrap;
+		/* Opera 4-6 */
+		white-space: -o-pre-wrap;
+		/* Opera 7 */
+		word-wrap: break-word;
+		/* Internet Explorer 5.5+ */
+	}
+
 	/** TEST CSS for images **/
 	img {
 		transition: transform 1s ease;
@@ -46,19 +71,242 @@
 		<h1>Layouts</h1>
 		<p>Sitewide layouts are important to get you started on your new webiste. You'll need to determine what layout best
 			suitrs your users' needs.</p>
+	</div>
+	<div class="container-medium">
 		<h2>Apply a layout</h2>
 		<p>To set the layout you'd like for your site, you can simply update the <code>format</code> attribute, in the
-			<code>&lt;ca-layout&gt;</code> tag, to one of the
+			<code>ca-layout</code> tag, to one of the
 			following settings:
 		</p>
 		<ul>
-			<li>Side-nav layout: <code>&lt;ca-layout format&gt; </code>. This is our default layout so <code>format</code>
+			<li>Side-nav layout: <code>&lt;ca-layout format=""&gt; </code>. This is our default layout so <code>format</code>
 				is
 				<code>null</code>.
 			</li>
-			<li>Top-nav layout: <code>&lt;ca-layout format="top"&gt;</code></li>
-			<li>Top-nav-lite layout: <code>&lt;ca-layout format="top-lite"&gt;</code></li>
+			<li>Top-nav-full layout: <code>&lt;ca-layout format="top-full"&gt;</code>.</li>
+			<li>Top-nav-lite layout: <code>&lt;ca-layout format="top-lite"&gt;</code>.</li>
 		</ul>
+		<h2>Code</h2>
+		<p>Need some help here...not sure what code to show or if we show any at all. This code is from the base-layout.njk
+			page. Not sure if this is the best delivery method for this code. </p>
+		<ca-code-demo>
+			<template>
+				<ca-layout format="">
+					<ca-site-menu>
+						<a href="#content-nav" title="Menu">
+							<ca-icon symbol="bear-menu" format="burger"></ca-icon>
+							<span class="visually-hidden">Menu</span>
+						</a>
+					</ca-site-menu>
+
+					<ca-site-logo>
+						<a href="/pages/index">
+							<svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_1506_25118)">
+									<path
+										d="M26.8588 17.1376V3.04688C12.8933 7.79347 2.36677 20.0374 0 35.0192H13.1283C14.967 27.2853 20.058 20.8086 26.8588 17.1376Z"
+										fill="#007FB9" />
+									<path
+										d="M39.749 68.962C26.9008 68.962 16.1006 60.0067 13.1671 47.9766H0.0258789C3.13971 67.2254 19.7393 81.922 39.749 81.922C46.5176 81.922 52.8966 80.2372 58.4931 77.2662V61.4647C53.5921 66.1108 46.9974 68.962 39.749 68.962Z"
+										fill="#007FB9" />
+									<path
+										d="M39.749 0.921875C39.749 0.921875 39.7426 0.921875 39.7394 0.921875V13.8819C39.7394 13.8819 39.7458 13.8819 39.749 13.8819C52.6487 13.8819 63.4875 22.9118 66.3631 35.0164H39.7329V47.9764H66.3309H79.4721C79.8166 45.8412 80.0002 43.6542 80.0002 41.4219C80.0002 19.0529 61.9773 0.921875 39.749 0.921875Z"
+										fill="#007FB9" />
+								</g>
+								<defs>
+									<clipPath id="clip0_1506_25118">
+										<rect width="80" height="81" fill="white" transform="translate(0 0.921875)" />
+									</clipPath>
+								</defs>
+							</svg>
+						</a>
+					</ca-site-logo>
+
+					<header>
+						<a href="/pages/index">
+							<span>California</span>
+							<span>Design System<sup>α0.0.1</sup></span>
+						</a>
+					</header>
+
+					<ca-priority-bar>
+						<search>
+							<form>
+								<label for="site-search" class="visually-hidden">Search this site</label>
+								<input type="search" id="site-search" placeholder="Search" />
+								<button type="submit">
+									<ca-icon symbol="search"></ca-icon>
+									<span class="visually-hidden">Search</span>
+								</button>
+							</form>
+						</search>
+					</ca-priority-bar>
+
+					<ca-utility-bar>
+						<nav id="utility-nav" aria-label="Utility navigation">
+							<ul>
+								<li>
+									<ca-layout-toggle></ca-layout-toggle>
+								</li>
+								<li>
+									<ca-color-scheme-toggle>
+										<button class="utility">
+											<ca-icon symbol="light-mode"></ca-icon>
+											<span class="visually-hidden">Switch between light and dark modes</span>
+										</button>
+									</ca-color-scheme-toggle>
+								</li>
+								<li>
+									<a href="#" title="Login" class="button utility">
+										<ca-icon symbol="account-circle"></ca-icon>
+										<span class="visually-hidden">Login</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="Translate" class="button utility">
+										<ca-icon symbol="language"></ca-icon>
+										<span class="visually-hidden">Translate</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</ca-utility-bar>
+
+					<ca-page-bar>
+						<nav id="content-nav" aria-label="Content navigation">
+							<ca-nav-menu>
+								<ul>
+									<li><a href="/pages/get-started/index">Get started</a>
+									</li>
+									<li>
+										<ca-nav-menu><a href="/pages/design/index">Design</a>
+											<ul>
+												<li><a href="/pages/design/principles">UX principles</a></li>
+												<li><a href="/pages/design/content">Content guidelines</a></li>
+												<li><a href="/pages/design/layouts">Layouts</a></li>
+												<li><a href="/pages/design/typography">Typography</a></li>
+												<li><a href="/pages/design/color">Color</a></li>
+												<li><a href="/pages/design/ui-kit">UI-kit</a></li>
+											</ul>
+										</ca-nav-menu>
+									</li>
+									<li>
+										<ca-nav-menu><a href="/pages/develop/index">Develop</a>
+											<ul>
+												<li><a href="/pages/develop/development-checklist">Devleopment checklist</a></li>
+											</ul>
+										</ca-nav-menu>
+									</li>
+									<li>
+										<ca-nav-menu><a href="/pages/building-blocks/index">Building blocks</a>
+											<ul>
+												<li><a href="/pages/building-blocks/ca-grid">CA-grid layout</a></li>
+												<li><a href="/pages/building-blocks/ca-flex">CA-flex layout</a></li>
+												<li><a href="/pages/building-blocks/header-navigation">Header | navigation</a></li>
+												<li><a href="/pages/building-blocks/cards">Cards</a></li>
+												<li><a href="/pages/building-blocks/tables">Tables</a></li>
+												<!--<li><a href="/pages/building-blocks/alerts">Alerts</a></li>-->
+												<li><a href="/pages/building-blocks/footer">Footer</a></li>
+											</ul>
+										</ca-nav-menu>
+									</li>
+									<li><ca-nav-menu><a href="/pages/building-blocks/index">Showcase</a></ca-nav-menu></li>
+								</ul>
+							</ca-nav-menu>
+						</nav>
+					</ca-page-bar>
+
+					<main>
+						{{ content | safe }}
+					</main>
+
+					<footer>
+
+						<p>A product of the California Design System.</p>
+						<ca-flex format="footer-split-links">
+							<ul class="social-icon-list">
+								<li>
+									<a href="#" class="button social">
+										<ca-icon symbol="mail"></ca-icon>
+										<span class="visually-hidden">Email</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="button social">
+										<ca-icon symbol="facebook"></ca-icon>
+										<span class="visually-hidden">Facebook</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="button social">
+										<ca-icon symbol="linked-in"></ca-icon>
+										<span class="visually-hidden">LinkedIn</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="button social">
+										<ca-icon symbol="x-dot-com"></ca-icon>
+										<span class="visually-hidden">X.com</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="button social">
+										<ca-icon symbol="youtube"></ca-icon>
+										<span class="visually-hidden">YouTube</span>
+									</a>
+								</li>
+							</ul>
+						</ca-flex>
+
+						<hr>
+
+						<ca-flex format="footer-split-links">
+							<ul class="compliance-link-list">
+								<li class="flex-basis-full">
+									<a href="https://www.ca.gov/images/WebsiteAccessibilityCert-ca.gov.pdf">Website Accessibility
+										Certification</a>
+								</li>
+								<li>
+									<a href="/pages/conditions-of-use">Conditions of use</a>
+								</li>
+								<li>
+									<a href="/pages/privacy">Privacy</a>
+								</li>
+								<li>
+									<a href="/pages/accessibility">Accessibility</a>
+								</li>
+								<li>
+									<a href="/pages/about">About</a>
+								</li>
+								<li>
+									<a href="/pages/sitemap">Sitemap</a>
+								</li>
+							</ul>
+
+
+						</ca-flex><ca-flex format="footer-end">
+							<ca-flex format="copyright-stamp">
+								<ca-icon symbol="footer-ca-bear"></ca-icon>
+								<p>An official California state website.</p>
+								<p>© <ca-current-year>2025</ca-current-year> State of California</p>
+							</ca-flex>
+
+							<ca-flex format="footer-utility">
+								<a href="#" class="button utility">
+									<ca-icon symbol="help"></ca-icon>
+									<span class="visually-hidden">Help</span>
+								</a>
+								<a href="#" class="button utility">
+									<ca-icon symbol="back-to-top"></ca-icon>
+									<span class="visually-hidden">Back to top</span>
+								</a>
+							</ca-flex>
+						</ca-flex>
+					</footer>
+				</ca-layout>
+				</ca-layout>
+			</template>
+		</ca-code-demo>
 	</div>
 	<div class="container-large">
 		<h2>Anatomy</h2>
@@ -104,4 +352,82 @@
 			</section>
 		</ca-grid>
 	</div>
+	<h3>Usage</h3>
+	<ca-grid flow="fill">
+		<section>
+			<h4>Do</h4>
+			<ul>
+				<li>Use to create a visual hierarchy.</li>
+				<li>Promote top tasks.</li>
+			</ul>
+		</section>
+		<section>
+			<h4>Don't </h4>
+			<ul>
+				<li>Use buttons in interactive cards.</li>
+				<li>Center text. It goes against accessibility, usability, and design best practices.</li>
+			</ul>
+		</section>
+	</ca-grid>
+	<h2>Developer notes</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Tags, attributes, classes</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>ca-grid</code></td>
+				<td><code></code></td>
+			</tr>
+			<tr>
+				<td><code>ca-card</code></td>
+				<td><code></code></td>
+			</tr>
+			<tr>
+				<td><code>.ca-card</code></td>
+				<td><code></code></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Accessibility</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Element or property</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code></code></td>
+				<td><code></code></td>
+			</tr>
+			<tr>
+				<td><code></code></td>
+				<td><code></code></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Changelog</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Version</th>
+				<th scope="col">Affects</th>
+				<th scope="col">Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>MM/DD/YYYY</td>
+				<td>0.0.0.0</td>
+				<td>Something</td>
+				<td>This is the first release.</td>
+			</tr>
+		</tbody>
+	</table>
 </ca-container>
