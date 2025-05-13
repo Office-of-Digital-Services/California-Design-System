@@ -60,30 +60,26 @@
 		font-size: var(--text-size-3);
 		margin-block-end: 0;
 	}
+
+	ul page-nav {
+		list-style-type: none;
+		content: "-";
+	}
 </style>
 <ca-container size="medium">
-	<h1>Header | navigation</h1>
+	<h1>Header and navigation</h1>
 	<p>A website header is the first section of a website. It’s usually the same throughout the site. Having the same
 		header
 		provides a consistent user experience.</p>
 	<h2 class="h5">On this page</h2>
 	<small>
-		<ca-grid flow="fill" style="--min-cell-inline-size: 15ch;">
-			<section>
-				<ul>
-					<li>Code</li>
-					<li>Anatomy</li>
-					<li>Usage</li>
-				</ul>
-			</section>
-			<section>
-				<ul>
-					<li>Developer notes</li>
-					<li>Accessibility</li>
-					<li>Change log</li>
-				</ul>
-			</section>
-		</ca-grid>
+		<ul type="page-nav">
+			<li>Code</li>
+			<li>Anatomy</li>
+			<li>Guidance</li>
+			<li>Change log</li>
+		</ul>
+
 	</small>
 	<hr>
 	<p>There are three variations of our header/navigation:</p>
@@ -94,6 +90,7 @@
 		<li><strong>Top-nav-lite</strong> is meant for smaller scale sites and does not offer nested navigation.</li>
 	</ul>
 	<p>Our header/navigation is also fully responsive.</p>
+
 	<h2>Code</h2>
 	<p>Here's our header and navigation HTML. The HTML for the different layouts is the same. The only thing you'll need
 		to
@@ -213,10 +210,10 @@
 		<li><code>search</code> - some sites have search in their homepage banner. You shouldn’t have two
 			search fields on the same page.</li>
 		<li><code>nav</code> that takes users where they need to go</li>
-		<li><code>utility-nav</code> for things like light/dark toggle or account login.</li>
-		<li><code>cagov-waffle-menu</code> for California resources which is also optional.</li>
+		<li><code>utility-nav</code> for things like an account login.</li>
+		<!--<li><code>cagov-waffle-menu</code> for California resources which is also optional.</li>-->
 	</ol>
-
+	<p>Check out the three header and navigation styles we have available.</p>
 	<ca-container size="medium" columns="3">
 		<ca-column>
 			<h3>Side-nav</h3>
@@ -239,7 +236,8 @@
 		</ca-column>
 	</ca-container>
 
-	<h2>Usage</h2>
+	<h2>Guidance</h2>
+	<h3>Content and digital designers</h3>
 	<ca-container type="inner-container" columns="2" size="medium">
 		<ca-column>
 			<h4>Do</h4>
@@ -258,7 +256,7 @@
 			</ca-grid>
 		</ca-column>
 	</ca-container>
-	<h2>Developer notes</h2>
+	<h3>Developers</h3>
 	<table>
 		<thead>
 			<tr>
@@ -338,7 +336,7 @@
 			</tr>
 		</tbody>
 	</table>
-	<h2>Accessibility</h2>
+	<h3>Accessibility</h3>
 	<table>
 		<thead>
 			<tr>
