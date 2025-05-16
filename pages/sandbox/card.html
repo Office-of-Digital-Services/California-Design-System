@@ -34,6 +34,7 @@
         <article>
           <h3><a href="#">My first card</a></h3>
           <p>Nothing fancy yet!</p>
+          <a href="#" class="button button-magenta">Button</a>
         </article>
       </ca-card>
     </template>
@@ -283,14 +284,14 @@
     <ca-code-demo>
       <template>
         <ca-grid>
-          <ca-card fit="cover">
+          <ca-card fit="cover" style="--card-image-max-size: 20rem">
             <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
             <div>
               <h3><a href="#">Grid card 1</a></h3>
               <p>Resize the window to see how the cards respond to changes in the grid.</p>
             </div>
           </ca-card>
-          <ca-card fit="contain">
+          <ca-card fit="cover" style="--card-image-max-size: 20rem">
             <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
             <article>
               <h3><a href="#">Grid card 2</a></h3>
@@ -299,7 +300,7 @@
               </p>
             </article>
           </ca-card>
-          <ca-card fit="pad-cover">
+          <ca-card fit="cover" style="--card-image-max-size: 20rem">
             <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
             <section>
               <h3><a href="#">Grid card 3</a></h3>

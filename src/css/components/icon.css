@@ -12,13 +12,15 @@ ca-icon {
   justify-content: center;
   color: var(--icon-color);
   border-radius: var(--border-radius);
+  block-size: var(--icon-y-size);
+  inline-size: var(--icon-x-size);
 }
 
 /* When the icon is using a built-in glpyh, set up the plumbing here. */
 ca-icon[symbol]::after {
   content: "";
-  block-size: var(--icon-y-size);
-  inline-size: var(--icon-x-size);
+  block-size: 100%;
+  inline-size: 100%;
   display: inline-block;
   background-color: var(--icon-color);
   mask-position: center center;
