@@ -155,8 +155,8 @@
   --button-block-size: 2.5rem;
 
   & > ca-icon {
-    --icon-x-size: 1.25rem;
-    --icon-y-size: auto;
+    inline-size: 1.25rem;
+    block-size: auto;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -165,7 +165,7 @@
     --button-padding: .75rem;
 
     & > ca-icon {
-      --icon-x-size: 1.5rem;
+      inline-size: 1.5rem;
     }
   }
 }
@@ -179,8 +179,8 @@
   --button-block-size: 2rem;
 
   & > ca-icon {
-    --icon-x-size: 1.25rem;
-    --icon-y-size: auto;
+    inline-size: 1.25rem;
+    block-size: auto;
   }
 }
 
@@ -192,7 +192,7 @@
   --button-block-size: 2.5rem;
 
   & > ca-icon {
-    --icon-x-size: 1.5rem;
-    --icon-y-size: auto;
+    inline-size: 1.5rem;
+    block-size: auto;
   }
 }

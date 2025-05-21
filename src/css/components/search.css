@@ -37,8 +37,8 @@ search {
     block-size: 100%;
 
     & ca-icon {
-      --icon-y-size: auto;
-      --icon-x-size: 1rem;
+      block-size: auto;
+      inline-size: 1rem;
     }
 
     &:hover {
