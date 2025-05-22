@@ -86,13 +86,13 @@ ca-nav-menu {
     }
   }
 
-  & ca-icon {
+  & ca-pic {
     --icon-size: 1.5rem;
     margin-inline-start: auto;
     flex: 0 0 1.5rem;
     transition: transform 0.4s ease;
 
-    &[symbol="close"] {
+    &[icon="close"] {
       transform: rotate(180deg);
     }
   }
@@ -205,7 +205,7 @@ ca-nav-menu {
         column-gap: 2rem;
       }
 
-      & button > ca-icon[symbol="right"] {
+      & button > ca-pic[icon="right"] {
         transform: rotate(90deg);
       }
 
@@ -216,7 +216,7 @@ ca-nav-menu {
         padding: 1rem 1rem 0 1rem;
         border-radius: unset;
 
-        &:has(ca-icon) {
+        &:has(ca-pic) {
           grid-template-columns: 1fr auto;
         }
 
@@ -237,7 +237,7 @@ ca-nav-menu {
         &:not(:active):is(:hover, :active)::after {
           background-color: var(--primary-accent);
         }
-        &:has(ca-icon)::after {
+        &:has(ca-pic)::after {
           grid-column: span 2;
         }
 

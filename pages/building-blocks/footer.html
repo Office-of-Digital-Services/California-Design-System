@@ -73,31 +73,31 @@ keywords: eureka, design system, building blocks, cards
           <ul class="social-icon-list">
             <li>
               <a href="#">
-                <ca-icon symbol="mail" format="social"></ca-icon>
+                <ca-pic icon="mail" format="social"></ca-pic>
                 <span class="visually-hidden">Email</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <ca-icon symbol="facebook" format="social"></ca-icon>
+                <ca-pic icon="facebook" format="social"></ca-pic>
                 <span class="visually-hidden">Facebook</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <ca-icon symbol="linked-in" format="social"></ca-icon>
+                <ca-pic icon="linked-in" format="social"></ca-pic>
                 <span class="visually-hidden">LinkedIn</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <ca-icon symbol="x-dot-com" format="social"></ca-icon>
+                <ca-pic icon="x-dot-com" format="social"></ca-pic>
                 <span class="visually-hidden">X.com</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <ca-icon symbol="youtube" format="social"></ca-icon>
+                <ca-pic icon="youtube" format="social"></ca-pic>
                 <span class="visually-hidden">YouTube</span>
               </a>
             </li>
@@ -129,18 +129,18 @@ keywords: eureka, design system, building blocks, cards
 
         </ca-flex><ca-flex format="footer-end">
           <ca-flex format="copyright-stamp">
-            <ca-icon symbol="ca-bear" format="footer-bear"></ca-icon>
+            <ca-pic icon="ca-bear" format="footer-bear"></ca-pic>
             <p>An official California state website.</p>
             <p>© <ca-current-year>2025</ca-current-year> State of California</p>
           </ca-flex>
 
           <ca-flex format="footer-utility">
             <a href="#">
-              <ca-icon symbol="help" format="utility"></ca-icon>
+              <ca-pic icon="help" format="utility"></ca-pic>
               <span class="visually-hidden">Help</span>
             </a>
             <a href="#">
-              <ca-icon symbol="back-to-top" format="utility"></ca-icon>
+              <ca-pic icon="back-to-top" format="utility"></ca-pic>
               <span class="visually-hidden">Back to top</span>
             </a>
           </ca-flex>
@@ -207,20 +207,20 @@ keywords: eureka, design system, building blocks, cards
            &lt;li&gt;&lt;a href="#"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
        &lt;/ul&gt;
        &lt;ca-social-links&gt; &lt;a href="#"&gt;
-           &lt;ca-icon symbol="mail"&gt;&lt;/ca-icon&gt;
+           &lt;ca-pic icon="mail"&gt;&lt;/ca-pic&gt;
            &lt;span class="visually-hidden"&gt;Email&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-           &lt;ca-icon symbol="facebook"&gt;&lt;/ca-icon&gt;
+           &lt;ca-pic icon="facebook"&gt;&lt;/ca-pic&gt;
            &lt;span class="visually-hidden"&gt;Facebook&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-           &lt;ca-icon symbol="linked-in"&gt;&lt;/ca-icon&gt;
+           &lt;ca-pic icon="linked-in"&gt;&lt;/ca-pic&gt;
            &lt;span class="visually-hidden"&gt;LinkedIn&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-           &lt;ca-icon symbol="x-dot-com"&gt;&lt;/ca-icon&gt;
+           &lt;ca-pic icon="x-dot-com"&gt;&lt;/ca-pic&gt;
            &lt;span class="visually-hidden"&gt;X.com&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-           &lt;ca-icon symbol="youtube"&gt;&lt;/ca-icon&gt;
+           &lt;ca-pic icon="youtube"&gt;&lt;/ca-pic&gt;
            &lt;span class="visually-hidden"&gt;YouTube&lt;/span&gt; &lt;/a&gt; &lt;/ca-social-links&gt;
    &lt;/ca-footer-links&gt;
    &lt;ca-footer-end&gt;
        &lt;div&gt;
-           &lt;ca-icon symbol="ca-bear"&gt;&lt;/ca-icon&gt;
+           &lt;ca-pic icon="ca-bear"&gt;&lt;/ca-pic&gt;
            &lt;p&gt;An official California state website&lt;/p&gt;
            &lt;p&gt;©
                &lt;ca-current-year&gt;2025&lt;/ca-current-year&gt;
@@ -228,11 +228,11 @@ keywords: eureka, design system, building blocks, cards
        &lt;/div&gt;
        &lt;div&gt; &lt;a href="#"&gt;
            &lt;ca-utility-icon with-border&gt;
-               &lt;ca-icon symbol="help"&gt;&lt;/ca-icon&gt;
+               &lt;ca-pic icon="help"&gt;&lt;/ca-pic&gt;
                &lt;span class="visually-hidden"&gt;Help&lt;/span&gt; &lt;/ca-utility-icon&gt;
            &lt;/a&gt; &lt;a href="#"&gt;
            &lt;ca-utility-icon with-border&gt;
-               &lt;ca-icon symbol="back-to-top"&gt;&lt;/ca-icon&gt;
+               &lt;ca-pic icon="back-to-top"&gt;&lt;/ca-pic&gt;
                &lt;span class="visually-hidden"&gt;Back to top&lt;/span&gt; &lt;/ca-utility-icon&gt;
            &lt;/a&gt; &lt;/div&gt;
    &lt;/ca-footer-end&gt;
@@ -349,7 +349,7 @@ ca-social-links {
     border-radius: var(--border-radius);
   }
 
-  & :is(ca-icon, svg, img) {
+  & :is(ca-pic, svg, img) {
     block-size: 1.25rem;
     inline-size: 1.25rem;
     color: var(--primary-background-10);
@@ -407,7 +407,7 @@ ca-footer-end {
     }
   }
 
-  & ca-icon[symbol="ca-bear"] {
+  & ca-pic[icon="ca-bear"] {
     inline-size: 3.12325rem;
     block-size: 1.75rem;
   }
@@ -531,20 +531,20 @@ ca-footer-end {
             &lt;li&gt;&lt;a href="#"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
         &lt;ca-social-links&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="mail"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="mail"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;Email&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="facebook"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="facebook"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;Facebook&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="linked-in"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="linked-in"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;LinkedIn&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="x-dot-com"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="x-dot-com"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;X.com&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="youtube"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="youtube"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;YouTube&lt;/span&gt; &lt;/a&gt; &lt;/ca-social-links&gt;
     &lt;/ca-footer-links&gt;
     &lt;ca-footer-end&gt;
         &lt;div&gt;
-            &lt;ca-icon symbol="ca-bear"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="ca-bear"&gt;&lt;/ca-pic&gt;
             &lt;p&gt;An official California state website&lt;/p&gt;
             &lt;p&gt;©
                 &lt;ca-current-year&gt;2025&lt;/ca-current-year&gt;
@@ -552,11 +552,11 @@ ca-footer-end {
         &lt;/div&gt;
         &lt;div&gt; &lt;a href="#"&gt;
             &lt;ca-utility-icon with-border&gt;
-                &lt;ca-icon symbol="help"&gt;&lt;/ca-icon&gt;
+                &lt;ca-pic icon="help"&gt;&lt;/ca-pic&gt;
                 &lt;span class="visually-hidden"&gt;Help&lt;/span&gt; &lt;/ca-utility-icon&gt;
             &lt;/a&gt; &lt;a href="#"&gt;
             &lt;ca-utility-icon with-border&gt;
-                &lt;ca-icon symbol="back-to-top"&gt;&lt;/ca-icon&gt;
+                &lt;ca-pic icon="back-to-top"&gt;&lt;/ca-pic&gt;
                 &lt;span class="visually-hidden"&gt;Back to top&lt;/span&gt; &lt;/ca-utility-icon&gt;
             &lt;/a&gt; &lt;/div&gt;
     &lt;/ca-footer-end&gt;
@@ -673,7 +673,7 @@ ca-social-links {
     border-radius: var(--border-radius);
   }
 
-  & :is(ca-icon, svg, img) {
+  & :is(ca-pic, svg, img) {
     block-size: 1.25rem;
     inline-size: 1.25rem;
     color: var(--primary-background-10);
@@ -731,7 +731,7 @@ ca-footer-end {
     }
   }
 
-  & ca-icon[symbol="ca-bear"] {
+  & ca-pic[icon="ca-bear"] {
     inline-size: 3.12325rem;
     block-size: 1.75rem;
   }
@@ -815,15 +815,15 @@ ca-footer-end {
     &lt;ca-grid type="min"&gt;
         &lt;p&gt;A product of the Eureka Design System&lt;/p&gt;
         &lt;ca-social-links&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="mail"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="mail"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;Email&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="facebook"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="facebook"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;Facebook&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="linked-in"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="linked-in"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;LinkedIn&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="x-dot-com"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="x-dot-com"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;X.com&lt;/span&gt; &lt;/a&gt; &lt;a href="#"&gt;
-            &lt;ca-icon symbol="youtube"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="youtube"&gt;&lt;/ca-pic&gt;
             &lt;span class="visually-hidden"&gt;YouTube&lt;/span&gt; &lt;/a&gt; &lt;/ca-social-links&gt;
     &lt;/ca-grid&gt;
     &lt;ca-footer-links&gt;
@@ -837,7 +837,7 @@ ca-footer-end {
     &lt;/ca-footer-links&gt;
     &lt;ca-footer-end&gt;
         &lt;div&gt;
-            &lt;ca-icon symbol="ca-bear"&gt;&lt;/ca-icon&gt;
+            &lt;ca-pic icon="ca-bear"&gt;&lt;/ca-pic&gt;
             &lt;p&gt;An official California state website&lt;/p&gt;
             &lt;p&gt;©
                 &lt;ca-current-year&gt;2025&lt;/ca-current-year&gt;
@@ -845,11 +845,11 @@ ca-footer-end {
         &lt;/div&gt;
         &lt;div&gt; &lt;a href="#"&gt;
             &lt;ca-utility-icon with-border=""&gt;
-                &lt;ca-icon symbol="help"&gt;&lt;/ca-icon&gt;
+                &lt;ca-pic icon="help"&gt;&lt;/ca-pic&gt;
                 &lt;span class="visually-hidden"&gt;Help&lt;/span&gt; &lt;/ca-utility-icon&gt;
             &lt;/a&gt; &lt;a href="#"&gt;
             &lt;ca-utility-icon with-border=""&gt;
-                &lt;ca-icon symbol="back-to-top"&gt;&lt;/ca-icon&gt;
+                &lt;ca-pic icon="back-to-top"&gt;&lt;/ca-pic&gt;
                 &lt;span class="visually-hidden"&gt;Back to top&lt;/span&gt; &lt;/ca-utility-icon&gt;
             &lt;/a&gt; &lt;/div&gt;
     &lt;/ca-footer-end&gt;
@@ -966,7 +966,7 @@ ca-social-links {
     border-radius: var(--border-radius);
   }
 
-  & :is(ca-icon, svg, img) {
+  & :is(ca-pic, svg, img) {
     block-size: 1.25rem;
     inline-size: 1.25rem;
     color: var(--primary-background-10);
@@ -1024,7 +1024,7 @@ ca-footer-end {
     }
   }
 
-  & ca-icon[symbol="ca-bear"] {
+  & ca-pic[icon="ca-bear"] {
     inline-size: 3.12325rem;
     block-size: 1.75rem;
   }
@@ -1161,23 +1161,23 @@ ca-footer-end {
 
 							<ca-social-links>
 								<a href="#">
-									<ca-icon symbol="mail"></ca-icon>
+									<ca-pic icon="mail"></ca-pic>
 									<span class="visually-hidden">Email</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="facebook"></ca-icon>
+									<ca-pic icon="facebook"></ca-pic>
 									<span class="visually-hidden">Facebook</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="linked-in"></ca-icon>
+									<ca-pic icon="linked-in"></ca-pic>
 									<span class="visually-hidden">LinkedIn</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="x-dot-com"></ca-icon>
+									<ca-pic icon="x-dot-com"></ca-pic>
 									<span class="visually-hidden">X.com</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="youtube"></ca-icon>
+									<ca-pic icon="youtube"></ca-pic>
 									<span class="visually-hidden">YouTube</span>
 								</a>
 							</ca-social-links>
@@ -1185,20 +1185,20 @@ ca-footer-end {
 
 						<ca-footer-end>
 							<div>
-								<ca-icon symbol="ca-bear"></ca-icon>
+								<ca-pic icon="ca-bear"></ca-pic>
 								<p>An official California state website</p>
 								<p>© <ca-current-year>2025</ca-current-year> State of California</p>
 							</div>
 							<div>
 								<a href="#">
 									<ca-utility-icon with-border>
-										<ca-icon symbol="help"></ca-icon>
+										<ca-pic icon="help"></ca-pic>
 										<span class="visually-hidden">Help</span>
 									</ca-utility-icon>
 								</a>
 								<a href="#">
 									<ca-utility-icon with-border>
-										<ca-icon symbol="back-to-top"></ca-icon>
+										<ca-pic icon="back-to-top"></ca-pic>
 										<span class="visually-hidden">Back to top</span>
 									</ca-utility-icon>
 								</a>
@@ -1263,23 +1263,23 @@ ca-footer-end {
 
 							<ca-social-links>
 								<a href="#">
-									<ca-icon symbol="mail"></ca-icon>
+									<ca-pic icon="mail"></ca-pic>
 									<span class="visually-hidden">Email</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="facebook"></ca-icon>
+									<ca-pic icon="facebook"></ca-pic>
 									<span class="visually-hidden">Facebook</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="linked-in"></ca-icon>
+									<ca-pic icon="linked-in"></ca-pic>
 									<span class="visually-hidden">LinkedIn</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="x-dot-com"></ca-icon>
+									<ca-pic icon="x-dot-com"></ca-pic>
 									<span class="visually-hidden">X.com</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="youtube"></ca-icon>
+									<ca-pic icon="youtube"></ca-pic>
 									<span class="visually-hidden">YouTube</span>
 								</a>
 							</ca-social-links>
@@ -1287,20 +1287,20 @@ ca-footer-end {
 
 						<ca-footer-end>
 							<div>
-								<ca-icon symbol="ca-bear"></ca-icon>
+								<ca-pic icon="ca-bear"></ca-pic>
 								<p>An official California state website</p>
 								<p>© <ca-current-year>2025</ca-current-year> State of California</p>
 							</div>
 							<div>
 								<a href="#">
 									<ca-utility-icon with-border>
-										<ca-icon symbol="help"></ca-icon>
+										<ca-pic icon="help"></ca-pic>
 										<span class="visually-hidden">Help</span>
 									</ca-utility-icon>
 								</a>
 								<a href="#">
 									<ca-utility-icon with-border>
-										<ca-icon symbol="back-to-top"></ca-icon>
+										<ca-pic icon="back-to-top"></ca-pic>
 										<span class="visually-hidden">Back to top</span>
 									</ca-utility-icon>
 								</a>
@@ -1316,23 +1316,23 @@ ca-footer-end {
 							<p>A product of the Eureka Design System</p>
 							<ca-social-links>
 								<a href="#">
-									<ca-icon symbol="mail"></ca-icon>
+									<ca-pic icon="mail"></ca-pic>
 									<span class="visually-hidden">Email</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="facebook"></ca-icon>
+									<ca-pic icon="facebook"></ca-pic>
 									<span class="visually-hidden">Facebook</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="linked-in"></ca-icon>
+									<ca-pic icon="linked-in"></ca-pic>
 									<span class="visually-hidden">LinkedIn</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="x-dot-com"></ca-icon>
+									<ca-pic icon="x-dot-com"></ca-pic>
 									<span class="visually-hidden">X.com</span>
 								</a>
 								<a href="#">
-									<ca-icon symbol="youtube"></ca-icon>
+									<ca-pic icon="youtube"></ca-pic>
 									<span class="visually-hidden">YouTube</span>
 								</a>
 							</ca-social-links>
@@ -1352,20 +1352,20 @@ ca-footer-end {
 						</ca-footer-links>
 						<ca-footer-end>
 							<div>
-								<ca-icon symbol="ca-bear"></ca-icon>
+								<ca-pic icon="ca-bear"></ca-pic>
 								<p>An official California state website</p>
 								<p>© <ca-current-year>2025</ca-current-year> State of California</p>
 							</div>
 							<div>
 								<a href="#">
 									<ca-utility-icon with-border="">
-										<ca-icon symbol="help"></ca-icon>
+										<ca-pic icon="help"></ca-pic>
 										<span class="visually-hidden">Help</span>
 									</ca-utility-icon>
 								</a>
 								<a href="#">
 									<ca-utility-icon with-border="">
-										<ca-icon symbol="back-to-top"></ca-icon>
+										<ca-pic icon="back-to-top"></ca-pic>
 										<span class="visually-hidden">Back to top</span>
 									</ca-utility-icon>
 								</a>
@@ -1479,7 +1479,7 @@ ca-footer-end {
         <td><code><strong></strong></code></td>
       </tr>
       <tr>
-        <td><code><strong>ca-icon</strong></code></td>
+        <td><code><strong>ca-pic</strong></code></td>
         <td><code><strong></strong></code></td>
       </tr>
       <tr>
@@ -1530,7 +1530,7 @@ ca-footer-end {
         <td><code><strong></strong></code></td>
       </tr>
       <tr>
-        <td><code><strong>ca-icon</strong></code></td>
+        <td><code><strong>ca-pic</strong></code></td>
         <td><code><strong></strong></code></td>
       </tr>
       <tr>

@@ -21,7 +21,7 @@ class NavMenu extends HTMLElement {
       if (menuLabel !== null) {
         this.button = document.createElement("button");
         this.button.setAttribute("aria-expanded", "false");
-        this.button.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-icon symbol="right"></ca-icon>`;
+        this.button.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-pic icon="right"></ca-pic>`;
         this.prepend(this.button);
 
         this.button.addEventListener("click", this.toggleEventHandler());
@@ -60,8 +60,8 @@ class NavMenu extends HTMLElement {
     this.button.classList.add("active");
     this.button.setAttribute("aria-expanded", "true");
 
-    const menuButtonIcon = this.button.querySelector("ca-icon");
-    menuButtonIcon.setAttribute("symbol", "close");
+    const menuButtonIcon = this.button.querySelector("ca-pic");
+    menuButtonIcon.setAttribute("icon", "close");
   }
 
   // Close the menu.
@@ -72,8 +72,8 @@ class NavMenu extends HTMLElement {
     this.button.classList.remove("active");
     this.button.setAttribute("aria-expanded", "false");
 
-    const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("symbol", "right");
+    const buttonIcon = this.button.querySelector("ca-pic");
+    buttonIcon.setAttribute("icon", "right");
   }
 
   // An event handler for reacting to the custom "close all menus" event.

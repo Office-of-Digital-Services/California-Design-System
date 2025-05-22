@@ -94,8 +94,8 @@ class SiteMenu extends HTMLElement {
     this.setAttribute("expanded", "");
     this.button.setAttribute("aria-expanded", "true");
 
-    const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("symbol", "close");
+    const buttonIcon = this.button.querySelector("ca-pic");
+    buttonIcon.setAttribute("icon", "close");
 
     const content = [...this.layout.querySelectorAll("main, footer")];
     for (const element of content) {
@@ -113,8 +113,8 @@ class SiteMenu extends HTMLElement {
     this.layout.setAttribute("site-menu", "closed");
     this.button.setAttribute("aria-expanded", "false");
 
-    const buttonIcon = this.button.querySelector("ca-icon");
-    buttonIcon.setAttribute("symbol", "bear-menu");
+    const buttonIcon = this.button.querySelector("ca-pic");
+    buttonIcon.setAttribute("icon", "bear-menu");
 
     const content = [...this.layout.querySelectorAll("main, footer")];
     for (const element of content) {

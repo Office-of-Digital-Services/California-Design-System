@@ -154,7 +154,7 @@
   --button-padding: .625rem;
   --button-block-size: 2.5rem;
 
-  & > ca-icon {
+  & > ca-pic {
     inline-size: 1.25rem;
     block-size: auto;
   }
@@ -164,7 +164,7 @@
     --button-block-size: 3rem;
     --button-padding: .75rem;
 
-    & > ca-icon {
+    & > ca-pic {
       inline-size: 1.5rem;
     }
   }
@@ -178,7 +178,7 @@
   --button-padding: .375rem;
   --button-block-size: 2rem;
 
-  & > ca-icon {
+  & > ca-pic {
     inline-size: 1.25rem;
     block-size: auto;
   }
@@ -191,7 +191,7 @@
   --button-padding: .5rem;
   --button-block-size: 2.5rem;
 
-  & > ca-icon {
+  & > ca-pic {
     inline-size: 1.5rem;
     block-size: auto;
   }
