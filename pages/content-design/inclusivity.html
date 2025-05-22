@@ -1,3 +1,124 @@
+<style>
+	ca-container[size="small"],
+	ca-container[size="medium"] {
+		margin-inline-start: 0;
+	}
+
+	ca-grid {
+		margin-block-end: 2rem;
+	}
+
+	table {
+		margin-block-end: 2rem;
+
+		& th {
+			font-size: 1.35rem;
+			text-align: left;
+		}
+	}
+</style>
+
+
 <ca-container size="full">
-	<h1>Accessibility</h1>
+	<ca-container size="small">
+		<h1>Inclusivity</h1>
+		<p>Writing to include is writing without assumption or prejudice. It helps make our users feel welcome and
+			facilitates positive user experiences.</p>
+	</ca-container>
+	<ca-container size="medium">
+		<p>I feel like we need some tables in here to show users what this stuff means to us/them...similar to Atlassian.
+		</p>
+		<h2>Respecting diversity</h2>
+		<h3>People come first</h3>
+		<ul>
+			<li><strong>Focus on the individual</strong>: Put the person before the condition or identity when discussing
+				disabilities or differences.
+				For example, say "person with a disability" instead of "disabled person".
+			</li>
+			<li><strong>Emphasize humanity</strong>: Prioritize the person's humanity over their condition or identity.</li>
+		</ul>
+		<h3>Gender-neutral cotent</h3>
+		<ca-grid>
+			<ca-card>
+				<h4>Pronouns</h4>
+				<p>Avoid assuming gender and use "they/them" or other gender-neutral alternatives instead of "he/she".</p>
+			</ca-card>
+			<ca-card>
+				<h4>Gendered terms</h4>
+				<p>Replace gender-specific job titles like "repairman" with gender-neutral options like "repair person".</p>
+			</ca-card>
+		</ca-grid>
+		<h3>Cultural sensitivity</h3>
+		<p>Be mindful of cultural differences and avoid using slang and language that is offensive or hurtful.</p>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Avoid</th>
+					<th scope="col">Consider</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="row">"Minority"</td>
+					<td>"people of color" or "communities of color"</td>
+				</tr>
+				<tr>
+					<td scope="row">"Oriental," "Blacks," "Hispanics"</td>
+					<td>"Asian," "person who's black," or "Latino(a)" if preferred.</td>
+				</tr>
+				<tr>
+					<td scope="row">"Sup?" or "What's up?" (English slang)</td>
+					<td>"How are you? or "How are you doing today?" (Global English)</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Clear, consistent, concise</h2>
+		<h3>Plain language</h3>
+		<p>Use clear, concise language that's easily understood, avoiding jargon, idioms, and slang as mentioned previously.
+		</p>
+		<h3>Avoid complex sentences</h3>
+		<p>According to multiple <a
+				href="https://www.evergreen.edu/sites/default/files/2023-05/compoundcomplex.pdf">accredited sources</a>, "A
+			complex sentence combines an independent clause (a complete thought) with at
+			least one dependent clause (a clause that
+			cannot stand alone as a sentence)."</p>
+		<p>Check out some examples:</p>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Complex sentence</th>
+					<th scope="col">Independent clause</th>
+					<th scope="col">Dependent clause</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="row">Although he was tired, he finished the project.</td>
+					<td>"Although he was tired,"</td>
+					<td>"he finished the project."</td>
+				</tr>
+				<tr>
+					<td scope="row">When the bell rings, we will have to go to our next class.</td>
+					<td>"When the bell rings,"</td>
+					<td>"we will have to go to our next class."</td>
+				</tr>
+				<tr>
+					<td scope="row">The cat, which was wearing a collar, was very calm.</td>
+					<td>"The cat, ..., was very calm."</td>
+					<td>", which was wearing a collar,"</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h3>Accessible fonts and sizes</h3>
+		<h2>Avoid biased language</h2>
+		<h3>Avoid stereotypes</h3>
+		<h3>Avoid slang</h3>
+		<h3>Be mindful of overall word choice</h3>
+		<h2>Accessibility features</h2>
+		<h3>Alt-text</h3>
+		<h3>Captions and subtitles</h3>
+		<h3>Keyboard navigation</h3>
+		<h3>Structural HTML</h3>
+	</ca-container>
 </ca-container>
