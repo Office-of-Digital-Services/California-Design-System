@@ -100,7 +100,6 @@ class LayoutToggle extends HTMLElement {
 				<fieldset id="include">
 					<legend>Include</legend>
 					<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
-					<label><input type="checkbox" name="site-logo" value="site-logo" /> Site logo</label>
 					<label><input type="checkbox" name="header" value="header" /> Header</label>
 					<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> Priority bar</label>
 					<label><input type="checkbox" name="utility-bar" value="utility-bar" /> Utility bar</label>
@@ -218,7 +217,6 @@ class LayoutToggle extends HTMLElement {
 
     window.setTimeout(() => {
       this.setupIncludeToggle(layout, "site-menu", "ca-site-menu");
-      this.setupIncludeToggle(layout, "site-logo", "ca-site-logo");
       this.setupIncludeToggle(layout, "header", "header");
       this.setupIncludeToggle(layout, "ca-priority-bar", "ca-priority-bar");
       this.setupIncludeToggle(layout, "utility-bar", "ca-utility-bar");

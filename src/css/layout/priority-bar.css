@@ -15,4 +15,13 @@ ca-priority-bar {
   ca-priority-bar {
     display: flex;
   }
+
+  ca-layout:not([format|="top"]) > ca-priority-bar {
+    padding: 1.5rem 1rem 0 1rem;
+    border-inline-end: 0.0625rem solid var(--gray-40);
+  }
+
+  ca-layout[format|="top"] > ca-priority-bar {
+    padding: .5rem 1rem;
+  }
 }

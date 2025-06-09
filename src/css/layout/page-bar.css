@@ -1,6 +1,6 @@
 ca-page-bar {
   display: none; /* Hide by default on mobile. */
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
   z-index: 3;
   background-color: var(--primary-background-20);
 }
@@ -11,20 +11,17 @@ ca-page-bar {
     display: block;
   }
 
+  ca-layout:not([format|="top"]) > ca-page-bar {
+    border-inline-end: 0.0625rem solid var(--gray-40);
+  }
+
   /* Horizon, small desktop */
   ca-layout[format="top-full"] > ca-page-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1rem 0 0;
-    border-block-start: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-      to right,
-      transparent,
-      var(--primary-accent),
-      transparent
-    );
+    border-block-start: 0.0625rem solid var(--gray-40);
   }
 
   /* Skyline, small desktop */

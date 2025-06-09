@@ -3,60 +3,20 @@ Layout header
 */
 
 ca-layout > header {
-  position: relative;
-  padding-block: .5rem 1rem;
-  padding-inline: 1rem;
+  padding: 1.5rem 1rem;
   background-color: var(--primary-background-20);
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
   z-index: 3;
-
-  & > a {
-    all: unset;
-    padding: 0;
-
-    & > span {
-      cursor: pointer;
-    }
-  }
-
-  &:has(> :not(a)),
-  & > a {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-
-    /* "California" */
-    & > span:first-of-type {
-      font-weight: 700;
-      font-size: var(--text-size-4);
-      line-height: 2.1875rem;
-    }
-
-    /* Department website */
-    & > span:nth-of-type(2) {
-      line-height: 1.6rem;
-    }
-  }
 }
 
 @media screen and (min-width: 1024px) {
   /* Default (Eureka), small desktop */
-  ca-layout > header {
-    padding-block: 1rem;
-    padding-inline: 2rem;
+  ca-layout:not([format|="top"]) > header {
+    padding: 1.5rem 2rem 0 2rem;
+    border-inline-end: 0.0625rem solid var(--gray-40);
   }
 
   /* Horizon, small desktop */
-  ca-layout[format="top-full"] > header {
-    padding-block: 1rem .5rem;
-    padding-inline: 1rem;
-  }
-
-  /* Skyline, small desktop */
-  ca-layout[format="top-lite"] > header {
-    padding-inline: 1rem;
+  ca-layout[format|="top"] > header {
+    padding: 1rem 2rem;
   }
 }

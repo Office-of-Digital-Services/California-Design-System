@@ -17,11 +17,6 @@ ca-layout {
     grid-area: page-bar;
   }
 
-  /* Optional */
-  & > ca-site-logo {
-    grid-area: logo;
-  }
-
   /* Required */
   & > header {
     grid-area: header;
@@ -92,11 +87,10 @@ ca-layout {
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout:not([format="top-full"]):not([format="top-lite"]) {
-    grid-template-columns: 15rem 1fr;
+    grid-template-columns: 16rem 1fr;
     grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr max-content;
     grid-template-areas:
-      "logo utility-bar"
-      "logo main"
+      "header utility-bar"
       "header main"
       "priority-bar main"
       "page-bar main"
@@ -104,14 +98,6 @@ ca-layout {
 
     & > header {
       align-items: start;
-    }
-
-    /* When the site-logo is missing, fill the empty grid cells with the header. */
-    &:has(ca-site-logo[hidden]),
-    &:not(:has(ca-site-logo)) {
-      & > header {
-        grid-row: 1 / 4;
-      }
     }
 
     /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
@@ -123,6 +109,7 @@ ca-layout {
       display: block;
       background: var(--primary-background-20);
       grid-area: page-bar;
+      border-inline-end: 0.0625rem solid var(--gray-40);
     }
   }
 }
@@ -130,26 +117,13 @@ ca-layout {
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="top-full"] {
-    grid-template-columns: fit-content(7rem) 1fr fit-content(15rem) auto;
+    grid-template-columns: 1fr fit-content(15rem) auto;
     grid-template-rows: max-content max-content 1fr max-content;
     grid-template-areas:
-      "logo header priority-bar utility-bar"
-      "logo page-bar page-bar page-bar"
-      "main main main main"
-      "footer footer footer footer";
-
-    /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
-    &:has(ca-page-bar[hidden]),
-    &:not(:has(ca-page-bar)) {
-      &::before {
-        content: "";
-        block-size: 100%;
-        inline-size: 100%;
-        display: block;
-        background: var(--primary-background-20);
-        grid-area: page-bar;
-      }
-    }
+      "header priority-bar utility-bar"
+      "page-bar page-bar page-bar"
+      "main main main"
+      "footer footer footer";
 
     /* When the utility-bar is missing, add a psuedo element to fill the grid slot. */
     &:has(ca-utility-bar[hidden]),
@@ -169,12 +143,12 @@ ca-layout {
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format="top-lite"] {
-    grid-template-columns: fit-content(7rem) max-content 1fr fit-content(15rem) max-content;
+    grid-template-columns: max-content 1fr fit-content(15rem) max-content;
     grid-template-rows: max-content auto max-content;
     grid-template-areas:
-      "logo header page-bar priority-bar utility-bar"
-      "main main main main main"
-      "footer footer footer footer footer";
+      "header page-bar priority-bar utility-bar"
+      "main main main main"
+      "footer footer footer footer";
 
     /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
     &:has(ca-page-bar[hidden]),
