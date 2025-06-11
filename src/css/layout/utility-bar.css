@@ -1,4 +1,4 @@
-ca-utility-bar {
+ca-spot[slot="utility"] {
   display: flex;
   align-items: center;
   justify-content: end;
@@ -23,14 +23,14 @@ ca-utility-bar {
 
 /* Small desktop */
 @media screen and (min-width: 1024px) {
-  ca-utility-bar {
+  ca-spot[slot="utility"] {
     background-color: unset;
   }
 
   ca-layout {
     &[format="top-full"],
     &[format="top-lite"] {
-      & > ca-utility-bar {
+      & > ca-spot[slot="utility"] {
         background-color: var(--primary-background-20);
       }
     }

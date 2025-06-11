@@ -101,9 +101,9 @@ class LayoutToggle extends HTMLElement {
 					<legend>Include</legend>
 					<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
 					<label><input type="checkbox" name="header" value="header" /> Header</label>
-					<label><input type="checkbox" name="ca-priority-bar" value="ca-priority-bar" /> Priority bar</label>
-					<label><input type="checkbox" name="utility-bar" value="utility-bar" /> Utility bar</label>
-					<label><input type="checkbox" name="page-bar" value="page-bar" /> Page bar</label>
+					<label><input type="checkbox" name="priority" value="priority" /> Priority</label>
+					<label><input type="checkbox" name="utility" value="utility" /> Utility</label>
+					<label><input type="checkbox" name="menu" value="menu" /> Menu</label>
 					<label><input type="checkbox" name="main" value="main" /> Main</label>
 					<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
 				</fieldset>
@@ -218,9 +218,9 @@ class LayoutToggle extends HTMLElement {
     window.setTimeout(() => {
       this.setupIncludeToggle(layout, "site-menu", "ca-site-menu");
       this.setupIncludeToggle(layout, "header", "header");
-      this.setupIncludeToggle(layout, "ca-priority-bar", "ca-priority-bar");
-      this.setupIncludeToggle(layout, "utility-bar", "ca-utility-bar");
-      this.setupIncludeToggle(layout, "page-bar", "ca-page-bar");
+      this.setupIncludeToggle(layout, "priority", "ca-spot[slot='priority']");
+      this.setupIncludeToggle(layout, "utility", "ca-spot[slot='utility']");
+      this.setupIncludeToggle(layout, "menu", "ca-spot[slot='menu']");
       this.setupIncludeToggle(layout, "main", "main");
       this.setupIncludeToggle(layout, "footer", "footer");
     }, 1);

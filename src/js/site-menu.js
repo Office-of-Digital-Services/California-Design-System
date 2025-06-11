@@ -127,7 +127,7 @@ class SiteMenu extends HTMLElement {
   // Apply inline styles to layout elements to ensure they look good in expanded menu.
   applyTopOffsets() {
     let depth = 0;
-    const elements = ["ca-site-menu", "ca-utility-bar", "header"];
+    const elements = ["ca-site-menu", "ca-spot[slot='utility']", "header"];
     for (const element of elements) {
       const el = this.layout.querySelector(element);
       if (el) {
@@ -140,14 +140,14 @@ class SiteMenu extends HTMLElement {
       }
     }
 
-    const priorityBar = this.layout.querySelector("ca-priority-bar");
+    const priorityBar = this.layout.querySelector("ca-spot[slot='priority']");
     if (priorityBar) {
       const priorityBarTop = depth - 1;
       priorityBar.style.top = `${priorityBarTop}px`;
       depth += priorityBar.offsetHeight;
     }
 
-    const pageBar = this.layout.querySelector("ca-page-bar");
+    const pageBar = this.layout.querySelector("ca-spot[slot='menu']");
     if (pageBar) {
       const pageBarTop = depth - 1;
       pageBar.style.top = `${pageBarTop}px`;
@@ -160,10 +160,10 @@ class SiteMenu extends HTMLElement {
   removeTopOffsets() {
     const elements = [
       "ca-site-menu",
-      "ca-priority-bar",
-      "ca-utility-bar",
+      "ca-spot[slot='priority']",
+      "ca-spot[slot='utility']",
       "header",
-      "ca-page-bar",
+      "ca-spot[slot='menu']",
     ];
     for (const element of elements) {
       const el = this.layout.querySelector(element);

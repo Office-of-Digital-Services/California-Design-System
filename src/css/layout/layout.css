@@ -6,14 +6,14 @@ ca-layout {
 
 /* Layout grid area definitions */
 ca-layout {
-  /* Required when ca-page-bar is present. */
+  /* Required when ca-spot[slot='menu'] is present. */
   & > ca-site-menu {
     grid-area: burger;
   }
 
   /* Required when the ca-site-menu is present. */
   /* Horizon layout really needs this to work too. */
-  & > ca-page-bar {
+  & > ca-spot[slot="menu"] {
     grid-area: page-bar;
   }
 
@@ -23,12 +23,12 @@ ca-layout {
   }
 
   /* Optional */
-  & > ca-priority-bar {
+  & > ca-spot[slot="priority"] {
     grid-area: priority-bar;
   }
 
   /* Optional */
-  & > ca-utility-bar {
+  & > ca-spot[slot="utility"] {
     grid-area: utility-bar;
   }
 
@@ -88,7 +88,7 @@ ca-layout {
 @media screen and (min-width: 1024px) {
   ca-layout:not([format="top-full"]):not([format="top-lite"]) {
     grid-template-columns: 16rem 1fr;
-    grid-template-rows: fit-content(7rem) max-content max-content max-content 1fr max-content;
+    grid-template-rows: auto max-content max-content 1fr max-content;
     grid-template-areas:
       "header utility-bar"
       "header main"
@@ -101,8 +101,8 @@ ca-layout {
     }
 
     /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
-    &:has(ca-page-bar[hidden])::before,
-    &:not(:has(ca-page-bar))::before {
+    &:has(ca-spot[slot="menu"][hidden])::before,
+    &:not(:has(ca-spot[slot="menu"]))::before {
       content: "";
       block-size: 100%;
       inline-size: 100%;
@@ -126,8 +126,8 @@ ca-layout {
       "footer footer footer";
 
     /* When the utility-bar is missing, add a psuedo element to fill the grid slot. */
-    &:has(ca-utility-bar[hidden]),
-    &:not(:has(ca-utility-bar)) {
+    &:has(ca-spot[slot="utility"][hidden]),
+    &:not(:has(ca-spot[slot="utility"])) {
       &::after {
         content: "";
         block-size: 100%;
@@ -151,8 +151,8 @@ ca-layout {
       "footer footer footer footer";
 
     /* When the page-bar is missing, add a psuedo element to fill the grid slot. */
-    &:has(ca-page-bar[hidden]),
-    &:not(:has(ca-page-bar)) {
+    &:has(ca-spot[slot="menu"][hidden]),
+    &:not(:has(ca-spot[slot="menu"])) {
       &::before {
         content: "";
         block-size: 100%;
@@ -169,7 +169,7 @@ ca-layout {
 ca-layout[site-menu="open"] {
   overflow-x: clip;
 
-  & > :is(ca-site-menu, ca-utility-bar, header) {
+  & > :is(ca-site-menu, ca-spot[slot="utility"], header) {
     position: sticky;
     /* Exact positioning will be inlined by JS. */
     z-index: 1000;
@@ -179,7 +179,7 @@ ca-layout[site-menu="open"] {
     padding-inline-start: 2rem;
   }
 
-  & > ca-priority-bar {
+  & > ca-spot[slot="priority"] {
     position: fixed;
     display: block;
     overflow-y: auto;
@@ -187,14 +187,14 @@ ca-layout[site-menu="open"] {
     z-index: 999;
   }
 
-  & > ca-page-bar {
+  & > ca-spot[slot="menu"] {
     position: fixed;
     display: block;
     overflow-y: auto;
     z-index: 998;
   }
 
-  & > :is(header, ca-priority-bar, ca-page-bar) {
+  & > :is(header, ca-spot[slot="priority"], ca-spot[slot="menu"]) {
     width: 15rem;
   }
 
@@ -246,11 +246,11 @@ ca-layout[site-menu="open"] {
     prefers-reduced-motion: no-preference
   ) {
   ca-layout[site-menu="open"] {
-    & :is(ca-site-menu, ca-utility-bar) {
+    & :is(ca-site-menu, ca-spot[slot="utility"]) {
       opacity: 0;
       animation: burger-from-top ease-out 0.3s forwards;
     }
-    & :is(header, ca-priority-bar, ca-page-bar) {
+    & :is(header, ca-spot[slot="priority"], ca-spot[slot="menu"]) {
       opacity: 0;
       animation: burger-from-left ease-out 0.3s forwards;
     }

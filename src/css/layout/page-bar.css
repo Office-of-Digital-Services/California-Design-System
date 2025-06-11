@@ -1,4 +1,4 @@
-ca-page-bar {
+ca-spot[slot="menu"] {
   display: none; /* Hide by default on mobile. */
   padding: 1.5rem 1rem 1rem 1rem;
   z-index: 3;
@@ -7,16 +7,16 @@ ca-page-bar {
 
 @media screen and (min-width: 1024px) {
   /* Show the full nav on desktop. */
-  ca-page-bar {
+  ca-spot[slot="menu"] {
     display: block;
   }
 
-  ca-layout:not([format|="top"]) > ca-page-bar {
+  ca-layout:not([format|="top"]) > ca-spot[slot="menu"] {
     border-inline-end: 0.0625rem solid var(--gray-40);
   }
 
   /* Horizon, small desktop */
-  ca-layout[format="top-full"] > ca-page-bar {
+  ca-layout[format="top-full"] > ca-spot[slot="menu"] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,7 +25,7 @@ ca-page-bar {
   }
 
   /* Skyline, small desktop */
-  ca-layout[format="top-lite"] > ca-page-bar {
+  ca-layout[format="top-lite"] > ca-spot[slot="menu"] {
     display: flex;
     align-items: center;
     padding: 1rem 3rem;
@@ -33,7 +33,7 @@ ca-page-bar {
 }
 
 /* Go ahead and display content-nav if JS disabled. */
-ca-layout:has(ca-site-menu:not(:defined)) > ca-page-bar {
+ca-layout:has(ca-site-menu:not(:defined)) > ca-spot[slot="menu"] {
   display: block;
 
   /* Without JS, display the nested lists too. */

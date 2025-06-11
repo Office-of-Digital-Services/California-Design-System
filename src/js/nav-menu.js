@@ -1,43 +1,54 @@
-const closeOtherMenus = new Event("close-other-menu");
-
 class NavMenu extends HTMLElement {
   connectedCallback() {
     // Get layout and browser variables for later use.
     this.layout = this.closest("ca-layout");
-    this.parentMenu = this.closest("ca-nav-menu ca-nav-menu");
 
     window.setTimeout(() => {
-      const list = this.querySelector(":scope > ul");
-      const menuLabel = this.querySelector(":scope > :is(a, span)");
+      const list = this.querySelector(":scope > :is(ul, menu)");
+      const summary = this.querySelector(':scope > [slot="summary"]');
+
+      console.log(summary.nodeName);
+
+      // If a button was already included, just use it.
+      if (summary?.nodeName === "BUTTON") {
+        this.button = summary;
+      }
+
+      // If there's no button, we need to create it.
+      if (summary?.nodeName !== "BUTTON") {
+        this.button = document.createElement("button");
+        this.button.innerHTML = `<span>${summary.innerHTML}</span><ca-pic icon="down"></ca-pic>`;
+        this.prepend(this.button);
+      }
 
       // If the menu's label is a link, preserve the link within the sub-menu.
-      if (menuLabel?.nodeName === "A") {
+      if (summary?.nodeName === "A") {
         const listItem = document.createElement("li");
-        listItem.append(menuLabel);
+        listItem.append(summary);
         list.prepend(listItem);
       }
 
-      // Create a button for toggling the sub-menu open and closed.
-      if (menuLabel !== null) {
-        this.button = document.createElement("button");
-        this.button.setAttribute("aria-expanded", "false");
-        this.button.innerHTML = `<span>${menuLabel.innerHTML}</span><ca-pic icon="right"></ca-pic>`;
-        this.prepend(this.button);
-
-        this.button.addEventListener("click", this.toggleEventHandler());
+      // If the summary is a span, remove it. We just recreated it above.
+      if (summary?.nodeName === "SPAN") {
+        summary.remove();
       }
+
+      const open = this.hasAttribute("open");
+
+      this.button.setAttribute("aria-expanded", `${open}`);
+      this.button.addEventListener("click", this.toggleEventHandler());
     }, 1);
   }
 
   // Handle button clicks for opening/closing the menu.
   toggle() {
-    const expanded = this.hasAttribute("expanded");
+    const open = this.hasAttribute("open");
 
-    if (expanded) {
+    if (open) {
       this.close();
     }
 
-    if (!expanded) {
+    if (!open) {
       this.open();
     }
   }
@@ -51,47 +62,15 @@ class NavMenu extends HTMLElement {
 
   // Open the menu.
   open() {
-    this.closeOtherMenus();
-
-    // Now that this menu is open, we need to listen for any other menus.
-    this.addEventListener("close-other-menu", this.otherMenuEventHandler());
-
-    this.setAttribute("expanded", "");
-    this.button.classList.add("active");
+    this.setAttribute("open", "");
     this.button.setAttribute("aria-expanded", "true");
-
-    const menuButtonIcon = this.button.querySelector("ca-pic");
-    menuButtonIcon.setAttribute("icon", "close");
   }
 
   // Close the menu.
   close() {
-    this.removeEventListener("close-other-menu", this.otherMenuEventHandler());
-
-    this.removeAttribute("expanded");
-    this.button.classList.remove("active");
+    this.removeAttribute("open");
     this.button.setAttribute("aria-expanded", "false");
-
-    const buttonIcon = this.button.querySelector("ca-pic");
-    buttonIcon.setAttribute("icon", "right");
-  }
-
-  // An event handler for reacting to the custom "close all menus" event.
-  otherMenuEventHandler() {
-    return (event) => {
-      this.close();
-    };
-  }
-
-  // Emit the custom "close all menus" event to all other menus.
-  closeOtherMenus() {
-    const otherMenus = [...document.querySelectorAll("ca-nav-menu")].filter(
-      (el) => el !== this,
-    );
-    for (const el of document.querySelectorAll("ca-nav-menu")) {
-      el.dispatchEvent(closeOtherMenus);
-    }
   }
 }
 
-customElements.define("ca-nav-menu", NavMenu);
+customElements.define("ca-menu", NavMenu);

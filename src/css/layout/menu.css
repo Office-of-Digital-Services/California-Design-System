@@ -1,0 +1,114 @@
+menu {
+  --nested: 0;
+
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  margin: 0;
+  padding: 0;
+  gap: .5rem;
+  list-style-type: none;
+
+  & > li {
+    margin: 0;
+    padding: 0;
+  }
+
+  & menu {
+    --nested: 1;
+  }
+  & menu menu {
+    --nested: 2;
+  }
+  & menu menu menu {
+    --nested: 3;
+  }
+  & menu menu menu menu {
+    --nested: 4;
+  }
+}
+
+ca-menu button {
+  all: unset;
+  cursor: pointer;
+}
+
+menu a,
+ca-menu button {
+  display: flex;
+  align-items: center;
+  gap: .875rem;
+  color: var(--primary-110);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .75rem 1rem .75rem 0;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: var(--border-radius);
+
+  & > ca-pic[icon] {
+    margin-inline-start: auto;
+    flex: 0 0 .75rem;
+    transition: transform 0.4s ease;
+  }
+
+  /* Create the little accent block at the beginning of the link. */
+  /* It's empty at rest, but still occupies space. */
+  &::before {
+    content: " ";
+    display: block;
+    inline-size: .125rem;
+    block-size: 1rem;
+    margin-inline-end: calc(var(--nested) * 1rem);
+  }
+
+  /* When needed, apply background color to bring it to life. */
+  &:is(:hover, :active, .active)::before {
+    background-color: var(--primary-accent);
+  }
+
+  &:hover {
+    background-color: var(--primary-background-40);
+  }
+
+  /* In-click state */
+  &:active,
+  &.active {
+    color: var(--primary-120);
+    background-color: var(--primary-background-50);
+  }
+
+  &:focus-visible {
+    border: 2px solid var(--primary-10);
+    outline: 2px solid var(--primary-120);
+  }
+}
+
+menu a:visited {
+  color: var(--primary-110);
+}
+
+menu menu a,
+menu menu ca-menu button {
+  font-weight: 400;
+}
+
+ca-menu {
+  display: block;
+
+  & > menu {
+    display: none;
+  }
+  &[open] > menu {
+    margin-block-start: .5rem;
+    display: flex;
+  }
+
+  &[open] {
+    & > button > ca-pic[icon] {
+      transform: rotate(-180deg);
+    }
+  }
+}

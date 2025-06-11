@@ -20,7 +20,7 @@ layout: blank-page
     </a>
   </header>
 
-  <ca-priority-bar>
+  <ca-spot slot="priority">
     <search>
       <form>
         <label for="site-search" class="visually-hidden">Search this site</label>
@@ -31,9 +31,9 @@ layout: blank-page
         </button>
       </form>
     </search>
-  </ca-priority-bar>
+  </ca-spot>
 
-  <ca-utility-bar>
+  <ca-spot slot="utility">
     <nav id="utility-nav" aria-label="Utility navigation">
       <ul>
         <li>
@@ -62,32 +62,56 @@ layout: blank-page
         </li>
       </ul>
     </nav>
-  </ca-utility-bar>
+  </ca-spot>
 
-  <ca-page-bar>
+  <ca-spot slot="menu">
     <nav id="content-nav" aria-label="Content navigation">
-      <ca-nav-menu>
-        <ul>
-          <li><a href="#">Navigation link</a></li>
-          <li>
-            <ca-nav-menu>
-              <a href="#">Navigation</a>
-              <ul>
-                <li><a href="#">Drawer 1</a></li>
-                <li><a href="#">Sub-link 2</a></li>
-                <li><a href="#">Nested link 3</a></li>
-              </ul>
-            </ca-nav-menu>
-          </li>
-          <li><a href="#">Another link that's super long</a></li>
-          <li><a href="#">Differ widths</a></li>
-        </ul>
-      </ca-nav-menu>
+      <menu>
+        <li><a href="#">Navigation link</a></li>
+        <li>
+          <ca-menu open>
+            <button slot="summary">
+              Navigation
+              <ca-pic icon="down"></ca-pic>
+            </button>
+            <menu>
+              <li><a href="#">Drawer 1</a></li>
+              <li><a href="#">Sub-link 2</a></li>
+              <li>
+                <ca-menu>
+                  <button slot="summary">
+                    Navigation
+                    <ca-pic icon="down"></ca-pic>
+                  </button>
+                  <menu>
+                    <li><a href="#">Drawer 1</a></li>
+                    <li><a href="#">Sub-link 2</a></li>
+                    <li>
+                      <a href="#">Nested link 3</a>
+                    </li>
+                  </menu>
+                </ca-menu>
+              </li>
+            </menu>
+          </ca-menu>
+        </li>
+        <li><a href="#">Another link that's super long</a></li>
+        <li><a href="#">Differ widths</a></li>
+      </menu>
     </nav>
-  </ca-page-bar>
+  </ca-spot>
 
   <main>
     <p>Icon test: <ca-pic icon="mail"></ca-pic> </p>
+
+    <ca-menu>
+      <span slot="summary">Navigation</span>
+      <menu>
+        <li><a href="#">Drawer 1</a></li>
+        <li><a href="#">Sub-link 2</a></li>
+        <li><a href="#">Nested link 3</a></li>
+      </menu>
+    </ca-menu>
 
     <ca-org format="horizontal">
       <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
