@@ -58,7 +58,6 @@ class LayoutToggle extends HTMLElement {
 				padding: 1rem;
 				top: 5rem;
 				right: 1rem;
-				max-width: 70%;
 				box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 				border-radius: var(--border-radius);
 				z-index: 100;
@@ -99,11 +98,12 @@ class LayoutToggle extends HTMLElement {
 				<p>Debug panel</p>
 				<fieldset id="include">
 					<legend>Include</legend>
-					<label><input type="checkbox" name="site-menu" value="site-menu" /> Site menu</label>
-					<label><input type="checkbox" name="header" value="header" /> Header</label>
+					<label><input type="checkbox" name="burger" value="burger" /> Burger</label>
+					<label><input type="checkbox" name="org" value="org" /> Org</label>
 					<label><input type="checkbox" name="priority" value="priority" /> Priority</label>
 					<label><input type="checkbox" name="utility" value="utility" /> Utility</label>
 					<label><input type="checkbox" name="menu" value="menu" /> Menu</label>
+					<label><input type="checkbox" name="header" value="header" /> All header</label>
 					<label><input type="checkbox" name="main" value="main" /> Main</label>
 					<label><input type="checkbox" name="footer" value="footer" /> Footer</label>
 				</fieldset>
@@ -216,11 +216,12 @@ class LayoutToggle extends HTMLElement {
     });
 
     window.setTimeout(() => {
-      this.setupIncludeToggle(layout, "site-menu", "ca-site-menu");
+      this.setupIncludeToggle(layout, "burger", "ca-burger");
+      this.setupIncludeToggle(layout, "org", "ca-org");
+      this.setupIncludeToggle(layout, "priority", "[slot='priority']");
+      this.setupIncludeToggle(layout, "utility", "[slot='utility']");
+      this.setupIncludeToggle(layout, "menu", "[slot='menu']");
       this.setupIncludeToggle(layout, "header", "header");
-      this.setupIncludeToggle(layout, "priority", "ca-spot[slot='priority']");
-      this.setupIncludeToggle(layout, "utility", "ca-spot[slot='utility']");
-      this.setupIncludeToggle(layout, "menu", "ca-spot[slot='menu']");
       this.setupIncludeToggle(layout, "main", "main");
       this.setupIncludeToggle(layout, "footer", "footer");
     }, 1);

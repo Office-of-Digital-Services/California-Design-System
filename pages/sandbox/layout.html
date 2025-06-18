@@ -2,74 +2,66 @@
 layout: blank-page
 ---
 
-<ca-layout format="">
-  <ca-site-menu>
-    <a href="#content-nav" title="Menu" class="button button-burger">
-      <ca-pic icon="bear-menu"></ca-pic>
-      <span class="visually-hidden">Menu</span>
-    </a>
-  </ca-site-menu>
-
+<ca-layout format="top-lite">
   <header>
-    <a href="/">
-      <ca-org>
+    <ca-burger>
+      <a href="#content-nav" title="Menu" class="button button-burger">
+        <ca-pic icon="pancakes-menu"></ca-pic>
+        <span class="visually-hidden">Menu</span>
+      </a>
+    </ca-burger>
+
+    <ca-org>
+      <a href="/">
         <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
         <span slot="cal">California</span>
         <span slot="dept">Department Website Long Name</span>
-      </ca-org>
-    </a>
-  </header>
+      </a>
+    </ca-org>
 
-  <ca-spot slot="priority">
-    <search>
-      <form>
-        <label for="site-search" class="visually-hidden">Search this site</label>
-        <input type="search" id="site-search" placeholder="Search" />
-        <button type="submit">
-          <ca-pic icon="search"></ca-pic>
-          <span class="visually-hidden">Search</span>
-        </button>
-      </form>
-    </search>
-  </ca-spot>
+    <ca-spot slot="priority">
+      <search>
+        <form>
+          <label for="site-search" class="visually-hidden">Search this site</label>
+          <input type="search" id="site-search" placeholder="Search" />
+          <button type="submit">
+            <ca-pic icon="search"></ca-pic>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </form>
+      </search>
+    </ca-spot>
 
-  <ca-spot slot="utility">
-    <nav id="utility-nav" aria-label="Utility navigation">
-      <ul>
-        <li>
-          <ca-layout-toggle></ca-layout-toggle>
-        </li>
-        <li>
-          <ca-color-scheme-toggle>
-            <button class="button button-utility">
-              <ca-pic icon="light-mode"></ca-pic>
-              <span class="visually-hidden">Switch between light and dark modes</span>
-            </button>
-          </ca-color-scheme-toggle>
-        </li>
-        <li>
-          <a href="#" title="Login" class="button button-utility">
-            <ca-pic icon="account-circle"></ca-pic>
-            Login
-            <span class="visually-hidden">Login</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" title="Translate" class="button button-utility">
-            <ca-pic icon="language"></ca-pic>
-            <span class="visually-hidden">Translate</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </ca-spot>
+    <ca-spot slot="utility">
+      <nav id="utility-nav" aria-label="Utility navigation">
+        <ul>
+          <li>
+            <ca-layout-toggle></ca-layout-toggle>
+          </li>
+          <li>
+            <ca-color-scheme-toggle>
+              <button class="button button-utility">
+                <ca-pic icon="light-mode"></ca-pic>
+                <span class="visually-hidden">Switch between light and dark modes</span>
+              </button>
+            </ca-color-scheme-toggle>
+          </li>
+          <li>
+            <a href="#" title="Login" class="button button-utility">
+              <ca-pic icon="account-circle"></ca-pic>
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </ca-spot>
 
-  <ca-spot slot="menu">
-    <nav id="content-nav" aria-label="Content navigation">
+
+    <nav slot="menu" id="content-nav" aria-label="Content navigation">
       <menu>
         <li><a href="#">Navigation link</a></li>
         <li>
-          <ca-menu open>
+          <ca-menu>
             <button slot="summary">
               Navigation
               <ca-pic icon="down"></ca-pic>
@@ -77,6 +69,15 @@ layout: blank-page
             <menu>
               <li><a href="#">Drawer 1</a></li>
               <li><a href="#">Sub-link 2</a></li>
+              <li>
+                <menu>
+                  <li><a href="#">Drawer 1</a></li>
+                  <li><a href="#">Sub-link 2</a></li>
+                  <li>
+                    <a href="#">Nested link 3</a>
+                  </li>
+                </menu>
+              </li>
               <li>
                 <ca-menu>
                   <button slot="summary">
@@ -99,13 +100,14 @@ layout: blank-page
         <li><a href="#">Differ widths</a></li>
       </menu>
     </nav>
-  </ca-spot>
+
+  </header>
 
   <main>
     <p>Icon test: <ca-pic icon="mail"></ca-pic> </p>
 
     <ca-menu>
-      <span slot="summary">Navigation</span>
+      <button class="button" slot="summary">Navigation <ca-pic icon="down"></ca-pic></button>
       <menu>
         <li><a href="#">Drawer 1</a></li>
         <li><a href="#">Sub-link 2</a></li>

@@ -1,15 +1,16 @@
-a:has(ca-org) {
+ca-org > a {
   text-decoration: none;
 }
 
-ca-org {
+ca-org:not(:has(a)),
+ca-org > a {
   color: var(--gray-100);
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
 
-  display: inline-grid;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: "image" "border" "cal" "dept";
@@ -57,20 +58,23 @@ ca-org {
 @media screen and (min-width: 1024px) {
   /* Top navs */
   /* This is mainly a repeat of the horizontal rule above. */
-  ca-layout[format|="top"] > header ca-org {
-    align-items: center;
-    grid-template-columns: auto auto 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      "image border cal"
-      "image border dept";
+  ca-layout[format|="top"] > header {
+    & ca-org:not(:has(a)),
+    & ca-org > a {
+      align-items: center;
+      grid-template-columns: auto auto 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        "image border cal"
+        "image border dept";
 
-    &:has([slot="img"] + *)::after {
-      border-block-end: none;
-      border-inline-end: 0.0625rem solid var(--gray-60);
-      margin-block: 0;
-      margin-inline: 1rem;
-      block-size: 100%;
+      &:has([slot="img"] + *)::after {
+        border-block-end: none;
+        border-inline-end: 0.0625rem solid var(--gray-60);
+        margin-block: 0;
+        margin-inline: 1rem;
+        block-size: 100%;
+      }
     }
   }
 }

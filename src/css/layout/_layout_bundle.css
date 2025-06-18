@@ -1,9 +1,9 @@
 @import "layout.css";
-@import "site-menu.css";
+@import "burger.css";
 @import "header.css";
-@import "priority-bar.css";
-@import "utility-bar.css";
-@import "page-bar.css";
+@import "slot-priority.css";
+@import "slot-utility.css";
+@import "slot-menu.css";
 @import "menu.css";
 @import "content.css";
 @import "main.css";

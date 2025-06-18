@@ -1,13 +1,10 @@
-ca-site-menu {
+ca-burger {
   z-index: 4;
-  display: flex;
-  align-items: center;
-  padding: .5rem 1rem;
-  background-color: var(--primary-background-20);
+  display: block;
 }
 
 /* Fix the burger after user has scrolled down the page. */
-ca-site-menu[position="scrolled"] {
+ca-burger[position="scrolled"] {
   & > :is(a, button) {
     position: fixed;
     top: .5rem;
@@ -51,7 +48,7 @@ ca-site-menu[position="scrolled"] {
 
 /* Only add animation if user is okay with it. */
 @media (prefers-reduced-motion: no-preference) {
-  ca-site-menu[position="scrolled"] > :is(a, button) {
+  ca-burger[position="scrolled"] > :is(a, button) {
     opacity: 0;
     animation: reveal-scrolled-burger ease-out 0.8s forwards;
   }
@@ -60,7 +57,7 @@ ca-site-menu[position="scrolled"] {
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
   /* Hide the burger */
-  ca-site-menu {
+  ca-burger {
     display: none;
   }
 }

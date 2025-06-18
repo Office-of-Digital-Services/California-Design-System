@@ -1,7 +1,6 @@
-ca-spot[slot="priority"] {
+[slot="priority"] {
   display: none; /* Should be flex when shown. */
 
-  padding: .5rem 1rem;
   background-color: var(--primary-background-20);
   align-items: center;
   justify-content: end;
@@ -12,16 +11,16 @@ ca-spot[slot="priority"] {
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
-  ca-spot[slot="priority"] {
+  [slot="priority"] {
     display: flex;
   }
 
-  ca-layout:not([format|="top"]) > ca-spot[slot="priority"] {
+  ca-layout:not([format|="top"]) > [slot="priority"] {
     padding: 1.5rem 1rem 0 1rem;
     border-inline-end: 0.0625rem solid var(--gray-40);
   }
 
-  ca-layout[format|="top"] > ca-spot[slot="priority"] {
+  ca-layout[format|="top"] > [slot="priority"] {
     padding: .5rem 1rem;
   }
 }

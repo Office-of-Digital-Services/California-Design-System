@@ -1,13 +1,16 @@
 ca-layout > main {
   container: main / inline-size;
   z-index: 1;
-  padding-block-end: 4rem;
+}
+
+:where(ca-layout > main) {
+  padding-block: 5rem;
 }
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format|="top"] > main {
-    padding-block-start: 2rem;
+    padding-block: 2rem;
   }
 
   ca-layout[format="top-lite"] > main {

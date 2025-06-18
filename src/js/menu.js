@@ -7,8 +7,6 @@ class NavMenu extends HTMLElement {
       const list = this.querySelector(":scope > :is(ul, menu)");
       const summary = this.querySelector(':scope > [slot="summary"]');
 
-      console.log(summary.nodeName);
-
       // If a button was already included, just use it.
       if (summary?.nodeName === "BUTTON") {
         this.button = summary;
