@@ -1,31 +1,30 @@
-ca-container {
+ca-box {
   /* Don't switch the classes to display:block. Might disrupt styling of the content. */
   display: block;
 }
 
-ca-container {
-  margin-inline: 1rem;
+ca-box {
   max-width: var(--max-width);
 }
 
-ca-container,
-ca-container[size="medium"] {
+ca-box,
+ca-box[size="medium"] {
   --max-width: 65rem; /* Default */
 }
 
-ca-container[size="small"] {
+ca-box[size="small"] {
   --max-width: 45rem;
 }
 
-ca-container[size="large"] {
+ca-box[size="large"] {
   --max-width: 85rem;
 }
 
-ca-container[size="full"] {
+ca-box[size="full"] {
   --max-width: unset;
 }
 
-ca-container[columns] {
+ca-box[columns] {
   --columns: 2; /* Default 2 columns */
   --gap: 0rem; /* Default no gap between columns */
   --gap-x: var(--gap);
@@ -145,15 +144,19 @@ ca-container[columns] {
   }
 }
 
-ca-container[columns="2"] {
+ca-box[columns="2"] {
   --columns: 2; /* Default */
 }
-ca-container[columns="3"] {
+ca-box[columns="3"] {
   --columns: 3;
 }
-ca-container[columns="4"] {
+ca-box[columns="4"] {
   --columns: 4;
 }
-ca-container[columns="5"] {
+ca-box[columns="5"] {
   --columns: 5;
+}
+
+ca-column {
+  display: block;
 }

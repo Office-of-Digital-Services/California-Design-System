@@ -1,164 +1,164 @@
 <style>
-	ca-flex,
-	.flex {
-		margin-block-end: 3rem;
-	}
+  ca-flex,
+  .flex {
+    margin-block-end: 3rem;
+  }
 
-	:is(ca-flex, .flex) div,
-	ca-self {
-		display: block;
-		padding: 1rem 2rem;
-		background-color: var(--primary-30);
-		border: 2px solid var(--primary-100);
-		border-radius: .5rem;
-	}
+  :is(ca-flex, .flex) div,
+  ca-self {
+    display: block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-30);
+    border: 2px solid var(--primary-100);
+    border-radius: .5rem;
+  }
 
-	.alignment-box {
-		padding: .5rem;
-		min-height: 10rem;
-		background-color: var(--primary-background-40);
-	}
+  .alignment-box {
+    padding: .5rem;
+    min-height: 10rem;
+    background-color: var(--primary-background-40);
+  }
 </style>
 
-<ca-container>
-	<h1>Flex</h1>
-	<p>This is an attempt to create a "utility tag" to supplement our utility classes.</p>
+<ca-box>
+  <h1>Flex</h1>
+  <p>This is an attempt to create a "utility tag" to supplement our utility classes.</p>
 
-	<h2>Standard</h2>
-	<p>This is the default <code>&lt;ca-flex&gt;</code> in action</p>
-	<ca-flex>
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <h2>Standard</h2>
+  <p>This is the default <code>&lt;ca-flex&gt;</code> in action</p>
+  <ca-flex>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<p>It works with classes too.</p>
-	<div class="flex">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</div>
+  <p>It works with classes too.</p>
+  <div class="flex">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
 
-	<h2>Direction</h2>
-	<p>Control the <code>flex-direction</code> with the <code>direction</code> attribute.</p>
-	<ca-flex direction="column">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <h2>Direction</h2>
+  <p>Control the <code>flex-direction</code> with the <code>direction</code> attribute.</p>
+  <ca-flex direction="column">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<p>Reversals work too.</p>
-	<ca-flex direction="row-reverse">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <p>Reversals work too.</p>
+  <ca-flex direction="row-reverse">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<h2>Wrap</h2>
-	<p>Use the <code>wrap</code> attributes to control wrapping.</p>
-	<ca-flex wrap>
-		<div style="width: 33%">1</div>
-		<div style="width: 33%">2</div>
-		<div style="width: 33%">3</div>
-		<div style="width: 33%">4</div>
-		<div style="width: 33%">5</div>
-	</ca-flex>
+  <h2>Wrap</h2>
+  <p>Use the <code>wrap</code> attributes to control wrapping.</p>
+  <ca-flex wrap>
+    <div style="width: 33%">1</div>
+    <div style="width: 33%">2</div>
+    <div style="width: 33%">3</div>
+    <div style="width: 33%">4</div>
+    <div style="width: 33%">5</div>
+  </ca-flex>
 
-	<h2>Gaps</h2>
-	<p>Use the <code>gap</code> attribute to control the gap.</p>
-	<ca-flex gap="4">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <h2>Gaps</h2>
+  <p>Use the <code>gap</code> attribute to control the gap.</p>
+  <ca-flex gap="4">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<p>The <code>gap-x</code> attribute limits the gap to columns.</p>
-	<ca-flex gap-x="6">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <p>The <code>gap-x</code> attribute limits the gap to columns.</p>
+  <ca-flex gap-x="6">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<p>The <code>gap-y</code> attribute limits the gap to rows.</p>
-	<ca-flex gap-y="2" direction="column">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <p>The <code>gap-y</code> attribute limits the gap to rows.</p>
+  <ca-flex gap-y="2" direction="column">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<h2>Align</h2>
-	<p>Use the <code>align-items</code> attribute to control the alignment.</p>
-	<ca-flex align-items="center" class="alignment-box">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <h2>Align</h2>
+  <p>Use the <code>align-items</code> attribute to control the alignment.</p>
+  <ca-flex align-items="center" class="alignment-box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<p><code>align-content</code> works too.</p>
-	<ca-flex wrap align-content="end" class="alignment-box" style="min-height: 14rem;">
-		<div style="width: 33%">1</div>
-		<div style="width: 33%">2</div>
-		<div style="width: 33%">3</div>
-		<div style="width: 33%">4</div>
-		<div style="width: 33%">5</div>
-	</ca-flex>
+  <p><code>align-content</code> works too.</p>
+  <ca-flex wrap align-content="end" class="alignment-box" style="min-height: 14rem;">
+    <div style="width: 33%">1</div>
+    <div style="width: 33%">2</div>
+    <div style="width: 33%">3</div>
+    <div style="width: 33%">4</div>
+    <div style="width: 33%">5</div>
+  </ca-flex>
 
-	<p>Use the <code>align</code> attribute on <code>&lt;ca-self&gt;</code> to align a single item.</p>
-	<ca-flex align-items="center" class="alignment-box">
-		<div>1</div>
-		<ca-self align="end">2</ca-self>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <p>Use the <code>align</code> attribute on <code>&lt;ca-self&gt;</code> to align a single item.</p>
+  <ca-flex align-items="center" class="alignment-box">
+    <div>1</div>
+    <ca-self align="end">2</ca-self>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<h2>Justify</h2>
-	<p><code>justify-content</code> controls justification.</p>
-	<ca-flex justify-content="center" class="alignment-box">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <h2>Justify</h2>
+  <p><code>justify-content</code> controls justification.</p>
+  <ca-flex justify-content="center" class="alignment-box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<h2>Basis</h2>
-	<p>Use the <code>basis</code> attribute on <code>&lt;ca-self&gt;</code> to control <code>flex-basis</code>.</p>
-	<p>This remains limited in functionality. To do flex-basis well, we need some "standard block sizes" for content
-		components.</p>
-	<ca-flex>
-		<div>1</div>
-		<ca-self basis="half">2</ca-self>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
+  <h2>Basis</h2>
+  <p>Use the <code>basis</code> attribute on <code>&lt;ca-self&gt;</code> to control <code>flex-basis</code>.</p>
+  <p>This remains limited in functionality. To do flex-basis well, we need some "standard block sizes" for content
+    components.</p>
+  <ca-flex>
+    <div>1</div>
+    <ca-self basis="half">2</ca-self>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
 
-	<h2>Grow and shrink</h2>
-	<p>Use <code>grow</code> and <code>shrink</code> attributes on <code>&lt;ca-self&gt;</code> to control their
-		respective flex properties.</p>
-	<p>Some research would be helpful to understand which grow and shrink values are, well, valuable.</p>
-	<ca-flex>
-		<div>1</div>
-		<ca-self grow>2</ca-self>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-	</ca-flex>
-</ca-container>
+  <h2>Grow and shrink</h2>
+  <p>Use <code>grow</code> and <code>shrink</code> attributes on <code>&lt;ca-self&gt;</code> to control their
+    respective flex properties.</p>
+  <p>Some research would be helpful to understand which grow and shrink values are, well, valuable.</p>
+  <ca-flex>
+    <div>1</div>
+    <ca-self grow>2</ca-self>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </ca-flex>
+</ca-box>

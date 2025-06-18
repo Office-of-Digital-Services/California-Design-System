@@ -1,43 +1,43 @@
 <style>
-	ca-container[size="small"],
-	ca-container[size="medium"] {
-		margin-inline-start: 0;
-	}
+  ca-box[size="small"],
+  ca-box[size="medium"] {
+    margin-inline-start: 0;
+  }
 
-	ca-grid {
-		margin-block-end: 2rem;
-	}
+  ca-grid {
+    margin-block-end: 2rem;
+  }
 
-	table {
-		margin-block-end: 2rem;
+  table {
+    margin-block-end: 2rem;
 
-		& th {
-			font-size: 1.35rem;
-			text-align: left;
-		}
-	}
+    & th {
+      font-size: 1.35rem;
+      text-align: left;
+    }
+  }
 </style>
 
 
-<ca-container size="full">
-	<ca-container size="small">
-		<h1>Inclusivity</h1>
-		<p>Writing to include is writing without assumption or prejudice. It helps make our users feel welcome and
-			facilitates positive user experiences.</p>
-	</ca-container>
-	<ca-container size="medium">
-		<p>I feel like we need some tables in here to show users what this stuff means to us/them...similar to Atlassian.
-		</p>
-		<h2>Respecting diversity</h2>
-		<h3>People come first</h3>
-		<ul>
-			<li><strong>Focus on the individual</strong>: Put the person before the condition or identity when discussing
-				disabilities or differences.
-				For example, say "person with a disability" instead of "disabled person".
-			</li>
-			<li><strong>Emphasize humanity</strong>: Prioritize the person's humanity over their condition or identity.</li>
-		</ul>
-		<!--<h3>Gender-neutral cotent</h3>
+<ca-box size="full">
+  <ca-box size="small">
+    <h1>Inclusivity</h1>
+    <p>Writing to include is writing without assumption or prejudice. It helps make our users feel welcome and
+      facilitates positive user experiences.</p>
+  </ca-box>
+  <ca-box size="medium">
+    <p>I feel like we need some tables in here to show users what this stuff means to us/them...similar to Atlassian.
+    </p>
+    <h2>Respecting diversity</h2>
+    <h3>People come first</h3>
+    <ul>
+      <li><strong>Focus on the individual</strong>: Put the person before the condition or identity when discussing
+        disabilities or differences.
+        For example, say "person with a disability" instead of "disabled person".
+      </li>
+      <li><strong>Emphasize humanity</strong>: Prioritize the person's humanity over their condition or identity.</li>
+    </ul>
+    <!--<h3>Gender-neutral cotent</h3>
 		<ca-grid>
 			<ca-card>
 				<h4>Pronouns</h4>
@@ -48,97 +48,97 @@
 				<p>Replace gender-specific job titles like "repairman" with gender-neutral options like "repair person".</p>
 			</ca-card>
 		</ca-grid>-->
-		<h3>Cultural sensitivity</h3>
-		<p>Be mindful of cultural differences and avoid using slang and language that is offensive or hurtful. Here are
-			examples of common terms to aviod and those we should consider instead.</p>
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Consider</th>
-					<th scope="col">Avoid</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td scope="row">"people of color" or "communities of color"</td>
-					<td>"Minority"</td>
-				</tr>
-				<tr>
-					<td scope="row">"Asian," "person who's black," or "Latino(a)" if preferred.</td>
-					<td>"Oriental," "Blacks," or "Hispanics"</td>
-				</tr>
-				<tr>
-					<td scope="row">"How are you? or "How are you doing today?" (Global English)</td>
-					<td>"Sup?" or "What's up?" (English slang)</td>
-				</tr>
-			</tbody>
-		</table>
-		<h2>Clear, consistent, concise</h2>
-		<h3>Plain language</h3>
-		<p>Use clear, concise language that's easily understood, avoiding jargon, idioms, and slang as mentioned previously.
-		</p>
-		<p>For more on plain language, visit the <a href="https://centerforplainlanguage.org/">Center for PLain
-				Language</a>.</p>
-		<h3>Avoid complex sentences</h3>
-		<p>According to multiple <a
-				href="https://www.evergreen.edu/sites/default/files/2023-05/compoundcomplex.pdf">accredited sources</a>, "A
-			complex sentence combines an independent clause (a complete thought) with at
-			least one dependent clause (a clause that
-			cannot stand alone as a sentence)."</p>
-		<p>Check out some examples:</p>
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Complex sentence</th>
-					<th scope="col">Independent clause</th>
-					<th scope="col">Dependent clause</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td scope="row">Although he was tired, he finished the project.</td>
-					<td>"Although he was tired,"</td>
-					<td>"he finished the project."</td>
-				</tr>
-				<tr>
-					<td scope="row">When the bell rings, we will have to go to our next class.</td>
-					<td>"When the bell rings,"</td>
-					<td>"we will have to go to our next class."</td>
-				</tr>
-				<tr>
-					<td scope="row">The cat, which was wearing a collar, was very calm.</td>
-					<td>"The cat, ..., was very calm."</td>
-					<td>", which was wearing a collar,"</td>
-				</tr>
-			</tbody>
-		</table>
-		<h3>Accessible font sizes</h3>
-		<p>It's important to use accessible font sizes to ensure as many users as possible have access to your content.</p>
-		<ca-grid>
-			<ca-card>
-				<h4>Minimum accessible font size</h4>
-				<p>Generally, <code>12pt (16px)</code> is <strong>recommended</strong> for body text by most accessiblity
-					experts, like <a href="https://accessiblyapp.com/web-accessibility/font-size/">Accessibily</a>.</p>
-				<p>Text any smaller than this may be illegible on many platforms, which can create additional accessibility
-					issues.</p>
-			</ca-card>
-			<ca-card>
-				<h4>Our recommendation</h4>
-				<p>We use and suggest <code>1.125rem (18px)</code> for body text. We want to ensure we deliver what we believe
-					to be the most
-					accessible product we can to our users.</p>
-				<p>Visit our <a href="/pages/digital-design/typography">Typography</a> page for more about our font-sizes and
-					type ramp.</p>
-			</ca-card>
-		</ca-grid>
-		<h2>Avoid biased language</h2>
-		<h3>Avoid stereotypes</h3>
-		<h3>Avoid slang</h3>
-		<h3>Be mindful of overall word choice</h3>
-		<h2>Accessibility features</h2>
-		<h3>Alt-text</h3>
-		<h3>Captions and subtitles</h3>
-		<h3>Keyboard navigation</h3>
-		<h3>Structural HTML</h3>
-	</ca-container>
-</ca-container>
+    <h3>Cultural sensitivity</h3>
+    <p>Be mindful of cultural differences and avoid using slang and language that is offensive or hurtful. Here are
+      examples of common terms to aviod and those we should consider instead.</p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Consider</th>
+          <th scope="col">Avoid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">"people of color" or "communities of color"</td>
+          <td>"Minority"</td>
+        </tr>
+        <tr>
+          <td scope="row">"Asian," "person who's black," or "Latino(a)" if preferred.</td>
+          <td>"Oriental," "Blacks," or "Hispanics"</td>
+        </tr>
+        <tr>
+          <td scope="row">"How are you? or "How are you doing today?" (Global English)</td>
+          <td>"Sup?" or "What's up?" (English slang)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Clear, consistent, concise</h2>
+    <h3>Plain language</h3>
+    <p>Use clear, concise language that's easily understood, avoiding jargon, idioms, and slang as mentioned previously.
+    </p>
+    <p>For more on plain language, visit the <a href="https://centerforplainlanguage.org/">Center for PLain
+        Language</a>.</p>
+    <h3>Avoid complex sentences</h3>
+    <p>According to multiple <a
+        href="https://www.evergreen.edu/sites/default/files/2023-05/compoundcomplex.pdf">accredited sources</a>, "A
+      complex sentence combines an independent clause (a complete thought) with at
+      least one dependent clause (a clause that
+      cannot stand alone as a sentence)."</p>
+    <p>Check out some examples:</p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Complex sentence</th>
+          <th scope="col">Independent clause</th>
+          <th scope="col">Dependent clause</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Although he was tired, he finished the project.</td>
+          <td>"Although he was tired,"</td>
+          <td>"he finished the project."</td>
+        </tr>
+        <tr>
+          <td scope="row">When the bell rings, we will have to go to our next class.</td>
+          <td>"When the bell rings,"</td>
+          <td>"we will have to go to our next class."</td>
+        </tr>
+        <tr>
+          <td scope="row">The cat, which was wearing a collar, was very calm.</td>
+          <td>"The cat, ..., was very calm."</td>
+          <td>", which was wearing a collar,"</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Accessible font sizes</h3>
+    <p>It's important to use accessible font sizes to ensure as many users as possible have access to your content.</p>
+    <ca-grid>
+      <ca-card>
+        <h4>Minimum accessible font size</h4>
+        <p>Generally, <code>12pt (16px)</code> is <strong>recommended</strong> for body text by most accessiblity
+          experts, like <a href="https://accessiblyapp.com/web-accessibility/font-size/">Accessibily</a>.</p>
+        <p>Text any smaller than this may be illegible on many platforms, which can create additional accessibility
+          issues.</p>
+      </ca-card>
+      <ca-card>
+        <h4>Our recommendation</h4>
+        <p>We use and suggest <code>1.125rem (18px)</code> for body text. We want to ensure we deliver what we believe
+          to be the most
+          accessible product we can to our users.</p>
+        <p>Visit our <a href="/pages/digital-design/typography">Typography</a> page for more about our font-sizes and
+          type ramp.</p>
+      </ca-card>
+    </ca-grid>
+    <h2>Avoid biased language</h2>
+    <h3>Avoid stereotypes</h3>
+    <h3>Avoid slang</h3>
+    <h3>Be mindful of overall word choice</h3>
+    <h2>Accessibility features</h2>
+    <h3>Alt-text</h3>
+    <h3>Captions and subtitles</h3>
+    <h3>Keyboard navigation</h3>
+    <h3>Structural HTML</h3>
+  </ca-box>
+</ca-box>

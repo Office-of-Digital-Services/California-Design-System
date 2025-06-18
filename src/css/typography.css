@@ -9,7 +9,7 @@
   --font-family: Noto Sans;
   --text-max-width: 65ch;
 
-  --text-size-sm: 0.9375rem;
+  --text-size-0: 0.9375rem;
   --text-size-1: 1rem; /* H5, H6, and menu items */
   --text-size-2: 1.125rem; /* Base text */
   --text-size-3: 1.25rem; /* H4 and lead text */
@@ -101,7 +101,7 @@ h1 + p,
 
 small,
 .small {
-  font-size: var(--text-size-sm);
+  font-size: var(--text-size-0);
   margin-bottom: 1rem;
 }
 
@@ -120,4 +120,83 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+/* Utilities */
+.text-left,
+.text-start {
+  text-align: start;
+}
+.text-center {
+  text-align: center;
+}
+.text-right,
+.text-end {
+  text-align: end;
+}
+
+.text-size-0,
+.text-mini {
+  font-size: var(--text-size-0);
+}
+.text-size-1,
+.text-small {
+  font-size: var(--text-size-1);
+}
+.text-size-2,
+.text-base {
+  font-size: var(--text-size-2);
+}
+.text-size-3,
+.text-lead {
+  font-size: var(--text-size-3);
+}
+.text-size-4 {
+  font-size: var(--text-size-4);
+}
+.text-size-5 {
+  font-size: var(--text-size-5);
+}
+.text-size-6 {
+  font-size: var(--text-size-6);
+}
+.text-size-7 {
+  font-size: var(--text-size-7);
+}
+
+.font-weight-900,
+.font-heavy {
+  font-weight: 900;
+}
+.font-weight-800,
+.font-extrabold {
+  font-weight: 800;
+}
+.font-weight-700,
+.font-bold {
+  font-weight: 700;
+}
+.font-weight-600,
+.font-semibold {
+  font-weight: 600;
+}
+.font-weight-500,
+.font-medium {
+  font-weight: 500;
+}
+.font-weight-400,
+.font-normal {
+  font-weight: 400;
+}
+.font-weight-300,
+.font-light {
+  font-weight: 300;
+}
+.font-weight-200,
+.font-extralight {
+  font-weight: 200;
+}
+.font-weight-100,
+.font-thin {
+  font-weight: 100;
 }

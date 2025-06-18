@@ -2,7 +2,7 @@
 layout: blank-page
 ---
 
-<ca-layout format="top-lite">
+<ca-layout format="">
   <header>
     <ca-burger>
       <a href="#content-nav" title="Menu" class="button button-burger">
@@ -19,42 +19,38 @@ layout: blank-page
       </a>
     </ca-org>
 
-    <ca-spot slot="priority">
-      <search>
-        <form>
-          <label for="site-search" class="visually-hidden">Search this site</label>
-          <input type="search" id="site-search" placeholder="Search" />
-          <button type="submit">
-            <ca-pic icon="search"></ca-pic>
-            <span class="visually-hidden">Search</span>
-          </button>
-        </form>
-      </search>
-    </ca-spot>
+    <search slot="priority">
+      <form>
+        <label for="site-search" class="visually-hidden">Search this site</label>
+        <input type="search" id="site-search" placeholder="Search" />
+        <button type="submit">
+          <ca-pic icon="search"></ca-pic>
+          <span class="visually-hidden">Search</span>
+        </button>
+      </form>
+    </search>
 
-    <ca-spot slot="utility">
-      <nav id="utility-nav" aria-label="Utility navigation">
-        <ul>
-          <li>
-            <ca-layout-toggle></ca-layout-toggle>
-          </li>
-          <li>
-            <ca-color-scheme-toggle>
-              <button class="button button-utility">
-                <ca-pic icon="light-mode"></ca-pic>
-                <span class="visually-hidden">Switch between light and dark modes</span>
-              </button>
-            </ca-color-scheme-toggle>
-          </li>
-          <li>
-            <a href="#" title="Login" class="button button-utility">
-              <ca-pic icon="account-circle"></ca-pic>
-              Login
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </ca-spot>
+    <nav id="utility-nav" slot="utility" aria-label="Utility navigation">
+      <ul>
+        <li>
+          <ca-layout-toggle></ca-layout-toggle>
+        </li>
+        <li>
+          <ca-color-scheme-toggle>
+            <button class="button button-utility">
+              <ca-pic icon="light-mode"></ca-pic>
+              <span class="visually-hidden">Switch between light and dark modes</span>
+            </button>
+          </ca-color-scheme-toggle>
+        </li>
+        <li>
+          <a href="#" title="Login" class="button button-utility">
+            <ca-pic icon="account-circle"></ca-pic>
+            Login
+          </a>
+        </li>
+      </ul>
+    </nav>
 
 
     <nav slot="menu" id="content-nav" aria-label="Content navigation">
@@ -146,87 +142,97 @@ layout: blank-page
   </main>
 
   <footer>
-    <ca-grid format="footer-link-grid">
-      <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-    </ca-grid>
+    <ca-box columns="5" gap="6" size="large" format="site-links">
+      <ca-column span="2">
+        <ca-org>
+          <a href="/">
+            <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+            <span slot="cal">California</span>
+            <span slot="dept">Department Website Long Name</span>
+          </a>
+        </ca-org>
+      </ca-column>
+
+      <ca-grid class="span-3" gap="6">
+        <section>
+          <h2>Footer column heading</h2>
+          <ul>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Footer column heading</h2>
+          <ul>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Footer column heading</h2>
+          <ul>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+          </ul>
+        </section>
+      </ca-grid>
+    </ca-box>
 
     <hr>
 
-    <ca-flex format="footer-split-links">
-      <ul class="compliance-link-list">
-        <li class="flex-basis-full">
-          <a href="#">Website Accessibility Certification</a>
-        </li>
-        <li>
-          <a href="#">Conditions of use</a>
-        </li>
-        <li>
-          <a href="#">Privacy</a>
-        </li>
-        <li>
-          <a href="#">Accessibility</a>
-        </li>
-        <li>
-          <a href="#">Sitemap</a>
-        </li>
-      </ul>
+    <ul class="flex flex-row flex-wrap gap-2">
+      <li class="flex-basis-full">
+        <a href="#">Website Accessibility Certification</a>
+      </li>
+      <li>
+        <a href="#">Conditions of use</a>
+      </li>
+      <li>
+        <a href="#">Privacy</a>
+      </li>
+      <li>
+        <a href="#">Accessibility</a>
+      </li>
+      <li>
+        <a href="#">Sitemap</a>
+      </li>
+    </ul>
 
-      <ul class="social-icon-list">
-        <li>
-          <a href="#" class="button button-social">
-            <ca-pic icon="mail"></ca-pic>
-            <span class="visually-hidden">Email</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button button-social">
-            <ca-pic icon="facebook"></ca-pic>
-            <span class="visually-hidden">Facebook</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button button-social">
-            <ca-pic icon="linked-in"></ca-pic>
-            <span class="visually-hidden">LinkedIn</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button button-social">
-            <ca-pic icon="x-dot-com"></ca-pic>
-            <span class="visually-hidden">X.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button button-social">
-            <ca-pic icon="youtube"></ca-pic>
-            <span class="visually-hidden">YouTube</span>
-          </a>
-        </li>
-      </ul>
-    </ca-flex>
+    <ul class="flex flex-row gap-2 margin-y-6">
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="mail"></ca-pic>
+          <span class="visually-hidden">Email</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="facebook"></ca-pic>
+          <span class="visually-hidden">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="linked-in"></ca-pic>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="x-dot-com"></ca-pic>
+          <span class="visually-hidden">X.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="youtube"></ca-pic>
+          <span class="visually-hidden">YouTube</span>
+        </a>
+      </li>
+    </ul>
 
     <ca-flex format="footer-end">
       <ca-flex format="copyright-stamp">

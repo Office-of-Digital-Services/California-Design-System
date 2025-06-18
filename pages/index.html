@@ -1,89 +1,89 @@
 <style>
-	h1 {
-		line-height: 1.25;
-	}
+  h1 {
+    line-height: 1.25;
+  }
 
-	h1 span {
-		color: var(--gray-static-30);
-		font-size: 70%;
-		font-weight: 500;
-	}
+  h1 span {
+    color: var(--gray-static-30);
+    font-size: 70%;
+    font-weight: 500;
+  }
 
-	h2 {
-		font-size: 1.5rem;
-	}
+  h2 {
+    font-size: 1.5rem;
+  }
 
-	p {
-		margin-block-end: 2rem;
-	}
+  p {
+    margin-block-end: 2rem;
+  }
 
-	a.coastal {
-		padding-inline: 1rem;
-	}
+  a.coastal {
+    padding-inline: 1rem;
+  }
 
-	.container-home {
-		display: grid;
-		max-width: inherit;
-		position: relative;
-		margin: auto;
-		grid-gap: 1rem;
-		grid-template-areas:
-			"banner banner-img"
-			"main main";
-		grid-template-columns: 30vw auto;
-		grid-template-rows: 30rem;
-	}
+  .container-home {
+    display: grid;
+    max-width: inherit;
+    position: relative;
+    margin: auto;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "banner banner-img"
+      "main main";
+    grid-template-columns: 30vw auto;
+    grid-template-rows: 30rem;
+  }
 
-	.banner {
-		grid-area: banner;
-	}
+  .banner {
+    grid-area: banner;
+  }
 
-	.banner-img {
-		grid-area: banner-img;
-		overflow: visible;
-	}
+  .banner-img {
+    grid-area: banner-img;
+    overflow: visible;
+  }
 
-	.main {
-		grid-area: main;
-	}
+  .main {
+    grid-area: main;
+  }
 </style>
 
-<ca-container size="full">
-	<div class="container-home">
-		<ca-flex class="banner" direction="column">
-			<h1>California<br>
-				<span>Design System</span>
-			</h1>
-			<p style="width: auto">Bring digital experiences together.</p>
-			<a style="width: 8.5rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
-		</ca-flex>
-		<div class="banner-img"></div>
+<ca-box size="full">
+  <div class="container-home">
+    <ca-flex class="banner" direction="column">
+      <h1>California<br>
+        <span>Design System</span>
+      </h1>
+      <p style="width: auto">Bring digital experiences together.</p>
+      <a style="width: 8.5rem;" href="/pages/get-started/index" class="button coastal">Get started</a>
+    </ca-flex>
+    <div class="banner-img"></div>
 
-	</div>
-	<ca-grid class="main">
-		<ca-card interactive="full">
-			<article>
-				<h2><a href="/pages/get-started">Get started</a></h2>
-				<p>Learn more about our design system.</p>
-			</article>
-		</ca-card>
-		<ca-card interactive="full">
-			<article>
-				<h2><a href="/pages/digital-design/index">Digital design</a></h2>
-				<p>Create beautiful digital interfaces.</p>
-			</article>
-		</ca-card>
-		<ca-card interactive="full">
-			<article>
-				<h2><a href="/pages/development/index">Development</a></h2>
-				<p>Environment setup, utilities, and dev tools.</p>
-			</article>
-		</ca-card>
-		<ca-card interactive="full">
-			<article>
-				<h2><a href="/pages/building-blocks/index">Building blocks</a></h2>
-				<p>Piece together your product journey.</p>
-			</article>
-		</ca-card>
-	</ca-grid>
-</ca-container>
+  </div>
+  <ca-grid class="main">
+    <ca-card interactive="full">
+      <article>
+        <h2><a href="/pages/get-started">Get started</a></h2>
+        <p>Learn more about our design system.</p>
+      </article>
+    </ca-card>
+    <ca-card interactive="full">
+      <article>
+        <h2><a href="/pages/digital-design/index">Digital design</a></h2>
+        <p>Create beautiful digital interfaces.</p>
+      </article>
+    </ca-card>
+    <ca-card interactive="full">
+      <article>
+        <h2><a href="/pages/development/index">Development</a></h2>
+        <p>Environment setup, utilities, and dev tools.</p>
+      </article>
+    </ca-card>
+    <ca-card interactive="full">
+      <article>
+        <h2><a href="/pages/building-blocks/index">Building blocks</a></h2>
+        <p>Piece together your product journey.</p>
+      </article>
+    </ca-card>
+  </ca-grid>
+</ca-box>
