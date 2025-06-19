@@ -1,62 +1,199 @@
-/* 
-Layout header 
-*/
+@media screen and (min-width: 1024px) {
+  /* Horizon, small desktop */
+  ca-layout[format|="top"] > :is(header, .site-header) {
+    padding: 1rem 2rem;
+  }
+}
 
-ca-layout > header {
-  position: relative;
-  padding-block: .5rem 1rem;
-  padding-inline: 1rem;
+ca-layout > :is(header, .site-header) {
+  padding: 1rem 1rem 1.5rem 1rem;
   background-color: var(--primary-background-20);
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
   z-index: 3;
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 2rem;
+  column-gap: 1rem;
 
-  & > a {
-    all: unset;
-    padding: 0;
-
-    & > span {
-      cursor: pointer;
-    }
+  /* Required when [slot='menu'] is present. */
+  & > ca-burger {
+    grid-area: burger;
   }
 
-  &:has(> :not(a)),
-  & > a {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
+  & ca-org {
+    grid-area: org;
+  }
 
-    /* "California" */
-    & > span:first-of-type {
-      font-weight: 700;
-      font-size: var(--text-size-4);
-      line-height: 2.1875rem;
+  /* Required when the ca-burger is present. */
+  & > [slot="menu"] {
+    grid-area: menu;
+  }
+
+  /* Optional */
+  & > [slot="priority"] {
+    grid-area: priority;
+  }
+
+  /* Optional */
+  & > [slot="utility"] {
+    grid-area: utility;
+  }
+
+  /* For hiding elements with the dev tool. */
+  & > *[hidden] {
+    display: none !important;
+  }
+}
+
+/* 
+ * Header grid shifts 
+ */
+
+/* Mobile */
+/* Apply a mobile-only media query, so these mods don't mess with desktop. */
+@media screen and (max-width: 1023px) {
+  ca-layout > :is(header, .site-header) {
+    grid-template-columns: 2.5rem 1fr;
+    grid-template-areas:
+      "burger utility"
+      "org org";
+  }
+}
+
+/* Default (Eureka), small desktop */
+@media screen and (min-width: 1024px) {
+  ca-layout:not([format|="top"]) > :is(header, .site-header) {
+    padding: 1.5rem 1rem 2rem 1rem;
+    border-inline-end: 0.0625rem solid var(--gray-40);
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    row-gap: 1.5rem;
+    grid-template-areas:
+      "org"
+      "priority"
+      "menu";
+
+    & > ca-burger {
+      display: none;
     }
 
-    /* Department website */
-    & > span:nth-of-type(2) {
-      line-height: 1.6rem;
+    & > ca-org {
+      margin-inline: 1rem;
+    }
+
+    & > [slot="utility"] {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    &:has([slot="priority"][hidden]),
+    &:not(:has([slot="priority"])) {
+      row-gap: .75rem;
     }
   }
 }
 
+/* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  /* Default (Eureka), small desktop */
-  ca-layout > header {
-    padding-block: 1rem;
-    padding-inline: 2rem;
+  ca-layout[format="top-full"] > :is(header, .site-header) {
+    row-gap: 1rem;
+    padding-block-end: 0;
+    grid-template-columns: 1fr fit-content(15rem) max-content;
+    grid-template-rows: min-content;
+    grid-template-areas:
+      "org priority utility"
+      "menu menu menu";
+
+    & > [slot="menu"] {
+      border-block-start: 0.0625rem solid var(--gray-40);
+      padding-inline-start: calc(var(--indent-size) - 3rem);
+    }
+  }
+}
+
+/* Skyline, small desktop */
+@media screen and (min-width: 1024px) {
+  ca-layout[format="top-lite"] > :is(header, .site-header) {
+    grid-template-columns: max-content 1fr fit-content(15rem) max-content;
+    grid-template-rows: auto;
+    grid-template-areas: "org menu priority utility";
+  }
+}
+
+ca-layout[burger="open"] {
+  & :is(header, .site-header) {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100vw;
+    block-size: 100vh;
+    background-color: unset;
+    padding: 0;
+    gap: 0;
+    grid-template-columns: 2.5rem 13.5rem 1fr;
+    grid-template-rows: min-content min-content min-content 1fr;
+    grid-template-areas:
+      "burger utility utility"
+      "org org org"
+      "priority priority ."
+      "menu menu .";
+
+    & > :is([slot="menu"], [slot="priority"]) {
+      display: block;
+    }
+
+    & > [slot="menu"] {
+      overflow-y: auto;
+    }
+
+    & > * {
+      background-color: var(--primary-background-20);
+      padding: 1rem;
+    }
+
+    & > ca-org {
+      padding-block-end: 1.5rem;
+    }
   }
 
-  /* Horizon, small desktop */
-  ca-layout[format="top-full"] > header {
-    padding-block: 1rem .5rem;
-    padding-inline: 1rem;
+  & > :is(main, footer) {
+    filter: blur(.2rem);
+  }
+}
+
+@keyframes burger-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16rem);
   }
 
-  /* Skyline, small desktop */
-  ca-layout[format="top-lite"] > header {
-    padding-inline: 1rem;
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes content-blur {
+  from {
+    filter: none;
+  }
+
+  to {
+    filter: blur(.2rem);
+  }
+}
+
+@media screen and (max-width: 1023px) and (
+    prefers-reduced-motion: no-preference
+  ) {
+  ca-layout[burger="open"] {
+    & :is([slot="menu"], [slot="priority"]) {
+      opacity: 0;
+      animation: burger-from-left ease-out 0.3s forwards;
+    }
+    & :is(main, footer) {
+      filter: none;
+      animation: content-blur ease-out 0.3s forwards;
+    }
   }
 }

@@ -1,0 +1,80 @@
+ca-org > a {
+  text-decoration: none;
+}
+
+ca-org:not(:has(a)),
+ca-org > a {
+  color: var(--gray-100);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "image" "border" "cal" "dept";
+
+  /* This is the border. */
+  &:has([slot="img"] + *)::after {
+    content: "";
+    display: block;
+    grid-area: border;
+    border-block-end: 0.0625rem solid var(--gray-60);
+    margin-block: 1rem .5rem;
+  }
+
+  & > [slot="img"] {
+    grid-area: image;
+  }
+
+  & > [slot="cal"] {
+    grid-area: cal;
+    color: var(--gray-70);
+  }
+
+  & > [slot="dept"] {
+    grid-area: dept;
+  }
+
+  &[format="horizontal"] {
+    align-items: center;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "image border cal"
+      "image border dept";
+
+    &:has([slot="img"] + *)::after {
+      border-block-end: none;
+      border-inline-end: 0.0625rem solid var(--gray-60);
+      margin-block: 0;
+      margin-inline: 1rem;
+      block-size: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Top navs */
+  /* This is mainly a repeat of the horizontal rule above. */
+  ca-layout[format|="top"] > header {
+    & ca-org:not(:has(a)),
+    & ca-org > a {
+      align-items: center;
+      grid-template-columns: auto auto 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        "image border cal"
+        "image border dept";
+
+      &:has([slot="img"] + *)::after {
+        border-block-end: none;
+        border-inline-end: 0.0625rem solid var(--gray-60);
+        margin-block: 0;
+        margin-inline: 1rem;
+        block-size: 100%;
+      }
+    }
+  }
+}

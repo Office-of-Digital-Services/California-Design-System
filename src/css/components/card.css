@@ -98,7 +98,8 @@ ca-card:has(> img, > svg, > ca-visual) {
   }
 
   & > :is(img, svg, ca-visual) {
-    place-self: center;
+    align-self: center;
+    justify-self: start;
   }
 
   & > :is(div, section, article) {
@@ -241,7 +242,7 @@ ca-card:has(> img, > svg, > ca-visual) {
 ca-visual {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 li > ca-card {

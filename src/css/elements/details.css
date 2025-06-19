@@ -1,0 +1,80 @@
+details {
+  padding: 0;
+  margin-block: 1rem 2rem;
+
+  /* Opened accordion heading. */
+  &[open] > summary {
+    margin-block-end: 1.5rem;
+    border-block-end: 0.0625rem solid var(--primary-110);
+  }
+
+  /* All content within accordion. */
+  &[open] > :not(summary) {
+    margin-inline: 1rem;
+
+    &:first-child {
+      margin-block-start: 0;
+    }
+
+    &:last-child {
+      margin-block-end: 1.5rem;
+    }
+  }
+
+  /* This is all we need to combine subsequent <details> into an accordion. */
+  & + details {
+    margin-block-start: 0;
+    border-block-start: none;
+    border-block-start: 0.0625rem solid var(--gray-40);
+  }
+  &:has(+ details) {
+    margin-block-end: 0;
+  }
+
+  &:not([open]):hover {
+    border-block-start: none;
+    background: var(--primary-background-40);
+    border-radius: var(--border-radius);
+
+    & + details {
+      border-block-start: none;
+    }
+  }
+}
+
+summary {
+  padding: .75rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 150%;
+
+  &::marker {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    background-color: currentColor;
+    mask-position: center center;
+    mask-size: 100% auto;
+    mask-repeat: no-repeat;
+    mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7"><path d="M6.00005 6.97499C5.86672 6.97499 5.74172 6.95415 5.62505 6.91249C5.50838 6.87082 5.40005 6.79999 5.30005 6.69999L0.700049 2.09999C0.516715 1.91665 0.425049 1.68332 0.425049 1.39999C0.425049 1.11665 0.516715 0.883321 0.700049 0.699988C0.883382 0.516654 1.11672 0.424988 1.40005 0.424988C1.68338 0.424988 1.91672 0.516654 2.10005 0.699988L6.00005 4.59999L9.90005 0.699988C10.0834 0.516654 10.3167 0.424988 10.6 0.424988C10.8834 0.424988 11.1167 0.516654 11.3 0.699988C11.4834 0.883321 11.575 1.11665 11.575 1.39999C11.575 1.68332 11.4834 1.91665 11.3 2.09999L6.70005 6.69999C6.60005 6.79999 6.49172 6.87082 6.37505 6.91249C6.25838 6.95415 6.13338 6.97499 6.00005 6.97499Z" fill="black"/></svg>');
+    display: block;
+    block-size: 1rem;
+    inline-size: 1rem;
+    aspect-ratio: 12 / 7;
+    transition: 0.2s;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  details[open] > summary::before {
+    transform: rotate(-180deg);
+  }
+}

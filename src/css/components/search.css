@@ -36,9 +36,9 @@ search {
     min-inline-size: 3rem;
     block-size: 100%;
 
-    & ca-icon {
-      --icon-y-size: auto;
-      --icon-x-size: 1rem;
+    & ca-pic {
+      block-size: auto;
+      inline-size: 1rem;
     }
 
     &:hover {

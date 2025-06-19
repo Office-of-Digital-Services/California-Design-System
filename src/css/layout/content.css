@@ -1,0 +1,54 @@
+/*
+content.css
+
+Provides common rules for user content. 
+For now, this is limited to <main> and <footer>.
+*/
+
+/* Variables */
+ca-layout {
+  --outdent-size: min(10vw, 9.5rem);
+  --indent-size: min(11vw, 10.5rem);
+}
+/* Slightly different for top-nav layouts. */
+ca-layout[format|="top"] {
+  --outdent-size: min(12vw, 11.5rem);
+  --indent-size: min(13vw, 12.5rem);
+}
+
+/* Auto-apply side margin to all top-level children of main. */
+ca-layout > :is(main, footer) > * {
+  margin-inline: 1rem;
+}
+
+/* Manual indents, for creating custom blocks. But mostly inert on mobile here, by default. */
+.nodent {
+  margin-inline: 0;
+}
+.outdent,
+.indent {
+  margin-inline: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  /* Auto-apply the indent to all first-level main and footer content. */
+  ca-layout > :is(main, footer) > * {
+    margin-inline-start: var(--indent-size);
+    margin-inline-end: 2rem;
+  }
+
+  /* For select first-level content in main, auto-apply the outdent. Only main, not footer. */
+  ca-layout
+    > main
+    > :is(figure, table, img, picture, video, canvas, code, ul.grid, ca-grid) {
+    margin-inline-start: var(--outdent-size);
+  }
+
+  /* Class-based overrides */
+  .outdent {
+    margin-inline: var(--outdent-size) 2rem;
+  }
+  .indent {
+    margin-inline: var(--indent-size) 2rem;
+  }
+}

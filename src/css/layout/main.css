@@ -1,38 +1,19 @@
 ca-layout > main {
   container: main / inline-size;
   z-index: 1;
-  padding-block-end: 4rem;
+}
 
-  /*
-  > * {
-    /* Apply side margin to all top-level children of main.
-    margin-inline: 1rem;
-  }
-	*/
+:where(ca-layout > main) {
+  padding-block: 5rem;
 }
-/*
-@container main (width > 50rem) {
-  ca-layout > main > * {
-    /* Apply side margin to all top-level children of main.
-    margin-inline: 5rem;
-  }
-}
-*/
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
   ca-layout[format|="top"] > main {
-    padding-block-start: 2rem;
+    padding-block: 2rem;
   }
 
   ca-layout[format="top-lite"] > main {
-    border-block-start: 2px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(
-      to right,
-      var(--primary-background-10),
-      var(--primary-accent),
-      var(--primary-background-10)
-    );
+    border-block-start: 0.0625rem solid var(--gray-40);
   }
 }

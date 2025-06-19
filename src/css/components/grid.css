@@ -10,7 +10,6 @@ ca-grid,
   --flow-style: auto-fit;
 
   display: grid;
-  container: ca-grid / inline-size;
   /* We'll need to teach a whole course to explain this one. */
   grid-template-columns: repeat(
       var(--flow-style),

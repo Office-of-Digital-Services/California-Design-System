@@ -3,209 +3,250 @@ layout: blank-page
 ---
 
 <ca-layout format="">
-  <ca-site-menu>
-    <a href="#content-nav" title="Menu" class="button burger">
-      <ca-icon symbol="bear-menu"></ca-icon>
-      <span class="visually-hidden">Menu</span>
-    </a>
-  </ca-site-menu>
-
-  <ca-site-logo>
-    <a href="/">
-      <svg width="24" height="24" viewBox="0 0 10 10" aria-hidden="true">
-        <circle cx="5" cy="5" r="5" fill="var(--primary-background-60)" />
-      </svg>
-    </a>
-  </ca-site-logo>
-
   <header>
-    <a href="/">
-      <span>California</span>
-      <span>Department Website with Long Name</span>
-    </a>
-  </header>
+    <ca-burger>
+      <a href="#content-nav" title="Menu" class="button button-burger">
+        <ca-pic icon="pancakes-menu"></ca-pic>
+        <span class="visually-hidden">Menu</span>
+      </a>
+    </ca-burger>
 
-  <ca-priority-bar>
-    <search>
+    <ca-org>
+      <a href="/">
+        <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+        <span slot="cal">California</span>
+        <span slot="dept">Department Website Long Name</span>
+      </a>
+    </ca-org>
+
+    <search slot="priority">
       <form>
         <label for="site-search" class="visually-hidden">Search this site</label>
         <input type="search" id="site-search" placeholder="Search" />
         <button type="submit">
-          <ca-icon symbol="search"></ca-icon>
+          <ca-pic icon="search"></ca-pic>
           <span class="visually-hidden">Search</span>
         </button>
       </form>
     </search>
-  </ca-priority-bar>
 
-  <ca-utility-bar>
-    <nav id="utility-nav" aria-label="Utility navigation">
+    <nav id="utility-nav" slot="utility" aria-label="Utility navigation">
       <ul>
         <li>
           <ca-layout-toggle></ca-layout-toggle>
         </li>
         <li>
           <ca-color-scheme-toggle>
-            <button class="utility">
-              <ca-icon symbol="light-mode"></ca-icon>
+            <button class="button button-utility">
+              <ca-pic icon="light-mode"></ca-pic>
               <span class="visually-hidden">Switch between light and dark modes</span>
             </button>
           </ca-color-scheme-toggle>
         </li>
         <li>
-          <a href="#" title="Login" class="button utility">
-            <ca-icon symbol="account-circle"></ca-icon>
+          <a href="#" title="Login" class="button button-utility">
+            <ca-pic icon="account-circle"></ca-pic>
             Login
-            <span class="visually-hidden">Login</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" title="Translate" class="button utility">
-            <ca-icon symbol="language"></ca-icon>
-            <span class="visually-hidden">Translate</span>
           </a>
         </li>
       </ul>
     </nav>
-  </ca-utility-bar>
 
-  <ca-page-bar>
-    <nav id="content-nav" aria-label="Content navigation">
-      <ca-nav-menu>
-        <ul>
-          <li><a href="#">Navigation link</a></li>
-          <li>
-            <ca-nav-menu>
-              <a href="#">Navigation</a>
-              <ul>
-                <li><a href="#">Drawer 1</a></li>
-                <li><a href="#">Sub-link 2</a></li>
-                <li><a href="#">Nested link 3</a></li>
-              </ul>
-            </ca-nav-menu>
-          </li>
-          <li><a href="#">Another link that's super long</a></li>
-          <li><a href="#">Differ widths</a></li>
-        </ul>
-      </ca-nav-menu>
+
+    <nav slot="menu" id="content-nav" aria-label="Content navigation">
+      <menu>
+        <li><a href="#">Navigation link</a></li>
+        <li>
+          <ca-menu>
+            <button slot="summary">
+              Navigation
+              <ca-pic icon="down"></ca-pic>
+            </button>
+            <menu>
+              <li><a href="#">Drawer 1</a></li>
+              <li><a href="#">Sub-link 2</a></li>
+              <li>
+                <menu>
+                  <li><a href="#">Drawer 1</a></li>
+                  <li><a href="#">Sub-link 2</a></li>
+                  <li>
+                    <a href="#">Nested link 3</a>
+                  </li>
+                </menu>
+              </li>
+              <li>
+                <ca-menu>
+                  <button slot="summary">
+                    Navigation
+                    <ca-pic icon="down"></ca-pic>
+                  </button>
+                  <menu>
+                    <li><a href="#">Drawer 1</a></li>
+                    <li><a href="#">Sub-link 2</a></li>
+                    <li>
+                      <a href="#">Nested link 3</a>
+                    </li>
+                  </menu>
+                </ca-menu>
+              </li>
+            </menu>
+          </ca-menu>
+        </li>
+        <li><a href="#">Another link that's super long</a></li>
+        <li><a href="#">Differ widths</a></li>
+      </menu>
     </nav>
-  </ca-page-bar>
+
+  </header>
 
   <main>
-    <ca-container>
-      <p>Icon test: <ca-icon symbol="mail"></ca-icon> </p>
+    <p>Icon test: <ca-pic icon="mail"></ca-pic> </p>
 
-      <h1>Layout page</h1>
-      <p>Lead text.</p>
-      <p>Normal text.</p>
-      <h2>Heading</h2>
-      <p><a href="#">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-        anim id
-        est laborum.</p>
-    </ca-container>
+    <ca-menu>
+      <button class="button" slot="summary">Navigation <ca-pic icon="down"></ca-pic></button>
+      <menu>
+        <li><a href="#">Drawer 1</a></li>
+        <li><a href="#">Sub-link 2</a></li>
+        <li><a href="#">Nested link 3</a></li>
+      </menu>
+    </ca-menu>
+
+    <ca-org format="horizontal">
+      <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+      <span slot="cal">California</span>
+      <span slot="dept">Department Website Long Name</span>
+    </ca-org>
+
+    <h1>Layout page</h1>
+    <p>Lead text.</p>
+    <p>Normal text.</p>
+    <h2>Heading</h2>
+    <p><a href="#">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+      anim id
+      est laborum.</p>
+    <p class="outdent"><a href="#">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor
+      incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+      anim id
+      est laborum.</p>
   </main>
 
   <footer>
-    <ca-grid format="footer-link-grid">
-      <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Footer column heading</h2>
-        <ul>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-          <li><a href="#">Footer link</a></li>
-        </ul>
-      </section>
-    </ca-grid>
+    <ca-box columns="5" gap="6" size="large" format="site-links">
+      <ca-column span="2">
+        <ca-org>
+          <a href="/">
+            <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+            <span slot="cal">California</span>
+            <span slot="dept">Department Website Long Name</span>
+          </a>
+        </ca-org>
+      </ca-column>
+
+      <ca-grid class="span-3" gap="6">
+        <section>
+          <h2>Footer column heading</h2>
+          <ul>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Footer column heading</h2>
+          <ul>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Footer column heading</h2>
+          <ul>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+            <li><a href="#">Footer link</a></li>
+          </ul>
+        </section>
+      </ca-grid>
+    </ca-box>
 
     <hr>
 
-    <ca-flex format="footer-split-links">
-      <ul class="compliance-link-list">
-        <li class="flex-basis-full">
-          <a href="#">Website Accessibility Certification</a>
-        </li>
-        <li>
-          <a href="#">Conditions of use</a>
-        </li>
-        <li>
-          <a href="#">Privacy</a>
-        </li>
-        <li>
-          <a href="#">Accessibility</a>
-        </li>
-        <li>
-          <a href="#">Sitemap</a>
-        </li>
-      </ul>
+    <ul class="flex flex-row flex-wrap gap-2">
+      <li class="flex-basis-full">
+        <a href="#">Website Accessibility Certification</a>
+      </li>
+      <li>
+        <a href="#">Conditions of use</a>
+      </li>
+      <li>
+        <a href="#">Privacy</a>
+      </li>
+      <li>
+        <a href="#">Accessibility</a>
+      </li>
+      <li>
+        <a href="#">Sitemap</a>
+      </li>
+    </ul>
 
-      <ul class="social-icon-list">
-        <li>
-          <a href="#" class="button social">
-            <ca-icon symbol="mail"></ca-icon>
-            <span class="visually-hidden">Email</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button social">
-            <ca-icon symbol="facebook"></ca-icon>
-            <span class="visually-hidden">Facebook</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button social">
-            <ca-icon symbol="linked-in"></ca-icon>
-            <span class="visually-hidden">LinkedIn</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button social">
-            <ca-icon symbol="x-dot-com"></ca-icon>
-            <span class="visually-hidden">X.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="button social">
-            <ca-icon symbol="youtube"></ca-icon>
-            <span class="visually-hidden">YouTube</span>
-          </a>
-        </li>
-      </ul>
-    </ca-flex>
+    <ul class="flex flex-row gap-2 margin-y-6">
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="mail"></ca-pic>
+          <span class="visually-hidden">Email</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="facebook"></ca-pic>
+          <span class="visually-hidden">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="linked-in"></ca-pic>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="x-dot-com"></ca-pic>
+          <span class="visually-hidden">X.com</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="button button-social">
+          <ca-pic icon="youtube"></ca-pic>
+          <span class="visually-hidden">YouTube</span>
+        </a>
+      </li>
+    </ul>
 
     <ca-flex format="footer-end">
       <ca-flex format="copyright-stamp">
-        <ca-icon symbol="footer-ca-bear"></ca-icon>
+        <ca-pic icon="footer-ca-bear"></ca-pic>
         <p>An official California state website</p>
         <p>© <ca-current-year>2025</ca-current-year> State of California</p>
       </ca-flex>
       <ca-flex format="footer-utility">
-        <a href="#" class="button utility">
-          <ca-icon symbol="help"></ca-icon>
+        <a href="#" class="button button-utility">
+          <ca-pic icon="help"></ca-pic>
           <span class="visually-hidden">Help</span>
         </a>
-        <a href="#" class="button utility">
-          <ca-icon symbol="back-to-top"></ca-icon>
+        <a href="#" class="button button-utility">
+          <ca-pic icon="back-to-top"></ca-pic>
           <span class="visually-hidden">Back to top</span>
         </a>
       </ca-flex>
