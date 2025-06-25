@@ -6,6 +6,14 @@ For now, this is limited to <main> and <footer>.
 */
 
 /* Variables */
+/* Globally configurable max-widths. */
+:root {
+  --content-width-small: 45rem;
+  --content-width-medium: 65rem;
+  --content-width-large: 85rem;
+  --content-width-full: unset;
+}
+/* Default indents. */
 ca-layout {
   --outdent-size: min(10vw, 9.5rem);
   --indent-size: min(11vw, 10.5rem);
@@ -14,6 +22,26 @@ ca-layout {
 ca-layout[format|="top"] {
   --outdent-size: min(12vw, 11.5rem);
   --indent-size: min(13vw, 12.5rem);
+}
+
+/* Utility classes and defaults for constraining content. */
+.content-width-medium,
+ca-layout > :is(main, footer) > * {
+  max-width: var(--content-width-medium);
+}
+.content-width-small,
+ca-layout > :is(main, footer) > :is(p, ul, ol) {
+  max-width: var(--content-width-small);
+}
+.content-width-large,
+ca-layout
+  > :is(main, footer)
+  > :is(figure, table, img, picture, video, canvas, code, form) {
+  max-width: var(--content-width-large);
+}
+.content-width-full,
+ca-layout > :is(main, footer) > :is(ul.grid, ca-grid) {
+  max-width: var(--content-width-full);
 }
 
 /* Auto-apply side margin to all top-level children of main. */
