@@ -1,41 +1,33 @@
-/* Global default card values */
-:root {
-  --card-image-min-size: 5rem;
-  --card-image-max-size: 1fr;
-  --card-size: auto;
-}
-
-/* Basic cards, with or without visual */
 ca-card {
-  display: inline-block;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: var(--primary-background-30);
   border-radius: var(--border-radius);
-  box-shadow: var(--primary-shadow-1);
-  max-inline-size: var(--card-size);
+
+  & > :is(div, section, article) {
+    padding: 1.5rem 1rem;
+
+    & > :first-child {
+      margin-block-start: 0;
+    }
+
+    & > :last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  & > :is(img, svg, ca-pic) {
+    place-self: center;
+  }
 
   & a {
     text-decoration: none;
   }
 
-  & :is(div, section, article) > :first-child,
-  & > :first-child {
-    margin-block-start: 0;
-  }
-
-  & :is(div, section, article) > :last-child,
-  & > :last-child {
-    margin-block-end: 0;
-  }
-
-  & > :is(div, section, article) {
-    padding: 0;
-  }
-
   /* The full card will "rise" when a link/button within is hovered. */
-  &[interactive="links"] {
-    & a:hover {
+  &[interactive] {
+    & :where(a:hover) {
       text-decoration: underline;
     }
 
@@ -63,189 +55,87 @@ ca-card {
         inline-size: 100%;
       }
     }
+  }
 
-    &:has(a:hover, button:hover) {
-      transform: scale(1.01);
+  /* Enable shadows to add depth to the card. */
+  &[shadow] {
+    box-shadow: var(--primary-shadow-1);
+
+    &[interactive]:has(a:hover, button:hover) {
       box-shadow: var(--primary-shadow-2);
-
-      & a:hover {
-        text-decoration: underline;
-      }
     }
-  }
-}
-
-/* Cards that have a visual */
-ca-card:has(> img, > svg, > ca-visual) {
-  padding: 0;
-  /* Grid gives us better tools over flex where we don't want images to fill full width/height of the card. */
-  display: inline-grid;
-
-  &:has(img:first-child, svg:first-child, ca-visual:first-child) {
-    grid-template-columns: auto;
-    grid-template-rows: minmax(
-        var(--card-image-min-size),
-        var(--card-image-max-size)
-      ) auto;
-  }
-
-  &:has(img:last-child, svg:last-child, ca-visual:last-child) {
-    grid-template-columns: auto;
-    grid-template-rows: auto minmax(
-        var(--card-image-min-size),
-        var(--card-image-max-size)
-      );
-  }
-
-  & > :is(img, svg, ca-visual) {
-    align-self: center;
-    justify-self: start;
-  }
-
-  & > :is(div, section, article) {
-    padding: 1rem;
-  }
-
-  &[fit] > :is(img, svg, ca-visual) {
-    block-size: 100%;
-    inline-size: 100%;
-  }
-
-  &[fit|="pad"] {
-    & > :is(img:first-child, svg:first-child, ca-visual:first-child) {
-      padding: 1rem 1rem 0 1rem;
-    }
-    & > :is(img:last-child, svg:last-child, ca-visual:last-child) {
-      padding: 0 1rem 1rem 1rem;
-    }
-    &[direction="horizontal"]
-      > :is(img:first-child, svg:first-child, ca-visual:first-child) {
-      padding: 1rem 0 1rem 1rem;
-    }
-    &[direction="horizontal"]
-      > :is(img:last-child, svg:last-child, ca-visual:last-child) {
-      padding: 1rem 1rem 1rem 0;
-    }
-  }
-
-  &[fit*="fill"] > :is(img, svg, ca-visual) {
-    object-fit: fill;
-  }
-
-  &[fit*="cover"] > :is(img, svg, ca-visual) {
-    object-fit: cover;
-  }
-
-  &[fit*="contain"] > :is(img, svg, ca-visual) {
-    object-fit: contain;
   }
 
   &[size="small"] {
-    --card-size: 15rem;
+    & > :is(img, svg, ca-pic) {
+      block-size: 15.5rem;
+    }
   }
-
   &[size="medium"] {
-    --card-size: 31rem;
+    & > :is(img, svg, ca-pic) {
+      block-size: 22rem;
+    }
   }
-
   &[size="large"] {
-    --card-size: 47rem;
+    & > :is(img, svg, ca-pic) {
+      block-size: 28.5rem;
+    }
   }
 
-  &[image-min-size="extra-small"] {
-    --card-image-min-size: 25%;
-  }
+  &[flow|="horizontal"] {
+    flex-direction: row;
+    flex-wrap: wrap;
 
-  &[image-min-size="small"] {
-    --card-image-min-size: 33%;
-  }
-
-  &[image-min-size="medium"] {
-    --card-image-min-size: 50%;
-  }
-
-  &[image-min-size="large"] {
-    --card-image-min-size: 66%;
-  }
-
-  &[image-min-size="extra-large"] {
-    --card-image-min-size: 75%;
-  }
-
-  &[image-max-size="extra-small"] {
-    --card-image-max-size: 25%;
-  }
-
-  &[image-max-size="small"] {
-    --card-image-max-size: 33%;
-  }
-
-  &[image-max-size="medium"] {
-    --card-image-max-size: 50%;
-  }
-
-  &[image-max-size="large"] {
-    --card-image-max-size: 66%;
-  }
-
-  &[image-max-size="extra-large"] {
-    --card-image-max-size: 75%;
-  }
-
-  /* Switch up the grid when direction is set to horizontal. */
-  &[direction="horizontal"] {
-    &:has(img:first-child, svg:first-child, ca-visual:first-child) {
-      grid-template-rows: auto;
-      grid-template-columns: minmax(
-          var(--card-image-min-size),
-          var(--card-image-max-size)
-        ) auto;
+    & > * {
+      flex: 1 2 auto;
     }
 
-    &:has(img:last-child, svg:last-child, ca-visual:last-child) {
-      grid-template-rows: auto;
-      grid-template-columns: auto minmax(
-          var(--card-image-min-size),
-          var(--card-image-max-size)
-        );
+    & > :is(img, svg, ca-pic) {
+      flex: 2 1 auto;
     }
+
+    &[size="small"] {
+      & > :is(img, svg, ca-pic) {
+        inline-size: 9rem;
+      }
+    }
+    &[size="medium"] {
+      & > :is(img, svg, ca-pic) {
+        inline-size: 15.5rem;
+      }
+    }
+    &[size="large"] {
+      & > :is(img, svg, ca-pic) {
+        inline-size: 22rem;
+      }
+    }
+  }
+
+  /* Used as flow="horizontal-reverse" */
+  &[flow*="reverse"] {
+    flex-wrap: wrap-reverse;
   }
 }
 
-@container main (width > 50rem) {
-  ca-card[direction="large:horizontal"] {
-    &:has(img:first-child, svg:first-child, ca-visual:first-child) {
-      grid-template-rows: auto;
-      grid-template-columns: minmax(
-          var(--card-image-min-size),
-          var(--card-image-max-size)
-        ) auto;
-    }
+/* Defaults. */
+:where(ca-card) {
+  block-size: 100%;
+  inline-size: 100%;
 
-    &:has(img:last-child, svg:last-child, ca-visual:last-child) {
-      grid-template-rows: auto;
-      grid-template-columns: auto minmax(
-          var(--card-image-min-size),
-          var(--card-image-max-size)
-        );
-    }
+  & > :where(img) {
+    inline-size: 100%;
+    max-block-size: 22rem;
+    object-fit: cover;
+  }
+
+  & > :where([flow|="horizontal"] > :where(img, svg, ca-pic)) {
+    inline-size: max(20vw, 100%);
   }
 }
 
-/* Animations for desktop. */
+/* Animations. */
 @media screen and (prefers-reduced-motion: no-preference) {
   ca-card {
     transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
   }
-}
-
-ca-visual {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-
-li > ca-card {
-  block-size: 100%;
-  inline-size: 100%;
 }

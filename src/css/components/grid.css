@@ -2,7 +2,7 @@ ca-grid,
 .grid {
   /* End-user can override any of these vars. */
   /* Consider adding sm/md/lg shortcut attributes. */
-  --min-cell-inline-size: 32ch;
+  --min-cell-inline-size: 22.5rem;
   --min-columns: 1;
   --max-columns: 6;
   --col-gap: 1rem;

@@ -70,7 +70,10 @@ export default async function (eleventyConfig) {
         const $template = $(el).find("template").clone();
 
         if ($template.length > 0) {
-          const templateHtml = htmlPrettify($template.html());
+          const templateHtml = htmlPrettify($template.html()).replaceAll(
+            '=""',
+            "",
+          );
           const highlightedCode = hljs.highlight(templateHtml, {
             language: "html",
           }).value;
