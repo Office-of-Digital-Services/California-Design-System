@@ -4,21 +4,17 @@ ca-layout > main {
 }
 
 :where(ca-layout > main) {
-  padding-block-end: 5rem;
+  padding-block: 2rem;
 }
 
-:where(ca-layout > main > *:first-child) {
-  margin-block-start: 5rem;
-}
-
-/* Skyline, small desktop */
+/* Small desktop */
 @media screen and (min-width: 1024px) {
-  :where(ca-layout[format|="top"] > main) {
-    padding-block-end: 5rem;
+  :where(ca-layout > main) {
+    padding-block: 5rem;
   }
 
-  :where(ca-layout[format|="top"] > main > *:first-child) {
-    margin-block-start: 2rem;
+  :where(ca-layout[format|="top"] > main) {
+    padding-block-start: 2rem;
   }
 
   ca-layout[format="top-lite"] > main {

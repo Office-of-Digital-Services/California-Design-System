@@ -52,7 +52,7 @@
 
 <p>Cards have no explicit size themselves. By default, they expand to their container.</p>
 
-<p>To size to a card, just add a <code>max-width</code>.</p>
+<p>To size a single card, just add a <code>max-width</code>.</p>
 
 <ca-code-demo class="outdent">
   <template>
@@ -65,108 +65,6 @@
     </ca-card>
   </template>
 </ca-code-demo>
-
-<h2>Image fit</h2>
-
-<p>Images will automatically fit the card with an <code>object-fit</code> of <code>cover</code>. This can be altered by
-  applying a utility class to the image.</p>
-
-<ca-code-demo class="outdent">
-  <template>
-    <ca-card>
-      <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower"
-        class="fit-fill" />
-      <article>
-        <h3><a href="#">Using fit</a></h3>
-        <p>Let's stretch out this image with the <code>fit-fill</code> class. Why not?</p>
-      </article>
-    </ca-card>
-  </template>
-</ca-code-demo>
-
-<p>Here's a list of available utility classes.</p>
-
-<table style="margin-bottom: 2rem;">
-  <thead>
-    <tr>
-      <th scope="col">Class</th>
-      <th scope="col">Effect</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"><code>fit-cover</code></th>
-      <td>Default. Instructs the image to fill all available space, without breaking aspect ratio. Some content may be
-        hidden
-        along the edges.</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>fit-contain</code></th>
-      <td>Instructs the image to expand, but without breaking aspect ratio or hiding anything. This may result in some
-        margin around the image.</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>fit-fill</code></th>
-      <td>Instructs the image to fill all available space by stretching itself, breaking aspect ratio.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2>Image padding</h2>
-
-<p>Padding can be added around the image if desired. Use utility classes.
-</p>
-
-<ca-code-demo class="outdent">
-  <template>
-    <ca-card class="padding-2">
-      <img class="rounded" src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg"
-        alt="California poppy flower" />
-      <article class="padding-y-start-3 padding-y-end-0 padding-x-1">
-        <h3><a href="#">Using padding</a></h3>
-        <p>Add CSS or utility classes to alter the padding.</p>
-      </article>
-    </ca-card>
-  </template>
-</ca-code-demo>
-
-<p>The card is a base. It's flexible. Add your own CSS or utility classes to make it yours.</p>
-
-<h2>With interactive effects</h2>
-
-<p>The <code>interactive</code> attribute can set visual hover effects on the card.</p>
-
-<p>By default, this will raise the whole card when a link or button is
-  hovered.
-</p>
-
-<ca-code-demo class="outdent">
-  <template>
-    <ca-card interactive>
-      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-      <div>
-        <h3><a href="#">Interactive hover on the links</a></h3>
-        <p>When hovering a link, the whole card will rise.</p>
-      </div>
-    </ca-card>
-  </template>
-</ca-code-demo>
-
-<p>With <code>interactive="full"</code>, we can make the whole card clickable.</p>
-
-<ca-code-demo class="outdent">
-  <template>
-    <ca-card interactive="full">
-      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-      <div>
-        <h3><a href="#">Fully clickable card</a></h3>
-        <p>Through the magic of CSS, the whole card is now clickable.</p>
-      </div>
-    </ca-card>
-  </template>
-</ca-code-demo>
-
-
 
 
 <h2>With grid</h2>
@@ -303,6 +201,138 @@
 </ca-code-demo>
 
 
+
+
+<h2>Image fit</h2>
+
+<p>Images will automatically fit the card with an <code>object-fit</code> of <code>cover</code>. This can be altered by
+  applying a utility class to the image.</p>
+
+<ca-code-demo class="outdent">
+  <template>
+    <ca-card>
+      <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower"
+        class="fit-fill" />
+      <article>
+        <h3><a href="#">Using fit</a></h3>
+        <p>Let's stretch out this image with the <code>fit-fill</code> class. Why not?</p>
+      </article>
+    </ca-card>
+  </template>
+</ca-code-demo>
+
+<p>Here's a list of available utility classes.</p>
+
+<table style="margin-bottom: 2rem;">
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><code>fit-cover</code></th>
+      <td>Default. Instructs the image to fill all available space, without breaking aspect ratio. Some content may be
+        hidden
+        along the edges.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>fit-contain</code></th>
+      <td>Instructs the image to expand, but without breaking aspect ratio or hiding anything. This may result in some
+        margin around the image.</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>fit-fill</code></th>
+      <td>Instructs the image to fill all available space by stretching itself, breaking aspect ratio.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Image padding</h2>
+
+<p>Padding can be added around the image if desired. Use utility classes.
+</p>
+
+<ca-code-demo class="outdent">
+  <template>
+    <ca-card class="padding-2">
+      <img class="rounded" src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg"
+        alt="California poppy flower" />
+      <article class="padding-y-start-3 padding-y-end-0 padding-x-1">
+        <h3><a href="#">Using padding</a></h3>
+        <p>Add CSS or utility classes to alter the padding.</p>
+      </article>
+    </ca-card>
+  </template>
+</ca-code-demo>
+
+<p>The card is a base. It's flexible. Add your own CSS or utility classes to make it yours.</p>
+
+<h2>With interactive effects</h2>
+
+<p>The <code>interactive</code> attribute can set visual hover effects on the card.</p>
+
+<p>By default, this will raise the whole card when a link or button is
+  hovered.
+</p>
+
+<ca-code-demo class="outdent">
+  <template>
+    <ca-card interactive>
+      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+      <div>
+        <h3><a href="#">Interactive hover on the links</a></h3>
+        <p>When hovering a link, the whole card will rise.</p>
+      </div>
+    </ca-card>
+  </template>
+</ca-code-demo>
+
+<p>With <code>interactive="full"</code>, we can make the whole card clickable.</p>
+
+<ca-code-demo class="outdent">
+  <template>
+    <ca-card interactive="full">
+      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+      <div>
+        <h3><a href="#">Fully clickable card</a></h3>
+        <p>Through the magic of CSS, the whole card is now clickable.</p>
+      </div>
+    </ca-card>
+  </template>
+</ca-code-demo>
+
+
+<h2>With shadow</h2>
+
+<p>The <code>shadow</code> attribute adds depth.</p>
+
+<ca-code-demo class="outdent">
+  <template>
+    <ca-card shadow>
+      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+      <div>
+        <h3><a href="#">The shadow card</a></h3>
+        <p>Catch some shade.</p>
+      </div>
+    </ca-card>
+  </template>
+</ca-code-demo>
+
+<p>It's even better when used alongside <code>interactive</code>.</p>
+
+<ca-code-demo class="outdent">
+  <template>
+    <ca-card interactive="full" shadow>
+      <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+      <div>
+        <h3><a href="#">The interactive shadow card</a></h3>
+        <p>Catch some (raised) shade.</p>
+      </div>
+    </ca-card>
+  </template>
+</ca-code-demo>
 
 
 

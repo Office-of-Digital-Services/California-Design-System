@@ -60,7 +60,7 @@ hr {
   border: none;
   border-block-start: .125rem solid var(--primary-accent);
   height: .125rem;
-  margin: 1.5rem 0;
+  margin-block: 1.5rem;
   line-height: 1rem;
 }
 

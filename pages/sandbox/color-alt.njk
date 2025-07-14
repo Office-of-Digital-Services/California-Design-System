@@ -1,0 +1,701 @@
+<style>
+  :root {
+    /* Coastal */
+    --coastal-7-dark: oklch(10% 0.019 239.46);
+    --coastal-7: oklch(14% 0.028 238.38);
+    --coastal-7-light: oklch(19% 0.04 238.03);
+    --coastal-6-dark: oklch(22% 0.048 238.02);
+    --coastal-6: oklch(26% 0.062 242.68);
+    --coastal-6-light: oklch(30% 0.073 244.16);
+    --coastal-5-dark: oklch(34% 0.084 244.16);
+    --coastal-5: oklch(38% 0.093 244.16);
+    --coastal-5-light: oklch(42% 0.103 244.16);
+    --coastal-4-dark: oklch(46% 0.113 244.16);
+    --coastal-4: oklch(50% 0.122 244.16);
+    --coastal-4-light: oklch(54% 0.132 244.16);
+    --coastal-3-dark: oklch(69% 0.145 244.16);
+    --coastal-3: oklch(73% 0.125 244.16);
+    --coastal-3-light: oklch(77% 0.104 244.16);
+    --coastal-2-dark: oklch(81% 0.082 244.16);
+    --coastal-2: oklch(85% 0.062 244.16);
+    --coastal-2-light: oklch(89% 0.042 244.16);
+    --coastal-1-dark: oklch(94% 0.02 244.16);
+    --coastal-1: oklch(98% 0.005 244.16);
+    --coastal-1-light: oklch(100% 0 137.33);
+
+    /* Desert */
+    --desert-7-dark: oklch(10% 0.014 82.17);
+    --desert-7: oklch(14% 0.02 81.85);
+    --desert-7-light: oklch(19% 0.029 82.13);
+    --desert-6-dark: oklch(22% 0.034 82.12);
+    --desert-6: oklch(26% 0.041 82.05);
+    --desert-6-light: oklch(30% 0.048 80.73);
+    --desert-5-dark: oklch(34% 0.054 80.73);
+    --desert-5: oklch(38% 0.06 80.73);
+    --desert-5-light: oklch(42% 0.067 80.73);
+    --desert-4-dark: oklch(46% 0.073 80.73);
+    --desert-4: oklch(50% 0.079 80.73);
+    --desert-4-light: oklch(54% 0.086 80.73);
+    --desert-3-dark: oklch(69% 0.11 80.73);
+    --desert-3: oklch(73% 0.116 80.73);
+    --desert-3-light: oklch(77% 0.122 80.73);
+    --desert-2-dark: oklch(81% 0.124 80.73);
+    --desert-2: oklch(85% 0.113 80.73);
+    --desert-2-light: oklch(89% 0.078 80.73);
+    --desert-1-dark: oklch(94% 0.037 80.73);
+    --desert-1: oklch(98% 0.01 80.73);
+    --desert-1-light: oklch(100% 0 137.33);
+
+    /* Mountain */
+    --mountain-7-dark: oklch(10% 0.007 228.85);
+    --mountain-7: oklch(14% 0.01 228.7);
+    --mountain-7-light: oklch(19% 0.014 228.65);
+    --mountain-6-dark: oklch(22% 0.017 228.64);
+    --mountain-6: oklch(26% 0.02 229.07);
+    --mountain-6-light: oklch(30% 0.023 229.4);
+    --mountain-5-dark: oklch(34% 0.026 229.4);
+    --mountain-5: oklch(38% 0.029 229.4);
+    --mountain-5-light: oklch(42% 0.033 229.4);
+    --mountain-4-dark: oklch(46% 0.035 229.4);
+    --mountain-4: oklch(50% 0.039 229.4);
+    --mountain-4-light: oklch(54% 0.042 229.4);
+    --mountain-3-dark: oklch(69% 0.053 229.4);
+    --mountain-3: oklch(73% 0.056 229.4);
+    --mountain-3-light: oklch(77% 0.047 229.4);
+    --mountain-2-dark: oklch(81% 0.037 229.4);
+    --mountain-2: oklch(85% 0.028 229.4);
+    --mountain-2-light: oklch(89% 0.019 229.4);
+    --mountain-1-dark: oklch(94% 0.009 229.4);
+    --mountain-1: oklch(98% 0.003 229.4);
+    --mountain-1-light: oklch(100% 0 137.33);
+
+    /* Valley */
+    --valley-7-dark: oklch(10% 0.011 208.33);
+    --valley-7: oklch(14% 0.016 208.31);
+    --valley-7-light: oklch(19% 0.023 208.31);
+    --valley-6-dark: oklch(22% 0.027 208.31);
+    --valley-6: oklch(26% 0.033 208.31);
+    --valley-6-light: oklch(30% 0.037 208.34);
+    --valley-5-dark: oklch(34% 0.042 208.34);
+    --valley-5: oklch(38% 0.047 208.34);
+    --valley-5-light: oklch(42% 0.052 208.34);
+    --valley-4-dark: oklch(46% 0.058 208.34);
+    --valley-4: oklch(50% 0.062 208.34);
+    --valley-4-light: oklch(54% 0.067 208.34);
+    --valley-3-dark: oklch(69% 0.086 208.34);
+    --valley-3: oklch(73% 0.091 208.34);
+    --valley-3-light: oklch(77% 0.096 208.34);
+    --valley-2-dark: oklch(81% 0.097 208.34);
+    --valley-2: oklch(85% 0.078 208.34);
+    --valley-2-light: oklch(89% 0.054 208.34);
+    --valley-1-dark: oklch(94% 0.026 208.34);
+    --valley-1: oklch(98% 0.007 208.34);
+    --valley-1-light: oklch(100% 0 137.33);
+
+    /* Danger */
+    --danger-7-dark: oklch(10% 0.029 33.98);
+    --danger-7: oklch(14% 0.049 26.26);
+    --danger-7-light: oklch(19% 0.07 25.52);
+    --danger-6-dark: oklch(22% 0.084 27.33);
+    --danger-6: oklch(26% 0.099 29.8);
+    --danger-6-light: oklch(30% 0.113 29.98);
+    --danger-5-dark: oklch(34% 0.128 29.98);
+    --danger-5: oklch(38% 0.143 29.98);
+    --danger-5-light: oklch(42% 0.158 29.98);
+    --danger-4-dark: oklch(46% 0.174 29.98);
+    --danger-4: oklch(50% 0.189 29.98);
+    --danger-4-light: oklch(54% 0.203 29.98);
+    --danger-3-dark: oklch(69% 0.213 29.98);
+    --danger-3: oklch(73% 0.179 29.98);
+    --danger-3-light: oklch(77% 0.146 29.98);
+    --danger-2-dark: oklch(81% 0.112 29.98);
+    --danger-2: oklch(85% 0.082 29.98);
+    --danger-2-light: oklch(89% 0.056 29.98);
+    --danger-1-dark: oklch(94% 0.026 29.98);
+    --danger-1: oklch(98% 0.007 29.98);
+    --danger-1-light: oklch(100% 0 137.33);
+
+    /* Ongoing */
+    --ongoing-7-dark: oklch(10% 0.028 36.43);
+    --ongoing-7: oklch(14% 0.042 36.43);
+    --ongoing-7-light: oklch(19% 0.06 36.43);
+    --ongoing-6-dark: oklch(22% 0.071 36.43);
+    --ongoing-6: oklch(26% 0.085 36.43);
+    --ongoing-6-light: oklch(30% 0.098 36.43);
+    --ongoing-5-dark: oklch(34% 0.111 36.43);
+    --ongoing-5: oklch(38% 0.124 36.43);
+    --ongoing-5-light: oklch(42% 0.138 36.43);
+    --ongoing-4-dark: oklch(46% 0.15 36.43);
+    --ongoing-4: oklch(50% 0.164 36.43);
+    --ongoing-4-light: oklch(54% 0.177 36.43);
+    --ongoing-3-dark: oklch(69% 0.221 36.43);
+    --ongoing-3: oklch(73% 0.185 36.43);
+    --ongoing-3-light: oklch(77% 0.151 36.43);
+    --ongoing-2-dark: oklch(81% 0.116 36.43);
+    --ongoing-2: oklch(85% 0.086 36.43);
+    --ongoing-2-light: oklch(89% 0.058 36.43);
+    --ongoing-1-dark: oklch(94% 0.028 36.43);
+    --ongoing-1: oklch(98% 0.007 36.43);
+    --ongoing-1-light: oklch(100% 0 137.33);
+
+    /* Warning */
+    --warning-7-dark: oklch(10% 0.018 71.92);
+    --warning-7: oklch(14% 0.027 71.92);
+    --warning-7-light: oklch(19% 0.038 71.92);
+    --warning-6-dark: oklch(22% 0.045 71.92);
+    --warning-6: oklch(26% 0.054 71.92);
+    --warning-6-light: oklch(30% 0.063 71.92);
+    --warning-5-dark: oklch(34% 0.071 71.92);
+    --warning-5: oklch(38% 0.08 71.92);
+    --warning-5-light: oklch(42% 0.088 71.92);
+    --warning-4-dark: oklch(46% 0.096 71.92);
+    --warning-4: oklch(50% 0.105 71.92);
+    --warning-4-light: oklch(54% 0.113 71.92);
+    --warning-3-dark: oklch(69% 0.145 71.92);
+    --warning-3: oklch(73% 0.153 71.92);
+    --warning-3-light: oklch(77% 0.161 71.92);
+    --warning-2-dark: oklch(81% 0.163 71.92);
+    --warning-2: oklch(85% 0.121 71.92);
+    --warning-2-light: oklch(89% 0.082 71.92);
+    --warning-1-dark: oklch(94% 0.04 71.92);
+    --warning-1: oklch(98% 0.011 71.92);
+    --warning-1-light: oklch(100% 0 137.33);
+
+    /* Success */
+    --success-7-dark: oklch(10% 0.02 157.4);
+    --success-7: oklch(14% 0.03 157.4);
+    --success-7-light: oklch(19% 0.043 157.4);
+    --success-6-dark: oklch(22% 0.051 157.4);
+    --success-6: oklch(26% 0.061 157.4);
+    --success-6-light: oklch(30% 0.07 157.4);
+    --success-5-dark: oklch(34% 0.08 157.4);
+    --success-5: oklch(38% 0.09 157.4);
+    --success-5-light: oklch(42% 0.099 157.4);
+    --success-4-dark: oklch(46% 0.108 157.4);
+    --success-4: oklch(50% 0.118 157.4);
+    --success-4-light: oklch(54% 0.127 157.4);
+    --success-3-dark: oklch(69% 0.162 157.4);
+    --success-3: oklch(73% 0.172 157.4);
+    --success-3-light: oklch(77% 0.18 157.4);
+    --success-2-dark: oklch(81% 0.183 157.4);
+    --success-2: oklch(85% 0.186 157.4);
+    --success-2-light: oklch(89% 0.135 157.4);
+    --success-1-dark: oklch(94% 0.061 157.4);
+    --success-1: oklch(98% 0.016 157.4);
+    --success-1-light: oklch(100% 0 137.33);
+
+    /* Info */
+    --info-7-dark: oklch(10% 0.038 260.44);
+    --info-7: oklch(14% 0.057 260.44);
+    --info-7-light: oklch(19% 0.081 260.44);
+    --info-6-dark: oklch(22% 0.096 260.44);
+    --info-6: oklch(26% 0.115 260.44);
+    --info-6-light: oklch(30% 0.133 260.44);
+    --info-5-dark: oklch(34% 0.151 260.44);
+    --info-5: oklch(38% 0.169 260.44);
+    --info-5-light: oklch(42% 0.186 260.44);
+    --info-4-dark: oklch(46% 0.204 260.44);
+    --info-4: oklch(50% 0.222 260.44);
+    --info-4-light: oklch(54% 0.232 260.44);
+    --info-3-dark: oklch(69% 0.149 260.44);
+    --info-3: oklch(73% 0.128 260.44);
+    --info-3-light: oklch(77% 0.107 260.44);
+    --info-2-dark: oklch(81% 0.084 260.44);
+    --info-2: oklch(85% 0.064 260.44);
+    --info-2-light: oklch(89% 0.044 260.44);
+    --info-1-dark: oklch(94% 0.021 260.44);
+    --info-1: oklch(98% 0.006 260.44);
+    --info-1-light: oklch(100% 0 137.33);
+
+    /* Gray (cool) */
+    --gray-cool-7-dark: oklch(10% 0 137.33);
+    --gray-cool-7: oklch(14% 0 137.33);
+    --gray-cool-7-light: oklch(19% 0 137.33);
+    --gray-cool-6-dark: oklch(22% 0 137.33);
+    --gray-cool-6: oklch(26% 0 137.33);
+    --gray-cool-6-light: oklch(30% 0 137.33);
+    --gray-cool-5-dark: oklch(34% 0 137.33);
+    --gray-cool-5: oklch(38% 0 137.33);
+    --gray-cool-5-light: oklch(42% 0 137.33);
+    --gray-cool-4-dark: oklch(46% 0 137.33);
+    --gray-cool-4: oklch(50% 0 137.33);
+    --gray-cool-4-light: oklch(54% 0 137.33);
+    --gray-cool-3-dark: oklch(69% 0 137.33);
+    --gray-cool-3: oklch(73% 0 137.33);
+    --gray-cool-3-light: oklch(77% 0 137.33);
+    --gray-cool-2-dark: oklch(81% 0 137.33);
+    --gray-cool-2: oklch(85% 0 137.33);
+    --gray-cool-2-light: oklch(89% 0 137.33);
+    --gray-cool-1-dark: oklch(94% 0 137.33);
+    --gray-cool-1: oklch(98% 0 137.33);
+    --gray-cool-1-light: oklch(100% 0 137.33);
+
+    /* Gray (warm) */
+    --gray-warm-7-dark: oklch(10% 0.004 83.51);
+    --gray-warm-7: oklch(14% 0.005 83.51);
+    --gray-warm-7-light: oklch(19% 0.008 83.51);
+    --gray-warm-6-dark: oklch(22% 0.009 83.51);
+    --gray-warm-6: oklch(26% 0.011 83.51);
+    --gray-warm-6-light: oklch(30% 0.013 83.51);
+    --gray-warm-5-dark: oklch(34% 0.014 83.51);
+    --gray-warm-5: oklch(38% 0.016 83.51);
+    --gray-warm-5-light: oklch(42% 0.018 83.51);
+    --gray-warm-4-dark: oklch(46% 0.02 83.51);
+    --gray-warm-4: oklch(50% 0.021 83.51);
+    --gray-warm-4-light: oklch(54% 0.023 83.51);
+    --gray-warm-3-dark: oklch(69% 0.029 83.51);
+    --gray-warm-3: oklch(73% 0.031 83.51);
+    --gray-warm-3-light: oklch(77% 0.033 83.51);
+    --gray-warm-2-dark: oklch(81% 0.033 83.51);
+    --gray-warm-2: oklch(85% 0.033 83.51);
+    --gray-warm-2-light: oklch(89% 0.022 83.51);
+    --gray-warm-1-dark: oklch(94% 0.011 83.51);
+    --gray-warm-1: oklch(98% 0.003 83.51);
+    --gray-warm-1-light: oklch(100% 0 137.33);
+  }
+
+  :root {
+    --coastal-surface-1: var(--coastal-1);
+    --coastal-surface-1-hover: var(--coastal-1-dark);
+    --coastal-surface-2: var(--coastal-2);
+    --coastal-surface-2-hover: var(--coastal-2-dark);
+    --coastal-surface-3: var(--coastal-3);
+    --coastal-surface-3-hover: var(--coastal-3-dark);
+    --coastal-cta: var(--coastal-4);
+    --coastal-cta-hover: var(--coastal-4-dark);
+    --coastal-line-3: var(--coastal-5);
+    --coastal-line-3-hover: var(--coastal-5-dark);
+    --coastal-line-2: var(--coastal-6);
+    --coastal-line-2-hover: var(--coastal-6-dark);
+    --coastal-line-1: var(--coastal-7);
+    --coastal-line-1-hover: var(--coastal-7-dark);
+
+    --desert-surface-1: var(--desert-1);
+    --desert-surface-1-hover: var(--desert-1-dark);
+    --desert-surface-2: var(--desert-2);
+    --desert-surface-2-hover: var(--desert-2-dark);
+    --desert-surface-3: var(--desert-3);
+    --desert-surface-3-hover: var(--desert-3-dark);
+    --desert-cta: var(--desert-4);
+    --desert-cta-hover: var(--desert-4-dark);
+    --desert-line-3: var(--desert-5);
+    --desert-line-3-hover: var(--desert-5-dark);
+    --desert-line-2: var(--desert-6);
+    --desert-line-2-hover: var(--desert-6-dark);
+    --desert-line-1: var(--desert-7);
+    --desert-line-1-hover: var(--desert-7-dark);
+
+    --mountain-surface-1: var(--mountain-1);
+    --mountain-surface-1-hover: var(--mountain-1-dark);
+    --mountain-surface-2: var(--mountain-2);
+    --mountain-surface-2-hover: var(--mountain-2-dark);
+    --mountain-surface-3: var(--mountain-3);
+    --mountain-surface-3-hover: var(--mountain-3-dark);
+    --mountain-cta: var(--mountain-4);
+    --mountain-cta-hover: var(--mountain-4-dark);
+    --mountain-line-3: var(--mountain-5);
+    --mountain-line-3-hover: var(--mountain-5-dark);
+    --mountain-line-2: var(--mountain-6);
+    --mountain-line-2-hover: var(--mountain-6-dark);
+    --mountain-line-1: var(--mountain-7);
+    --mountain-line-1-hover: var(--mountain-7-dark);
+
+    --valley-surface-1: var(--valley-1);
+    --valley-surface-1-hover: var(--valley-1-dark);
+    --valley-surface-2: var(--valley-2);
+    --valley-surface-2-hover: var(--valley-2-dark);
+    --valley-surface-3: var(--valley-3);
+    --valley-surface-3-hover: var(--valley-3-dark);
+    --valley-cta: var(--valley-4);
+    --valley-cta-hover: var(--valley-4-dark);
+    --valley-line-3: var(--valley-5);
+    --valley-line-3-hover: var(--valley-5-dark);
+    --valley-line-2: var(--valley-6);
+    --valley-line-2-hover: var(--valley-6-dark);
+    --valley-line-1: var(--valley-7);
+    --valley-line-1-hover: var(--valley-7-dark);
+
+    --gray-cool-surface-1: var(--gray-cool-1);
+    --gray-cool-surface-1-hover: var(--gray-cool-1-dark);
+    --gray-cool-surface-2: var(--gray-cool-2);
+    --gray-cool-surface-2-hover: var(--gray-cool-2-dark);
+    --gray-cool-surface-3: var(--gray-cool-3);
+    --gray-cool-surface-3-hover: var(--gray-cool-3-dark);
+    --gray-cool-cta: var(--gray-cool-4);
+    --gray-cool-cta-hover: var(--gray-cool-4-dark);
+    --gray-cool-line-3: var(--gray-cool-5);
+    --gray-cool-line-3-hover: var(--gray-cool-5-dark);
+    --gray-cool-line-2: var(--gray-cool-6);
+    --gray-cool-line-2-hover: var(--gray-cool-6-dark);
+    --gray-cool-line-1: var(--gray-cool-7);
+    --gray-cool-line-1-hover: var(--gray-cool-7-dark);
+
+    --gray-warm-surface-1: var(--gray-warm-1);
+    --gray-warm-surface-1-hover: var(--gray-warm-1-dark);
+    --gray-warm-surface-2: var(--gray-warm-2);
+    --gray-warm-surface-2-hover: var(--gray-warm-2-dark);
+    --gray-warm-surface-3: var(--gray-warm-3);
+    --gray-warm-surface-3-hover: var(--gray-warm-3-dark);
+    --gray-warm-cta: var(--gray-warm-4);
+    --gray-warm-cta-hover: var(--gray-warm-4-dark);
+    --gray-warm-line-3: var(--gray-warm-5);
+    --gray-warm-line-3-hover: var(--gray-warm-5-dark);
+    --gray-warm-line-2: var(--gray-warm-6);
+    --gray-warm-line-2-hover: var(--gray-warm-6-dark);
+    --gray-warm-line-1: var(--gray-warm-7);
+    --gray-warm-line-1-hover: var(--gray-warm-7-dark);
+
+    --danger-surface-1: var(--danger-1);
+    --danger-surface-1-hover: var(--danger-1-dark);
+    --danger-surface-2: var(--danger-2);
+    --danger-surface-2-hover: var(--danger-2-dark);
+    --danger-surface-3: var(--danger-3);
+    --danger-surface-3-hover: var(--danger-3-dark);
+    --danger-cta: var(--danger-4);
+    --danger-cta-hover: var(--danger-4-dark);
+    --danger-line-3: var(--danger-5);
+    --danger-line-3-hover: var(--danger-5-dark);
+    --danger-line-2: var(--danger-6);
+    --danger-line-2-hover: var(--danger-6-dark);
+    --danger-line-1: var(--danger-7);
+    --danger-line-1-hover: var(--danger-7-dark);
+
+    --ongoing-surface-1: var(--ongoing-1);
+    --ongoing-surface-1-hover: var(--ongoing-1-dark);
+    --ongoing-surface-2: var(--ongoing-2);
+    --ongoing-surface-2-hover: var(--ongoing-2-dark);
+    --ongoing-surface-3: var(--ongoing-3);
+    --ongoing-surface-3-hover: var(--ongoing-3-dark);
+    --ongoing-cta: var(--ongoing-4);
+    --ongoing-cta-hover: var(--ongoing-4-dark);
+    --ongoing-line-3: var(--ongoing-5);
+    --ongoing-line-3-hover: var(--ongoing-5-dark);
+    --ongoing-line-2: var(--ongoing-6);
+    --ongoing-line-2-hover: var(--ongoing-6-dark);
+    --ongoing-line-1: var(--ongoing-7);
+    --ongoing-line-1-hover: var(--ongoing-7-dark);
+
+    --warning-surface-1: var(--warning-1);
+    --warning-surface-1-hover: var(--warning-1-dark);
+    --warning-surface-2: var(--warning-2);
+    --warning-surface-2-hover: var(--warning-2-dark);
+    --warning-surface-3: var(--warning-3);
+    --warning-surface-3-hover: var(--warning-3-dark);
+    --warning-cta: var(--warning-4);
+    --warning-cta-hover: var(--warning-4-dark);
+    --warning-line-3: var(--warning-5);
+    --warning-line-3-hover: var(--warning-5-dark);
+    --warning-line-2: var(--warning-6);
+    --warning-line-2-hover: var(--warning-6-dark);
+    --warning-line-1: var(--warning-7);
+    --warning-line-1-hover: var(--warning-7-dark);
+
+		--success-surface-1: var(--success-1);
+		--success-surface-1-hover: var(--success-1-dark);
+		--success-surface-2: var(--success-2);
+		--success-surface-2-hover: var(--success-2-dark);
+		--success-surface-3: var(--success-3);
+		--success-surface-3-hover: var(--success-3-dark);
+		--success-cta: var(--success-4);
+		--success-cta-hover: var(--success-4-dark);
+		--success-line-3: var(--success-5);
+		--success-line-3-hover: var(--success-5-dark);
+		--success-line-2: var(--success-6);
+		--success-line-2-hover: var(--success-6-dark);
+		--success-line-1: var(--success-7);
+		--success-line-1-hover: var(--success-7-dark);
+
+		--info-surface-1: var(--info-1);
+		--info-surface-1-hover: var(--info-1-dark);
+		--info-surface-2: var(--info-2);
+		--info-surface-2-hover: var(--info-2-dark);
+		--info-surface-3: var(--info-3);
+		--info-surface-3-hover: var(--info-3-dark);
+		--info-cta: var(--info-4);
+		--info-cta-hover: var(--info-4-dark);
+		--info-line-3: var(--info-5);
+		--info-line-3-hover: var(--info-5-dark);
+		--info-line-2: var(--info-6);
+		--info-line-2-hover: var(--info-6-dark);
+		--info-line-1: var(--info-7);
+		--info-line-1-hover: var(--info-7-dark);
+	}
+
+	[data-color-scheme="dark"] {
+		--coastal-surface-1: var(--coastal-7);
+		--coastal-surface-1-hover: var(--coastal-7-light);
+		--coastal-surface-2: var(--coastal-6);
+		--coastal-surface-2-hover: var(--coastal-6-light);
+		--coastal-surface-3: var(--coastal-5);
+		--coastal-surface-3-hover: var(--coastal-5-light);
+		--coastal-cta: var(--coastal-4);
+		--coastal-cta-hover: var(--coastal-4-light);
+		--coastal-line-3: var(--coastal-3);
+		--coastal-line-3-hover: var(--coastal-3-light);
+		--coastal-line-2: var(--coastal-2);
+		--coastal-line-2-hover: var(--coastal-2-light);
+		--coastal-line-1: var(--coastal-1);
+		--coastal-line-1-hover: var(--coastal-1-light);
+
+		--desert-surface-1: var(--desert-7);
+		--desert-surface-1-hover: var(--desert-7-light);
+		--desert-surface-2: var(--desert-6);
+		--desert-surface-2-hover: var(--desert-6-light);
+		--desert-surface-3: var(--desert-5);
+		--desert-surface-3-hover: var(--desert-5-light);
+		--desert-cta: var(--desert-4);
+		--desert-cta-hover: var(--desert-4-light);
+		--desert-line-3: var(--desert-3);
+		--desert-line-3-hover: var(--desert-3-light);
+		--desert-line-2: var(--desert-2);
+		--desert-line-2-hover: var(--desert-2-light);
+		--desert-line-1: var(--desert-1);
+		--desert-line-1-hover: var(--desert-1-light);
+
+		--mountain-surface-1: var(--mountain-7);
+		--mountain-surface-1-hover: var(--mountain-7-light);
+		--mountain-surface-2: var(--mountain-6);
+		--mountain-surface-2-hover: var(--mountain-6-light);
+		--mountain-surface-3: var(--mountain-5);
+		--mountain-surface-3-hover: var(--mountain-5-light);
+		--mountain-cta: var(--mountain-4);
+		--mountain-cta-hover: var(--mountain-4-light);
+		--mountain-line-3: var(--mountain-3);
+		--mountain-line-3-hover: var(--mountain-3-light);
+		--mountain-line-2: var(--mountain-2);
+		--mountain-line-2-hover: var(--mountain-2-light);
+		--mountain-line-1: var(--mountain-1);
+		--mountain-line-1-hover: var(--mountain-1-light);
+
+		--valley-surface-1: var(--valley-7);
+		--valley-surface-1-hover: var(--valley-7-light);
+		--valley-surface-2: var(--valley-6);
+		--valley-surface-2-hover: var(--valley-6-light);
+		--valley-surface-3: var(--valley-5);
+		--valley-surface-3-hover: var(--valley-5-light);
+		--valley-cta: var(--valley-4);
+		--valley-cta-hover: var(--valley-4-light);
+		--valley-line-3: var(--valley-3);
+		--valley-line-3-hover: var(--valley-3-light);
+		--valley-line-2: var(--valley-2);
+		--valley-line-2-hover: var(--valley-2-light);
+		--valley-line-1: var(--valley-1);
+		--valley-line-1-hover: var(--valley-1-light);
+
+		--gray-cool-surface-1: var(--gray-cool-7);
+		--gray-cool-surface-1-hover: var(--gray-cool-7-light);
+		--gray-cool-surface-2: var(--gray-cool-6);
+		--gray-cool-surface-2-hover: var(--gray-cool-6-light);
+		--gray-cool-surface-3: var(--gray-cool-5);
+		--gray-cool-surface-3-hover: var(--gray-cool-5-light);
+		--gray-cool-cta: var(--gray-cool-4);
+		--gray-cool-cta-hover: var(--gray-cool-4-light);
+		--gray-cool-line-3: var(--gray-cool-3);
+		--gray-cool-line-3-hover: var(--gray-cool-3-light);
+		--gray-cool-line-2: var(--gray-cool-2);
+		--gray-cool-line-2-hover: var(--gray-cool-2-light);
+		--gray-cool-line-1: var(--gray-cool-1);
+		--gray-cool-line-1-hover: var(--gray-cool-1-light);
+
+		--gray-warm-surface-1: var(--gray-warm-7);
+		--gray-warm-surface-1-hover: var(--gray-warm-7-light);
+		--gray-warm-surface-2: var(--gray-warm-6);
+		--gray-warm-surface-2-hover: var(--gray-warm-6-light);
+		--gray-warm-surface-3: var(--gray-warm-5);
+		--gray-warm-surface-3-hover: var(--gray-warm-5-light);
+		--gray-warm-cta: var(--gray-warm-4);
+		--gray-warm-cta-hover: var(--gray-warm-4-light);
+		--gray-warm-line-3: var(--gray-warm-3);
+		--gray-warm-line-3-hover: var(--gray-warm-3-light);
+		--gray-warm-line-2: var(--gray-warm-2);
+		--gray-warm-line-2-hover: var(--gray-warm-2-light);
+		--gray-warm-line-1: var(--gray-warm-1);
+		--gray-warm-line-1-hover: var(--gray-warm-1-light);
+
+		--danger-surface-1: var(--danger-7);
+		--danger-surface-1-hover: var(--danger-7-light);
+		--danger-surface-2: var(--danger-6);
+		--danger-surface-2-hover: var(--danger-6-light);
+		--danger-surface-3: var(--danger-5);
+		--danger-surface-3-hover: var(--danger-5-light);
+		--danger-cta: var(--danger-4);
+		--danger-cta-hover: var(--danger-4-light);
+		--danger-line-3: var(--danger-3);
+		--danger-line-3-hover: var(--danger-3-light);
+		--danger-line-2: var(--danger-2);
+		--danger-line-2-hover: var(--danger-2-light);
+		--danger-line-1: var(--danger-1);
+		--danger-line-1-hover: var(--danger-1-light);
+
+		--ongoing-surface-1: var(--ongoing-7);
+		--ongoing-surface-1-hover: var(--ongoing-7-light);
+		--ongoing-surface-2: var(--ongoing-6);
+		--ongoing-surface-2-hover: var(--ongoing-6-light);
+		--ongoing-surface-3: var(--ongoing-5);
+		--ongoing-surface-3-hover: var(--ongoing-5-light);
+		--ongoing-cta: var(--ongoing-4);
+		--ongoing-cta-hover: var(--ongoing-4-light);
+		--ongoing-line-3: var(--ongoing-3);
+		--ongoing-line-3-hover: var(--ongoing-3-light);
+		--ongoing-line-2: var(--ongoing-2);
+		--ongoing-line-2-hover: var(--ongoing-2-light);
+		--ongoing-line-1: var(--ongoing-1);
+		--ongoing-line-1-hover: var(--ongoing-1-light);
+
+		--warning-surface-1: var(--warning-7);
+		--warning-surface-1-hover: var(--warning-7-light);
+		--warning-surface-2: var(--warning-6);
+		--warning-surface-2-hover: var(--warning-6-light);
+		--warning-surface-3: var(--warning-5);
+		--warning-surface-3-hover: var(--warning-5-light);
+		--warning-cta: var(--warning-4);
+		--warning-cta-hover: var(--warning-4-light);
+		--warning-line-3: var(--warning-3);
+		--warning-line-3-hover: var(--warning-3-light);
+		--warning-line-2: var(--warning-2);
+		--warning-line-2-hover: var(--warning-2-light);
+		--warning-line-1: var(--warning-1);
+		--warning-line-1-hover: var(--warning-1-light);
+
+		--success-surface-1: var(--success-7);
+		--success-surface-1-hover: var(--success-7-light);
+		--success-surface-2: var(--success-6);
+		--success-surface-2-hover: var(--success-6-light);
+		--success-surface-3: var(--success-5);
+		--success-surface-3-hover: var(--success-5-light);
+		--success-cta: var(--success-4);
+		--success-cta-hover: var(--success-4-light);
+		--success-line-3: var(--success-3);
+		--success-line-3-hover: var(--success-3-light);
+		--success-line-2: var(--success-2);
+		--success-line-2-hover: var(--success-2-light);
+		--success-line-1: var(--success-1);
+		--success-line-1-hover: var(--success-1-light);
+
+		--info-surface-1: var(--info-7);
+		--info-surface-1-hover: var(--info-7-light);
+		--info-surface-2: var(--info-6);
+		--info-surface-2-hover: var(--info-6-light);
+		--info-surface-3: var(--info-5);
+		--info-surface-3-hover: var(--info-5-light);
+		--info-cta: var(--info-4);
+		--info-cta-hover: var(--info-4-light);
+		--info-line-3: var(--info-3);
+		--info-line-3-hover: var(--info-3-light);
+		--info-line-2: var(--info-2);
+		--info-line-2-hover: var(--info-2-light);
+		--info-line-1: var(--info-1);
+		--info-line-1-hover: var(--info-1-light);
+	}
+</style>
+
+<h1>Experimental palette</h1>
+
+<p>Not married to the specific colors here. I'm more interested in exploring systems approaches to color.</p>
+
+<p>This experiment limits the number of colors in the palette to only 7. Light and dark versions of each color are provided.</p>
+
+<p>The goal here is to limit the number of colors a designer needs to think about, while still providing flexibility.</p>
+
+<p>In common usage, these colors are divided into:<p> 
+
+<ul>
+	<li>3 surface colors (or backgrounds)</li> 
+	<li>3 line colors (for text and icons)</li>
+	<li>1 call-to-action color</p>
+</ul>
+
+<p>Finally, while I didn't do any fine tuning on the colors, I did generate all of the palettes on the same lightness curve using OKLCH. It's possible to use math to simplify this palette (by dynamically adding alpha or lightness in code). But I figured I'd just do the whole thing to get nicer hue/chroma for each tint/shade.</p>
+
+{% set colors = [ "coastal", "desert", "mountain", "valley", "gray-cool", "gray-warm", "danger", "ongoing", "warning",
+"success", "info" ] %}
+
+{% for color in colors %}
+	<h2>{{ color }}</h2>
+	<svg width="1050" height="370">
+		<style>
+			text { font-size: .75rem; }
+		</style>
+		<rect width="450" height="50" y="0" x="0" fill="lightgrey" />
+		<text text-anchor="middle" dominant-baseline="middle" x="225" y="25" fill="dimgray">Light tints</text>
+		<rect width="150" height="50" y="0" x="450" fill="dimgray" />
+		<text text-anchor="middle" dominant-baseline="middle" x="525" y="25" fill="white">CTA</text>
+		<rect width="450" height="50" y="0" x="600" fill="black" />
+		<text text-anchor="middle" dominant-baseline="middle" x="825" y="25" fill="silver">Dark shades</text>
+		{% for n in range(1,8) %}
+			{% set textZ = 1 if n > 3 else 7 %}
+			<rect width="150" height="30" y="60" x="{{150*(n-1)}}" fill="var(--{{color}}-{{n}}-dark)" />
+			<text text-anchor="start" dominant-baseline="middle" x="{{150*(n-1) + 10}}" y="75" fill="var(--{{color}}-{{textZ}})">{{color}}-{{n}}-dark</text>
+		{% endfor %}
+		{% for n in range(1,8) %}
+			{% set textZ = 1 if n > 3 else 7 %}
+			<rect width="150" height="70" y="90" x="{{150*(n-1)}}" fill="var(--{{color}}-{{n}})" />
+			<text text-anchor="start" dominant-baseline="middle" x="{{150*(n-1) + 10}}" y="125" fill="var(--{{color}}-{{textZ}})">{{color}}-{{n}}</text>
+		{% endfor %}
+		{% for n in range(1,8) %}
+			{% set textZ = 1 if n > 3 else 7 %}
+			<rect width="150" height="30" y="160" x="{{150*(n-1)}}" fill="var(--{{color}}-{{n}}-light)" />
+			<text text-anchor="start" dominant-baseline="middle" x="{{150*(n-1) + 10}}" y="175" fill="var(--{{color}}-{{textZ}})">{{color}}-{{n}}-light</text>
+		{% endfor %}
+		<rect width="1050" height="50" y="200" x="0" fill="dimgray" />
+		<text text-anchor="middle" dominant-baseline="middle" x="525" y="225" fill="white">Light/dark example usage</text>
+		{% for n in range(1,4) %}
+			<style>
+				#{{color}}-surface-{{n}} {
+					& rect {
+						cursor: pointer;
+						fill: var(--{{color}}-surface-{{n}});
+					}
+
+					&:hover rect {
+						fill: var(--{{color}}-surface-{{n}}-hover);
+					}
+				}
+			</style>
+			<g id="{{color}}-surface-{{n}}">
+				<rect width="150" height="50" y="260" x="{{150*(n-1)}}" />
+				<text text-anchor="start" dominant-baseline="middle" x="{{150*(n-1) + 10}}" y="285" fill="var(--{{color}}-line-1)">{{color}}-surface-{{n}}</text>
+			</g>
+		{% endfor %}
+		<style>
+			#{{color}}-cta {
+				& rect {
+					cursor: pointer;
+					fill: var(--{{color}}-cta);
+				}
+
+				&:hover rect {
+					fill: var(--{{color}}-cta-hover);
+				}
+			}
+		</style>
+		<g id="{{color}}-cta">
+			<rect width="150" height="50" y="260" x="450" />
+			<text text-anchor="start" dominant-baseline="middle" x="460" y="285" fill="var(--{{color}}-1)">{{color}}-cta</text>
+		</g>
+		{% for n in range(1,4) | reverse %}
+			<style>
+				#{{color}}-line-{{n}} {
+					& rect {
+						fill: var(--{{color}}-surface-1);
+					}
+
+					& text {
+						cursor: pointer;
+						fill: var(--{{color}}-line-{{n}});
+						font-weight: 600;
+						font-size: .85rem;
+					}
+
+					&:hover text {
+						fill: var(--{{color}}-line-{{n}}-hover);
+					}
+				}
+			</style>
+			<g id="{{color}}-line-{{n}}">
+				<rect width="150" height="50" y="260" x="{{150*(7-n)}}" />
+				<text text-anchor="start" dominant-baseline="middle" x="{{150*(7-n) + 10}}" y="285">{{color}}-line-{{n}}</text>
+			</g>
+		{% endfor %}
+	</svg>
+{% endfor %}

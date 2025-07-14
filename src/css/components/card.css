@@ -33,7 +33,6 @@ ca-card {
 
     &:has(a:hover, button:hover) {
       transform: scale(1.01);
-      box-shadow: var(--primary-shadow-2);
     }
   }
 

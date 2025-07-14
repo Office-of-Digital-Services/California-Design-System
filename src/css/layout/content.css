@@ -37,7 +37,7 @@ ca-layout[format|="top"] {
 :where(
     ca-layout
       > :is(main, footer)
-      > :is(figure, table, img, picture, video, canvas, code, form)
+      > :is(figure, table, img, picture, video, canvas, code, form, hr)
   ) {
   max-width: var(--content-width-large);
 }
