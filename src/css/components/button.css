@@ -31,6 +31,10 @@
   align-items: center;
   justify-content: center;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   &:where(:hover) {
     background: var(--button-background-hover);
   }

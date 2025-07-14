@@ -9,19 +9,19 @@ ca-box {
 
 ca-box,
 ca-box[size="medium"] {
-  --max-width: 65rem; /* Default */
+  --max-width: var(--content-width-medium); /* Default */
 }
 
 ca-box[size="small"] {
-  --max-width: 45rem;
+  --max-width: var(--content-width-small);
 }
 
 ca-box[size="large"] {
-  --max-width: 85rem;
+  --max-width: var(--content-width-large);
 }
 
 ca-box[size="full"] {
-  --max-width: unset;
+  --max-width: var(--content-width-full);
 }
 
 ca-box[columns] {

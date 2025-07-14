@@ -106,7 +106,7 @@ ca-layout > :is(header, .site-header) {
 
     & > [slot="menu"] {
       border-block-start: 0.0625rem solid var(--gray-40);
-      padding-inline-start: calc(var(--indent-size) - 3rem);
+      padding-inline-start: calc(var(--indent) - 3rem);
     }
   }
 }
