@@ -19,6 +19,7 @@ ca-pic[icon] {
 ca-pic[icon]::after {
   content: "";
   inline-size: 100%;
+  block-size: 100%;
   display: inline-block;
   background-color: currentColor;
   mask-position: center center;
