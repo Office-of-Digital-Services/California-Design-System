@@ -1,0 +1,46 @@
+* > ca-badge {
+  position: relative;
+}
+
+ca-badge {
+  --badge-background-color: var(--blue-70);
+  --badge-text-color: var(--blue-static-10);
+  --badge-border-color: var(--blue-10);
+
+  position: absolute;
+  margin: 0;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  min-inline-size: 1rem;
+  min-block-size: 1rem;
+  display: block;
+  text-align: center;
+  background: var(--badge-background-color);
+  border: 0.0625rem solid var(--badge-border-color);
+  color: var(--badge-text-color);
+  font-size: .8rem;
+  line-height: 1;
+  font-weight: 600;
+  padding: .3rem .5rem;
+  border-radius: var(--border-radius);
+  transform: translate(35%, -35%);
+
+  &:empty {
+    padding: 0;
+    border: none;
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
+
+  &[color="red"] {
+    --badge-background-color: var(--red-70);
+    --badge-text-color: var(--red-static-10);
+    --badge-border-color: var(--red-10);
+  }
+
+  &[color="green"] {
+    --badge-background-color: var(--green-80);
+    --badge-text-color: var(--green-static-10);
+    --badge-border-color: var(--green-10);
+  }
+}
