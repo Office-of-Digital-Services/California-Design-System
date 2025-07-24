@@ -1,0 +1,65 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+:where(table) {
+  max-inline-size: var(--content-width-large);
+}
+
+caption {
+  font-size: var(--text-size-0);
+  caption-side: bottom;
+  padding: 1rem;
+  font-style: italic;
+  text-align: start;
+}
+
+th,
+td {
+  font-size: var(--text-size-1);
+  padding: .5rem 1rem;
+  text-align: start;
+}
+
+th {
+  font-weight: 600;
+}
+
+td {
+  font-weight: 400;
+}
+
+table.inner-border {
+  &:has(tfoot > tr) > tbody > tr,
+  &:not(:has(tfoot > tr)) tr:not(:last-child) {
+    & > :is(th, td) {
+      border-block-end: 0.0625rem solid var(--gray-30);
+    }
+  }
+
+  & thead > tr > :is(th, td) {
+    border-block-end: 0.0625rem solid var(--gray-50);
+  }
+}
+
+table.outer-border {
+  border: 0.0625rem solid var(--gray-30);
+  border-radius: var(--border-radius);
+}
+
+table.stripes {
+  & tr:nth-child(even) {
+    background-color: var(--gray-background-30);
+  }
+
+  & > thead > tr {
+    background-color: var(--gray-background-50);
+  }
+}
+
+table.hover-rows {
+  & :not(thead) tr:hover {
+    background-color: var(--primary-background-30);
+  }
+}

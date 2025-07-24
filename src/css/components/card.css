@@ -18,7 +18,7 @@ ca-card {
   }
 
   & > :is(img, svg, ca-pic) {
-    place-self: center;
+    place-self: start center;
   }
 
   & a {

@@ -15,11 +15,11 @@ ca-layout > :is(header, .site-header) {
   column-gap: 1rem;
 
   /* Required when [slot='menu'] is present. */
-  & > ca-burger {
+  & > :is(ca-burger, [slot="burger"]) {
     grid-area: burger;
   }
 
-  & ca-org {
+  & :is(ca-org, [slot="org"]) {
     grid-area: org;
   }
 

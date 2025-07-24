@@ -103,6 +103,10 @@ ca-grid,
   }
 }
 
+:where(ca-grid, .grid) {
+  max-width: var(--content-width-full);
+}
+
 /* 
  * COLSPAN
  * 

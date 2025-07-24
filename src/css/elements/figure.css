@@ -1,0 +1,17 @@
+figure {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: .5rem;
+  border: .125rem solid var(--primary-background-40);
+  max-width: var(--text-max-width);
+}
+
+figcaption {
+  font-style: italic;
+  text-wrap: pretty;
+}
+
+:where(figure) {
+  max-width: var(--content-width-large);
+}

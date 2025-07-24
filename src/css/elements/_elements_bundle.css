@@ -1,1 +1,19 @@
+@import "reset.css";
+
+@import "html.css";
+@import "body.css";
+
+@import "inline.css";
+@import "a.css";
+@import "h.css";
+@import "p.css";
+@import "lists.css";
+@import "media.css";
+@import "hr.css";
+
+@import "button.css";
+@import "form.css";
+@import "table.css";
 @import "details.css";
+@import "blockquote.css";
+@import "figure.css";

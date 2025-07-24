@@ -14,17 +14,17 @@ ca-layout {
 /* Layout grid area definitions */
 ca-layout {
   /* Required */
-  & > header {
+  & > :is(header, [slot="header"]) {
     grid-area: header;
   }
 
   /* Required */
-  & > main {
+  & > :is(main, [slot="main"]) {
     grid-area: main;
   }
 
   /* Optional */
-  & > footer {
+  & > :is(footer, [slot="footer"]) {
     grid-area: footer;
   }
 

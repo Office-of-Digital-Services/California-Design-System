@@ -1,0 +1,12 @@
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+:where(img, picture, video, canvas) {
+  max-width: var(--content-width-large);
+}

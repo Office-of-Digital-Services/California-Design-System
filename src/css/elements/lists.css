@@ -1,0 +1,17 @@
+dl {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+li {
+  margin-block-end: 1.5rem;
+}
+
+:where(ul, ol) {
+  max-width: var(--content-width-small);
+}

@@ -1,0 +1,5 @@
+blockquote {
+  border-inline-start: var(--primary-background-60) .25rem solid;
+  padding-inline-start: 1rem;
+  text-wrap: pretty;
+}

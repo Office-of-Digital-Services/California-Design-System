@@ -1,0 +1,41 @@
+code {
+  background-color: var(--gray-background-60);
+  padding: .25rem;
+  border-radius: min(.25rem, var(--border-radius)); /* Border radius not to exceed .25rem. */
+}
+
+abbr {
+  font-weight: 700;
+}
+
+del {
+  background-color: lightcoral;
+}
+
+ins {
+  background-color: lightgreen;
+}
+
+kbd {
+  border: .125rem solid var(--primary-text);
+  border-radius: .25rem;
+  padding: .25rem;
+}
+
+mark {
+  background-color: lightyellow;
+}
+
+small {
+  font-size: var(--text-size-0);
+}
+
+cite {
+  font-style: italic;
+}
+
+code,
+pre,
+samp {
+  font-family: monospace;
+}

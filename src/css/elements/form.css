@@ -1,0 +1,141 @@
+:where(form) {
+  font-size: var(--text-size-1);
+  max-width: var(--content-width-large);
+}
+
+:where(input, button, textarea, select) {
+  font: inherit;
+}
+
+:where(label) {
+  display: block;
+  font-weight: 600;
+}
+
+:where(label > :is(input, textarea, select)) {
+  margin-block-start: 1rem;
+}
+
+/* Default to display:block for most inputs. */
+:where(
+    input:not([type="radio"], [type="checkbox"], [type="color"]),
+    textarea,
+    select
+  ) {
+  display: block;
+  padding: .75rem 1rem;
+
+  border: 0.0625rem solid var(--gray-30);
+  border-radius: var(--border-radius);
+}
+
+/* Increase width for some inputs. */
+input:not(
+    [type="submit"],
+    [type="reset"],
+    [type="color"],
+    [type="checkbox"],
+    [type="radio"]
+  ),
+select,
+textarea {
+  inline-size: 100%;
+}
+
+/* Add some buffer when scrolling back up to an invalid field. */
+input:invalid {
+  scroll-margin-block: 5ex;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  margin-block-end: .25rem;
+}
+
+/* 
+	<ca-req> puts the little asterix on required fields.
+	Include it inside the <label>.
+	Adding text will hide it for sighted users while presenting it to screen readers.
+	For example, <ca-req>(required)</ca-req>.
+	However, leave it blank when using HTML-native <input required>, otherwise the screen reader will say "required" multiple times.
+*/
+ca-req {
+  display: contents;
+  font-size-adjust: 0;
+
+  &::before {
+    display: inline-block;
+    font-size-adjust: initial;
+    content: "*";
+    color: var(--red-70);
+  }
+}
+
+ca-field {
+  margin-block: 1.5rem;
+  max-inline-size: var(--content-width-medium);
+
+  & p {
+    color: var(--gray-70);
+  }
+
+  & :is(input, textarea, select):focus-within {
+    border-color: var(--primary-110);
+  }
+
+  /* Remove top and bottom margins from first and last children. */
+  & > :first-child {
+    margin-block-start: 0;
+  }
+  & > :last-child {
+    margin-block-end: 0;
+  }
+
+  /* If using HTML5 required attribute, automatically add the red asterix. */
+  &:has(*:required):not(:has(ca-req)) label:not(:has(input))::after {
+    display: inline-block;
+    content: " *";
+    margin-inline-start: .25rem;
+    color: var(--red-70);
+  }
+
+  &.invalid,
+  &[invalid],
+  &:has(*:invalid) {
+    & p {
+      color: var(--red-70);
+    }
+
+    & :is(textarea, select, input:not([type="radio"], [type="checkbox"])) {
+      border-block-end-color: var(--red-70);
+    }
+  }
+
+  /* When it's a simple label + input, do a simple vertical flex. */
+  /* We need to allow disclaimer/fine-print text below the input too. */
+  &:has(textarea, select, input:not([type="radio"], [type="checkbox"])) {
+    display: block;
+
+    & label:not(:has(input, select, textarea)) {
+      margin-block-end: 1rem;
+    }
+  }
+
+  /* When it's a checkbox or radio button, switch to grid. */
+  /* Consider extending this to other scenarios, such as "initial each paragraph" forms. */
+  &:has(input:is([type="radio"], [type="checkbox"])) {
+    display: grid;
+    grid-template-columns: 1rem auto;
+    grid-template-rows: auto;
+    gap: .5rem 1rem;
+
+    /* All subsequent elements should stay in the second column. */
+    & > :nth-child(n + 3) {
+      grid-column-start: 2;
+    }
+  }
+}

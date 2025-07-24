@@ -1,101 +1,99 @@
-<section class="container">
-  <h1>Buttons</h1>
+<h1>Buttons</h1>
 
-  <p>The button style can be applied to both buttons and links.</p>
-</section>
+<p>The button style can be applied to both buttons and links.</p>
 
-<section class="container">
-  <h2>Default button</h2>
 
-  <p>Use the <code>button</code> class to add button styles to links or buttons.</p>
 
-  <p>Here's a link.</p>
+<h2>Default button</h2>
 
-  <ca-code-demo>
-    <template>
-      <a href="#" class="button">Default button</a>
-    </template>
-  </ca-code-demo>
+<p>Use the <code>button</code> class to add button styles to links or buttons.</p>
 
-  <p>We still apply the class even when it's a proper <code>&lt;button&gt;</code>. This ensures we don't pollute other
-    use cases of the
-    <code>&lt;button&gt;</code> element.</code>
-  </p>
+<p>Here's a link.</p>
 
-  <ca-code-demo>
-    <template>
-      <button class="button">Default button</button>
-    </template>
-  </ca-code-demo>
-</section>
+<ca-code-demo>
+  <template>
+    <a href="#" class="button">Default button</a>
+  </template>
+</ca-code-demo>
 
-<section class="container">
-  <h2>Button colors</h2>
+<p>We still apply the class even when it's a proper <code>&lt;button&gt;</code>. This ensures we don't pollute other
+  use cases of the
+  <code>&lt;button&gt;</code> element.</code>
+</p>
 
-  <p>Buttons come in many colors.</p>
+<ca-code-demo>
+  <template>
+    <button class="button">Default button</button>
+  </template>
+</ca-code-demo>
 
-  <p>The default button uses your theme's primary color.</p>
 
-  <ca-code-demo>
-    <template>
-      <ca-flex gap="2" wrap>
-        <button class="button">Primary</button>
-        <button class="button button-gray">Gray</button>
-        <button class="button button-yellow">Yellow</button>
-        <button class="button button-red">Red</button>
-        <button class="button button-magenta">Magenta</button>
-        <button class="button button-orange">Orange</button>
-        <button class="button button-green">Green</button>
-        <button class="button button-blue">Blue</button>
-        <button class="button button-purple">Purple</button>
-        <button class="button button-coastal">Coastal</button>
-        <button class="button button-desert">Desert</button>
-        <button class="button button-mountain">Mountain</button>
-        <button class="button button-valley">Valley</button>
-      </ca-flex>
-    </template>
-  </ca-code-demo>
-</section>
 
-<section class="container">
-  <h2>Include icons</h2>
+<h2>Button colors</h2>
 
-  <p>Icons can be added to buttons.</p>
+<p>Buttons come in many colors.</p>
 
-  <ca-code-demo>
-    <template>
-      <button class="button">
-        <ca-pic icon="account-circle"></ca-pic>
-        <!-- This will work without the <span> too. -->
-        <span>Login</span>
-      </button>
-    </template>
-  </ca-code-demo>
-</section>
+<p>The default button uses your theme's primary color.</p>
 
-<section class="container">
-  <h2>Specialty buttons</h2>
+<ca-code-demo>
+  <template>
+    <ca-flex gap="2" wrap>
+      <button class="button">Primary</button>
+      <button class="button button-gray">Gray</button>
+      <button class="button button-yellow">Yellow</button>
+      <button class="button button-red">Red</button>
+      <button class="button button-magenta">Magenta</button>
+      <button class="button button-orange">Orange</button>
+      <button class="button button-green">Green</button>
+      <button class="button button-blue">Blue</button>
+      <button class="button button-purple">Purple</button>
+      <button class="button button-coastal">Coastal</button>
+      <button class="button button-desert">Desert</button>
+      <button class="button button-mountain">Mountain</button>
+      <button class="button button-valley">Valley</button>
+    </ca-flex>
+  </template>
+</ca-code-demo>
 
-  <p>By modifying the button's CSS variables, different looks are possible.</p>
 
-  <p>Here's the button for utility icons as seen throughout the layout.</p>
 
-  <ca-code-demo>
-    <template>
-      <a href="#" class="button button-utility">
-        <ca-pic icon="account-circle"></ca-pic>
-      </a>
-    </template>
-  </ca-code-demo>
+<h2>Include icons</h2>
 
-  <p>We can add text too.</p>
+<p>Icons can be added to buttons.</p>
 
-  <ca-code-demo>
-    <template>
-      <a href="#" class="button button-utility">
-        <ca-pic icon="account-circle"></ca-pic>
-        <span>Utility</span>
-      </a>
-    </template>
-  </ca-code-demo>
-</section>
+<ca-code-demo>
+  <template>
+    <button class="button">
+      <ca-pic icon="account-circle"></ca-pic>
+      <!-- This will work without the <span> too. -->
+      <span>Login</span>
+    </button>
+  </template>
+</ca-code-demo>
+
+
+
+<h2>Specialty buttons</h2>
+
+<p>By modifying the button's CSS variables, different looks are possible.</p>
+
+<p>Here's the button for utility icons as seen throughout the layout.</p>
+
+<ca-code-demo>
+  <template>
+    <a href="#" class="button button-utility">
+      <ca-pic icon="account-circle"></ca-pic>
+    </a>
+  </template>
+</ca-code-demo>
+
+<p>We can add text too.</p>
+
+<ca-code-demo>
+  <template>
+    <a href="#" class="button button-utility">
+      <ca-pic icon="account-circle"></ca-pic>
+      <span>Utility</span>
+    </a>
+  </template>
+</ca-code-demo>

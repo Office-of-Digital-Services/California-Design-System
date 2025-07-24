@@ -1,9 +1,9 @@
 <style>
   ca-code-demo :is(p, ca-column) {
-    margin: 0;
     padding: 2rem;
     border: 1px solid var(--primary-text);
     background-color: var(--primary-background-60);
+    max-width: none;
   }
 
   ca-code-demo :is(ca-box)+ :is(ca-box) {
@@ -11,326 +11,318 @@
   }
 </style>
 
-<section>
-  <h1>Box</h1>
-
-  <p>Boxes help position content on the page. They contain content to standard sizes. They can also create column-based
-    layouts that respond and break for mobile devices.</p>
-</section>
-
-<section>
-  <h2>Basic box</h2>
-
-  <p>Here's an example of the basic box.</p>
-
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box>
-          <p>Standard <code>ca-box</code></p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-  <p>Try resizing the window and switching layouts to see how the box responds.</p>
-</section>
-
-<section>
-  <h2>Sizes</h2>
-
-  <p>Boxes come in many sizes.</p>
-
-  <ca-box size="full">
-    <ca-code-demo>
-      <template>
-        <ca-box size="small">
-          <p>Small <code>ca-box</code> with <code>size="small"</code></p>
-        </ca-box>
-
-        <ca-box>
-          <p>Default <code>ca-box</code> at medium size</p>
-        </ca-box>
-
-        <ca-box size="medium">
-          <p>Medium <code>ca-box</code> with <code>size="medium"</code></p>
-        </ca-box>
-
-        <ca-box size="large">
-          <p>Large <code>ca-box</code> with <code>size="large"</code></p>
-        </ca-box>
-
-        <ca-box size="full">
-          <p>Full <code>ca-box</code> with <code>size="full"</code></p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-</section>
-
-
-<section>
-  <h2>Columns</h2>
-
-  <p>A box can be divided into multiple columns. This can be used to create multi-column pages.</p>
-
-  <p>Our boxes combine the box/row/column grid-based layout tools often seen in other popular CSS
-    frameworks.</p>
-
-  <p>When a column shrinks too far, it will break onto a new line. Good for mobile.</p>
-
-  <p>Note that this will not work with a full-width box. (Because a full-width box has no defined size
-    overall,
-    I don't see a good way for us to define the ideal size of each column for responsive purposes.)</p>
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2">
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-  <h3>Each column</h3>
-
-  <p>When using box columns, you have the option of using the <code>ca-column</code> tag to define each column.
-    But it's not a requirement. Any element will work.</p>
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2">
-          <!-- Using the ca-column tag here. -->
-          <ca-column>Column 1</ca-column>
-          <ca-column>Column 2</ca-column>
-        </ca-box>
-        <ca-box columns="2">
-          <!-- Just using plain p tags here. Still works. -->
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-  <h3>Span</h3>
-
-  <p>The box supports up to six columns. When using more than three or four, you'll probably want some columns
-    to be bigger than others. That's where <code>span</code> comes into play.</p>
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="3">
-          <ca-column span="2">Columns 1, 2</ca-column>
-          <ca-column>Column 3</ca-column>
-        </ca-box>
-        <ca-box columns="3">
-          <ca-column>Columns 1, 2</ca-column>
-          <ca-column span="2">Column 3</ca-column>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-
-  <p>We also have equivalent classes.</p>
-
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <div class="box box-columns-3">
-          <!-- Just using plain p tags here. Still works. -->
-          <p class="span-2">Columns 1, 2</p>
-          <p>Column 3</p>
-        </div>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-
-  <h3>Box column gaps</h3>
-
-  <p>Gutters can be placed between columns if desired.</p>
-
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2" gap="2">
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-
-  <p>Gaps can be applied in just one direction too.</p>
-
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2" gap-x="2">
-          <!-- The gap will be placed between columns, but not between "rows" on mobile. -->
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-
-        <ca-box columns="2" gap-y="2">
-          <!-- The gap will only be applied between "rows". In this case, mostly on mobile. -->
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-
-  <h3>Box column recursion</h3>
-
-  <p>Let's do some nesting with our code demos.</p>
-
-
-
-  <ca-box size="large" columns="2" gap-x="2">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2">
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2">
-          <p>Column 1</p>
-          <p>Column 2</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-
-
-  <h3>The test matrix</h3>
-
-  <p>Jon uses this in testing.</p>
-
-
-  <ca-box size="large">
-    <ca-code-demo>
-      <template>
-        <ca-box columns="2">
-          <p>Column A-1</p>
-          <p>Column A-2</p>
-        </ca-box>
-
-        <ca-box columns="2" gap-x="2">
-          <p>Column A-1</p>
-          <p>Column A-2</p>
-        </ca-box>
-
-        <ca-box columns="3">
-          <p>Column B-1</p>
-          <p>Column B-2</p>
-          <p>Column B-3</p>
-        </ca-box>
-
-        <ca-box columns="3" gap-x="2">
-          <p>Column B-1</p>
-          <p>Column B-2</p>
-          <p>Column B-3</p>
-        </ca-box>
-
-        <ca-box columns="4">
-          <p>Column C-1</p>
-          <p>Column C-2</p>
-          <p>Column C-3</p>
-          <p>Column C-4</p>
-        </ca-box>
-
-        <ca-box columns="4" gap-x="2">
-          <p>Column C-1</p>
-          <p>Column C-2</p>
-          <p>Column C-3</p>
-          <p>Column C-4</p>
-        </ca-box>
-
-        <ca-box columns="3">
-          <p class="span-2">Columns F-1, F-2</p>
-          <p>Column F-3</p>
-        </ca-box>
-
-        <ca-box columns="3" gap-x="2">
-          <p class="span-2">Columns F-1, F-2</p>
-          <p>Column F-3</p>
-        </ca-box>
-
-        <ca-box columns="4">
-          <p>Column G-1</p>
-          <p class="span-2">Columns G-2, G-3</p>
-          <p>Column G-4</p>
-        </ca-box>
-
-        <ca-box columns="4" gap-x="2">
-          <p>Column G-1</p>
-          <p class="span-2">Columns G-2, G-3</p>
-          <p>Column G-4</p>
-        </ca-box>
-
-        <ca-box columns="4">
-          <p class="span-3">Columns I-1 to I-3</p>
-          <p>Column I-4</p>
-        </ca-box>
-
-        <ca-box columns="4" gap-x="2">
-          <p class="span-3">Columns I-1 to I-3</p>
-          <p>Column I-4</p>
-        </ca-box>
-
-        <ca-box columns="4">
-          <p class="span-2">Columns H-1, H-2</p>
-          <p class="span-2">Columns H-3, H-4</p>
-        </ca-box>
-
-        <ca-box columns="4" gap-x="2">
-          <p class="span-2">Columns H-1, H-2</p>
-          <p class="span-2">Columns H-3, H-4</p>
-        </ca-box>
-
-        <ca-box columns="5">
-          <p>Column D-1</p>
-          <p>Column D-2</p>
-          <p>Column D-3</p>
-          <p>Column D-4</p>
-          <p>Column D-4</p>
-        </ca-box>
-
-        <ca-box columns="5" gap-x="2">
-          <p>Column D-1</p>
-          <p>Column D-2</p>
-          <p>Column D-3</p>
-          <p>Column D-4</p>
-          <p>Column D-4</p>
-        </ca-box>
-
-        <ca-box columns="5">
-          <p class="span-3">Columns J-1 to J-3</p>
-          <p class="span-2">Columns J-4, J-5</p>
-        </ca-box>
-
-        <ca-box columns="5" gap-x="2">
-          <p class="span-3">Columns J-1 to J-3</p>
-          <p class="span-2">Columns J-4, J-5</p>
-        </ca-box>
-      </template>
-    </ca-code-demo>
-  </ca-box>
-</section>
+
+<h1>Box</h1>
+
+<p>Boxes help position content on the page. They contain content to standard sizes. They can also create column-based
+  layouts that respond and break for mobile devices.</p>
+
+
+
+<h2>Basic box</h2>
+
+<p>Here's an example of the basic box.</p>
+
+
+<ca-code-demo>
+  <template>
+    <ca-box>
+      <p>Standard <code>ca-box</code></p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+<p>Try resizing the window and switching layouts to see how the box responds.</p>
+
+
+
+<h2>Sizes</h2>
+
+<p>Boxes come in many sizes.</p>
+<ca-code-demo>
+  <template>
+    <ca-box size="small">
+      <p>Small <code>ca-box</code> with <code>size="small"</code></p>
+    </ca-box>
+
+    <ca-box>
+      <p>Default <code>ca-box</code> at medium size</p>
+    </ca-box>
+
+    <ca-box size="medium">
+      <p>Medium <code>ca-box</code> with <code>size="medium"</code></p>
+    </ca-box>
+
+    <ca-box size="large">
+      <p>Large <code>ca-box</code> with <code>size="large"</code></p>
+    </ca-box>
+
+    <ca-box size="full">
+      <p>Full <code>ca-box</code> with <code>size="full"</code></p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+
+
+
+<h2>Columns</h2>
+
+<p>A box can be divided into multiple columns. This can be used to create multi-column pages.</p>
+
+<p>Our boxes combine the box/row/column grid-based layout tools often seen in other popular CSS
+  frameworks.</p>
+
+<p>When a column shrinks too far, it will break onto a new line. Good for mobile.</p>
+
+<p>Note that this will not work with a full-width box. (Because a full-width box has no defined size
+  overall,
+  I don't see a good way for us to define the ideal size of each column for responsive purposes.)</p>
+
+<ca-code-demo>
+  <template>
+    <ca-box columns="2">
+      <p>Column 1</p>
+      <p>Column 2</p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+<h3>Each column</h3>
+
+<p>When using box columns, you have the option of using the <code>ca-column</code> tag to define each column.
+  But it's not a requirement. Any element will work.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-box columns="2">
+      <!-- Using the ca-column tag here. -->
+      <ca-column>Column 1</ca-column>
+      <ca-column>Column 2</ca-column>
+    </ca-box>
+    <ca-box columns="2">
+      <!-- Just using plain p tags here. Still works. -->
+      <p>Column 1</p>
+      <p>Column 2</p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+<h3>Span</h3>
+
+<p>The box supports up to six columns. When using more than three or four, you'll probably want some columns
+  to be bigger than others. That's where <code>span</code> comes into play.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-box columns="3">
+      <ca-column span="2">Columns 1, 2</ca-column>
+      <ca-column>Column 3</ca-column>
+    </ca-box>
+    <ca-box columns="3">
+      <ca-column>Columns 1, 2</ca-column>
+      <ca-column span="2">Column 3</ca-column>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+
+
+<p>We also have equivalent classes.</p>
+
+
+
+<ca-code-demo>
+  <template>
+    <div class="box box-columns-3">
+      <!-- Just using plain p tags here. Still works. -->
+      <p class="span-2">Columns 1, 2</p>
+      <p>Column 3</p>
+    </div>
+  </template>
+</ca-code-demo>
+
+
+
+<h3>Box column gaps</h3>
+
+<p>Gutters can be placed between columns if desired.</p>
+
+
+
+<ca-code-demo>
+  <template>
+    <ca-box columns="2" gap="2">
+      <p>Column 1</p>
+      <p>Column 2</p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+
+
+<p>Gaps can be applied in just one direction too.</p>
+
+
+
+<ca-code-demo>
+  <template>
+    <ca-box columns="2" gap-x="2">
+      <!-- The gap will be placed between columns, but not between "rows" on mobile. -->
+      <p>Column 1</p>
+      <p>Column 2</p>
+    </ca-box>
+
+    <ca-box columns="2" gap-y="2">
+      <!-- The gap will only be applied between "rows". In this case, mostly on mobile. -->
+      <p>Column 1</p>
+      <p>Column 2</p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
+
+
+<h3>Box column recursion</h3>
+
+<p>Let's do some nesting with our code demos.</p>
+
+
+
+<ca-box size="large" columns="2" gap-x="2" class="outdent">
+  <ca-code-demo>
+    <template>
+      <ca-box columns="2">
+        <p>Column 1</p>
+        <p>Column 2</p>
+      </ca-box>
+    </template>
+  </ca-code-demo>
+  <ca-code-demo>
+    <template>
+      <ca-box columns="2">
+        <p>Column 1</p>
+        <p>Column 2</p>
+      </ca-box>
+    </template>
+  </ca-code-demo>
+</ca-box>
+
+
+<h3>The test matrix</h3>
+
+<p>Jon uses this in testing.</p>
+
+<ca-code-demo class="content-width-medium">
+  <template>
+    <ca-box columns="2">
+      <p>Column A-1</p>
+      <p>Column A-2</p>
+    </ca-box>
+
+    <ca-box columns="2" gap-x="2">
+      <p>Column A-1</p>
+      <p>Column A-2</p>
+    </ca-box>
+
+    <ca-box columns="3">
+      <p>Column B-1</p>
+      <p>Column B-2</p>
+      <p>Column B-3</p>
+    </ca-box>
+
+    <ca-box columns="3" gap-x="2">
+      <p>Column B-1</p>
+      <p>Column B-2</p>
+      <p>Column B-3</p>
+    </ca-box>
+
+    <ca-box columns="4">
+      <p>Column C-1</p>
+      <p>Column C-2</p>
+      <p>Column C-3</p>
+      <p>Column C-4</p>
+    </ca-box>
+
+    <ca-box columns="4" gap-x="2">
+      <p>Column C-1</p>
+      <p>Column C-2</p>
+      <p>Column C-3</p>
+      <p>Column C-4</p>
+    </ca-box>
+
+    <ca-box columns="3">
+      <p class="span-2">Columns F-1, F-2</p>
+      <p>Column F-3</p>
+    </ca-box>
+
+    <ca-box columns="3" gap-x="2">
+      <p class="span-2">Columns F-1, F-2</p>
+      <p>Column F-3</p>
+    </ca-box>
+
+    <ca-box columns="4">
+      <p>Column G-1</p>
+      <p class="span-2">Columns G-2, G-3</p>
+      <p>Column G-4</p>
+    </ca-box>
+
+    <ca-box columns="4" gap-x="2">
+      <p>Column G-1</p>
+      <p class="span-2">Columns G-2, G-3</p>
+      <p>Column G-4</p>
+    </ca-box>
+
+    <ca-box columns="4">
+      <p class="span-3">Columns I-1 to I-3</p>
+      <p>Column I-4</p>
+    </ca-box>
+
+    <ca-box columns="4" gap-x="2">
+      <p class="span-3">Columns I-1 to I-3</p>
+      <p>Column I-4</p>
+    </ca-box>
+
+    <ca-box columns="4">
+      <p class="span-2">Columns H-1, H-2</p>
+      <p class="span-2">Columns H-3, H-4</p>
+    </ca-box>
+
+    <ca-box columns="4" gap-x="2">
+      <p class="span-2">Columns H-1, H-2</p>
+      <p class="span-2">Columns H-3, H-4</p>
+    </ca-box>
+
+    <ca-box columns="5">
+      <p>Column D-1</p>
+      <p>Column D-2</p>
+      <p>Column D-3</p>
+      <p>Column D-4</p>
+      <p>Column D-4</p>
+    </ca-box>
+
+    <ca-box columns="5" gap-x="2">
+      <p>Column D-1</p>
+      <p>Column D-2</p>
+      <p>Column D-3</p>
+      <p>Column D-4</p>
+      <p>Column D-4</p>
+    </ca-box>
+
+    <ca-box columns="5">
+      <p class="span-3">Columns J-1 to J-3</p>
+      <p class="span-2">Columns J-4, J-5</p>
+    </ca-box>
+
+    <ca-box columns="5" gap-x="2">
+      <p class="span-3">Columns J-1 to J-3</p>
+      <p class="span-2">Columns J-4, J-5</p>
+    </ca-box>
+
+    <ca-box columns="5">
+      <p class="span-3">Columns J-1 to J-3</p>
+      <p>J-4</p>
+      <p>J-5</p>
+    </ca-box>
+  </template>
+</ca-code-demo>

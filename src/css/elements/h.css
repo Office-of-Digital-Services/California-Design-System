@@ -1,0 +1,42 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  margin-block-end: 1.5rem;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: var(--text-size-6);
+  line-height: 4.625rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: var(--text-size-5);
+  line-height: 2.625rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: var(--text-size-4);
+  line-height: 2.1875rem;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: var(--text-size-3);
+  line-height: 1.875rem;
+}
+
+h5 {
+  font-weight: 600;
+  font-size: var(--text-size-1);
+}
+
+h6 {
+  font-size: var(--text-size-1);
+}

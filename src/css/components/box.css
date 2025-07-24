@@ -58,9 +58,12 @@ ca-box[columns] {
     --span: 1; /* Default column span of 1 */
 
     /* Start with the ideal --column-size, then factor in --span for this particular column. */
-    inline-size: calc(
-      (var(--column-size) * var(--span)) +
-      ((var(--span) - 1) * var(--gap-x))
+    inline-size: min(
+      100%,
+      calc(
+        (var(--column-size) * var(--span)) +
+        ((var(--span) - 1) * var(--gap-x))
+      )
     );
 
     /* Larger spanned columns need a larger flex-grow to maintain alignment. */

@@ -1,0 +1,174 @@
+<h2>Forms</h2>
+
+<form action="" method="get">
+  <ca-field>
+    <label for="text1">Text</label>
+    <input type="text" name="text1" id="text1" pattern="\w{3,16}" required />
+    <p><small>Enter something between 3 and 16 characters.</small></p>
+  </ca-field>
+
+  <ca-field>
+    <label for="text2">
+      Text 2 <ca-req></ca-req>
+      <input type="text" name="text2" id="text2" required />
+    </label>
+    <p><small>You must enter something.</small></p>
+  </ca-field>
+
+  <ca-field invalid>
+    <label for="text3">Text 3</label>
+    <input type="text" name="text3" id="text3" />
+    <p><small>This is marked invalid by hand.</small></p>
+  </ca-field>
+
+  <ca-field>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" />
+  </ca-field>
+
+  <ca-field>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" />
+  </ca-field>
+
+  <ca-field>
+    <label for="date">Pick a date: </label>
+    <input type="date" name="date" id="date" />
+  </ca-field>
+
+  <ca-field>
+    <label for="datetime">Pick a date and time</label>
+    <input type="datetime-local" name="datetime" id="datetime" />
+  </ca-field>
+
+  <ca-field>
+    <label for="month">Pick a month</label>
+    <input type="month" name="month" id="month" />
+  </ca-field>
+
+  <ca-field>
+    <label for="week">Pick a week</label>
+    <input type="week" name="week" id="week" />
+  </ca-field>
+
+  <ca-field>
+    <label for="time">Pick a time</label>
+    <input type="time" name="time" id="time" />
+  </ca-field>
+
+  <ca-field>
+    <label for="number">Pick a number</label>
+    <input type="number" name="number" id="number" />
+  </ca-field>
+
+  <ca-field>
+    <label for="tel">Enter a telephone number</label>
+    <input type="tel" name="tel" id="tel" />
+  </ca-field>
+
+  <ca-field>
+    <input type="checkbox" name="checkbox" id="checkbox" />
+    <label for="checkbox">I agree to the whatever.</label>
+    <p><small>By agreeing to the whatever, you will also be bound by the additional whatevers of this small
+        print.</small></p>
+  </ca-field>
+
+  <ca-field>
+    <input type="radio" name="radio" id="radio" />
+    <label for="radio">I select this default single option against my will.</label>
+  </ca-field>
+
+  <fieldset>
+    <legend>Choose your favorite condiments:</legend>
+
+    <ca-field>
+      <input type="checkbox" id="mustard" name="condiments" value="mustard" />
+      <label for="mustard">Mustard</label>
+    </ca-field>
+
+    <ca-field>
+      <input type="checkbox" id="wasabi" name="condiments" value="wasabi" />
+      <label for="wasabi">Wasabi</label>
+    </ca-field>
+
+    <ca-field>
+      <input type="checkbox" id="horshradish" name="condiments" value="horshradish" />
+      <label for="horshradish">Horseradish</label>
+    </ca-field>
+  </fieldset>
+
+  <fieldset>
+    <legend>What's the correct spelling?</legend>
+
+    <ca-field>
+      <input type="radio" id="ketchup" name="spelling" value="ketchup" />
+      <label for="ketchup">Ketchup</label>
+    </ca-field>
+
+    <ca-field>
+      <input type="radio" id="catsup" name="spelling" value="catsup" />
+      <label for="catsup">Catsup</label>
+    </ca-field>
+
+    <ca-field>
+      <input type="radio" id="what" name="spelling" value="what" />
+      <label for="what">What's up?</label>
+    </ca-field>
+  </fieldset>
+
+  <ca-field>
+    <label for="pet-select">Choose a pet</label>
+    <select name="pets" id="pet-select">
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="hamster">Hamster</option>
+      <option value="parrot">Parrot</option>
+      <option value="spider">Spider</option>
+      <option value="goldfish">Goldfish</option>
+    </select>
+  </ca-field>
+
+  <ca-field>
+    <label for="dino-select">Choose a dinosaur</label>
+    <select id="dino-select">
+      <optgroup label="Theropods">
+        <option>Tyrannosaurus</option>
+        <option>Velociraptor</option>
+        <option>Deinonychus</option>
+      </optgroup>
+      <optgroup label="Sauropods">
+        <option>Diplodocus</option>
+        <option>Saltasaurus</option>
+        <option>Apatosaurus</option>
+      </optgroup>
+    </select>
+  </ca-field>
+
+  <ca-field>
+    <label for="range">Adjust the range slider</label>
+    <input type="range" name="range" id="range" min="0" max="100" />
+  </ca-field>
+
+  <ca-field>
+    <label for="color">Pick a color</label>
+    <input type="color" name="color" id="color" />
+  </ca-field>
+
+  <ca-field>
+    <label for="search">Search</label>
+    <input type="search" name="search" id="search" />
+  </ca-field>
+
+  <ca-field>
+    <label for="url">Enter a URL</label>
+    <input type="url" name="url" id="url" />
+  </ca-field>
+
+  <ca-field>
+    <label for="file">Upload a file</label>
+    <input type="file" name="file" id="file" />
+  </ca-field>
+
+  <input type="reset" value="Reset" class="button button-yellow" />
+  <input type="submit" value="Submit" class="button" />
+</form>

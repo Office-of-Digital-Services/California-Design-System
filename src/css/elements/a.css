@@ -1,0 +1,7 @@
+a {
+  color: var(--link);
+
+  &:focus {
+    color: var(--link-active);
+  }
+}

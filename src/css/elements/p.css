@@ -1,0 +1,18 @@
+p {
+  line-height: 1.6rem;
+  /* max-width: var(--text-max-width); */
+  text-wrap: pretty;
+  margin-block-end: 1.5rem;
+}
+
+:where(p) {
+  max-width: var(--content-width-small);
+}
+
+h1 + p,
+.lead {
+  font-weight: 400;
+  font-size: var(--text-size-3);
+  line-height: 1.875rem;
+  margin-bottom: 1.5rem;
+}

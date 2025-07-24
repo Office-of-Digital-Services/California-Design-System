@@ -1,0 +1,10 @@
+body {
+  font-family: var(--font-family), system-ui, -apple-system, "Roboto",
+    "Helvetica Neue", sans-serif;
+  font-size: var(--text-size-2);
+  font-weight: 400;
+  background-color: var(--primary-background-10);
+  color: var(--primary-120);
+  position: relative;
+  min-height: 100vh;
+}

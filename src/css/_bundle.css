@@ -1,9 +1,7 @@
 @import "typography.css";
-
-@import "elements.css";
 @import "utilities.css";
 
+@import "elements/_elements_bundle.css";
 @import "theme/_theme_bundle.css";
 @import "layout/_layout_bundle.css";
 @import "components/_components_bundle.css";
-@import "elements/_elements_bundle.css";

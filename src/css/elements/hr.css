@@ -1,0 +1,11 @@
+hr {
+  border: none;
+  border-block-start: .125rem solid var(--primary-accent);
+  height: .125rem;
+  margin-block: 1.5rem;
+  line-height: 1rem;
+}
+
+:where(hr) {
+  max-width: var(--content-width-large);
+}

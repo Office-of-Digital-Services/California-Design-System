@@ -15,8 +15,10 @@ For now, this is limited to <main> and <footer>.
 }
 /* Default indents. */
 ca-layout {
-  --outdent: min(10vw, 9.5rem);
-  --indent: min(11vw, 10.5rem);
+  --outdent: min(10vw, 9.5rem); /* An emphasized left indent that sticks out a bit. */
+  --indent: min(11vw, 10.5rem); /* A standard left indent for most content. */
+  --enddent: 2rem; /* The right-side gutter. */
+  --mindent: 1rem; /* The small-size margin on both sides for mobile. */
 }
 /* Slightly different for top-nav layouts. */
 ca-layout[format|="top"] {
@@ -25,30 +27,35 @@ ca-layout[format|="top"] {
 }
 
 /* Utility classes and defaults for constraining content. */
-.content-width-medium,
-:where(ca-layout > :is(main, footer) > *) {
-  max-width: var(--content-width-medium);
-}
 .content-width-small,
-:where(ca-layout > :is(main, footer, section) > :is(p, ul, ol)) {
-  max-width: var(--content-width-small);
+.width-small {
+  max-inline-size: var(--content-width-small);
+}
+.content-width-medium,
+.width-medium {
+  max-inline-size: var(--content-width-medium);
 }
 .content-width-large,
-:where(
-    ca-layout
-      > :is(main, footer)
-      > :is(figure, table, img, picture, video, canvas, code, form, hr)
-  ) {
-  max-width: var(--content-width-large);
+.width-large {
+  max-inline-size: var(--content-width-large);
 }
 .content-width-full,
-:where(ca-layout > :is(main, footer) > :is(ul.grid, ca-grid)) {
-  max-width: var(--content-width-full);
+.width-full {
+  max-inline-size: var(--content-width-full);
+}
+.width-small,
+.width-medium,
+.width-large,
+.width-full {
+  inline-size: calc(100% - 2 * var(--mindent));
+}
+.content-width-reset {
+  max-inline-size: none;
 }
 
 /* Auto-apply side margin to all top-level children of main. */
 :where(ca-layout > :is(main, footer) > *) {
-  margin-inline: 1rem;
+  margin-inline: var(--mindent);
 }
 
 /* Manual indents, for creating custom blocks. But mostly inert on mobile here, by default. */
@@ -57,14 +64,18 @@ ca-layout[format|="top"] {
 }
 .outdent,
 .indent {
-  margin-inline: 1rem;
+  margin-inline: var(--mindent);
 }
 
 @media screen and (min-width: 1024px) {
+  .content {
+    margin-inline: 0;
+  }
+
   /* Auto-apply the indent to all first-level main and footer content. */
-  :where(ca-layout > :is(main, footer) > *) {
-    margin-inline-start: var(--indent);
-    margin-inline-end: 2rem;
+  :where(ca-layout > :is(main, footer) > *),
+  .content > * {
+    margin-inline: var(--indent) var(--enddent);
   }
 
   /* For select first-level content in main, auto-apply the outdent. Only main, not footer. */
@@ -80,17 +91,31 @@ ca-layout[format|="top"] {
           canvas,
           code,
           ul.grid,
-          ca-grid
+          ca-grid,
+          ca-code-demo
         )
+    ),
+  .content
+    > :is(
+      figure,
+      table,
+      img,
+      picture,
+      video,
+      canvas,
+      code,
+      ul.grid,
+      ca-grid,
+      ca-code-demo
     ) {
     margin-inline-start: var(--outdent);
   }
 
   /* Class-based overrides */
   .outdent {
-    margin-inline: var(--outdent) 2rem;
+    margin-inline: var(--outdent) var(--enddent);
   }
   .indent {
-    margin-inline: var(--indent) 2rem;
+    margin-inline: var(--indent) var(--enddent);
   }
 }
