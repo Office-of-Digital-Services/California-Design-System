@@ -1,4 +1,4 @@
-* > ca-badge {
+*:has(> ca-badge) {
   position: relative;
 }
 

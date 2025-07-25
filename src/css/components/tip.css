@@ -1,0 +1,86 @@
+ca-tip {
+  --triangle-altitude: .75rem; /* The "height" of the triangle's point from the base. */
+  --triangle-base: 1rem; /* The size of the triangle's base, which sits flush against tooltip. */
+  --offset-distance: 1rem; /* Adjusts how far away the tooltip pops up, relative to the button. */
+
+  position: absolute;
+  display: block;
+  margin: 0;
+  font-size: 0;
+}
+
+*:has(> ca-tip) {
+  position: relative;
+
+  &:is(:hover, :active, :focus) > ca-tip {
+    font-size: var(--text-size-0);
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-radius: var(--border-radius);
+    inline-size: max-content;
+    background: var(--primary-100);
+    color: var(--primary-10);
+    inset-block-start: 100%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, var(--offset-distance));
+    z-index: 100;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inline-size: var(--triangle-base);
+      block-size: var(--triangle-altitude);
+      background: var(--primary-100);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      inset-block-start: calc(1px - var(--triangle-altitude));
+      inset-inline-start: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &[top] {
+      inset-block-start: 0;
+      inset-inline-start: 50%;
+      transform: translate(-50%, calc(-100% - var(--offset-distance)));
+
+      &::before {
+        inline-size: var(--triangle-base);
+        block-size: var(--triangle-altitude);
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        inset-block-start: calc(100% - 1px);
+        inset-inline-start: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    &[right] {
+      inset-block-start: 50%;
+      inset-inline-start: 100%;
+      transform: translate(var(--offset-distance), -50%);
+
+      &::before {
+        inline-size: .75rem;
+        block-size: var(--triangle-base);
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+        inset-block-start: 50%;
+        inset-inline-start: calc(1px - var(--triangle-altitude));
+        transform: translate(0, -50%);
+      }
+    }
+
+    &[left] {
+      inset-block-start: 50%;
+      inset-inline-start: 0;
+      transform: translate(calc(-100% - var(--offset-distance)), -50%);
+
+      &::before {
+        inline-size: var(--triangle-altitude);
+        block-size: var(--triangle-base);
+        clip-path: polygon(100% 50%, 0 0, 0 100%);
+        inset-block-start: 50%;
+        inset-inline-start: calc(100% - 1px);
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}
