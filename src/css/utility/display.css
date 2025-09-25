@@ -1,0 +1,10 @@
+.ca-block, ca-block { display: block; }
+.ca-inline, ca-inline { display: inline; }
+.ca-inline-block, ca-inline-block { display: inline-block; }
+.ca-flex, ca-flex { display: flex; }
+.ca-inline-flex, ca-inline-flex { display: inline-flex; }
+.ca-grid, ca-grid { display: grid; }
+.ca-inline-grid, ca-inline-grid { display: inline-grid; }
+
+.ca-contents { display: contents; }
+.ca-hidden, [hidden], ca-hidden {	display: none; }

@@ -15,7 +15,7 @@
 
 
 <style>
-  ca-grid {
+  ca-mesh {
     margin-bottom: 2rem;
   }
 </style>
@@ -72,11 +72,11 @@
 <p>In many real-world use cases,
   we will be displaying many cards together, in list-like structures.</p>
 
-<p>One way to do this is with our own <code>ca-grid</code> component.</p>
+<p>One way to do this is with our own <code>ca-mesh</code> component.</p>
 
 <ca-code-demo class="outdent content-width-large">
   <template>
-    <ca-grid>
+    <ca-mesh>
       <ca-card size="medium">
         <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
         <div>
@@ -100,7 +100,7 @@
           <p>It's all aligned.</p>
         </div>
       </ca-card>
-    </ca-grid>
+    </ca-mesh>
   </template>
 </ca-code-demo>
 
@@ -108,14 +108,14 @@
   same
   size, nicely aligned.</p>
 
-<p>Below, we use the <code>ca-grid</code> component's sizing capabilities to change the flow of all cards together.
+<p>Below, we use the <code>ca-mesh</code> component's sizing capabilities to change the flow of all cards together.
 </p>
 
 
 <ca-code-demo class="outdent content-width-large">
   <template>
-    <!-- The --min-cell-inline-size variable is a function of the ca-grid component. -->
-    <ca-grid style="--min-cell-inline-size: 15rem;">
+    <!-- The --cell-width variable is a function of the ca-mesh component. -->
+    <ca-mesh style="--cell-width: 15rem;">
       <ca-card>
         <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
         <div>
@@ -151,7 +151,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur</p>
         </article>
       </ca-card>
-    </ca-grid>
+    </ca-mesh>
   </template>
 </ca-code-demo>
 
@@ -167,36 +167,38 @@
 
 <ca-code-demo class="outdent content-width-large">
   <template>
+    <ca-mesh>
+      <ul class="meshify">
+        <li>
+          <ca-card size="medium">
+            <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+        </li>
+        <li>
+          <ca-card size="medium">
+            <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+        </li>
+        <li>
+          <ca-card size="medium">
+            <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
+            <article>
+              <h3><a href="#">Card heading</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur</p>
+            </article>
+          </ca-card>
+        </li>
+      </ul>
+    </ca-mesh>
     <!-- Note our use of the grid class here. -->
-    <ul class="grid">
-      <li>
-        <ca-card size="medium">
-          <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
-          <article>
-            <h3><a href="#">Card heading</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur</p>
-          </article>
-        </ca-card>
-      </li>
-      <li>
-        <ca-card size="medium">
-          <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
-          <article>
-            <h3><a href="#">Card heading</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur</p>
-          </article>
-        </ca-card>
-      </li>
-      <li>
-        <ca-card size="medium">
-          <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
-          <article>
-            <h3><a href="#">Card heading</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur</p>
-          </article>
-        </ca-card>
-      </li>
-    </ul>
   </template>
 </ca-code-demo>
 
@@ -344,7 +346,7 @@
 
 <ca-code-demo class="outdent content-width-large">
   <template>
-    <ca-grid>
+    <ca-mesh>
       <ca-card>
         <div>
           <h3><a href="#">Card heading</a></h3>
@@ -364,7 +366,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur</p>
         </article>
       </ca-card>
-    </ca-grid>
+    </ca-mesh>
   </template>
 </ca-code-demo>
 

@@ -1,0 +1,97 @@
+ca-shout {
+  --shout-background: var(--gray-20);
+  --shout-text: var(--gray-120);
+  --shout-alert: var(--gray-60);
+  --shout-icon-in-frame: var(--gray-static-10);
+
+  display: grid;
+  grid-template-columns: 1rem min-content 1fr;
+  grid-template-rows: minmax(2rem, auto) auto;
+  padding-block-start: .5rem;
+
+  color: var(--shout-text);
+  background: var(--shout-background);
+  border-radius: var(--border-radius);
+
+  /* The little alert bar that appears next to the icon. */
+  &::before {
+    content: "";
+    display: block;
+    block-size: 1rem;
+    inline-size: 0.125rem;
+    place-content: center;
+    margin-block-start: .25rem;
+    margin-inline-end: 0.875rem;
+    background: var(--shout-alert);
+  }
+
+  & > [slot="img"] {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    font-size: 1.5rem;
+    margin-inline-end: 1rem;
+  }
+
+  /* When we use a framed icon, set up the colors. */
+  & > ca-icon[slot="img"][frame] {
+    background: var(--shout-alert);
+    color: var(--shout-icon-in-frame);
+  }
+
+  /* For any other type of image, center it. */
+  & > :where([slot="img"]) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--shout-text);
+  }
+
+  & > [slot="summary"] {
+    color: var(--shout-text);
+    font-size: var(--text-size-2);
+    font-weight: 600;
+    font-style: normal;
+    line-height: normal;
+    margin: 0;
+    padding: 0 1rem .5rem 0;
+  }
+
+  & > [slot="summary"],
+  & > *:nth-child(n + 2) {
+    grid-column-start: 3;
+  }
+
+  & > [slot="body"] {
+    grid-column-start: 3;
+    margin-block-end: .5rem;
+  }
+
+  & > [slot="body"] > *:last-child {
+    margin-block-end: 0;
+  }
+
+  &[color="red"] {
+    --shout-background: var(--red-20);
+    --shout-alert: var(--red-60);
+  }
+
+  &[color="green"] {
+    --shout-background: var(--green-20);
+    --shout-alert: var(--green-80);
+  }
+
+  &[color="yellow"] {
+    --shout-background: var(--yellow-20);
+    --shout-alert: var(--yellow-60);
+  }
+
+  &[color="orange"] {
+    --shout-background: var(--orange-20);
+    --shout-alert: var(--orange-80);
+  }
+
+  &[color="blue"] {
+    --shout-background: var(--blue-20);
+    --shout-alert: var(--blue-60);
+  }
+}

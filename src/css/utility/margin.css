@@ -1,0 +1,135 @@
+.ca-margin-0 { margin: 0rem; }
+.ca-margin-1 { margin: 0.5rem; }
+.ca-margin-2 { margin: 1rem; }
+.ca-margin-3 { margin: 1.5rem; }
+.ca-margin-4 { margin: 2rem; }
+.ca-margin-5 { margin: 2.5rem; }
+.ca-margin-6 { margin: 3rem; }
+.ca-margin-7 { margin: 3.5rem; }
+.ca-margin-8 { margin: 4rem; }
+.ca-margin-9 { margin: 4.5rem; }
+.ca-margin-10 { margin: 5rem; }
+.ca-margin-12 { margin: 6rem; }
+.ca-margin-14 { margin: 7rem; }
+.ca-margin-16 { margin: 8rem; }
+.ca-margin-18 { margin: 9rem; }
+.ca-margin-20 { margin: 10rem; }
+
+.ca-margin-x-0 { margin-inline: 0rem; }
+.ca-margin-x-1 { margin-inline: 0.5rem; }
+.ca-margin-x-2 { margin-inline: 1rem; }
+.ca-margin-x-3 { margin-inline: 1.5rem; }
+.ca-margin-x-4 { margin-inline: 2rem; }
+.ca-margin-x-5 { margin-inline: 2.5rem; }
+.ca-margin-x-6 { margin-inline: 3rem; }
+.ca-margin-x-7 { margin-inline: 3.5rem; }
+.ca-margin-x-8 { margin-inline: 4rem; }
+.ca-margin-x-9 { margin-inline: 4.5rem; }
+.ca-margin-x-10 { margin-inline: 5rem; }
+.ca-margin-x-12 { margin-inline: 6rem; }
+.ca-margin-x-14 { margin-inline: 7rem; }
+.ca-margin-x-16 { margin-inline: 8rem; }
+.ca-margin-x-18 { margin-inline: 9rem; }
+.ca-margin-x-20 { margin-inline: 10rem; }
+
+.ca-margin-y-0 { margin-block: 0rem; }
+.ca-margin-y-1 { margin-block: 0.5rem; }
+.ca-margin-y-2 { margin-block: 1rem; }
+.ca-margin-y-3 { margin-block: 1.5rem; }
+.ca-margin-y-4 { margin-block: 2rem; }
+.ca-margin-y-5 { margin-block: 2.5rem; }
+.ca-margin-y-6 { margin-block: 3rem; }
+.ca-margin-y-7 { margin-block: 3.5rem; }
+.ca-margin-y-8 { margin-block: 4rem; }
+.ca-margin-y-9 { margin-block: 4.5rem; }
+.ca-margin-y-10 { margin-block: 5rem; }
+.ca-margin-y-12 { margin-block: 6rem; }
+.ca-margin-y-14 { margin-block: 7rem; }
+.ca-margin-y-16 { margin-block: 8rem; }
+.ca-margin-y-18 { margin-block: 9rem; }
+.ca-margin-y-20 { margin-block: 10rem; }
+
+.ca-margin-top-0 { margin-block-start: 0rem; }
+.ca-margin-top-1 { margin-block-start: 0.5rem; }
+.ca-margin-top-2 { margin-block-start: 1rem; }
+.ca-margin-top-3 { margin-block-start: 1.5rem; }
+.ca-margin-top-4 { margin-block-start: 2rem; }
+.ca-margin-top-5 { margin-block-start: 2.5rem; }
+.ca-margin-top-6 { margin-block-start: 3rem; }
+.ca-margin-top-7 { margin-block-start: 3.5rem; }
+.ca-margin-top-8 { margin-block-start: 4rem; }
+.ca-margin-top-9 { margin-block-start: 4.5rem; }
+.ca-margin-top-10 { margin-block-start: 5rem; }
+.ca-margin-top-12 { margin-block-start: 6rem; }
+.ca-margin-top-14 { margin-block-start: 7rem; }
+.ca-margin-top-16 { margin-block-start: 8rem; }
+.ca-margin-top-18 { margin-block-start: 9rem; }
+.ca-margin-top-20 { margin-block-start: 10rem; }
+
+.ca-margin-bottom-0 { margin-block-end: 0rem; }
+.ca-margin-bottom-1 { margin-block-end: 0.5rem; }
+.ca-margin-bottom-2 { margin-block-end: 1rem; }
+.ca-margin-bottom-3 { margin-block-end: 1.5rem; }
+.ca-margin-bottom-4 { margin-block-end: 2rem; }
+.ca-margin-bottom-5 { margin-block-end: 2.5rem; }
+.ca-margin-bottom-6 { margin-block-end: 3rem; }
+.ca-margin-bottom-7 { margin-block-end: 3.5rem; }
+.ca-margin-bottom-8 { margin-block-end: 4rem; }
+.ca-margin-bottom-9 { margin-block-end: 4.5rem; }
+.ca-margin-bottom-10 { margin-block-end: 5rem; }
+.ca-margin-bottom-12 { margin-block-end: 6rem; }
+.ca-margin-bottom-14 { margin-block-end: 7rem; }
+.ca-margin-bottom-16 { margin-block-end: 8rem; }
+.ca-margin-bottom-18 { margin-block-end: 9rem; }
+.ca-margin-bottom-20 { margin-block-end: 10rem; }
+
+.ca-margin-left-0 { margin-inline-start: 0rem; }
+.ca-margin-left-1 { margin-inline-start: 0.5rem; }
+.ca-margin-left-2 { margin-inline-start: 1rem; }
+.ca-margin-left-3 { margin-inline-start: 1.5rem; }
+.ca-margin-left-4 { margin-inline-start: 2rem; }
+.ca-margin-left-5 { margin-inline-start: 2.5rem; }
+.ca-margin-left-6 { margin-inline-start: 3rem; }
+.ca-margin-left-7 { margin-inline-start: 3.5rem; }
+.ca-margin-left-8 { margin-inline-start: 4rem; }
+.ca-margin-left-9 { margin-inline-start: 4.5rem; }
+.ca-margin-left-10 { margin-inline-start: 5rem; }
+.ca-margin-left-12 { margin-inline-start: 6rem; }
+.ca-margin-left-14 { margin-inline-start: 7rem; }
+.ca-margin-left-16 { margin-inline-start: 8rem; }
+.ca-margin-left-18 { margin-inline-start: 9rem; }
+.ca-margin-left-20 { margin-inline-start: 10rem; }
+
+.ca-margin-right-0 { margin-inline-end: 0rem; }
+.ca-margin-right-1 { margin-inline-end: 0.5rem; }
+.ca-margin-right-2 { margin-inline-end: 1rem; }
+.ca-margin-right-3 { margin-inline-end: 1.5rem; }
+.ca-margin-right-4 { margin-inline-end: 2rem; }
+.ca-margin-right-5 { margin-inline-end: 2.5rem; }
+.ca-margin-right-6 { margin-inline-end: 3rem; }
+.ca-margin-right-7 { margin-inline-end: 3.5rem; }
+.ca-margin-right-8 { margin-inline-end: 4rem; }
+.ca-margin-right-9 { margin-inline-end: 4.5rem; }
+.ca-margin-right-10 { margin-inline-end: 5rem; }
+.ca-margin-right-12 { margin-inline-end: 6rem; }
+.ca-margin-right-14 { margin-inline-end: 7rem; }
+.ca-margin-right-16 { margin-inline-end: 8rem; }
+.ca-margin-right-18 { margin-inline-end: 9rem; }
+.ca-margin-right-20 { margin-inline-end: 10rem; }
+
+.ca-margin-x-trim { 
+	& > :first-child {   
+		margin-inline-start: 0; 
+	} 
+	& > :last-child {   
+		margin-inline-end: 0; 
+	} 
+}
+.ca-margin-y-trim { 
+	& > :first-child {   
+		margin-block-start: 0; 
+	} 
+	& > :last-child {   
+		margin-block-end: 0; 
+	} 
+}

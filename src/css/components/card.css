@@ -5,7 +5,7 @@ ca-card {
   background: var(--primary-background-30);
   border-radius: var(--border-radius);
 
-  & > :is(div, section, article) {
+  & > :where(div, section, article, [slot="content"]) {
     padding: 1.5rem 1rem;
 
     & > :first-child {
@@ -17,7 +17,7 @@ ca-card {
     }
   }
 
-  & > :is(img, svg, ca-pic) {
+  & > :where(img, svg, [slot="img"]) {
     place-self: start center;
   }
 
@@ -66,17 +66,17 @@ ca-card {
   }
 
   &[size="small"] {
-    & > :is(img, svg, ca-pic) {
+    & > :is(img, svg, [slot="img"]) {
       block-size: 15.5rem;
     }
   }
   &[size="medium"] {
-    & > :is(img, svg, ca-pic) {
+    & > :is(img, svg, [slot="img"]) {
       block-size: 22rem;
     }
   }
   &[size="large"] {
-    & > :is(img, svg, ca-pic) {
+    & > :is(img, svg, [slot="img"]) {
       block-size: 28.5rem;
     }
   }
@@ -89,22 +89,22 @@ ca-card {
       flex: 1 2 auto;
     }
 
-    & > :is(img, svg, ca-pic) {
+    & > :is(img, svg, [slot="img"]) {
       flex: 2 1 auto;
     }
 
     &[size="small"] {
-      & > :is(img, svg, ca-pic) {
+      & > :is(img, svg, [slot="img"]) {
         inline-size: 9rem;
       }
     }
     &[size="medium"] {
-      & > :is(img, svg, ca-pic) {
+      & > :is(img, svg, [slot="img"]) {
         inline-size: 15.5rem;
       }
     }
     &[size="large"] {
-      & > :is(img, svg, ca-pic) {
+      & > :is(img, svg, [slot="img"]) {
         inline-size: 22rem;
       }
     }
@@ -127,7 +127,7 @@ ca-card {
     object-fit: cover;
   }
 
-  & > :where([flow|="horizontal"] > :where(img, svg, ca-pic)) {
+  & > :where([flow|="horizontal"] > :where(img, svg, [slot="img"])) {
     inline-size: max(20vw, 100%);
   }
 }

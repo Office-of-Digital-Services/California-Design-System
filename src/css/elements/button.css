@@ -6,7 +6,7 @@
   --button-background-active: var(--button-background-hover);
   --button-padding: .75rem 2rem;
   --button-block-size: initial;
-  --button-gap: .75rem;
+  --button-gap: .5rem;
   --button-text-size: var(--text-size-2);
   --button-text-weight: 600;
   --button-border: none;

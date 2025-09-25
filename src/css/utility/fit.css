@@ -1,0 +1,6 @@
+/* Object fit */
+.ca-fit-fill { object-fit: fill; }
+.ca-fit-cover { object-fit: cover; }
+.ca-fit-contain { object-fit: contain; }
+.ca-fit-none { object-fit: none; }
+.ca-fit-scale { object-fit: scale-down; }

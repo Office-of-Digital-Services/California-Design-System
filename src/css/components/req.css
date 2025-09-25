@@ -1,0 +1,18 @@
+/* 
+	<ca-req> puts the little asterix on required fields.
+	Include it inside the <label>.
+	Adding text will hide it for sighted users while presenting it to screen readers.
+	For example, <ca-req>(required)</ca-req>.
+	However, leave it blank when using HTML-native <input required>, otherwise the screen reader will say "required" multiple times.
+*/
+ca-req {
+  display: contents;
+  font-size-adjust: 0;
+
+  &::before {
+    display: inline-block;
+    font-size-adjust: initial;
+    content: "*";
+    color: var(--red-70);
+  }
+}

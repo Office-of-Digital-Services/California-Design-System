@@ -29,8 +29,8 @@ ca-layout > footer {
 ca-box[format="site-links"] {
   margin-block-end: 4rem;
 
-  & ca-grid {
-    --min-cell-inline-size: 15rem;
+  & ca-mesh {
+    --cell-width: 15rem;
 
     & section {
       padding: 0;
