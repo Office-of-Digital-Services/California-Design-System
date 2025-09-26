@@ -1,8 +1,6 @@
 # California Design System
 
-[The Design System test site](https://office-of-digital-services.github.io/California-Design-System/)
-
-This is the Base Team repository for the upcoming California Design System. We can make this readme professional later. For now, here's what devs need to know.
+This repository contains the early development work for California’s next design system. Code, components, and documentation are evolving, and the system is not yet ready for production use. Follow along as we build towards an Alpha release.
 
 ## Grab it
 
@@ -80,3 +78,9 @@ The following package version numbers apply.
 * 1.6.0
 
 See more at [npm's deprecation page](https://docs.npmjs.com/deprecating-and-undeprecating-packages-or-package-versions).
+
+## Early test site
+
+[View the test site](https://office-of-digital-services.github.io/California-Design-System/)
+
+This is just our sandbox. It’s where we try things out and preview work in progress. It’s not the finished product and doesn’t reflect the final design or content.
