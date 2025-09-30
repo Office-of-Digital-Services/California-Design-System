@@ -25,7 +25,9 @@
     "esbuild": "^0.25.0",
     "glob": "^11.0.0",
     "highlight.js": "^11.11.1",
-    "html-prettify": "^1.0.7",
     "lightningcss": "^1.27.0"
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
   }
 }

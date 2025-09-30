@@ -12,7 +12,7 @@
   --button-border: none;
 }
 
-.button {
+.ca-button {
   padding: var(--button-padding);
   color: var(--button-color);
   border: var(--button-border);
@@ -49,7 +49,7 @@
   }
 }
 
-.button-translucent {
+.ca-button-translucent {
   background: unset;
 
   &::before {
@@ -78,79 +78,79 @@
   }
 }
 
-.button-gray {
+.ca-button-gray {
   --button-color: var(--gray-static-10);
   --button-background: var(--gray-highlight);
   --button-background-hover: var(--gray-highlight-active);
 }
 
-.button-magenta {
+.ca-button-magenta {
   --button-color: var(--magenta-static-10);
   --button-background: var(--magenta-highlight);
   --button-background-hover: var(--magenta-highlight-active);
 }
 
-.button-orange {
+.ca-button-orange {
   --button-color: var(--orange-static-10);
   --button-background: var(--orange-highlight);
   --button-background-hover: var(--orange-highlight-active);
 }
 
-.button-green {
+.ca-button-green {
   --button-color: var(--green-static-10);
   --button-background: var(--green-highlight);
   --button-background-hover: var(--green-highlight-active);
 }
 
-.button-blue {
+.ca-button-blue {
   --button-color: var(--blue-static-10);
   --button-background: var(--blue-highlight);
   --button-background-hover: var(--blue-highlight-active);
 }
 
-.button-purple {
+.ca-button-purple {
   --button-color: var(--purple-static-10);
   --button-background: var(--purple-highlight);
   --button-background-hover: var(--purple-highlight-active);
 }
 
-.button-yellow {
+.ca-button-yellow {
   --button-color: var(--yellow-static-10);
   --button-background: var(--yellow-highlight);
   --button-background-hover: var(--yellow-highlight-active);
 }
 
-.button-red {
+.ca-button-red {
   --button-color: var(--red-static-10);
   --button-background: var(--red-highlight);
   --button-background-hover: var(--red-highlight-active);
 }
 
-.button-coastal {
+.ca-button-coastal {
   --button-color: var(--coastal-static-10);
   --button-background: var(--coastal-highlight);
   --button-background-hover: var(--coastal-highlight-active);
 }
 
-.button-desert {
+.ca-button-desert {
   --button-color: var(--desert-static-10);
   --button-background: var(--desert-highlight);
   --button-background-hover: var(--desert-highlight-active);
 }
 
-.button-mountain {
+.ca-button-mountain {
   --button-color: var(--mountain-static-10);
   --button-background: var(--mountain-highlight);
   --button-background-hover: var(--mountain-highlight-active);
 }
 
-.button-valley {
+.ca-button-valley {
   --button-color: var(--valley-static-10);
   --button-background: var(--valley-highlight);
   --button-background-hover: var(--valley-highlight-active);
 }
 
-.button-utility {
+.ca-button-utility {
   --button-color: var(--primary-100);
   --button-background: var(--primary-background-30);
   --button-background-hover: var(--primary-background-40);
@@ -158,23 +158,23 @@
   --button-padding: .625rem;
   --button-block-size: 2.5rem;
 
-  & > ca-pic {
+  & > ca-icon {
     inline-size: 1.25rem;
     block-size: auto;
   }
 }
 @media screen and (min-width: 1024px) {
-  .button.button-utility {
+  .ca-button.ca-button-utility {
     --button-block-size: 3rem;
     --button-padding: .75rem;
 
-    & > ca-pic {
+    & > ca-icon {
       inline-size: 1.5rem;
     }
   }
 }
 
-.button-social {
+.ca-button-social {
   --button-color: var(--primary-10);
   --button-background: var(--primary-100);
   --button-background-hover: var(--primary-110);
@@ -182,20 +182,20 @@
   --button-padding: .375rem;
   --button-block-size: 2rem;
 
-  & > ca-pic {
+  & > ca-icon {
     inline-size: 1.25rem;
     block-size: auto;
   }
 }
 
-.button-burger {
+.ca-button-burger {
   --button-color: var(--primary-10);
   --button-background: var(--primary-100);
   --button-background-hover: var(--primary-110);
   --button-padding: .5rem;
   --button-block-size: 2.5rem;
 
-  & > ca-pic {
+  & > ca-icon {
     inline-size: 1.5rem;
     block-size: auto;
   }

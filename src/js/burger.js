@@ -12,7 +12,7 @@ class Burger extends HTMLElement {
       /* First, convert the burger link into a burger button. */
       const link = this.querySelector("a");
       this.button = document.createElement("button");
-      this.button.classList.add("button", "button-burger");
+      this.button.classList.add("ca-button", "ca-button-burger");
       this.button.setAttribute("aria-expanded", "false");
       this.button.innerHTML = link.innerHTML;
       link.replaceWith(this.button);
@@ -106,7 +106,7 @@ class Burger extends HTMLElement {
       icon = position === "scrolled" ? "bear-menu" : "pancakes-menu";
     }
 
-    const buttonIcon = this.button.querySelector("ca-pic");
+    const buttonIcon = this.button.querySelector("ca-icon");
     buttonIcon.setAttribute("icon", icon);
   }
 

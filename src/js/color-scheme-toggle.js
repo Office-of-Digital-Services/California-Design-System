@@ -13,7 +13,7 @@ class ColorSchemeToggle extends HTMLElement {
 
     window.setTimeout(() => {
       this.button = this.querySelector("button");
-      this.icon = this.querySelector("ca-pic");
+      this.icon = this.querySelector("ca-icon");
 
       this.applyScheme();
 
@@ -69,7 +69,8 @@ class ColorSchemeToggle extends HTMLElement {
 
     const newicon =
       this.scheme === this.schemes.light ? "light-mode" : "dark-mode";
-    this.icon.setAttribute("icon", newicon);
+
+    this.icon.setAttribute("name", newicon);
   }
 }
 

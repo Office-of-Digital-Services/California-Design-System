@@ -47,7 +47,9 @@ menu a,
   block-size: 100%;
   border-radius: var(--border-radius);
 
-  & > ca-pic[icon] {
+  & > ca-icon[name] {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
     margin-inline-start: auto;
     flex: 0 0 .75rem;
   }
@@ -104,12 +106,12 @@ ca-menu {
     display: flex;
   }
 
-  & > button > ca-pic[icon] {
+  & > button > ca-icon[name] {
     transition: transform 0.4s ease;
   }
 
   &[open] {
-    & > button > ca-pic[icon] {
+    & > button > ca-icon[name] {
       transform: rotate(-180deg);
     }
   }
@@ -147,7 +149,9 @@ ca-layout:not([format|="top"]) [slot="menu"] ca-menu {
       flex-wrap: wrap;
       padding: .75rem 1rem 0 1rem;
 
-      & > ca-pic[icon] {
+      & > ca-icon[name] {
+        inline-size: 1.5rem;
+        block-size: 1.5rem;
         margin-inline-start: 1rem;
         flex: 0 0 .75rem;
       }

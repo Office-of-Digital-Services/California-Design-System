@@ -6,13 +6,13 @@
 
 <h2>Default button</h2>
 
-<p>Use the <code>button</code> class to add button styles to links or buttons.</p>
+<p>Use the <code>ca-button</code> class to add button styles to links or buttons.</p>
 
 <p>Here's a link.</p>
 
 <ca-code-demo>
   <template>
-    <a href="#" class="button">Default button</a>
+    <a href="#" class="ca-button">Default button</a>
   </template>
 </ca-code-demo>
 
@@ -23,7 +23,7 @@
 
 <ca-code-demo>
   <template>
-    <button class="button">Default button</button>
+    <button class="ca-button">Default button</button>
   </template>
 </ca-code-demo>
 
@@ -37,21 +37,21 @@
 
 <ca-code-demo>
   <template>
-    <ca-flex gap="2" wrap>
-      <button class="button">Primary</button>
-      <button class="button button-gray">Gray</button>
-      <button class="button button-yellow">Yellow</button>
-      <button class="button button-red">Red</button>
-      <button class="button button-magenta">Magenta</button>
-      <button class="button button-orange">Orange</button>
-      <button class="button button-green">Green</button>
-      <button class="button button-blue">Blue</button>
-      <button class="button button-purple">Purple</button>
-      <button class="button button-coastal">Coastal</button>
-      <button class="button button-desert">Desert</button>
-      <button class="button button-mountain">Mountain</button>
-      <button class="button button-valley">Valley</button>
-    </ca-flex>
+    <ca-mesh gap="2" style="--cell-width: 10rem;">
+      <button class="ca-button">Primary</button>
+      <button class="ca-button ca-button-gray">Gray</button>
+      <button class="ca-button ca-button-yellow">Yellow</button>
+      <button class="ca-button ca-button-red">Red</button>
+      <button class="ca-button ca-button-magenta">Magenta</button>
+      <button class="ca-button ca-button-orange">Orange</button>
+      <button class="ca-button ca-button-green">Green</button>
+      <button class="ca-button ca-button-blue">Blue</button>
+      <button class="ca-button ca-button-purple">Purple</button>
+      <button class="ca-button ca-button-coastal">Coastal</button>
+      <button class="ca-button ca-button-desert">Desert</button>
+      <button class="ca-button ca-button-mountain">Mountain</button>
+      <button class="ca-button ca-button-valley">Valley</button>
+    </ca-mesh>
   </template>
 </ca-code-demo>
 
@@ -63,8 +63,8 @@
 
 <ca-code-demo>
   <template>
-    <button class="button">
-      <ca-pic icon="account-circle"></ca-pic>
+    <button class="ca-button">
+      <ca-icon name="account"></ca-icon>
       <!-- This will work without the <span> too. -->
       <span>Login</span>
     </button>
@@ -81,8 +81,8 @@
 
 <ca-code-demo>
   <template>
-    <a href="#" class="button button-utility">
-      <ca-pic icon="account-circle"></ca-pic>
+    <a href="#" class="ca-button ca-button-utility">
+      <ca-icon name="account"></ca-icon>
     </a>
   </template>
 </ca-code-demo>
@@ -91,8 +91,8 @@
 
 <ca-code-demo>
   <template>
-    <a href="#" class="button button-utility">
-      <ca-pic icon="account-circle"></ca-pic>
+    <a href="#" class="ca-button ca-button-utility">
+      <ca-icon name="account"></ca-icon>
       <span>Utility</span>
     </a>
   </template>
@@ -105,8 +105,8 @@
 
 <ca-code-demo>
   <template>
-    <a href="#" class="button button-utility">
-      <ca-pic icon="mail"></ca-pic>
+    <a href="#" class="ca-button ca-button-utility">
+      <ca-icon name="mail"></ca-icon>
       <ca-badge>9</ca-badge>
       <ca-tip>Unread messages</ca-tip>
     </a>

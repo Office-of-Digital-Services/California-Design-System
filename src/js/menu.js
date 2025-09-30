@@ -15,7 +15,7 @@ class NavMenu extends HTMLElement {
       // If there's no button, we need to create it.
       if (summary?.nodeName !== "BUTTON") {
         this.button = document.createElement("button");
-        this.button.innerHTML = `<span>${summary.innerHTML}</span><ca-pic icon="down"></ca-pic>`;
+        this.button.innerHTML = `<span>${summary.innerHTML}</span><ca-icon name="arrow-down"></ca-icon>`;
         this.prepend(this.button);
       }
 

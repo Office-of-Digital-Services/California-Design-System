@@ -1,0 +1,214 @@
+<h1>Mesh</h1>
+
+<p>Mesh is a grid-based system for arranging content. It's great for cards.</p>
+
+<!-- styles only for testing purposes -->
+<style>
+  ca-mesh {
+    --cell-width: 22ch;
+  }
+
+  ca-mesh p {
+    margin: 0;
+    padding: 1rem;
+    max-width: 100%;
+    background-color: lightseagreen;
+  }
+</style>
+
+
+<h2>Max six columns (default)</h2>
+
+<p>Expand your window to see how the grid reflows.</p>
+<ca-code-demo>
+  <template>
+    <ca-mesh>
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Max three columns</h2>
+
+<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh max-columns="3">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Minimum two columns</h2>
+
+<p>This grid will maintain a minimum of two columns, even on mobile.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh min-columns="2">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Min two columns, max three columns</h2>
+
+<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh min-columns="2" max-columns="3">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Max three columns</h2>
+
+<p>This grid will not exceed three columns. But it will still flow within that constraint.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh max-columns="3">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Minimum two columns</h2>
+
+<p>This grid will maintain a minimum of two columns, even on mobile.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh min-columns="2">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Min two columns, max three columns</h2>
+
+<p>We can mix and match min and max columns. Everything should flow within the given limits.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh min-columns="2" max-columns="3">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+<h2>Cell width override</h2>
+
+<p>CSS vars can be overriden to increase the size of the grid cells.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh style="--cell-width: 48ch;">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Cell width override with shortcut</h2>
+
+<p>We can create convenient attributes, like <code>cell-size="large"</code> for applying popular cell sizes.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh cell-size="large">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Cell width and gap override</h2>
+
+<p>Gaps can also be modified.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh style="--cell-width: 20ch; --gap-x: 2rem;">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+      <p>Cell four.</p>
+      <p>Cell five.</p>
+      <p>Cell six.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Grid flow with auto-fit (default)</h2>
+
+<p>Fill excess width.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh flow="fit" style="--cell-width: 15ch;">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>
+
+<h2>Grid flow with auto-fill</h2>
+
+<p>Don't fill excess width.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-mesh flow="fill" style="--cell-width: 15ch;">
+      <p>Cell one.</p>
+      <p>Cell two.</p>
+      <p>Cell three.</p>
+    </ca-mesh>
+  </template>
+</ca-code-demo>

@@ -1,7 +1,7 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import * as cheerio from "cheerio";
 import hljs from "highlight.js";
-import htmlPrettify from "html-prettify";
+import prettier from "prettier";
 import cssBuilder from "./tools/bundlers/css-builder.js";
 import jsBuilder from "./tools/bundlers/js-builder.js";
 
@@ -64,26 +64,36 @@ export default async function (eleventyConfig) {
   eleventyConfig.addTransform("html-transform", async (content) => {
     const $ = cheerio.load(content);
     const demos = $("ca-code-demo");
+    const promises = [];
 
     if (demos.length > 0) {
       demos.each((i, el) => {
         const $template = $(el).find("template").clone();
 
         if ($template.length > 0) {
-          const templateHtml = htmlPrettify($template.html()).replaceAll(
-            '=""',
-            "",
-          );
-          const highlightedCode = hljs.highlight(templateHtml, {
-            language: "html",
-          }).value;
-          $(el).append(`<div class="example-block">${templateHtml}</div>`);
-          $(el).append(
-            `<div class="example-code"><pre class="hljs"><code>${highlightedCode}</code></pre></div>`,
+          promises.push(
+            prettier
+              .format($template.html(), {
+                parser: "html",
+              })
+              .then((formattedHtml) => {
+                const highlightedCode = hljs.highlight(formattedHtml, {
+                  language: "html",
+                }).value;
+
+                $(el).append(
+                  `<div class="example-block">${formattedHtml}</div>`,
+                );
+                $(el).append(
+                  `<div class="example-code"><pre class="hljs"><code>${highlightedCode}</code></pre></div>`,
+                );
+              }),
           );
         }
       });
     }
+
+    await Promise.all(promises);
 
     return $.html();
   });
@@ -102,6 +112,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./tools/demo-site-only-src");
 
   // Ignores
+  eleventyConfig.ignores.add(".previous-web/**/*");
   eleventyConfig.ignores.add("*.md"); // Repo root markdowns
   eleventyConfig.ignores.add("*.js"); // Repo root configs
 
@@ -115,6 +126,8 @@ export default async function (eleventyConfig) {
       input: ".",
       // site structure pages (path is relative to input directory)
       includes: "tools/11ty/_includes",
+      // template data
+      data: "tools/11ty/_data",
       // site final output directory
       output: "_site",
     },

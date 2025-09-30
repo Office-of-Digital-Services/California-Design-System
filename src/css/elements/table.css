@@ -30,7 +30,7 @@ td {
   font-weight: 400;
 }
 
-table.inner-border {
+table.ca-inner-border {
   &:has(tfoot > tr) > tbody > tr,
   &:not(:has(tfoot > tr)) tr:not(:last-child) {
     & > :is(th, td) {
@@ -43,12 +43,12 @@ table.inner-border {
   }
 }
 
-table.outer-border {
+table.ca-outer-border {
   border: 0.0625rem solid var(--gray-30);
   border-radius: var(--border-radius);
 }
 
-table.stripes {
+table.ca-stripes {
   & tr:nth-child(even) {
     background-color: var(--gray-background-30);
   }
@@ -58,7 +58,7 @@ table.stripes {
   }
 }
 
-table.hover-rows {
+table.ca-hover-rows {
   & :not(thead) tr:hover {
     background-color: var(--primary-background-30);
   }

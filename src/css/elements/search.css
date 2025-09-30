@@ -36,7 +36,7 @@ search {
     min-inline-size: 3rem;
     block-size: 100%;
 
-    & ca-pic {
+    & ca-icon {
       block-size: auto;
       inline-size: 1rem;
     }

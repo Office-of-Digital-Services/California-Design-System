@@ -1,11 +1,11 @@
 @media screen and (min-width: 1024px) {
   /* Horizon, small desktop */
-  ca-layout[format|="top"] > :is(header, .site-header) {
+  ca-layout[format|="top"] > :is(header, [slot="header"]) {
     padding: 1rem 2rem;
   }
 }
 
-ca-layout > :is(header, .site-header) {
+ca-layout > :is(header, [slot="header"]) {
   padding: 1rem 1rem 1.5rem 1rem;
   background-color: var(--primary-background-20);
   z-index: 3;
@@ -51,7 +51,7 @@ ca-layout > :is(header, .site-header) {
 /* Mobile */
 /* Apply a mobile-only media query, so these mods don't mess with desktop. */
 @media screen and (max-width: 1023px) {
-  ca-layout > :is(header, .site-header) {
+  ca-layout > :is(header, [slot="header"]) {
     grid-template-columns: 2.5rem 1fr;
     grid-template-areas:
       "burger utility"
@@ -61,7 +61,7 @@ ca-layout > :is(header, .site-header) {
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout:not([format|="top"]) > :is(header, .site-header) {
+  ca-layout:not([format|="top"]) > :is(header, [slot="header"]) {
     padding: 1.5rem 1rem 2rem 1rem;
     border-inline-end: 0.0625rem solid var(--gray-40);
     grid-template-columns: 1fr;
@@ -95,7 +95,7 @@ ca-layout > :is(header, .site-header) {
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout[format="top-full"] > :is(header, .site-header) {
+  ca-layout[format="top-full"] > :is(header, [slot="header"]) {
     row-gap: 1rem;
     padding-block-end: 0;
     grid-template-columns: 1fr fit-content(15rem) max-content;
@@ -113,7 +113,7 @@ ca-layout > :is(header, .site-header) {
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout[format="top-lite"] > :is(header, .site-header) {
+  ca-layout[format="top-lite"] > :is(header, [slot="header"]) {
     grid-template-columns: max-content 1fr fit-content(15rem) max-content;
     grid-template-rows: auto;
     grid-template-areas: "org menu priority utility";
@@ -121,7 +121,7 @@ ca-layout > :is(header, .site-header) {
 }
 
 ca-layout[burger="open"] {
-  & :is(header, .site-header) {
+  & :is(header, [slot="header"]) {
     position: fixed;
     inset-block-start: 0;
     inset-inline-start: 0;

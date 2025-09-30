@@ -10,7 +10,7 @@ p {
 }
 
 h1 + p,
-.lead {
+.ca-lead {
   font-weight: 400;
   font-size: var(--text-size-3);
   line-height: 1.875rem;
