@@ -8,7 +8,7 @@ table {
 }
 
 caption {
-  font-size: var(--text-size-0);
+  font-size: var(--text-size-small);
   caption-side: bottom;
   padding: 1rem;
   font-style: italic;
@@ -17,7 +17,7 @@ caption {
 
 th,
 td {
-  font-size: var(--text-size-1);
+  font-size: var(--text-size-default);
   padding: .5rem 1rem;
   text-align: start;
 }

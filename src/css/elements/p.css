@@ -1,5 +1,5 @@
 p {
-  line-height: 1.6rem;
+  line-height: var(--line-height-default);
   /* max-width: var(--text-max-width); */
   text-wrap: pretty;
   margin-block-end: 1.5rem;
@@ -11,8 +11,7 @@ p {
 
 h1 + p,
 .ca-lead {
-  font-weight: 400;
-  font-size: var(--text-size-3);
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem;
+  font-size: var(--text-size-large);
+  line-height: var(--line-height-large);
+  margin-block-end: clamp(2rem, calc(1.7289rem + 1.2048vw), 2.5rem);
 }

@@ -10,7 +10,7 @@ ca-code-demo {
   & .example-code pre {
     padding: 1rem;
     border-radius: var(--border-radius);
-    font-size: var(--text-size-0);
+    font-size: var(--text-size-small);
     overflow: auto;
   }
 

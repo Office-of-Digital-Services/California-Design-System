@@ -48,7 +48,7 @@ ca-shout {
 
   & > [slot="summary"] {
     color: var(--shout-text);
-    font-size: var(--text-size-2);
+    font-size: var(--text-size-default);
     font-weight: 600;
     font-style: normal;
     line-height: normal;

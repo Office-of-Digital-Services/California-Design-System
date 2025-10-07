@@ -1,7 +1,8 @@
 body {
   font-family: var(--font-family), system-ui, -apple-system, "Roboto",
     "Helvetica Neue", sans-serif;
-  font-size: var(--text-size-2);
+  font-size: var(--text-size-default);
+  line-height: var(--line-height-default);
   font-weight: 400;
   background-color: var(--primary-background-10);
   color: var(--primary-120);

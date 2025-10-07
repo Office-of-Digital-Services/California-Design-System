@@ -5,38 +5,49 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
-  margin-block-end: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
 }
 
 h1 {
-  font-weight: 600;
-  font-size: var(--text-size-6);
-  line-height: 4.625rem;
+  font-size: var(--text-size-h1);
+  line-height: var(--line-height-h1);
+  margin-block-end: clamp(2.5rem, 2.2289rem + 1.2048vw, 3rem);
 }
 
 h2 {
-  font-weight: 600;
-  font-size: var(--text-size-5);
-  line-height: 2.625rem;
+  font-size: var(--text-size-h2);
+  line-height: var(--line-height-h2);
+  margin-block-start: clamp(2.5rem, 2.2289rem + 1.2048vw, 3rem);
+  margin-block-end: clamp(2rem, 1.7289rem + 1.2048vw, 2.5rem);
 }
 
 h3 {
-  font-weight: 600;
-  font-size: var(--text-size-4);
-  line-height: 2.1875rem;
+  font-size: var(--text-size-h3);
+  line-height: var(--line-height-h3);
 }
 
 h4 {
-  font-weight: 600;
-  font-size: var(--text-size-3);
-  line-height: 1.875rem;
+  font-size: var(--text-size-h4);
+  line-height: var(--line-height-h4);
 }
 
-h5 {
-  font-weight: 600;
-  font-size: var(--text-size-1);
-}
-
+h5,
 h6 {
-  font-size: var(--text-size-1);
+  font-size: var(--text-size-h5);
+  line-height: var(--line-height-h5);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: clamp(2rem, 1.7289rem + 1.2048vw, 2.5rem);
+  margin-block-end: 1rem;
 }

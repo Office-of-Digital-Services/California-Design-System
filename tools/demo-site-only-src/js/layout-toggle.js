@@ -2,7 +2,7 @@ class LayoutToggle extends HTMLElement {
   shadowHtml = /* html */ `
 		<style>
 			:host {
-				font-size: var(--text-size-0);
+				font-size: var(--text-size-small);
 				margin: 0 1rem;
 			}
 			button {

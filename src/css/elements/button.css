@@ -7,7 +7,7 @@
   --button-padding: .75rem 2rem;
   --button-block-size: initial;
   --button-gap: .5rem;
-  --button-text-size: var(--text-size-2);
+  --button-text-size: var(--text-size-default);
   --button-text-weight: 600;
   --button-border: none;
 }
@@ -30,6 +30,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  & :where(ca-icon) {
+    inline-size: 1.5rem;
+    block-size: auto;
+  }
 
   &:hover {
     text-decoration: none;
@@ -158,7 +163,7 @@
   --button-padding: .625rem;
   --button-block-size: 2.5rem;
 
-  & > ca-icon {
+  & ca-icon {
     inline-size: 1.25rem;
     block-size: auto;
   }
@@ -168,7 +173,7 @@
     --button-block-size: 3rem;
     --button-padding: .75rem;
 
-    & > ca-icon {
+    & ca-icon {
       inline-size: 1.5rem;
     }
   }
@@ -182,7 +187,7 @@
   --button-padding: .375rem;
   --button-block-size: 2rem;
 
-  & > ca-icon {
+  & ca-icon {
     inline-size: 1.25rem;
     block-size: auto;
   }
@@ -195,7 +200,7 @@
   --button-padding: .5rem;
   --button-block-size: 2.5rem;
 
-  & > ca-icon {
+  & ca-icon {
     inline-size: 1.5rem;
     block-size: auto;
   }

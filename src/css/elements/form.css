@@ -1,5 +1,5 @@
 :where(form) {
-  font-size: var(--text-size-1);
+  font-size: var(--text-size-default);
   max-width: var(--content-width-large);
 }
 

@@ -22,7 +22,7 @@ ca-layout > footer {
   & li {
     padding: 0;
     margin: 0;
-    font-size: var(--text-size-0);
+    font-size: var(--text-size-small);
   }
 }
 
@@ -38,7 +38,7 @@ ca-box[format="site-links"] {
 
     /* Support all heading levels for footer sections, just in case. */
     & :is(h2, h3, h4, h5, h6) {
-      font-size: var(--text-size-1);
+      font-size: var(--text-size-default);
       line-height: normal;
       font-weight: 600;
       margin-block: 0 1rem;
@@ -67,12 +67,12 @@ ca-flex[format="copyright-stamp"] {
 
   & p {
     margin: 0;
-    font-size: var(--text-size-1);
+    font-size: var(--text-size-default);
     line-height: normal;
   }
 
   & > *:last-child {
-    font-size: var(--text-size-0);
+    font-size: var(--text-size-small);
   }
 }
 

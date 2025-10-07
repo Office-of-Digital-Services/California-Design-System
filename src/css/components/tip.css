@@ -13,7 +13,7 @@ ca-tip {
   position: relative;
 
   &:is(:hover, :active, :focus) > ca-tip {
-    font-size: var(--text-size-0);
+    font-size: var(--text-size-small);
     font-weight: 600;
     padding: .5rem 1rem;
     border-radius: var(--border-radius);

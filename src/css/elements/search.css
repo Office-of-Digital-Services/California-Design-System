@@ -15,7 +15,7 @@ search {
     display: inline-block;
     inline-size: 100%;
     padding: .5rem 1rem;
-    font-size: var(--text-size-1);
+    font-size: var(--text-size-default);
 
     &::placeholder {
       color: var(--gray-100);

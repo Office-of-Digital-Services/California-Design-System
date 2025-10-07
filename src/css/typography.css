@@ -1,102 +1,130 @@
 :root {
-  /* 
-	 * Removing responsive typography for now, while making sense of the layout.
-	 * See the following URL to restore.
-	 * https://github.com/Office-of-Digital-Services/California-Design-System/blob/v1.5.0/src/css/typography.css
-	 * Let's revisit after both layout and typography are settled.
-	 */
-
   --font-family: Noto Sans;
   --text-max-width: 65ch;
 
-  --text-size-0: 0.9375rem;
-  --text-size-1: 1rem; /* H5, H6, and menu items */
-  --text-size-2: 1.125rem; /* Base text */
-  --text-size-3: 1.25rem; /* H4 and lead text */
-  --text-size-4: 1.5625rem; /* H3 */
-  --text-size-5: 2rem; /* H2 */
-  --text-size-6: 3.375rem; /* H1 */
+  --text-size-small: clamp(1rem, 1rem + 0vw, 1rem);
+  --text-size-default: clamp(1.125rem, 1.0572rem + 0.3012vw, 1.25rem);
+  --text-size-large: clamp(1.25rem, 1.1145rem + 0.6024vw, 1.5rem);
+  --text-size-h5: clamp(1.25rem, 0.9789rem + 1.2048vw, 1.75rem);
+  --text-size-h4: clamp(1.5rem, 1.2289rem + 1.2048vw, 2rem);
+  --text-size-h3: clamp(1.75rem, 1.3434rem + 1.8072vw, 2.5rem);
+  --text-size-h2: clamp(2rem, 1.4578rem + 2.4096vw, 3rem);
+  --text-size-h1: clamp(2.25rem, 1.5723rem + 3.012vw, 3.5rem);
+
+  --line-height-small: 1.48;
+  --line-height-default: 1.48;
+  --line-height-large: 1.52;
+  --line-height-h5: 1.36;
+  --line-height-h4: 1.28;
+  --line-height-h3: 1.24;
+  --line-height-h2: 1.2;
+  --line-height-h1: 1.2;
 }
 
-.monospace {
+@media screen and (min-width: 1024px) {
+  :root {
+    --line-height-small: 1.8;
+    --line-height-default: 1.8;
+    --line-height-large: 1.8;
+    --line-height-h5: 1.48;
+    --line-height-h4: 1.4;
+    --line-height-h3: 1.36;
+    --line-height-h2: 1.36;
+    --line-height-h1: 1.32;
+  }
+}
+
+.ca-monospace {
   font-family: monospace;
 }
 
 /* Utilities */
-.text-left,
-.text-start {
+.ca-text-left {
   text-align: start;
 }
-.text-center {
+.ca-text-center {
   text-align: center;
 }
-.text-right,
-.text-end {
+.ca-text-right {
   text-align: end;
 }
 
-.text-size-0,
-.text-mini {
-  font-size: var(--text-size-0);
+.ca-text-small {
+  font-size: var(--text-size-small);
+  line-height: var(--line-height-small);
 }
-.text-size-1,
-.text-small {
-  font-size: var(--text-size-1);
+.ca-text-base {
+  font-size: var(--text-size-default);
+  line-height: var(--line-height-default);
 }
-.text-size-2,
-.text-base {
-  font-size: var(--text-size-2);
-}
-.text-size-3,
-.text-lead {
-  font-size: var(--text-size-3);
-}
-.text-size-4 {
-  font-size: var(--text-size-4);
-}
-.text-size-5 {
-  font-size: var(--text-size-5);
-}
-.text-size-6 {
-  font-size: var(--text-size-6);
-}
-.text-size-7 {
-  font-size: var(--text-size-7);
+.ca-text-large {
+  font-size: var(--text-size-large);
+  line-height: var(--line-height-large);
 }
 
-.font-weight-900,
-.font-heavy {
-  font-weight: 900;
+.ca-h5,
+.ca-h6 {
+  font-size: var(--text-size-h5);
+  line-height: var(--line-height-h5);
 }
-.font-weight-800,
-.font-extrabold {
-  font-weight: 800;
+.ca-h4 {
+  font-size: var(--text-size-h4);
+  line-height: var(--line-height-h4);
 }
-.font-weight-700,
-.font-bold {
+.ca-h3 {
+  font-size: var(--text-size-h3);
+  line-height: var(--line-height-h3);
+}
+.ca-h2 {
+  font-size: var(--text-size-h2);
+  line-height: var(--line-height-h2);
+}
+.ca-h1 {
+  font-size: var(--text-size-h1);
+  line-height: var(--line-height-h1);
+}
+
+.ca-h1,
+.ca-h2,
+.ca-h3,
+.ca-h4,
+.ca-h5 {
   font-weight: 700;
 }
-.font-weight-600,
-.font-semibold {
+
+.ca-weight-900,
+.ca-heavy {
+  font-weight: 900;
+}
+.ca-weight-800,
+.ca-extrabold {
+  font-weight: 800;
+}
+.ca-weight-700,
+.ca-bold {
+  font-weight: 700;
+}
+.ca-weight-600,
+.ca-semibold {
   font-weight: 600;
 }
-.font-weight-500,
-.font-medium {
+.ca-weight-500,
+.ca-medium {
   font-weight: 500;
 }
-.font-weight-400,
-.font-normal {
+.ca-weight-400,
+.ca-normal {
   font-weight: 400;
 }
-.font-weight-300,
-.font-light {
+.ca-weight-300,
+.ca-light {
   font-weight: 300;
 }
-.font-weight-200,
-.font-extralight {
+.ca-weight-200,
+.ca-extralight {
   font-weight: 200;
 }
-.font-weight-100,
-.font-thin {
+.ca-weight-100,
+.ca-thin {
   font-weight: 100;
 }
