@@ -11,7 +11,7 @@ For now, this is limited to <main> and <footer>.
   --content-width-small: 45.5rem;
   --content-width-medium: 69rem;
   --content-width-large: 92.5rem;
-  --content-width-full: unset;
+  --content-width-reset: unset;
 }
 /* Default indents. */
 ca-layout {
@@ -27,54 +27,50 @@ ca-layout[format|="top"] {
 }
 
 /* Utility classes and defaults for constraining content. */
-.content-width-small,
-.width-small {
+.ca-width-small {
   max-inline-size: var(--content-width-small);
 }
-.content-width-medium,
-.width-medium {
+.ca-width-medium {
   max-inline-size: var(--content-width-medium);
 }
-.content-width-large,
-.width-large {
+.ca-width-large {
   max-inline-size: var(--content-width-large);
 }
-.content-width-full,
-.width-full {
-  max-inline-size: var(--content-width-full);
+.ca-width-reset {
+  max-inline-size: var(--content-width-reset);
 }
-.width-small,
-.width-medium,
-.width-large,
-.width-full {
+.ca-width-small,
+.ca-width-medium,
+.ca-width-large,
+.ca-width-reset {
   inline-size: calc(100% - 2 * var(--mindent));
 }
-.content-width-reset {
+.ca-width-reset {
   max-inline-size: none;
 }
 
 /* Auto-apply side margin to all top-level children of main. */
-:where(ca-layout > :is(main, footer) > *) {
+:where(ca-layout > :is(main, [slot="main"] footer, [slot="footer"]) > *) {
   margin-inline: var(--mindent);
 }
 
 /* Manual indents, for creating custom blocks. But mostly inert on mobile here, by default. */
-.nodent {
+.ca-nodent {
   margin-inline: 0;
 }
-.outdent,
-.indent {
+.ca-outdent,
+.ca-indent {
   margin-inline: var(--mindent);
 }
 
 @media screen and (min-width: 1024px) {
-  .content {
+  .ca-content {
     margin-inline: 0;
   }
 
   /* Auto-apply the indent to all first-level main and footer content. */
-  :where(ca-layout > :is(main, footer) > *),
-  .content > * {
+  :where(ca-layout > :is(main, [slot="main"] footer, [slot="footer"]) > *),
+  .ca-content > * {
     margin-inline: var(--indent) var(--enddent);
   }
 
@@ -90,12 +86,12 @@ ca-layout[format|="top"] {
           video,
           canvas,
           code,
-          ul.grid,
-          ca-grid,
+          .ca-meshify,
+          ca-mesh,
           ca-code-demo
         )
     ),
-  .content
+  .ca-content
     > :is(
       figure,
       table,
@@ -104,18 +100,18 @@ ca-layout[format|="top"] {
       video,
       canvas,
       code,
-      ul.grid,
-      ca-grid,
+      .ca-meshify,
+      ca-mesh,
       ca-code-demo
     ) {
     margin-inline-start: var(--outdent);
   }
 
   /* Class-based overrides */
-  .outdent {
+  .ca-outdent {
     margin-inline: var(--outdent) var(--enddent);
   }
-  .indent {
+  .ca-indent {
     margin-inline: var(--indent) var(--enddent);
   }
 }

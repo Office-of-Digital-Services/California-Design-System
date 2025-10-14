@@ -19,7 +19,7 @@ ca-layout > :is(header, [slot="header"]) {
     grid-area: burger;
   }
 
-  & :is(ca-org, [slot="org"]) {
+  & > :is(ca-org, [slot="org"]) {
     grid-area: org;
   }
 

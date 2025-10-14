@@ -26,7 +26,7 @@ ca-field {
     color: var(--red-70);
   }
 
-  &.invalid,
+  &.ca-invalid,
   &[invalid],
   &:has(*:invalid) {
     & p {

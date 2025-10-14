@@ -25,7 +25,7 @@
 
 <p>Here's a basic card, all alone.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card>
       <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
@@ -54,7 +54,7 @@
 
 <p>To size a single card, just add a <code>max-width</code>.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card style="max-width: 31rem;">
       <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
@@ -74,7 +74,7 @@
 
 <p>One way to do this is with our own <code>ca-mesh</code> component.</p>
 
-<ca-code-demo class="outdent content-width-large">
+<ca-code-demo class="ca-outdent content-width-large">
   <template>
     <ca-mesh>
       <ca-card size="medium">
@@ -112,7 +112,7 @@
 </p>
 
 
-<ca-code-demo class="outdent content-width-large">
+<ca-code-demo class="ca-outdent content-width-large">
   <template>
     <!-- The --cell-width variable is a function of the ca-mesh component. -->
     <ca-mesh style="--cell-width: 15rem;">
@@ -165,10 +165,10 @@
 </p>
 
 
-<ca-code-demo class="outdent content-width-large">
+<ca-code-demo class="ca-outdent content-width-large">
   <template>
     <ca-mesh>
-      <ul class="meshify">
+      <ul class="ca-meshify">
         <li>
           <ca-card size="medium">
             <img src="https://live.staticflickr.com/5609/15596534729_9c240ff83a_b.jpg" alt="Brown bear" />
@@ -210,7 +210,7 @@
 <p>Images will automatically fit the card with an <code>object-fit</code> of <code>cover</code>. This can be altered by
   applying a utility class to the image.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card>
       <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower"
@@ -256,7 +256,7 @@
 <p>Padding can be added around the image if desired. Use utility classes.
 </p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card class="padding-2">
       <img class="rounded" src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg"
@@ -279,7 +279,7 @@
   hovered.
 </p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card interactive>
       <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
@@ -293,7 +293,7 @@
 
 <p>With <code>interactive="full"</code>, we can make the whole card clickable.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card interactive="full">
       <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
@@ -310,7 +310,7 @@
 
 <p>The <code>shadow</code> attribute adds depth.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card shadow>
       <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
@@ -324,7 +324,7 @@
 
 <p>It's even better when used alongside <code>interactive</code>.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card interactive="full" shadow>
       <img src="https://live.staticflickr.com/5707/30956223351_b42f440856_o_d.jpg" alt="Half dome" />
@@ -344,7 +344,7 @@
 
 
 
-<ca-code-demo class="outdent content-width-large">
+<ca-code-demo class="ca-outdent content-width-large">
   <template>
     <ca-mesh>
       <ca-card>
@@ -379,7 +379,7 @@
 
 <p>Use the <code>flow="horizontal"</code> attribute.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card flow="horizontal" size="small">
       <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
@@ -393,7 +393,7 @@
 
 <p>To change the direction of the responsive flip on mobile, use <code>flow="horizontal-reverse"</code>.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card flow="horizontal-reverse" size="small">
       <img src="https://live.staticflickr.com/8628/16622486169_087756b818_b.jpg" alt="California poppy flower" />
@@ -412,7 +412,7 @@
 
 <p>To put the image at the end of the card, just switch the position of the image element.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card size="medium">
       <article>
@@ -427,7 +427,7 @@
 
 <p>Works with horizontal cards too.</p>
 
-<ca-code-demo class="outdent">
+<ca-code-demo class="ca-outdent">
   <template>
     <ca-card flow="horizontal" size="small">
       <article>

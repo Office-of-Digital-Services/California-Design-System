@@ -21,6 +21,7 @@
   --line-height-h1: 1.2;
 }
 
+/* Desktop */
 @media screen and (min-width: 1024px) {
   :root {
     --line-height-small: 1.8;

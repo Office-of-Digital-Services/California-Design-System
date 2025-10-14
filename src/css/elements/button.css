@@ -87,72 +87,84 @@
   --button-color: var(--gray-static-10);
   --button-background: var(--gray-highlight);
   --button-background-hover: var(--gray-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-magenta {
   --button-color: var(--magenta-static-10);
   --button-background: var(--magenta-highlight);
   --button-background-hover: var(--magenta-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-orange {
   --button-color: var(--orange-static-10);
   --button-background: var(--orange-highlight);
   --button-background-hover: var(--orange-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-green {
   --button-color: var(--green-static-10);
   --button-background: var(--green-highlight);
   --button-background-hover: var(--green-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-blue {
   --button-color: var(--blue-static-10);
   --button-background: var(--blue-highlight);
   --button-background-hover: var(--blue-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-purple {
   --button-color: var(--purple-static-10);
   --button-background: var(--purple-highlight);
   --button-background-hover: var(--purple-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-yellow {
   --button-color: var(--yellow-static-10);
   --button-background: var(--yellow-highlight);
   --button-background-hover: var(--yellow-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-red {
   --button-color: var(--red-static-10);
   --button-background: var(--red-highlight);
   --button-background-hover: var(--red-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-coastal {
   --button-color: var(--coastal-static-10);
   --button-background: var(--coastal-highlight);
   --button-background-hover: var(--coastal-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-desert {
   --button-color: var(--desert-static-10);
   --button-background: var(--desert-highlight);
   --button-background-hover: var(--desert-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-mountain {
   --button-color: var(--mountain-static-10);
   --button-background: var(--mountain-highlight);
   --button-background-hover: var(--mountain-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-valley {
   --button-color: var(--valley-static-10);
   --button-background: var(--valley-highlight);
   --button-background-hover: var(--valley-highlight-active);
+  --button-background-active: var(--button-background-hover);
 }
 
 .ca-button-utility {

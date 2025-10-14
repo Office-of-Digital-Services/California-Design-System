@@ -65,7 +65,7 @@ menu a,
   }
 
   /* When needed, apply background color to bring it to life. */
-  &:is(:hover, :active, .active)::before {
+  &:is(:hover, :active, .ca-active)::before {
     background-color: var(--primary-accent);
   }
 
@@ -75,7 +75,7 @@ menu a,
 
   /* In-click state */
   &:active,
-  &.active {
+  &.ca-active {
     color: var(--primary-120);
     background-color: var(--primary-background-50);
   }
@@ -167,7 +167,7 @@ ca-layout:not([format|="top"]) [slot="menu"] ca-menu {
         margin-block-start: .875rem;
       }
 
-      &:is(:hover, :active, .active)::after {
+      &:is(:hover, :active, .ca-active)::after {
         background-color: var(--primary-highlight-active);
       }
 
@@ -177,7 +177,7 @@ ca-layout:not([format|="top"]) [slot="menu"] ca-menu {
 
       /* In-click state */
       &:active,
-      &.active {
+      &.ca-active {
         color: var(--primary-120);
         background-color: unset;
       }
