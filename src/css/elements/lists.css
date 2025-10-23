@@ -12,6 +12,11 @@ li {
   margin-block-end: 1.5rem;
 }
 
+/* Padding fix for nested lists. */
+:where(ul, ol) :where(ul, ol) li:first-child {
+  margin-block-start: 1.5rem;
+}
+
 :where(ul, ol) {
   max-width: var(--content-width-small);
 }
