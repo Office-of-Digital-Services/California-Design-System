@@ -1,0 +1,204 @@
+<h1>Layout</h1>
+
+<p>The layout component is a container for the page content. It's used to create the page layout and structure.</p>
+
+<h2>Basic usage</h2>
+
+<p>Here's the most basic mark-up.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <header></header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<p>If desired, you can instead use the <code>slot</code> attribute to place the header, main, and footer.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <div slot="layout-header"></div>
+      <div slot="layout-main"></div>
+      <div slot="layout-footer"></div>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<h3>Changing the layout</h3>
+
+<p>Use the <code>format</code> attribute to change the layout.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout format="top-full">
+      <header></header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<p>The available formats are:</p>
+
+<ul>
+  <li><code>side</code> (default)</li>
+  <li><code>top-full</code></li>
+  <li><code>top-lite</code></li>
+</ul>
+
+<h2>Header</h2>
+
+<p>Among the layout elements, the header has its own complex set of slots.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <header>
+        <div slot="header-burger"></div>
+        <div slot="header-org"></div>
+        <div slot="header-menu"></div>
+        <div slot="header-priority"></div>
+        <div slot="header-utility"></div>
+      </header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<h3>Burger</h3>
+
+<p>The <code>header-burger</code> slot can be replaced with the <code>ca-burger</code> element. Here's a full example.
+</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <header>
+
+        <ca-burger>
+          <a href="#content-nav" title="Menu" class="ca-button ca-button-burger">
+            <ca-icon name="pancakes-menu"></ca-icon>
+            <ca-tip>Menu</ca-tip>
+          </a>
+        </ca-burger>
+
+        <div slot="header-org"></div>
+        <div slot="header-menu"></div>
+        <div slot="header-priority"></div>
+        <div slot="header-utility"></div>
+      </header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<h3>Org</h3>
+
+<p>The same goes for the <code>header-org</code> slot, which can be replaced with the <code>ca-org</code> element.
+  Here's a full example.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <header>
+        <div slot="header-burger"></div>
+
+        <ca-org>
+          <a href="/">
+            <ca-pic slot="org-img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+            <span slot="org-cal">California</span>
+            <span slot="org-dept">Design System</span>
+          </a>
+        </ca-org>
+
+        <div slot="header-menu"></div>
+        <div slot="header-priority"></div>
+        <div slot="header-utility"></div>
+      </header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<h3>Menu</h3>
+
+<p>The <code>header-menu</code> slot can be placed on a <code>nav</code> element if needed.</p>
+
+<p>Combine with the <code>menu</code> element to create nicely formatted links. Use <code>ca-pop</code> to create nested
+  dropdown menus.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <header>
+        <div slot="header-burger"></div>
+        <div slot="header-org"></div>
+
+        <nav id="content-nav" slot="header-menu" aria-label="Content navigation">
+          <menu>
+            <li><a href="/pages/get-started">Get started</a></li>
+            <li>
+              <ca-pop>
+                <button class="ca-button-menu" slot="pop-button">
+                  Components
+                  <ca-icon name="arrow-down"></ca-icon>
+                </button>
+                <menu slot="pop-content">
+                  <li><a href="/pages/components/typography">Typography</a></li>
+                  <li><a href="/pages/components/org">Org</a></li>
+                  <li><a href="/pages/components/icon">Icon</a></li>
+                  <li><a href="/pages/components/pop">Pop</a></li>
+                </menu>
+              </ca-pop>
+            </li>
+          </menu>
+        </nav>
+
+        <div slot="header-priority"></div>
+        <div slot="header-utility"></div>
+      </header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
+
+<h3>Utility</h3>
+
+<p>The <code>header-utility</code> slot can also be placed on a <code>nav</code> element if needed.</p>
+
+<p>The <code>ca-button-utility</code> class works great with buttons in this section.</p>
+
+<ca-code-demo hide="example">
+  <template>
+    <ca-layout>
+      <header>
+        <div slot="header-burger"></div>
+        <div slot="header-org"></div>
+        <div slot="header-menu"></div>
+        <div slot="header-priority"></div>
+
+        <nav id="utility-nav" slot="header-utility" aria-label="Utility navigation">
+          <ul>
+            <li>
+              <a href="#" title="Login" class="ca-button ca-button-utility">
+                <ca-icon name="account"></ca-icon>
+                <ca-tip>Login</ca-tip>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </header>
+      <main></main>
+      <footer></footer>
+    </ca-layout>
+  </template>
+</ca-code-demo>
