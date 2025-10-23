@@ -1,0 +1,45 @@
+<h1>Org</h1>
+
+<p>Display an organization's logo and name. Useful for layouts and headers.</p>
+
+<h2>Basic usage</h2>
+
+<ca-code-demo>
+  <template>
+    <ca-org>
+      <a href="/">
+        <ca-pic slot="org-img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+        <span slot="org-cal">California</span>
+        <span slot="org-dept">Design System</span>
+      </a>
+    </ca-org>
+  </template>
+</ca-code-demo>
+
+<h2>Without the link</h2>
+
+<p>If you don't want to link the org to a page, you can remove the <code>&lt;a&gt;</code> element. Still works.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-org>
+      <ca-pic slot="org-img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+      <span slot="org-cal">California</span>
+      <span slot="org-dept">Design System</span>
+    </ca-org>
+  </template>
+</ca-code-demo>
+
+<h2>Horizontal version</h2>
+
+<p>There's also a horizontal version. Use the <code>format="horizontal"</code> attribute.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-org format="horizontal">
+      <ca-pic slot="org-img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+      <span slot="org-cal">California</span>
+      <span slot="org-dept">Design System</span>
+    </ca-org>
+  </template>
+</ca-code-demo>
