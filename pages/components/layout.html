@@ -57,12 +57,12 @@ layout: blank-page
       <menu>
         <li><a href="#">Navigation link</a></li>
         <li>
-          <ca-menu>
-            <button slot="summary">
+          <ca-pop>
+            <button class="ca-button-menu" slot="pop-button">
               Navigation
               <ca-icon name="arrow-down"></ca-icon>
             </button>
-            <menu>
+            <menu slot="pop-content">
               <li><a href="#">Drawer 1</a></li>
               <li><a href="#">Sub-link 2</a></li>
               <li>
@@ -75,22 +75,22 @@ layout: blank-page
                 </menu>
               </li>
               <li>
-                <ca-menu>
-                  <button slot="summary">
+                <ca-pop>
+                  <button class="ca-button-menu" slot="pop-button">
                     Navigation
                     <ca-icon name="arrow-down"></ca-icon>
                   </button>
-                  <menu>
+                  <menu slot="pop-content">
                     <li><a href="#">Drawer 1</a></li>
                     <li><a href="#">Sub-link 2</a></li>
                     <li>
                       <a href="#">Nested link 3</a>
                     </li>
                   </menu>
-                </ca-menu>
+                </ca-pop>
               </li>
             </menu>
-          </ca-menu>
+          </ca-pop>
         </li>
         <li><a href="#">Another link that's super long</a></li>
         <li><a href="#">Differ widths</a></li>

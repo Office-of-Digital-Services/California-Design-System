@@ -1,0 +1,103 @@
+ca-pop {
+  --pop-position: calc(100% + 1rem);
+
+  position: relative;
+  display: inline-block;
+
+  & > [slot="pop-content"] {
+    position: absolute;
+    display: none;
+  }
+
+  & > :where([slot="pop-content"]) {
+    inset-block-start: var(--pop-position);
+    inline-size: max-content;
+    padding: .5rem;
+    border-radius: var(--border-radius);
+    background: var(--primary-background-20);
+    box-shadow: var(--primary-shadow-2);
+  }
+
+  &[open] > :where([slot="pop-content"]) {
+    display: block;
+  }
+
+  & > [slot="pop-button"] ca-icon[name] {
+    transition: transform 0.4s ease;
+  }
+
+  &[open] > [slot="pop-button"] ca-icon[name] {
+    transform: rotate(-180deg);
+  }
+
+  :is(&, &[direction="down"]) > [slot="pop-content"] {
+    inset-block-start: var(--pop-position);
+  }
+
+  &[direction="up"] > [slot="pop-content"] {
+    inset-block-start: unset;
+    inset-block-end: var(--pop-position);
+  }
+
+  &[direction="right"] > [slot="pop-content"] {
+    inset-block-start: 0;
+    inset-inline-start: var(--pop-position);
+  }
+
+  &[direction="left"] > [slot="pop-content"] {
+    inset-block-start: 0;
+    inset-inline-end: var(--pop-position);
+  }
+}
+
+/* Layout nav menu overrides */
+
+[slot="menu"] ca-pop {
+  display: block;
+}
+
+/* Mobile */
+@media screen and (max-width: 1023px) {
+  [slot="menu"] ca-pop > [slot="pop-content"] {
+    position: relative;
+    padding: 0;
+    inline-size: 100%;
+    border-radius: unset;
+    box-shadow: unset;
+    background: unset;
+  }
+}
+
+/* Layout nav menu overrides */
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  /* Side nav */
+  ca-layout:not([format|="top"]) [slot="menu"] ca-pop > [slot="pop-content"] {
+    position: unset;
+    padding: 0;
+    inline-size: 100%;
+    border-radius: unset;
+    box-shadow: unset;
+    background: unset;
+  }
+
+  /* Top navs */
+  ca-layout[format|="top"] [slot="menu"] {
+    ca-pop {
+      /* Slightly modify pop position for top navs. */
+      &[open] > [slot="pop-content"] {
+        inset-block-start: calc(100% + .5rem);
+        inset-inline-start: 0;
+
+        /* Nested pops open in place, not hover. */
+        & [slot="pop-content"] {
+          position: unset;
+          background: unset;
+          box-shadow: unset;
+          padding-block: 0;
+          min-inline-size: unset;
+        }
+      }
+    }
+  }
+}

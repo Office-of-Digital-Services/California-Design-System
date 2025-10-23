@@ -1,0 +1,64 @@
+<h1>Pop</h1>
+
+<p>Pop is a popup system for displaying content.</p>
+
+<h2>Default</h2>
+
+<p>The most basic mark-up.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-pop>
+      <button slot="pop-button">Open pop</button>
+      <div slot="pop-content">Pop content.</div>
+    </ca-pop>
+  </template>
+</ca-code-demo>
+
+<h2>With fancier styles</h2>
+
+<p>Use the <code>ca-button</code> class to add button styles to the pop button. We can also include an icon.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-pop>
+      <button class="ca-button" slot="pop-button">
+        Open pop
+        <ca-icon name="arrow-down"></ca-icon>
+      </button>
+      <div slot="pop-content">Pop content.</div>
+    </ca-pop>
+  </template>
+</ca-code-demo>
+
+<h2>With direction</h2>
+
+<p>Use the <code>direction</code> attribute to change the direction of the pop. Also note the change in icon.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-pop direction="up">
+      <button class="ca-button" slot="pop-button">
+        Open up
+        <ca-icon name="arrow-up"></ca-icon>
+      </button>
+      <div slot="pop-content">Pop content.</div>
+    </ca-pop>
+    <hr>
+    <ca-pop direction="right">
+      <button class="ca-button" slot="pop-button">
+        Open right
+        <ca-icon name="arrow-right"></ca-icon>
+      </button>
+      <div slot="pop-content">Pop content.</div>
+    </ca-pop>
+    <hr>
+    <ca-pop direction="left">
+      <button class="ca-button" slot="pop-button">
+        <ca-icon name="arrow-left"></ca-icon>
+        Open left
+      </button>
+      <div slot="pop-content">Pop content.</div>
+    </ca-pop>
+  </template>
+</ca-code-demo>

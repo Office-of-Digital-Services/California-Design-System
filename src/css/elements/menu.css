@@ -28,13 +28,13 @@ menu {
   }
 }
 
-:is(menu, [slot="menu"]) ca-menu button {
+.ca-button-menu {
   all: unset;
   cursor: pointer;
 }
 
 menu a,
-:is(menu, [slot="menu"]) ca-menu button {
+.ca-button-menu {
   display: flex;
   align-items: center;
   color: var(--primary-110);
@@ -91,39 +91,8 @@ menu a:visited {
 }
 
 menu menu a,
-:is(menu, [slot="menu"] menu) menu ca-menu button {
+menu menu .ca-button-menu {
   font-weight: 400;
-}
-
-ca-menu {
-  display: inline-block;
-
-  & > menu {
-    display: none;
-  }
-  &[open] > menu {
-    margin-block-start: .5rem;
-    display: flex;
-  }
-
-  & > button > ca-icon[name] {
-    transition: transform 0.4s ease;
-  }
-
-  &[open] {
-    & > button > ca-icon[name] {
-      transform: rotate(-180deg);
-    }
-  }
-}
-
-[slot="menu"] ca-menu {
-  display: block;
-}
-
-/* In side-nav layout, we need to expand to fill the sidebar, so the arrows flush right. */
-ca-layout:not([format|="top"]) [slot="menu"] ca-menu {
-  display: block;
 }
 
 @media screen and (min-width: 1024px) {
@@ -142,8 +111,13 @@ ca-layout:not([format|="top"]) [slot="menu"] ca-menu {
       padding: 1rem;
     }
 
+    /* And then we needed nested menus within the dropdown to have some padding trimmed. */
+    & menu menu menu {
+      padding-block: 0;
+    }
+
     & menu a,
-    & menu ca-menu button {
+    & menu .ca-button-menu {
       display: inline-flex;
       inline-size: auto;
       flex-wrap: wrap;
@@ -189,31 +163,11 @@ ca-layout:not([format|="top"]) [slot="menu"] ca-menu {
     }
 
     & menu menu a,
-    & menu menu ca-menu button {
+    & menu menu .ca-button-menu {
       padding-block-end: 1rem;
 
       &::after {
         margin-block-start: 0.125rem;
-      }
-    }
-
-    ca-menu {
-      position: relative;
-
-      &[open] > menu {
-        position: absolute;
-        inset-block-start: 100%;
-        inset-inline-start: 0;
-        background: var(--primary-background-20);
-        box-shadow: var(--primary-shadow-2);
-
-        & menu {
-          position: unset;
-          background: unset;
-          box-shadow: unset;
-          padding-block: 0;
-          min-inline-size: unset;
-        }
       }
     }
   }
