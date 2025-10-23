@@ -50,7 +50,11 @@ ca-layout[format|="top"] {
 }
 
 /* Auto-apply side margin to all top-level children of main. */
-:where(ca-layout > :is(main, [slot="main"], footer, [slot="footer"]) > *) {
+:where(
+    ca-layout
+      > :is(main, [slot="layout-main"], footer, [slot="layout-footer"])
+      > *
+  ) {
   margin-inline: var(--mindent);
 }
 
@@ -69,7 +73,11 @@ ca-layout[format|="top"] {
   }
 
   /* Auto-apply the indent to all first-level main and footer content. */
-  :where(ca-layout > :is(main, [slot="main"], footer, [slot="footer"]) > *),
+  :where(
+      ca-layout
+        > :is(main, [slot="layout-main"], footer, [slot="layout-footer"])
+        > *
+    ),
   .ca-content > * {
     margin-inline: var(--indent) var(--enddent);
   }

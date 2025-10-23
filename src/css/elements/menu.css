@@ -96,7 +96,7 @@ menu menu .ca-button-menu {
 }
 
 @media screen and (min-width: 1024px) {
-  ca-layout[format|="top"] [slot="menu"] {
+  ca-layout[format|="top"] [slot="header-menu"] {
     display: flex;
     align-items: center;
 

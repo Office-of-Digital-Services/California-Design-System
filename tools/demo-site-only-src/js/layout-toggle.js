@@ -218,9 +218,9 @@ class LayoutToggle extends HTMLElement {
     window.setTimeout(() => {
       this.setupIncludeToggle(layout, "burger", "ca-burger");
       this.setupIncludeToggle(layout, "org", "ca-org");
-      this.setupIncludeToggle(layout, "priority", "[slot='priority']");
-      this.setupIncludeToggle(layout, "utility", "[slot='utility']");
-      this.setupIncludeToggle(layout, "menu", "[slot='menu']");
+      this.setupIncludeToggle(layout, "priority", "[slot='header-priority']");
+      this.setupIncludeToggle(layout, "utility", "[slot='header-utility']");
+      this.setupIncludeToggle(layout, "menu", "[slot='header-menu']");
       this.setupIncludeToggle(layout, "header", "header");
       this.setupIncludeToggle(layout, "main", "main");
       this.setupIncludeToggle(layout, "footer", "footer");

@@ -1,4 +1,4 @@
-ca-layout > footer {
+ca-layout > :where(footer, [slot="layout-footer"]) {
   z-index: 1;
   container: footer / inline-size;
   padding-block: 4rem 3rem;

@@ -52,13 +52,13 @@ ca-pop {
 
 /* Layout nav menu overrides */
 
-[slot="menu"] ca-pop {
+[slot="header-menu"] ca-pop {
   display: block;
 }
 
 /* Mobile */
 @media screen and (max-width: 1023px) {
-  [slot="menu"] ca-pop > [slot="pop-content"] {
+  [slot="header-menu"] ca-pop > [slot="pop-content"] {
     position: relative;
     padding: 0;
     inline-size: 100%;
@@ -72,7 +72,10 @@ ca-pop {
 /* Desktop */
 @media screen and (min-width: 1024px) {
   /* Side nav */
-  ca-layout:not([format|="top"]) [slot="menu"] ca-pop > [slot="pop-content"] {
+  ca-layout:not([format|="top"])
+    [slot="header-menu"]
+    ca-pop
+    > [slot="pop-content"] {
     position: unset;
     padding: 0;
     inline-size: 100%;
@@ -82,7 +85,7 @@ ca-pop {
   }
 
   /* Top navs */
-  ca-layout[format|="top"] [slot="menu"] {
+  ca-layout[format|="top"] [slot="header-menu"] {
     ca-pop {
       /* Slightly modify pop position for top navs. */
       &[open] > [slot="pop-content"] {

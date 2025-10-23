@@ -13,13 +13,13 @@
 
 		<ca-org>
       <a href="/">
-        <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
-        <span slot="cal">California</span>
-        <span slot="dept">Design System</span>
+        <ca-pic slot="org-img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+        <span slot="org-cal">California</span>
+        <span slot="org-dept">Design System</span>
       </a>
     </ca-org>
 
-		<search slot="priority">
+		<search slot="header-priority">
 			<form>
 				<label for="site-search" class="visually-hidden">Search this site</label>
 				<input type="search" id="site-search" placeholder="Search" />
@@ -30,7 +30,7 @@
 			</form>
 		</search>
 
-		<nav id="utility-nav" slot="utility" aria-label="Utility navigation">
+		<nav id="utility-nav" slot="header-utility" aria-label="Utility navigation">
 			<ul>
 				<li>
 					<ca-layout-toggle></ca-layout-toggle>
@@ -52,7 +52,7 @@
 			</ul>
 		</nav>
 
-		<nav id="content-nav" slot="menu" aria-label="Content navigation">
+		<nav id="content-nav" slot="header-menu" aria-label="Content navigation">
 			<menu>
 				<li><a href="/pages/get-started">Get started</a></li>
 				<li>
@@ -86,9 +86,9 @@
       <ca-column span="2">
         <ca-org>
           <a href="/">
-            <ca-pic slot="img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
-            <span slot="cal">California</span>
-            <span slot="dept">Department Website Long Name</span>
+            <ca-pic slot="org-img" emblem="ca.gov" aria-label="ca.gov"></ca-pic>
+            <span slot="org-cal">California</span>
+            <span slot="org-dept">Department Website Long Name</span>
           </a>
         </ca-org>
       </ca-column>

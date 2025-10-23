@@ -1,11 +1,11 @@
 @media screen and (min-width: 1024px) {
   /* Horizon, small desktop */
-  ca-layout[format|="top"] > :is(header, [slot="header"]) {
+  ca-layout[format|="top"] > :is(header, [slot="layout-header"]) {
     padding: 1rem 2rem;
   }
 }
 
-ca-layout > :is(header, [slot="header"]) {
+ca-layout > :is(header, [slot="layout-header"]) {
   padding: 1rem 1rem 1.5rem 1rem;
   background-color: var(--primary-background-20);
   z-index: 3;
@@ -15,26 +15,26 @@ ca-layout > :is(header, [slot="header"]) {
   column-gap: 1rem;
 
   /* Required when [slot='menu'] is present. */
-  & > :is(ca-burger, [slot="burger"]) {
+  & > :is(ca-burger, [slot="header-burger"]) {
     grid-area: burger;
   }
 
-  & > :is(ca-org, [slot="org"]) {
+  & > :is(ca-org, [slot="header-org"]) {
     grid-area: org;
   }
 
   /* Required when the ca-burger is present. */
-  & > [slot="menu"] {
+  & > [slot="header-menu"] {
     grid-area: menu;
   }
 
   /* Optional */
-  & > [slot="priority"] {
+  & > [slot="header-priority"] {
     grid-area: priority;
   }
 
   /* Optional */
-  & > [slot="utility"] {
+  & > [slot="header-utility"] {
     grid-area: utility;
   }
 
@@ -51,7 +51,7 @@ ca-layout > :is(header, [slot="header"]) {
 /* Mobile */
 /* Apply a mobile-only media query, so these mods don't mess with desktop. */
 @media screen and (max-width: 1023px) {
-  ca-layout > :is(header, [slot="header"]) {
+  ca-layout > :is(header, [slot="layout-header"]) {
     grid-template-columns: 2.5rem 1fr;
     grid-template-areas:
       "burger utility"
@@ -61,7 +61,7 @@ ca-layout > :is(header, [slot="header"]) {
 
 /* Default (Eureka), small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout:not([format|="top"]) > :is(header, [slot="header"]) {
+  ca-layout:not([format|="top"]) > :is(header, [slot="layout-header"]) {
     padding: 1.5rem 1rem 2rem 1rem;
     border-inline-end: 0.0625rem solid var(--gray-40);
     grid-template-columns: 1fr;
@@ -80,14 +80,14 @@ ca-layout > :is(header, [slot="header"]) {
       margin-inline: 1rem;
     }
 
-    & > [slot="utility"] {
+    & > [slot="header-utility"] {
       position: absolute;
       top: 1rem;
       right: 1rem;
     }
 
-    &:has([slot="priority"][hidden]),
-    &:not(:has([slot="priority"])) {
+    &:has([slot="header-priority"][hidden]),
+    &:not(:has([slot="header-priority"])) {
       row-gap: .75rem;
     }
   }
@@ -95,7 +95,7 @@ ca-layout > :is(header, [slot="header"]) {
 
 /* Horizon, small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout[format="top-full"] > :is(header, [slot="header"]) {
+  ca-layout[format="top-full"] > :is(header, [slot="layout-header"]) {
     row-gap: 1rem;
     padding-block-end: 0;
     grid-template-columns: 1fr fit-content(15rem) max-content;
@@ -104,7 +104,7 @@ ca-layout > :is(header, [slot="header"]) {
       "org priority utility"
       "menu menu menu";
 
-    & > [slot="menu"] {
+    & > [slot="header-menu"] {
       border-block-start: 0.0625rem solid var(--gray-40);
       padding-inline-start: calc(var(--indent) - 3rem);
     }
@@ -113,7 +113,7 @@ ca-layout > :is(header, [slot="header"]) {
 
 /* Skyline, small desktop */
 @media screen and (min-width: 1024px) {
-  ca-layout[format="top-lite"] > :is(header, [slot="header"]) {
+  ca-layout[format="top-lite"] > :is(header, [slot="layout-header"]) {
     grid-template-columns: max-content 1fr fit-content(15rem) max-content;
     grid-template-rows: auto;
     grid-template-areas: "org menu priority utility";
@@ -121,7 +121,7 @@ ca-layout > :is(header, [slot="header"]) {
 }
 
 ca-layout[burger="open"] {
-  & :is(header, [slot="header"]) {
+  & :is(header, [slot="layout-header"]) {
     position: fixed;
     inset-block-start: 0;
     inset-inline-start: 0;
@@ -138,11 +138,11 @@ ca-layout[burger="open"] {
       "priority priority ."
       "menu menu .";
 
-    & > :is([slot="menu"], [slot="priority"]) {
+    & > :is([slot="header-menu"], [slot="header-priority"]) {
       display: block;
     }
 
-    & > [slot="menu"] {
+    & > [slot="header-menu"] {
       overflow-y: auto;
     }
 
@@ -187,7 +187,7 @@ ca-layout[burger="open"] {
     prefers-reduced-motion: no-preference
   ) {
   ca-layout[burger="open"] {
-    & :is([slot="menu"], [slot="priority"]) {
+    & :is([slot="header-menu"], [slot="header-priority"]) {
       opacity: 0;
       animation: burger-from-left ease-out 0.3s forwards;
     }

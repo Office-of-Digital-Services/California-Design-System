@@ -1,23 +1,23 @@
-ca-layout > main {
+ca-layout > :where(main, [slot="layout-main"]) {
   container: main / inline-size;
   z-index: 1;
 }
 
-:where(ca-layout > main) {
+:where(ca-layout > :where(main, [slot="layout-main"])) {
   padding-block: 2rem;
 }
 
 /* Small desktop */
 @media screen and (min-width: 1024px) {
-  :where(ca-layout > main) {
+  :where(ca-layout > :where(main, [slot="layout-main"])) {
     padding-block: 5rem;
   }
 
-  :where(ca-layout[format|="top"] > main) {
+  :where(ca-layout[format|="top"] > :where(main, [slot="layout-main"])) {
     padding-block-start: 2rem;
   }
 
-  ca-layout[format="top-lite"] > main {
+  ca-layout[format="top-lite"] > :where(main, [slot="layout-main"]) {
     border-block-start: 0.0625rem solid var(--gray-40);
   }
 }

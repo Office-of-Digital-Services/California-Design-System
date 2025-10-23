@@ -1,4 +1,4 @@
-[slot="priority"] {
+[slot="header-priority"] {
   display: none; /* Should be flex when shown. */
 
   background-color: var(--primary-background-20);
@@ -11,16 +11,16 @@
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
-  [slot="priority"] {
+  [slot="header-priority"] {
     display: flex;
   }
 
-  ca-layout:not([format|="top"]) > [slot="priority"] {
+  ca-layout:not([format|="top"]) > [slot="header-priority"] {
     padding: 1.5rem 1rem 0 1rem;
     border-inline-end: 0.0625rem solid var(--gray-40);
   }
 
-  ca-layout[format|="top"] > [slot="priority"] {
+  ca-layout[format|="top"] > [slot="header-priority"] {
     padding: .5rem 1rem;
   }
 }

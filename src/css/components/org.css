@@ -16,7 +16,7 @@ ca-org > a {
   grid-template-areas: "image" "border" "cal" "dept";
 
   /* This is the border. */
-  &:has([slot="img"] + *)::after {
+  &:has([slot="org-img"] + *)::after {
     content: "";
     display: block;
     grid-area: border;
@@ -24,16 +24,16 @@ ca-org > a {
     margin-block: 1rem .5rem;
   }
 
-  & > [slot="img"] {
+  & > [slot="org-img"] {
     grid-area: image;
   }
 
-  & > [slot="cal"] {
+  & > [slot="org-cal"] {
     grid-area: cal;
     color: var(--gray-70);
   }
 
-  & > [slot="dept"] {
+  & > [slot="org-dept"] {
     grid-area: dept;
   }
 
@@ -45,7 +45,7 @@ ca-org > a {
       "image border cal"
       "image border dept";
 
-    &:has([slot="img"] + *)::after {
+    &:has([slot="org-img"] + *)::after {
       border-block-end: none;
       border-inline-end: 0.0625rem solid var(--gray-60);
       margin-block: 0;
@@ -68,7 +68,7 @@ ca-org > a {
         "image border cal"
         "image border dept";
 
-      &:has([slot="img"] + *)::after {
+      &:has([slot="org-img"] + *)::after {
         border-block-end: none;
         border-inline-end: 0.0625rem solid var(--gray-60);
         margin-block: 0;
