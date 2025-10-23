@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.3.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.2.0...v0.3.0) (2025-10-23)
+
+
+### Features
+
+* Badge ([f939a8c](https://github.com/Office-of-Digital-Services/California-Design-System/commit/f939a8c365dee26b906b842ae2f53dee493d3f0c))
+* Container ([15593f9](https://github.com/Office-of-Digital-Services/California-Design-System/commit/15593f9a30582d5fbf79d5646b61e05c91ee2cf5))
+* Container columns ([efe4ce1](https://github.com/Office-of-Digital-Services/California-Design-System/commit/efe4ce16b52957a3f23cd867d19536d3ced39f73))
+* Re-worked card ([3c0da60](https://github.com/Office-of-Digital-Services/California-Design-System/commit/3c0da605c7eaf9844fa10500fa43f76c5be635b9))
+* Revised card ([7430e10](https://github.com/Office-of-Digital-Services/California-Design-System/commit/7430e1070c24318133f85c25226c7804af30b9e0))
+* Shadows ([6371024](https://github.com/Office-of-Digital-Services/California-Design-System/commit/63710242d672f1eb61b6654d2e2998a18bb0552d))
+* Tip ([768a78f](https://github.com/Office-of-Digital-Services/California-Design-System/commit/768a78f789271b0bfaf8138388468ceec49798b2))
+
+
+### Bug Fixes
+
+* Button margins ([81d756b](https://github.com/Office-of-Digital-Services/California-Design-System/commit/81d756b10f5d3a530b1ba426640380dcd7a715ed))
+* Container column span alignment ([92f045d](https://github.com/Office-of-Digital-Services/California-Design-System/commit/92f045d0ba950ab174327304c3d14cf0c9b6b36e))
+* Full-width container margins ([4fc49e5](https://github.com/Office-of-Digital-Services/California-Design-System/commit/4fc49e5ae863405c132bcaf7bb7ad67e6a899322))
+* Primary highlight color ([352d0f1](https://github.com/Office-of-Digital-Services/California-Design-System/commit/352d0f1ea3bdb14f7ee24f6537a41668de5f4b6a))
+
 ## [0.2.0](https://github.com/Office-of-Digital-Services/California-Design-System/compare/v0.1.1...v0.2.0) (2025-04-11)
 
 
