@@ -85,7 +85,7 @@ ca-layout[format|="top"] {
   /* For select first-level content in main, auto-apply the outdent. Only main, not footer. */
   :where(
       ca-layout
-        > main
+        > :is(main, [slot="layout-main"])
         > :is(
           figure,
           table,

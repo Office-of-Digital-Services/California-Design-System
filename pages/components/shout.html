@@ -1,45 +1,48 @@
 <ca-shout class="ca-margin-bottom-4">
-  <ca-icon name="info" frame="circle" slot="img"></ca-icon>
-  <p slot="summary">With no body</p>
+  <ca-icon name="info" frame="circle" slot="shout-img"></ca-icon>
+  <p slot="shout-summary">With no body</p>
 </ca-shout>
 
 
 
 <ca-shout class="ca-margin-bottom-4" color="green">
-  <ca-icon name="check" frame="circle" slot="img"></ca-icon>
-  <p slot="body">With no heading</p>
+  <ca-icon name="check" frame="circle" slot="shout-img"></ca-icon>
+  <div slot="shout-body">
+    <p>With no heading.</p>
+    <p>This is a longer body.</p>
+  </div>
 </ca-shout>
 
 <ca-shout class="ca-margin-bottom-4" color="blue">
-  <ca-icon name="info" frame="circle" slot="img"></ca-icon>
-  <p slot="summary">With body</p>
-  <p slot="body">Hello!</p>
+  <ca-icon name="info" frame="circle" slot="shout-img"></ca-icon>
+  <p slot="shout-summary">With body</p>
+  <p slot="shout-body">Hello!</p>
 </ca-shout>
 <ca-shout class="ca-margin-bottom-4" color="yellow">
-  <ca-icon name="info" slot="img"></ca-icon>
-  <p slot="summary">With standard icon</p>
-  <p slot="body">No circular frame on the icon here.</p>
+  <ca-icon name="info" slot="shout-img"></ca-icon>
+  <p slot="shout-summary">With standard icon</p>
+  <p slot="shout-body">No circular frame on the icon here.</p>
 </ca-shout>
 <ca-shout class="ca-margin-bottom-4" color="orange">
-  <ca-icon name="notification" frame="circle" slot="img"></ca-icon>
-  <p slot="summary">It's orange!</p>
-  <p slot="body">Might be useful?</p>
+  <ca-icon name="notification" frame="circle" slot="shout-img"></ca-icon>
+  <p slot="shout-summary">It's orange!</p>
+  <p slot="shout-body">Might be useful?</p>
 </ca-shout>
 <ca-shout class="ca-margin-bottom-4" color="red">
-  <p slot="summary">With no icon</p>
-  <p slot="body">Still aligns properly.</p>
+  <p slot="shout-summary">With no icon</p>
+  <p slot="shout-body">Still aligns properly.</p>
 </ca-shout>
 <ca-shout class="ca-margin-bottom-4">
-  <span slot="img">👋</span>
-  <p slot="summary">With emoji</p>
-  <div slot="body">
+  <span slot="shout-img">👋</span>
+  <p slot="shout-summary">With emoji</p>
+  <div slot="shout-body">
     <p>The icon slot is flexible.</p>
   </div>
 </ca-shout>
 <ca-shout class="ca-margin-bottom-4">
-  <span slot="img">👋</span>
-  <p slot="summary">With longer body</p>
-  <div slot="body">
+  <span slot="shout-img">👋</span>
+  <p slot="shout-summary">With longer body</p>
+  <div slot="shout-body">
     <p>This is a longer body.</p>
     <p>It has multiple paragraphs.</p>
     <ul>

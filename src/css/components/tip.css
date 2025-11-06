@@ -12,14 +12,14 @@ ca-tip {
 *:has(> ca-tip) {
   position: relative;
 
-  &:is(:hover, :active, :focus) > ca-tip {
+  &:is(:hover, :focus-visible) > ca-tip {
     font-size: var(--text-size-small);
-    font-weight: 600;
-    padding: .5rem 1rem;
+    font-weight: 400;
+    padding: .25rem .5rem;
     border-radius: var(--border-radius);
     inline-size: max-content;
-    background: var(--primary-100);
-    color: var(--primary-10);
+    background: var(--gray-100);
+    color: var(--gray-10);
     inset-block-start: 100%;
     inset-inline-start: 50%;
     transform: translate(-50%, var(--offset-distance));
@@ -31,7 +31,7 @@ ca-tip {
       position: absolute;
       inline-size: var(--triangle-base);
       block-size: var(--triangle-altitude);
-      background: var(--primary-100);
+      background: var(--gray-100);
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       inset-block-start: calc(1px - var(--triangle-altitude));
       inset-inline-start: 50%;

@@ -163,3 +163,31 @@ ca-box[columns="5"] {
 ca-column {
   display: block;
 }
+
+ca-box[color] {
+  border-radius: var(--border-radius);
+}
+
+ca-box[color="gray"] {
+  background-color: var(--gray-20);
+}
+
+ca-box[color="red"] {
+  background-color: var(--red-20);
+}
+
+ca-box[color="yellow"] {
+  background-color: var(--yellow-20);
+}
+
+ca-box[color="green"] {
+  background-color: var(--green-20);
+}
+
+ca-box[color="blue"] {
+  background-color: var(--blue-20);
+}
+
+ca-box[color="orange"] {
+  background-color: var(--orange-20);
+}

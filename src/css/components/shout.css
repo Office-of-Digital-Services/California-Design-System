@@ -1,16 +1,17 @@
 ca-shout {
-  --shout-background: var(--gray-20);
+  --shout-background-summary: var(--gray-30);
+  --shout-background-body: var(--gray-20);
   --shout-text: var(--gray-120);
-  --shout-alert: var(--gray-60);
+  --shout-alert: var(--gray-80);
   --shout-icon-in-frame: var(--gray-static-10);
 
   display: grid;
-  grid-template-columns: 1rem min-content 1fr;
+  position: relative;
+  grid-template-columns: min-content min-content 1fr;
   grid-template-rows: minmax(2rem, auto) auto;
-  padding-block-start: .5rem;
 
   color: var(--shout-text);
-  background: var(--shout-background);
+  background: var(--shout-background-summary);
   border-radius: var(--border-radius);
 
   /* The little alert bar that appears next to the icon. */
@@ -20,78 +21,103 @@ ca-shout {
     block-size: 1rem;
     inline-size: 0.125rem;
     place-content: center;
-    margin-block-start: .25rem;
     margin-inline-end: 0.875rem;
+    margin-block: 1rem;
     background: var(--shout-alert);
   }
 
-  & > [slot="img"] {
-    inline-size: 1.5rem;
-    block-size: 1.5rem;
-    font-size: 1.5rem;
-    margin-inline-end: 1rem;
+  &::after {
+    content: "";
+    display: block;
+    block-size: 100%;
+    inline-size: 100%;
+    grid-column: 1 / 3;
+    grid-row-start: 2;
+    background: var(--shout-background-body);
+    border-end-start-radius: var(--border-radius);
   }
 
-  /* When we use a framed icon, set up the colors. */
-  & > ca-icon[slot="img"][frame] {
-    background: var(--shout-alert);
-    color: var(--shout-icon-in-frame);
-  }
-
-  /* For any other type of image, center it. */
-  & > :where([slot="img"]) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--shout-text);
-  }
-
-  & > [slot="summary"] {
-    color: var(--shout-text);
-    font-size: var(--text-size-default);
-    font-weight: 600;
-    font-style: normal;
-    line-height: normal;
-    margin: 0;
-    padding: 0 1rem .5rem 0;
-  }
-
-  & > [slot="summary"],
-  & > *:nth-child(n + 2) {
-    grid-column-start: 3;
-  }
-
-  & > [slot="body"] {
-    grid-column-start: 3;
-    margin-block-end: .5rem;
-  }
-
-  & > [slot="body"] > *:last-child {
-    margin-block-end: 0;
+  &:not(:has(> [slot="shout-summary"])) {
+    background: var(--shout-background-body);
   }
 
   &[color="red"] {
-    --shout-background: var(--red-20);
+    --shout-background-summary: var(--red-30);
+    --shout-background-body: var(--red-20);
     --shout-alert: var(--red-60);
   }
 
   &[color="green"] {
-    --shout-background: var(--green-20);
+    --shout-background-summary: var(--green-30);
+    --shout-background-body: var(--green-20);
     --shout-alert: var(--green-80);
   }
 
   &[color="yellow"] {
-    --shout-background: var(--yellow-20);
+    --shout-background-summary: var(--yellow-30);
+    --shout-background-body: var(--yellow-20);
     --shout-alert: var(--yellow-60);
   }
 
   &[color="orange"] {
-    --shout-background: var(--orange-20);
+    --shout-background-summary: var(--orange-30);
+    --shout-background-body: var(--orange-20);
     --shout-alert: var(--orange-80);
   }
 
   &[color="blue"] {
-    --shout-background: var(--blue-20);
+    --shout-background-summary: var(--blue-30);
+    --shout-background-body: var(--blue-20);
     --shout-alert: var(--blue-60);
   }
+}
+
+[slot="shout-img"] {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  font-size: 1.5rem;
+  margin-inline-end: 1rem;
+  margin-block: .75rem;
+}
+
+/* When we use a framed icon, set up the colors. */
+ca-icon[slot="shout-img"][frame] {
+  background: var(--shout-alert);
+  color: var(--shout-icon-in-frame);
+}
+
+/* For any other type of image, center it. */
+:where([slot="shout-img"]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--shout-text);
+}
+
+[slot="shout-summary"] {
+  font-size: var(--text-size-default);
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  margin: 0;
+  align-self: center;
+  grid-column-start: 3;
+}
+
+[slot="shout-body"] {
+  background: var(--shout-background-body);
+  display: block;
+  max-inline-size: unset;
+  grid-column-start: 3;
+  margin-block: 0;
+  align-self: center;
+  border-end-end-radius: var(--border-radius);
+}
+
+:where([slot="shout-body"]) {
+  padding-block: .5rem;
+}
+
+[slot="shout-body"] > *:last-child {
+  margin-block-end: 0;
 }

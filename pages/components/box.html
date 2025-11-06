@@ -1,9 +1,16 @@
 <style>
-  ca-code-demo :is(p, ca-column) {
-    padding: 2rem;
-    margin: 0;
+  ca-code-demo ca-box:not([color]) :where(p, ca-column) {
+    padding: 2rem 1rem;
     border: 1px solid var(--primary-text);
-    background-color: var(--primary-background-60);
+    background-image: repeating-linear-gradient(-55deg,
+        var(--primary-background-40),
+        var(--primary-background-40) 5rem,
+        var(--primary-background-60) 5rem,
+        var(--primary-background-60) 10rem);
+  }
+
+  ca-code-demo :where(p, ca-column) {
+    margin: 0;
     max-width: none;
   }
 
@@ -65,6 +72,38 @@
 </ca-code-demo>
 
 
+<h2>Colors</h2>
+
+<p>Boxes can be given a color with the <code>color</code> attribute.</p>
+
+<ca-code-demo>
+  <template>
+    <ca-box color="gray">
+      <p class="ca-padding-2">Gray <code>ca-box</code> with <code>color="gray"</code></p>
+    </ca-box>
+
+    <ca-box color="red">
+      <p class="ca-padding-2">Red <code>ca-box</code> with <code>color="red"</code></p>
+    </ca-box>
+
+    <ca-box color="yellow">
+      <p class="ca-padding-2">Yellow <code>ca-box</code> with <code>color="yellow"</code></p>
+    </ca-box>
+
+    <ca-box color="green">
+      <p class="ca-padding-2">Green <code>ca-box</code> with <code>color="green"</code></p>
+    </ca-box>
+
+    <ca-box color="blue">
+      <p class="ca-padding-2">Blue <code>ca-box</code> with <code>color="blue"</code></p>
+    </ca-box>
+
+    <ca-box color="orange">
+      <p class="ca-padding-2">Orange <code>ca-box</code> with <code>color="orange"</code></p>
+    </ca-box>
+  </template>
+</ca-code-demo>
+
 
 
 <h2>Columns</h2>
@@ -101,6 +140,7 @@
       <ca-column>Column 1</ca-column>
       <ca-column>Column 2</ca-column>
     </ca-box>
+
     <ca-box columns="2">
       <!-- Just using plain p tags here. Still works. -->
       <p>Column 1</p>
@@ -208,7 +248,6 @@
     </template>
   </ca-code-demo>
 </ca-box>
-
 
 <h3>The test matrix</h3>
 

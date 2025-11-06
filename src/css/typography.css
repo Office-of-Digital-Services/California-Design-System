@@ -2,7 +2,7 @@
   --font-family: Noto Sans;
   --text-max-width: 65ch;
 
-  --text-size-small: clamp(1rem, 1rem + 0vw, 1rem);
+  --text-size-small: 1rem;
   --text-size-default: clamp(1.125rem, 1.0572rem + 0.3012vw, 1.25rem);
   --text-size-large: clamp(1.25rem, 1.1145rem + 0.6024vw, 1.5rem);
   --text-size-h5: clamp(1.25rem, 0.9789rem + 1.2048vw, 1.75rem);
