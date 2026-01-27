@@ -24,7 +24,7 @@ ca-box[size="full"] {
   --max-width: var(--content-width-full);
 }
 
-ca-box[columns] {
+:where(ca-box[columns]) {
   --columns: 2; /* Default 2 columns */
   --gap: 0rem; /* Default no gap between columns */
   --gap-x: var(--gap);
@@ -36,7 +36,9 @@ ca-box[columns] {
 		We'll probably want to adjust this over time, with testing.
 	*/
   --shrink-factor: 0.8;
+}
 
+ca-box[columns] {
   /* --column-size uses all of our variables to figure out the ideal size for each column. */
   --column-size: calc(
     (
@@ -162,6 +164,12 @@ ca-box[columns="5"] {
 
 ca-column {
   display: block;
+}
+
+:where(ca-box[color]) {
+  --gap: 1rem;
+  margin-block-end: 2rem;
+  padding: 1rem;
 }
 
 ca-box[color] {
